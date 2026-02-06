@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root BTCPP_format="4" project_name="Project">
+    <include path="medical.xml"/>
+    <!-- Description of Node Models (used by Groot) -->
+    <TreeNodesModel>
+        <Action ID="AlertChargeFault" editable="true"/>
+        <Action ID="AlertFault" editable="true">
+            <input_port name="fault_type"/>
+        </Action>
+        <Action ID="AlertUnfinishedOnce" editable="true"/>
+        <Action ID="AnomalyDetect" editable="true"/>
+        <Action ID="CallDutyNurse" editable="true">
+            <input_port name="bed_id"/>
+        </Action>
+        <Action ID="ClearInteractionMode" editable="true"/>
+        <Action ID="ClearPatrolTrigger" editable="true"/>
+        <Action ID="EnqueueNurseCall" editable="true">
+            <input_port name="bed_id"/>
+        </Action>
+        <Action ID="FaceIdentify" editable="true">
+            <output_port name="person_id"/>
+        </Action>
+        <Condition ID="HasNextBed" editable="true"/>
+        <Condition ID="HasNurseCall" editable="true"/>
+        <Condition ID="HasRemainingPatrol" editable="true"/>
+        <Action ID="IdleWait" editable="true"/>
+        <Condition ID="IsAnomaly" editable="true"/>
+        <Condition ID="IsBatteryLow" editable="true"/>
+        <Condition ID="IsCallSignal" editable="true"/>
+        <Condition ID="IsInteractionMode" editable="true">
+            <input_port name="mode"/>
+        </Condition>
+        <Condition ID="IsLocalizationAbnormal" editable="true"/>
+        <Condition ID="IsNavFault" editable="true"/>
+        <Condition ID="IsPatrolComplete" editable="true"/>
+        <Condition ID="IsPatrolIncomplete" editable="true"/>
+        <Condition ID="IsPatrolTriggered" editable="true"/>
+        <Condition ID="IsSelfFault" editable="true"/>
+        <Action ID="LLMInteraction" editable="true">
+            <input_port name="mode"/>
+            <input_port name="person_id"/>
+            <output_port name="need_call_nurse"/>
+        </Action>
+        <Action ID="LoadConfig" editable="true"/>
+        <Action ID="LoadPatrolPlan" editable="true">
+            <input_port name="route_id"/>
+            <input_port name="cycles"/>
+        </Action>
+        <Action ID="ManagePatrolStart" editable="true"/>
+        <Action ID="NavgateTo" editable="true">
+            <input_port name="target"/>
+            <input_port name="nav_type"/>
+        </Action>
+        <Action ID="NextPatrolPoint" editable="true">
+            <output_port name="patrol_point"/>
+        </Action>
+        <Action ID="PopNurseCall" editable="true">
+            <output_port name="bed_id"/>
+        </Action>
+        <Action ID="RestoreContext" editable="true"/>
+        <Action ID="SaveContext" editable="true"/>
+        <Action ID="SelectNextBed" editable="true">
+            <output_port name="bed_id"/>
+        </Action>
+        <Action ID="SetInteractionMode" editable="true">
+            <input_port name="mode"/>
+        </Action>
+        <Condition ID="ShouldCallNurse" editable="true"/>
+        <Action ID="WaitAtChargeDock" editable="true"/>
+        <Action ID="WaitChargeUntil" editable="true">
+            <input_port name="percent"/>
+        </Action>
+        <Action ID="WaitNurseConnected" editable="true"/>
+    </TreeNodesModel>
+</root>

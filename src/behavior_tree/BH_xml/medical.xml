@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root BTCPP_format="4"
+      main_tree_to_execute="MainTree">
+  <BehaviorTree ID="BedProcessTree">
+    <KeepRunningUntilFailure name="ProcessBedsLoop">
+      <Sequence>
+        <SelectNextBed bed_id="{bed_id}"/>
+        <RetryUntilSuccessful num_attempts="2">
+          <Timeout msec="15000">
+            <NavgateTo target="{bed_id}"
+                       nav_type="goal"/>
+          </Timeout>
+        </RetryUntilSuccessful>
+        <AnomalyDetect/>
+        <Sequence name="DialogOrAlert">
+          <FaceIdentify person_id="{person_id}"/>
+          <LLMInteraction mode="{interaction_mode}"
+                          person_id="{person_id}"
+                          need_call_nurse="{call_nurse}"/>
+          <ClearInteractionMode/>
+        </Sequence>
+        <Fallback name="CallNurseIfNeeded">
+          <Sequence>
+            <ShouldCallNurse/>
+            <EnqueueNurseCall bed_id="{bed_id}"/>
+          </Sequence>
+          <AlwaysSuccess/>
+        </Fallback>
+      </Sequence>
+    </KeepRunningUntilFailure>
+  </BehaviorTree>
+
+  <BehaviorTree ID="GoChargeTree">
+    <Fallback>
+      <RetryUntilSuccessful num_attempts="3">
+        <NavgateTo target="charge_dock"
+                   nav_type="charge"/>
+      </RetryUntilSuccessful>
+      <AlertChargeFault/>
+    </Fallback>
+  </BehaviorTree>
+
+  <BehaviorTree ID="MainReactiveTree">
+    <ReactiveFallback name="MainPriority">
+      <Sequence name="FaultHandling">
+        <IsPatrolTriggered/>
+        <ReactiveFallback name="FaultOrBattery">
+          <Sequence name="LocalizationFault">
+            <IsLocalizationAbnormal/>
+            <SaveContext/>
+            <NavgateTo target="current"
+                       nav_type="stop"/>
+            <AlertFault fault_type="localization"/>
+          </Sequence>
+          <Sequence name="NavFault">
+            <IsNavFault/>
+            <SaveContext/>
+            <NavgateTo target="current"
+                       nav_type="stop"/>
+            <AlertFault fault_type="navigation"/>
+          </Sequence>
+          <Sequence name="SelfFault">
+            <IsSelfFault/>
+            <SaveContext/>
+            <NavgateTo target="current"
+                       nav_type="stop"/>
+            <AlertFault fault_type="self"/>
+          </Sequence>
+          <Sequence name="LowBatteryHandling">
+            <IsBatteryLow/>
+            <SaveContext/>
+            <Fallback>
+              <Sequence name="UnfinishedPatrolChargeResume">
+                <IsPatrolIncomplete/>
+                <NavgateTo target="charge_dock"
+                           nav_type="charge"/>
+                <AlertUnfinishedOnce/>
+                <WaitChargeUntil percent="{charge_resume_percent}"/>
+                <RestoreContext/>
+              </Sequence>
+              <Sequence name="NormalLowBatteryCharge">
+                <SubTree ID="GoChargeTree"/>
+                <ClearPatrolTrigger/>
+              </Sequence>
+            </Fallback>
+          </Sequence>
+        </ReactiveFallback>
+      </Sequence>
+      <Sequence name="CallInteraction">
+        <Inverter>
+          <IsInteractionMode mode="[passive_wakeup,abnormal_alert]"/>
+        </Inverter>
+        <IsCallSignal/>
+        <SaveContext/>
+        <NavgateTo target="current"
+                   nav_type="stop"/>
+        <FaceIdentify person_id="{person_id}"/>
+        <LLMInteraction mode="call_response"
+                        person_id="{person_id}"
+                        need_call_nurse="{call_nurse}"/>
+        <RestoreContext/>
+      </Sequence>
+      <Sequence name="PatrolTriggered">
+        <IsPatrolTriggered/>
+        <SubTree ID="PatrolTaskTree"
+                 _autoremap="true"/>
+      </Sequence>
+      <IdleWait/>
+    </ReactiveFallback>
+  </BehaviorTree>
+
+  <BehaviorTree ID="MainTree">
+    <Sequence name="BOOT">
+      <LoadConfig/>
+      <Parallel name="RuntimeThreads"
+                failure_count="-1"
+                success_count="-1">
+        <KeepRunningUntilFailure name="Thread_NurseCall">
+          <SubTree ID="NurseCallTree"
+                   _autoremap="true"/>
+        </KeepRunningUntilFailure>
+        <KeepRunningUntilFailure name="Thread_MainReactive">
+          <SubTree ID="MainReactiveTree"
+                   _autoremap="true"/>
+        </KeepRunningUntilFailure>
+      </Parallel>
+    </Sequence>
+  </BehaviorTree>
+
+  <BehaviorTree ID="NurseCallTree">
+    <ReactiveFallback name="HandleOrIdle">
+      <Sequence>
+        <HasNurseCall/>
+        <PopNurseCall bed_id="{nurse_bed_id}"/>
+        <CallDutyNurse bed_id="{nurse_bed_id}"/>
+        <WaitNurseConnected/>
+      </Sequence>
+      <IdleWait/>
+    </ReactiveFallback>
+  </BehaviorTree>
+
+  <BehaviorTree ID="PatrolTaskTree">
+    <Sequence name="PatrolTask">
+      <LoadPatrolPlan route_id="{patrol_route_id}"
+                      cycles="{patrol_cycles}"/>
+      <Fallback name="PatrolCompleteOrRun">
+        <Sequence name="PatrolCompleteToChargeWait">
+          <IsPatrolComplete/>
+          <SubTree ID="GoChargeTree"/>
+          <ClearPatrolTrigger/>
+        </Sequence>
+        <Sequence name="PatrolRun">
+          <NextPatrolPoint patrol_point="{patrol_point}"/>
+          <NavgateTo target="{patrol_point}"
+                     nav_type="goal"/>
+          <AnomalyDetect/>
+          <ForceSuccess>
+            <SubTree ID="BedProcessTree"
+                     _autoremap="true"/>
+          </ForceSuccess>
+        </Sequence>
+      </Fallback>
+    </Sequence>
+  </BehaviorTree>
+
+  <!-- Description of Node Models (used by Groot) -->
+  <TreeNodesModel>
+    <Action ID="AlertChargeFault"
+            editable="true"/>
+    <Action ID="AlertFault"
+            editable="true">
+      <input_port name="fault_type"/>
+    </Action>
+    <Action ID="AlertUnfinishedOnce"
+            editable="true"/>
+    <Action ID="AnomalyDetect"
+            editable="true"/>
+    <Action ID="CallDutyNurse"
+            editable="true">
+      <input_port name="bed_id"/>
+    </Action>
+    <Action ID="ClearInteractionMode"
+            editable="true"/>
+    <Action ID="ClearPatrolTrigger"
+            editable="true"/>
+    <Action ID="EnqueueNurseCall"
+            editable="true">
+      <input_port name="bed_id"/>
+    </Action>
+    <Action ID="FaceIdentify"
+            editable="true">
+      <output_port name="person_id"/>
+    </Action>
+    <Condition ID="HasNurseCall"
+               editable="true"/>
+    <Action ID="IdleWait"
+            editable="true"/>
+    <Condition ID="IsAnomaly"
+               editable="true"/>
+    <Condition ID="IsBatteryLow"
+               editable="true"/>
+    <Condition ID="IsCallSignal"
+               editable="true"/>
+    <Condition ID="IsInteractionMode"
+               editable="true">
+      <input_port name="mode"/>
+    </Condition>
+    <Condition ID="IsLocalizationAbnormal"
+               editable="true"/>
+    <Condition ID="IsNavFault"
+               editable="true"/>
+    <Condition ID="IsPatrolComplete"
+               editable="true"/>
+    <Condition ID="IsPatrolIncomplete"
+               editable="true"/>
+    <Condition ID="IsPatrolTriggered"
+               editable="true"/>
+    <Condition ID="IsSelfFault"
+               editable="true"/>
+    <Action ID="LLMInteraction"
+            editable="true">
+      <input_port name="mode"/>
+      <input_port name="person_id"/>
+      <output_port name="need_call_nurse"/>
+    </Action>
+    <Action ID="LoadConfig"
+            editable="true"/>
+    <Action ID="LoadPatrolPlan"
+            editable="true">
+      <input_port name="route_id"/>
+      <input_port name="cycles"/>
+    </Action>
+    <Action ID="NavgateTo"
+            editable="true">
+      <input_port name="target"/>
+      <input_port name="nav_type"/>
+    </Action>
+    <Action ID="NextPatrolPoint"
+            editable="true">
+      <output_port name="patrol_point"/>
+    </Action>
+    <Action ID="PopNurseCall"
+            editable="true">
+      <output_port name="bed_id"/>
+    </Action>
+    <Action ID="RestoreContext"
+            editable="true"/>
+    <Action ID="SaveContext"
+            editable="true"/>
+    <Action ID="SelectNextBed"
+            editable="true">
+      <output_port name="bed_id"/>
+    </Action>
+    <Condition ID="ShouldCallNurse"
+               editable="true"/>
+    <Action ID="WaitChargeUntil"
+            editable="true">
+      <input_port name="percent"/>
+    </Action>
+    <Action ID="WaitNurseConnected"
+            editable="true"/>
+  </TreeNodesModel>
+
+</root>
