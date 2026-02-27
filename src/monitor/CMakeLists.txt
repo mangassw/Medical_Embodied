@@ -14,5 +14,6 @@ catkin_package(
 catkin_install_python(PROGRAMS
   scripts/monitor_mock_pub.py
   scripts/anomaly_detect_server.py
+  scripts/face_identify_server.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )

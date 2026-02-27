@@ -20,6 +20,7 @@ add_service_files(
   Dock.srv
   ChargeUntil.srv
   DetectAnomaly.srv
+  FaceIdentify.srv
 )
 
 add_action_files(
