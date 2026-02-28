@@ -548,48 +548,6 @@ public:
     }
 };
 
-class EnqueueNurseCall : public SyncActionNode
-{
-public:
-    EnqueueNurseCall(const std::string& name, const NodeConfig& config) : SyncActionNode(name, config) {}
-
-    static PortsList providedPorts() { return { InputPort<std::string>("bed_id") }; }
-
-    NodeStatus tick() override
-    {
-        auto bb = config().blackboard;
-        std::string bed_id = getInput<std::string>("bed_id").value_or(getString(bb, "bed_id", "unknown"));
-        if (g_root_bb)
-        {
-            g_root_bb->set("nurse_call_pending", true);
-            g_root_bb->set("nurse_call_bed_id", bed_id);
-        }
-        std::cout << "[ACT ] FaceIdentify person_id=" << srv.response.person_id << "\n";
-        return NodeStatus::SUCCESS;
-    }
-};
-
-class PopNurseCall : public SyncActionNode
-{
-public:
-    PopNurseCall(const std::string& name, const NodeConfig& config) : SyncActionNode(name, config) {}
-
-    static PortsList providedPorts() { return { OutputPort<std::string>("bed_id") }; }
-
-    NodeStatus tick() override
-    {
-        auto bb = config().blackboard;
-        std::string bed_id = getString(g_root_bb.get(), "nurse_call_bed_id", "unknown");
-        if (g_root_bb)
-        {
-            g_root_bb->set("nurse_call_pending", false);
-        }
-        bb->set("nurse_bed_id", bed_id);
-        setOutput("bed_id", bed_id);
-        std::cout << "[ACT ] PopNurseCall bed_id=" << bed_id << "\n";
-        return NodeStatus::SUCCESS;
-    }
-};
 
 class ClearInteractionMode : public SyncActionNode
 {
@@ -887,7 +845,7 @@ int main(int argc, char** argv)
     g_ctx->call_signal_sub = nh.subscribe("/call_signal", 1, callSignalCb);
     g_ctx->patrol_trigger_sub = nh.subscribe("/patrol_triggered", 1, patrolTriggerCb);
     g_ctx->anomaly_client = nh.serviceClient<interfaces::DetectAnomaly>("/detect_anomaly");
-    g_ctx->face_identify_clinet = nh.serviceClient<interfaces::FaceIdentify>("/face_identify");
+    g_ctx->face_identify_client = nh.serviceClient<interfaces::FaceIdentify>("/face_identify");
 
     BehaviorTreeFactory factory;
 
