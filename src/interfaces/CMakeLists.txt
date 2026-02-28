@@ -16,10 +16,11 @@ add_message_files(
 
 add_service_files(
   FILES
-  PatrolTrigger.srv
   Dock.srv
   ChargeUntil.srv
   DetectAnomaly.srv
+  SetConfig.srv
+  FaceIdentify.srv
 )
 
 add_action_files(
