@@ -1,0 +1,33 @@
+<launch>
+    
+    <!-- 1 硬件相关 -->
+    <node pkg="car_driver" type="car_hardware_node" name="car_hardware_node" output="screen"/>
+
+    <!-- <include file="$(find livox_ros_driver2)/launch_ROS1/msg_MID360.launch"/> -->
+
+
+    <!-- 2 底盘控制 -->
+    <node pkg="car_move" type="control_main_node" name="control_main_node" output="screen" >
+    <remap from="/cmd_vel" to="/smooth_cmd_vel" />
+    </node>
+
+    <!-- 3 遥控器 -->
+    <group ns="joy_node_usb">
+        <node respawn="true" pkg="joy" type="joy_node" name="joy_node_usb" output="screen">
+            <param name="/dev" value="/dev/input/js_usb" />
+        </node>
+    </group>
+
+    <group ns="joy_node_bl">
+        <node respawn="true" pkg="joy" type="joy_node" name="joy_node_bl" output="screen">
+            <param name="dev" value="/dev/input/js_bl" />
+        </node>
+    </group>
+    <!-- <node respawn="true" pkg="joy" type="joy_node" name="joy_node" >
+        <param name="dev" value="/dev/input/js1" />
+    </node> -->
+    <include file="$(find velocity_smoother_ema)/launch/velocity_smoother_ema.launch"/>
+
+    
+</launch>
+

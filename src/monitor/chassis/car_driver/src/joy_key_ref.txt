@@ -1,0 +1,44 @@
+#include "car_joy.h"
+
+namespace car::hardware {
+
+// -------------------------------------------------------------------------------------------------------------
+// ------------------------------------------------ 遥控 --------------------------------------------------------
+// -------------------------------------------------------------------------------------------------------------
+
+void JoyControl::init()
+{
+   
+    sub = nh.subscribe<sensor_msgs::Joy>("joy", 10, &JoyControl::callback, this);
+    joy_cmd_pub = nh.advertise<std_msgs::Float32MultiArray>("/joy/cmd", 1);
+    // joy_vel_simulator_pub = nh.advertise<geometry_msgs::Twist>("/vision/cmd_vel", 1);
+    // joy_relay_pub = nh.advertise<std_msgs::Int16MultiArray>("/joy/usb_io_cmd", 1);
+}
+
+
+void JoyControl::callback(const sensor_msgs::Joy::ConstPtr &joy)
+{
+	std_msgs::Float32MultiArray joy_cmd;
+	joy_cmd.data.clear();
+	joy_cmd.data.push_back(joy->axes[1]);	// axis[1]-->左摇杆上下移动-->控制轮毂电机前进后退
+	joy_cmd.data.push_back(joy->axes[2]);	// axis[2]-->右摇杆左右移动-->控制轮毂电机左右转
+	joy_cmd.data.push_back(joy->axes[6]);	// axis[7]-->方向键左右按下-->控制齿轮电机爬升 默认为前电机驱动
+	joy_cmd.data.push_back(joy->buttons[0]);// buttons[0]-->A键-->循迹
+	joy_cmd.data.push_back(joy->buttons[1]);// buttons[1]-->B键-->二级爬升（一键爬升到位）
+	joy_cmd.data.push_back(joy->buttons[3]);// buttons[3]-->X键-->一级爬升
+	joy_cmd.data.push_back(joy->buttons[4]);// buttons[4]-->Y键-->预留
+	joy_cmd.data.push_back(joy->axes[5]);	// axis[5]-->左上扳机键 按下为-1 -->控制齿轮电机爬升切换为后电机驱动
+	joy_cmd.data.push_back(joy->buttons[10]);	// buttons[10]-->中间，从左往右第一个View按钮-->测试用
+	joy_cmd.data.push_back(joy->buttons[11]);	// buttons[11]-->中间，从左往右第三个菜单按钮-->测试用
+	joy_cmd.data.push_back(joy->buttons[6]);	// buttons[6]-->左上的按键-->测试用
+	joy_cmd.data.push_back(joy->buttons[7]);	// buttons[7]-->右上的按键-->测试用
+	joy_cmd.data.push_back(joy->axes[7]);	 // axes[7]-->方向键下键按下-->齿轮电机归零
+	joy_cmd.data.push_back(joy->axes[4]);	 // axes[4]-->右上扳机键（新增）-->双速度控制
+	joy_cmd.data.push_back(joy->buttons[13]);	 // buttons[13]-->左摇杆中键-->断使能
+	joy_cmd.data.push_back(joy->buttons[14]);	 // buttons[14]-->右摇杆中键-->清除故障并重新使能
+    joy_cmd_pub.publish(joy_cmd);
+}
+
+}
+
+

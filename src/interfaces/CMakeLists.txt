@@ -12,6 +12,7 @@ add_message_files(
   ActionStatus.msg
   Battery.msg
   Fault.msg
+  RealCMD.msg
 )
 
 add_service_files(
