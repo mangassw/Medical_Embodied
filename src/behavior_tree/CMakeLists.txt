@@ -18,7 +18,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(behaviortree_cpp_DIR "/home/val/Downloads/BehaviorTree.CPP/install/lib/cmake/behaviortree_cpp")
+set(behaviortree_cpp_DIR "/home/artrc/下载/BehaviorTree.CPP/install/lib/cmake/behaviortree_cpp")
 find_package(behaviortree_cpp REQUIRED)
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
