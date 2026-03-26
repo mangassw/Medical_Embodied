@@ -21,6 +21,7 @@ add_service_files(
   ChargeUntil.srv
   DetectAnomaly.srv
   FaceIdentify.srv
+  SetConfig.srv
 )
 
 add_action_files(
