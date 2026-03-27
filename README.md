@@ -61,7 +61,7 @@ Message：`Battery.msg`、`Fault.msg`、`ActionStatus.msg` 等。
 接口：发布 `/battery`、`/fault`、`/call_signal`；提供 `/ros_bt_runner/detect_anomaly`、`/ros_bt_runner/face_identify`。  
 需实现：接入真实监控数据源与异常检测算法。
 
-`nav`  
+`navigation`  
 作用：导航 action mock。  
 接口：`navigate` action（goal: `target_index`, `nav_type`；`nav_type`: `goal=0`、`stop=1`、`dock=2`）。  
 需实现：接入真实导航栈与路径执行。
