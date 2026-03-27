@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="map2d" default="/home/wu/robo_ws/xj_robot0128/PCD/scans.yaml" />
+  <arg name="map3d" default="/home/wu/robo_ws/xj_robot0128/PCD/scans.pcd" />
+  <arg name="use_map2d" default="true" />
+
+  <arg name="loc_rviz" default="true" />
+
+  <arg name="points_topic" default="/livox/points" />
+  <arg name="imu_topic" default="/imu" />
+  <arg name="wheel_odom_topic" default="/odom_diff" />
+
+  <arg name="map_frame" default="map" />
+  <arg name="odom_frame" default="odom" />
+  <arg name="base_frame" default="base_link" />
+  <arg name="lidar_frame" default="lidar_3d_link" />
+
+  <group if="$(arg use_map2d)">
+    <node pkg="map_server" type="map_server" name="map_server" args="$(arg map2d)"/>
+  </group>
+
+  <include file="$(find xjrobot_loc)/launch/hdl_localization.launch">
+    <arg name="hdl_rviz" value="false" />
+    <arg name="map3d" value="$(arg map3d)" />
+    <arg name="points_topic" value="$(arg points_topic)" />
+    <arg name="imu_topic" value="$(arg imu_topic)" />
+    <arg name="odom_child_frame_id" value="$(arg lidar_frame)" />
+    <arg name="robot_odom_frame_id" value="$(arg odom_frame)" />
+    <arg name="publish_tf" value="false" />
+  </include>
+
+  <rosparam command="load" file="$(find xjrobot_loc)/config/dual_ekf.yaml" />
+  <!-- local EKF: wheel + IMU -->
+  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_local" output="screen">
+    <param name="map_frame" value="$(arg map_frame)" />
+    <param name="odom_frame" value="$(arg odom_frame)" />
+    <param name="base_link_frame" value="$(arg base_frame)" />
+    <param name="world_frame" value="$(arg odom_frame)" />
+    <param name="odom0" value="$(arg wheel_odom_topic)" />
+    <param name="imu0" value="$(arg imu_topic)" />
+    <remap from="odometry/filtered" to="/odometry/local" />
+  </node>
+
+  <!-- global EKF: local EKF + HDL global pose -->
+  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_global" output="screen">
+    <param name="map_frame" value="$(arg map_frame)" />
+    <param name="odom_frame" value="$(arg odom_frame)" />
+    <param name="base_link_frame" value="$(arg base_frame)" />
+    <param name="world_frame" value="$(arg map_frame)" />
+    <param name="odom0" value="/odometry/local" />
+    <param name="odom1" value="/odom_hdl" />
+    <remap from="odometry/filtered" to="/odometry/global" />
+  </node>
+
+  <!-- 可视化 -->
+  <group if="$(arg loc_rviz)">
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find xjrobot_loc)/rviz/loc.rviz" />
+  </group>
+
+
+
+</launch>

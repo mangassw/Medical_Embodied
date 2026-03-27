@@ -1,0 +1,27 @@
+<launch>
+  <!-- Expose BT-compatible navigate action server and forward only to patrol_state_machine_ext -->
+  <arg name="patrol_ext_ns" default="/patrol_state_machine_ext" />
+  <arg name="ext_policy" default="INSERT_NEXT_ONCE" />
+  <arg name="ext_hard_preempt" default="true" />
+  <arg name="ext_auto_start" default="true" />
+  <arg name="wait_service_timeout" default="5.0" />
+  <arg name="call_timeout" default="120.0" />
+
+  <node pkg="bridge" type="navigate_xj_bridge_server" name="navigate_xj_bridge_server" output="screen">
+    <param name="patrol_ext_ns" value="$(arg patrol_ext_ns)" />
+    <param name="ext_policy" value="$(arg ext_policy)" />
+    <param name="ext_hard_preempt" value="$(arg ext_hard_preempt)" />
+    <param name="ext_auto_start" value="$(arg ext_auto_start)" />
+    <param name="wait_service_timeout" value="$(arg wait_service_timeout)" />
+    <param name="call_timeout" value="$(arg call_timeout)" />
+
+    <!-- Map BT target names to x/y/yaw(rad). Update for your map. -->
+    <rosparam param="target_map">
+      charge_dock: [0.0, 0.0, 0.0]
+      p0: [0.0, 0.0, 0.0]
+      p1: [1.0, 0.0, 0.0]
+      bed_0: [1.0, 0.0, 0.0]
+      bed_1: [1.0, 1.0, 1.5708]
+    </rosparam>
+  </node>
+</launch>

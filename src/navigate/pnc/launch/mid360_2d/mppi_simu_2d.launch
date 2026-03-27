@@ -1,0 +1,162 @@
+<launch>
+
+  <!-- 参数 -->
+  <arg name="cmd_vel_topic" default="/cmd_vel" />
+  <arg name="odom_topic" default="/odom_diff" />
+  <arg name="map2d" default="/home/wu/robo_ws/xj_robot0128/PCD/scans.yaml" />
+  <arg name="map3d" default="/home/wu/robo_ws/xj_robot0128/PCD/scans.pcd" />
+  <arg name="use_localization" default="true" />
+  <arg name="use_simu" default="true" />
+  <arg name="localization_rviz" default="false" />
+  <arg name="pnc_rviz" default="true" />
+  <arg name="use_goal_bridge" default="true" />
+  <arg name="vel_plotter" default="false" />
+  <arg name="use_localization_supervisor" default="false" />
+  <arg name="use_goal_reach_debug" default="false" />
+  <arg name="use_patrol_state_machine" default="false" />
+  <arg name="debug_terminal_prefix" default="gnome-terminal --" />
+
+  <!--
+    点云预处理链路（供 costmap 使用）:
+      原始点云 /livox/points
+        -> ground_segmentation (RANSAC 地面分割，输出地面点索引)
+        -> ground_removed_cloud (按索引反选，输出非地面点云)
+        -> non_ground_to_scan (非地面点云投影为 2D LaserScan)
+        -> /mid360/non_ground_scan (供全局/局部 costmap 订阅)
+
+    调参原则:
+      1) 先调“地面分割”参数（ransac_*），确保地面尽量不残留在 non_ground_points。
+      2) 再调“2D投影”参数（scan_height_* / range_*），控制哪些高度和距离进入 scan。
+      3) 若出现墙面被误当地面，优先收紧 ransac_eps_angle；若地面漏检，增大 ransac_distance_threshold。
+  -->
+  <!-- 点云处理参数 -->
+  <arg name="points_topic" default="/livox/points" />
+  <arg name="base_frame" default="base_link" />            <!-- 点云预处理与2D投影参考坐标系；建议始终使用车体坐标 -->
+  <arg name="lidar_frame" default="lidar_3d_link" />       <!-- 雷达安装坐标（定位模块可能用到） -->
+  <arg name="ground_inliers_topic" default="/mid360/ground_inliers" />   <!-- 地面点索引输出 -->
+  <arg name="non_ground_points_topic" default="/mid360/non_ground_points" /> <!-- 去地面后的点云 -->
+  <!-- RANSAC 分割参数 -->
+  <arg name="ransac_distance_threshold" default="0.12" />  <!-- 点到平面的最大内点距离；大=更容易把地面吞进去 -->
+  <arg name="ransac_eps_angle" default="0.20" />           <!-- 法向约束角（弧度）；小=更严格要求平面近似水平 -->
+  <arg name="ransac_max_iterations" default="300" />       <!-- 迭代次数上限；大=稳定性更好但开销更高 -->
+  <!-- 点云转 2D scan 参数 -->
+  <arg name="scan_height_min" default="0.08" />           <!-- 投影高度下限（base_frame） -->
+  <arg name="scan_height_max" default="1.50" />            <!-- 投影高度上限（base_frame） -->
+  <arg name="scan_range_min" default="0.20" />             <!-- 雷达最小量程 -->
+  <arg name="scan_range_max" default="30.0" />             <!-- 雷达最大量程 -->
+
+  <!-- 仿真参数 -->
+  <arg name="x_pos" default="0.0" />
+  <arg name="y_pos" default="0.0" />
+  <arg name="z_pos" default="0.07" />
+  <arg name="gui" default="true" />
+  <arg name="simu_rviz" default="false" />
+
+  <!-- 仿真 -->
+  <group if="$(arg use_simu)">
+    <include file="$(find xjrobot_simu)/launch/simu.launch">
+      <arg name="x_pos" value="$(arg x_pos)" />
+      <arg name="y_pos" value="$(arg y_pos)" />
+      <arg name="z_pos" value="$(arg z_pos)" />
+      <arg name="gui" value="$(arg gui)" />
+      <arg name="simu_rviz" value="$(arg simu_rviz)" />
+    </include>
+  </group>
+
+  <!-- 定位 -->
+  <group if="$(arg use_localization)">
+    <include file="$(find xjrobot_loc)/launch/loc.launch">
+      <arg name="map2d" value="$(arg map2d)" />
+      <arg name="map3d" value="$(arg map3d)" />
+      <arg name="loc_rviz" value="$(arg localization_rviz)" />
+      <arg name="points_topic" value="$(arg points_topic)" />
+      <arg name="base_frame" value="$(arg base_frame)" />
+      <arg name="lidar_frame" value="$(arg lidar_frame)" />
+    </include>
+  </group>
+
+  <!-- 点云预处理链路（独立封装） -->
+  <include file="$(find xjrobot_pnc)/launch/mid360_2d/pointcloud_preprocess.launch">
+    <arg name="points_topic" value="$(arg points_topic)" />
+    <arg name="base_frame" value="$(arg base_frame)" />
+    <arg name="ground_inliers_topic" value="$(arg ground_inliers_topic)" />
+    <arg name="non_ground_points_topic" value="$(arg non_ground_points_topic)" />
+    <arg name="non_ground_scan_topic" value="/mid360/non_ground_scan" />
+    <arg name="ransac_distance_threshold" value="$(arg ransac_distance_threshold)" />
+    <arg name="ransac_eps_angle" value="$(arg ransac_eps_angle)" />
+    <arg name="ransac_max_iterations" value="$(arg ransac_max_iterations)" />
+    <arg name="scan_height_min" value="$(arg scan_height_min)" />
+    <arg name="scan_height_max" value="$(arg scan_height_max)" />
+    <arg name="scan_range_min" value="$(arg scan_range_min)" />
+    <arg name="scan_range_max" value="$(arg scan_range_max)" />
+  </include>
+
+  <!-- MBF + MPPI -->
+  <node pkg="mbf_costmap_nav" type="mbf_costmap_nav" respawn="false" name="move_base_flex" output="screen">
+    <rosparam file="$(find xjrobot_pnc)/config/mppi_mid360_2d/costmap_params.yaml" command="load" />
+    <rosparam file="$(find xjrobot_pnc)/config/mppi/move_base_flex_mppi.yaml" command="load" />
+    <rosparam file="$(find xjrobot_pnc)/config/mppi/recovery_behavior_params.yaml" command="load" />
+    <rosparam file="$(find xjrobot_pnc)/config/mppi/mppi_controller_ros.yaml" command="load" />
+    <rosparam file="$(find xjrobot_pnc)/config/mppi/costmap_converter_params.yaml" command="load" />
+    <remap from="cmd_vel" to="$(arg cmd_vel_topic)" />
+    <remap from="odom" to="$(arg odom_topic)" />
+  </node>
+
+  <!-- 定位健康监测 -->
+  <group if="$(arg use_localization_supervisor)">
+    <include file="$(find xjrobot_pnc)/launch/mid360_2d/localization_supervisor.launch">
+      <arg name="status_topic" value="/status" />
+      <arg name="global_odom_topic" value="/odometry/global" />
+      <arg name="cmd_vel_topic" value="$(arg cmd_vel_topic)" />
+      <arg name="cancel_topic" value="/move_base_flex/move_base/cancel" />
+      <arg name="relocalize_service" value="/relocalize" />
+      <arg name="debug_terminal_prefix" value="$(arg debug_terminal_prefix)" />
+    </include>
+  </group>
+
+  <!-- 让 RViz 的 /move_base_simple/goal 生效 -->
+  <group if="$(arg use_goal_bridge)">
+    <node pkg="xjrobot_pnc" type="xjrobot_mbf_bridge" respawn="false" name="xjrobot_mbf_bridge" />
+  </group>
+
+  <group if="$(arg vel_plotter)">
+    <node pkg="xjrobot_pnc" type="vel_plotter.py" name="vel_plotter" output="screen">
+      <param name="cmd_topic" value="$(arg cmd_vel_topic)" />
+      <param name="odom_topic" value="$(arg odom_topic)" />
+      <param name="use_odom" value="true" />
+      <param name="window" value="15.0" />
+      <param name="sample_hz" value="20.0" />
+    </node>
+  </group>
+
+  <!-- 巡检状态机（xjrobot_task）：
+       开启后将自动按 task/launch/patrol_state_machine.launch 的参数运行巡检任务。 -->
+  <group if="$(arg use_patrol_state_machine)">
+    <include file="$(find xjrobot_task)/launch/patrol_state_machine.launch">
+      <!-- 与总 launch 保持里程计来源一致，便于卡住检测与速度判据统一 -->
+      <arg name="odom_topic" value="$(arg odom_topic)" />
+    </include>
+  </group>
+
+  <!-- 仅日志调试：打印到达判据卡点（xy/yaw/速度），不改变任何导航行为 -->
+  <group if="$(arg use_goal_reach_debug)">
+    <node pkg="xjrobot_pnc" type="goal_reach_debug_node" name="goal_reach_debug" output="screen">
+      <param name="goal_topic" value="/move_base_flex/controller_goal" />
+      <param name="odom_topic" value="$(arg odom_topic)" />
+      <param name="status_topic" value="/move_base_flex/move_base/status" />
+      <param name="global_frame" value="map" />
+      <param name="odom_frame" value="odom" />
+      <param name="base_frame" value="base_link" />
+      <param name="xy_goal_tolerance" value="0.3" />
+      <param name="yaw_goal_tolerance" value="0.25" />
+      <param name="trans_stopped_vel" value="0.05" />
+      <param name="theta_stopped_vel" value="0.1" />
+      <param name="log_hz" value="5.0" />
+    </node>
+  </group>
+
+  <!-- 可视化 -->
+  <group if="$(arg pnc_rviz)">
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find xjrobot_pnc)/rviz/rviz0202.rviz" />
+  </group>
+</launch>

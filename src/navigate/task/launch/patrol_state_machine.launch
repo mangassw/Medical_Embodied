@@ -1,0 +1,59 @@
+<launch>
+  <!-- ==================== patrol_state_machine 参数区 ==================== -->
+  <!-- MBF MoveBase action 服务名 -->
+  <arg name="action_name" default="/move_base_flex/move_base" />
+  <!-- 巡检路点文件，当前示例使用 csv(x,y,yaw_rad) -->
+  <arg name="waypoint_file" default="$(find xjrobot_task)/config/patrol_waypoints.csv" />
+  <!-- 路点所在全局坐标系 -->
+  <arg name="waypoint_frame" default="map" />
+  <!-- 机器人底盘坐标系（用于 TF 位姿获取） -->
+  <arg name="base_frame" default="base_link" />
+  <!-- 巡检遍历模式：LOOP / ONCE_AND_STOP / ONCE_AND_RETURN -->
+  <arg name="traverse_mode" default="LOOP" />
+  <!-- 指定索引模式：>=0 时仅导航到该索引；-1 表示按 traverse_mode 执行 -->
+  <arg name="single_index" default="-1" />
+  <!-- 当前点失败后的最大重试次数 -->
+  <arg name="retry_max" default="2" />
+  <!-- 是否启动即自动开始巡检 -->
+  <arg name="auto_start" default="true" />
+  <!-- 状态机主循环频率 -->
+  <arg name="tick_hz" default="10.0" />
+  <!-- 进度日志打印周期（秒） -->
+  <arg name="progress_log_period" default="1.0" />
+  <!-- 里程计话题：用于卡住检测 -->
+  <arg name="odom_topic" default="/odom_diff" />
+  <!-- 异常日志文件（追加写，不清空历史） -->
+  <arg name="abnormal_log_file" default="$(find xjrobot_task)/patrol_state_machine.log" />
+  <!-- 是否启用“低速卡住->重规划”逻辑 -->
+  <arg name="enable_stuck_replan" default="true" />
+  <!-- 低速持续超时阈值（秒） -->
+  <arg name="stuck_timeout_sec" default="2.5" />
+  <!-- 低速线速度阈值（m/s） -->
+  <arg name="stuck_linear_vel_eps" default="0.02" />
+  <!-- 低速角速度阈值（rad/s） -->
+  <arg name="stuck_angular_vel_eps" default="0.05" />
+
+  <!-- ==================== 巡检状态机节点 ==================== -->
+  <node pkg="xjrobot_task" type="patrol_state_machine_node" name="patrol_state_machine" output="screen">
+    <!-- 基础导航参数 -->
+    <param name="action_name" value="$(arg action_name)" />
+    <param name="waypoint_file" value="$(arg waypoint_file)" />
+    <param name="waypoint_frame" value="$(arg waypoint_frame)" />
+    <param name="base_frame" value="$(arg base_frame)" />
+    <!-- 状态机策略参数 -->
+    <param name="traverse_mode" value="$(arg traverse_mode)" />
+    <param name="single_index" value="$(arg single_index)" />
+    <param name="retry_max" value="$(arg retry_max)" />
+    <param name="auto_start" value="$(arg auto_start)" />
+    <param name="tick_hz" value="$(arg tick_hz)" />
+    <param name="progress_log_period" value="$(arg progress_log_period)" />
+    <!-- 异常日志参数 -->
+    <param name="odom_topic" value="$(arg odom_topic)" />
+    <param name="abnormal_log_file" value="$(arg abnormal_log_file)" />
+    <!-- 卡住检测参数 -->
+    <param name="enable_stuck_replan" value="$(arg enable_stuck_replan)" />
+    <param name="stuck_timeout_sec" value="$(arg stuck_timeout_sec)" />
+    <param name="stuck_linear_vel_eps" value="$(arg stuck_linear_vel_eps)" />
+    <param name="stuck_angular_vel_eps" value="$(arg stuck_angular_vel_eps)" />
+  </node>
+</launch>

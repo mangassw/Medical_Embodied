@@ -1,0 +1,61 @@
+<launch>
+  <!-- ==================== patrol_state_machine_ext 参数区 ==================== -->
+  <arg name="action_name" default="/move_base_flex/move_base" />
+  <arg name="waypoint_file" default="$(find xjrobot_task)/config/patrol_waypoints.csv" />
+  <arg name="waypoint_frame" default="map" />
+  <arg name="base_frame" default="base_link" />
+
+  <!-- 基础巡检模式：LOOP / ONCE_AND_STOP / ONCE_AND_RETURN / RETURN_IMMEDIATELY -->
+  <!-- 约定：waypoint_file 第一个点为原点，巡检点从第二个点开始 -->
+  <arg name="traverse_mode" default="LOOP" />
+  <!-- >=0 时仅执行该索引，-1 表示正常模式 -->
+  <arg name="single_index" default="-1" />
+
+  <arg name="retry_max" default="2" />
+  <arg name="auto_start" default="true" />
+  <arg name="tick_hz" default="10.0" />
+  <arg name="progress_log_period" default="1.0" />
+
+  <arg name="odom_topic" default="/odom_diff" />
+  <arg name="cmd_vel_topic" default="/cmd_vel" />
+  <arg name="abnormal_log_file" default="$(find xjrobot_task)/patrol_state_machine_ext.log" />
+
+  <arg name="enable_stuck_replan" default="true" />
+  <arg name="stuck_timeout_sec" default="2.5" />
+  <arg name="stuck_linear_vel_eps" default="0.02" />
+  <arg name="stuck_angular_vel_eps" default="0.05" />
+  <arg name="force_stop_on_pause" default="true" />
+  <arg name="force_stop_duration_sec" default="1.0" />
+
+  <!-- 服务 add_waypoint/add_waypoints 的默认注入策略 -->
+  <arg name="default_add_policy" default="INSERT_NEXT_ONCE" />
+
+  <!-- ==================== 巡检扩展状态机节点 ==================== -->
+  <node pkg="xjrobot_task" type="patrol_state_machine_ext_node" name="patrol_state_machine_ext" output="screen">
+    <param name="action_name" value="$(arg action_name)" />
+    <param name="waypoint_file" value="$(arg waypoint_file)" />
+    <param name="waypoint_frame" value="$(arg waypoint_frame)" />
+    <param name="base_frame" value="$(arg base_frame)" />
+
+    <param name="traverse_mode" value="$(arg traverse_mode)" />
+    <param name="single_index" value="$(arg single_index)" />
+
+    <param name="retry_max" value="$(arg retry_max)" />
+    <param name="auto_start" value="$(arg auto_start)" />
+    <param name="tick_hz" value="$(arg tick_hz)" />
+    <param name="progress_log_period" value="$(arg progress_log_period)" />
+
+    <param name="odom_topic" value="$(arg odom_topic)" />
+    <param name="cmd_vel_topic" value="$(arg cmd_vel_topic)" />
+    <param name="abnormal_log_file" value="$(arg abnormal_log_file)" />
+
+    <param name="enable_stuck_replan" value="$(arg enable_stuck_replan)" />
+    <param name="stuck_timeout_sec" value="$(arg stuck_timeout_sec)" />
+    <param name="stuck_linear_vel_eps" value="$(arg stuck_linear_vel_eps)" />
+    <param name="stuck_angular_vel_eps" value="$(arg stuck_angular_vel_eps)" />
+    <param name="force_stop_on_pause" value="$(arg force_stop_on_pause)" />
+    <param name="force_stop_duration_sec" value="$(arg force_stop_duration_sec)" />
+
+    <param name="default_add_policy" value="$(arg default_add_policy)" />
+  </node>
+</launch>

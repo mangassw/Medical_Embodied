@@ -1,0 +1,97 @@
+<launch>
+  <!-- Input topics -->
+  <arg name="status_topic" default="/status" />  <!-- hdl_localization 质量状态: matching_error / inlier_fraction -->
+  <arg name="global_odom_topic" default="/odometry/global" />  <!-- 全局里程计，用于超时与位姿突跳检测 -->
+
+  <!-- Core quality thresholds (核心判据) -->
+  <arg name="startup_grace_period" default="5.0" />  <!-- 启动宽限期，期间不判故障 -->
+  <arg name="status_timeout" default="0.8" />  <!-- /status 超时阈值(s) -->
+  <arg name="global_odom_timeout" default="1.0" />  <!-- /odometry/global 超时阈值(s) -->
+  <arg name="min_inlier_fraction" default="0.30" />  <!-- inlier_fraction 下限 -->
+  <arg name="max_matching_error" default="0.30" />  <!-- matching_error 上限 -->
+
+  <!-- Pose jump detector -->
+  <arg name="jump_trans_thresh" default="0.30" />  <!-- 位姿突跳平移阈值(m) -->
+  <arg name="jump_yaw_thresh" default="0.35" />  <!-- 位姿突跳角度阈值(rad) -->
+  <arg name="jump_linear_speed_gate" default="0.10" />  <!-- 近静止线速度门限(m/s)，只在低速时检测突跳 -->
+  <arg name="jump_angular_speed_gate" default="0.20" />  <!-- 近静止角速度门限(rad/s)，只在低速时检测突跳 -->
+  <arg name="jump_hold_time" default="2.0" />  <!-- 触发突跳后维持故障标记时间(s) -->
+  <arg name="jump_dt_min" default="0.01" />  <!-- 相邻里程计比较的最小 dt(s) -->
+  <arg name="jump_dt_max" default="0.30" />  <!-- 相邻里程计比较的最大 dt(s) -->
+  <arg name="jump_suppress_after_relocalize" default="2.5" />  <!-- 每次重定位成功后，抑制 jump 检测时长(s) -->
+  <arg name="jump_suppress_after_recover" default="2.0" />  <!-- RECOVERY->NORMAL 后，抑制 jump 检测时长(s) -->
+
+  <!-- Recovery orchestration -->
+  <arg name="enable_recovery" default="true" />  <!-- 是否启用恢复编排（旋转 + 重定位调用） -->
+  <arg name="quality_bad_hold_time" default="1.0" />  <!-- 质量异常持续多久进入 RECOVERY(s) -->
+  <arg name="force_recovery_on_jump" default="true" />  <!-- 出现 pose_jump 时立即进入 RECOVERY -->
+  <arg name="recovery_success_hold_time" default="3.0" />  <!-- RECOVERY 判定恢复前，健康持续时长(s) -->
+  <arg name="recovery_min_inlier_fraction" default="0.90" />  <!-- RECOVERY->NORMAL 时 inlier_fraction 最小值 -->
+  <arg name="min_relocalize_calls_in_recovery" default="0" />  <!-- RECOVERY 至少重定位调用次数 -->
+  <arg name="recovery_attempt_timeout" default="15.0" />  <!-- 单次恢复尝试超时(s) -->
+  <arg name="max_recovery_attempts" default="10" />  <!-- 最大恢复尝试次数，超出进入 FAILSAFE -->
+  <arg name="cmd_vel_topic" default="/cmd_vel" />  <!-- 恢复动作速度输出 -->
+  <arg name="cancel_topic" default="/move_base_flex/move_base/cancel" />  <!-- 取消当前导航目标 -->
+  <arg name="enable_cancel_navigation" default="true" />  <!-- 进入/重试恢复时是否取消导航目标 -->
+  <arg name="relocalize_service" default="/relocalize" />  <!-- 重定位服务 -->
+  <arg name="enable_rotate_recovery" default="true" />  <!-- RECOVERY 是否执行原地旋转 -->
+  <arg name="rotate_speed" default="0.10" />  <!-- 原地旋转角速度(rad/s)，默认较小更稳 -->
+
+  <!-- Runtime outputs -->
+  <arg name="enable_info_log" default="true" />  <!-- 是否周期打印调试信息 -->
+  <arg name="process_on_status_update" default="true" />  <!-- 判定与恢复编排是否跟随 /status 触发 -->
+  <arg name="log_follow_status" default="true" />  <!-- 是否每个 /status 周期打印 [LOC_MONITOR] -->
+  <arg name="normal_info_log_throttle" default="1.0" />  <!-- NORMAL 状态日志节流周期(s) -->
+  <arg name="recovery_info_log_throttle" default="0.25" />  <!-- RECOVERY 状态日志节流周期(s) -->
+  <arg name="enable_periodic_fail_log" default="false" />  <!-- 是否周期输出故障日志（默认关闭，避免重复） -->
+  <arg name="periodic_fail_log_throttle" default="2.0" />  <!-- 周期故障日志节流周期(s) -->
+  <arg name="enable_file_log" default="true" />  <!-- 是否记录故障/恢复事件到文件 -->
+  <arg name="event_log_file" default="~/.ros/localization_monitor.log" />  <!-- 长时运行事件日志文件 -->
+  <arg name="debug_terminal_prefix" default="" />  <!-- 终端前缀(留空=不单开；可设为 gnome-terminal 或 terminator -x) -->
+
+  <node pkg="xjrobot_pnc" type="localization_supervisor_node" name="localization_supervisor" output="screen" launch-prefix="$(arg debug_terminal_prefix)">
+    <param name="status_topic" value="$(arg status_topic)" />
+    <param name="global_odom_topic" value="$(arg global_odom_topic)" />
+
+    <param name="startup_grace_period" value="$(arg startup_grace_period)" />
+    <param name="status_timeout" value="$(arg status_timeout)" />
+    <param name="global_odom_timeout" value="$(arg global_odom_timeout)" />
+    <param name="min_inlier_fraction" value="$(arg min_inlier_fraction)" />
+    <param name="max_matching_error" value="$(arg max_matching_error)" />
+
+    <param name="jump_trans_thresh" value="$(arg jump_trans_thresh)" />
+    <param name="jump_yaw_thresh" value="$(arg jump_yaw_thresh)" />
+    <param name="jump_linear_speed_gate" value="$(arg jump_linear_speed_gate)" />
+    <param name="jump_angular_speed_gate" value="$(arg jump_angular_speed_gate)" />
+    <param name="jump_hold_time" value="$(arg jump_hold_time)" />
+    <param name="jump_dt_min" value="$(arg jump_dt_min)" />
+    <param name="jump_dt_max" value="$(arg jump_dt_max)" />
+    <param name="jump_suppress_after_relocalize" value="$(arg jump_suppress_after_relocalize)" />
+    <param name="jump_suppress_after_recover" value="$(arg jump_suppress_after_recover)" />
+
+    <param name="enable_recovery" value="$(arg enable_recovery)" />
+    <param name="quality_bad_hold_time" value="$(arg quality_bad_hold_time)" />
+    <param name="force_recovery_on_jump" value="$(arg force_recovery_on_jump)" />
+    <param name="recovery_success_hold_time" value="$(arg recovery_success_hold_time)" />
+    <param name="recovery_min_inlier_fraction" value="$(arg recovery_min_inlier_fraction)" />
+    <param name="min_relocalize_calls_in_recovery" value="$(arg min_relocalize_calls_in_recovery)" />
+    <param name="recovery_attempt_timeout" value="$(arg recovery_attempt_timeout)" />
+    <param name="max_recovery_attempts" value="$(arg max_recovery_attempts)" />
+    <param name="cmd_vel_topic" value="$(arg cmd_vel_topic)" />
+    <param name="cancel_topic" value="$(arg cancel_topic)" />
+    <param name="enable_cancel_navigation" value="$(arg enable_cancel_navigation)" />
+    <param name="relocalize_service" value="$(arg relocalize_service)" />
+    <param name="enable_rotate_recovery" value="$(arg enable_rotate_recovery)" />
+    <param name="rotate_speed" value="$(arg rotate_speed)" />
+
+    <param name="enable_info_log" value="$(arg enable_info_log)" />
+    <param name="process_on_status_update" value="$(arg process_on_status_update)" />
+    <param name="log_follow_status" value="$(arg log_follow_status)" />
+    <param name="normal_info_log_throttle" value="$(arg normal_info_log_throttle)" />
+    <param name="recovery_info_log_throttle" value="$(arg recovery_info_log_throttle)" />
+    <param name="enable_periodic_fail_log" value="$(arg enable_periodic_fail_log)" />
+    <param name="periodic_fail_log_throttle" value="$(arg periodic_fail_log_throttle)" />
+    <param name="enable_file_log" value="$(arg enable_file_log)" />
+    <param name="event_log_file" value="$(arg event_log_file)" />
+  </node>
+</launch>

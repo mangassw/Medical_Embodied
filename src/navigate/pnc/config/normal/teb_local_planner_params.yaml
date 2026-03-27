@@ -1,0 +1,130 @@
+# 5-27 修改最大速度和加速度
+TebLocalPlannerROS:
+
+ odom_topic: odom
+
+ # Trajectory
+
+ teb_autosize: True                         #优化期间允许改变轨迹的时域长度
+ #TEB通过状态搜索树寻找最优路径，而dt_ref则是最优路径上的两个相邻姿态
+ #（即位置、速度、航向信息，可通过TEB可视化在rivz中看到）的默认距离
+ #此距离不固定，规划器自动根据速度大小调整这一距离，速度越大，相邻距离自然越大，
+ #较小的值理论上可提供更高精度
+ dt_ref: 0.3                                #局部路径规划的解析度
+ dt_hysteresis: 0.1                         #允许改变的时域解析度的浮动范围， 一般为 dt_ref 的 10% 左右;
+ max_samples: 500
+ global_plan_overwrite_orientation: True    #覆盖全局路径中局部路径点的朝向  
+ allow_init_with_backwards_motion: False    #允许在开始时想后退来执行轨迹
+ #指定用于优化的全局计划子集的最大长度（累计欧氏距离）。实际长度由本地代价图大小和此最大限制的逻辑结合决定。设置为零或负数可关闭此限制。
+ max_global_plan_lookahead_dist: 3.0 
+ # 如果为正值，则从全局平面图中提取路点（路径跟随模式下），最小值为两个路点之间的距离，故此值与路径点分辨率相关
+ global_plan_viapoint_sep: -1 
+ global_plan_prune_distance: 1              #该参数决定了从机器人当前位置的后面一定距离开始裁剪
+ exact_arc_length: False
+ #在判断生成的轨迹是否冲突时使用，此时设置为5，即从轨迹起点开始逐个检查轨迹上的3个点，
+ #若5个点均不发生碰撞，则认为本次轨迹有效。若小于0则检查所有路径点
+ feasibility_check_no_poses: 5              #检测位姿可到达的时间间隔
+ publish_feedback: False                    #发布包含完整轨迹和活动障碍物列表的规划器反馈
+
+ # Robot
+
+ max_vel_x: 1.0                             #最大x前向速度
+ max_vel_x_backwards: 0.1                   #最大x后退速度
+ max_vel_y: 0.0                             #最大y方向速度
+ max_vel_theta: 0.5                         #最大转向角速度
+ acc_lim_x: 0.5                             #最大x加速度
+ acc_lim_theta: 0.5                         #最大角速度
+# 原始速度
+#  max_vel_x: 0.5
+#  max_vel_x_backwards: 0.1
+#  max_vel_y: 0.0
+#  max_vel_theta: 0.25
+#  acc_lim_x: 0.25
+#  acc_lim_theta: 0.25
+ min_turning_radius: 0.0                    #车类机器人的最小转弯半径  # diff-drive robot (can turn on place!)
+
+ footprint_model: # types: "point", "circular", "two_circles", "line", "polygon"
+   type: "line"
+   line_start: [0.0, 0.0] # for type "line"
+   line_end: [-0.8, 0.0] # for type "line"
+
+ # GoalTolerance
+ # /2 3-22 wu
+ xy_goal_tolerance: 0.2
+ yaw_goal_tolerance: 0.1
+ free_goal_vel: False                     #允许机器人以最大速度驶向目的地，为False时，车到达终点时的目标速度为0；
+ complete_global_plan: True
+
+ # Obstacles
+
+ min_obstacle_dist: 0.2                    #和障碍物最小距离 # This value must also include our robot's expansion, since footprint_model is set to "line".
+ inflation_dist: 0.6                       #障碍物膨胀距离
+ include_costmap_obstacles: True           #costmap 中的障碍物是否被直接考虑
+ costmap_obstacles_behind_robot_dist: 1.5  #规划时考虑后面n米内的障碍物
+ obstacle_poses_affected: 15               #障碍物姿态受影响程度0-30
+
+ dynamic_obstacle_inflation_dist: 0.6      #动态障碍物的膨胀范围
+ include_dynamic_obstacles: True           #是否将动态障碍物预测为速度模型
+
+ costmap_converter_plugin: ""
+ costmap_converter_spin_thread: True
+ costmap_converter_rate: 5
+
+ # Optimization
+ no_inner_iterations: 5         #被外循环调用后内循环执行优化次数
+ no_outer_iterations: 4         #执行的外循环的优化次数执行的外循环的优化次数
+ optimization_activate: True    #激活优化
+ optimization_verbose: False    #打印优化过程详情
+ penalty_epsilon: 0.1           #对于硬约束近似，在惩罚函数中添加安全范围
+ obstacle_cost_exponent: 4
+ weight_max_vel_x: 2            #最大x速度权重 0~2
+ weight_max_vel_theta: 1        #最大角速度权重 0~1
+ weight_acc_lim_x: 1            #最大x 加速度权重 0~1
+ weight_acc_lim_theta: 1        #最大角速度权重 0~1
+ weight_kinematics_nh: 1000     #非完整运动学的优化权重
+ weight_kinematics_forward_drive: 1     #优化过程中，迫使机器人只选择前进方向，差速轮适用
+ weight_kinematics_turning_radius: 1    #优化过程中，车型机器人的最小转弯半径的权重
+ weight_optimaltime: 1 # must be > 0  #优化过程中，基于轨迹的时间上的权重
+ weight_shortest_path: 0
+ weight_obstacle: 100           #优化过程中，和障碍物最小距离的权重 0~50
+ weight_inflation: 0.2          #优化过程中， 膨胀区的权重
+ weight_dynamic_obstacle: 10    #优化过程中，和动态障碍物最小距离的权重
+ weight_dynamic_obstacle_inflation: 0.2  #优化过程中，和动态障碍物膨胀区的权重 0~50
+ weight_viapoint: 1             #优化过程中，和全局路径采样点距离的权重
+ weight_adapt_factor: 2
+
+ # Homotopy Class Planner
+
+ enable_homotopy_class_planning: True
+ enable_multithreading: True
+ max_number_classes: 4
+ selection_cost_hysteresis: 1.0
+ selection_prefer_initial_plan: 0.9
+ selection_obst_cost_scale: 100.0
+ selection_alternative_time_cost: False
+
+ roadmap_graph_no_samples: 15
+ roadmap_graph_area_width: 5
+ roadmap_graph_area_length_scale: 1.0
+ h_signature_prescaler: 0.5
+ h_signature_threshold: 0.1
+ obstacle_heading_threshold: 0.45
+ switching_blocking_period: 0.0
+ viapoints_all_candidates: True
+ delete_detours_backwards: True
+ max_ratio_detours_duration_best_duration: 3.0
+ visualize_hc_graph: False
+ visualize_with_time_as_z_axis_scale: False
+
+# Recovery
+
+ shrink_horizon_backup: True
+ shrink_horizon_min_duration: 10
+ oscillation_recovery: True
+ oscillation_v_eps: 0.1
+ oscillation_omega_eps: 0.1
+ oscillation_recovery_min_duration: 10
+ oscillation_filter_duration: 10
+
+#  参数调整参考：
+#  https://blog.csdn.net/Draonly/article/details/125119683

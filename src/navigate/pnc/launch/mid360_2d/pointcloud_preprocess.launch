@@ -1,0 +1,61 @@
+<launch>
+  <!-- 输入/输出话题 -->
+  <arg name="points_topic" default="/livox/points" />
+  <arg name="base_frame" default="base_link" />
+  <arg name="ground_inliers_topic" default="/mid360/ground_inliers" />
+  <arg name="non_ground_points_topic" default="/mid360/non_ground_points" />
+  <arg name="non_ground_scan_topic" default="/mid360/non_ground_scan" />
+
+  <!-- 地面分割参数 -->
+  <arg name="ransac_distance_threshold" default="0.12" />
+  <arg name="ransac_eps_angle" default="0.20" />
+  <arg name="ransac_max_iterations" default="300" />
+
+  <!-- 点云转2D参数 -->
+  <arg name="scan_height_min" default="0.08" />
+  <arg name="scan_height_max" default="1.50" />
+  <arg name="scan_range_min" default="0.20" />
+  <arg name="scan_range_max" default="30.0" />
+
+  <!-- 1) RANSAC 地面分割，输出地面点索引 -->
+  <node pkg="nodelet" type="nodelet" name="ground_segmentation" args="standalone pcl/SACSegmentation" output="screen">
+    <remap from="~input" to="$(arg points_topic)" />
+    <remap from="~inliers" to="$(arg ground_inliers_topic)" />
+    <param name="model_type" value="9" />
+    <param name="method_type" value="0" />
+    <param name="publish_indices" value="true" />
+    <param name="input_frame" value="$(arg base_frame)" />
+    <rosparam param="axis">[0.0, 0.0, 1.0]</rosparam>
+    <param name="eps_angle" value="$(arg ransac_eps_angle)" />
+    <param name="distance_threshold" value="$(arg ransac_distance_threshold)" />
+    <param name="max_iterations" value="$(arg ransac_max_iterations)" />
+  </node>
+
+  <!-- 2) 按地面索引反选，输出非地面点 -->
+  <node pkg="nodelet" type="nodelet" name="ground_removed_cloud" args="standalone pcl/ExtractIndices" output="screen">
+    <remap from="~input" to="$(arg points_topic)" />
+    <remap from="~indices" to="$(arg ground_inliers_topic)" />
+    <remap from="~output" to="$(arg non_ground_points_topic)" />
+    <param name="use_indices" value="true" />
+    <param name="negative" value="true" />
+  </node>
+
+  <!-- 3) 非地面点云投影为 2D LaserScan -->
+  <node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" name="non_ground_to_scan" output="screen">
+    <remap from="cloud_in" to="$(arg non_ground_points_topic)" />
+    <remap from="scan" to="$(arg non_ground_scan_topic)" />
+    <param name="target_frame" value="$(arg base_frame)" />
+    <param name="transform_tolerance" value="0.05" />
+    <param name="min_height" value="$(arg scan_height_min)" />
+    <param name="max_height" value="$(arg scan_height_max)" />
+    <param name="angle_min" value="-3.14159" />
+    <param name="angle_max" value="3.14159" />
+    <param name="angle_increment" value="0.00872" />
+    <param name="scan_time" value="0.10" />
+    <param name="range_min" value="$(arg scan_range_min)" />
+    <param name="range_max" value="$(arg scan_range_max)" />
+    <param name="use_inf" value="true" />
+    <param name="inf_epsilon" value="1.0" />
+    <param name="concurrency_level" value="1" />
+  </node>
+</launch>

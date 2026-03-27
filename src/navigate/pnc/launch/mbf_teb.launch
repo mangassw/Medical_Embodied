@@ -1,0 +1,42 @@
+<launch>
+    <!-- mbf路径规划器：GlobalPlanner and TebLocalPlannerROS-->
+    <!-- 定位：HDL -->
+    <!-- 模型：差速bw，驱动轮在后，万向轮在前 -->
+
+    <!-- Arguments -->
+    <arg name="cmd_vel_topic" default="/cmd_vel" />
+    <arg name="odom_topic" default="/odom_diff" />
+    <arg name="localization_rviz" default="false"/>
+    <arg name="hdl_rviz" default="true"/>
+    <arg name="pnc_rviz" default="false"/>
+
+    <param name="file_path" value="/home/wu/xjrobot/PATH/path_2" />
+
+    <!-- hdl_localization -->
+    <include file="$(find xjrobot_slam)/launch/3dmap_hdl_localization.launch">
+        <arg name="rviz_loca" value="$(arg localization_rviz)" />
+        <arg name="rviz_hdl" value="$(arg hdl_rviz)" />
+    </include>
+
+
+    <!-- move_base_flex -->
+    <node pkg="mbf_costmap_nav" type="mbf_costmap_nav" respawn="false" name="move_base_flex" output="screen" >
+        <rosparam file="$(find xjrobot_pnc)/param/track/costmap_params.yaml" command="load" />
+        <rosparam file="$(find xjrobot_pnc)/param/track/move_base_flex_params.yaml" command="load" />
+        <rosparam file="$(find xjrobot_pnc)/param/track/recovery_behavior_params.yaml" command="load" />
+        <rosparam file="$(find xjrobot_pnc)/param/track/teb_local_planner_params.yaml" command="load" />
+        <rosparam file="$(find xjrobot_pnc)/param/track/costmap_converter_params.yaml" command="load" />
+        <remap from="cmd_vel" to="$(arg cmd_vel_topic)"/>
+        <remap from="odom" to="$(arg odom_topic)"/>
+    </node>
+
+    <!-- action goal bridge -->
+    <node pkg="xjrobot_pnc" type="xjrobot_mbf_bridge" respawn="false" name="xjrobot_mbf_bridge" />
+    <![CDATA[
+    <node pkg="xjrobot_pnc" type="xjrobot_run_tasks" name="xjrobot_run_tasks" output="screen" launch-prefix="gnome-terminal --tab --" />
+    ]]>
+    <!-- rviz -->
+    <group if="$(arg pnc_rviz)">
+        <node pkg="rviz" type="rviz" name="rviz" args="-d $(find xjrobot_pnc)/rviz/mbf.rviz" />
+    </group>
+</launch>

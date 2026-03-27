@@ -1,0 +1,142 @@
+#!/usr/bin/env python3
+import rospy
+import signal
+from nav_msgs.msg import Odometry
+from geometry_msgs.msg import TransformStamped
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+import math
+
+# 初始化变量
+x_data_odom = []
+y_data_odom = []
+x_data_odom_calc = []
+y_data_odom_calc = []
+x_data_odom_hdl = []
+y_data_odom_hdl = []
+x_data_odom_imu = []
+y_data_odom_imu = []
+# 定义相似点的距离阈值
+DISTANCE_THRESHOLD = 0.01
+
+# 创建图形和坐标轴
+fig, ax = plt.subplots()
+line_odom, = ax.plot([], [], lw=2, color='black', label='odom')
+line_odom_calc, = ax.plot([], [], lw=2, color='red', label='odom_calc')
+line_odom_hdl, = ax.plot([], [], lw=2, color='green', label='odom_hdl')
+line_odom_imu, = ax.plot([], [], lw=2, color='blue', label='odom_imu')
+ax.legend()
+
+# 初始化图形
+def init():
+    ax.set_xlim(-6, 6)
+    ax.set_ylim(-6, 6)
+    ax.set_xlabel('X Position (m)')
+    ax.set_ylabel('Y Position (m)')
+    ax.set_title('Odometry Position')
+    return line_odom, line_odom_calc, line_odom_hdl, line_odom_imu
+
+# 计算两点之间的欧几里得距离
+def calculate_distance(x1, y1, x2, y2):
+    return math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
+
+# 回调函数，处理接收到的odom消息
+def odom_callback(msg):
+    global x_data_odom, y_data_odom
+    x = msg.pose.pose.position.x
+    y = msg.pose.pose.position.y
+    if len(x_data_odom) > 0:
+        last_x = x_data_odom[-1]
+        last_y = y_data_odom[-1]
+        distance = calculate_distance(last_x, last_y, x, y)
+        if distance > DISTANCE_THRESHOLD:
+            x_data_odom.append(x)
+            y_data_odom.append(y)
+    else:
+        x_data_odom.append(x)
+        y_data_odom.append(y)
+
+# 回调函数，处理接收到的odom_calc消息
+def odom_calc_callback(msg):
+    global x_data_odom_calc, y_data_odom_calc
+    x = msg.transform.translation.x
+    y = msg.transform.translation.y
+    if len(x_data_odom_calc) > 0:
+        last_x = x_data_odom_calc[-1]
+        last_y = y_data_odom_calc[-1]
+        distance = calculate_distance(last_x, last_y, x, y)
+        if distance > DISTANCE_THRESHOLD:
+            x_data_odom_calc.append(x)
+            y_data_odom_calc.append(y)
+    else:
+        x_data_odom_calc.append(x)
+        y_data_odom_calc.append(y)
+
+# 回调函数，处理接收到的odom_hdl消息
+def odom_hdl_callback(msg):
+    global x_data_odom_hdl, y_data_odom_hdl
+    x = msg.pose.pose.position.x
+    y = msg.pose.pose.position.y
+    if len(x_data_odom_hdl) > 0:
+        last_x = x_data_odom_hdl[-1]
+        last_y = y_data_odom_hdl[-1]
+        distance = calculate_distance(last_x, last_y, x, y)
+        if distance > DISTANCE_THRESHOLD:
+            x_data_odom_hdl.append(x)
+            y_data_odom_hdl.append(y)
+    else:
+        x_data_odom_hdl.append(x)
+        y_data_odom_hdl.append(y)
+
+# 回调函数，处理接收到的odom_imu消息
+def odom_imu_callback(msg):
+    global x_data_odom_imu, y_data_odom_imu
+    x = msg.pose.pose.position.x
+    y = msg.pose.pose.position.y
+    if len(x_data_odom_imu) > 0:
+        last_x = x_data_odom_imu[-1]
+        last_y = y_data_odom_imu[-1]
+        distance = calculate_distance(last_x, last_y, x, y)
+        if distance > DISTANCE_THRESHOLD:
+            x_data_odom_imu.append(x)
+            y_data_odom_imu.append(y)
+    else:
+        x_data_odom_imu.append(x)
+        y_data_odom_imu.append(y)
+
+# 更新图形
+def update(frame):
+    line_odom.set_data(x_data_odom, y_data_odom)
+    line_odom_calc.set_data(x_data_odom_calc, y_data_odom_calc)
+    line_odom_hdl.set_data(x_data_odom_hdl, y_data_odom_hdl)
+    line_odom_imu.set_data(x_data_odom_imu, y_data_odom_imu)
+    return line_odom, line_odom_calc, line_odom_hdl, line_odom_imu
+
+# 信号处理函数，用于处理 Ctrl + C
+def signal_handler(sig, frame):
+    print('You pressed Ctrl+C! Closing the plot and exiting...')
+    plt.close(fig)
+    rospy.signal_shutdown("User interrupted the program")
+
+# 主函数
+def main():
+    rospy.init_node('odom_plotter', anonymous=True)
+    rospy.Subscriber('odom_diff', Odometry, odom_callback)
+    rospy.Subscriber('odom_calc', TransformStamped, odom_calc_callback)
+    rospy.Subscriber('odom_hdl', Odometry, odom_hdl_callback)
+    rospy.Subscriber('odom_imu', Odometry, odom_imu_callback)
+
+    ani = FuncAnimation(fig, update, init_func=init, blit=True)
+
+    # 注册信号处理函数
+    signal.signal(signal.SIGINT, signal_handler)
+
+    plt.show()
+    rospy.spin()
+
+if __name__ == '__main__':
+    try:
+        main()
+    except rospy.ROSInterruptException:
+        pass
+    
