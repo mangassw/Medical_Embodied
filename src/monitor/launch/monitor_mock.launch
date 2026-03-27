@@ -1,0 +1,12 @@
+<launch>
+  <node pkg="monitor" type="monitor_mock_pub.py" name="monitor_mock_pub" output="screen">
+    <param name="battery_soc" value="50.0"/>
+    <param name="battery_charging" value="false"/>
+    <param name="battery_voltage" value="24.0"/>
+    <param name="fault_type" value=""/>
+    <param name="fault_severity" value="0"/>
+    <param name="fault_details" value=""/>
+    <param name="call_signal" value="false"/>
+  </node>
+  <node pkg="monitor" type="anomaly_detect_server.py" name="anomaly_detect_server" output="screen"/>
+</launch>

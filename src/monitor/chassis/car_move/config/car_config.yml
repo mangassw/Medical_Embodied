@@ -1,0 +1,66 @@
+############## 关键参数修改 ##############
+
+POS_WORK_FIRST: 199008386         ### 第一次停驻位置，此值为终端中读到的位置值
+POS_WORK_SECOND: 373963424        ### 第二次停驻位置，此值为终端中读到的位置值
+LiftHeight: 186                   ### 升降台最低点为0，此值为上升到位的高度（单位：厘米）
+LiftWholeDuration: 40             ### 升降台一次上升到位的时间（单位：秒）
+TurnTimerDuration: 2.8            ### 直角弯左转持续时间，应调整至接近旋转180°（单位：秒）
+ExitLiftStop_TAG: "tag_id_2"      ### 升降台开始处
+EnterLiftStop_TAG: "tag_id_7"     ### 升降台结束处
+PlaneTurnAround_TAG: "tag_id_11"  ### 平台退出时调头
+PlaneTurnLeft_TAG: "tag_id_13"    ### 平台进入时左转90度
+PlaneTurnRight_TAG: "tag_id_18"   ### 平台退出时转到升降平台处
+WheelEnterStright_TAG1: "tag_id_0"      ### 平面结束处，即接近齿道处
+WheelEnterStright_TAG2: "tag_id_1"      ### 平面结束处，即接近齿道处
+WheelEnterStright_TAG3: "tag_id_2"      ### 平面结束处，即接近齿道处
+WheelEnterStright_TAG4: "tag_id_3"      ### 平面结束处，即接近齿道处
+GearEnterStart_TAG1: "tag_id_4"  ### 轨道开始处，第二块铝板
+GearEnterStart_TAG2: "tag_id_5"  ### 轨道开始处，第二块铝板
+
+Gear_mA_Front: 800               # 前齿轮电流模式电流值
+Gear_mA_Behind: 1300              # 后齿轮电流模式电流值
+Gear_Run_Vel: 1500                # 齿轮电机爬升速度(手动或过弯轨阶段)
+POS_1_FORE_REACH_NC: 44864320     # 爬升位置1 前齿轮到达齿道结束时位置 --用于切换模式（此值应为前齿轮即将悬空时读到的前齿轮编码器值）
+POS_2_BACK_REACH_NC: 29229570     # 爬升位置2 后齿轮到达齿道结束时位置差值 --用于切换模式（此值应保证前齿轮已经通过悬空段）
+POS_3_BACK_PASS_NC : 13607232     # 爬升位置3 后齿轮到达竖直齿道开始位置差值 --用于切换模式（此值应保证后齿轮已经通过悬空段）
+Gear_Position_MAX: 999999999      # 齿轮电机最大位置
+Gear_Velocity_MAX: 3500           # 齿轮电机最大速度
+
+######## 所有串口 #########
+### nuc11--加注机器人车辆   ---> 其中串口为myusb*的设备需要按照标签插入指定USB口!!
+# 1 无线通讯模块串口已在 l32_serial.cpp 中指定为 /dev/myusb0
+# 2 车体前方usb单目摄像头串口已在 usb_cam.yml 中指定为 /dev/video0_cam 
+# 3 can分析仪不需要指定串口
+# 4 电池读取电量百分比串口：
+battery_port: "/dev/myusb6"
+# 5 机械臂双目摄像头串口：(待定)
+stereo_cam_port: "/dev/video2_cam "
+# 6 RTK模块串口：
+# 已指定为：RTK_port: "/dev/myusb3"
+# 7 IMU模块串口：
+# IMU_port: "/dev/myusb2"
+
+
+### nuc13--加注机器人升降台系统   ---> 其中串口为myusb*的设备需要按照标签插入指定USB口!!
+# 1 无线通讯模块串口已在 l32_serial.cpp 中指定为 /dev/myusb0
+# 2 usb转GPIO模块已添加规则，不需要指定串口
+# 3 can分析仪不需要指定串口
+# 4 伺服电机（大）串口：
+Lift_Motor_Big: "/dev/myusb2"
+# 5 伺服电机（小）串口：
+Lift_Motor_Small: "/dev/myusb3"
+#########################################
+
+# CAN分析仪CAN1和CAN2的波特率
+can1_baud_t0: 0
+can1_baud_t1: 28          # 波特率500 Kbps  0x00  0x1C  十进制0028
+can2_baud_t0: 0         
+can2_baud_t1: 20          # 波特率1000Kbps  0x00  0x14  十进制0020 
+
+# 其他参数
+Joy_Liner_K: 40                   # 遥控器线速度参数25 （建议＜100）
+Joy_Angular_K: 17                 # 遥控器角速度参数10 （建议＜30）
+Gear_Pos_Kp: 1200                 # 齿轮位置环Kp参数
+Gear_Pos_Ki: 0                    # 齿轮位置环Ki参数
+Gear_Pos_Kd: 400                  # 齿轮位置环Kd参数
+LiftTimerDuration: 0.02           # 升降台定时器间隔
