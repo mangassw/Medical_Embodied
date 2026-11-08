@@ -1,0 +1,942 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1197110",
+  "host": "artrc",
+  "tag": "ol3_chat10",
+  "round_index": 6,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T18:12:17.395",
+  "finished_at": "2026-10-30T18:12:27.023",
+  "duration_s": 9.628,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "讲个睡前故事",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793355137396455159,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793355137395247129,
+    "t_publish_question_ns": 1793355137396455159,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793355137399755450,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793355137402126726,
+      "ali_llm_output_start": 1793355137551928188,
+      "ali_llm_output_first_text": 1793355137552292692,
+      "ali_llm_output_done": 1793355138173161929,
+      "tts_realtime_data_start": 1793355137552339570,
+      "tts_realtime_data_first_text": 1793355137603090596,
+      "tts_realtime_data_done": 1793355138173666235,
+      "tts_session_finished": 1793355146720289024
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793355137604145472,
+      "tts_local.synth_start_first": 1793355137604262746,
+      "tts_local.synth_end_first": 1793355138632163578,
+      "tts_local.play_start_first": 1793355138663809805,
+      "tts_local.play_end_last": 1793355146718856715,
+      "tts_local.session_finished": 1793355146719974486
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 5.672,
+    "router_to_llm_first_ms": 150.166,
+    "question_to_llm_first_ms": 155.838,
+    "llm_first_to_done_ms": 620.869,
+    "question_to_llm_done_ms": 776.707,
+    "llm_first_to_tts_first_text_ms": 50.798,
+    "question_to_tts_first_text_ms": 206.635,
+    "first_tts_text_to_first_play_start_ms": 1060.719,
+    "tts_rx_to_synth_end_ms": 1028.018,
+    "tts_rx_to_play_start_ms": 1059.664,
+    "tts_synth_end_to_play_start_ms": 31.646,
+    "question_to_first_audio_ms": 1267.355,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 9323.834,
+    "audio_total_sum_ms": 8050.9,
+    "audio_first_to_last_ms": 8055.047
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 5671567,
+    "router_to_llm_first_ns": 150165966,
+    "question_to_llm_first_ns": 155837533,
+    "llm_first_to_done_ns": 620869237,
+    "question_to_llm_done_ns": 776706770,
+    "llm_first_to_tts_first_text_ns": 50797904,
+    "question_to_tts_first_text_ns": 206635437,
+    "first_tts_text_to_first_play_start_ns": 1060719209,
+    "tts_rx_to_synth_end_ns": 1028018106,
+    "tts_rx_to_play_start_ns": 1059664333,
+    "tts_synth_end_to_play_start_ns": 31646227,
+    "question_to_first_audio_ns": 1267354646,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 9323833865,
+    "audio_total_sum_ns": 8050899924,
+    "audio_first_to_last_ns": 8055046910
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 155837533,
+      "ms": 155.838
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 620869237,
+      "ms": 620.869
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 50797904,
+      "ms": 50.798
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 1060719209,
+      "ms": 1060.719
+    },
+    "question_to_first_play_start": {
+      "ns": 1267354646,
+      "ms": 1267.355
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 9323833865,
+      "ms": 9323.834
+    },
+    "audio_total_sec": {
+      "ns": 8050899924,
+      "ms": 8050.9,
+      "sec": 8.051
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 5.672,
+    "router_to_llm_first_ms": 150.166,
+    "question_to_llm_first_ms": 155.838,
+    "llm_first_to_done_ms": 620.869,
+    "question_to_llm_done_ms": 776.707,
+    "llm_first_to_tts_first_text_ms": 50.798,
+    "question_to_tts_first_text_ms": 206.635,
+    "first_tts_text_to_first_play_start_ms": 1060.719,
+    "tts_rx_to_synth_end_ms": 1028.018,
+    "tts_rx_to_play_start_ms": 1059.664,
+    "tts_synth_end_to_play_start_ms": 31.646,
+    "question_to_first_audio_ms": 1267.355,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 9323.834,
+    "audio_total_sum_ms": 8050.9,
+    "audio_first_to_last_ms": 8055.047
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793355137551928188,
+      "first_text_rx_ns": 1793355137552292692,
+      "done_rx_ns": 1793355138173161929,
+      "chunk_count": 21,
+      "char_count": 33,
+      "chunks": [
+        {
+          "t_ns": 1793355137552292692,
+          "text": "从前"
+        },
+        {
+          "t_ns": 1793355137565759505,
+          "text": "有个"
+        },
+        {
+          "t_ns": 1793355137577008169,
+          "text": "小"
+        },
+        {
+          "t_ns": 1793355137591442359,
+          "text": "熊"
+        },
+        {
+          "t_ns": 1793355137602701119,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793355137629448734,
+          "text": "每天"
+        },
+        {
+          "t_ns": 1793355137635180352,
+          "text": "晚上"
+        },
+        {
+          "t_ns": 1793355137655159580,
+          "text": "都"
+        },
+        {
+          "t_ns": 1793355137702407379,
+          "text": "数"
+        },
+        {
+          "t_ns": 1793355137741769469,
+          "text": "星星"
+        },
+        {
+          "t_ns": 1793355137778660684,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793355137789244934,
+          "text": "直到"
+        },
+        {
+          "t_ns": 1793355137825718758,
+          "text": "有一天"
+        },
+        {
+          "t_ns": 1793355137867423649,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793355137904126869,
+          "text": "它"
+        },
+        {
+          "t_ns": 1793355137941456515,
+          "text": "发现"
+        },
+        {
+          "t_ns": 1793355137981079391,
+          "text": "星星"
+        },
+        {
+          "t_ns": 1793355138021526524,
+          "text": "在"
+        },
+        {
+          "t_ns": 1793355138058332136,
+          "text": "偷偷"
+        },
+        {
+          "t_ns": 1793355138100575456,
+          "text": "说话"
+        },
+        {
+          "t_ns": 1793355138136819431,
+          "text": "。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793355137603090596,
+      "done_rx_ns": 1793355138173666235,
+      "text_count": 4,
+      "texts": [
+        {
+          "t_ns": 1793355137603090596,
+          "text": "从前有个小熊，"
+        },
+        {
+          "t_ns": 1793355137780222328,
+          "text": "每天晚上都数星星，"
+        },
+        {
+          "t_ns": 1793355137867759172,
+          "text": "直到有一天，"
+        },
+        {
+          "t_ns": 1793355138137485396,
+          "text": "它发现星星在偷偷说话。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 27,
+    "latency_events_total": 27,
+    "asr_events": 0,
+    "tts_events": 23,
+    "tts_play_pairs": 4,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793355137420884825,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793355137420481732,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "chitchat",
+        "keyword_medical": false,
+        "chitchat": true,
+        "judge_kind": null,
+        "judge_ms": 0.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793355137420481732, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"chitchat\", \"keyword_medical\": false, \"chitchat\": true, \"judge_kind\": null, \"judge_ms\": 0.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355137421514837,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793355137421138697,
+      "detail": {
+        "provider": "ollama",
+        "prompt_chars": 472,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793355137421138697, \"detail\": {\"provider\": \"ollama\", \"prompt_chars\": 472, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355137552381224,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793355137551983474,
+      "detail": {
+        "prompt_chars": 472
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793355137551983474, \"detail\": {\"prompt_chars\": 472}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355137554291238,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793355137553872574,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793355137553872574, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355137604693725,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793355137604145472,
+      "detail": {
+        "text_len": 7,
+        "head": "从前有个小熊，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793355137604145472, \"detail\": {\"text_len\": 7, \"head\": \"从前有个小熊，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355137605087864,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793355137604262746,
+      "detail": {
+        "text_len": 7
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793355137604262746, \"detail\": {\"text_len\": 7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355138173239804,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793355138172663625,
+      "detail": {
+        "chars": 33
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793355138172663625, \"detail\": {\"chars\": 33}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355138632585471,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793355138632163578,
+      "detail": {
+        "text_len": 7,
+        "dur_ms": 1027.893174,
+        "audio_sec": 2.16,
+        "rtf": 0.47587646944444445
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793355138632163578, \"detail\": {\"text_len\": 7, \"dur_ms\": 1027.893174, \"audio_sec\": 2.16, \"rtf\": 0.47587646944444445}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355138644711543,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793355138641671439,
+      "detail": {
+        "text_len": 9,
+        "head": "每天晚上都数星星，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793355138641671439, \"detail\": {\"text_len\": 9, \"head\": \"每天晚上都数星星，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355138644991883,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793355138641787115,
+      "detail": {
+        "text_len": 9
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793355138641787115, \"detail\": {\"text_len\": 9}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355138664180800,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793355138663809805,
+      "detail": {
+        "text_len": 7,
+        "head": "从前有个小熊，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793355138663809805, \"detail\": {\"text_len\": 7, \"head\": \"从前有个小熊，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355139480038185,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793355139479645360,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 837.850564,
+        "audio_sec": 2.0,
+        "rtf": 0.41892528199999995
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793355139479645360, \"detail\": {\"text_len\": 9, \"dur_ms\": 837.850564, \"audio_sec\": 2.0, \"rtf\": 0.41892528199999995}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355139480639006,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793355139480450078,
+      "detail": {
+        "text_len": 6,
+        "head": "直到有一天，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793355139480450078, \"detail\": {\"text_len\": 6, \"head\": \"直到有一天，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355139480935994,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793355139480515732,
+      "detail": {
+        "text_len": 6
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793355139480515732, \"detail\": {\"text_len\": 6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355140143792658,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793355140143379449,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 662.855493,
+        "audio_sec": 1.52,
+        "rtf": 0.43608914013157896
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793355140143379449, \"detail\": {\"text_len\": 6, \"dur_ms\": 662.855493, \"audio_sec\": 1.52, \"rtf\": 0.43608914013157896}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355140144373115,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793355140144175076,
+      "detail": {
+        "text_len": 11,
+        "head": "它发现星星在偷偷说话。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793355140144175076, \"detail\": {\"text_len\": 11, \"head\": \"它发现星星在偷偷说话。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355140144721633,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793355140144248222,
+      "detail": {
+        "text_len": 11
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793355140144248222, \"detail\": {\"text_len\": 11}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355140844859452,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793355140844103852,
+      "detail": {
+        "text_len": 7,
+        "interrupted": false,
+        "dur_ms": 2180.300037
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793355140844103852, \"detail\": {\"text_len\": 7, \"interrupted\": false, \"dur_ms\": 2180.300037}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355140845835891,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793355140845443822,
+      "detail": {
+        "text_len": 9,
+        "head": "每天晚上都数星星，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793355140845443822, \"detail\": {\"text_len\": 9, \"head\": \"每天晚上都数星星，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355141175219746,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793355141174816807,
+      "detail": {
+        "text_len": 11,
+        "dur_ms": 1030.560574,
+        "audio_sec": 2.32,
+        "rtf": 0.4442071439655173
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793355141174816807, \"detail\": {\"text_len\": 11, \"dur_ms\": 1030.560574, \"audio_sec\": 2.32, \"rtf\": 0.4442071439655173}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355141175804602,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793355141175633223,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793355141175633223, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355142865767331,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793355142865378328,
+      "detail": {
+        "text_len": 9,
+        "interrupted": false,
+        "dur_ms": 2019.931714
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793355142865378328, \"detail\": {\"text_len\": 9, \"interrupted\": false, \"dur_ms\": 2019.931714}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355142867615373,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793355142867347008,
+      "detail": {
+        "text_len": 6,
+        "head": "直到有一天，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793355142867347008, \"detail\": {\"text_len\": 6, \"head\": \"直到有一天，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355144398224233,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793355144397773020,
+      "detail": {
+        "text_len": 6,
+        "interrupted": false,
+        "dur_ms": 1530.420748
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793355144397773020, \"detail\": {\"text_len\": 6, \"interrupted\": false, \"dur_ms\": 1530.420748}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355144398870339,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793355144398611356,
+      "detail": {
+        "text_len": 11,
+        "head": "它发现星星在偷偷说话。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793355144398611356, \"detail\": {\"text_len\": 11, \"head\": \"它发现星星在偷偷说话。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355146719464967,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793355146718856715,
+      "detail": {
+        "text_len": 11,
+        "interrupted": false,
+        "dur_ms": 2320.243862
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793355146718856715, \"detail\": {\"text_len\": 11, \"interrupted\": false, \"dur_ms\": 2320.243862}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355146720355554,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793355146719974486,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793355146719974486, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793355137420481732,
+          "arrival_ns": 1793355137420884825,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "chitchat",
+            "keyword_medical": false,
+            "chitchat": true,
+            "judge_kind": null,
+            "judge_ms": 0.0
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793355137421138697,
+          "arrival_ns": 1793355137421514837,
+          "source": "round",
+          "detail": {
+            "provider": "ollama",
+            "prompt_chars": 472,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793355137551983474,
+          "arrival_ns": 1793355137552381224,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 472
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793355138172663625,
+          "arrival_ns": 1793355138173239804,
+          "source": "round",
+          "detail": {
+            "chars": 33
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793355137553872574,
+          "arrival_ns": 1793355137554291238,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793355141175633223,
+          "arrival_ns": 1793355141175804602,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793355137604145472,
+          "arrival_ns": 1793355137604693725,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "从前有个小熊，"
+          }
+        },
+        {
+          "t_ns": 1793355138641671439,
+          "arrival_ns": 1793355138644711543,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "每天晚上都数星星，"
+          }
+        },
+        {
+          "t_ns": 1793355139480450078,
+          "arrival_ns": 1793355139480639006,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "直到有一天，"
+          }
+        },
+        {
+          "t_ns": 1793355140144175076,
+          "arrival_ns": 1793355140144373115,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "它发现星星在偷偷说话。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793355137604262746,
+          "arrival_ns": 1793355137605087864,
+          "source": "round",
+          "detail": {
+            "text_len": 7
+          }
+        },
+        {
+          "t_ns": 1793355138641787115,
+          "arrival_ns": 1793355138644991883,
+          "source": "round",
+          "detail": {
+            "text_len": 9
+          }
+        },
+        {
+          "t_ns": 1793355139480515732,
+          "arrival_ns": 1793355139480935994,
+          "source": "round",
+          "detail": {
+            "text_len": 6
+          }
+        },
+        {
+          "t_ns": 1793355140144248222,
+          "arrival_ns": 1793355140144721633,
+          "source": "round",
+          "detail": {
+            "text_len": 11
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793355138632163578,
+          "arrival_ns": 1793355138632585471,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "dur_ms": 1027.893174,
+            "audio_sec": 2.16,
+            "rtf": 0.47587646944444445
+          }
+        },
+        {
+          "t_ns": 1793355139479645360,
+          "arrival_ns": 1793355139480038185,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 837.850564,
+            "audio_sec": 2.0,
+            "rtf": 0.41892528199999995
+          }
+        },
+        {
+          "t_ns": 1793355140143379449,
+          "arrival_ns": 1793355140143792658,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 662.855493,
+            "audio_sec": 1.52,
+            "rtf": 0.43608914013157896
+          }
+        },
+        {
+          "t_ns": 1793355141174816807,
+          "arrival_ns": 1793355141175219746,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "dur_ms": 1030.560574,
+            "audio_sec": 2.32,
+            "rtf": 0.4442071439655173
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793355138663809805,
+          "arrival_ns": 1793355138664180800,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "从前有个小熊，"
+          }
+        },
+        {
+          "t_ns": 1793355140845443822,
+          "arrival_ns": 1793355140845835891,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "每天晚上都数星星，"
+          }
+        },
+        {
+          "t_ns": 1793355142867347008,
+          "arrival_ns": 1793355142867615373,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "直到有一天，"
+          }
+        },
+        {
+          "t_ns": 1793355144398611356,
+          "arrival_ns": 1793355144398870339,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "它发现星星在偷偷说话。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793355140844103852,
+          "arrival_ns": 1793355140844859452,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "interrupted": false,
+            "dur_ms": 2180.300037
+          }
+        },
+        {
+          "t_ns": 1793355142865378328,
+          "arrival_ns": 1793355142865767331,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "interrupted": false,
+            "dur_ms": 2019.931714
+          }
+        },
+        {
+          "t_ns": 1793355144397773020,
+          "arrival_ns": 1793355144398224233,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "interrupted": false,
+            "dur_ms": 1530.420748
+          }
+        },
+        {
+          "t_ns": 1793355146718856715,
+          "arrival_ns": 1793355146719464967,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "interrupted": false,
+            "dur_ms": 2320.243862
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793355146719974486,
+          "arrival_ns": 1793355146720355554,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 10,
+    "interval_s": 2.0
+  }
+}

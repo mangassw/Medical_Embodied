@@ -1,0 +1,1281 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1077670",
+  "host": "artrc",
+  "tag": "opt2_kb20",
+  "round_index": 4,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T11:01:33.054",
+  "finished_at": "2026-10-30T11:01:49.230",
+  "duration_s": 16.176,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "透析间期体重怎么控制？",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793329293055313154,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793329293054915258,
+    "t_publish_question_ns": 1793329293055313154,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793329293055806598,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793329293056178030,
+      "ali_llm_output_start": 1793329293600532484,
+      "ali_llm_output_first_text": 1793329293600977604,
+      "ali_llm_output_done": 1793329294517798568,
+      "tts_realtime_data_start": 1793329293600820670,
+      "tts_realtime_data_first_text": 1793329293712693807,
+      "tts_realtime_data_done": 1793329294518096883,
+      "tts_session_finished": 1793329308928911555
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793329293714619503,
+      "tts_local.synth_start_first": 1793329293714686158,
+      "tts_local.synth_end_first": 1793329294437815484,
+      "tts_local.play_start_first": 1793329294518945910,
+      "tts_local.play_end_last": 1793329308927879893,
+      "tts_local.session_finished": 1793329308928542553
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.865,
+    "router_to_llm_first_ms": 544.8,
+    "question_to_llm_first_ms": 545.664,
+    "llm_first_to_done_ms": 916.821,
+    "question_to_llm_done_ms": 1462.485,
+    "llm_first_to_tts_first_text_ms": 111.716,
+    "question_to_tts_first_text_ms": 657.381,
+    "first_tts_text_to_first_play_start_ms": 806.252,
+    "tts_rx_to_synth_end_ms": 723.196,
+    "tts_rx_to_play_start_ms": 804.326,
+    "tts_synth_end_to_play_start_ms": 81.13,
+    "question_to_first_audio_ms": 1463.633,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 15873.598,
+    "audio_total_sum_ms": 14404.267,
+    "audio_first_to_last_ms": 14408.934
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 864876,
+    "router_to_llm_first_ns": 544799574,
+    "question_to_llm_first_ns": 545664450,
+    "llm_first_to_done_ns": 916820964,
+    "question_to_llm_done_ns": 1462485414,
+    "llm_first_to_tts_first_text_ns": 111716203,
+    "question_to_tts_first_text_ns": 657380653,
+    "first_tts_text_to_first_play_start_ns": 806252103,
+    "tts_rx_to_synth_end_ns": 723195981,
+    "tts_rx_to_play_start_ns": 804326407,
+    "tts_synth_end_to_play_start_ns": 81130426,
+    "question_to_first_audio_ns": 1463632756,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 15873598401,
+    "audio_total_sum_ns": 14404266719,
+    "audio_first_to_last_ns": 14408933983
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 545664450,
+      "ms": 545.664
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 916820964,
+      "ms": 916.821
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 111716203,
+      "ms": 111.716
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 806252103,
+      "ms": 806.252
+    },
+    "question_to_first_play_start": {
+      "ns": 1463632756,
+      "ms": 1463.633
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 15873598401,
+      "ms": 15873.598
+    },
+    "audio_total_sec": {
+      "ns": 14404266719,
+      "ms": 14404.267,
+      "sec": 14.404
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.865,
+    "router_to_llm_first_ms": 544.8,
+    "question_to_llm_first_ms": 545.664,
+    "llm_first_to_done_ms": 916.821,
+    "question_to_llm_done_ms": 1462.485,
+    "llm_first_to_tts_first_text_ms": 111.716,
+    "question_to_tts_first_text_ms": 657.381,
+    "first_tts_text_to_first_play_start_ms": 806.252,
+    "tts_rx_to_synth_end_ms": 723.196,
+    "tts_rx_to_play_start_ms": 804.326,
+    "tts_synth_end_to_play_start_ms": 81.13,
+    "question_to_first_audio_ms": 1463.633,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 15873.598,
+    "audio_total_sum_ms": 14404.267,
+    "audio_first_to_last_ms": 14408.934
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793329293600532484,
+      "first_text_rx_ns": 1793329293600977604,
+      "done_rx_ns": 1793329294517798568,
+      "chunk_count": 11,
+      "char_count": 56,
+      "chunks": [
+        {
+          "t_ns": 1793329293600977604,
+          "text": "控制"
+        },
+        {
+          "t_ns": 1793329293640344879,
+          "text": "在5"
+        },
+        {
+          "t_ns": 1793329293678522084,
+          "text": "%内"
+        },
+        {
+          "t_ns": 1793329293712479708,
+          "text": "。  \n比如"
+        },
+        {
+          "t_ns": 1793329293844546413,
+          "text": "干体重60公斤，"
+        },
+        {
+          "t_ns": 1793329294001289026,
+          "text": "透析间期增"
+        },
+        {
+          "t_ns": 1793329294066264178,
+          "text": "重别超3公斤"
+        },
+        {
+          "t_ns": 1793329294195513650,
+          "text": "。  \n多喝水、吃"
+        },
+        {
+          "t_ns": 1793329294377751623,
+          "text": "水果、喝汤都会"
+        },
+        {
+          "t_ns": 1793329294440987491,
+          "text": "增加体重，要"
+        },
+        {
+          "t_ns": 1793329294484733508,
+          "text": "留心。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793329293712693807,
+      "done_rx_ns": 1793329294518096883,
+      "text_count": 7,
+      "texts": [
+        {
+          "t_ns": 1793329293712693807,
+          "text": "控制在5%内。"
+        },
+        {
+          "t_ns": 1793329293844883620,
+          "text": "比如干体重60公斤，"
+        },
+        {
+          "t_ns": 1793329294195744187,
+          "text": "透析间期增重别超3公斤。"
+        },
+        {
+          "t_ns": 1793329294196063371,
+          "text": "多喝水、"
+        },
+        {
+          "t_ns": 1793329294377935252,
+          "text": "吃水果、"
+        },
+        {
+          "t_ns": 1793329294441183206,
+          "text": "喝汤都会增加体重，"
+        },
+        {
+          "t_ns": 1793329294484916157,
+          "text": "要留心。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 44,
+    "latency_events_total": 44,
+    "asr_events": 0,
+    "tts_events": 38,
+    "tts_play_pairs": 7,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793329293077156904,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793329293076928655,
+      "detail": {
+        "kind": "medical",
+        "chat_mode": false,
+        "source": "keyword",
+        "keyword_medical": true,
+        "chitchat": false,
+        "judge_kind": null,
+        "judge_ms": 0.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793329293076928655, \"detail\": {\"kind\": \"medical\", \"chat_mode\": false, \"source\": \"keyword\", \"keyword_medical\": true, \"chitchat\": false, \"judge_kind\": null, \"judge_ms\": 0.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329293077488906,
+      "node": "llm_medical",
+      "stage": "rag_start",
+      "t_ns": 1793329293077374504,
+      "detail": {},
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_start\", \"t_ns\": 1793329293077374504, \"detail\": {}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329293087899562,
+      "node": "llm_medical",
+      "stage": "rag_end",
+      "t_ns": 1793329293087647858,
+      "detail": {
+        "n_chunks": 3,
+        "took_ms": 10.19,
+        "top1": "血液透析患者如何控水（水平衡管理）"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_end\", \"t_ns\": 1793329293087647858, \"detail\": {\"n_chunks\": 3, \"took_ms\": 10.19, \"top1\": \"血液透析患者如何控水（水平衡管理）\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329293600583648,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793329293600165477,
+      "detail": {
+        "prompt_chars": 884,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793329293600165477, \"detail\": {\"prompt_chars\": 884, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329293601006869,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793329293600740186,
+      "detail": {
+        "prompt_chars": 884
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793329293600740186, \"detail\": {\"prompt_chars\": 884}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329293605888122,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793329293605674041,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793329293605674041, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329293714846576,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329293714619503,
+      "detail": {
+        "text_len": 7,
+        "head": "控制在5%内。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329293714619503, \"detail\": {\"text_len\": 7, \"head\": \"控制在5%内。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329293715162670,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329293714686158,
+      "detail": {
+        "text_len": 7
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329293714686158, \"detail\": {\"text_len\": 7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329294438115738,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329294437815484,
+      "detail": {
+        "text_len": 7,
+        "dur_ms": 723.123698,
+        "audio_sec": 2.0,
+        "rtf": 0.361561849
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329294437815484, \"detail\": {\"text_len\": 7, \"dur_ms\": 723.123698, \"audio_sec\": 2.0, \"rtf\": 0.361561849}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329294442196815,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329294442039049,
+      "detail": {
+        "text_len": 10,
+        "head": "比如干体重60公斤，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329294442039049, \"detail\": {\"text_len\": 10, \"head\": \"比如干体重60公斤，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329294442374713,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329294442099983,
+      "detail": {
+        "text_len": 10
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329294442099983, \"detail\": {\"text_len\": 10}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329294517848328,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793329294517514734,
+      "detail": {
+        "chars": 56
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793329294517514734, \"detail\": {\"chars\": 56}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329294519157179,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329294518945910,
+      "detail": {
+        "text_len": 7,
+        "head": "控制在5%内。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329294518945910, \"detail\": {\"text_len\": 7, \"head\": \"控制在5%内。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329295324721244,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329295324393576,
+      "detail": {
+        "text_len": 10,
+        "dur_ms": 882.288285,
+        "audio_sec": 2.48,
+        "rtf": 0.3557614052419355
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329295324393576, \"detail\": {\"text_len\": 10, \"dur_ms\": 882.288285, \"audio_sec\": 2.48, \"rtf\": 0.3557614052419355}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329295379095574,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329295378770050,
+      "detail": {
+        "text_len": 12,
+        "head": "透析间期增重别超3公斤。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329295378770050, \"detail\": {\"text_len\": 12, \"head\": \"透析间期增重别超3公斤。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329295379310385,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329295378861957,
+      "detail": {
+        "text_len": 12
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329295378861957, \"detail\": {\"text_len\": 12}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329296379735863,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329296379371946,
+      "detail": {
+        "text_len": 12,
+        "dur_ms": 1000.502299,
+        "audio_sec": 2.88,
+        "rtf": 0.3473966315972223
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329296379371946, \"detail\": {\"text_len\": 12, \"dur_ms\": 1000.502299, \"audio_sec\": 2.88, \"rtf\": 0.3473966315972223}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329296380210925,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329296380014889,
+      "detail": {
+        "text_len": 4,
+        "head": "多喝水、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329296380014889, \"detail\": {\"text_len\": 4, \"head\": \"多喝水、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329296380441405,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329296380054442,
+      "detail": {
+        "text_len": 4
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329296380054442, \"detail\": {\"text_len\": 4}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329296523739527,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329296523416746,
+      "detail": {
+        "text_len": 7,
+        "interrupted": false,
+        "dur_ms": 2004.468779
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329296523416746, \"detail\": {\"text_len\": 7, \"interrupted\": false, \"dur_ms\": 2004.468779}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329296524200073,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329296524071248,
+      "detail": {
+        "text_len": 10,
+        "head": "比如干体重60公斤，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329296524071248, \"detail\": {\"text_len\": 10, \"head\": \"比如干体重60公斤，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329297043638757,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329297043260262,
+      "detail": {
+        "text_len": 4,
+        "dur_ms": 663.200296,
+        "audio_sec": 1.84,
+        "rtf": 0.3604349434782608
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329297043260262, \"detail\": {\"text_len\": 4, \"dur_ms\": 663.200296, \"audio_sec\": 1.84, \"rtf\": 0.3604349434782608}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329297044184996,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329297043873296,
+      "detail": {
+        "text_len": 4,
+        "head": "吃水果、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329297043873296, \"detail\": {\"text_len\": 4, \"head\": \"吃水果、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329297044513178,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329297043941636,
+      "detail": {
+        "text_len": 4
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329297043941636, \"detail\": {\"text_len\": 4}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329297548542292,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329297548222383,
+      "detail": {
+        "text_len": 4,
+        "dur_ms": 504.276047,
+        "audio_sec": 1.36,
+        "rtf": 0.37079121102941176
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329297548222383, \"detail\": {\"text_len\": 4, \"dur_ms\": 504.276047, \"audio_sec\": 1.36, \"rtf\": 0.37079121102941176}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329297548981564,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329297548854405,
+      "detail": {
+        "text_len": 9,
+        "head": "喝汤都会增加体重，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329297548854405, \"detail\": {\"text_len\": 9, \"head\": \"喝汤都会增加体重，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329297549165918,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329297548897080,
+      "detail": {
+        "text_len": 9
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329297548897080, \"detail\": {\"text_len\": 9}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329298431065076,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329298430736588,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 881.834233,
+        "audio_sec": 2.48,
+        "rtf": 0.35557831975806453
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329298430736588, \"detail\": {\"text_len\": 9, \"dur_ms\": 881.834233, \"audio_sec\": 2.48, \"rtf\": 0.35557831975806453}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329298431439628,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329298431315119,
+      "detail": {
+        "text_len": 4,
+        "head": "要留心。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329298431315119, \"detail\": {\"text_len\": 4, \"head\": \"要留心。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329298431625755,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329298431357076,
+      "detail": {
+        "text_len": 4
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329298431357076, \"detail\": {\"text_len\": 4}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329298938310255,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329298938025854,
+      "detail": {
+        "text_len": 4,
+        "dur_ms": 506.663542,
+        "audio_sec": 1.36,
+        "rtf": 0.3725467220588235
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329298938025854, \"detail\": {\"text_len\": 4, \"dur_ms\": 506.663542, \"audio_sec\": 1.36, \"rtf\": 0.3725467220588235}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329298938871995,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793329298938663691,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793329298938663691, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329299005524971,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329299005167246,
+      "detail": {
+        "text_len": 10,
+        "interrupted": false,
+        "dur_ms": 2481.092839
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329299005167246, \"detail\": {\"text_len\": 10, \"interrupted\": false, \"dur_ms\": 2481.092839}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329299006045389,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329299005886110,
+      "detail": {
+        "text_len": 12,
+        "head": "透析间期增重别超3公斤。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329299005886110, \"detail\": {\"text_len\": 12, \"head\": \"透析间期增重别超3公斤。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329301887409553,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329301887015947,
+      "detail": {
+        "text_len": 12,
+        "interrupted": false,
+        "dur_ms": 2881.12618
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329301887015947, \"detail\": {\"text_len\": 12, \"interrupted\": false, \"dur_ms\": 2881.12618}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329301888114210,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329301887851082,
+      "detail": {
+        "text_len": 4,
+        "head": "多喝水、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329301887851082, \"detail\": {\"text_len\": 4, \"head\": \"多喝水、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329303727932802,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329303727478906,
+      "detail": {
+        "text_len": 4,
+        "interrupted": false,
+        "dur_ms": 1839.622885
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329303727478906, \"detail\": {\"text_len\": 4, \"interrupted\": false, \"dur_ms\": 1839.622885}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329303728563091,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329303728377589,
+      "detail": {
+        "text_len": 4,
+        "head": "吃水果、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329303728377589, \"detail\": {\"text_len\": 4, \"head\": \"吃水果、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329305087409219,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329305087124937,
+      "detail": {
+        "text_len": 4,
+        "interrupted": false,
+        "dur_ms": 1358.74492
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329305087124937, \"detail\": {\"text_len\": 4, \"interrupted\": false, \"dur_ms\": 1358.74492}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329305087966665,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329305087821949,
+      "detail": {
+        "text_len": 9,
+        "head": "喝汤都会增加体重，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329305087821949, \"detail\": {\"text_len\": 9, \"head\": \"喝汤都会增加体重，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329307565649370,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329307565348009,
+      "detail": {
+        "text_len": 9,
+        "interrupted": false,
+        "dur_ms": 2477.522342
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329307565348009, \"detail\": {\"text_len\": 9, \"interrupted\": false, \"dur_ms\": 2477.522342}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329307566466742,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329307566211077,
+      "detail": {
+        "text_len": 4,
+        "head": "要留心。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329307566211077, \"detail\": {\"text_len\": 4, \"head\": \"要留心。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329308928204699,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329308927879893,
+      "detail": {
+        "text_len": 4,
+        "interrupted": false,
+        "dur_ms": 1361.666392
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329308927879893, \"detail\": {\"text_len\": 4, \"interrupted\": false, \"dur_ms\": 1361.666392}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329308928730694,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793329308928542553,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793329308928542553, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793329293076928655,
+          "arrival_ns": 1793329293077156904,
+          "source": "round",
+          "detail": {
+            "kind": "medical",
+            "chat_mode": false,
+            "source": "keyword",
+            "keyword_medical": true,
+            "chitchat": false,
+            "judge_kind": null,
+            "judge_ms": 0.0
+          }
+        }
+      ],
+      "rag_start": [
+        {
+          "t_ns": 1793329293077374504,
+          "arrival_ns": 1793329293077488906,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "rag_end": [
+        {
+          "t_ns": 1793329293087647858,
+          "arrival_ns": 1793329293087899562,
+          "source": "round",
+          "detail": {
+            "n_chunks": 3,
+            "took_ms": 10.19,
+            "top1": "血液透析患者如何控水（水平衡管理）"
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793329293600165477,
+          "arrival_ns": 1793329293600583648,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 884,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793329293600740186,
+          "arrival_ns": 1793329293601006869,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 884
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793329294517514734,
+          "arrival_ns": 1793329294517848328,
+          "source": "round",
+          "detail": {
+            "chars": 56
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793329293605674041,
+          "arrival_ns": 1793329293605888122,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793329298938663691,
+          "arrival_ns": 1793329298938871995,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793329293714619503,
+          "arrival_ns": 1793329293714846576,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "控制在5%内。"
+          }
+        },
+        {
+          "t_ns": 1793329294442039049,
+          "arrival_ns": 1793329294442196815,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "比如干体重60公斤，"
+          }
+        },
+        {
+          "t_ns": 1793329295378770050,
+          "arrival_ns": 1793329295379095574,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "透析间期增重别超3公斤。"
+          }
+        },
+        {
+          "t_ns": 1793329296380014889,
+          "arrival_ns": 1793329296380210925,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "多喝水、"
+          }
+        },
+        {
+          "t_ns": 1793329297043873296,
+          "arrival_ns": 1793329297044184996,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "吃水果、"
+          }
+        },
+        {
+          "t_ns": 1793329297548854405,
+          "arrival_ns": 1793329297548981564,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "喝汤都会增加体重，"
+          }
+        },
+        {
+          "t_ns": 1793329298431315119,
+          "arrival_ns": 1793329298431439628,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "要留心。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793329293714686158,
+          "arrival_ns": 1793329293715162670,
+          "source": "round",
+          "detail": {
+            "text_len": 7
+          }
+        },
+        {
+          "t_ns": 1793329294442099983,
+          "arrival_ns": 1793329294442374713,
+          "source": "round",
+          "detail": {
+            "text_len": 10
+          }
+        },
+        {
+          "t_ns": 1793329295378861957,
+          "arrival_ns": 1793329295379310385,
+          "source": "round",
+          "detail": {
+            "text_len": 12
+          }
+        },
+        {
+          "t_ns": 1793329296380054442,
+          "arrival_ns": 1793329296380441405,
+          "source": "round",
+          "detail": {
+            "text_len": 4
+          }
+        },
+        {
+          "t_ns": 1793329297043941636,
+          "arrival_ns": 1793329297044513178,
+          "source": "round",
+          "detail": {
+            "text_len": 4
+          }
+        },
+        {
+          "t_ns": 1793329297548897080,
+          "arrival_ns": 1793329297549165918,
+          "source": "round",
+          "detail": {
+            "text_len": 9
+          }
+        },
+        {
+          "t_ns": 1793329298431357076,
+          "arrival_ns": 1793329298431625755,
+          "source": "round",
+          "detail": {
+            "text_len": 4
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793329294437815484,
+          "arrival_ns": 1793329294438115738,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "dur_ms": 723.123698,
+            "audio_sec": 2.0,
+            "rtf": 0.361561849
+          }
+        },
+        {
+          "t_ns": 1793329295324393576,
+          "arrival_ns": 1793329295324721244,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "dur_ms": 882.288285,
+            "audio_sec": 2.48,
+            "rtf": 0.3557614052419355
+          }
+        },
+        {
+          "t_ns": 1793329296379371946,
+          "arrival_ns": 1793329296379735863,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "dur_ms": 1000.502299,
+            "audio_sec": 2.88,
+            "rtf": 0.3473966315972223
+          }
+        },
+        {
+          "t_ns": 1793329297043260262,
+          "arrival_ns": 1793329297043638757,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "dur_ms": 663.200296,
+            "audio_sec": 1.84,
+            "rtf": 0.3604349434782608
+          }
+        },
+        {
+          "t_ns": 1793329297548222383,
+          "arrival_ns": 1793329297548542292,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "dur_ms": 504.276047,
+            "audio_sec": 1.36,
+            "rtf": 0.37079121102941176
+          }
+        },
+        {
+          "t_ns": 1793329298430736588,
+          "arrival_ns": 1793329298431065076,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 881.834233,
+            "audio_sec": 2.48,
+            "rtf": 0.35557831975806453
+          }
+        },
+        {
+          "t_ns": 1793329298938025854,
+          "arrival_ns": 1793329298938310255,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "dur_ms": 506.663542,
+            "audio_sec": 1.36,
+            "rtf": 0.3725467220588235
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793329294518945910,
+          "arrival_ns": 1793329294519157179,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "控制在5%内。"
+          }
+        },
+        {
+          "t_ns": 1793329296524071248,
+          "arrival_ns": 1793329296524200073,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "比如干体重60公斤，"
+          }
+        },
+        {
+          "t_ns": 1793329299005886110,
+          "arrival_ns": 1793329299006045389,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "透析间期增重别超3公斤。"
+          }
+        },
+        {
+          "t_ns": 1793329301887851082,
+          "arrival_ns": 1793329301888114210,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "多喝水、"
+          }
+        },
+        {
+          "t_ns": 1793329303728377589,
+          "arrival_ns": 1793329303728563091,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "吃水果、"
+          }
+        },
+        {
+          "t_ns": 1793329305087821949,
+          "arrival_ns": 1793329305087966665,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "喝汤都会增加体重，"
+          }
+        },
+        {
+          "t_ns": 1793329307566211077,
+          "arrival_ns": 1793329307566466742,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "要留心。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793329296523416746,
+          "arrival_ns": 1793329296523739527,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "interrupted": false,
+            "dur_ms": 2004.468779
+          }
+        },
+        {
+          "t_ns": 1793329299005167246,
+          "arrival_ns": 1793329299005524971,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "interrupted": false,
+            "dur_ms": 2481.092839
+          }
+        },
+        {
+          "t_ns": 1793329301887015947,
+          "arrival_ns": 1793329301887409553,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "interrupted": false,
+            "dur_ms": 2881.12618
+          }
+        },
+        {
+          "t_ns": 1793329303727478906,
+          "arrival_ns": 1793329303727932802,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "interrupted": false,
+            "dur_ms": 1839.622885
+          }
+        },
+        {
+          "t_ns": 1793329305087124937,
+          "arrival_ns": 1793329305087409219,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "interrupted": false,
+            "dur_ms": 1358.74492
+          }
+        },
+        {
+          "t_ns": 1793329307565348009,
+          "arrival_ns": 1793329307565649370,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "interrupted": false,
+            "dur_ms": 2477.522342
+          }
+        },
+        {
+          "t_ns": 1793329308927879893,
+          "arrival_ns": 1793329308928204699,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "interrupted": false,
+            "dur_ms": 1361.666392
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793329308928542553,
+          "arrival_ns": 1793329308928730694,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 20,
+    "interval_s": 2.0
+  }
+}

@@ -1,0 +1,687 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1064920",
+  "host": "artrc",
+  "tag": "chat50",
+  "round_index": 39,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T10:34:10.626",
+  "finished_at": "2026-10-30T10:34:20.116",
+  "duration_s": 9.49,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "你会写诗吗",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793327650626918338,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793327650626521267,
+    "t_publish_question_ns": 1793327650626918338,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793327650627586292,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793327650628028448,
+      "ali_llm_output_start": 1793327652322248520,
+      "ali_llm_output_first_text": 1793327652322824380,
+      "ali_llm_output_done": 1793327652837286083,
+      "tts_realtime_data_start": 1793327652322563855,
+      "tts_realtime_data_first_text": 1793327652395414016,
+      "tts_realtime_data_done": 1793327652837680682,
+      "tts_session_finished": 1793327659812723180
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793327652395730619,
+      "tts_local.synth_start_first": 1793327652395791450,
+      "tts_local.synth_end_first": 1793327653088171467,
+      "tts_local.play_start_first": 1793327653155086545,
+      "tts_local.play_end_last": 1793327659811215012,
+      "tts_local.session_finished": 1793327659812189168
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.11,
+    "router_to_llm_first_ms": 1694.796,
+    "question_to_llm_first_ms": 1695.906,
+    "llm_first_to_done_ms": 514.462,
+    "question_to_llm_done_ms": 2210.368,
+    "llm_first_to_tts_first_text_ms": 72.59,
+    "question_to_tts_first_text_ms": 1768.496,
+    "first_tts_text_to_first_play_start_ms": 759.673,
+    "tts_rx_to_synth_end_ms": 692.441,
+    "tts_rx_to_play_start_ms": 759.356,
+    "tts_synth_end_to_play_start_ms": 66.915,
+    "question_to_first_audio_ms": 2528.168,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 9185.805,
+    "audio_total_sum_ms": 6655.231,
+    "audio_first_to_last_ms": 6656.128
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 1110110,
+    "router_to_llm_first_ns": 1694795932,
+    "question_to_llm_first_ns": 1695906042,
+    "llm_first_to_done_ns": 514461703,
+    "question_to_llm_done_ns": 2210367745,
+    "llm_first_to_tts_first_text_ns": 72589636,
+    "question_to_tts_first_text_ns": 1768495678,
+    "first_tts_text_to_first_play_start_ns": 759672529,
+    "tts_rx_to_synth_end_ns": 692440848,
+    "tts_rx_to_play_start_ns": 759355926,
+    "tts_synth_end_to_play_start_ns": 66915078,
+    "question_to_first_audio_ns": 2528168207,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 9185804842,
+    "audio_total_sum_ns": 6655231402,
+    "audio_first_to_last_ns": 6656128467
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 1695906042,
+      "ms": 1695.906
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 514461703,
+      "ms": 514.462
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 72589636,
+      "ms": 72.59
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 759672529,
+      "ms": 759.673
+    },
+    "question_to_first_play_start": {
+      "ns": 2528168207,
+      "ms": 2528.168
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 9185804842,
+      "ms": 9185.805
+    },
+    "audio_total_sec": {
+      "ns": 6655231402,
+      "ms": 6655.231,
+      "sec": 6.655
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.11,
+    "router_to_llm_first_ms": 1694.796,
+    "question_to_llm_first_ms": 1695.906,
+    "llm_first_to_done_ms": 514.462,
+    "question_to_llm_done_ms": 2210.368,
+    "llm_first_to_tts_first_text_ms": 72.59,
+    "question_to_tts_first_text_ms": 1768.496,
+    "first_tts_text_to_first_play_start_ms": 759.673,
+    "tts_rx_to_synth_end_ms": 692.441,
+    "tts_rx_to_play_start_ms": 759.356,
+    "tts_synth_end_to_play_start_ms": 66.915,
+    "question_to_first_audio_ms": 2528.168,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 9185.805,
+    "audio_total_sum_ms": 6655.231,
+    "audio_first_to_last_ms": 6656.128
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793327652322248520,
+      "first_text_rx_ns": 1793327652322824380,
+      "done_rx_ns": 1793327652837286083,
+      "chunk_count": 8,
+      "char_count": 25,
+      "chunks": [
+        {
+          "t_ns": 1793327652322824380,
+          "text": "会"
+        },
+        {
+          "t_ns": 1793327652323033746,
+          "text": "写几句"
+        },
+        {
+          "t_ns": 1793327652384472382,
+          "text": "小"
+        },
+        {
+          "t_ns": 1793327652395122951,
+          "text": "诗，像"
+        },
+        {
+          "t_ns": 1793327652521052063,
+          "text": "晨光里轻轻"
+        },
+        {
+          "t_ns": 1793327652673488944,
+          "text": "落下的露珠～"
+        },
+        {
+          "t_ns": 1793327652836426684,
+          "text": "想听哪一种"
+        },
+        {
+          "t_ns": 1793327652836649397,
+          "text": "？"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793327652395414016,
+      "done_rx_ns": 1793327652837680682,
+      "text_count": 2,
+      "texts": [
+        {
+          "t_ns": 1793327652395414016,
+          "text": "会写几句小诗，"
+        },
+        {
+          "t_ns": 1793327652836942819,
+          "text": "像晨光里轻轻落下的露珠～想听哪一种？"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 18,
+    "latency_events_total": 18,
+    "asr_events": 0,
+    "tts_events": 13,
+    "tts_play_pairs": 2,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793327651824111217,
+      "node": "llm_medical",
+      "stage": "intent_judge",
+      "t_ns": 1793327651823805844,
+      "detail": {
+        "model": "qwen-flash",
+        "ms": 1195.2,
+        "answer": "聊",
+        "kind": "chat"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent_judge\", \"t_ns\": 1793327651823805844, \"detail\": {\"model\": \"qwen-flash\", \"ms\": 1195.2, \"answer\": \"聊\", \"kind\": \"chat\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327651824315987,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793327651823964232,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "llm:qwen-flash",
+        "keyword_medical": false,
+        "judge_kind": "chat",
+        "judge_ms": 1195.2
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793327651823964232, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"llm:qwen-flash\", \"keyword_medical\": false, \"judge_kind\": \"chat\", \"judge_ms\": 1195.2}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327652322300467,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793327652321945538,
+      "detail": {
+        "prompt_chars": 399,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793327652321945538, \"detail\": {\"prompt_chars\": 399, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327652322600425,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793327652322434411,
+      "detail": {
+        "prompt_chars": 399
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793327652322434411, \"detail\": {\"prompt_chars\": 399}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327652323439739,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793327652323145836,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793327652323145836, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327652395903289,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327652395730619,
+      "detail": {
+        "text_len": 7,
+        "head": "会写几句小诗，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327652395730619, \"detail\": {\"text_len\": 7, \"head\": \"会写几句小诗，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327652396097733,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327652395791450,
+      "detail": {
+        "text_len": 7
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327652395791450, \"detail\": {\"text_len\": 7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327652837105678,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793327652836972615,
+      "detail": {
+        "chars": 28
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793327652836972615, \"detail\": {\"chars\": 28}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327653088447915,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327653088171467,
+      "detail": {
+        "text_len": 7,
+        "dur_ms": 692.375517,
+        "audio_sec": 1.84,
+        "rtf": 0.3762910418478261
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327653088171467, \"detail\": {\"text_len\": 7, \"dur_ms\": 692.375517, \"audio_sec\": 1.84, \"rtf\": 0.3762910418478261}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327653089519756,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327653089339298,
+      "detail": {
+        "text_len": 18,
+        "head": "像晨光里轻轻落下的露珠～想听哪一种？"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327653089339298, \"detail\": {\"text_len\": 18, \"head\": \"像晨光里轻轻落下的露珠～想听哪一种？\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327653089721491,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327653089397701,
+      "detail": {
+        "text_len": 18
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327653089397701, \"detail\": {\"text_len\": 18}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327653155367325,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327653155086545,
+      "detail": {
+        "text_len": 7,
+        "head": "会写几句小诗，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327653155086545, \"detail\": {\"text_len\": 7, \"head\": \"会写几句小诗，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327654735174203,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327654734849505,
+      "detail": {
+        "text_len": 18,
+        "dur_ms": 1645.445911,
+        "audio_sec": 4.8,
+        "rtf": 0.34280123145833336
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327654734849505, \"detail\": {\"text_len\": 18, \"dur_ms\": 1645.445911, \"audio_sec\": 4.8, \"rtf\": 0.34280123145833336}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327654735734502,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793327654735544918,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793327654735544918, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327654997046676,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327654996696499,
+      "detail": {
+        "text_len": 7,
+        "interrupted": false,
+        "dur_ms": 1841.60701
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327654996696499, \"detail\": {\"text_len\": 7, \"interrupted\": false, \"dur_ms\": 1841.60701}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327654997751447,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327654997593564,
+      "detail": {
+        "text_len": 18,
+        "head": "像晨光里轻轻落下的露珠～想听哪一种？"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327654997593564, \"detail\": {\"text_len\": 18, \"head\": \"像晨光里轻轻落下的露珠～想听哪一种？\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327659811579609,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327659811215012,
+      "detail": {
+        "text_len": 18,
+        "interrupted": false,
+        "dur_ms": 4813.617607
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327659811215012, \"detail\": {\"text_len\": 18, \"interrupted\": false, \"dur_ms\": 4813.617607}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327659812454658,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793327659812189168,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793327659812189168, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent_judge": [
+        {
+          "t_ns": 1793327651823805844,
+          "arrival_ns": 1793327651824111217,
+          "source": "round",
+          "detail": {
+            "model": "qwen-flash",
+            "ms": 1195.2,
+            "answer": "聊",
+            "kind": "chat"
+          }
+        }
+      ],
+      "intent": [
+        {
+          "t_ns": 1793327651823964232,
+          "arrival_ns": 1793327651824315987,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "llm:qwen-flash",
+            "keyword_medical": false,
+            "judge_kind": "chat",
+            "judge_ms": 1195.2
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793327652321945538,
+          "arrival_ns": 1793327652322300467,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 399,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793327652322434411,
+          "arrival_ns": 1793327652322600425,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 399
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793327652836972615,
+          "arrival_ns": 1793327652837105678,
+          "source": "round",
+          "detail": {
+            "chars": 28
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793327652323145836,
+          "arrival_ns": 1793327652323439739,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793327654735544918,
+          "arrival_ns": 1793327654735734502,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793327652395730619,
+          "arrival_ns": 1793327652395903289,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "会写几句小诗，"
+          }
+        },
+        {
+          "t_ns": 1793327653089339298,
+          "arrival_ns": 1793327653089519756,
+          "source": "round",
+          "detail": {
+            "text_len": 18,
+            "head": "像晨光里轻轻落下的露珠～想听哪一种？"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793327652395791450,
+          "arrival_ns": 1793327652396097733,
+          "source": "round",
+          "detail": {
+            "text_len": 7
+          }
+        },
+        {
+          "t_ns": 1793327653089397701,
+          "arrival_ns": 1793327653089721491,
+          "source": "round",
+          "detail": {
+            "text_len": 18
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793327653088171467,
+          "arrival_ns": 1793327653088447915,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "dur_ms": 692.375517,
+            "audio_sec": 1.84,
+            "rtf": 0.3762910418478261
+          }
+        },
+        {
+          "t_ns": 1793327654734849505,
+          "arrival_ns": 1793327654735174203,
+          "source": "round",
+          "detail": {
+            "text_len": 18,
+            "dur_ms": 1645.445911,
+            "audio_sec": 4.8,
+            "rtf": 0.34280123145833336
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793327653155086545,
+          "arrival_ns": 1793327653155367325,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "会写几句小诗，"
+          }
+        },
+        {
+          "t_ns": 1793327654997593564,
+          "arrival_ns": 1793327654997751447,
+          "source": "round",
+          "detail": {
+            "text_len": 18,
+            "head": "像晨光里轻轻落下的露珠～想听哪一种？"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793327654996696499,
+          "arrival_ns": 1793327654997046676,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "interrupted": false,
+            "dur_ms": 1841.60701
+          }
+        },
+        {
+          "t_ns": 1793327659811215012,
+          "arrival_ns": 1793327659811579609,
+          "source": "round",
+          "detail": {
+            "text_len": 18,
+            "interrupted": false,
+            "dur_ms": 4813.617607
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793327659812189168,
+          "arrival_ns": 1793327659812454658,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 50,
+    "interval_s": 2.0
+  }
+}

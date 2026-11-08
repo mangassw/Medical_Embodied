@@ -1,0 +1,936 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1058399",
+  "host": "artrc",
+  "tag": "kb50",
+  "round_index": 17,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T10:19:58.735",
+  "finished_at": "2026-10-30T10:20:10.516",
+  "duration_s": 11.782,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "透析中腿抽筋怎么办？",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793326798735591179,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793326798735163290,
+    "t_publish_question_ns": 1793326798735591179,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793326798736184671,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793326798736474059,
+      "ali_llm_output_start": 1793326799765570164,
+      "ali_llm_output_first_text": 1793326799765972699,
+      "ali_llm_output_done": 1793326800481051378,
+      "tts_realtime_data_start": 1793326799766021209,
+      "tts_realtime_data_first_text": 1793326799829841649,
+      "tts_realtime_data_done": 1793326800481404132,
+      "tts_session_finished": 1793326810212464179
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793326799830198385,
+      "tts_local.synth_start_first": 1793326799830278492,
+      "tts_local.synth_end_first": 1793326800284804368,
+      "tts_local.play_start_first": 1793326800355185008,
+      "tts_local.play_end_last": 1793326810211267339,
+      "tts_local.session_finished": 1793326810212016291
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.883,
+    "router_to_llm_first_ms": 1029.499,
+    "question_to_llm_first_ms": 1030.382,
+    "llm_first_to_done_ms": 715.079,
+    "question_to_llm_done_ms": 1745.46,
+    "llm_first_to_tts_first_text_ms": 63.869,
+    "question_to_tts_first_text_ms": 1094.25,
+    "first_tts_text_to_first_play_start_ms": 525.343,
+    "tts_rx_to_synth_end_ms": 454.606,
+    "tts_rx_to_play_start_ms": 524.987,
+    "tts_synth_end_to_play_start_ms": 70.381,
+    "question_to_first_audio_ms": 1619.594,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 11476.873,
+    "audio_total_sum_ms": 9853.58,
+    "audio_first_to_last_ms": 9856.082
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 882880,
+    "router_to_llm_first_ns": 1029498640,
+    "question_to_llm_first_ns": 1030381520,
+    "llm_first_to_done_ns": 715078679,
+    "question_to_llm_done_ns": 1745460199,
+    "llm_first_to_tts_first_text_ns": 63868950,
+    "question_to_tts_first_text_ns": 1094250470,
+    "first_tts_text_to_first_play_start_ns": 525343359,
+    "tts_rx_to_synth_end_ns": 454605983,
+    "tts_rx_to_play_start_ns": 524986623,
+    "tts_synth_end_to_play_start_ns": 70380640,
+    "question_to_first_audio_ns": 1619593829,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 11476873000,
+    "audio_total_sum_ns": 9853580411,
+    "audio_first_to_last_ns": 9856082331
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 1030381520,
+      "ms": 1030.382
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 715078679,
+      "ms": 715.079
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 63868950,
+      "ms": 63.869
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 525343359,
+      "ms": 525.343
+    },
+    "question_to_first_play_start": {
+      "ns": 1619593829,
+      "ms": 1619.594
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 11476873000,
+      "ms": 11476.873
+    },
+    "audio_total_sec": {
+      "ns": 9853580411,
+      "ms": 9853.58,
+      "sec": 9.854
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.883,
+    "router_to_llm_first_ms": 1029.499,
+    "question_to_llm_first_ms": 1030.382,
+    "llm_first_to_done_ms": 715.079,
+    "question_to_llm_done_ms": 1745.46,
+    "llm_first_to_tts_first_text_ms": 63.869,
+    "question_to_tts_first_text_ms": 1094.25,
+    "first_tts_text_to_first_play_start_ms": 525.343,
+    "tts_rx_to_synth_end_ms": 454.606,
+    "tts_rx_to_play_start_ms": 524.987,
+    "tts_synth_end_to_play_start_ms": 70.381,
+    "question_to_first_audio_ms": 1619.594,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 11476.873,
+    "audio_total_sum_ms": 9853.58,
+    "audio_first_to_last_ms": 9856.082
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793326799765570164,
+      "first_text_rx_ns": 1793326799765972699,
+      "done_rx_ns": 1793326800481051378,
+      "chunk_count": 10,
+      "char_count": 42,
+      "chunks": [
+        {
+          "t_ns": 1793326799765972699,
+          "text": "可以"
+        },
+        {
+          "t_ns": 1793326799792764786,
+          "text": "补"
+        },
+        {
+          "t_ns": 1793326799828686376,
+          "text": "钙。"
+        },
+        {
+          "t_ns": 1793326800084759479,
+          "text": "抽"
+        },
+        {
+          "t_ns": 1793326800084934189,
+          "text": "筋常因超滤过"
+        },
+        {
+          "t_ns": 1793326800120647769,
+          "text": "快、干体重过低"
+        },
+        {
+          "t_ns": 1793326800277423508,
+          "text": "或电解质紊乱"
+        },
+        {
+          "t_ns": 1793326800281201378,
+          "text": "引起。  \n建议"
+        },
+        {
+          "t_ns": 1793326800416776222,
+          "text": "及时告诉护士处理"
+        },
+        {
+          "t_ns": 1793326800417044238,
+          "text": "。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793326799829841649,
+      "done_rx_ns": 1793326800481404132,
+      "text_count": 4,
+      "texts": [
+        {
+          "t_ns": 1793326799829841649,
+          "text": "可以补钙。"
+        },
+        {
+          "t_ns": 1793326800120843367,
+          "text": "抽筋常因超滤过快、"
+        },
+        {
+          "t_ns": 1793326800281431895,
+          "text": "干体重过低或电解质紊乱引起。"
+        },
+        {
+          "t_ns": 1793326800417251560,
+          "text": "建议及时告诉护士处理。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 29,
+    "latency_events_total": 29,
+    "asr_events": 0,
+    "tts_events": 23,
+    "tts_play_pairs": 4,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793326798757739856,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793326798757459896,
+      "detail": {
+        "kind": "medical",
+        "chat_mode": false,
+        "source": "keyword",
+        "keyword_medical": true,
+        "judge_kind": null,
+        "judge_ms": 0.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793326798757459896, \"detail\": {\"kind\": \"medical\", \"chat_mode\": false, \"source\": \"keyword\", \"keyword_medical\": true, \"judge_kind\": null, \"judge_ms\": 0.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326798758137132,
+      "node": "llm_medical",
+      "stage": "rag_start",
+      "t_ns": 1793326798757988277,
+      "detail": {},
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_start\", \"t_ns\": 1793326798757988277, \"detail\": {}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326798768029528,
+      "node": "llm_medical",
+      "stage": "rag_end",
+      "t_ns": 1793326798767724873,
+      "detail": {
+        "n_chunks": 4,
+        "took_ms": 9.63,
+        "top1": "透析相关并发症与处理"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_end\", \"t_ns\": 1793326798767724873, \"detail\": {\"n_chunks\": 4, \"took_ms\": 9.63, \"top1\": \"透析相关并发症与处理\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326799765633392,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793326799765231332,
+      "detail": {
+        "prompt_chars": 1187,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793326799765231332, \"detail\": {\"prompt_chars\": 1187, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326799766062798,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793326799765689332,
+      "detail": {
+        "prompt_chars": 1187
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793326799765689332, \"detail\": {\"prompt_chars\": 1187}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326799766368912,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793326799765940650,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793326799765940650, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326799830373519,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793326799830198385,
+      "detail": {
+        "text_len": 5,
+        "head": "可以补钙。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793326799830198385, \"detail\": {\"text_len\": 5, \"head\": \"可以补钙。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326799830619713,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793326799830278492,
+      "detail": {
+        "text_len": 5
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793326799830278492, \"detail\": {\"text_len\": 5}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326800285038662,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793326800284804368,
+      "detail": {
+        "text_len": 5,
+        "dur_ms": 454.520727,
+        "audio_sec": 1.2,
+        "rtf": 0.37876727250000003
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793326800284804368, \"detail\": {\"text_len\": 5, \"dur_ms\": 454.520727, \"audio_sec\": 1.2, \"rtf\": 0.37876727250000003}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326800287338408,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793326800287126676,
+      "detail": {
+        "text_len": 9,
+        "head": "抽筋常因超滤过快、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793326800287126676, \"detail\": {\"text_len\": 9, \"head\": \"抽筋常因超滤过快、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326800287567738,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793326800287199571,
+      "detail": {
+        "text_len": 9
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793326800287199571, \"detail\": {\"text_len\": 9}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326800355436131,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793326800355185008,
+      "detail": {
+        "text_len": 5,
+        "head": "可以补钙。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793326800355185008, \"detail\": {\"text_len\": 5, \"head\": \"可以补钙。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326800481094597,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793326800480755158,
+      "detail": {
+        "chars": 45
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793326800480755158, \"detail\": {\"chars\": 45}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326801322429875,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793326801322070774,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 1034.86635,
+        "audio_sec": 2.96,
+        "rtf": 0.34961701013513513
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793326801322070774, \"detail\": {\"text_len\": 9, \"dur_ms\": 1034.86635, \"audio_sec\": 2.96, \"rtf\": 0.34961701013513513}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326801322995232,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793326801322834991,
+      "detail": {
+        "text_len": 14,
+        "head": "干体重过低或电解质紊乱引起。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793326801322834991, \"detail\": {\"text_len\": 14, \"head\": \"干体重过低或电解质紊乱引起。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326801323187707,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793326801322892046,
+      "detail": {
+        "text_len": 14
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793326801322892046, \"detail\": {\"text_len\": 14}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326801556949387,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793326801556652398,
+      "detail": {
+        "text_len": 5,
+        "interrupted": false,
+        "dur_ms": 1201.464791
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793326801556652398, \"detail\": {\"text_len\": 5, \"interrupted\": false, \"dur_ms\": 1201.464791}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326801557458419,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793326801557323050,
+      "detail": {
+        "text_len": 9,
+        "head": "抽筋常因超滤过快、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793326801557323050, \"detail\": {\"text_len\": 9, \"head\": \"抽筋常因超滤过快、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326802514641581,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793326802514292963,
+      "detail": {
+        "text_len": 14,
+        "dur_ms": 1191.393645,
+        "audio_sec": 3.36,
+        "rtf": 0.3545814419642857
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793326802514292963, \"detail\": {\"text_len\": 14, \"dur_ms\": 1191.393645, \"audio_sec\": 3.36, \"rtf\": 0.3545814419642857}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326802515231235,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793326802514992508,
+      "detail": {
+        "text_len": 11,
+        "head": "建议及时告诉护士处理。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793326802514992508, \"detail\": {\"text_len\": 11, \"head\": \"建议及时告诉护士处理。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326802515449613,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793326802515087312,
+      "detail": {
+        "text_len": 11
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793326802515087312, \"detail\": {\"text_len\": 11}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326803340071066,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793326803339690026,
+      "detail": {
+        "text_len": 11,
+        "dur_ms": 824.597228,
+        "audio_sec": 2.32,
+        "rtf": 0.35542983965517244
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793326803339690026, \"detail\": {\"text_len\": 11, \"dur_ms\": 824.597228, \"audio_sec\": 2.32, \"rtf\": 0.35542983965517244}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326803340702319,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793326803340344489,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793326803340344489, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326804531219937,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793326804530766817,
+      "detail": {
+        "text_len": 9,
+        "interrupted": false,
+        "dur_ms": 2973.438593
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793326804530766817, \"detail\": {\"text_len\": 9, \"interrupted\": false, \"dur_ms\": 2973.438593}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326804531994188,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793326804531726702,
+      "detail": {
+        "text_len": 14,
+        "head": "干体重过低或电解质紊乱引起。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793326804531726702, \"detail\": {\"text_len\": 14, \"head\": \"干体重过低或电解质紊乱引起。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326807892404855,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793326807891888036,
+      "detail": {
+        "text_len": 14,
+        "interrupted": false,
+        "dur_ms": 3360.158733
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793326807891888036, \"detail\": {\"text_len\": 14, \"interrupted\": false, \"dur_ms\": 3360.158733}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326807892919617,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793326807892759419,
+      "detail": {
+        "text_len": 11,
+        "head": "建议及时告诉护士处理。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793326807892759419, \"detail\": {\"text_len\": 11, \"head\": \"建议及时告诉护士处理。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326810211622661,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793326810211267339,
+      "detail": {
+        "text_len": 11,
+        "interrupted": false,
+        "dur_ms": 2318.504407
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793326810211267339, \"detail\": {\"text_len\": 11, \"interrupted\": false, \"dur_ms\": 2318.504407}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326810212219272,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793326810212016291,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793326810212016291, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793326798757459896,
+          "arrival_ns": 1793326798757739856,
+          "source": "round",
+          "detail": {
+            "kind": "medical",
+            "chat_mode": false,
+            "source": "keyword",
+            "keyword_medical": true,
+            "judge_kind": null,
+            "judge_ms": 0.0
+          }
+        }
+      ],
+      "rag_start": [
+        {
+          "t_ns": 1793326798757988277,
+          "arrival_ns": 1793326798758137132,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "rag_end": [
+        {
+          "t_ns": 1793326798767724873,
+          "arrival_ns": 1793326798768029528,
+          "source": "round",
+          "detail": {
+            "n_chunks": 4,
+            "took_ms": 9.63,
+            "top1": "透析相关并发症与处理"
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793326799765231332,
+          "arrival_ns": 1793326799765633392,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1187,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793326799765689332,
+          "arrival_ns": 1793326799766062798,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1187
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793326800480755158,
+          "arrival_ns": 1793326800481094597,
+          "source": "round",
+          "detail": {
+            "chars": 45
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793326799765940650,
+          "arrival_ns": 1793326799766368912,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793326803340344489,
+          "arrival_ns": 1793326803340702319,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793326799830198385,
+          "arrival_ns": 1793326799830373519,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "可以补钙。"
+          }
+        },
+        {
+          "t_ns": 1793326800287126676,
+          "arrival_ns": 1793326800287338408,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "抽筋常因超滤过快、"
+          }
+        },
+        {
+          "t_ns": 1793326801322834991,
+          "arrival_ns": 1793326801322995232,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "head": "干体重过低或电解质紊乱引起。"
+          }
+        },
+        {
+          "t_ns": 1793326802514992508,
+          "arrival_ns": 1793326802515231235,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "建议及时告诉护士处理。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793326799830278492,
+          "arrival_ns": 1793326799830619713,
+          "source": "round",
+          "detail": {
+            "text_len": 5
+          }
+        },
+        {
+          "t_ns": 1793326800287199571,
+          "arrival_ns": 1793326800287567738,
+          "source": "round",
+          "detail": {
+            "text_len": 9
+          }
+        },
+        {
+          "t_ns": 1793326801322892046,
+          "arrival_ns": 1793326801323187707,
+          "source": "round",
+          "detail": {
+            "text_len": 14
+          }
+        },
+        {
+          "t_ns": 1793326802515087312,
+          "arrival_ns": 1793326802515449613,
+          "source": "round",
+          "detail": {
+            "text_len": 11
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793326800284804368,
+          "arrival_ns": 1793326800285038662,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "dur_ms": 454.520727,
+            "audio_sec": 1.2,
+            "rtf": 0.37876727250000003
+          }
+        },
+        {
+          "t_ns": 1793326801322070774,
+          "arrival_ns": 1793326801322429875,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 1034.86635,
+            "audio_sec": 2.96,
+            "rtf": 0.34961701013513513
+          }
+        },
+        {
+          "t_ns": 1793326802514292963,
+          "arrival_ns": 1793326802514641581,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "dur_ms": 1191.393645,
+            "audio_sec": 3.36,
+            "rtf": 0.3545814419642857
+          }
+        },
+        {
+          "t_ns": 1793326803339690026,
+          "arrival_ns": 1793326803340071066,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "dur_ms": 824.597228,
+            "audio_sec": 2.32,
+            "rtf": 0.35542983965517244
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793326800355185008,
+          "arrival_ns": 1793326800355436131,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "可以补钙。"
+          }
+        },
+        {
+          "t_ns": 1793326801557323050,
+          "arrival_ns": 1793326801557458419,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "抽筋常因超滤过快、"
+          }
+        },
+        {
+          "t_ns": 1793326804531726702,
+          "arrival_ns": 1793326804531994188,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "head": "干体重过低或电解质紊乱引起。"
+          }
+        },
+        {
+          "t_ns": 1793326807892759419,
+          "arrival_ns": 1793326807892919617,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "建议及时告诉护士处理。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793326801556652398,
+          "arrival_ns": 1793326801556949387,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "interrupted": false,
+            "dur_ms": 1201.464791
+          }
+        },
+        {
+          "t_ns": 1793326804530766817,
+          "arrival_ns": 1793326804531219937,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "interrupted": false,
+            "dur_ms": 2973.438593
+          }
+        },
+        {
+          "t_ns": 1793326807891888036,
+          "arrival_ns": 1793326807892404855,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "interrupted": false,
+            "dur_ms": 3360.158733
+          }
+        },
+        {
+          "t_ns": 1793326810211267339,
+          "arrival_ns": 1793326810211622661,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "interrupted": false,
+            "dur_ms": 2318.504407
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793326810212016291,
+          "arrival_ns": 1793326810212219272,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 50,
+    "interval_s": 2.0
+  }
+}

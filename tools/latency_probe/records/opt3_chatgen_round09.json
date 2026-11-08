@@ -1,0 +1,693 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1089655",
+  "host": "artrc",
+  "tag": "opt3_chatgen",
+  "round_index": 9,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T11:36:15.100",
+  "finished_at": "2026-10-30T11:36:26.554",
+  "duration_s": 11.453,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "世界上最高的山是哪座",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793331375101253918,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793331375100783828,
+    "t_publish_question_ns": 1793331375101253918,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793331375101818937,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793331375102205386,
+      "ali_llm_output_start": 1793331376902045088,
+      "ali_llm_output_first_text": 1793331376902447797,
+      "ali_llm_output_done": 1793331377656781559,
+      "tts_realtime_data_start": 1793331376902503470,
+      "tts_realtime_data_first_text": 1793331376994238896,
+      "tts_realtime_data_done": 1793331377656814946,
+      "tts_session_finished": 1793331386253807526
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793331376994408913,
+      "tts_local.synth_start_first": 1793331376994476011,
+      "tts_local.synth_end_first": 1793331377560201486,
+      "tts_local.play_start_first": 1793331377615530750,
+      "tts_local.play_end_last": 1793331386252895478,
+      "tts_local.session_finished": 1793331386253587583
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.951,
+    "router_to_llm_first_ms": 1800.242,
+    "question_to_llm_first_ms": 1801.194,
+    "llm_first_to_done_ms": 754.334,
+    "question_to_llm_done_ms": 2555.528,
+    "llm_first_to_tts_first_text_ms": 91.791,
+    "question_to_tts_first_text_ms": 1892.985,
+    "first_tts_text_to_first_play_start_ms": 621.292,
+    "tts_rx_to_synth_end_ms": 565.793,
+    "tts_rx_to_play_start_ms": 621.122,
+    "tts_synth_end_to_play_start_ms": 55.329,
+    "question_to_first_audio_ms": 2514.277,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 11152.554,
+    "audio_total_sum_ms": 8395.85,
+    "audio_first_to_last_ms": 8637.365
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 951468,
+    "router_to_llm_first_ns": 1800242411,
+    "question_to_llm_first_ns": 1801193879,
+    "llm_first_to_done_ns": 754333762,
+    "question_to_llm_done_ns": 2555527641,
+    "llm_first_to_tts_first_text_ns": 91791099,
+    "question_to_tts_first_text_ns": 1892984978,
+    "first_tts_text_to_first_play_start_ns": 621291854,
+    "tts_rx_to_synth_end_ns": 565792573,
+    "tts_rx_to_play_start_ns": 621121837,
+    "tts_synth_end_to_play_start_ns": 55329264,
+    "question_to_first_audio_ns": 2514276832,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 11152553608,
+    "audio_total_sum_ns": 8395850335,
+    "audio_first_to_last_ns": 8637364728
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 1801193879,
+      "ms": 1801.194
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 754333762,
+      "ms": 754.334
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 91791099,
+      "ms": 91.791
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 621291854,
+      "ms": 621.292
+    },
+    "question_to_first_play_start": {
+      "ns": 2514276832,
+      "ms": 2514.277
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 11152553608,
+      "ms": 11152.554
+    },
+    "audio_total_sec": {
+      "ns": 8395850335,
+      "ms": 8395.85,
+      "sec": 8.396
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.951,
+    "router_to_llm_first_ms": 1800.242,
+    "question_to_llm_first_ms": 1801.194,
+    "llm_first_to_done_ms": 754.334,
+    "question_to_llm_done_ms": 2555.528,
+    "llm_first_to_tts_first_text_ms": 91.791,
+    "question_to_tts_first_text_ms": 1892.985,
+    "first_tts_text_to_first_play_start_ms": 621.292,
+    "tts_rx_to_synth_end_ms": 565.793,
+    "tts_rx_to_play_start_ms": 621.122,
+    "tts_synth_end_to_play_start_ms": 55.329,
+    "question_to_first_audio_ms": 2514.277,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 11152.554,
+    "audio_total_sum_ms": 8395.85,
+    "audio_first_to_last_ms": 8637.365
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793331376902045088,
+      "first_text_rx_ns": 1793331376902447797,
+      "done_rx_ns": 1793331377656781559,
+      "chunk_count": 9,
+      "char_count": 35,
+      "chunks": [
+        {
+          "t_ns": 1793331376902447797,
+          "text": "珠"
+        },
+        {
+          "t_ns": 1793331376915654764,
+          "text": "穆"
+        },
+        {
+          "t_ns": 1793331376993648458,
+          "text": "朗玛峰"
+        },
+        {
+          "t_ns": 1793331376993872340,
+          "text": "，海拔"
+        },
+        {
+          "t_ns": 1793331377102316626,
+          "text": "8848.8"
+        },
+        {
+          "t_ns": 1793331377267099216,
+          "text": "6米～  \n它可是"
+        },
+        {
+          "t_ns": 1793331377385535069,
+          "text": "站在地球头顶"
+        },
+        {
+          "t_ns": 1793331377497220868,
+          "text": "看云的人"
+        },
+        {
+          "t_ns": 1793331377620683841,
+          "text": "呀。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793331376994238896,
+      "done_rx_ns": 1793331377656814946,
+      "text_count": 2,
+      "texts": [
+        {
+          "t_ns": 1793331376994238896,
+          "text": "珠穆朗玛峰，"
+        },
+        {
+          "t_ns": 1793331377621020074,
+          "text": "海拔8848.86米～  \n它可是站在地球头顶看云的人呀。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 18,
+    "latency_events_total": 18,
+    "asr_events": 0,
+    "tts_events": 13,
+    "tts_play_pairs": 2,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793331376183758431,
+      "node": "llm_medical",
+      "stage": "intent_judge",
+      "t_ns": 1793331376183422897,
+      "detail": {
+        "model": "qwen-flash",
+        "ms": 1080.4,
+        "answer": "聊",
+        "kind": "chat"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent_judge\", \"t_ns\": 1793331376183422897, \"detail\": {\"model\": \"qwen-flash\", \"ms\": 1080.4, \"answer\": \"聊\", \"kind\": \"chat\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331376183956819,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793331376183558436,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "llm:qwen-flash",
+        "keyword_medical": false,
+        "chitchat": false,
+        "judge_kind": "chat",
+        "judge_ms": 1080.4
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793331376183558436, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"llm:qwen-flash\", \"keyword_medical\": false, \"chitchat\": false, \"judge_kind\": \"chat\", \"judge_ms\": 1080.4}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331376902110077,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793331376901774470,
+      "detail": {
+        "prompt_chars": 435,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793331376901774470, \"detail\": {\"prompt_chars\": 435, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331376902565339,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793331376902177873,
+      "detail": {
+        "prompt_chars": 435
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793331376902177873, \"detail\": {\"prompt_chars\": 435}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331376902909678,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793331376902646172,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793331376902646172, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331376994616342,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793331376994408913,
+      "detail": {
+        "text_len": 6,
+        "head": "珠穆朗玛峰，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793331376994408913, \"detail\": {\"text_len\": 6, \"head\": \"珠穆朗玛峰，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331376994859205,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793331376994476011,
+      "detail": {
+        "text_len": 6
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793331376994476011, \"detail\": {\"text_len\": 6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331377560504601,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793331377560201486,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 565.721894,
+        "audio_sec": 1.76,
+        "rtf": 0.32143289431818184
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793331377560201486, \"detail\": {\"text_len\": 6, \"dur_ms\": 565.721894, \"audio_sec\": 1.76, \"rtf\": 0.32143289431818184}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331377615717416,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793331377615530750,
+      "detail": {
+        "text_len": 6,
+        "head": "珠穆朗玛峰，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793331377615530750, \"detail\": {\"text_len\": 6, \"head\": \"珠穆朗玛峰，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331377621330274,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793331377621138843,
+      "detail": {
+        "text_len": 29,
+        "head": "海拔8848.86米～  \n它可是站在地球头顶看"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793331377621138843, \"detail\": {\"text_len\": 29, \"head\": \"海拔8848.86米～  \\n它可是站在地球头顶看\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331377621515094,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793331377621185352,
+      "detail": {
+        "text_len": 29
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793331377621185352, \"detail\": {\"text_len\": 29}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331377656560507,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793331377656298233,
+      "detail": {
+        "chars": 35
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793331377656298233, \"detail\": {\"chars\": 35}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331379374250872,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793331379373952370,
+      "detail": {
+        "text_len": 6,
+        "interrupted": false,
+        "dur_ms": 1758.419797
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793331379373952370, \"detail\": {\"text_len\": 6, \"interrupted\": false, \"dur_ms\": 1758.419797}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331379606564839,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793331379606193477,
+      "detail": {
+        "text_len": 29,
+        "dur_ms": 1985.003124,
+        "audio_sec": 6.64,
+        "rtf": 0.29894625361445787
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793331379606193477, \"detail\": {\"text_len\": 29, \"dur_ms\": 1985.003124, \"audio_sec\": 6.64, \"rtf\": 0.29894625361445787}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331379609555137,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793331379609379748,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793331379609379748, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331379615608298,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793331379615466763,
+      "detail": {
+        "text_len": 29,
+        "head": "海拔8848.86米～  \n它可是站在地球头顶看"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793331379615466763, \"detail\": {\"text_len\": 29, \"head\": \"海拔8848.86米～  \\n它可是站在地球头顶看\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331386253251259,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793331386252895478,
+      "detail": {
+        "text_len": 29,
+        "interrupted": false,
+        "dur_ms": 6637.426233
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793331386252895478, \"detail\": {\"text_len\": 29, \"interrupted\": false, \"dur_ms\": 6637.426233}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331386253846947,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793331386253587583,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793331386253587583, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent_judge": [
+        {
+          "t_ns": 1793331376183422897,
+          "arrival_ns": 1793331376183758431,
+          "source": "round",
+          "detail": {
+            "model": "qwen-flash",
+            "ms": 1080.4,
+            "answer": "聊",
+            "kind": "chat"
+          }
+        }
+      ],
+      "intent": [
+        {
+          "t_ns": 1793331376183558436,
+          "arrival_ns": 1793331376183956819,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "llm:qwen-flash",
+            "keyword_medical": false,
+            "chitchat": false,
+            "judge_kind": "chat",
+            "judge_ms": 1080.4
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793331376901774470,
+          "arrival_ns": 1793331376902110077,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 435,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793331376902177873,
+          "arrival_ns": 1793331376902565339,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 435
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793331377656298233,
+          "arrival_ns": 1793331377656560507,
+          "source": "round",
+          "detail": {
+            "chars": 35
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793331376902646172,
+          "arrival_ns": 1793331376902909678,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793331379609379748,
+          "arrival_ns": 1793331379609555137,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793331376994408913,
+          "arrival_ns": 1793331376994616342,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "珠穆朗玛峰，"
+          }
+        },
+        {
+          "t_ns": 1793331377621138843,
+          "arrival_ns": 1793331377621330274,
+          "source": "round",
+          "detail": {
+            "text_len": 29,
+            "head": "海拔8848.86米～  \n它可是站在地球头顶看"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793331376994476011,
+          "arrival_ns": 1793331376994859205,
+          "source": "round",
+          "detail": {
+            "text_len": 6
+          }
+        },
+        {
+          "t_ns": 1793331377621185352,
+          "arrival_ns": 1793331377621515094,
+          "source": "round",
+          "detail": {
+            "text_len": 29
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793331377560201486,
+          "arrival_ns": 1793331377560504601,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 565.721894,
+            "audio_sec": 1.76,
+            "rtf": 0.32143289431818184
+          }
+        },
+        {
+          "t_ns": 1793331379606193477,
+          "arrival_ns": 1793331379606564839,
+          "source": "round",
+          "detail": {
+            "text_len": 29,
+            "dur_ms": 1985.003124,
+            "audio_sec": 6.64,
+            "rtf": 0.29894625361445787
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793331377615530750,
+          "arrival_ns": 1793331377615717416,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "珠穆朗玛峰，"
+          }
+        },
+        {
+          "t_ns": 1793331379615466763,
+          "arrival_ns": 1793331379615608298,
+          "source": "round",
+          "detail": {
+            "text_len": 29,
+            "head": "海拔8848.86米～  \n它可是站在地球头顶看"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793331379373952370,
+          "arrival_ns": 1793331379374250872,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "interrupted": false,
+            "dur_ms": 1758.419797
+          }
+        },
+        {
+          "t_ns": 1793331386252895478,
+          "arrival_ns": 1793331386253251259,
+          "source": "round",
+          "detail": {
+            "text_len": 29,
+            "interrupted": false,
+            "dur_ms": 6637.426233
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793331386253587583,
+          "arrival_ns": 1793331386253846947,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 45.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 10,
+    "interval_s": 2.0
+  }
+}

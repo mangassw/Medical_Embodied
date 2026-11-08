@@ -1,0 +1,932 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1058399",
+  "host": "artrc",
+  "tag": "kb50",
+  "round_index": 16,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T10:19:45.451",
+  "finished_at": "2026-10-30T10:19:56.730",
+  "duration_s": 11.278,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "透析的时候突然头晕、出冷汗是怎么回事？",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793326785451989577,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793326785451576732,
+    "t_publish_question_ns": 1793326785451989577,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793326785452496516,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793326785452829500,
+      "ali_llm_output_start": 1793326786133378244,
+      "ali_llm_output_first_text": 1793326786133998082,
+      "ali_llm_output_done": 1793326786767641578,
+      "tts_realtime_data_start": 1793326786134527825,
+      "tts_realtime_data_first_text": 1793326786210137248,
+      "tts_realtime_data_done": 1793326786767925064,
+      "tts_session_finished": 1793326796429365224
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793326786210279708,
+      "tts_local.synth_start_first": 1793326786210358969,
+      "tts_local.synth_end_first": 1793326786906940481,
+      "tts_local.play_start_first": 1793326786955168115,
+      "tts_local.play_end_last": 1793326796428302246,
+      "tts_local.session_finished": 1793326796429142501
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.84,
+    "router_to_llm_first_ms": 681.169,
+    "question_to_llm_first_ms": 682.009,
+    "llm_first_to_done_ms": 633.643,
+    "question_to_llm_done_ms": 1315.652,
+    "llm_first_to_tts_first_text_ms": 76.139,
+    "question_to_tts_first_text_ms": 758.148,
+    "first_tts_text_to_first_play_start_ms": 745.031,
+    "tts_rx_to_synth_end_ms": 696.661,
+    "tts_rx_to_play_start_ms": 744.888,
+    "tts_synth_end_to_play_start_ms": 48.228,
+    "question_to_first_audio_ms": 1503.179,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 10977.376,
+    "audio_total_sum_ms": 9469.871,
+    "audio_first_to_last_ms": 9473.134
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 839923,
+    "router_to_llm_first_ns": 681168582,
+    "question_to_llm_first_ns": 682008505,
+    "llm_first_to_done_ns": 633643496,
+    "question_to_llm_done_ns": 1315652001,
+    "llm_first_to_tts_first_text_ns": 76139166,
+    "question_to_tts_first_text_ns": 758147671,
+    "first_tts_text_to_first_play_start_ns": 745030867,
+    "tts_rx_to_synth_end_ns": 696660773,
+    "tts_rx_to_play_start_ns": 744888407,
+    "tts_synth_end_to_play_start_ns": 48227634,
+    "question_to_first_audio_ns": 1503178538,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 10977375647,
+    "audio_total_sum_ns": 9469871022,
+    "audio_first_to_last_ns": 9473134131
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 682008505,
+      "ms": 682.009
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 633643496,
+      "ms": 633.643
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 76139166,
+      "ms": 76.139
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 745030867,
+      "ms": 745.031
+    },
+    "question_to_first_play_start": {
+      "ns": 1503178538,
+      "ms": 1503.179
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 10977375647,
+      "ms": 10977.376
+    },
+    "audio_total_sec": {
+      "ns": 9469871022,
+      "ms": 9469.871,
+      "sec": 9.47
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.84,
+    "router_to_llm_first_ms": 681.169,
+    "question_to_llm_first_ms": 682.009,
+    "llm_first_to_done_ms": 633.643,
+    "question_to_llm_done_ms": 1315.652,
+    "llm_first_to_tts_first_text_ms": 76.139,
+    "question_to_tts_first_text_ms": 758.148,
+    "first_tts_text_to_first_play_start_ms": 745.031,
+    "tts_rx_to_synth_end_ms": 696.661,
+    "tts_rx_to_play_start_ms": 744.888,
+    "tts_synth_end_to_play_start_ms": 48.228,
+    "question_to_first_audio_ms": 1503.179,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 10977.376,
+    "audio_total_sum_ms": 9469.871,
+    "audio_first_to_last_ms": 9473.134
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793326786133378244,
+      "first_text_rx_ns": 1793326786133998082,
+      "done_rx_ns": 1793326786767641578,
+      "chunk_count": 9,
+      "char_count": 36,
+      "chunks": [
+        {
+          "t_ns": 1793326786133998082,
+          "text": "可能是"
+        },
+        {
+          "t_ns": 1793326786203340054,
+          "text": "低"
+        },
+        {
+          "t_ns": 1793326786209604471,
+          "text": "血压。"
+        },
+        {
+          "t_ns": 1793326786241548715,
+          "text": "与"
+        },
+        {
+          "t_ns": 1793326786325445330,
+          "text": "超滤过多、"
+        },
+        {
+          "t_ns": 1793326786417836700,
+          "text": "过快或透析中"
+        },
+        {
+          "t_ns": 1793326786533102839,
+          "text": "血压下降有关。"
+        },
+        {
+          "t_ns": 1793326786620331667,
+          "text": "我马上帮您"
+        },
+        {
+          "t_ns": 1793326786748315434,
+          "text": "呼叫护士。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793326786210137248,
+      "done_rx_ns": 1793326786767925064,
+      "text_count": 4,
+      "texts": [
+        {
+          "t_ns": 1793326786210137248,
+          "text": "可能是低血压。"
+        },
+        {
+          "t_ns": 1793326786325793658,
+          "text": "与超滤过多、"
+        },
+        {
+          "t_ns": 1793326786533391968,
+          "text": "过快或透析中血压下降有关。"
+        },
+        {
+          "t_ns": 1793326786748541793,
+          "text": "我马上帮您呼叫护士。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 29,
+    "latency_events_total": 29,
+    "asr_events": 0,
+    "tts_events": 23,
+    "tts_play_pairs": 4,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793326785474089077,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793326785473847297,
+      "detail": {
+        "kind": "medical",
+        "chat_mode": false,
+        "source": "keyword",
+        "keyword_medical": true,
+        "judge_kind": null,
+        "judge_ms": 0.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793326785473847297, \"detail\": {\"kind\": \"medical\", \"chat_mode\": false, \"source\": \"keyword\", \"keyword_medical\": true, \"judge_kind\": null, \"judge_ms\": 0.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326785474423466,
+      "node": "llm_medical",
+      "stage": "rag_start",
+      "t_ns": 1793326785474300503,
+      "detail": {},
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_start\", \"t_ns\": 1793326785474300503, \"detail\": {}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326785487703582,
+      "node": "llm_medical",
+      "stage": "rag_end",
+      "t_ns": 1793326785487466079,
+      "detail": {
+        "n_chunks": 4,
+        "took_ms": 13.08,
+        "top1": "血透常用药物"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_end\", \"t_ns\": 1793326785487466079, \"detail\": {\"n_chunks\": 4, \"took_ms\": 13.08, \"top1\": \"血透常用药物\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326786133445171,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793326786132988842,
+      "detail": {
+        "prompt_chars": 1060,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793326786132988842, \"detail\": {\"prompt_chars\": 1060, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326786134051005,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793326786133649800,
+      "detail": {
+        "prompt_chars": 1060
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793326786133649800, \"detail\": {\"prompt_chars\": 1060}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326786135073122,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793326786134874039,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793326786134874039, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326786210762046,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793326786210279708,
+      "detail": {
+        "text_len": 7,
+        "head": "可能是低血压。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793326786210279708, \"detail\": {\"text_len\": 7, \"head\": \"可能是低血压。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326786211140236,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793326786210358969,
+      "detail": {
+        "text_len": 7
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793326786210358969, \"detail\": {\"text_len\": 7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326786767689005,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793326786767221350,
+      "detail": {
+        "chars": 42
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793326786767221350, \"detail\": {\"chars\": 42}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326786907216083,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793326786906940481,
+      "detail": {
+        "text_len": 7,
+        "dur_ms": 696.576531,
+        "audio_sec": 1.84,
+        "rtf": 0.3785742016304348
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793326786906940481, \"detail\": {\"text_len\": 7, \"dur_ms\": 696.576531, \"audio_sec\": 1.84, \"rtf\": 0.3785742016304348}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326786907896104,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793326786907732469,
+      "detail": {
+        "text_len": 6,
+        "head": "与超滤过多、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793326786907732469, \"detail\": {\"text_len\": 6, \"head\": \"与超滤过多、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326786908086546,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793326786907777970,
+      "detail": {
+        "text_len": 6
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793326786907777970, \"detail\": {\"text_len\": 6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326786955440284,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793326786955168115,
+      "detail": {
+        "text_len": 7,
+        "head": "可能是低血压。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793326786955168115, \"detail\": {\"text_len\": 7, \"head\": \"可能是低血压。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326787510761151,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793326787510455790,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 602.672739,
+        "audio_sec": 1.68,
+        "rtf": 0.3587337732142857
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793326787510455790, \"detail\": {\"text_len\": 6, \"dur_ms\": 602.672739, \"audio_sec\": 1.68, \"rtf\": 0.3587337732142857}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326787511172719,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793326787511052476,
+      "detail": {
+        "text_len": 13,
+        "head": "过快或透析中血压下降有关。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793326787511052476, \"detail\": {\"text_len\": 13, \"head\": \"过快或透析中血压下降有关。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326787511342664,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793326787511102590,
+      "detail": {
+        "text_len": 13
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793326787511102590, \"detail\": {\"text_len\": 13}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326788641695047,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793326788641343748,
+      "detail": {
+        "text_len": 13,
+        "dur_ms": 1130.233553,
+        "audio_sec": 3.28,
+        "rtf": 0.3445834003048781
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793326788641343748, \"detail\": {\"text_len\": 13, \"dur_ms\": 1130.233553, \"audio_sec\": 3.28, \"rtf\": 0.3445834003048781}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326788642154614,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793326788642004523,
+      "detail": {
+        "text_len": 10,
+        "head": "我马上帮您呼叫护士。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793326788642004523, \"detail\": {\"text_len\": 10, \"head\": \"我马上帮您呼叫护士。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326788642380024,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793326788642054452,
+      "detail": {
+        "text_len": 10
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793326788642054452, \"detail\": {\"text_len\": 10}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326788809945546,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793326788809597489,
+      "detail": {
+        "text_len": 7,
+        "interrupted": false,
+        "dur_ms": 1854.425277
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793326788809597489, \"detail\": {\"text_len\": 7, \"interrupted\": false, \"dur_ms\": 1854.425277}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326788810414252,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793326788810276242,
+      "detail": {
+        "text_len": 6,
+        "head": "与超滤过多、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793326788810276242, \"detail\": {\"text_len\": 6, \"head\": \"与超滤过多、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326789569172949,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793326789568847272,
+      "detail": {
+        "text_len": 10,
+        "dur_ms": 926.787643,
+        "audio_sec": 2.64,
+        "rtf": 0.3510559253787879
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793326789568847272, \"detail\": {\"text_len\": 10, \"dur_ms\": 926.787643, \"audio_sec\": 2.64, \"rtf\": 0.3510559253787879}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326789569536648,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793326789569413888,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793326789569413888, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326790494164151,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793326790493727234,
+      "detail": {
+        "text_len": 6,
+        "interrupted": false,
+        "dur_ms": 1683.443895
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793326790493727234, \"detail\": {\"text_len\": 6, \"interrupted\": false, \"dur_ms\": 1683.443895}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326790494718112,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793326790494579736,
+      "detail": {
+        "text_len": 13,
+        "head": "过快或透析中血压下降有关。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793326790494579736, \"detail\": {\"text_len\": 13, \"head\": \"过快或透析中血压下降有关。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326793782285146,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793326793781512662,
+      "detail": {
+        "text_len": 13,
+        "interrupted": false,
+        "dur_ms": 3286.92754
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793326793781512662, \"detail\": {\"text_len\": 13, \"interrupted\": false, \"dur_ms\": 3286.92754}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326793784153927,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793326793783244516,
+      "detail": {
+        "text_len": 10,
+        "head": "我马上帮您呼叫护士。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793326793783244516, \"detail\": {\"text_len\": 10, \"head\": \"我马上帮您呼叫护士。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326796428637420,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793326796428302246,
+      "detail": {
+        "text_len": 10,
+        "interrupted": false,
+        "dur_ms": 2645.054971
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793326796428302246, \"detail\": {\"text_len\": 10, \"interrupted\": false, \"dur_ms\": 2645.054971}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326796429420860,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793326796429142501,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793326796429142501, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793326785473847297,
+          "arrival_ns": 1793326785474089077,
+          "source": "round",
+          "detail": {
+            "kind": "medical",
+            "chat_mode": false,
+            "source": "keyword",
+            "keyword_medical": true,
+            "judge_kind": null,
+            "judge_ms": 0.0
+          }
+        }
+      ],
+      "rag_start": [
+        {
+          "t_ns": 1793326785474300503,
+          "arrival_ns": 1793326785474423466,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "rag_end": [
+        {
+          "t_ns": 1793326785487466079,
+          "arrival_ns": 1793326785487703582,
+          "source": "round",
+          "detail": {
+            "n_chunks": 4,
+            "took_ms": 13.08,
+            "top1": "血透常用药物"
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793326786132988842,
+          "arrival_ns": 1793326786133445171,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1060,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793326786133649800,
+          "arrival_ns": 1793326786134051005,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1060
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793326786767221350,
+          "arrival_ns": 1793326786767689005,
+          "source": "round",
+          "detail": {
+            "chars": 42
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793326786134874039,
+          "arrival_ns": 1793326786135073122,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793326789569413888,
+          "arrival_ns": 1793326789569536648,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793326786210279708,
+          "arrival_ns": 1793326786210762046,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "可能是低血压。"
+          }
+        },
+        {
+          "t_ns": 1793326786907732469,
+          "arrival_ns": 1793326786907896104,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "与超滤过多、"
+          }
+        },
+        {
+          "t_ns": 1793326787511052476,
+          "arrival_ns": 1793326787511172719,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "head": "过快或透析中血压下降有关。"
+          }
+        },
+        {
+          "t_ns": 1793326788642004523,
+          "arrival_ns": 1793326788642154614,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "我马上帮您呼叫护士。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793326786210358969,
+          "arrival_ns": 1793326786211140236,
+          "source": "round",
+          "detail": {
+            "text_len": 7
+          }
+        },
+        {
+          "t_ns": 1793326786907777970,
+          "arrival_ns": 1793326786908086546,
+          "source": "round",
+          "detail": {
+            "text_len": 6
+          }
+        },
+        {
+          "t_ns": 1793326787511102590,
+          "arrival_ns": 1793326787511342664,
+          "source": "round",
+          "detail": {
+            "text_len": 13
+          }
+        },
+        {
+          "t_ns": 1793326788642054452,
+          "arrival_ns": 1793326788642380024,
+          "source": "round",
+          "detail": {
+            "text_len": 10
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793326786906940481,
+          "arrival_ns": 1793326786907216083,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "dur_ms": 696.576531,
+            "audio_sec": 1.84,
+            "rtf": 0.3785742016304348
+          }
+        },
+        {
+          "t_ns": 1793326787510455790,
+          "arrival_ns": 1793326787510761151,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 602.672739,
+            "audio_sec": 1.68,
+            "rtf": 0.3587337732142857
+          }
+        },
+        {
+          "t_ns": 1793326788641343748,
+          "arrival_ns": 1793326788641695047,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "dur_ms": 1130.233553,
+            "audio_sec": 3.28,
+            "rtf": 0.3445834003048781
+          }
+        },
+        {
+          "t_ns": 1793326789568847272,
+          "arrival_ns": 1793326789569172949,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "dur_ms": 926.787643,
+            "audio_sec": 2.64,
+            "rtf": 0.3510559253787879
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793326786955168115,
+          "arrival_ns": 1793326786955440284,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "可能是低血压。"
+          }
+        },
+        {
+          "t_ns": 1793326788810276242,
+          "arrival_ns": 1793326788810414252,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "与超滤过多、"
+          }
+        },
+        {
+          "t_ns": 1793326790494579736,
+          "arrival_ns": 1793326790494718112,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "head": "过快或透析中血压下降有关。"
+          }
+        },
+        {
+          "t_ns": 1793326793783244516,
+          "arrival_ns": 1793326793784153927,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "我马上帮您呼叫护士。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793326788809597489,
+          "arrival_ns": 1793326788809945546,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "interrupted": false,
+            "dur_ms": 1854.425277
+          }
+        },
+        {
+          "t_ns": 1793326790493727234,
+          "arrival_ns": 1793326790494164151,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "interrupted": false,
+            "dur_ms": 1683.443895
+          }
+        },
+        {
+          "t_ns": 1793326793781512662,
+          "arrival_ns": 1793326793782285146,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "interrupted": false,
+            "dur_ms": 3286.92754
+          }
+        },
+        {
+          "t_ns": 1793326796428302246,
+          "arrival_ns": 1793326796428637420,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "interrupted": false,
+            "dur_ms": 2645.054971
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793326796429142501,
+          "arrival_ns": 1793326796429420860,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 50,
+    "interval_s": 2.0
+  }
+}

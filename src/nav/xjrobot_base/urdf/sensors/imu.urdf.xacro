@@ -1,0 +1,18 @@
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- 实机专用 IMU 模型。当前安装关系与仿真版本保持一致。 -->
+  <xacro:macro name="xjrobot_imu">
+    <link name="imu_link"/>
+
+    <joint name="joint_imu" type="fixed">
+      <!-- 固定 TF: lidar_3d_link -> imu_link
+           注意：此 imu_link 仅用于 EKF/可视化等次要链路（EKF 当前只融合 wz 角速度，
+           不依赖 imu_link 位姿）；最终 map->base_footprint 定位链路
+           （map_odom_tf_publisher 走 base_footprint->base_link->lidar_3d_link）不经过 imu_link。
+           因此这里的数值与 xjrobot_localization/config/e1r.yaml（或 mid360.yaml）的
+           extrinsic_T / extrinsic_R 不一致不会直接导致定位转弯失配，但建议实机复测安装位姿后统一。 -->
+      <origin xyz="-0.03975383 0.011 -0.03014352" rpy="0.0 0.0 0.0" />
+      <parent link="lidar_3d_link" />
+      <child link="imu_link" />
+    </joint>
+  </xacro:macro>
+</robot>

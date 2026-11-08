@@ -1,0 +1,1154 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1047693",
+  "host": "artrc",
+  "tag": "v_med",
+  "round_index": 0,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T09:44:49.404",
+  "finished_at": "2026-10-30T09:45:03.012",
+  "duration_s": 13.608,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "我这两天总觉得没劲",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793324689404944769,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793324689404388405,
+    "t_publish_question_ns": 1793324689404944769,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793324689405586879,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793324689406159401,
+      "ali_llm_output_start": 1793324690976995300,
+      "ali_llm_output_first_text": 1793324690980227377,
+      "ali_llm_output_done": 1793324691691453673,
+      "tts_realtime_data_start": 1793324690977229271,
+      "tts_realtime_data_first_text": 1793324691043960930,
+      "tts_realtime_data_done": 1793324691692921789,
+      "tts_session_finished": 1793324702707511403
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793324691044221778,
+      "tts_local.synth_start_first": 1793324691044289711,
+      "tts_local.synth_end_first": 1793324691607477482,
+      "tts_local.play_start_first": 1793324691627891884,
+      "tts_local.play_end_last": 1793324702706663040,
+      "tts_local.session_finished": 1793324702707344220
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.215,
+    "router_to_llm_first_ms": 1574.068,
+    "question_to_llm_first_ms": 1575.283,
+    "llm_first_to_done_ms": 711.226,
+    "question_to_llm_done_ms": 2286.509,
+    "llm_first_to_tts_first_text_ms": 63.734,
+    "question_to_tts_first_text_ms": 1639.016,
+    "first_tts_text_to_first_play_start_ms": 583.931,
+    "tts_rx_to_synth_end_ms": 563.256,
+    "tts_rx_to_play_start_ms": 583.67,
+    "tts_synth_end_to_play_start_ms": 20.414,
+    "question_to_first_audio_ms": 2222.947,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 13302.567,
+    "audio_total_sum_ms": 11075.384,
+    "audio_first_to_last_ms": 11078.771
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 1214632,
+    "router_to_llm_first_ns": 1574067976,
+    "question_to_llm_first_ns": 1575282608,
+    "llm_first_to_done_ns": 711226296,
+    "question_to_llm_done_ns": 2286508904,
+    "llm_first_to_tts_first_text_ns": 63733553,
+    "question_to_tts_first_text_ns": 1639016161,
+    "first_tts_text_to_first_play_start_ns": 583930954,
+    "tts_rx_to_synth_end_ns": 563255704,
+    "tts_rx_to_play_start_ns": 583670106,
+    "tts_synth_end_to_play_start_ns": 20414402,
+    "question_to_first_audio_ns": 2222947115,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 13302566634,
+    "audio_total_sum_ns": 11075384192,
+    "audio_first_to_last_ns": 11078771156
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 1575282608,
+      "ms": 1575.283
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 711226296,
+      "ms": 711.226
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 63733553,
+      "ms": 63.734
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 583930954,
+      "ms": 583.931
+    },
+    "question_to_first_play_start": {
+      "ns": 2222947115,
+      "ms": 2222.947
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 13302566634,
+      "ms": 13302.567
+    },
+    "audio_total_sec": {
+      "ns": 11075384192,
+      "ms": 11075.384,
+      "sec": 11.075
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.215,
+    "router_to_llm_first_ms": 1574.068,
+    "question_to_llm_first_ms": 1575.283,
+    "llm_first_to_done_ms": 711.226,
+    "question_to_llm_done_ms": 2286.509,
+    "llm_first_to_tts_first_text_ms": 63.734,
+    "question_to_tts_first_text_ms": 1639.016,
+    "first_tts_text_to_first_play_start_ms": 583.931,
+    "tts_rx_to_synth_end_ms": 563.256,
+    "tts_rx_to_play_start_ms": 583.67,
+    "tts_synth_end_to_play_start_ms": 20.414,
+    "question_to_first_audio_ms": 2222.947,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 13302.567,
+    "audio_total_sum_ms": 11075.384,
+    "audio_first_to_last_ms": 11078.771
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793324690976995300,
+      "first_text_rx_ns": 1793324690980227377,
+      "done_rx_ns": 1793324691691453673,
+      "chunk_count": 10,
+      "char_count": 48,
+      "chunks": [
+        {
+          "t_ns": 1793324690980227377,
+          "text": "可以"
+        },
+        {
+          "t_ns": 1793324691013011792,
+          "text": "适当"
+        },
+        {
+          "t_ns": 1793324691043741903,
+          "text": "运动。"
+        },
+        {
+          "t_ns": 1793324691109711101,
+          "text": "医生"
+        },
+        {
+          "t_ns": 1793324691185261239,
+          "text": "允许的话，试试"
+        },
+        {
+          "t_ns": 1793324691270468582,
+          "text": "散步或太极拳，"
+        },
+        {
+          "t_ns": 1793324691360119705,
+          "text": "能改善疲倦、"
+        },
+        {
+          "t_ns": 1793324691456555561,
+          "text": "提升精力。  \n内"
+        },
+        {
+          "t_ns": 1793324691597754757,
+          "text": "瘘侧手臂别"
+        },
+        {
+          "t_ns": 1793324691660322185,
+          "text": "太用力哦。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793324691043960930,
+      "done_rx_ns": 1793324691692921789,
+      "text_count": 6,
+      "texts": [
+        {
+          "t_ns": 1793324691043960930,
+          "text": "可以适当运动。"
+        },
+        {
+          "t_ns": 1793324691185576207,
+          "text": "医生允许的话，"
+        },
+        {
+          "t_ns": 1793324691270707604,
+          "text": "试试散步或太极拳，"
+        },
+        {
+          "t_ns": 1793324691360321193,
+          "text": "能改善疲倦、"
+        },
+        {
+          "t_ns": 1793324691456872454,
+          "text": "提升精力。"
+        },
+        {
+          "t_ns": 1793324691660562041,
+          "text": "内瘘侧手臂别太用力哦。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 39,
+    "latency_events_total": 39,
+    "asr_events": 0,
+    "tts_events": 33,
+    "tts_play_pairs": 6,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793324689427751004,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793324689427505357,
+      "detail": {
+        "kind": "medical",
+        "chat_mode": false
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793324689427505357, \"detail\": {\"kind\": \"medical\", \"chat_mode\": false}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324689428221798,
+      "node": "llm_medical",
+      "stage": "rag_start",
+      "t_ns": 1793324689427971565,
+      "detail": {},
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_start\", \"t_ns\": 1793324689427971565, \"detail\": {}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324689699847980,
+      "node": "llm_medical",
+      "stage": "rag_end",
+      "t_ns": 1793324689699490419,
+      "detail": {
+        "n_chunks": 4,
+        "took_ms": 271.24,
+        "top1": "透析患者情志指导"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_end\", \"t_ns\": 1793324689699490419, \"detail\": {\"n_chunks\": 4, \"took_ms\": 271.24, \"top1\": \"透析患者情志指导\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324690977039292,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793324690976608931,
+      "detail": {
+        "prompt_chars": 914,
+        "n_messages": 2
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793324690976608931, \"detail\": {\"prompt_chars\": 914, \"n_messages\": 2}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324690977564288,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793324690977420419,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793324690977420419, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324690980269378,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793324690979973490,
+      "detail": {
+        "prompt_chars": 914
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793324690979973490, \"detail\": {\"prompt_chars\": 914}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324691044418076,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793324691044221778,
+      "detail": {
+        "text_len": 7,
+        "head": "可以适当运动。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793324691044221778, \"detail\": {\"text_len\": 7, \"head\": \"可以适当运动。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324691044728488,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793324691044289711,
+      "detail": {
+        "text_len": 7
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793324691044289711, \"detail\": {\"text_len\": 7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324691607829430,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793324691607477482,
+      "detail": {
+        "text_len": 7,
+        "dur_ms": 563.182353,
+        "audio_sec": 1.44,
+        "rtf": 0.39109885625000007
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793324691607477482, \"detail\": {\"text_len\": 7, \"dur_ms\": 563.182353, \"audio_sec\": 1.44, \"rtf\": 0.39109885625000007}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324691609607979,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793324691609405184,
+      "detail": {
+        "text_len": 7,
+        "head": "医生允许的话，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793324691609405184, \"detail\": {\"text_len\": 7, \"head\": \"医生允许的话，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324691609857498,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793324691609447873,
+      "detail": {
+        "text_len": 7
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793324691609447873, \"detail\": {\"text_len\": 7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324691628108933,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793324691627891884,
+      "detail": {
+        "text_len": 7,
+        "head": "可以适当运动。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793324691627891884, \"detail\": {\"text_len\": 7, \"head\": \"可以适当运动。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324691690757593,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793324691690321127,
+      "detail": {
+        "chars": 51
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793324691690321127, \"detail\": {\"chars\": 51}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324692220219378,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793324692219880665,
+      "detail": {
+        "text_len": 7,
+        "dur_ms": 610.427447,
+        "audio_sec": 1.68,
+        "rtf": 0.36334967083333336
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793324692219880665, \"detail\": {\"text_len\": 7, \"dur_ms\": 610.427447, \"audio_sec\": 1.68, \"rtf\": 0.36334967083333336}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324692230042682,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793324692229849636,
+      "detail": {
+        "text_len": 9,
+        "head": "试试散步或太极拳，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793324692229849636, \"detail\": {\"text_len\": 9, \"head\": \"试试散步或太极拳，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324692230267817,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793324692229894310,
+      "detail": {
+        "text_len": 9
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793324692229894310, \"detail\": {\"text_len\": 9}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324693090328934,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793324693090025180,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 860.126202,
+        "audio_sec": 2.4,
+        "rtf": 0.35838591750000004
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793324693090025180, \"detail\": {\"text_len\": 9, \"dur_ms\": 860.126202, \"audio_sec\": 2.4, \"rtf\": 0.35838591750000004}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324693090716287,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793324693090583295,
+      "detail": {
+        "text_len": 6,
+        "head": "能改善疲倦、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793324693090583295, \"detail\": {\"text_len\": 6, \"head\": \"能改善疲倦、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324693090897161,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793324693090621514,
+      "detail": {
+        "text_len": 6
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793324693090621514, \"detail\": {\"text_len\": 6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324693097180138,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793324693096890399,
+      "detail": {
+        "text_len": 7,
+        "interrupted": false,
+        "dur_ms": 1468.996835
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793324693096890399, \"detail\": {\"text_len\": 7, \"interrupted\": false, \"dur_ms\": 1468.996835}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324693097791262,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793324693097553147,
+      "detail": {
+        "text_len": 7,
+        "head": "医生允许的话，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793324693097553147, \"detail\": {\"text_len\": 7, \"head\": \"医生允许的话，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324693672832306,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793324693672419053,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 581.792695,
+        "audio_sec": 1.6,
+        "rtf": 0.36362043437499997
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793324693672419053, \"detail\": {\"text_len\": 6, \"dur_ms\": 581.792695, \"audio_sec\": 1.6, \"rtf\": 0.36362043437499997}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324693673306856,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793324693673084653,
+      "detail": {
+        "text_len": 5,
+        "head": "提升精力。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793324693673084653, \"detail\": {\"text_len\": 5, \"head\": \"提升精力。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324693673512128,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793324693673154754,
+      "detail": {
+        "text_len": 5
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793324693673154754, \"detail\": {\"text_len\": 5}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324694236437997,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793324694236144623,
+      "detail": {
+        "text_len": 5,
+        "dur_ms": 562.983331,
+        "audio_sec": 1.52,
+        "rtf": 0.3703837703947368
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793324694236144623, \"detail\": {\"text_len\": 5, \"dur_ms\": 562.983331, \"audio_sec\": 1.52, \"rtf\": 0.3703837703947368}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324694237055369,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793324694236882205,
+      "detail": {
+        "text_len": 11,
+        "head": "内瘘侧手臂别太用力哦。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793324694236882205, \"detail\": {\"text_len\": 11, \"head\": \"内瘘侧手臂别太用力哦。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324694237251065,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793324694236950012,
+      "detail": {
+        "text_len": 11
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793324694236950012, \"detail\": {\"text_len\": 11}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324694803007677,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793324694802640107,
+      "detail": {
+        "text_len": 7,
+        "interrupted": false,
+        "dur_ms": 1705.085718
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793324694802640107, \"detail\": {\"text_len\": 7, \"interrupted\": false, \"dur_ms\": 1705.085718}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324694803431225,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793324694803278514,
+      "detail": {
+        "text_len": 9,
+        "head": "试试散步或太极拳，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793324694803278514, \"detail\": {\"text_len\": 9, \"head\": \"试试散步或太极拳，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324695095144942,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793324695094838471,
+      "detail": {
+        "text_len": 11,
+        "dur_ms": 857.883595,
+        "audio_sec": 2.32,
+        "rtf": 0.36977741163793104
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793324695094838471, \"detail\": {\"text_len\": 11, \"dur_ms\": 857.883595, \"audio_sec\": 2.32, \"rtf\": 0.36977741163793104}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324695095474336,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793324695095341153,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793324695095341153, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324697238427201,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793324697238130900,
+      "detail": {
+        "text_len": 9,
+        "interrupted": false,
+        "dur_ms": 2434.848945
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793324697238130900, \"detail\": {\"text_len\": 9, \"interrupted\": false, \"dur_ms\": 2434.848945}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324697238991214,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793324697238843172,
+      "detail": {
+        "text_len": 6,
+        "head": "能改善疲倦、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793324697238843172, \"detail\": {\"text_len\": 6, \"head\": \"能改善疲倦、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324698851246843,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793324698850939828,
+      "detail": {
+        "text_len": 6,
+        "interrupted": false,
+        "dur_ms": 1612.093336
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793324698850939828, \"detail\": {\"text_len\": 6, \"interrupted\": false, \"dur_ms\": 1612.093336}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324698851757256,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793324698851619331,
+      "detail": {
+        "text_len": 5,
+        "head": "提升精力。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793324698851619331, \"detail\": {\"text_len\": 5, \"head\": \"提升精力。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324700377986700,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793324700377666187,
+      "detail": {
+        "text_len": 5,
+        "interrupted": false,
+        "dur_ms": 1526.043617
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793324700377666187, \"detail\": {\"text_len\": 5, \"interrupted\": false, \"dur_ms\": 1526.043617}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324700378532361,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793324700378360221,
+      "detail": {
+        "text_len": 11,
+        "head": "内瘘侧手臂别太用力哦。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793324700378360221, \"detail\": {\"text_len\": 11, \"head\": \"内瘘侧手臂别太用力哦。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324702706958182,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793324702706663040,
+      "detail": {
+        "text_len": 11,
+        "interrupted": false,
+        "dur_ms": 2328.297962
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793324702706663040, \"detail\": {\"text_len\": 11, \"interrupted\": false, \"dur_ms\": 2328.297962}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324702707549774,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793324702707344220,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793324702707344220, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793324689427505357,
+          "arrival_ns": 1793324689427751004,
+          "source": "round",
+          "detail": {
+            "kind": "medical",
+            "chat_mode": false
+          }
+        }
+      ],
+      "rag_start": [
+        {
+          "t_ns": 1793324689427971565,
+          "arrival_ns": 1793324689428221798,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "rag_end": [
+        {
+          "t_ns": 1793324689699490419,
+          "arrival_ns": 1793324689699847980,
+          "source": "round",
+          "detail": {
+            "n_chunks": 4,
+            "took_ms": 271.24,
+            "top1": "透析患者情志指导"
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793324690976608931,
+          "arrival_ns": 1793324690977039292,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 914,
+            "n_messages": 2
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793324690979973490,
+          "arrival_ns": 1793324690980269378,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 914
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793324691690321127,
+          "arrival_ns": 1793324691690757593,
+          "source": "round",
+          "detail": {
+            "chars": 51
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793324690977420419,
+          "arrival_ns": 1793324690977564288,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793324695095341153,
+          "arrival_ns": 1793324695095474336,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793324691044221778,
+          "arrival_ns": 1793324691044418076,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "可以适当运动。"
+          }
+        },
+        {
+          "t_ns": 1793324691609405184,
+          "arrival_ns": 1793324691609607979,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "医生允许的话，"
+          }
+        },
+        {
+          "t_ns": 1793324692229849636,
+          "arrival_ns": 1793324692230042682,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "试试散步或太极拳，"
+          }
+        },
+        {
+          "t_ns": 1793324693090583295,
+          "arrival_ns": 1793324693090716287,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "能改善疲倦、"
+          }
+        },
+        {
+          "t_ns": 1793324693673084653,
+          "arrival_ns": 1793324693673306856,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "提升精力。"
+          }
+        },
+        {
+          "t_ns": 1793324694236882205,
+          "arrival_ns": 1793324694237055369,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "内瘘侧手臂别太用力哦。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793324691044289711,
+          "arrival_ns": 1793324691044728488,
+          "source": "round",
+          "detail": {
+            "text_len": 7
+          }
+        },
+        {
+          "t_ns": 1793324691609447873,
+          "arrival_ns": 1793324691609857498,
+          "source": "round",
+          "detail": {
+            "text_len": 7
+          }
+        },
+        {
+          "t_ns": 1793324692229894310,
+          "arrival_ns": 1793324692230267817,
+          "source": "round",
+          "detail": {
+            "text_len": 9
+          }
+        },
+        {
+          "t_ns": 1793324693090621514,
+          "arrival_ns": 1793324693090897161,
+          "source": "round",
+          "detail": {
+            "text_len": 6
+          }
+        },
+        {
+          "t_ns": 1793324693673154754,
+          "arrival_ns": 1793324693673512128,
+          "source": "round",
+          "detail": {
+            "text_len": 5
+          }
+        },
+        {
+          "t_ns": 1793324694236950012,
+          "arrival_ns": 1793324694237251065,
+          "source": "round",
+          "detail": {
+            "text_len": 11
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793324691607477482,
+          "arrival_ns": 1793324691607829430,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "dur_ms": 563.182353,
+            "audio_sec": 1.44,
+            "rtf": 0.39109885625000007
+          }
+        },
+        {
+          "t_ns": 1793324692219880665,
+          "arrival_ns": 1793324692220219378,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "dur_ms": 610.427447,
+            "audio_sec": 1.68,
+            "rtf": 0.36334967083333336
+          }
+        },
+        {
+          "t_ns": 1793324693090025180,
+          "arrival_ns": 1793324693090328934,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 860.126202,
+            "audio_sec": 2.4,
+            "rtf": 0.35838591750000004
+          }
+        },
+        {
+          "t_ns": 1793324693672419053,
+          "arrival_ns": 1793324693672832306,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 581.792695,
+            "audio_sec": 1.6,
+            "rtf": 0.36362043437499997
+          }
+        },
+        {
+          "t_ns": 1793324694236144623,
+          "arrival_ns": 1793324694236437997,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "dur_ms": 562.983331,
+            "audio_sec": 1.52,
+            "rtf": 0.3703837703947368
+          }
+        },
+        {
+          "t_ns": 1793324695094838471,
+          "arrival_ns": 1793324695095144942,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "dur_ms": 857.883595,
+            "audio_sec": 2.32,
+            "rtf": 0.36977741163793104
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793324691627891884,
+          "arrival_ns": 1793324691628108933,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "可以适当运动。"
+          }
+        },
+        {
+          "t_ns": 1793324693097553147,
+          "arrival_ns": 1793324693097791262,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "医生允许的话，"
+          }
+        },
+        {
+          "t_ns": 1793324694803278514,
+          "arrival_ns": 1793324694803431225,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "试试散步或太极拳，"
+          }
+        },
+        {
+          "t_ns": 1793324697238843172,
+          "arrival_ns": 1793324697238991214,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "能改善疲倦、"
+          }
+        },
+        {
+          "t_ns": 1793324698851619331,
+          "arrival_ns": 1793324698851757256,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "提升精力。"
+          }
+        },
+        {
+          "t_ns": 1793324700378360221,
+          "arrival_ns": 1793324700378532361,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "内瘘侧手臂别太用力哦。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793324693096890399,
+          "arrival_ns": 1793324693097180138,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "interrupted": false,
+            "dur_ms": 1468.996835
+          }
+        },
+        {
+          "t_ns": 1793324694802640107,
+          "arrival_ns": 1793324694803007677,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "interrupted": false,
+            "dur_ms": 1705.085718
+          }
+        },
+        {
+          "t_ns": 1793324697238130900,
+          "arrival_ns": 1793324697238427201,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "interrupted": false,
+            "dur_ms": 2434.848945
+          }
+        },
+        {
+          "t_ns": 1793324698850939828,
+          "arrival_ns": 1793324698851246843,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "interrupted": false,
+            "dur_ms": 1612.093336
+          }
+        },
+        {
+          "t_ns": 1793324700377666187,
+          "arrival_ns": 1793324700377986700,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "interrupted": false,
+            "dur_ms": 1526.043617
+          }
+        },
+        {
+          "t_ns": 1793324702706663040,
+          "arrival_ns": 1793324702706958182,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "interrupted": false,
+            "dur_ms": 2328.297962
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793324702707344220,
+          "arrival_ns": 1793324702707549774,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 30.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 1,
+    "interval_s": 1.0
+  }
+}

@@ -1,0 +1,940 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1058399",
+  "host": "artrc",
+  "tag": "kb50",
+  "round_index": 44,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T10:25:03.358",
+  "finished_at": "2026-10-30T10:25:18.432",
+  "duration_s": 15.075,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "血钙低会有什么表现？",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793327103358484812,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793327103358074363,
+    "t_publish_question_ns": 1793327103358484812,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793327103359261120,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793327103359458657,
+      "ali_llm_output_start": 1793327104291313795,
+      "ali_llm_output_first_text": 1793327104291591604,
+      "ali_llm_output_done": 1793327105128285218,
+      "tts_realtime_data_start": 1793327104291624534,
+      "tts_realtime_data_first_text": 1793327104320601592,
+      "tts_realtime_data_done": 1793327105128317454,
+      "tts_session_finished": 1793327118132323814
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793327104320840759,
+      "tts_local.synth_start_first": 1793327104320908386,
+      "tts_local.synth_end_first": 1793327104837881123,
+      "tts_local.play_start_first": 1793327104855196552,
+      "tts_local.play_end_last": 1793327118130959621,
+      "tts_local.session_finished": 1793327118132046606
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.974,
+    "router_to_llm_first_ms": 932.133,
+    "question_to_llm_first_ms": 933.107,
+    "llm_first_to_done_ms": 836.694,
+    "question_to_llm_done_ms": 1769.8,
+    "llm_first_to_tts_first_text_ms": 29.01,
+    "question_to_tts_first_text_ms": 962.117,
+    "first_tts_text_to_first_play_start_ms": 534.595,
+    "tts_rx_to_synth_end_ms": 517.04,
+    "tts_rx_to_play_start_ms": 534.356,
+    "tts_synth_end_to_play_start_ms": 17.315,
+    "question_to_first_audio_ms": 1496.712,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 14773.839,
+    "audio_total_sum_ms": 12633.734,
+    "audio_first_to_last_ms": 13275.763
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 973845,
+    "router_to_llm_first_ns": 932132947,
+    "question_to_llm_first_ns": 933106792,
+    "llm_first_to_done_ns": 836693614,
+    "question_to_llm_done_ns": 1769800406,
+    "llm_first_to_tts_first_text_ns": 29009988,
+    "question_to_tts_first_text_ns": 962116780,
+    "first_tts_text_to_first_play_start_ns": 534594960,
+    "tts_rx_to_synth_end_ns": 517040364,
+    "tts_rx_to_play_start_ns": 534355793,
+    "tts_synth_end_to_play_start_ns": 17315429,
+    "question_to_first_audio_ns": 1496711740,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 14773839002,
+    "audio_total_sum_ns": 12633733569,
+    "audio_first_to_last_ns": 13275763069
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 933106792,
+      "ms": 933.107
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 836693614,
+      "ms": 836.694
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 29009988,
+      "ms": 29.01
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 534594960,
+      "ms": 534.595
+    },
+    "question_to_first_play_start": {
+      "ns": 1496711740,
+      "ms": 1496.712
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 14773839002,
+      "ms": 14773.839
+    },
+    "audio_total_sec": {
+      "ns": 12633733569,
+      "ms": 12633.734,
+      "sec": 12.634
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.974,
+    "router_to_llm_first_ms": 932.133,
+    "question_to_llm_first_ms": 933.107,
+    "llm_first_to_done_ms": 836.694,
+    "question_to_llm_done_ms": 1769.8,
+    "llm_first_to_tts_first_text_ms": 29.01,
+    "question_to_tts_first_text_ms": 962.117,
+    "first_tts_text_to_first_play_start_ms": 534.595,
+    "tts_rx_to_synth_end_ms": 517.04,
+    "tts_rx_to_play_start_ms": 534.356,
+    "tts_synth_end_to_play_start_ms": 17.315,
+    "question_to_first_audio_ms": 1496.712,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 14773.839,
+    "audio_total_sum_ms": 12633.734,
+    "audio_first_to_last_ms": 13275.763
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793327104291313795,
+      "first_text_rx_ns": 1793327104291591604,
+      "done_rx_ns": 1793327105128285218,
+      "chunk_count": 11,
+      "char_count": 59,
+      "chunks": [
+        {
+          "t_ns": 1793327104291591604,
+          "text": "这个"
+        },
+        {
+          "t_ns": 1793327104320422723,
+          "text": "要注意。"
+        },
+        {
+          "t_ns": 1793327104387370806,
+          "text": "资料"
+        },
+        {
+          "t_ns": 1793327104400294854,
+          "text": "提到"
+        },
+        {
+          "t_ns": 1793327104499281562,
+          "text": "血钙应维持在2"
+        },
+        {
+          "t_ns": 1793327104642312665,
+          "text": ".1—2.5"
+        },
+        {
+          "t_ns": 1793327104757689961,
+          "text": "mmol/L，低于"
+        },
+        {
+          "t_ns": 1793327104861462829,
+          "text": "正常可能引发肾"
+        },
+        {
+          "t_ns": 1793327104986555924,
+          "text": "性骨病等问题"
+        },
+        {
+          "t_ns": 1793327105036213783,
+          "text": "。  \n具体表现"
+        },
+        {
+          "t_ns": 1793327105103484120,
+          "text": "需医生评估。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793327104320601592,
+      "done_rx_ns": 1793327105128317454,
+      "text_count": 4,
+      "texts": [
+        {
+          "t_ns": 1793327104320601592,
+          "text": "这个要注意。"
+        },
+        {
+          "t_ns": 1793327104757884180,
+          "text": "资料提到血钙应维持在2.1—2.5mmol/L，"
+        },
+        {
+          "t_ns": 1793327105036512295,
+          "text": "低于正常可能引发肾性骨病等问题。"
+        },
+        {
+          "t_ns": 1793327105103741373,
+          "text": "具体表现需医生评估。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 29,
+    "latency_events_total": 29,
+    "asr_events": 0,
+    "tts_events": 23,
+    "tts_play_pairs": 4,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793327103380362954,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793327103380093097,
+      "detail": {
+        "kind": "medical",
+        "chat_mode": false,
+        "source": "keyword",
+        "keyword_medical": true,
+        "judge_kind": null,
+        "judge_ms": 0.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793327103380093097, \"detail\": {\"kind\": \"medical\", \"chat_mode\": false, \"source\": \"keyword\", \"keyword_medical\": true, \"judge_kind\": null, \"judge_ms\": 0.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327103380679882,
+      "node": "llm_medical",
+      "stage": "rag_start",
+      "t_ns": 1793327103380523804,
+      "detail": {},
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_start\", \"t_ns\": 1793327103380523804, \"detail\": {}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327103390847279,
+      "node": "llm_medical",
+      "stage": "rag_end",
+      "t_ns": 1793327103390606534,
+      "detail": {
+        "n_chunks": 4,
+        "took_ms": 9.99,
+        "top1": "血液透析患者常见检验项目"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_end\", \"t_ns\": 1793327103390606534, \"detail\": {\"n_chunks\": 4, \"took_ms\": 9.99, \"top1\": \"血液透析患者常见检验项目\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327104291358709,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793327104290948433,
+      "detail": {
+        "prompt_chars": 1075,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793327104290948433, \"detail\": {\"prompt_chars\": 1075, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327104291651909,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793327104291388701,
+      "detail": {
+        "prompt_chars": 1075
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793327104291388701, \"detail\": {\"prompt_chars\": 1075}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327104304672507,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793327104304451177,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793327104304451177, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327104321067810,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327104320840759,
+      "detail": {
+        "text_len": 6,
+        "head": "这个要注意。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327104320840759, \"detail\": {\"text_len\": 6, \"head\": \"这个要注意。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327104321252159,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327104320908386,
+      "detail": {
+        "text_len": 6
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327104320908386, \"detail\": {\"text_len\": 6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327104838720763,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327104837881123,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 516.967702,
+        "audio_sec": 1.36,
+        "rtf": 0.38012331029411767
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327104837881123, \"detail\": {\"text_len\": 6, \"dur_ms\": 516.967702, \"audio_sec\": 1.36, \"rtf\": 0.38012331029411767}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327104839093394,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327104838568351,
+      "detail": {
+        "text_len": 24,
+        "head": "资料提到血钙应维持在2.1—2.5mmol/L，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327104838568351, \"detail\": {\"text_len\": 24, \"head\": \"资料提到血钙应维持在2.1—2.5mmol/L，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327104839407281,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327104838639358,
+      "detail": {
+        "text_len": 24
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327104838639358, \"detail\": {\"text_len\": 24}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327104855443373,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327104855196552,
+      "detail": {
+        "text_len": 6,
+        "head": "这个要注意。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327104855196552, \"detail\": {\"text_len\": 6, \"head\": \"这个要注意。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327105128051516,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793327105127733745,
+      "detail": {
+        "chars": 63
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793327105127733745, \"detail\": {\"chars\": 63}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327106214850938,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327106214482776,
+      "detail": {
+        "text_len": 6,
+        "interrupted": false,
+        "dur_ms": 1359.28279
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327106214482776, \"detail\": {\"text_len\": 6, \"interrupted\": false, \"dur_ms\": 1359.28279}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327106792419965,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327106792052050,
+      "detail": {
+        "text_len": 24,
+        "dur_ms": 1953.406528,
+        "audio_sec": 5.6,
+        "rtf": 0.34882259428571427
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327106792052050, \"detail\": {\"text_len\": 24, \"dur_ms\": 1953.406528, \"audio_sec\": 5.6, \"rtf\": 0.34882259428571427}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327106813531782,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327106813226072,
+      "detail": {
+        "text_len": 16,
+        "head": "低于正常可能引发肾性骨病等问题。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327106813226072, \"detail\": {\"text_len\": 16, \"head\": \"低于正常可能引发肾性骨病等问题。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327106813744040,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327106813304205,
+      "detail": {
+        "text_len": 16
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327106813304205, \"detail\": {\"text_len\": 16}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327106855365755,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327106855105713,
+      "detail": {
+        "text_len": 24,
+        "head": "资料提到血钙应维持在2.1—2.5mmol/L，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327106855105713, \"detail\": {\"text_len\": 24, \"head\": \"资料提到血钙应维持在2.1—2.5mmol/L，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327108015647116,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327108015325822,
+      "detail": {
+        "text_len": 16,
+        "dur_ms": 1202.014983,
+        "audio_sec": 3.36,
+        "rtf": 0.3577425544642857
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327108015325822, \"detail\": {\"text_len\": 16, \"dur_ms\": 1202.014983, \"audio_sec\": 3.36, \"rtf\": 0.3577425544642857}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327108016176418,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327108015968281,
+      "detail": {
+        "text_len": 10,
+        "head": "具体表现需医生评估。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327108015968281, \"detail\": {\"text_len\": 10, \"head\": \"具体表现需医生评估。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327108016397336,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327108016021828,
+      "detail": {
+        "text_len": 10
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327108016021828, \"detail\": {\"text_len\": 10}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327108844939817,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327108844636267,
+      "detail": {
+        "text_len": 10,
+        "dur_ms": 828.609743,
+        "audio_sec": 2.32,
+        "rtf": 0.35715937198275866
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327108844636267, \"detail\": {\"text_len\": 10, \"dur_ms\": 828.609743, \"audio_sec\": 2.32, \"rtf\": 0.35715937198275866}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327108845394957,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793327108845217766,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793327108845217766, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327112454860749,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327112454589351,
+      "detail": {
+        "text_len": 24,
+        "interrupted": false,
+        "dur_ms": 5599.480529
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327112454589351, \"detail\": {\"text_len\": 24, \"interrupted\": false, \"dur_ms\": 5599.480529}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327112455456083,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327112455294911,
+      "detail": {
+        "text_len": 16,
+        "head": "低于正常可能引发肾性骨病等问题。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327112455294911, \"detail\": {\"text_len\": 16, \"head\": \"低于正常可能引发肾性骨病等问题。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327115812100142,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327115811783380,
+      "detail": {
+        "text_len": 16,
+        "interrupted": false,
+        "dur_ms": 3356.485481
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327115811783380, \"detail\": {\"text_len\": 16, \"interrupted\": false, \"dur_ms\": 3356.485481}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327115812616489,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327115812484383,
+      "detail": {
+        "text_len": 10,
+        "head": "具体表现需医生评估。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327115812484383, \"detail\": {\"text_len\": 10, \"head\": \"具体表现需医生评估。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327118131478286,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327118130959621,
+      "detail": {
+        "text_len": 10,
+        "interrupted": false,
+        "dur_ms": 2318.469449
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327118130959621, \"detail\": {\"text_len\": 10, \"interrupted\": false, \"dur_ms\": 2318.469449}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327118132370960,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793327118132046606,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793327118132046606, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793327103380093097,
+          "arrival_ns": 1793327103380362954,
+          "source": "round",
+          "detail": {
+            "kind": "medical",
+            "chat_mode": false,
+            "source": "keyword",
+            "keyword_medical": true,
+            "judge_kind": null,
+            "judge_ms": 0.0
+          }
+        }
+      ],
+      "rag_start": [
+        {
+          "t_ns": 1793327103380523804,
+          "arrival_ns": 1793327103380679882,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "rag_end": [
+        {
+          "t_ns": 1793327103390606534,
+          "arrival_ns": 1793327103390847279,
+          "source": "round",
+          "detail": {
+            "n_chunks": 4,
+            "took_ms": 9.99,
+            "top1": "血液透析患者常见检验项目"
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793327104290948433,
+          "arrival_ns": 1793327104291358709,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1075,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793327104291388701,
+          "arrival_ns": 1793327104291651909,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1075
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793327105127733745,
+          "arrival_ns": 1793327105128051516,
+          "source": "round",
+          "detail": {
+            "chars": 63
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793327104304451177,
+          "arrival_ns": 1793327104304672507,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793327108845217766,
+          "arrival_ns": 1793327108845394957,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793327104320840759,
+          "arrival_ns": 1793327104321067810,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "这个要注意。"
+          }
+        },
+        {
+          "t_ns": 1793327104838568351,
+          "arrival_ns": 1793327104839093394,
+          "source": "round",
+          "detail": {
+            "text_len": 24,
+            "head": "资料提到血钙应维持在2.1—2.5mmol/L，"
+          }
+        },
+        {
+          "t_ns": 1793327106813226072,
+          "arrival_ns": 1793327106813531782,
+          "source": "round",
+          "detail": {
+            "text_len": 16,
+            "head": "低于正常可能引发肾性骨病等问题。"
+          }
+        },
+        {
+          "t_ns": 1793327108015968281,
+          "arrival_ns": 1793327108016176418,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "具体表现需医生评估。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793327104320908386,
+          "arrival_ns": 1793327104321252159,
+          "source": "round",
+          "detail": {
+            "text_len": 6
+          }
+        },
+        {
+          "t_ns": 1793327104838639358,
+          "arrival_ns": 1793327104839407281,
+          "source": "round",
+          "detail": {
+            "text_len": 24
+          }
+        },
+        {
+          "t_ns": 1793327106813304205,
+          "arrival_ns": 1793327106813744040,
+          "source": "round",
+          "detail": {
+            "text_len": 16
+          }
+        },
+        {
+          "t_ns": 1793327108016021828,
+          "arrival_ns": 1793327108016397336,
+          "source": "round",
+          "detail": {
+            "text_len": 10
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793327104837881123,
+          "arrival_ns": 1793327104838720763,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 516.967702,
+            "audio_sec": 1.36,
+            "rtf": 0.38012331029411767
+          }
+        },
+        {
+          "t_ns": 1793327106792052050,
+          "arrival_ns": 1793327106792419965,
+          "source": "round",
+          "detail": {
+            "text_len": 24,
+            "dur_ms": 1953.406528,
+            "audio_sec": 5.6,
+            "rtf": 0.34882259428571427
+          }
+        },
+        {
+          "t_ns": 1793327108015325822,
+          "arrival_ns": 1793327108015647116,
+          "source": "round",
+          "detail": {
+            "text_len": 16,
+            "dur_ms": 1202.014983,
+            "audio_sec": 3.36,
+            "rtf": 0.3577425544642857
+          }
+        },
+        {
+          "t_ns": 1793327108844636267,
+          "arrival_ns": 1793327108844939817,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "dur_ms": 828.609743,
+            "audio_sec": 2.32,
+            "rtf": 0.35715937198275866
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793327104855196552,
+          "arrival_ns": 1793327104855443373,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "这个要注意。"
+          }
+        },
+        {
+          "t_ns": 1793327106855105713,
+          "arrival_ns": 1793327106855365755,
+          "source": "round",
+          "detail": {
+            "text_len": 24,
+            "head": "资料提到血钙应维持在2.1—2.5mmol/L，"
+          }
+        },
+        {
+          "t_ns": 1793327112455294911,
+          "arrival_ns": 1793327112455456083,
+          "source": "round",
+          "detail": {
+            "text_len": 16,
+            "head": "低于正常可能引发肾性骨病等问题。"
+          }
+        },
+        {
+          "t_ns": 1793327115812484383,
+          "arrival_ns": 1793327115812616489,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "具体表现需医生评估。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793327106214482776,
+          "arrival_ns": 1793327106214850938,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "interrupted": false,
+            "dur_ms": 1359.28279
+          }
+        },
+        {
+          "t_ns": 1793327112454589351,
+          "arrival_ns": 1793327112454860749,
+          "source": "round",
+          "detail": {
+            "text_len": 24,
+            "interrupted": false,
+            "dur_ms": 5599.480529
+          }
+        },
+        {
+          "t_ns": 1793327115811783380,
+          "arrival_ns": 1793327115812100142,
+          "source": "round",
+          "detail": {
+            "text_len": 16,
+            "interrupted": false,
+            "dur_ms": 3356.485481
+          }
+        },
+        {
+          "t_ns": 1793327118130959621,
+          "arrival_ns": 1793327118131478286,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "interrupted": false,
+            "dur_ms": 2318.469449
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793327118132046606,
+          "arrival_ns": 1793327118132370960,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 50,
+    "interval_s": 2.0
+  }
+}

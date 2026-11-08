@@ -1,0 +1,1321 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_173007",
+  "host": "artrc",
+  "tag": "test_voice",
+  "round_index": 0,
+  "mode": "wake-wav",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-27T15:46:36.320",
+  "finished_at": "2026-10-27T15:47:02.209",
+  "duration_s": 25.89,
+  "trigger": {
+    "mode": "wake-wav",
+    "t0_source": "question_asr_rx",
+    "inject_text": null,
+    "question_wav": "audio/q_weather.wav",
+    "wake_wav": "audio/wake_xiaoyi.wav",
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": [
+      {
+        "role": "wake",
+        "wav": "audio/wake_xiaoyi.wav",
+        "cmd": "pw-play --target latency_sink audio/wake_xiaoyi.wav",
+        "start_ns": 1793087196320721938,
+        "end_ns": 1793087198250080101,
+        "ok": true,
+        "error": null
+      },
+      {
+        "role": "question",
+        "wav": "audio/q_weather.wav",
+        "cmd": "pw-play --target latency_sink audio/q_weather.wav",
+        "start_ns": 1793087198477674561,
+        "end_ns": 1793087200596804306,
+        "ok": true,
+        "error": null
+      }
+    ]
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793087203879936341,
+    "t0_source": "question_asr_rx",
+    "t_trigger_begin_ns": 1793087196320122212,
+    "t_publish_question_ns": null,
+    "t_start_asr_pub_ns": 1793087198174838527,
+    "t_question_play_start_ns": 1793087198477674561,
+    "t_question_play_end_ns": 1793087200596804306,
+    "probe_rx_ns": {
+      "question_asr": 1793087203879936341,
+      "llm_to_openai": 1793087203880794868,
+      "llm_to_dashapp": null,
+      "ali_llm_output_start": null,
+      "ali_llm_output_first_text": 1793087204624670051,
+      "ali_llm_output_done": 1793087205816189110,
+      "tts_realtime_data_start": null,
+      "tts_realtime_data_first_text": 1793087204706354252,
+      "tts_realtime_data_done": 1793087205816270810,
+      "tts_session_finished": 1793087221903803212
+    },
+    "node_event_ns": {
+      "asr.kws_detected": 1793087198171000378,
+      "asr.start_asr": 1793087198177064168,
+      "asr.endpoint": 1793087201976158571,
+      "asr.asr_callback": 1793087201990795070,
+      "asr.nurse_req": 1793087201996569675,
+      "asr.nurse_resp": 1793087203879208986,
+      "asr.publish_question": 1793087203879427464,
+      "tts_local.rx_first": 1793087204706662345,
+      "tts_local.synth_start_first": 1793087204706741552,
+      "tts_local.synth_end_first": 1793087205676862558,
+      "tts_local.play_start_first": 1793087205776486493,
+      "tts_local.play_end_last": 1793087221902446098,
+      "tts_local.session_finished": 1793087221903395250
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": 6.064,
+    "asr_start_asr_to_endpoint_ms": 3799.094,
+    "asr_endpoint_to_nurse_req_ms": 20.411,
+    "asr_nurse_req_to_nurse_resp_ms": 1882.639,
+    "asr_nurse_resp_to_publish_question_ms": 0.218,
+    "asr_endpoint_to_question_rx_ms": 1903.778,
+    "asr_publish_question_to_rx_ms": 0.509,
+    "question_to_router_ms": 0.859,
+    "router_to_llm_first_ms": 743.875,
+    "question_to_llm_first_ms": 744.734,
+    "llm_first_to_done_ms": 1191.519,
+    "question_to_llm_done_ms": 1936.253,
+    "llm_first_to_tts_first_text_ms": 81.684,
+    "question_to_tts_first_text_ms": 826.418,
+    "first_tts_text_to_first_play_start_ms": 1070.132,
+    "tts_rx_to_synth_end_ms": 970.2,
+    "tts_rx_to_play_start_ms": 1069.824,
+    "tts_synth_end_to_play_start_ms": 99.624,
+    "question_to_first_audio_ms": 1896.55,
+    "speech_end_to_first_audio_ms": 6200.328,
+    "playback_end_to_first_audio_ms": 5179.682,
+    "question_to_session_finished_ms": 18023.867,
+    "audio_total_sum_ms": 16120.637,
+    "audio_first_to_last_ms": 16125.96
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": 6063790,
+    "asr_start_asr_to_endpoint_ns": 3799094403,
+    "asr_endpoint_to_nurse_req_ns": 20411104,
+    "asr_nurse_req_to_nurse_resp_ns": 1882639311,
+    "asr_nurse_resp_to_publish_question_ns": 218478,
+    "asr_endpoint_to_question_rx_ns": 1903777770,
+    "asr_publish_question_to_rx_ns": 508877,
+    "question_to_router_ns": 858527,
+    "router_to_llm_first_ns": 743875183,
+    "question_to_llm_first_ns": 744733710,
+    "llm_first_to_done_ns": 1191519059,
+    "question_to_llm_done_ns": 1936252769,
+    "llm_first_to_tts_first_text_ns": 81684201,
+    "question_to_tts_first_text_ns": 826417911,
+    "first_tts_text_to_first_play_start_ns": 1070132241,
+    "tts_rx_to_synth_end_ns": 970200213,
+    "tts_rx_to_play_start_ns": 1069824148,
+    "tts_synth_end_to_play_start_ns": 99623935,
+    "question_to_first_audio_ns": 1896550152,
+    "speech_end_to_first_audio_ns": 6200327922,
+    "playback_end_to_first_audio_ns": 5179682187,
+    "question_to_session_finished_ns": 18023866871,
+    "audio_total_sum_ns": 16120637287,
+    "audio_first_to_last_ns": 16125959605
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": 20411104,
+      "ms": 20.411
+    },
+    "nurse_dur": {
+      "ns": 1882639311,
+      "ms": 1882.639
+    },
+    "nurse_resp_to_question": {
+      "ns": 727355,
+      "ms": 0.727
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 744733710,
+      "ms": 744.734
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 1191519059,
+      "ms": 1191.519
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 81684201,
+      "ms": 81.684
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 1070132241,
+      "ms": 1070.132
+    },
+    "question_to_first_play_start": {
+      "ns": 1896550152,
+      "ms": 1896.55
+    },
+    "speech_end_to_first_play_start": {
+      "ns": 6200327922,
+      "ms": 6200.328
+    },
+    "question_to_session_finished": {
+      "ns": 18023866871,
+      "ms": 18023.867
+    },
+    "audio_total_sec": {
+      "ns": 16120637287,
+      "ms": 16120.637,
+      "sec": 16.121
+    }
+  },
+  "asr_chain": {
+    "kws_detected": {
+      "t_ns": 1793087198171000378,
+      "arrival_ns": 1793087198174757680,
+      "detail": {
+        "keyword": "{\"start_time\":0.00, \"keyword\": \"小艺小艺\", \"timestamps\": [0.40, 0.64, 0.72, 0.84, 1.12, 1.16, 1.36, 1.44], \"tokens\":[\"x\", \"iǎo\", \"y\", \"ì\", \"x\", \"iǎo\", \"y\", \"ì\"]}"
+      }
+    },
+    "start_asr": {
+      "t_ns": 1793087198177064168,
+      "arrival_ns": 1793087198177339079,
+      "detail": {}
+    },
+    "endpoint": {
+      "t_ns": 1793087201976158571,
+      "arrival_ns": 1793087201987773485,
+      "detail": {}
+    },
+    "asr_callback": {
+      "t_ns": 1793087201990795070,
+      "arrival_ns": 1793087202000741530,
+      "detail": {
+        "text_len": 21
+      }
+    },
+    "nurse_req": {
+      "t_ns": 1793087201996569675,
+      "arrival_ns": 1793087202001406280,
+      "detail": {
+        "text_len": 21
+      }
+    },
+    "nurse_resp": {
+      "t_ns": 1793087203879208986,
+      "arrival_ns": 1793087203879541912,
+      "detail": {
+        "dur_ms": 1882.635
+      }
+    },
+    "publish_question": {
+      "t_ns": 1793087203879427464,
+      "arrival_ns": 1793087203880441953,
+      "detail": {
+        "text_len": 73
+      }
+    }
+  },
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": 1793087203879427464,
+    "publish_question_found": true
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": 6.064,
+    "asr_start_asr_to_endpoint_ms": 3799.094,
+    "asr_endpoint_to_nurse_req_ms": 20.411,
+    "asr_nurse_req_to_nurse_resp_ms": 1882.639,
+    "asr_nurse_resp_to_publish_question_ms": 0.218,
+    "asr_endpoint_to_question_rx_ms": 1903.778,
+    "asr_publish_question_to_rx_ms": 0.509,
+    "question_to_router_ms": 0.859,
+    "router_to_llm_first_ms": 743.875,
+    "question_to_llm_first_ms": 744.734,
+    "llm_first_to_done_ms": 1191.519,
+    "question_to_llm_done_ms": 1936.253,
+    "llm_first_to_tts_first_text_ms": 81.684,
+    "question_to_tts_first_text_ms": 826.418,
+    "first_tts_text_to_first_play_start_ms": 1070.132,
+    "tts_rx_to_synth_end_ms": 970.2,
+    "tts_rx_to_play_start_ms": 1069.824,
+    "tts_synth_end_to_play_start_ms": 99.624,
+    "question_to_first_audio_ms": 1896.55,
+    "speech_end_to_first_audio_ms": 6200.328,
+    "playback_end_to_first_audio_ms": 5179.682,
+    "question_to_session_finished_ms": 18023.867,
+    "audio_total_sum_ms": 16120.637,
+    "audio_first_to_last_ms": 16125.96
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": null,
+      "first_text_rx_ns": 1793087204624670051,
+      "done_rx_ns": 1793087205816189110,
+      "chunk_count": 14,
+      "char_count": 70,
+      "chunks": [
+        {
+          "t_ns": 1793087204624670051,
+          "text": "今天"
+        },
+        {
+          "t_ns": 1793087204666351966,
+          "text": "杭州天气"
+        },
+        {
+          "t_ns": 1793087204668028936,
+          "text": "晴"
+        },
+        {
+          "t_ns": 1793087204706016417,
+          "text": "朗，气温"
+        },
+        {
+          "t_ns": 1793087204911931416,
+          "text": "在十六到二"
+        },
+        {
+          "t_ns": 1793087204990427343,
+          "text": "十二摄氏度之间"
+        },
+        {
+          "t_ns": 1793087205037997270,
+          "text": "，微风轻拂，"
+        },
+        {
+          "t_ns": 1793087205125081797,
+          "text": "空气也挺清新"
+        },
+        {
+          "t_ns": 1793087205252792684,
+          "text": "。  \n透析后"
+        },
+        {
+          "t_ns": 1793087205457117232,
+          "text": "身体容易感觉凉，"
+        },
+        {
+          "t_ns": 1793087205526754846,
+          "text": "您要是觉得有点冷"
+        },
+        {
+          "t_ns": 1793087205640289252,
+          "text": "，可以适当加"
+        },
+        {
+          "t_ns": 1793087205710001647,
+          "text": "件薄外套哦"
+        },
+        {
+          "t_ns": 1793087205791463293,
+          "text": "。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793087204706354252,
+      "done_rx_ns": 1793087205816270810,
+      "text_count": 7,
+      "texts": [
+        {
+          "t_ns": 1793087204706354252,
+          "text": "今天杭州天气晴朗，"
+        },
+        {
+          "t_ns": 1793087205038205426,
+          "text": "气温在十六到二十二摄氏度之间，"
+        },
+        {
+          "t_ns": 1793087205038738510,
+          "text": "微风轻拂，"
+        },
+        {
+          "t_ns": 1793087205253077197,
+          "text": "空气也挺清新。"
+        },
+        {
+          "t_ns": 1793087205457509219,
+          "text": "透析后身体容易感觉凉，"
+        },
+        {
+          "t_ns": 1793087205641299480,
+          "text": "您要是觉得有点冷，"
+        },
+        {
+          "t_ns": 1793087205791730393,
+          "text": "可以适当加件薄外套哦。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 44,
+    "latency_events_total": 44,
+    "asr_events": 7,
+    "tts_events": 37,
+    "tts_play_pairs": 7,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793087198174757680,
+      "node": "asr",
+      "stage": "kws_detected",
+      "t_ns": 1793087198171000378,
+      "detail": {
+        "keyword": "{\"start_time\":0.00, \"keyword\": \"小艺小艺\", \"timestamps\": [0.40, 0.64, 0.72, 0.84, 1.12, 1.16, 1.36, 1.44], \"tokens\":[\"x\", \"iǎo\", \"y\", \"ì\", \"x\", \"iǎo\", \"y\", \"ì\"]}"
+      },
+      "raw": "{\"node\":\"asr\",\"stage\":\"kws_detected\",\"t_ns\":1793087198171000378,\"detail\":{\"keyword\":\"{\\\"start_time\\\":0.00, \\\"keyword\\\": \\\"小艺小艺\\\", \\\"timestamps\\\": [0.40, 0.64, 0.72, 0.84, 1.12, 1.16, 1.36, 1.44], \\\"tokens\\\":[\\\"x\\\", \\\"iǎo\\\", \\\"y\\\", \\\"ì\\\", \\\"x\\\", \\\"iǎo\\\", \\\"y\\\", \\\"ì\\\"]}\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087198177339079,
+      "node": "asr",
+      "stage": "start_asr",
+      "t_ns": 1793087198177064168,
+      "detail": {},
+      "raw": "{\"node\":\"asr\",\"stage\":\"start_asr\",\"t_ns\":1793087198177064168}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087201987773485,
+      "node": "asr",
+      "stage": "endpoint",
+      "t_ns": 1793087201976158571,
+      "detail": {},
+      "raw": "{\"node\":\"asr\",\"stage\":\"endpoint\",\"t_ns\":1793087201976158571}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087202000741530,
+      "node": "asr",
+      "stage": "asr_callback",
+      "t_ns": 1793087201990795070,
+      "detail": {
+        "text_len": 21
+      },
+      "raw": "{\"node\":\"asr\",\"stage\":\"asr_callback\",\"t_ns\":1793087201990795070,\"detail\":{\"text_len\":21}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087202001406280,
+      "node": "asr",
+      "stage": "nurse_req",
+      "t_ns": 1793087201996569675,
+      "detail": {
+        "text_len": 21
+      },
+      "raw": "{\"node\":\"asr\",\"stage\":\"nurse_req\",\"t_ns\":1793087201996569675,\"detail\":{\"text_len\":21}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087203879541912,
+      "node": "asr",
+      "stage": "nurse_resp",
+      "t_ns": 1793087203879208986,
+      "detail": {
+        "dur_ms": 1882.635
+      },
+      "raw": "{\"node\":\"asr\",\"stage\":\"nurse_resp\",\"t_ns\":1793087203879208986,\"detail\":{\"dur_ms\":1882.635}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087203880441953,
+      "node": "asr",
+      "stage": "publish_question",
+      "t_ns": 1793087203879427464,
+      "detail": {
+        "text_len": 73
+      },
+      "raw": "{\"node\":\"asr\",\"stage\":\"publish_question\",\"t_ns\":1793087203879427464,\"detail\":{\"text_len\":73}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087204706900855,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087204706662345,
+      "detail": {
+        "text_len": 9,
+        "head": "今天杭州天气晴朗，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087204706662345, \"detail\": {\"text_len\": 9, \"head\": \"今天杭州天气晴朗，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087204707203239,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087204706741552,
+      "detail": {
+        "text_len": 9
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087204706741552, \"detail\": {\"text_len\": 9}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087205677202260,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087205676862558,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 970.115415,
+        "audio_sec": 2.64,
+        "rtf": 0.3674679602272727
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087205676862558, \"detail\": {\"text_len\": 9, \"dur_ms\": 970.115415, \"audio_sec\": 2.64, \"rtf\": 0.3674679602272727}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087205686006264,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087205685650099,
+      "detail": {
+        "text_len": 15,
+        "head": "气温在十六到二十二摄氏度之间，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087205685650099, \"detail\": {\"text_len\": 15, \"head\": \"气温在十六到二十二摄氏度之间，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087205686309020,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087205685748199,
+      "detail": {
+        "text_len": 15
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087205685748199, \"detail\": {\"text_len\": 15}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087205776833538,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793087205776486493,
+      "detail": {
+        "text_len": 9,
+        "head": "今天杭州天气晴朗，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793087205776486493, \"detail\": {\"text_len\": 9, \"head\": \"今天杭州天气晴朗，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087206845704141,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087206845278464,
+      "detail": {
+        "text_len": 15,
+        "dur_ms": 1159.522525,
+        "audio_sec": 3.2,
+        "rtf": 0.3623507890625
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087206845278464, \"detail\": {\"text_len\": 15, \"dur_ms\": 1159.522525, \"audio_sec\": 3.2, \"rtf\": 0.3623507890625}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087206851147877,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087206850695760,
+      "detail": {
+        "text_len": 5,
+        "head": "微风轻拂，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087206850695760, \"detail\": {\"text_len\": 5, \"head\": \"微风轻拂，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087206851640249,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087206850787415,
+      "detail": {
+        "text_len": 5
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087206850787415, \"detail\": {\"text_len\": 5}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087207524838227,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087207524466790,
+      "detail": {
+        "text_len": 5,
+        "dur_ms": 673.674534,
+        "audio_sec": 1.76,
+        "rtf": 0.3827696215909091
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087207524466790, \"detail\": {\"text_len\": 5, \"dur_ms\": 673.674534, \"audio_sec\": 1.76, \"rtf\": 0.3827696215909091}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087207525276598,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087207525111316,
+      "detail": {
+        "text_len": 7,
+        "head": "空气也挺清新。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087207525111316, \"detail\": {\"text_len\": 7, \"head\": \"空气也挺清新。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087207525468628,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087207525189612,
+      "detail": {
+        "text_len": 7
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087207525189612, \"detail\": {\"text_len\": 7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087208237335698,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087208236965236,
+      "detail": {
+        "text_len": 7,
+        "dur_ms": 711.770424,
+        "audio_sec": 1.84,
+        "rtf": 0.386831752173913
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087208236965236, \"detail\": {\"text_len\": 7, \"dur_ms\": 711.770424, \"audio_sec\": 1.84, \"rtf\": 0.386831752173913}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087208237723463,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087208237566221,
+      "detail": {
+        "text_len": 11,
+        "head": "透析后身体容易感觉凉，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087208237566221, \"detail\": {\"text_len\": 11, \"head\": \"透析后身体容易感觉凉，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087208237917174,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087208237615897,
+      "detail": {
+        "text_len": 11
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087208237615897, \"detail\": {\"text_len\": 11}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087208570558131,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793087208570175029,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 2793.686474
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793087208570175029, \"detail\": {\"text_len\": 9, \"dur_ms\": 2793.686474}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087208571132039,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793087208570857055,
+      "detail": {
+        "text_len": 15,
+        "head": "气温在十六到二十二摄氏度之间，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793087208570857055, \"detail\": {\"text_len\": 15, \"head\": \"气温在十六到二十二摄氏度之间，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087209058088205,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087209057701201,
+      "detail": {
+        "text_len": 11,
+        "dur_ms": 820.076915,
+        "audio_sec": 2.24,
+        "rtf": 0.36610576562499997
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087209057701201, \"detail\": {\"text_len\": 11, \"dur_ms\": 820.076915, \"audio_sec\": 2.24, \"rtf\": 0.36610576562499997}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087209058681390,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087209058296970,
+      "detail": {
+        "text_len": 9,
+        "head": "您要是觉得有点冷，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087209058296970, \"detail\": {\"text_len\": 9, \"head\": \"您要是觉得有点冷，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087209059003412,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087209058348195,
+      "detail": {
+        "text_len": 9
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087209058348195, \"detail\": {\"text_len\": 9}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087209757666244,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087209757196618,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 698.838904,
+        "audio_sec": 1.84,
+        "rtf": 0.379803752173913
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087209757196618, \"detail\": {\"text_len\": 9, \"dur_ms\": 698.838904, \"audio_sec\": 1.84, \"rtf\": 0.379803752173913}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087209758130536,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087209757996401,
+      "detail": {
+        "text_len": 11,
+        "head": "可以适当加件薄外套哦。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087209757996401, \"detail\": {\"text_len\": 11, \"head\": \"可以适当加件薄外套哦。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087209758386311,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087209758041535,
+      "detail": {
+        "text_len": 11
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087209758041535, \"detail\": {\"text_len\": 11}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087210645174908,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087210644837736,
+      "detail": {
+        "text_len": 11,
+        "dur_ms": 886.791347,
+        "audio_sec": 2.4,
+        "rtf": 0.36949639458333333
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087210644837736, \"detail\": {\"text_len\": 11, \"dur_ms\": 886.791347, \"audio_sec\": 2.4, \"rtf\": 0.36949639458333333}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087210645540443,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793087210645403086,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793087210645403086, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087211776678963,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793087211776198174,
+      "detail": {
+        "text_len": 15,
+        "dur_ms": 3205.33426
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793087211776198174, \"detail\": {\"text_len\": 15, \"dur_ms\": 3205.33426}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087211777425888,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793087211777232516,
+      "detail": {
+        "text_len": 5,
+        "head": "微风轻拂，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793087211777232516, \"detail\": {\"text_len\": 5, \"head\": \"微风轻拂，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087213544667386,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793087213544116264,
+      "detail": {
+        "text_len": 5,
+        "dur_ms": 1766.871963
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793087213544116264, \"detail\": {\"text_len\": 5, \"dur_ms\": 1766.871963}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087213545440909,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793087213545205270,
+      "detail": {
+        "text_len": 7,
+        "head": "空气也挺清新。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793087213545205270, \"detail\": {\"text_len\": 7, \"head\": \"空气也挺清新。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087215388577851,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793087215388097689,
+      "detail": {
+        "text_len": 7,
+        "dur_ms": 1842.889094
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793087215388097689, \"detail\": {\"text_len\": 7, \"dur_ms\": 1842.889094}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087215389085457,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793087215388857568,
+      "detail": {
+        "text_len": 11,
+        "head": "透析后身体容易感觉凉，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793087215388857568, \"detail\": {\"text_len\": 11, \"head\": \"透析后身体容易感觉凉，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087217631938707,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793087217631572616,
+      "detail": {
+        "text_len": 11,
+        "dur_ms": 2242.711637
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793087217631572616, \"detail\": {\"text_len\": 11, \"dur_ms\": 2242.711637}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087217632595135,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793087217632430539,
+      "detail": {
+        "text_len": 9,
+        "head": "您要是觉得有点冷，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793087217632430539, \"detail\": {\"text_len\": 9, \"head\": \"您要是觉得有点冷，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087219493645051,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793087219493185970,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 1860.746902
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793087219493185970, \"detail\": {\"text_len\": 9, \"dur_ms\": 1860.746902}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087219494294825,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793087219494085112,
+      "detail": {
+        "text_len": 11,
+        "head": "可以适当加件薄外套哦。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793087219494085112, \"detail\": {\"text_len\": 11, \"head\": \"可以适当加件薄外套哦。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087221902889758,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793087221902446098,
+      "detail": {
+        "text_len": 11,
+        "dur_ms": 2408.358582
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793087221902446098, \"detail\": {\"text_len\": 11, \"dur_ms\": 2408.358582}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087221903585348,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793087221903395250,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793087221903395250, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "asr": {
+      "kws_detected": [
+        {
+          "t_ns": 1793087198171000378,
+          "arrival_ns": 1793087198174757680,
+          "source": "round",
+          "detail": {
+            "keyword": "{\"start_time\":0.00, \"keyword\": \"小艺小艺\", \"timestamps\": [0.40, 0.64, 0.72, 0.84, 1.12, 1.16, 1.36, 1.44], \"tokens\":[\"x\", \"iǎo\", \"y\", \"ì\", \"x\", \"iǎo\", \"y\", \"ì\"]}"
+          }
+        }
+      ],
+      "start_asr": [
+        {
+          "t_ns": 1793087198177064168,
+          "arrival_ns": 1793087198177339079,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "endpoint": [
+        {
+          "t_ns": 1793087201976158571,
+          "arrival_ns": 1793087201987773485,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "asr_callback": [
+        {
+          "t_ns": 1793087201990795070,
+          "arrival_ns": 1793087202000741530,
+          "source": "round",
+          "detail": {
+            "text_len": 21
+          }
+        }
+      ],
+      "nurse_req": [
+        {
+          "t_ns": 1793087201996569675,
+          "arrival_ns": 1793087202001406280,
+          "source": "round",
+          "detail": {
+            "text_len": 21
+          }
+        }
+      ],
+      "nurse_resp": [
+        {
+          "t_ns": 1793087203879208986,
+          "arrival_ns": 1793087203879541912,
+          "source": "round",
+          "detail": {
+            "dur_ms": 1882.635
+          }
+        }
+      ],
+      "publish_question": [
+        {
+          "t_ns": 1793087203879427464,
+          "arrival_ns": 1793087203880441953,
+          "source": "round",
+          "detail": {
+            "text_len": 73
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx": [
+        {
+          "t_ns": 1793087204706662345,
+          "arrival_ns": 1793087204706900855,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "今天杭州天气晴朗，"
+          }
+        },
+        {
+          "t_ns": 1793087205685650099,
+          "arrival_ns": 1793087205686006264,
+          "source": "round",
+          "detail": {
+            "text_len": 15,
+            "head": "气温在十六到二十二摄氏度之间，"
+          }
+        },
+        {
+          "t_ns": 1793087206850695760,
+          "arrival_ns": 1793087206851147877,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "微风轻拂，"
+          }
+        },
+        {
+          "t_ns": 1793087207525111316,
+          "arrival_ns": 1793087207525276598,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "空气也挺清新。"
+          }
+        },
+        {
+          "t_ns": 1793087208237566221,
+          "arrival_ns": 1793087208237723463,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "透析后身体容易感觉凉，"
+          }
+        },
+        {
+          "t_ns": 1793087209058296970,
+          "arrival_ns": 1793087209058681390,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "您要是觉得有点冷，"
+          }
+        },
+        {
+          "t_ns": 1793087209757996401,
+          "arrival_ns": 1793087209758130536,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "可以适当加件薄外套哦。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793087204706741552,
+          "arrival_ns": 1793087204707203239,
+          "source": "round",
+          "detail": {
+            "text_len": 9
+          }
+        },
+        {
+          "t_ns": 1793087205685748199,
+          "arrival_ns": 1793087205686309020,
+          "source": "round",
+          "detail": {
+            "text_len": 15
+          }
+        },
+        {
+          "t_ns": 1793087206850787415,
+          "arrival_ns": 1793087206851640249,
+          "source": "round",
+          "detail": {
+            "text_len": 5
+          }
+        },
+        {
+          "t_ns": 1793087207525189612,
+          "arrival_ns": 1793087207525468628,
+          "source": "round",
+          "detail": {
+            "text_len": 7
+          }
+        },
+        {
+          "t_ns": 1793087208237615897,
+          "arrival_ns": 1793087208237917174,
+          "source": "round",
+          "detail": {
+            "text_len": 11
+          }
+        },
+        {
+          "t_ns": 1793087209058348195,
+          "arrival_ns": 1793087209059003412,
+          "source": "round",
+          "detail": {
+            "text_len": 9
+          }
+        },
+        {
+          "t_ns": 1793087209758041535,
+          "arrival_ns": 1793087209758386311,
+          "source": "round",
+          "detail": {
+            "text_len": 11
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793087205676862558,
+          "arrival_ns": 1793087205677202260,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 970.115415,
+            "audio_sec": 2.64,
+            "rtf": 0.3674679602272727
+          }
+        },
+        {
+          "t_ns": 1793087206845278464,
+          "arrival_ns": 1793087206845704141,
+          "source": "round",
+          "detail": {
+            "text_len": 15,
+            "dur_ms": 1159.522525,
+            "audio_sec": 3.2,
+            "rtf": 0.3623507890625
+          }
+        },
+        {
+          "t_ns": 1793087207524466790,
+          "arrival_ns": 1793087207524838227,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "dur_ms": 673.674534,
+            "audio_sec": 1.76,
+            "rtf": 0.3827696215909091
+          }
+        },
+        {
+          "t_ns": 1793087208236965236,
+          "arrival_ns": 1793087208237335698,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "dur_ms": 711.770424,
+            "audio_sec": 1.84,
+            "rtf": 0.386831752173913
+          }
+        },
+        {
+          "t_ns": 1793087209057701201,
+          "arrival_ns": 1793087209058088205,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "dur_ms": 820.076915,
+            "audio_sec": 2.24,
+            "rtf": 0.36610576562499997
+          }
+        },
+        {
+          "t_ns": 1793087209757196618,
+          "arrival_ns": 1793087209757666244,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 698.838904,
+            "audio_sec": 1.84,
+            "rtf": 0.379803752173913
+          }
+        },
+        {
+          "t_ns": 1793087210644837736,
+          "arrival_ns": 1793087210645174908,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "dur_ms": 886.791347,
+            "audio_sec": 2.4,
+            "rtf": 0.36949639458333333
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793087205776486493,
+          "arrival_ns": 1793087205776833538,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "今天杭州天气晴朗，"
+          }
+        },
+        {
+          "t_ns": 1793087208570857055,
+          "arrival_ns": 1793087208571132039,
+          "source": "round",
+          "detail": {
+            "text_len": 15,
+            "head": "气温在十六到二十二摄氏度之间，"
+          }
+        },
+        {
+          "t_ns": 1793087211777232516,
+          "arrival_ns": 1793087211777425888,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "微风轻拂，"
+          }
+        },
+        {
+          "t_ns": 1793087213545205270,
+          "arrival_ns": 1793087213545440909,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "空气也挺清新。"
+          }
+        },
+        {
+          "t_ns": 1793087215388857568,
+          "arrival_ns": 1793087215389085457,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "透析后身体容易感觉凉，"
+          }
+        },
+        {
+          "t_ns": 1793087217632430539,
+          "arrival_ns": 1793087217632595135,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "您要是觉得有点冷，"
+          }
+        },
+        {
+          "t_ns": 1793087219494085112,
+          "arrival_ns": 1793087219494294825,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "可以适当加件薄外套哦。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793087208570175029,
+          "arrival_ns": 1793087208570558131,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 2793.686474
+          }
+        },
+        {
+          "t_ns": 1793087211776198174,
+          "arrival_ns": 1793087211776678963,
+          "source": "round",
+          "detail": {
+            "text_len": 15,
+            "dur_ms": 3205.33426
+          }
+        },
+        {
+          "t_ns": 1793087213544116264,
+          "arrival_ns": 1793087213544667386,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "dur_ms": 1766.871963
+          }
+        },
+        {
+          "t_ns": 1793087215388097689,
+          "arrival_ns": 1793087215388577851,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "dur_ms": 1842.889094
+          }
+        },
+        {
+          "t_ns": 1793087217631572616,
+          "arrival_ns": 1793087217631938707,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "dur_ms": 2242.711637
+          }
+        },
+        {
+          "t_ns": 1793087219493185970,
+          "arrival_ns": 1793087219493645051,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 1860.746902
+          }
+        },
+        {
+          "t_ns": 1793087221902446098,
+          "arrival_ns": 1793087221902889758,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "dur_ms": 2408.358582
+          }
+        }
+      ],
+      "rx_control": [
+        {
+          "t_ns": 1793087210645403086,
+          "arrival_ns": 1793087210645540443,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793087221903395250,
+          "arrival_ns": 1793087221903585348,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 1,
+    "interval_s": 1.0
+  }
+}

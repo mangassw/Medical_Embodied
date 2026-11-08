@@ -1,0 +1,946 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1143864",
+  "host": "artrc",
+  "tag": "ol_smoke",
+  "round_index": 1,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T15:23:16.430",
+  "finished_at": "2026-10-30T15:23:24.933",
+  "duration_s": 8.503,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "给我讲个笑话吧",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793344996430417750,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793344996430012291,
+    "t_publish_question_ns": 1793344996430417750,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793344996430983373,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793344996431287998,
+      "ali_llm_output_start": 1793344996725081702,
+      "ali_llm_output_first_text": 1793344996725329637,
+      "ali_llm_output_done": 1793344997528564290,
+      "tts_realtime_data_start": 1793344996725361814,
+      "tts_realtime_data_first_text": 1793344996818578796,
+      "tts_realtime_data_done": 1793344997528618759,
+      "tts_session_finished": 1793345004632960159
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793344996819345788,
+      "tts_local.synth_start_first": 1793344996819419975,
+      "tts_local.synth_end_first": 1793344997682122002,
+      "tts_local.play_start_first": 1793344997719851259,
+      "tts_local.play_end_last": 1793345004631911945,
+      "tts_local.session_finished": 1793345004632603775
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.87,
+    "router_to_llm_first_ms": 294.042,
+    "question_to_llm_first_ms": 294.912,
+    "llm_first_to_done_ms": 803.235,
+    "question_to_llm_done_ms": 1098.147,
+    "llm_first_to_tts_first_text_ms": 93.249,
+    "question_to_tts_first_text_ms": 388.161,
+    "first_tts_text_to_first_play_start_ms": 901.272,
+    "tts_rx_to_synth_end_ms": 862.776,
+    "tts_rx_to_play_start_ms": 900.505,
+    "tts_synth_end_to_play_start_ms": 37.729,
+    "question_to_first_audio_ms": 1289.434,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 8202.542,
+    "audio_total_sum_ms": 6910.025,
+    "audio_first_to_last_ms": 6912.061
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 870248,
+    "router_to_llm_first_ns": 294041639,
+    "question_to_llm_first_ns": 294911887,
+    "llm_first_to_done_ns": 803234653,
+    "question_to_llm_done_ns": 1098146540,
+    "llm_first_to_tts_first_text_ns": 93249159,
+    "question_to_tts_first_text_ns": 388161046,
+    "first_tts_text_to_first_play_start_ns": 901272463,
+    "tts_rx_to_synth_end_ns": 862776214,
+    "tts_rx_to_play_start_ns": 900505471,
+    "tts_synth_end_to_play_start_ns": 37729257,
+    "question_to_first_audio_ns": 1289433509,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 8202542409,
+    "audio_total_sum_ns": 6910024660,
+    "audio_first_to_last_ns": 6912060686
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 294911887,
+      "ms": 294.912
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 803234653,
+      "ms": 803.235
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 93249159,
+      "ms": 93.249
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 901272463,
+      "ms": 901.272
+    },
+    "question_to_first_play_start": {
+      "ns": 1289433509,
+      "ms": 1289.434
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 8202542409,
+      "ms": 8202.542
+    },
+    "audio_total_sec": {
+      "ns": 6910024660,
+      "ms": 6910.025,
+      "sec": 6.91
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.87,
+    "router_to_llm_first_ms": 294.042,
+    "question_to_llm_first_ms": 294.912,
+    "llm_first_to_done_ms": 803.235,
+    "question_to_llm_done_ms": 1098.147,
+    "llm_first_to_tts_first_text_ms": 93.249,
+    "question_to_tts_first_text_ms": 388.161,
+    "first_tts_text_to_first_play_start_ms": 901.272,
+    "tts_rx_to_synth_end_ms": 862.776,
+    "tts_rx_to_play_start_ms": 900.505,
+    "tts_synth_end_to_play_start_ms": 37.729,
+    "question_to_first_audio_ms": 1289.434,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 8202.542,
+    "audio_total_sum_ms": 6910.025,
+    "audio_first_to_last_ms": 6912.061
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793344996725081702,
+      "first_text_rx_ns": 1793344996725329637,
+      "done_rx_ns": 1793344997528564290,
+      "chunk_count": 22,
+      "char_count": 27,
+      "chunks": [
+        {
+          "t_ns": 1793344996725329637,
+          "text": "从前"
+        },
+        {
+          "t_ns": 1793344996742745821,
+          "text": "有"
+        },
+        {
+          "t_ns": 1793344996760548965,
+          "text": "只"
+        },
+        {
+          "t_ns": 1793344996781519458,
+          "text": "鸭"
+        },
+        {
+          "t_ns": 1793344996802831930,
+          "text": "子"
+        },
+        {
+          "t_ns": 1793344996818146880,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793344996838378808,
+          "text": "它"
+        },
+        {
+          "t_ns": 1793344996868027475,
+          "text": "想"
+        },
+        {
+          "t_ns": 1793344996919854003,
+          "text": "飞"
+        },
+        {
+          "t_ns": 1793344996963795976,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793344997005185501,
+          "text": "结果"
+        },
+        {
+          "t_ns": 1793344997046023025,
+          "text": "扑"
+        },
+        {
+          "t_ns": 1793344997087449803,
+          "text": "通"
+        },
+        {
+          "t_ns": 1793344997133319034,
+          "text": "掉"
+        },
+        {
+          "t_ns": 1793344997167376785,
+          "text": "进"
+        },
+        {
+          "t_ns": 1793344997211371702,
+          "text": "水"
+        },
+        {
+          "t_ns": 1793344997253349983,
+          "text": "里"
+        },
+        {
+          "t_ns": 1793344997307874277,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793344997358924748,
+          "text": "还"
+        },
+        {
+          "t_ns": 1793344997405667051,
+          "text": "学会了"
+        },
+        {
+          "t_ns": 1793344997444096659,
+          "text": "游泳"
+        },
+        {
+          "t_ns": 1793344997484085284,
+          "text": "。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793344996818578796,
+      "done_rx_ns": 1793344997528618759,
+      "text_count": 4,
+      "texts": [
+        {
+          "t_ns": 1793344996818578796,
+          "text": "从前有只鸭子，"
+        },
+        {
+          "t_ns": 1793344996964033715,
+          "text": "它想飞，"
+        },
+        {
+          "t_ns": 1793344997308723220,
+          "text": "结果扑通掉进水里，"
+        },
+        {
+          "t_ns": 1793344997488953316,
+          "text": "还学会了游泳。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 27,
+    "latency_events_total": 27,
+    "asr_events": 0,
+    "tts_events": 23,
+    "tts_play_pairs": 4,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793344996452307783,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793344996452057169,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "chitchat",
+        "keyword_medical": false,
+        "chitchat": true,
+        "judge_kind": null,
+        "judge_ms": 0.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793344996452057169, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"chitchat\", \"keyword_medical\": false, \"chitchat\": true, \"judge_kind\": null, \"judge_ms\": 0.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793344996725126120,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793344996724793981,
+      "detail": {
+        "provider": "ollama",
+        "prompt_chars": 355,
+        "n_messages": 4
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793344996724793981, \"detail\": {\"provider\": \"ollama\", \"prompt_chars\": 355, \"n_messages\": 4}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793344996725389654,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793344996725204242,
+      "detail": {
+        "prompt_chars": 355
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793344996725204242, \"detail\": {\"prompt_chars\": 355}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793344996725995191,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793344996725842706,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793344996725842706, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793344996819545964,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793344996819345788,
+      "detail": {
+        "text_len": 7,
+        "head": "从前有只鸭子，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793344996819345788, \"detail\": {\"text_len\": 7, \"head\": \"从前有只鸭子，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793344996820262938,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793344996819419975,
+      "detail": {
+        "text_len": 7
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793344996819419975, \"detail\": {\"text_len\": 7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793344997528657437,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793344997526549276,
+      "detail": {
+        "chars": 27
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793344997526549276, \"detail\": {\"chars\": 27}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793344997682446504,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793344997682122002,
+      "detail": {
+        "text_len": 7,
+        "dur_ms": 862.695721,
+        "audio_sec": 1.68,
+        "rtf": 0.5135093577380953
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793344997682122002, \"detail\": {\"text_len\": 7, \"dur_ms\": 862.695721, \"audio_sec\": 1.68, \"rtf\": 0.5135093577380953}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793344997688796698,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793344997688597896,
+      "detail": {
+        "text_len": 4,
+        "head": "它想飞，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793344997688597896, \"detail\": {\"text_len\": 4, \"head\": \"它想飞，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793344997689046942,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793344997688660173,
+      "detail": {
+        "text_len": 4
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793344997688660173, \"detail\": {\"text_len\": 4}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793344997720166841,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793344997719851259,
+      "detail": {
+        "text_len": 7,
+        "head": "从前有只鸭子，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793344997719851259, \"detail\": {\"text_len\": 7, \"head\": \"从前有只鸭子，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793344998169446118,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793344998169029946,
+      "detail": {
+        "text_len": 4,
+        "dur_ms": 480.362569,
+        "audio_sec": 1.2,
+        "rtf": 0.4003021408333334
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793344998169029946, \"detail\": {\"text_len\": 4, \"dur_ms\": 480.362569, \"audio_sec\": 1.2, \"rtf\": 0.4003021408333334}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793344998171180064,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793344998169784099,
+      "detail": {
+        "text_len": 9,
+        "head": "结果扑通掉进水里，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793344998169784099, \"detail\": {\"text_len\": 9, \"head\": \"结果扑通掉进水里，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793344998171445081,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793344998169856628,
+      "detail": {
+        "text_len": 9
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793344998169856628, \"detail\": {\"text_len\": 9}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793344999038820930,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793344999038338892,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 868.475936,
+        "audio_sec": 2.4,
+        "rtf": 0.3618649733333334
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793344999038338892, \"detail\": {\"text_len\": 9, \"dur_ms\": 868.475936, \"audio_sec\": 2.4, \"rtf\": 0.3618649733333334}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793344999039170915,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793344999038946637,
+      "detail": {
+        "text_len": 7,
+        "head": "还学会了游泳。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793344999038946637, \"detail\": {\"text_len\": 7, \"head\": \"还学会了游泳。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793344999039345377,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793344999038992582,
+      "detail": {
+        "text_len": 7
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793344999038992582, \"detail\": {\"text_len\": 7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793344999425189966,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793344999424866675,
+      "detail": {
+        "text_len": 7,
+        "interrupted": false,
+        "dur_ms": 1705.013684
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793344999424866675, \"detail\": {\"text_len\": 7, \"interrupted\": false, \"dur_ms\": 1705.013684}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793344999425635613,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793344999425486738,
+      "detail": {
+        "text_len": 4,
+        "head": "它想飞，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793344999425486738, \"detail\": {\"text_len\": 4, \"head\": \"它想飞，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793344999604573441,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793344999604304285,
+      "detail": {
+        "text_len": 7,
+        "dur_ms": 565.306919,
+        "audio_sec": 1.52,
+        "rtf": 0.3719124467105263
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793344999604304285, \"detail\": {\"text_len\": 7, \"dur_ms\": 565.306919, \"audio_sec\": 1.52, \"rtf\": 0.3719124467105263}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793344999604982746,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793344999604850879,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793344999604850879, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345000648896463,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793345000648562316,
+      "detail": {
+        "text_len": 4,
+        "interrupted": false,
+        "dur_ms": 1223.069614
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793345000648562316, \"detail\": {\"text_len\": 4, \"interrupted\": false, \"dur_ms\": 1223.069614}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345000649421841,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793345000649267431,
+      "detail": {
+        "text_len": 9,
+        "head": "结果扑通掉进水里，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793345000649267431, \"detail\": {\"text_len\": 9, \"head\": \"结果扑通掉进水里，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345003085162035,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793345003084838903,
+      "detail": {
+        "text_len": 9,
+        "interrupted": false,
+        "dur_ms": 2435.566494
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793345003084838903, \"detail\": {\"text_len\": 9, \"interrupted\": false, \"dur_ms\": 2435.566494}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345003085726340,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793345003085549751,
+      "detail": {
+        "text_len": 7,
+        "head": "还学会了游泳。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793345003085549751, \"detail\": {\"text_len\": 7, \"head\": \"还学会了游泳。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345004632223685,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793345004631911945,
+      "detail": {
+        "text_len": 7,
+        "interrupted": false,
+        "dur_ms": 1546.357679
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793345004631911945, \"detail\": {\"text_len\": 7, \"interrupted\": false, \"dur_ms\": 1546.357679}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345004632759366,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793345004632603775,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793345004632603775, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793344996452057169,
+          "arrival_ns": 1793344996452307783,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "chitchat",
+            "keyword_medical": false,
+            "chitchat": true,
+            "judge_kind": null,
+            "judge_ms": 0.0
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793344996724793981,
+          "arrival_ns": 1793344996725126120,
+          "source": "round",
+          "detail": {
+            "provider": "ollama",
+            "prompt_chars": 355,
+            "n_messages": 4
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793344996725204242,
+          "arrival_ns": 1793344996725389654,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 355
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793344997526549276,
+          "arrival_ns": 1793344997528657437,
+          "source": "round",
+          "detail": {
+            "chars": 27
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793344996725842706,
+          "arrival_ns": 1793344996725995191,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793344999604850879,
+          "arrival_ns": 1793344999604982746,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793344996819345788,
+          "arrival_ns": 1793344996819545964,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "从前有只鸭子，"
+          }
+        },
+        {
+          "t_ns": 1793344997688597896,
+          "arrival_ns": 1793344997688796698,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "它想飞，"
+          }
+        },
+        {
+          "t_ns": 1793344998169784099,
+          "arrival_ns": 1793344998171180064,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "结果扑通掉进水里，"
+          }
+        },
+        {
+          "t_ns": 1793344999038946637,
+          "arrival_ns": 1793344999039170915,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "还学会了游泳。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793344996819419975,
+          "arrival_ns": 1793344996820262938,
+          "source": "round",
+          "detail": {
+            "text_len": 7
+          }
+        },
+        {
+          "t_ns": 1793344997688660173,
+          "arrival_ns": 1793344997689046942,
+          "source": "round",
+          "detail": {
+            "text_len": 4
+          }
+        },
+        {
+          "t_ns": 1793344998169856628,
+          "arrival_ns": 1793344998171445081,
+          "source": "round",
+          "detail": {
+            "text_len": 9
+          }
+        },
+        {
+          "t_ns": 1793344999038992582,
+          "arrival_ns": 1793344999039345377,
+          "source": "round",
+          "detail": {
+            "text_len": 7
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793344997682122002,
+          "arrival_ns": 1793344997682446504,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "dur_ms": 862.695721,
+            "audio_sec": 1.68,
+            "rtf": 0.5135093577380953
+          }
+        },
+        {
+          "t_ns": 1793344998169029946,
+          "arrival_ns": 1793344998169446118,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "dur_ms": 480.362569,
+            "audio_sec": 1.2,
+            "rtf": 0.4003021408333334
+          }
+        },
+        {
+          "t_ns": 1793344999038338892,
+          "arrival_ns": 1793344999038820930,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 868.475936,
+            "audio_sec": 2.4,
+            "rtf": 0.3618649733333334
+          }
+        },
+        {
+          "t_ns": 1793344999604304285,
+          "arrival_ns": 1793344999604573441,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "dur_ms": 565.306919,
+            "audio_sec": 1.52,
+            "rtf": 0.3719124467105263
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793344997719851259,
+          "arrival_ns": 1793344997720166841,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "从前有只鸭子，"
+          }
+        },
+        {
+          "t_ns": 1793344999425486738,
+          "arrival_ns": 1793344999425635613,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "它想飞，"
+          }
+        },
+        {
+          "t_ns": 1793345000649267431,
+          "arrival_ns": 1793345000649421841,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "结果扑通掉进水里，"
+          }
+        },
+        {
+          "t_ns": 1793345003085549751,
+          "arrival_ns": 1793345003085726340,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "还学会了游泳。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793344999424866675,
+          "arrival_ns": 1793344999425189966,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "interrupted": false,
+            "dur_ms": 1705.013684
+          }
+        },
+        {
+          "t_ns": 1793345000648562316,
+          "arrival_ns": 1793345000648896463,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "interrupted": false,
+            "dur_ms": 1223.069614
+          }
+        },
+        {
+          "t_ns": 1793345003084838903,
+          "arrival_ns": 1793345003085162035,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "interrupted": false,
+            "dur_ms": 2435.566494
+          }
+        },
+        {
+          "t_ns": 1793345004631911945,
+          "arrival_ns": 1793345004632223685,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "interrupted": false,
+            "dur_ms": 1546.357679
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793345004632603775,
+          "arrival_ns": 1793345004632759366,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 3,
+    "interval_s": 2.0
+  }
+}

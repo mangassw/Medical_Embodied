@@ -1,0 +1,689 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1089655",
+  "host": "artrc",
+  "tag": "opt3_chatgen",
+  "round_index": 5,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T11:35:24.540",
+  "finished_at": "2026-10-30T11:35:35.601",
+  "duration_s": 11.061,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "大海为什么是蓝色的",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793331324540789604,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793331324540322321,
+    "t_publish_question_ns": 1793331324540789604,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793331324541348867,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793331324541736853,
+      "ali_llm_output_start": 1793331325153046057,
+      "ali_llm_output_first_text": 1793331325153282331,
+      "ali_llm_output_done": 1793331325836809119,
+      "tts_realtime_data_start": 1793331325153313189,
+      "tts_realtime_data_first_text": 1793331325683676884,
+      "tts_realtime_data_done": 1793331325837085417,
+      "tts_session_finished": 1793331335297178925
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793331325684061520,
+      "tts_local.synth_start_first": 1793331325684133062,
+      "tts_local.synth_end_first": 1793331327477368123,
+      "tts_local.play_start_first": 1793331327515493813,
+      "tts_local.play_end_last": 1793331335296300648,
+      "tts_local.session_finished": 1793331335296978283
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.947,
+    "router_to_llm_first_ms": 611.545,
+    "question_to_llm_first_ms": 612.493,
+    "llm_first_to_done_ms": 683.527,
+    "question_to_llm_done_ms": 1296.02,
+    "llm_first_to_tts_first_text_ms": 530.395,
+    "question_to_tts_first_text_ms": 1142.887,
+    "first_tts_text_to_first_play_start_ms": 1831.817,
+    "tts_rx_to_synth_end_ms": 1793.307,
+    "tts_rx_to_play_start_ms": 1831.432,
+    "tts_synth_end_to_play_start_ms": 38.126,
+    "question_to_first_audio_ms": 2974.704,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 10756.389,
+    "audio_total_sum_ms": 7780.011,
+    "audio_first_to_last_ms": 7780.807
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 947249,
+    "router_to_llm_first_ns": 611545478,
+    "question_to_llm_first_ns": 612492727,
+    "llm_first_to_done_ns": 683526788,
+    "question_to_llm_done_ns": 1296019515,
+    "llm_first_to_tts_first_text_ns": 530394553,
+    "question_to_tts_first_text_ns": 1142887280,
+    "first_tts_text_to_first_play_start_ns": 1831816929,
+    "tts_rx_to_synth_end_ns": 1793306603,
+    "tts_rx_to_play_start_ns": 1831432293,
+    "tts_synth_end_to_play_start_ns": 38125690,
+    "question_to_first_audio_ns": 2974704209,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 10756389321,
+    "audio_total_sum_ns": 7780010601,
+    "audio_first_to_last_ns": 7780806835
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 612492727,
+      "ms": 612.493
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 683526788,
+      "ms": 683.527
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 530394553,
+      "ms": 530.395
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 1831816929,
+      "ms": 1831.817
+    },
+    "question_to_first_play_start": {
+      "ns": 2974704209,
+      "ms": 2974.704
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 10756389321,
+      "ms": 10756.389
+    },
+    "audio_total_sec": {
+      "ns": 7780010601,
+      "ms": 7780.011,
+      "sec": 7.78
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.947,
+    "router_to_llm_first_ms": 611.545,
+    "question_to_llm_first_ms": 612.493,
+    "llm_first_to_done_ms": 683.527,
+    "question_to_llm_done_ms": 1296.02,
+    "llm_first_to_tts_first_text_ms": 530.395,
+    "question_to_tts_first_text_ms": 1142.887,
+    "first_tts_text_to_first_play_start_ms": 1831.817,
+    "tts_rx_to_synth_end_ms": 1793.307,
+    "tts_rx_to_play_start_ms": 1831.432,
+    "tts_synth_end_to_play_start_ms": 38.126,
+    "question_to_first_audio_ms": 2974.704,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 10756.389,
+    "audio_total_sum_ms": 7780.011,
+    "audio_first_to_last_ms": 7780.807
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793331325153046057,
+      "first_text_rx_ns": 1793331325153282331,
+      "done_rx_ns": 1793331325836809119,
+      "chunk_count": 8,
+      "char_count": 31,
+      "chunks": [
+        {
+          "t_ns": 1793331325153282331,
+          "text": "因为"
+        },
+        {
+          "t_ns": 1793331325196176442,
+          "text": "水"
+        },
+        {
+          "t_ns": 1793331325235080951,
+          "text": "分子"
+        },
+        {
+          "t_ns": 1793331325273899638,
+          "text": "偏"
+        },
+        {
+          "t_ns": 1793331325416592071,
+          "text": "爱散射蓝光呀"
+        },
+        {
+          "t_ns": 1793331325497942688,
+          "text": "～  \n就像天空"
+        },
+        {
+          "t_ns": 1793331325683438199,
+          "text": "蓝一样，是"
+        },
+        {
+          "t_ns": 1793331325808880777,
+          "text": "光的小把戏。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793331325683676884,
+      "done_rx_ns": 1793331325837085417,
+      "text_count": 2,
+      "texts": [
+        {
+          "t_ns": 1793331325683676884,
+          "text": "因为水分子偏爱散射蓝光呀～  \n就像天空蓝一样，"
+        },
+        {
+          "t_ns": 1793331325808931402,
+          "text": "是光的小把戏。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 18,
+    "latency_events_total": 18,
+    "asr_events": 0,
+    "tts_events": 13,
+    "tts_play_pairs": 2,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793331324824852506,
+      "node": "llm_medical",
+      "stage": "intent_judge",
+      "t_ns": 1793331324824553625,
+      "detail": {
+        "model": "qwen-flash",
+        "ms": 282.2,
+        "answer": "聊",
+        "kind": "chat"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent_judge\", \"t_ns\": 1793331324824553625, \"detail\": {\"model\": \"qwen-flash\", \"ms\": 282.2, \"answer\": \"聊\", \"kind\": \"chat\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331324825035761,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793331324824754730,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "llm:qwen-flash",
+        "keyword_medical": false,
+        "chitchat": false,
+        "judge_kind": "chat",
+        "judge_ms": 282.2
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793331324824754730, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"llm:qwen-flash\", \"keyword_medical\": false, \"chitchat\": false, \"judge_kind\": \"chat\", \"judge_ms\": 282.2}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331325153085489,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793331325152753259,
+      "detail": {
+        "prompt_chars": 436,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793331325152753259, \"detail\": {\"prompt_chars\": 436, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331325153339123,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793331325153149091,
+      "detail": {
+        "prompt_chars": 436
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793331325153149091, \"detail\": {\"prompt_chars\": 436}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331325153681706,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793331325153515902,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793331325153515902, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331325684270750,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793331325684061520,
+      "detail": {
+        "text_len": 24,
+        "head": "因为水分子偏爱散射蓝光呀～  \n就像天空蓝一样，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793331325684061520, \"detail\": {\"text_len\": 24, \"head\": \"因为水分子偏爱散射蓝光呀～  \\n就像天空蓝一样，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331325684537489,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793331325684133062,
+      "detail": {
+        "text_len": 24
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793331325684133062, \"detail\": {\"text_len\": 24}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331325836867128,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793331325836464794,
+      "detail": {
+        "chars": 31
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793331325836464794, \"detail\": {\"chars\": 31}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331327477753322,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793331327477368123,
+      "detail": {
+        "text_len": 24,
+        "dur_ms": 1793.230373,
+        "audio_sec": 5.92,
+        "rtf": 0.3029105359797297
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793331327477368123, \"detail\": {\"text_len\": 24, \"dur_ms\": 1793.230373, \"audio_sec\": 5.92, \"rtf\": 0.3029105359797297}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331327478097552,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793331327477923681,
+      "detail": {
+        "text_len": 7,
+        "head": "是光的小把戏。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793331327477923681, \"detail\": {\"text_len\": 7, \"head\": \"是光的小把戏。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331327478278198,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793331327477990442,
+      "detail": {
+        "text_len": 7
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793331327477990442, \"detail\": {\"text_len\": 7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331327515761431,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793331327515493813,
+      "detail": {
+        "text_len": 24,
+        "head": "因为水分子偏爱散射蓝光呀～  \n就像天空蓝一样，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793331327515493813, \"detail\": {\"text_len\": 24, \"head\": \"因为水分子偏爱散射蓝光呀～  \\n就像天空蓝一样，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331328064390126,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793331328063978359,
+      "detail": {
+        "text_len": 7,
+        "dur_ms": 585.984446,
+        "audio_sec": 1.84,
+        "rtf": 0.3184698076086957
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793331328063978359, \"detail\": {\"text_len\": 7, \"dur_ms\": 585.984446, \"audio_sec\": 1.84, \"rtf\": 0.3184698076086957}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331328064730196,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793331328064489029,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793331328064489029, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331333458442599,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793331333458097241,
+      "detail": {
+        "text_len": 24,
+        "interrupted": false,
+        "dur_ms": 5942.599586
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793331333458097241, \"detail\": {\"text_len\": 24, \"interrupted\": false, \"dur_ms\": 5942.599586}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331333459036099,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793331333458893475,
+      "detail": {
+        "text_len": 7,
+        "head": "是光的小把戏。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793331333458893475, \"detail\": {\"text_len\": 7, \"head\": \"是光的小把戏。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331335296610906,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793331335296300648,
+      "detail": {
+        "text_len": 7,
+        "interrupted": false,
+        "dur_ms": 1837.404623
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793331335296300648, \"detail\": {\"text_len\": 7, \"interrupted\": false, \"dur_ms\": 1837.404623}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331335297239621,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793331335296978283,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793331335296978283, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent_judge": [
+        {
+          "t_ns": 1793331324824553625,
+          "arrival_ns": 1793331324824852506,
+          "source": "round",
+          "detail": {
+            "model": "qwen-flash",
+            "ms": 282.2,
+            "answer": "聊",
+            "kind": "chat"
+          }
+        }
+      ],
+      "intent": [
+        {
+          "t_ns": 1793331324824754730,
+          "arrival_ns": 1793331324825035761,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "llm:qwen-flash",
+            "keyword_medical": false,
+            "chitchat": false,
+            "judge_kind": "chat",
+            "judge_ms": 282.2
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793331325152753259,
+          "arrival_ns": 1793331325153085489,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 436,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793331325153149091,
+          "arrival_ns": 1793331325153339123,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 436
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793331325836464794,
+          "arrival_ns": 1793331325836867128,
+          "source": "round",
+          "detail": {
+            "chars": 31
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793331325153515902,
+          "arrival_ns": 1793331325153681706,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793331328064489029,
+          "arrival_ns": 1793331328064730196,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793331325684061520,
+          "arrival_ns": 1793331325684270750,
+          "source": "round",
+          "detail": {
+            "text_len": 24,
+            "head": "因为水分子偏爱散射蓝光呀～  \n就像天空蓝一样，"
+          }
+        },
+        {
+          "t_ns": 1793331327477923681,
+          "arrival_ns": 1793331327478097552,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "是光的小把戏。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793331325684133062,
+          "arrival_ns": 1793331325684537489,
+          "source": "round",
+          "detail": {
+            "text_len": 24
+          }
+        },
+        {
+          "t_ns": 1793331327477990442,
+          "arrival_ns": 1793331327478278198,
+          "source": "round",
+          "detail": {
+            "text_len": 7
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793331327477368123,
+          "arrival_ns": 1793331327477753322,
+          "source": "round",
+          "detail": {
+            "text_len": 24,
+            "dur_ms": 1793.230373,
+            "audio_sec": 5.92,
+            "rtf": 0.3029105359797297
+          }
+        },
+        {
+          "t_ns": 1793331328063978359,
+          "arrival_ns": 1793331328064390126,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "dur_ms": 585.984446,
+            "audio_sec": 1.84,
+            "rtf": 0.3184698076086957
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793331327515493813,
+          "arrival_ns": 1793331327515761431,
+          "source": "round",
+          "detail": {
+            "text_len": 24,
+            "head": "因为水分子偏爱散射蓝光呀～  \n就像天空蓝一样，"
+          }
+        },
+        {
+          "t_ns": 1793331333458893475,
+          "arrival_ns": 1793331333459036099,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "是光的小把戏。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793331333458097241,
+          "arrival_ns": 1793331333458442599,
+          "source": "round",
+          "detail": {
+            "text_len": 24,
+            "interrupted": false,
+            "dur_ms": 5942.599586
+          }
+        },
+        {
+          "t_ns": 1793331335296300648,
+          "arrival_ns": 1793331335296610906,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "interrupted": false,
+            "dur_ms": 1837.404623
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793331335296978283,
+          "arrival_ns": 1793331335297239621,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 45.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 10,
+    "interval_s": 2.0
+  }
+}

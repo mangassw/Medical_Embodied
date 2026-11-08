@@ -1,0 +1,913 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1058399",
+  "host": "artrc",
+  "tag": "kb50",
+  "round_index": 22,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T10:20:57.840",
+  "finished_at": "2026-10-30T10:21:06.697",
+  "duration_s": 8.857,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "八段锦能练吗？",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793326857840966012,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793326857840568894,
+    "t_publish_question_ns": 1793326857840966012,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793326857841439543,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793326857842094478,
+      "ali_llm_output_start": 1793326859154550385,
+      "ali_llm_output_first_text": 1793326859154842427,
+      "ali_llm_output_done": 1793326859738262121,
+      "tts_realtime_data_start": 1793326859154873601,
+      "tts_realtime_data_first_text": 1793326859234545733,
+      "tts_realtime_data_done": 1793326859738313017,
+      "tts_session_finished": 1793326866392664113
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793326859234871693,
+      "tts_local.synth_start_first": 1793326859234936667,
+      "tts_local.synth_end_first": 1793326859624516562,
+      "tts_local.play_start_first": 1793326859655897095,
+      "tts_local.play_end_last": 1793326866391023914,
+      "tts_local.session_finished": 1793326866392062677
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.128,
+    "router_to_llm_first_ms": 1312.748,
+    "question_to_llm_first_ms": 1313.876,
+    "llm_first_to_done_ms": 583.42,
+    "question_to_llm_done_ms": 1897.296,
+    "llm_first_to_tts_first_text_ms": 79.703,
+    "question_to_tts_first_text_ms": 1393.58,
+    "first_tts_text_to_first_play_start_ms": 421.351,
+    "tts_rx_to_synth_end_ms": 389.645,
+    "tts_rx_to_play_start_ms": 421.025,
+    "tts_synth_end_to_play_start_ms": 31.381,
+    "question_to_first_audio_ms": 1814.931,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 8551.698,
+    "audio_total_sum_ms": 6728.441,
+    "audio_first_to_last_ms": 6735.127
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 1128466,
+    "router_to_llm_first_ns": 1312747949,
+    "question_to_llm_first_ns": 1313876415,
+    "llm_first_to_done_ns": 583419694,
+    "question_to_llm_done_ns": 1897296109,
+    "llm_first_to_tts_first_text_ns": 79703306,
+    "question_to_tts_first_text_ns": 1393579721,
+    "first_tts_text_to_first_play_start_ns": 421351362,
+    "tts_rx_to_synth_end_ns": 389644869,
+    "tts_rx_to_play_start_ns": 421025402,
+    "tts_synth_end_to_play_start_ns": 31380533,
+    "question_to_first_audio_ns": 1814931083,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 8551698101,
+    "audio_total_sum_ns": 6728440736,
+    "audio_first_to_last_ns": 6735126819
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 1313876415,
+      "ms": 1313.876
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 583419694,
+      "ms": 583.42
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 79703306,
+      "ms": 79.703
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 421351362,
+      "ms": 421.351
+    },
+    "question_to_first_play_start": {
+      "ns": 1814931083,
+      "ms": 1814.931
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 8551698101,
+      "ms": 8551.698
+    },
+    "audio_total_sec": {
+      "ns": 6728440736,
+      "ms": 6728.441,
+      "sec": 6.728
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.128,
+    "router_to_llm_first_ms": 1312.748,
+    "question_to_llm_first_ms": 1313.876,
+    "llm_first_to_done_ms": 583.42,
+    "question_to_llm_done_ms": 1897.296,
+    "llm_first_to_tts_first_text_ms": 79.703,
+    "question_to_tts_first_text_ms": 1393.58,
+    "first_tts_text_to_first_play_start_ms": 421.351,
+    "tts_rx_to_synth_end_ms": 389.645,
+    "tts_rx_to_play_start_ms": 421.025,
+    "tts_synth_end_to_play_start_ms": 31.381,
+    "question_to_first_audio_ms": 1814.931,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 8551.698,
+    "audio_total_sum_ms": 6728.441,
+    "audio_first_to_last_ms": 6735.127
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793326859154550385,
+      "first_text_rx_ns": 1793326859154842427,
+      "done_rx_ns": 1793326859738262121,
+      "chunk_count": 8,
+      "char_count": 35,
+      "chunks": [
+        {
+          "t_ns": 1793326859154842427,
+          "text": "可以"
+        },
+        {
+          "t_ns": 1793326859186596818,
+          "text": "练"
+        },
+        {
+          "t_ns": 1793326859234329197,
+          "text": "，动作"
+        },
+        {
+          "t_ns": 1793326859277877957,
+          "text": "要"
+        },
+        {
+          "t_ns": 1793326859350301421,
+          "text": "轻柔。  \n避开"
+        },
+        {
+          "t_ns": 1793326859449746553,
+          "text": "内瘘侧手臂"
+        },
+        {
+          "t_ns": 1793326859566908350,
+          "text": "用力。  \n练"
+        },
+        {
+          "t_ns": 1793326859736145144,
+          "text": "前最好问问医生。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793326859234545733,
+      "done_rx_ns": 1793326859738313017,
+      "text_count": 4,
+      "texts": [
+        {
+          "t_ns": 1793326859234545733,
+          "text": "可以练，"
+        },
+        {
+          "t_ns": 1793326859350686899,
+          "text": "动作要轻柔。"
+        },
+        {
+          "t_ns": 1793326859567133849,
+          "text": "避开内瘘侧手臂用力。"
+        },
+        {
+          "t_ns": 1793326859736492046,
+          "text": "练前最好问问医生。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 28,
+    "latency_events_total": 28,
+    "asr_events": 0,
+    "tts_events": 23,
+    "tts_play_pairs": 4,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793326858639793706,
+      "node": "llm_medical",
+      "stage": "intent_judge",
+      "t_ns": 1793326858639445648,
+      "detail": {
+        "model": "qwen-flash",
+        "ms": 796.7,
+        "answer": "聊",
+        "kind": "chat"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent_judge\", \"t_ns\": 1793326858639445648, \"detail\": {\"model\": \"qwen-flash\", \"ms\": 796.7, \"answer\": \"聊\", \"kind\": \"chat\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326858640031964,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793326858639636159,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "llm:qwen-flash",
+        "keyword_medical": false,
+        "judge_kind": "chat",
+        "judge_ms": 796.7
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793326858639636159, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"llm:qwen-flash\", \"keyword_medical\": false, \"judge_kind\": \"chat\", \"judge_ms\": 796.7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326859154599093,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793326859154206468,
+      "detail": {
+        "prompt_chars": 454,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793326859154206468, \"detail\": {\"prompt_chars\": 454, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326859154900267,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793326859154666918,
+      "detail": {
+        "prompt_chars": 454
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793326859154666918, \"detail\": {\"prompt_chars\": 454}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326859155296224,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793326859155090848,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793326859155090848, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326859235080357,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793326859234871693,
+      "detail": {
+        "text_len": 4,
+        "head": "可以练，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793326859234871693, \"detail\": {\"text_len\": 4, \"head\": \"可以练，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326859235421469,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793326859234936667,
+      "detail": {
+        "text_len": 4
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793326859234936667, \"detail\": {\"text_len\": 4}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326859624905467,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793326859624516562,
+      "detail": {
+        "text_len": 4,
+        "dur_ms": 389.575395,
+        "audio_sec": 0.96,
+        "rtf": 0.40580770312500003
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793326859624516562, \"detail\": {\"text_len\": 4, \"dur_ms\": 389.575395, \"audio_sec\": 0.96, \"rtf\": 0.40580770312500003}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326859625409963,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793326859625253051,
+      "detail": {
+        "text_len": 6,
+        "head": "动作要轻柔。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793326859625253051, \"detail\": {\"text_len\": 6, \"head\": \"动作要轻柔。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326859625605925,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793326859625312130,
+      "detail": {
+        "text_len": 6
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793326859625312130, \"detail\": {\"text_len\": 6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326859656250402,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793326859655897095,
+      "detail": {
+        "text_len": 4,
+        "head": "可以练，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793326859655897095, \"detail\": {\"text_len\": 4, \"head\": \"可以练，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326859737852153,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793326859737515854,
+      "detail": {
+        "chars": 35
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793326859737515854, \"detail\": {\"chars\": 35}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326860187929531,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793326860187524876,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 562.206886,
+        "audio_sec": 1.52,
+        "rtf": 0.36987295131578946
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793326860187524876, \"detail\": {\"text_len\": 6, \"dur_ms\": 562.206886, \"audio_sec\": 1.52, \"rtf\": 0.36987295131578946}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326860188441810,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793326860188285318,
+      "detail": {
+        "text_len": 10,
+        "head": "避开内瘘侧手臂用力。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793326860188285318, \"detail\": {\"text_len\": 10, \"head\": \"避开内瘘侧手臂用力。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326860188627077,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793326860188341942,
+      "detail": {
+        "text_len": 10
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793326860188341942, \"detail\": {\"text_len\": 10}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326860630003151,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793326860629541419,
+      "detail": {
+        "text_len": 4,
+        "interrupted": false,
+        "dur_ms": 973.642973
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793326860629541419, \"detail\": {\"text_len\": 4, \"interrupted\": false, \"dur_ms\": 973.642973}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326860634922867,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793326860634563662,
+      "detail": {
+        "text_len": 6,
+        "head": "动作要轻柔。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793326860634563662, \"detail\": {\"text_len\": 6, \"head\": \"动作要轻柔。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326861041918482,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793326861041620215,
+      "detail": {
+        "text_len": 10,
+        "dur_ms": 853.272616,
+        "audio_sec": 2.4,
+        "rtf": 0.35553025666666666
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793326861041620215, \"detail\": {\"text_len\": 10, \"dur_ms\": 853.272616, \"audio_sec\": 2.4, \"rtf\": 0.35553025666666666}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326861042389550,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793326861042252898,
+      "detail": {
+        "text_len": 9,
+        "head": "练前最好问问医生。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793326861042252898, \"detail\": {\"text_len\": 9, \"head\": \"练前最好问问医生。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326861042603829,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793326861042303786,
+      "detail": {
+        "text_len": 9
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793326861042303786, \"detail\": {\"text_len\": 9}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326861700922746,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793326861700601109,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 658.292354,
+        "audio_sec": 1.84,
+        "rtf": 0.3577675836956522
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793326861700601109, \"detail\": {\"text_len\": 9, \"dur_ms\": 658.292354, \"audio_sec\": 1.84, \"rtf\": 0.3577675836956522}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326861701468521,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793326861701294307,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793326861701294307, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326862153455542,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793326862153057703,
+      "detail": {
+        "text_len": 6,
+        "interrupted": false,
+        "dur_ms": 1518.492557
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793326862153057703, \"detail\": {\"text_len\": 6, \"interrupted\": false, \"dur_ms\": 1518.492557}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326862154199954,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793326862153936013,
+      "detail": {
+        "text_len": 10,
+        "head": "避开内瘘侧手臂用力。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793326862153936013, \"detail\": {\"text_len\": 10, \"head\": \"避开内瘘侧手臂用力。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326864552582728,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793326864552196966,
+      "detail": {
+        "text_len": 10,
+        "interrupted": false,
+        "dur_ms": 2398.25672
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793326864552196966, \"detail\": {\"text_len\": 10, \"interrupted\": false, \"dur_ms\": 2398.25672}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326864553148305,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793326864552982496,
+      "detail": {
+        "text_len": 9,
+        "head": "练前最好问问医生。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793326864552982496, \"detail\": {\"text_len\": 9, \"head\": \"练前最好问问医生。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326866391546670,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793326866391023914,
+      "detail": {
+        "text_len": 9,
+        "interrupted": false,
+        "dur_ms": 1838.037623
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793326866391023914, \"detail\": {\"text_len\": 9, \"interrupted\": false, \"dur_ms\": 1838.037623}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326866392320704,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793326866392062677,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793326866392062677, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent_judge": [
+        {
+          "t_ns": 1793326858639445648,
+          "arrival_ns": 1793326858639793706,
+          "source": "round",
+          "detail": {
+            "model": "qwen-flash",
+            "ms": 796.7,
+            "answer": "聊",
+            "kind": "chat"
+          }
+        }
+      ],
+      "intent": [
+        {
+          "t_ns": 1793326858639636159,
+          "arrival_ns": 1793326858640031964,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "llm:qwen-flash",
+            "keyword_medical": false,
+            "judge_kind": "chat",
+            "judge_ms": 796.7
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793326859154206468,
+          "arrival_ns": 1793326859154599093,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 454,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793326859154666918,
+          "arrival_ns": 1793326859154900267,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 454
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793326859737515854,
+          "arrival_ns": 1793326859737852153,
+          "source": "round",
+          "detail": {
+            "chars": 35
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793326859155090848,
+          "arrival_ns": 1793326859155296224,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793326861701294307,
+          "arrival_ns": 1793326861701468521,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793326859234871693,
+          "arrival_ns": 1793326859235080357,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "可以练，"
+          }
+        },
+        {
+          "t_ns": 1793326859625253051,
+          "arrival_ns": 1793326859625409963,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "动作要轻柔。"
+          }
+        },
+        {
+          "t_ns": 1793326860188285318,
+          "arrival_ns": 1793326860188441810,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "避开内瘘侧手臂用力。"
+          }
+        },
+        {
+          "t_ns": 1793326861042252898,
+          "arrival_ns": 1793326861042389550,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "练前最好问问医生。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793326859234936667,
+          "arrival_ns": 1793326859235421469,
+          "source": "round",
+          "detail": {
+            "text_len": 4
+          }
+        },
+        {
+          "t_ns": 1793326859625312130,
+          "arrival_ns": 1793326859625605925,
+          "source": "round",
+          "detail": {
+            "text_len": 6
+          }
+        },
+        {
+          "t_ns": 1793326860188341942,
+          "arrival_ns": 1793326860188627077,
+          "source": "round",
+          "detail": {
+            "text_len": 10
+          }
+        },
+        {
+          "t_ns": 1793326861042303786,
+          "arrival_ns": 1793326861042603829,
+          "source": "round",
+          "detail": {
+            "text_len": 9
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793326859624516562,
+          "arrival_ns": 1793326859624905467,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "dur_ms": 389.575395,
+            "audio_sec": 0.96,
+            "rtf": 0.40580770312500003
+          }
+        },
+        {
+          "t_ns": 1793326860187524876,
+          "arrival_ns": 1793326860187929531,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 562.206886,
+            "audio_sec": 1.52,
+            "rtf": 0.36987295131578946
+          }
+        },
+        {
+          "t_ns": 1793326861041620215,
+          "arrival_ns": 1793326861041918482,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "dur_ms": 853.272616,
+            "audio_sec": 2.4,
+            "rtf": 0.35553025666666666
+          }
+        },
+        {
+          "t_ns": 1793326861700601109,
+          "arrival_ns": 1793326861700922746,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 658.292354,
+            "audio_sec": 1.84,
+            "rtf": 0.3577675836956522
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793326859655897095,
+          "arrival_ns": 1793326859656250402,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "可以练，"
+          }
+        },
+        {
+          "t_ns": 1793326860634563662,
+          "arrival_ns": 1793326860634922867,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "动作要轻柔。"
+          }
+        },
+        {
+          "t_ns": 1793326862153936013,
+          "arrival_ns": 1793326862154199954,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "避开内瘘侧手臂用力。"
+          }
+        },
+        {
+          "t_ns": 1793326864552982496,
+          "arrival_ns": 1793326864553148305,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "练前最好问问医生。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793326860629541419,
+          "arrival_ns": 1793326860630003151,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "interrupted": false,
+            "dur_ms": 973.642973
+          }
+        },
+        {
+          "t_ns": 1793326862153057703,
+          "arrival_ns": 1793326862153455542,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "interrupted": false,
+            "dur_ms": 1518.492557
+          }
+        },
+        {
+          "t_ns": 1793326864552196966,
+          "arrival_ns": 1793326864552582728,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "interrupted": false,
+            "dur_ms": 2398.25672
+          }
+        },
+        {
+          "t_ns": 1793326866391023914,
+          "arrival_ns": 1793326866391546670,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "interrupted": false,
+            "dur_ms": 1838.037623
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793326866392062677,
+          "arrival_ns": 1793326866392320704,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 50,
+    "interval_s": 2.0
+  }
+}

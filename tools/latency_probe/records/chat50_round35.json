@@ -1,0 +1,917 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1064920",
+  "host": "artrc",
+  "tag": "chat50",
+  "round_index": 35,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T10:33:25.250",
+  "finished_at": "2026-10-30T10:33:36.441",
+  "duration_s": 11.191,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "我今天心情不太好",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793327605250696859,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793327605250280369,
+    "t_publish_question_ns": 1793327605250696859,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793327605251155513,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793327605251533141,
+      "ali_llm_output_start": 1793327606589671924,
+      "ali_llm_output_first_text": 1793327606590094967,
+      "ali_llm_output_done": 1793327607253056128,
+      "tts_realtime_data_start": 1793327606591016271,
+      "tts_realtime_data_first_text": 1793327606638071662,
+      "tts_realtime_data_done": 1793327607253311188,
+      "tts_session_finished": 1793327616137707294
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793327606638365086,
+      "tts_local.synth_start_first": 1793327606638439687,
+      "tts_local.synth_end_first": 1793327607045612542,
+      "tts_local.play_start_first": 1793327607055013104,
+      "tts_local.play_end_last": 1793327616136375313,
+      "tts_local.session_finished": 1793327616137280154
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.836,
+    "router_to_llm_first_ms": 1338.562,
+    "question_to_llm_first_ms": 1339.398,
+    "llm_first_to_done_ms": 662.961,
+    "question_to_llm_done_ms": 2002.359,
+    "llm_first_to_tts_first_text_ms": 47.977,
+    "question_to_tts_first_text_ms": 1387.375,
+    "first_tts_text_to_first_play_start_ms": 416.941,
+    "tts_rx_to_synth_end_ms": 407.247,
+    "tts_rx_to_play_start_ms": 416.648,
+    "tts_synth_end_to_play_start_ms": 9.401,
+    "question_to_first_audio_ms": 1804.316,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 10887.01,
+    "audio_total_sum_ms": 9079.036,
+    "audio_first_to_last_ms": 9081.362
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 836282,
+    "router_to_llm_first_ns": 1338561826,
+    "question_to_llm_first_ns": 1339398108,
+    "llm_first_to_done_ns": 662961161,
+    "question_to_llm_done_ns": 2002359269,
+    "llm_first_to_tts_first_text_ns": 47976695,
+    "question_to_tts_first_text_ns": 1387374803,
+    "first_tts_text_to_first_play_start_ns": 416941442,
+    "tts_rx_to_synth_end_ns": 407247456,
+    "tts_rx_to_play_start_ns": 416648018,
+    "tts_synth_end_to_play_start_ns": 9400562,
+    "question_to_first_audio_ns": 1804316245,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 10887010435,
+    "audio_total_sum_ns": 9079036472,
+    "audio_first_to_last_ns": 9081362209
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 1339398108,
+      "ms": 1339.398
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 662961161,
+      "ms": 662.961
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 47976695,
+      "ms": 47.977
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 416941442,
+      "ms": 416.941
+    },
+    "question_to_first_play_start": {
+      "ns": 1804316245,
+      "ms": 1804.316
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 10887010435,
+      "ms": 10887.01
+    },
+    "audio_total_sec": {
+      "ns": 9079036472,
+      "ms": 9079.036,
+      "sec": 9.079
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.836,
+    "router_to_llm_first_ms": 1338.562,
+    "question_to_llm_first_ms": 1339.398,
+    "llm_first_to_done_ms": 662.961,
+    "question_to_llm_done_ms": 2002.359,
+    "llm_first_to_tts_first_text_ms": 47.977,
+    "question_to_tts_first_text_ms": 1387.375,
+    "first_tts_text_to_first_play_start_ms": 416.941,
+    "tts_rx_to_synth_end_ms": 407.247,
+    "tts_rx_to_play_start_ms": 416.648,
+    "tts_synth_end_to_play_start_ms": 9.401,
+    "question_to_first_audio_ms": 1804.316,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 10887.01,
+    "audio_total_sum_ms": 9079.036,
+    "audio_first_to_last_ms": 9081.362
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793327606589671924,
+      "first_text_rx_ns": 1793327606590094967,
+      "done_rx_ns": 1793327607253056128,
+      "chunk_count": 9,
+      "char_count": 38,
+      "chunks": [
+        {
+          "t_ns": 1793327606590094967,
+          "text": "嗯"
+        },
+        {
+          "t_ns": 1793327606637864946,
+          "text": "，听你"
+        },
+        {
+          "t_ns": 1793327606686470585,
+          "text": "这么说，我"
+        },
+        {
+          "t_ns": 1793327606740755340,
+          "text": "有点想轻轻"
+        },
+        {
+          "t_ns": 1793327606876440168,
+          "text": "拍拍你的肩～"
+        },
+        {
+          "t_ns": 1793327606959944229,
+          "text": "要不聊"
+        },
+        {
+          "t_ns": 1793327607046651025,
+          "text": "点开心的？"
+        },
+        {
+          "t_ns": 1793327607140186590,
+          "text": "或者安静陪着你也"
+        },
+        {
+          "t_ns": 1793327607201885532,
+          "text": "行。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793327606638071662,
+      "done_rx_ns": 1793327607253311188,
+      "text_count": 4,
+      "texts": [
+        {
+          "t_ns": 1793327606638071662,
+          "text": "嗯，"
+        },
+        {
+          "t_ns": 1793327606686858485,
+          "text": "听你这么说，"
+        },
+        {
+          "t_ns": 1793327607046862242,
+          "text": "我有点想轻轻拍拍你的肩～要不聊点开心的？"
+        },
+        {
+          "t_ns": 1793327607202143922,
+          "text": "或者安静陪着你也行。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 28,
+    "latency_events_total": 28,
+    "asr_events": 0,
+    "tts_events": 23,
+    "tts_play_pairs": 4,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793327606109951482,
+      "node": "llm_medical",
+      "stage": "intent_judge",
+      "t_ns": 1793327606109669739,
+      "detail": {
+        "model": "qwen-flash",
+        "ms": 857.3,
+        "answer": "聊",
+        "kind": "chat"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent_judge\", \"t_ns\": 1793327606109669739, \"detail\": {\"model\": \"qwen-flash\", \"ms\": 857.3, \"answer\": \"聊\", \"kind\": \"chat\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327606110163796,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793327606109810592,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "llm:qwen-flash",
+        "keyword_medical": false,
+        "judge_kind": "chat",
+        "judge_ms": 857.3
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793327606109810592, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"llm:qwen-flash\", \"keyword_medical\": false, \"judge_kind\": \"chat\", \"judge_ms\": 857.3}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327606589762328,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793327606589308693,
+      "detail": {
+        "prompt_chars": 404,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793327606589308693, \"detail\": {\"prompt_chars\": 404, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327606590154383,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793327606589813427,
+      "detail": {
+        "prompt_chars": 404
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793327606589813427, \"detail\": {\"prompt_chars\": 404}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327606591511849,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793327606591372145,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793327606591372145, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327606638553648,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327606638365086,
+      "detail": {
+        "text_len": 2,
+        "head": "嗯，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327606638365086, \"detail\": {\"text_len\": 2, \"head\": \"嗯，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327606638764442,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327606638439687,
+      "detail": {
+        "text_len": 2
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327606638439687, \"detail\": {\"text_len\": 2}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327607045859017,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327607045612542,
+      "detail": {
+        "text_len": 2,
+        "dur_ms": 407.167928,
+        "audio_sec": 1.04,
+        "rtf": 0.39150762307692305
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327607045612542, \"detail\": {\"text_len\": 2, \"dur_ms\": 407.167928, \"audio_sec\": 1.04, \"rtf\": 0.39150762307692305}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327607047950460,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327607047728869,
+      "detail": {
+        "text_len": 6,
+        "head": "听你这么说，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327607047728869, \"detail\": {\"text_len\": 6, \"head\": \"听你这么说，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327607048286585,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327607047789231,
+      "detail": {
+        "text_len": 6
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327607047789231, \"detail\": {\"text_len\": 6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327607055222351,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327607055013104,
+      "detail": {
+        "text_len": 2,
+        "head": "嗯，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327607055013104, \"detail\": {\"text_len\": 2, \"head\": \"嗯，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327607253100910,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793327607252786296,
+      "detail": {
+        "chars": 41
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793327607252786296, \"detail\": {\"chars\": 41}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327607590528532,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327607590260252,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 542.466573,
+        "audio_sec": 1.52,
+        "rtf": 0.35688590328947367
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327607590260252, \"detail\": {\"text_len\": 6, \"dur_ms\": 542.466573, \"audio_sec\": 1.52, \"rtf\": 0.35688590328947367}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327607599007837,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327607598764431,
+      "detail": {
+        "text_len": 20,
+        "head": "我有点想轻轻拍拍你的肩～要不聊点开心的？"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327607598764431, \"detail\": {\"text_len\": 20, \"head\": \"我有点想轻轻拍拍你的肩～要不聊点开心的？\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327607599233084,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327607598827299,
+      "detail": {
+        "text_len": 20
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327607598827299, \"detail\": {\"text_len\": 20}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327608100325670,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327608100021691,
+      "detail": {
+        "text_len": 2,
+        "interrupted": false,
+        "dur_ms": 1045.007065
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327608100021691, \"detail\": {\"text_len\": 2, \"interrupted\": false, \"dur_ms\": 1045.007065}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327608100909686,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327608100755496,
+      "detail": {
+        "text_len": 6,
+        "head": "听你这么说，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327608100755496, \"detail\": {\"text_len\": 6, \"head\": \"听你这么说，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327608971780205,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327608971489167,
+      "detail": {
+        "text_len": 20,
+        "dur_ms": 1372.656173,
+        "audio_sec": 4.0,
+        "rtf": 0.34316404325
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327608971489167, \"detail\": {\"text_len\": 20, \"dur_ms\": 1372.656173, \"audio_sec\": 4.0, \"rtf\": 0.34316404325}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327608972209041,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327608972079159,
+      "detail": {
+        "text_len": 10,
+        "head": "或者安静陪着你也行。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327608972079159, \"detail\": {\"text_len\": 10, \"head\": \"或者安静陪着你也行。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327608972388714,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327608972123605,
+      "detail": {
+        "text_len": 10
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327608972123605, \"detail\": {\"text_len\": 10}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327609627463096,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327609627135487,
+      "detail": {
+        "text_len": 6,
+        "interrupted": false,
+        "dur_ms": 1526.378064
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327609627135487, \"detail\": {\"text_len\": 6, \"interrupted\": false, \"dur_ms\": 1526.378064}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327609628147294,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327609627983073,
+      "detail": {
+        "text_len": 20,
+        "head": "我有点想轻轻拍拍你的肩～要不聊点开心的？"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327609627983073, \"detail\": {\"text_len\": 20, \"head\": \"我有点想轻轻拍拍你的肩～要不聊点开心的？\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327609844126049,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327609843810512,
+      "detail": {
+        "text_len": 10,
+        "dur_ms": 871.68299,
+        "audio_sec": 2.48,
+        "rtf": 0.35148507661290324
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327609843810512, \"detail\": {\"text_len\": 10, \"dur_ms\": 871.68299, \"audio_sec\": 2.48, \"rtf\": 0.35148507661290324}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327609844500770,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793327609844357383,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793327609844357383, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327613646769498,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327613646477957,
+      "detail": {
+        "text_len": 20,
+        "interrupted": false,
+        "dur_ms": 4018.491893
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327613646477957, \"detail\": {\"text_len\": 20, \"interrupted\": false, \"dur_ms\": 4018.491893}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327613647387924,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327613647222303,
+      "detail": {
+        "text_len": 10,
+        "head": "或者安静陪着你也行。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327613647222303, \"detail\": {\"text_len\": 10, \"head\": \"或者安静陪着你也行。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327616137009846,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327616136375313,
+      "detail": {
+        "text_len": 10,
+        "interrupted": false,
+        "dur_ms": 2489.147288
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327616136375313, \"detail\": {\"text_len\": 10, \"interrupted\": false, \"dur_ms\": 2489.147288}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327616137469229,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793327616137280154,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793327616137280154, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent_judge": [
+        {
+          "t_ns": 1793327606109669739,
+          "arrival_ns": 1793327606109951482,
+          "source": "round",
+          "detail": {
+            "model": "qwen-flash",
+            "ms": 857.3,
+            "answer": "聊",
+            "kind": "chat"
+          }
+        }
+      ],
+      "intent": [
+        {
+          "t_ns": 1793327606109810592,
+          "arrival_ns": 1793327606110163796,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "llm:qwen-flash",
+            "keyword_medical": false,
+            "judge_kind": "chat",
+            "judge_ms": 857.3
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793327606589308693,
+          "arrival_ns": 1793327606589762328,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 404,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793327606589813427,
+          "arrival_ns": 1793327606590154383,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 404
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793327607252786296,
+          "arrival_ns": 1793327607253100910,
+          "source": "round",
+          "detail": {
+            "chars": 41
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793327606591372145,
+          "arrival_ns": 1793327606591511849,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793327609844357383,
+          "arrival_ns": 1793327609844500770,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793327606638365086,
+          "arrival_ns": 1793327606638553648,
+          "source": "round",
+          "detail": {
+            "text_len": 2,
+            "head": "嗯，"
+          }
+        },
+        {
+          "t_ns": 1793327607047728869,
+          "arrival_ns": 1793327607047950460,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "听你这么说，"
+          }
+        },
+        {
+          "t_ns": 1793327607598764431,
+          "arrival_ns": 1793327607599007837,
+          "source": "round",
+          "detail": {
+            "text_len": 20,
+            "head": "我有点想轻轻拍拍你的肩～要不聊点开心的？"
+          }
+        },
+        {
+          "t_ns": 1793327608972079159,
+          "arrival_ns": 1793327608972209041,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "或者安静陪着你也行。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793327606638439687,
+          "arrival_ns": 1793327606638764442,
+          "source": "round",
+          "detail": {
+            "text_len": 2
+          }
+        },
+        {
+          "t_ns": 1793327607047789231,
+          "arrival_ns": 1793327607048286585,
+          "source": "round",
+          "detail": {
+            "text_len": 6
+          }
+        },
+        {
+          "t_ns": 1793327607598827299,
+          "arrival_ns": 1793327607599233084,
+          "source": "round",
+          "detail": {
+            "text_len": 20
+          }
+        },
+        {
+          "t_ns": 1793327608972123605,
+          "arrival_ns": 1793327608972388714,
+          "source": "round",
+          "detail": {
+            "text_len": 10
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793327607045612542,
+          "arrival_ns": 1793327607045859017,
+          "source": "round",
+          "detail": {
+            "text_len": 2,
+            "dur_ms": 407.167928,
+            "audio_sec": 1.04,
+            "rtf": 0.39150762307692305
+          }
+        },
+        {
+          "t_ns": 1793327607590260252,
+          "arrival_ns": 1793327607590528532,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 542.466573,
+            "audio_sec": 1.52,
+            "rtf": 0.35688590328947367
+          }
+        },
+        {
+          "t_ns": 1793327608971489167,
+          "arrival_ns": 1793327608971780205,
+          "source": "round",
+          "detail": {
+            "text_len": 20,
+            "dur_ms": 1372.656173,
+            "audio_sec": 4.0,
+            "rtf": 0.34316404325
+          }
+        },
+        {
+          "t_ns": 1793327609843810512,
+          "arrival_ns": 1793327609844126049,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "dur_ms": 871.68299,
+            "audio_sec": 2.48,
+            "rtf": 0.35148507661290324
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793327607055013104,
+          "arrival_ns": 1793327607055222351,
+          "source": "round",
+          "detail": {
+            "text_len": 2,
+            "head": "嗯，"
+          }
+        },
+        {
+          "t_ns": 1793327608100755496,
+          "arrival_ns": 1793327608100909686,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "听你这么说，"
+          }
+        },
+        {
+          "t_ns": 1793327609627983073,
+          "arrival_ns": 1793327609628147294,
+          "source": "round",
+          "detail": {
+            "text_len": 20,
+            "head": "我有点想轻轻拍拍你的肩～要不聊点开心的？"
+          }
+        },
+        {
+          "t_ns": 1793327613647222303,
+          "arrival_ns": 1793327613647387924,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "或者安静陪着你也行。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793327608100021691,
+          "arrival_ns": 1793327608100325670,
+          "source": "round",
+          "detail": {
+            "text_len": 2,
+            "interrupted": false,
+            "dur_ms": 1045.007065
+          }
+        },
+        {
+          "t_ns": 1793327609627135487,
+          "arrival_ns": 1793327609627463096,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "interrupted": false,
+            "dur_ms": 1526.378064
+          }
+        },
+        {
+          "t_ns": 1793327613646477957,
+          "arrival_ns": 1793327613646769498,
+          "source": "round",
+          "detail": {
+            "text_len": 20,
+            "interrupted": false,
+            "dur_ms": 4018.491893
+          }
+        },
+        {
+          "t_ns": 1793327616136375313,
+          "arrival_ns": 1793327616137009846,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "interrupted": false,
+            "dur_ms": 2489.147288
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793327616137280154,
+          "arrival_ns": 1793327616137469229,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 50,
+    "interval_s": 2.0
+  }
+}

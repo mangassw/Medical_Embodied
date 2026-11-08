@@ -1,0 +1,783 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1080370",
+  "host": "artrc",
+  "tag": "opt2_chatfast",
+  "round_index": 8,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T11:09:13.124",
+  "finished_at": "2026-10-30T11:09:46.847",
+  "duration_s": 33.722,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "唱首歌吧",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793329753125219213,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793329753124839272,
+    "t_publish_question_ns": 1793329753125219213,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793329753125681811,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793329753126076951,
+      "ali_llm_output_start": 1793329759621139328,
+      "ali_llm_output_first_text": 1793329759621672976,
+      "ali_llm_output_done": 1793329760423448652,
+      "tts_realtime_data_start": 1793329759621483292,
+      "tts_realtime_data_first_text": 1793329759726552308,
+      "tts_realtime_data_done": 1793329760423899726,
+      "tts_session_finished": 1793329786547052717
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793329759749624586,
+      "tts_local.synth_start_first": 1793329759749710744,
+      "tts_local.synth_end_first": 1793329765007019765,
+      "tts_local.play_start_first": 1793329765019026603,
+      "tts_local.play_end_last": 1793329786546042459,
+      "tts_local.session_finished": 1793329786546738697
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.858,
+    "router_to_llm_first_ms": 6495.596,
+    "question_to_llm_first_ms": 6496.454,
+    "llm_first_to_done_ms": 801.776,
+    "question_to_llm_done_ms": 7298.229,
+    "llm_first_to_tts_first_text_ms": 104.879,
+    "question_to_tts_first_text_ms": 6601.333,
+    "first_tts_text_to_first_play_start_ms": 5292.474,
+    "tts_rx_to_synth_end_ms": 5257.395,
+    "tts_rx_to_play_start_ms": 5269.402,
+    "tts_synth_end_to_play_start_ms": 12.007,
+    "question_to_first_audio_ms": 11893.807,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 33421.834,
+    "audio_total_sum_ms": 21525.123,
+    "audio_first_to_last_ms": 21527.016
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 857738,
+    "router_to_llm_first_ns": 6495596025,
+    "question_to_llm_first_ns": 6496453763,
+    "llm_first_to_done_ns": 801775676,
+    "question_to_llm_done_ns": 7298229439,
+    "llm_first_to_tts_first_text_ns": 104879332,
+    "question_to_tts_first_text_ns": 6601333095,
+    "first_tts_text_to_first_play_start_ns": 5292474295,
+    "tts_rx_to_synth_end_ns": 5257395179,
+    "tts_rx_to_play_start_ns": 5269402017,
+    "tts_synth_end_to_play_start_ns": 12006838,
+    "question_to_first_audio_ns": 11893807390,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 33421833504,
+    "audio_total_sum_ns": 21525122743,
+    "audio_first_to_last_ns": 21527015856
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 6496453763,
+      "ms": 6496.454
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 801775676,
+      "ms": 801.776
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 104879332,
+      "ms": 104.879
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 5292474295,
+      "ms": 5292.474
+    },
+    "question_to_first_play_start": {
+      "ns": 11893807390,
+      "ms": 11893.807
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 33421833504,
+      "ms": 33421.834
+    },
+    "audio_total_sec": {
+      "ns": 21525122743,
+      "ms": 21525.123,
+      "sec": 21.525
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.858,
+    "router_to_llm_first_ms": 6495.596,
+    "question_to_llm_first_ms": 6496.454,
+    "llm_first_to_done_ms": 801.776,
+    "question_to_llm_done_ms": 7298.229,
+    "llm_first_to_tts_first_text_ms": 104.879,
+    "question_to_tts_first_text_ms": 6601.333,
+    "first_tts_text_to_first_play_start_ms": 5292.474,
+    "tts_rx_to_synth_end_ms": 5257.395,
+    "tts_rx_to_play_start_ms": 5269.402,
+    "tts_synth_end_to_play_start_ms": 12.007,
+    "question_to_first_audio_ms": 11893.807,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 33421.834,
+    "audio_total_sum_ms": 21525.123,
+    "audio_first_to_last_ms": 21527.016
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793329759621139328,
+      "first_text_rx_ns": 1793329759621672976,
+      "done_rx_ns": 1793329760423448652,
+      "chunk_count": 10,
+      "char_count": 35,
+      "chunks": [
+        {
+          "t_ns": 1793329759621672976,
+          "text": "我"
+        },
+        {
+          "t_ns": 1793329759652171604,
+          "text": "轻轻"
+        },
+        {
+          "t_ns": 1793329759688851007,
+          "text": "哼一段"
+        },
+        {
+          "t_ns": 1793329759726155859,
+          "text": "："
+        },
+        {
+          "t_ns": 1793329759807455967,
+          "text": "月光柔"
+        },
+        {
+          "t_ns": 1793329759925210206,
+          "text": "柔铺床边"
+        },
+        {
+          "t_ns": 1793329760073553028,
+          "text": "，风儿慢慢"
+        },
+        {
+          "t_ns": 1793329760203816695,
+          "text": "摇窗帘～  \n（"
+        },
+        {
+          "t_ns": 1793329760323021207,
+          "text": "声音轻得像羽毛"
+        },
+        {
+          "t_ns": 1793329760398370437,
+          "text": "）"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793329759726552308,
+      "done_rx_ns": 1793329760423899726,
+      "text_count": 3,
+      "texts": [
+        {
+          "t_ns": 1793329759726552308,
+          "text": "我轻轻哼一段："
+        },
+        {
+          "t_ns": 1793329760073886987,
+          "text": "月光柔柔铺床边，"
+        },
+        {
+          "t_ns": 1793329760423728659,
+          "text": "风儿慢慢摇窗帘～  \n（声音轻得像羽毛）"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 22,
+    "latency_events_total": 22,
+    "asr_events": 0,
+    "tts_events": 18,
+    "tts_play_pairs": 3,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793329753147174632,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793329753146966621,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "chitchat",
+        "keyword_medical": false,
+        "chitchat": true,
+        "judge_kind": null,
+        "judge_ms": 0.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793329753146966621, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"chitchat\", \"keyword_medical\": false, \"chitchat\": true, \"judge_kind\": null, \"judge_ms\": 0.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329759621185347,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793329759620854695,
+      "detail": {
+        "prompt_chars": 397,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793329759620854695, \"detail\": {\"prompt_chars\": 397, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329759621705962,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793329759621360749,
+      "detail": {
+        "prompt_chars": 397
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793329759621360749, \"detail\": {\"prompt_chars\": 397}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329759628260381,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793329759628010568,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793329759628010568, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329759749851571,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329759749624586,
+      "detail": {
+        "text_len": 7,
+        "head": "我轻轻哼一段："
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329759749624586, \"detail\": {\"text_len\": 7, \"head\": \"我轻轻哼一段：\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329759750065083,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329759749710744,
+      "detail": {
+        "text_len": 7
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329759749710744, \"detail\": {\"text_len\": 7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329760423495557,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793329760423103928,
+      "detail": {
+        "chars": 38
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793329760423103928, \"detail\": {\"chars\": 38}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329765007331219,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329765007019765,
+      "detail": {
+        "text_len": 7,
+        "dur_ms": 5257.302609,
+        "audio_sec": 15.12,
+        "rtf": 0.3477051990079365
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329765007019765, \"detail\": {\"text_len\": 7, \"dur_ms\": 5257.302609, \"audio_sec\": 15.12, \"rtf\": 0.3477051990079365}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329765007858868,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329765007712174,
+      "detail": {
+        "text_len": 8,
+        "head": "月光柔柔铺床边，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329765007712174, \"detail\": {\"text_len\": 8, \"head\": \"月光柔柔铺床边，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329765008161505,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329765007763674,
+      "detail": {
+        "text_len": 8
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329765007763674, \"detail\": {\"text_len\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329765019238702,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329765019026603,
+      "detail": {
+        "text_len": 7,
+        "head": "我轻轻哼一段："
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329765019026603, \"detail\": {\"text_len\": 7, \"head\": \"我轻轻哼一段：\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329765678577680,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329765678122187,
+      "detail": {
+        "text_len": 8,
+        "dur_ms": 670.352093,
+        "audio_sec": 1.84,
+        "rtf": 0.36432178967391304
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329765678122187, \"detail\": {\"text_len\": 8, \"dur_ms\": 670.352093, \"audio_sec\": 1.84, \"rtf\": 0.36432178967391304}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329765688584290,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329765684691130,
+      "detail": {
+        "text_len": 20,
+        "head": "风儿慢慢摇窗帘～  \n（声音轻得像羽毛）"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329765684691130, \"detail\": {\"text_len\": 20, \"head\": \"风儿慢慢摇窗帘～  \\n（声音轻得像羽毛）\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329765688916465,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329765684805444,
+      "detail": {
+        "text_len": 20
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329765684805444, \"detail\": {\"text_len\": 20}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329767232007260,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329767231723065,
+      "detail": {
+        "text_len": 20,
+        "dur_ms": 1546.911573,
+        "audio_sec": 4.48,
+        "rtf": 0.3452927618303571
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329767231723065, \"detail\": {\"text_len\": 20, \"dur_ms\": 1546.911573, \"audio_sec\": 4.48, \"rtf\": 0.3452927618303571}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329767232352020,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793329767232236039,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793329767232236039, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329780227976255,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329780227682082,
+      "detail": {
+        "text_len": 7,
+        "interrupted": false,
+        "dur_ms": 15208.652708
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329780227682082, \"detail\": {\"text_len\": 7, \"interrupted\": false, \"dur_ms\": 15208.652708}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329780228752345,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329780228454080,
+      "detail": {
+        "text_len": 8,
+        "head": "月光柔柔铺床边，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329780228454080, \"detail\": {\"text_len\": 8, \"head\": \"月光柔柔铺床边，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329782067371512,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329782066904379,
+      "detail": {
+        "text_len": 8,
+        "interrupted": false,
+        "dur_ms": 1838.447414
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329782066904379, \"detail\": {\"text_len\": 8, \"interrupted\": false, \"dur_ms\": 1838.447414}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329782068203627,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329782068025494,
+      "detail": {
+        "text_len": 20,
+        "head": "风儿慢慢摇窗帘～  \n（声音轻得像羽毛）"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329782068025494, \"detail\": {\"text_len\": 20, \"head\": \"风儿慢慢摇窗帘～  \\n（声音轻得像羽毛）\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329786546362946,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329786546042459,
+      "detail": {
+        "text_len": 20,
+        "interrupted": false,
+        "dur_ms": 4478.014498
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329786546042459, \"detail\": {\"text_len\": 20, \"interrupted\": false, \"dur_ms\": 4478.014498}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329786546865509,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793329786546738697,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793329786546738697, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793329753146966621,
+          "arrival_ns": 1793329753147174632,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "chitchat",
+            "keyword_medical": false,
+            "chitchat": true,
+            "judge_kind": null,
+            "judge_ms": 0.0
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793329759620854695,
+          "arrival_ns": 1793329759621185347,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 397,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793329759621360749,
+          "arrival_ns": 1793329759621705962,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 397
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793329760423103928,
+          "arrival_ns": 1793329760423495557,
+          "source": "round",
+          "detail": {
+            "chars": 38
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793329759628010568,
+          "arrival_ns": 1793329759628260381,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793329767232236039,
+          "arrival_ns": 1793329767232352020,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793329759749624586,
+          "arrival_ns": 1793329759749851571,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "我轻轻哼一段："
+          }
+        },
+        {
+          "t_ns": 1793329765007712174,
+          "arrival_ns": 1793329765007858868,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "月光柔柔铺床边，"
+          }
+        },
+        {
+          "t_ns": 1793329765684691130,
+          "arrival_ns": 1793329765688584290,
+          "source": "round",
+          "detail": {
+            "text_len": 20,
+            "head": "风儿慢慢摇窗帘～  \n（声音轻得像羽毛）"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793329759749710744,
+          "arrival_ns": 1793329759750065083,
+          "source": "round",
+          "detail": {
+            "text_len": 7
+          }
+        },
+        {
+          "t_ns": 1793329765007763674,
+          "arrival_ns": 1793329765008161505,
+          "source": "round",
+          "detail": {
+            "text_len": 8
+          }
+        },
+        {
+          "t_ns": 1793329765684805444,
+          "arrival_ns": 1793329765688916465,
+          "source": "round",
+          "detail": {
+            "text_len": 20
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793329765007019765,
+          "arrival_ns": 1793329765007331219,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "dur_ms": 5257.302609,
+            "audio_sec": 15.12,
+            "rtf": 0.3477051990079365
+          }
+        },
+        {
+          "t_ns": 1793329765678122187,
+          "arrival_ns": 1793329765678577680,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "dur_ms": 670.352093,
+            "audio_sec": 1.84,
+            "rtf": 0.36432178967391304
+          }
+        },
+        {
+          "t_ns": 1793329767231723065,
+          "arrival_ns": 1793329767232007260,
+          "source": "round",
+          "detail": {
+            "text_len": 20,
+            "dur_ms": 1546.911573,
+            "audio_sec": 4.48,
+            "rtf": 0.3452927618303571
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793329765019026603,
+          "arrival_ns": 1793329765019238702,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "我轻轻哼一段："
+          }
+        },
+        {
+          "t_ns": 1793329780228454080,
+          "arrival_ns": 1793329780228752345,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "月光柔柔铺床边，"
+          }
+        },
+        {
+          "t_ns": 1793329782068025494,
+          "arrival_ns": 1793329782068203627,
+          "source": "round",
+          "detail": {
+            "text_len": 20,
+            "head": "风儿慢慢摇窗帘～  \n（声音轻得像羽毛）"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793329780227682082,
+          "arrival_ns": 1793329780227976255,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "interrupted": false,
+            "dur_ms": 15208.652708
+          }
+        },
+        {
+          "t_ns": 1793329782066904379,
+          "arrival_ns": 1793329782067371512,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "interrupted": false,
+            "dur_ms": 1838.447414
+          }
+        },
+        {
+          "t_ns": 1793329786546042459,
+          "arrival_ns": 1793329786546362946,
+          "source": "round",
+          "detail": {
+            "text_len": 20,
+            "interrupted": false,
+            "dur_ms": 4478.014498
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793329786546738697,
+          "arrival_ns": 1793329786546865509,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 10,
+    "interval_s": 2.0
+  }
+}

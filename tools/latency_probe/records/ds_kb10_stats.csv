@@ -1,0 +1,16 @@
+metric,label,count,mean_ms,median_ms,p95_ms,min_ms,max_ms,stdev_ms
+question_to_router_ms,Router: question→路由话题到达,10,0.92,0.921,1.067,0.826,1.067,0.081
+router_to_llm_first_ms,LLM: 路由话题→首块,10,839.368,604.773,1681.86,446.966,1681.86,439.025
+question_to_llm_first_ms,LLM TTFT: question→首块,10,840.289,605.68,1682.744,447.792,1682.744,439.02
+llm_first_to_done_ms,LLM 总时长: 首块→[DONE],10,320.107,273.42,741.499,142.883,741.499,195.015
+question_to_llm_done_ms,LLM: question→[DONE],10,1160.396,929.409,2112.191,590.675,2112.191,566.285
+llm_first_to_tts_first_text_ms,断句: LLM首块→首个TTS文本,10,52.867,51.88,87.256,19.35,87.256,21.762
+question_to_tts_first_text_ms,断句: question→首个TTS文本,10,893.156,641.266,1755.291,504.734,1755.291,448.694
+first_tts_text_to_first_play_start_ms,断句: 首个TTS文本→首音,10,743.701,770.916,893.868,538.898,893.868,137.753
+tts_rx_to_synth_end_ms,TTS 首句合成: rx→synth_end,10,678.898,706.501,793.852,480.242,793.852,123.79
+tts_rx_to_play_start_ms,TTS 首音: rx→play_start,10,741.759,770.504,892.315,541.388,892.315,135.205
+tts_synth_end_to_play_start_ms,TTS 首句: synth_end→play_start,10,62.861,60.941,99.312,19.822,99.312,25.515
+question_to_first_audio_ms,端到端: question→首个play_start,10,1636.857,1447.128,2409.502,1156.575,2409.502,414.94
+question_to_session_finished_ms,会话总时长: question→session_finished,10,10472.069,12139.278,15131.992,5482.691,15131.992,4135.201
+audio_total_sum_ms,音频总时长(各段play相加),10,8827.701,10351.975,13351.073,4080.246,13351.073,4024.679
+audio_first_to_last_ms,音频跨距: 首play_start→末play_end,10,8834.05,10354.508,13394.264,4082.715,13394.264,4030.71

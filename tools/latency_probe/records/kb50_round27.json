@@ -1,0 +1,811 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1058399",
+  "host": "artrc",
+  "tag": "kb50",
+  "round_index": 27,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T10:21:52.105",
+  "finished_at": "2026-10-30T10:21:59.977",
+  "duration_s": 7.872,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "透析当天能吃降压药吗？",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793326912106081425,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793326912105674073,
+    "t_publish_question_ns": 1793326912106081425,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793326912106553875,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793326912106918744,
+      "ali_llm_output_start": 1793326912520096284,
+      "ali_llm_output_first_text": 1793326912520301341,
+      "ali_llm_output_done": 1793326912991458735,
+      "tts_realtime_data_start": 1793326912520334544,
+      "tts_realtime_data_first_text": 1793326912553128436,
+      "tts_realtime_data_done": 1793326912991926287,
+      "tts_session_finished": 1793326919673019366
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793326912801574791,
+      "tts_local.synth_start_first": 1793326912801647418,
+      "tts_local.synth_end_first": 1793326913262862490,
+      "tts_local.play_start_first": 1793326913355122658,
+      "tts_local.play_end_last": 1793326919671883017,
+      "tts_local.session_finished": 1793326919672709996
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.837,
+    "router_to_llm_first_ms": 413.383,
+    "question_to_llm_first_ms": 414.22,
+    "llm_first_to_done_ms": 471.157,
+    "question_to_llm_done_ms": 885.377,
+    "llm_first_to_tts_first_text_ms": 32.827,
+    "question_to_tts_first_text_ms": 447.047,
+    "first_tts_text_to_first_play_start_ms": 801.994,
+    "tts_rx_to_synth_end_ms": 461.288,
+    "tts_rx_to_play_start_ms": 553.548,
+    "tts_synth_end_to_play_start_ms": 92.26,
+    "question_to_first_audio_ms": 1249.041,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 7566.938,
+    "audio_total_sum_ms": 6315.235,
+    "audio_first_to_last_ms": 6316.76
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 837319,
+    "router_to_llm_first_ns": 413382597,
+    "question_to_llm_first_ns": 414219916,
+    "llm_first_to_done_ns": 471157394,
+    "question_to_llm_done_ns": 885377310,
+    "llm_first_to_tts_first_text_ns": 32827095,
+    "question_to_tts_first_text_ns": 447047011,
+    "first_tts_text_to_first_play_start_ns": 801994222,
+    "tts_rx_to_synth_end_ns": 461287699,
+    "tts_rx_to_play_start_ns": 553547867,
+    "tts_synth_end_to_play_start_ns": 92260168,
+    "question_to_first_audio_ns": 1249041233,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 7566937941,
+    "audio_total_sum_ns": 6315235228,
+    "audio_first_to_last_ns": 6316760359
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 414219916,
+      "ms": 414.22
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 471157394,
+      "ms": 471.157
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 32827095,
+      "ms": 32.827
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 801994222,
+      "ms": 801.994
+    },
+    "question_to_first_play_start": {
+      "ns": 1249041233,
+      "ms": 1249.041
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 7566937941,
+      "ms": 7566.938
+    },
+    "audio_total_sec": {
+      "ns": 6315235228,
+      "ms": 6315.235,
+      "sec": 6.315
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.837,
+    "router_to_llm_first_ms": 413.383,
+    "question_to_llm_first_ms": 414.22,
+    "llm_first_to_done_ms": 471.157,
+    "question_to_llm_done_ms": 885.377,
+    "llm_first_to_tts_first_text_ms": 32.827,
+    "question_to_tts_first_text_ms": 447.047,
+    "first_tts_text_to_first_play_start_ms": 801.994,
+    "tts_rx_to_synth_end_ms": 461.288,
+    "tts_rx_to_play_start_ms": 553.548,
+    "tts_synth_end_to_play_start_ms": 92.26,
+    "question_to_first_audio_ms": 1249.041,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 7566.938,
+    "audio_total_sum_ms": 6315.235,
+    "audio_first_to_last_ms": 6316.76
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793326912520096284,
+      "first_text_rx_ns": 1793326912520301341,
+      "done_rx_ns": 1793326912991458735,
+      "chunk_count": 7,
+      "char_count": 25,
+      "chunks": [
+        {
+          "t_ns": 1793326912520301341,
+          "text": "能"
+        },
+        {
+          "t_ns": 1793326912552927361,
+          "text": "吃。"
+        },
+        {
+          "t_ns": 1793326912591166172,
+          "text": "手术"
+        },
+        {
+          "t_ns": 1793326912632118767,
+          "text": "日晨起"
+        },
+        {
+          "t_ns": 1793326912765534693,
+          "text": "可小口水服下。"
+        },
+        {
+          "t_ns": 1793326912897836996,
+          "text": "具体遵麻醉"
+        },
+        {
+          "t_ns": 1793326912960916459,
+          "text": "医生医嘱。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793326912553128436,
+      "done_rx_ns": 1793326912991926287,
+      "text_count": 3,
+      "texts": [
+        {
+          "t_ns": 1793326912553128436,
+          "text": "能吃。"
+        },
+        {
+          "t_ns": 1793326912765721064,
+          "text": "手术日晨起可小口水服下。"
+        },
+        {
+          "t_ns": 1793326912961272052,
+          "text": "具体遵麻醉医生医嘱。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 24,
+    "latency_events_total": 24,
+    "asr_events": 0,
+    "tts_events": 18,
+    "tts_play_pairs": 3,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793326912130856733,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793326912130561036,
+      "detail": {
+        "kind": "medical",
+        "chat_mode": false,
+        "source": "keyword",
+        "keyword_medical": true,
+        "judge_kind": null,
+        "judge_ms": 0.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793326912130561036, \"detail\": {\"kind\": \"medical\", \"chat_mode\": false, \"source\": \"keyword\", \"keyword_medical\": true, \"judge_kind\": null, \"judge_ms\": 0.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326912131289278,
+      "node": "llm_medical",
+      "stage": "rag_start",
+      "t_ns": 1793326912131121590,
+      "detail": {},
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_start\", \"t_ns\": 1793326912131121590, \"detail\": {}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326912142525138,
+      "node": "llm_medical",
+      "stage": "rag_end",
+      "t_ns": 1793326912142219743,
+      "detail": {
+        "n_chunks": 4,
+        "took_ms": 11.0,
+        "top1": "血透常用药物"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_end\", \"t_ns\": 1793326912142219743, \"detail\": {\"n_chunks\": 4, \"took_ms\": 11.0, \"top1\": \"血透常用药物\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326912519903348,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793326912519585444,
+      "detail": {
+        "prompt_chars": 1255,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793326912519585444, \"detail\": {\"prompt_chars\": 1255, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326912520362098,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793326912520103635,
+      "detail": {
+        "prompt_chars": 1255
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793326912520103635, \"detail\": {\"prompt_chars\": 1255}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326912801316777,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793326912801033328,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793326912801033328, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326912801807589,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793326912801574791,
+      "detail": {
+        "text_len": 3,
+        "head": "能吃。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793326912801574791, \"detail\": {\"text_len\": 3, \"head\": \"能吃。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326912802098239,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793326912801647418,
+      "detail": {
+        "text_len": 3
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793326912801647418, \"detail\": {\"text_len\": 3}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326912991528632,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793326912991122280,
+      "detail": {
+        "chars": 31
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793326912991122280, \"detail\": {\"chars\": 31}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326913263152741,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793326913262862490,
+      "detail": {
+        "text_len": 3,
+        "dur_ms": 461.210268,
+        "audio_sec": 1.2,
+        "rtf": 0.38434189
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793326913262862490, \"detail\": {\"text_len\": 3, \"dur_ms\": 461.210268, \"audio_sec\": 1.2, \"rtf\": 0.38434189}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326913289891680,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793326913289686191,
+      "detail": {
+        "text_len": 12,
+        "head": "手术日晨起可小口水服下。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793326913289686191, \"detail\": {\"text_len\": 12, \"head\": \"手术日晨起可小口水服下。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326913290089896,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793326913289762034,
+      "detail": {
+        "text_len": 12
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793326913289762034, \"detail\": {\"text_len\": 12}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326913355411777,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793326913355122658,
+      "detail": {
+        "text_len": 3,
+        "head": "能吃。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793326913355122658, \"detail\": {\"text_len\": 3, \"head\": \"能吃。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326914216702137,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793326914216432959,
+      "detail": {
+        "text_len": 12,
+        "dur_ms": 926.666106,
+        "audio_sec": 2.64,
+        "rtf": 0.3510098886363636
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793326914216432959, \"detail\": {\"text_len\": 12, \"dur_ms\": 926.666106, \"audio_sec\": 2.64, \"rtf\": 0.3510098886363636}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326914217162497,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793326914217013284,
+      "detail": {
+        "text_len": 10,
+        "head": "具体遵麻醉医生医嘱。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793326914217013284, \"detail\": {\"text_len\": 10, \"head\": \"具体遵麻醉医生医嘱。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326914217351960,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793326914217064843,
+      "detail": {
+        "text_len": 10
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793326914217064843, \"detail\": {\"text_len\": 10}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326914553760513,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793326914553374647,
+      "detail": {
+        "text_len": 3,
+        "interrupted": false,
+        "dur_ms": 1198.250556
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793326914553374647, \"detail\": {\"text_len\": 3, \"interrupted\": false, \"dur_ms\": 1198.250556}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326914554245215,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793326914554072422,
+      "detail": {
+        "text_len": 12,
+        "head": "手术日晨起可小口水服下。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793326914554072422, \"detail\": {\"text_len\": 12, \"head\": \"手术日晨起可小口水服下。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326915102193573,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793326915101847701,
+      "detail": {
+        "text_len": 10,
+        "dur_ms": 884.777536,
+        "audio_sec": 2.48,
+        "rtf": 0.356765135483871
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793326915101847701, \"detail\": {\"text_len\": 10, \"dur_ms\": 884.777536, \"audio_sec\": 2.48, \"rtf\": 0.356765135483871}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326915102732830,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793326915102535309,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793326915102535309, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326917193763435,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793326917193416491,
+      "detail": {
+        "text_len": 12,
+        "interrupted": false,
+        "dur_ms": 2639.338578
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793326917193416491, \"detail\": {\"text_len\": 12, \"interrupted\": false, \"dur_ms\": 2639.338578}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326917194398928,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793326917194243847,
+      "detail": {
+        "text_len": 10,
+        "head": "具体遵麻醉医生医嘱。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793326917194243847, \"detail\": {\"text_len\": 10, \"head\": \"具体遵麻醉医生医嘱。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326919672455776,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793326919671883017,
+      "detail": {
+        "text_len": 10,
+        "interrupted": false,
+        "dur_ms": 2477.633442
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793326919671883017, \"detail\": {\"text_len\": 10, \"interrupted\": false, \"dur_ms\": 2477.633442}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326919673077591,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793326919672709996,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793326919672709996, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793326912130561036,
+          "arrival_ns": 1793326912130856733,
+          "source": "round",
+          "detail": {
+            "kind": "medical",
+            "chat_mode": false,
+            "source": "keyword",
+            "keyword_medical": true,
+            "judge_kind": null,
+            "judge_ms": 0.0
+          }
+        }
+      ],
+      "rag_start": [
+        {
+          "t_ns": 1793326912131121590,
+          "arrival_ns": 1793326912131289278,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "rag_end": [
+        {
+          "t_ns": 1793326912142219743,
+          "arrival_ns": 1793326912142525138,
+          "source": "round",
+          "detail": {
+            "n_chunks": 4,
+            "took_ms": 11.0,
+            "top1": "血透常用药物"
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793326912519585444,
+          "arrival_ns": 1793326912519903348,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1255,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793326912520103635,
+          "arrival_ns": 1793326912520362098,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1255
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793326912991122280,
+          "arrival_ns": 1793326912991528632,
+          "source": "round",
+          "detail": {
+            "chars": 31
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793326912801033328,
+          "arrival_ns": 1793326912801316777,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793326915102535309,
+          "arrival_ns": 1793326915102732830,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793326912801574791,
+          "arrival_ns": 1793326912801807589,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "head": "能吃。"
+          }
+        },
+        {
+          "t_ns": 1793326913289686191,
+          "arrival_ns": 1793326913289891680,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "手术日晨起可小口水服下。"
+          }
+        },
+        {
+          "t_ns": 1793326914217013284,
+          "arrival_ns": 1793326914217162497,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "具体遵麻醉医生医嘱。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793326912801647418,
+          "arrival_ns": 1793326912802098239,
+          "source": "round",
+          "detail": {
+            "text_len": 3
+          }
+        },
+        {
+          "t_ns": 1793326913289762034,
+          "arrival_ns": 1793326913290089896,
+          "source": "round",
+          "detail": {
+            "text_len": 12
+          }
+        },
+        {
+          "t_ns": 1793326914217064843,
+          "arrival_ns": 1793326914217351960,
+          "source": "round",
+          "detail": {
+            "text_len": 10
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793326913262862490,
+          "arrival_ns": 1793326913263152741,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "dur_ms": 461.210268,
+            "audio_sec": 1.2,
+            "rtf": 0.38434189
+          }
+        },
+        {
+          "t_ns": 1793326914216432959,
+          "arrival_ns": 1793326914216702137,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "dur_ms": 926.666106,
+            "audio_sec": 2.64,
+            "rtf": 0.3510098886363636
+          }
+        },
+        {
+          "t_ns": 1793326915101847701,
+          "arrival_ns": 1793326915102193573,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "dur_ms": 884.777536,
+            "audio_sec": 2.48,
+            "rtf": 0.356765135483871
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793326913355122658,
+          "arrival_ns": 1793326913355411777,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "head": "能吃。"
+          }
+        },
+        {
+          "t_ns": 1793326914554072422,
+          "arrival_ns": 1793326914554245215,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "手术日晨起可小口水服下。"
+          }
+        },
+        {
+          "t_ns": 1793326917194243847,
+          "arrival_ns": 1793326917194398928,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "具体遵麻醉医生医嘱。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793326914553374647,
+          "arrival_ns": 1793326914553760513,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "interrupted": false,
+            "dur_ms": 1198.250556
+          }
+        },
+        {
+          "t_ns": 1793326917193416491,
+          "arrival_ns": 1793326917193763435,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "interrupted": false,
+            "dur_ms": 2639.338578
+          }
+        },
+        {
+          "t_ns": 1793326919671883017,
+          "arrival_ns": 1793326919672455776,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "interrupted": false,
+            "dur_ms": 2477.633442
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793326919672709996,
+          "arrival_ns": 1793326919673077591,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 50,
+    "interval_s": 2.0
+  }
+}

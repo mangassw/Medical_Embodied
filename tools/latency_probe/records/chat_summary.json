@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1046126",
+  "host": "artrc",
+  "tag": "chat",
+  "generated_at": "2026-10-30T09:42:11.619",
+  "mode": "inject-text",
+  "run_count": 1,
+  "ok_count": 1,
+  "non_ok": [],
+  "config": {
+    "record_dir": "/home/artrc/medical_ws/Medical_Embodied_dev/tools/latency_probe/records",
+    "tag": "chat",
+    "mode": "inject-text",
+    "repeat": 1,
+    "interval_s": 1.0,
+    "inject_text": "我家猫最近不爱吃饭怎么办",
+    "question_wav": null,
+    "wake_wav": null,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "timeout_s": 40.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "start_asr": false
+  },
+  "metric_order": [
+    "asr_kws_to_start_asr_ms",
+    "asr_start_asr_to_endpoint_ms",
+    "asr_endpoint_to_nurse_req_ms",
+    "asr_nurse_req_to_nurse_resp_ms",
+    "asr_nurse_resp_to_publish_question_ms",
+    "asr_endpoint_to_question_rx_ms",
+    "asr_publish_question_to_rx_ms",
+    "question_to_router_ms",
+    "router_to_llm_first_ms",
+    "question_to_llm_first_ms",
+    "llm_first_to_done_ms",
+    "question_to_llm_done_ms",
+    "llm_first_to_tts_first_text_ms",
+    "question_to_tts_first_text_ms",
+    "first_tts_text_to_first_play_start_ms",
+    "tts_rx_to_synth_end_ms",
+    "tts_rx_to_play_start_ms",
+    "tts_synth_end_to_play_start_ms",
+    "question_to_first_audio_ms",
+    "speech_end_to_first_audio_ms",
+    "playback_end_to_first_audio_ms",
+    "question_to_session_finished_ms",
+    "audio_total_sum_ms",
+    "audio_first_to_last_ms"
+  ],
+  "metrics": {
+    "question_to_router_ms": {
+      "count": 1,
+      "mean_ms": 1.091,
+      "median_ms": 1.091,
+      "p95_ms": 1.091,
+      "min_ms": 1.091,
+      "max_ms": 1.091,
+      "stdev_ms": 0.0
+    },
+    "router_to_llm_first_ms": {
+      "count": 1,
+      "mean_ms": 882.082,
+      "median_ms": 882.082,
+      "p95_ms": 882.082,
+      "min_ms": 882.082,
+      "max_ms": 882.082,
+      "stdev_ms": 0.0
+    },
+    "question_to_llm_first_ms": {
+      "count": 1,
+      "mean_ms": 883.173,
+      "median_ms": 883.173,
+      "p95_ms": 883.173,
+      "min_ms": 883.173,
+      "max_ms": 883.173,
+      "stdev_ms": 0.0
+    },
+    "llm_first_to_done_ms": {
+      "count": 1,
+      "mean_ms": 505.268,
+      "median_ms": 505.268,
+      "p95_ms": 505.268,
+      "min_ms": 505.268,
+      "max_ms": 505.268,
+      "stdev_ms": 0.0
+    },
+    "question_to_llm_done_ms": {
+      "count": 1,
+      "mean_ms": 1388.44,
+      "median_ms": 1388.44,
+      "p95_ms": 1388.44,
+      "min_ms": 1388.44,
+      "max_ms": 1388.44,
+      "stdev_ms": 0.0
+    },
+    "llm_first_to_tts_first_text_ms": {
+      "count": 1,
+      "mean_ms": 224.382,
+      "median_ms": 224.382,
+      "p95_ms": 224.382,
+      "min_ms": 224.382,
+      "max_ms": 224.382,
+      "stdev_ms": 0.0
+    },
+    "question_to_tts_first_text_ms": {
+      "count": 1,
+      "mean_ms": 1107.555,
+      "median_ms": 1107.555,
+      "p95_ms": 1107.555,
+      "min_ms": 1107.555,
+      "max_ms": 1107.555,
+      "stdev_ms": 0.0
+    },
+    "first_tts_text_to_first_play_start_ms": {
+      "count": 1,
+      "mean_ms": 973.248,
+      "median_ms": 973.248,
+      "p95_ms": 973.248,
+      "min_ms": 973.248,
+      "max_ms": 973.248,
+      "stdev_ms": 0.0
+    },
+    "tts_rx_to_synth_end_ms": {
+      "count": 1,
+      "mean_ms": 942.821,
+      "median_ms": 942.821,
+      "p95_ms": 942.821,
+      "min_ms": 942.821,
+      "max_ms": 942.821,
+      "stdev_ms": 0.0
+    },
+    "tts_rx_to_play_start_ms": {
+      "count": 1,
+      "mean_ms": 972.968,
+      "median_ms": 972.968,
+      "p95_ms": 972.968,
+      "min_ms": 972.968,
+      "max_ms": 972.968,
+      "stdev_ms": 0.0
+    },
+    "tts_synth_end_to_play_start_ms": {
+      "count": 1,
+      "mean_ms": 30.147,
+      "median_ms": 30.147,
+      "p95_ms": 30.147,
+      "min_ms": 30.147,
+      "max_ms": 30.147,
+      "stdev_ms": 0.0
+    },
+    "question_to_first_audio_ms": {
+      "count": 1,
+      "mean_ms": 2080.803,
+      "median_ms": 2080.803,
+      "p95_ms": 2080.803,
+      "min_ms": 2080.803,
+      "max_ms": 2080.803,
+      "stdev_ms": 0.0
+    },
+    "question_to_session_finished_ms": {
+      "count": 1,
+      "mean_ms": 8824.012,
+      "median_ms": 8824.012,
+      "p95_ms": 8824.012,
+      "min_ms": 8824.012,
+      "max_ms": 8824.012,
+      "stdev_ms": 0.0
+    },
+    "audio_total_sum_ms": {
+      "count": 1,
+      "mean_ms": 6740.803,
+      "median_ms": 6740.803,
+      "p95_ms": 6740.803,
+      "min_ms": 6740.803,
+      "max_ms": 6740.803,
+      "stdev_ms": 0.0
+    },
+    "audio_first_to_last_ms": {
+      "count": 1,
+      "mean_ms": 6742.213,
+      "median_ms": 6742.213,
+      "p95_ms": 6742.213,
+      "min_ms": 6742.213,
+      "max_ms": 6742.213,
+      "stdev_ms": 0.0
+    }
+  },
+  "rounds": [
+    {
+      "round_index": 0,
+      "round_file": "/home/artrc/medical_ws/Medical_Embodied_dev/tools/latency_probe/records/chat_round00.json",
+      "status": "ok",
+      "t0_source": "publish_question",
+      "trigger": {
+        "t0_ns": 1793324522480875333,
+        "play_start_ns": null,
+        "play_end_ns": null
+      },
+      "metrics": {
+        "asr_kws_to_start_asr_ms": null,
+        "asr_endpoint_silence_used_ms": null,
+        "asr_start_asr_to_endpoint_ms": null,
+        "asr_endpoint_to_nurse_req_ms": null,
+        "asr_nurse_req_to_nurse_resp_ms": null,
+        "asr_nurse_resp_to_publish_question_ms": null,
+        "asr_endpoint_to_question_rx_ms": null,
+        "asr_publish_question_to_rx_ms": null,
+        "question_to_router_ms": 1.091,
+        "router_to_llm_first_ms": 882.082,
+        "question_to_llm_first_ms": 883.173,
+        "llm_first_to_done_ms": 505.268,
+        "question_to_llm_done_ms": 1388.44,
+        "llm_first_to_tts_first_text_ms": 224.382,
+        "question_to_tts_first_text_ms": 1107.555,
+        "first_tts_text_to_first_play_start_ms": 973.248,
+        "tts_rx_to_synth_end_ms": 942.821,
+        "tts_rx_to_play_start_ms": 972.968,
+        "tts_synth_end_to_play_start_ms": 30.147,
+        "question_to_first_audio_ms": 2080.803,
+        "speech_end_to_first_audio_ms": null,
+        "playback_end_to_first_audio_ms": null,
+        "question_to_session_finished_ms": 8824.012,
+        "audio_total_sum_ms": 6740.803,
+        "audio_first_to_last_ms": 6742.213
+      }
+    }
+  ],
+  "round_files": [
+    "chat_round00.json"
+  ]
+}

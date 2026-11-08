@@ -1,0 +1,936 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1166384",
+  "host": "artrc",
+  "tag": "ol2b_kb10",
+  "round_index": 3,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T16:32:36.672",
+  "finished_at": "2026-10-30T16:32:50.086",
+  "duration_s": 13.415,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "这两天涨了四公斤，是不是水喝多了？",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793349156672617431,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793349156672081757,
+    "t_publish_question_ns": 1793349156672617431,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793349156673367450,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793349156673811982,
+      "ali_llm_output_start": 1793349157201955385,
+      "ali_llm_output_first_text": 1793349157202193179,
+      "ali_llm_output_done": 1793349158500931049,
+      "tts_realtime_data_start": 1793349157202232472,
+      "tts_realtime_data_first_text": 1793349157307185944,
+      "tts_realtime_data_done": 1793349158501176925,
+      "tts_session_finished": 1793349169786636743
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793349157307564209,
+      "tts_local.synth_start_first": 1793349157307644033,
+      "tts_local.synth_end_first": 1793349158717744021,
+      "tts_local.play_start_first": 1793349158743157906,
+      "tts_local.play_end_last": 1793349169784643360,
+      "tts_local.session_finished": 1793349169785472008
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.195,
+    "router_to_llm_first_ms": 528.381,
+    "question_to_llm_first_ms": 529.576,
+    "llm_first_to_done_ms": 1298.738,
+    "question_to_llm_done_ms": 1828.314,
+    "llm_first_to_tts_first_text_ms": 104.993,
+    "question_to_tts_first_text_ms": 634.569,
+    "first_tts_text_to_first_play_start_ms": 1435.972,
+    "tts_rx_to_synth_end_ms": 1410.18,
+    "tts_rx_to_play_start_ms": 1435.594,
+    "tts_synth_end_to_play_start_ms": 25.414,
+    "question_to_first_audio_ms": 2070.54,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 13114.019,
+    "audio_total_sum_ms": 11039.94,
+    "audio_first_to_last_ms": 11041.485
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 1194551,
+    "router_to_llm_first_ns": 528381197,
+    "question_to_llm_first_ns": 529575748,
+    "llm_first_to_done_ns": 1298737870,
+    "question_to_llm_done_ns": 1828313618,
+    "llm_first_to_tts_first_text_ns": 104992765,
+    "question_to_tts_first_text_ns": 634568513,
+    "first_tts_text_to_first_play_start_ns": 1435971962,
+    "tts_rx_to_synth_end_ns": 1410179812,
+    "tts_rx_to_play_start_ns": 1435593697,
+    "tts_synth_end_to_play_start_ns": 25413885,
+    "question_to_first_audio_ns": 2070540475,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 13114019312,
+    "audio_total_sum_ns": 11039939860,
+    "audio_first_to_last_ns": 11041485454
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 529575748,
+      "ms": 529.576
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 1298737870,
+      "ms": 1298.738
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 104992765,
+      "ms": 104.993
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 1435971962,
+      "ms": 1435.972
+    },
+    "question_to_first_play_start": {
+      "ns": 2070540475,
+      "ms": 2070.54
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 13114019312,
+      "ms": 13114.019
+    },
+    "audio_total_sec": {
+      "ns": 11039939860,
+      "ms": 11039.94,
+      "sec": 11.04
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.195,
+    "router_to_llm_first_ms": 528.381,
+    "question_to_llm_first_ms": 529.576,
+    "llm_first_to_done_ms": 1298.738,
+    "question_to_llm_done_ms": 1828.314,
+    "llm_first_to_tts_first_text_ms": 104.993,
+    "question_to_tts_first_text_ms": 634.569,
+    "first_tts_text_to_first_play_start_ms": 1435.972,
+    "tts_rx_to_synth_end_ms": 1410.18,
+    "tts_rx_to_play_start_ms": 1435.594,
+    "tts_synth_end_to_play_start_ms": 25.414,
+    "question_to_first_audio_ms": 2070.54,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 13114.019,
+    "audio_total_sum_ms": 11039.94,
+    "audio_first_to_last_ms": 11041.485
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793349157201955385,
+      "first_text_rx_ns": 1793349157202193179,
+      "done_rx_ns": 1793349158500931049,
+      "chunk_count": 30,
+      "char_count": 48,
+      "chunks": [
+        {
+          "t_ns": 1793349157202193179,
+          "text": "这个"
+        },
+        {
+          "t_ns": 1793349157219299335,
+          "text": "情况"
+        },
+        {
+          "t_ns": 1793349157236194131,
+          "text": "可能"
+        },
+        {
+          "t_ns": 1793349157253814437,
+          "text": "和"
+        },
+        {
+          "t_ns": 1793349157273495978,
+          "text": "喝水"
+        },
+        {
+          "t_ns": 1793349157289024784,
+          "text": "有关"
+        },
+        {
+          "t_ns": 1793349157306886674,
+          "text": "。"
+        },
+        {
+          "t_ns": 1793349157325333604,
+          "text": "透"
+        },
+        {
+          "t_ns": 1793349157354165374,
+          "text": "析"
+        },
+        {
+          "t_ns": 1793349157403526659,
+          "text": "间"
+        },
+        {
+          "t_ns": 1793349157452978513,
+          "text": "期"
+        },
+        {
+          "t_ns": 1793349157506771527,
+          "text": "体重"
+        },
+        {
+          "t_ns": 1793349157559718598,
+          "text": "增长"
+        },
+        {
+          "t_ns": 1793349157607016122,
+          "text": "超过"
+        },
+        {
+          "t_ns": 1793349157705602972,
+          "text": "3"
+        },
+        {
+          "t_ns": 1793349157725073060,
+          "text": "kg"
+        },
+        {
+          "t_ns": 1793349157861722715,
+          "text": "要"
+        },
+        {
+          "t_ns": 1793349157902454656,
+          "text": "警惕"
+        },
+        {
+          "t_ns": 1793349157949765344,
+          "text": "水分"
+        },
+        {
+          "t_ns": 1793349157985020678,
+          "text": "过多"
+        },
+        {
+          "t_ns": 1793349158029866317,
+          "text": "。"
+        },
+        {
+          "t_ns": 1793349158071759270,
+          "text": "建议"
+        },
+        {
+          "t_ns": 1793349158118880624,
+          "text": "尽快"
+        },
+        {
+          "t_ns": 1793349158158048932,
+          "text": "联系"
+        },
+        {
+          "t_ns": 1793349158210616701,
+          "text": "医生"
+        },
+        {
+          "t_ns": 1793349158263657635,
+          "text": "调整"
+        },
+        {
+          "t_ns": 1793349158309040546,
+          "text": "透"
+        },
+        {
+          "t_ns": 1793349158351255472,
+          "text": "析"
+        },
+        {
+          "t_ns": 1793349158400572649,
+          "text": "方案"
+        },
+        {
+          "t_ns": 1793349158447134878,
+          "text": "。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793349157307185944,
+      "done_rx_ns": 1793349158501176925,
+      "text_count": 3,
+      "texts": [
+        {
+          "t_ns": 1793349157307185944,
+          "text": "这个情况可能和喝水有关。"
+        },
+        {
+          "t_ns": 1793349158030133030,
+          "text": "透析间期体重增长超过3kg要警惕水分过多。"
+        },
+        {
+          "t_ns": 1793349158447363975,
+          "text": "建议尽快联系医生调整透析方案。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 25,
+    "latency_events_total": 25,
+    "asr_events": 0,
+    "tts_events": 18,
+    "tts_play_pairs": 3,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793349156814977285,
+      "node": "llm_medical",
+      "stage": "intent_judge",
+      "t_ns": 1793349156814683034,
+      "detail": {
+        "model": "qwen3:8b",
+        "ms": 138.1,
+        "answer": "医",
+        "kind": "medical",
+        "provider": "ollama"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent_judge\", \"t_ns\": 1793349156814683034, \"detail\": {\"model\": \"qwen3:8b\", \"ms\": 138.1, \"answer\": \"医\", \"kind\": \"medical\", \"provider\": \"ollama\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349156815210687,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793349156814826275,
+      "detail": {
+        "kind": "medical",
+        "chat_mode": false,
+        "source": "llm:qwen3:8b",
+        "keyword_medical": false,
+        "chitchat": false,
+        "judge_kind": "medical",
+        "judge_ms": 138.1
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793349156814826275, \"detail\": {\"kind\": \"medical\", \"chat_mode\": false, \"source\": \"llm:qwen3:8b\", \"keyword_medical\": false, \"chitchat\": false, \"judge_kind\": \"medical\", \"judge_ms\": 138.1}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349156815385859,
+      "node": "llm_medical",
+      "stage": "rag_start",
+      "t_ns": 1793349156815253267,
+      "detail": {},
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_start\", \"t_ns\": 1793349156815253267, \"detail\": {}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349156824236452,
+      "node": "llm_medical",
+      "stage": "rag_end",
+      "t_ns": 1793349156823991832,
+      "detail": {
+        "n_chunks": 3,
+        "took_ms": 8.66,
+        "top1": "血液透析患者如何控水（水平衡管理）"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_end\", \"t_ns\": 1793349156823991832, \"detail\": {\"n_chunks\": 3, \"took_ms\": 8.66, \"top1\": \"血液透析患者如何控水（水平衡管理）\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349156824571106,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793349156824422086,
+      "detail": {
+        "provider": "ollama",
+        "prompt_chars": 1204,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793349156824422086, \"detail\": {\"provider\": \"ollama\", \"prompt_chars\": 1204, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349157202261880,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793349157201935345,
+      "detail": {
+        "prompt_chars": 1204
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793349157201935345, \"detail\": {\"prompt_chars\": 1204}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349157202452229,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793349157202257584,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793349157202257584, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349157307738219,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793349157307564209,
+      "detail": {
+        "text_len": 12,
+        "head": "这个情况可能和喝水有关。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793349157307564209, \"detail\": {\"text_len\": 12, \"head\": \"这个情况可能和喝水有关。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349157307934348,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793349157307644033,
+      "detail": {
+        "text_len": 12
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793349157307644033, \"detail\": {\"text_len\": 12}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349158500976669,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793349158500664816,
+      "detail": {
+        "chars": 50
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793349158500664816, \"detail\": {\"chars\": 50}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349158718048404,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793349158717744021,
+      "detail": {
+        "text_len": 12,
+        "dur_ms": 1410.094763,
+        "audio_sec": 2.8,
+        "rtf": 0.5036052725000001
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793349158717744021, \"detail\": {\"text_len\": 12, \"dur_ms\": 1410.094763, \"audio_sec\": 2.8, \"rtf\": 0.5036052725000001}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349158721235638,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793349158721045001,
+      "detail": {
+        "text_len": 21,
+        "head": "透析间期体重增长超过3kg要警惕水分过多。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793349158721045001, \"detail\": {\"text_len\": 21, \"head\": \"透析间期体重增长超过3kg要警惕水分过多。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349158721439469,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793349158721103255,
+      "detail": {
+        "text_len": 21
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793349158721103255, \"detail\": {\"text_len\": 21}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349158743395343,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793349158743157906,
+      "detail": {
+        "text_len": 12,
+        "head": "这个情况可能和喝水有关。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793349158743157906, \"detail\": {\"text_len\": 12, \"head\": \"这个情况可能和喝水有关。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349160488400849,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793349160488012563,
+      "detail": {
+        "text_len": 21,
+        "dur_ms": 1766.899968,
+        "audio_sec": 4.96,
+        "rtf": 0.3562298322580645
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793349160488012563, \"detail\": {\"text_len\": 21, \"dur_ms\": 1766.899968, \"audio_sec\": 4.96, \"rtf\": 0.3562298322580645}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349160488908245,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793349160488726102,
+      "detail": {
+        "text_len": 15,
+        "head": "建议尽快联系医生调整透析方案。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793349160488726102, \"detail\": {\"text_len\": 15, \"head\": \"建议尽快联系医生调整透析方案。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349160489097424,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793349160488782213,
+      "detail": {
+        "text_len": 15
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793349160488782213, \"detail\": {\"text_len\": 15}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349161543778213,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793349161543444384,
+      "detail": {
+        "text_len": 12,
+        "interrupted": false,
+        "dur_ms": 2800.284403
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793349161543444384, \"detail\": {\"text_len\": 12, \"interrupted\": false, \"dur_ms\": 2800.284403}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349161544244526,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793349161544094730,
+      "detail": {
+        "text_len": 21,
+        "head": "透析间期体重增长超过3kg要警惕水分过多。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793349161544094730, \"detail\": {\"text_len\": 21, \"head\": \"透析间期体重增长超过3kg要警惕水分过多。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349161662756534,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793349161662432870,
+      "detail": {
+        "text_len": 15,
+        "dur_ms": 1173.645337,
+        "audio_sec": 3.28,
+        "rtf": 0.35781870030487806
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793349161662432870, \"detail\": {\"text_len\": 15, \"dur_ms\": 1173.645337, \"audio_sec\": 3.28, \"rtf\": 0.35781870030487806}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349161663345743,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793349161663122800,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793349161663122800, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349166503542315,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793349166503204742,
+      "detail": {
+        "text_len": 21,
+        "interrupted": false,
+        "dur_ms": 4959.10721
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793349166503204742, \"detail\": {\"text_len\": 21, \"interrupted\": false, \"dur_ms\": 4959.10721}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349166504257118,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793349166504099990,
+      "detail": {
+        "text_len": 15,
+        "head": "建议尽快联系医生调整透析方案。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793349166504099990, \"detail\": {\"text_len\": 15, \"head\": \"建议尽快联系医生调整透析方案。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349169786698882,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793349169784643360,
+      "detail": {
+        "text_len": 15,
+        "interrupted": false,
+        "dur_ms": 3280.539468
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793349169784643360, \"detail\": {\"text_len\": 15, \"interrupted\": false, \"dur_ms\": 3280.539468}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349169787053035,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793349169785472008,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793349169785472008, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent_judge": [
+        {
+          "t_ns": 1793349156814683034,
+          "arrival_ns": 1793349156814977285,
+          "source": "round",
+          "detail": {
+            "model": "qwen3:8b",
+            "ms": 138.1,
+            "answer": "医",
+            "kind": "medical",
+            "provider": "ollama"
+          }
+        }
+      ],
+      "intent": [
+        {
+          "t_ns": 1793349156814826275,
+          "arrival_ns": 1793349156815210687,
+          "source": "round",
+          "detail": {
+            "kind": "medical",
+            "chat_mode": false,
+            "source": "llm:qwen3:8b",
+            "keyword_medical": false,
+            "chitchat": false,
+            "judge_kind": "medical",
+            "judge_ms": 138.1
+          }
+        }
+      ],
+      "rag_start": [
+        {
+          "t_ns": 1793349156815253267,
+          "arrival_ns": 1793349156815385859,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "rag_end": [
+        {
+          "t_ns": 1793349156823991832,
+          "arrival_ns": 1793349156824236452,
+          "source": "round",
+          "detail": {
+            "n_chunks": 3,
+            "took_ms": 8.66,
+            "top1": "血液透析患者如何控水（水平衡管理）"
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793349156824422086,
+          "arrival_ns": 1793349156824571106,
+          "source": "round",
+          "detail": {
+            "provider": "ollama",
+            "prompt_chars": 1204,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793349157201935345,
+          "arrival_ns": 1793349157202261880,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1204
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793349158500664816,
+          "arrival_ns": 1793349158500976669,
+          "source": "round",
+          "detail": {
+            "chars": 50
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793349157202257584,
+          "arrival_ns": 1793349157202452229,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793349161663122800,
+          "arrival_ns": 1793349161663345743,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793349157307564209,
+          "arrival_ns": 1793349157307738219,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "这个情况可能和喝水有关。"
+          }
+        },
+        {
+          "t_ns": 1793349158721045001,
+          "arrival_ns": 1793349158721235638,
+          "source": "round",
+          "detail": {
+            "text_len": 21,
+            "head": "透析间期体重增长超过3kg要警惕水分过多。"
+          }
+        },
+        {
+          "t_ns": 1793349160488726102,
+          "arrival_ns": 1793349160488908245,
+          "source": "round",
+          "detail": {
+            "text_len": 15,
+            "head": "建议尽快联系医生调整透析方案。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793349157307644033,
+          "arrival_ns": 1793349157307934348,
+          "source": "round",
+          "detail": {
+            "text_len": 12
+          }
+        },
+        {
+          "t_ns": 1793349158721103255,
+          "arrival_ns": 1793349158721439469,
+          "source": "round",
+          "detail": {
+            "text_len": 21
+          }
+        },
+        {
+          "t_ns": 1793349160488782213,
+          "arrival_ns": 1793349160489097424,
+          "source": "round",
+          "detail": {
+            "text_len": 15
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793349158717744021,
+          "arrival_ns": 1793349158718048404,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "dur_ms": 1410.094763,
+            "audio_sec": 2.8,
+            "rtf": 0.5036052725000001
+          }
+        },
+        {
+          "t_ns": 1793349160488012563,
+          "arrival_ns": 1793349160488400849,
+          "source": "round",
+          "detail": {
+            "text_len": 21,
+            "dur_ms": 1766.899968,
+            "audio_sec": 4.96,
+            "rtf": 0.3562298322580645
+          }
+        },
+        {
+          "t_ns": 1793349161662432870,
+          "arrival_ns": 1793349161662756534,
+          "source": "round",
+          "detail": {
+            "text_len": 15,
+            "dur_ms": 1173.645337,
+            "audio_sec": 3.28,
+            "rtf": 0.35781870030487806
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793349158743157906,
+          "arrival_ns": 1793349158743395343,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "这个情况可能和喝水有关。"
+          }
+        },
+        {
+          "t_ns": 1793349161544094730,
+          "arrival_ns": 1793349161544244526,
+          "source": "round",
+          "detail": {
+            "text_len": 21,
+            "head": "透析间期体重增长超过3kg要警惕水分过多。"
+          }
+        },
+        {
+          "t_ns": 1793349166504099990,
+          "arrival_ns": 1793349166504257118,
+          "source": "round",
+          "detail": {
+            "text_len": 15,
+            "head": "建议尽快联系医生调整透析方案。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793349161543444384,
+          "arrival_ns": 1793349161543778213,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "interrupted": false,
+            "dur_ms": 2800.284403
+          }
+        },
+        {
+          "t_ns": 1793349166503204742,
+          "arrival_ns": 1793349166503542315,
+          "source": "round",
+          "detail": {
+            "text_len": 21,
+            "interrupted": false,
+            "dur_ms": 4959.10721
+          }
+        },
+        {
+          "t_ns": 1793349169784643360,
+          "arrival_ns": 1793349169786698882,
+          "source": "round",
+          "detail": {
+            "text_len": 15,
+            "interrupted": false,
+            "dur_ms": 3280.539468
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793349169785472008,
+          "arrival_ns": 1793349169787053035,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 10,
+    "interval_s": 2.0
+  }
+}

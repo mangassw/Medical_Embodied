@@ -1,0 +1,25 @@
+metric,label,count,mean_ms,median_ms,p95_ms,min_ms,max_ms,stdev_ms
+asr_kws_to_start_asr_ms,ASR: kws_detected→start_asr,3,2.632,1.941,4.124,1.83,4.124,1.294
+asr_start_asr_to_endpoint_ms,ASR: start_asr→endpoint,3,3662.625,3579.742,3836.27,3571.864,3836.27,150.432
+asr_endpoint_to_nurse_req_ms,ASR: endpoint→nurse_req,3,13.355,12.461,15.844,11.761,15.844,2.183
+asr_nurse_req_to_nurse_resp_ms,ASR: nurse_req→nurse_resp,3,1668.447,1613.829,2288.8,1102.712,2288.8,594.927
+asr_nurse_resp_to_publish_question_ms,ASR: nurse_resp→publish_question,3,0.117,0.106,0.147,0.098,0.147,0.026
+asr_endpoint_to_question_rx_ms,ASR: endpoint→probe收到question,3,1682.415,1630.407,2301.821,1115.018,2301.821,595.108
+asr_publish_question_to_rx_ms,ASR: publish_question→probe收到,3,0.496,0.455,0.587,0.447,0.587,0.079
+question_to_router_ms,Router: question→路由话题到达,3,0.759,0.736,0.874,0.668,0.874,0.105
+router_to_llm_first_ms,LLM: 路由话题→首块,3,1102.602,1113.954,1560.059,633.793,1560.059,463.237
+question_to_llm_first_ms,LLM TTFT: question→首块,3,1103.361,1114.828,1560.727,634.529,1560.727,463.205
+llm_first_to_done_ms,LLM 总时长: 首块→[DONE],3,1359.117,1276.792,1531.63,1268.929,1531.63,149.452
+question_to_llm_done_ms,LLM: question→[DONE],3,2462.478,2383.757,3092.357,1911.321,3092.357,594.44
+llm_first_to_tts_first_text_ms,断句: LLM首块→首个TTS文本,3,133.215,79.203,246.158,74.283,246.158,97.843
+question_to_tts_first_text_ms,断句: question→首个TTS文本,3,1236.576,1194.032,1806.885,708.811,1806.885,550.272
+first_tts_text_to_first_play_start_ms,断句: 首个TTS文本→首音,3,1121.971,1131.405,1224.101,1010.407,1224.101,107.159
+tts_rx_to_synth_end_ms,TTS 首句合成: rx→synth_end,3,1083.701,1086.745,1158.118,1006.24,1158.118,75.985
+tts_rx_to_play_start_ms,TTS 首音: rx→play_start,3,1121.753,1131.332,1223.859,1010.069,1223.859,107.216
+tts_synth_end_to_play_start_ms,TTS 首句: synth_end→play_start,3,38.053,44.587,65.741,3.83,65.741,31.468
+question_to_first_audio_ms,端到端: question→首个play_start,3,2358.547,2204.439,3030.986,1840.216,3030.986,610.16
+speech_end_to_first_audio_ms,语音结束→首音 (endpoint-静音阈值),3,5340.963,5446.004,5806.26,4770.624,5806.26,525.748
+playback_end_to_first_audio_ms,问句播放结束→首音 (wav触发),3,5251.787,5257.347,5655.751,4842.264,5655.751,406.772
+question_to_session_finished_ms,会话总时长: question→session_finished,3,20412.393,20694.268,20832.37,19710.542,20832.37,611.731
+audio_total_sum_ms,音频总时长(各段play相加),3,18043.813,18614.531,18844.89,16672.017,18844.89,1193.58
+audio_first_to_last_ms,音频跨距: 首play_start→末play_end,3,18051.301,18623.592,18852.596,16677.714,18852.596,1195.059

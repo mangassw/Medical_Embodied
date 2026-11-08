@@ -1,0 +1,767 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1080370",
+  "host": "artrc",
+  "tag": "opt2_chatfast",
+  "round_index": 1,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T11:08:01.900",
+  "finished_at": "2026-10-30T11:08:09.108",
+  "duration_s": 7.208,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "早上好",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793329681901343783,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793329681900841756,
+    "t_publish_question_ns": 1793329681901343783,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793329681901951282,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793329681902396287,
+      "ali_llm_output_start": 1793329682972331678,
+      "ali_llm_output_first_text": 1793329682972602340,
+      "ali_llm_output_done": 1793329683292905010,
+      "tts_realtime_data_start": 1793329682972634682,
+      "tts_realtime_data_first_text": 1793329683001555160,
+      "tts_realtime_data_done": 1793329683293564948,
+      "tts_session_finished": 1793329688803380442
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793329683001800489,
+      "tts_local.synth_start_first": 1793329683001868978,
+      "tts_local.synth_end_first": 1793329683466158204,
+      "tts_local.play_start_first": 1793329683518918040,
+      "tts_local.play_end_last": 1793329688802326676,
+      "tts_local.session_finished": 1793329688803040218
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.053,
+    "router_to_llm_first_ms": 1070.206,
+    "question_to_llm_first_ms": 1071.259,
+    "llm_first_to_done_ms": 320.303,
+    "question_to_llm_done_ms": 1391.561,
+    "llm_first_to_tts_first_text_ms": 28.953,
+    "question_to_tts_first_text_ms": 1100.211,
+    "first_tts_text_to_first_play_start_ms": 517.363,
+    "tts_rx_to_synth_end_ms": 464.358,
+    "tts_rx_to_play_start_ms": 517.118,
+    "tts_synth_end_to_play_start_ms": 52.76,
+    "question_to_first_audio_ms": 1617.574,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 6902.037,
+    "audio_total_sum_ms": 5281.446,
+    "audio_first_to_last_ms": 5283.409
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 1052504,
+    "router_to_llm_first_ns": 1070206053,
+    "question_to_llm_first_ns": 1071258557,
+    "llm_first_to_done_ns": 320302670,
+    "question_to_llm_done_ns": 1391561227,
+    "llm_first_to_tts_first_text_ns": 28952820,
+    "question_to_tts_first_text_ns": 1100211377,
+    "first_tts_text_to_first_play_start_ns": 517362880,
+    "tts_rx_to_synth_end_ns": 464357715,
+    "tts_rx_to_play_start_ns": 517117551,
+    "tts_synth_end_to_play_start_ns": 52759836,
+    "question_to_first_audio_ns": 1617574257,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 6902036659,
+    "audio_total_sum_ns": 5281445984,
+    "audio_first_to_last_ns": 5283408636
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 1071258557,
+      "ms": 1071.259
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 320302670,
+      "ms": 320.303
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 28952820,
+      "ms": 28.953
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 517362880,
+      "ms": 517.363
+    },
+    "question_to_first_play_start": {
+      "ns": 1617574257,
+      "ms": 1617.574
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 6902036659,
+      "ms": 6902.037
+    },
+    "audio_total_sec": {
+      "ns": 5281445984,
+      "ms": 5281.446,
+      "sec": 5.281
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.053,
+    "router_to_llm_first_ms": 1070.206,
+    "question_to_llm_first_ms": 1071.259,
+    "llm_first_to_done_ms": 320.303,
+    "question_to_llm_done_ms": 1391.561,
+    "llm_first_to_tts_first_text_ms": 28.953,
+    "question_to_tts_first_text_ms": 1100.211,
+    "first_tts_text_to_first_play_start_ms": 517.363,
+    "tts_rx_to_synth_end_ms": 464.358,
+    "tts_rx_to_play_start_ms": 517.118,
+    "tts_synth_end_to_play_start_ms": 52.76,
+    "question_to_first_audio_ms": 1617.574,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 6902.037,
+    "audio_total_sum_ms": 5281.446,
+    "audio_first_to_last_ms": 5283.409
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793329682972331678,
+      "first_text_rx_ns": 1793329682972602340,
+      "done_rx_ns": 1793329683292905010,
+      "chunk_count": 6,
+      "char_count": 16,
+      "chunks": [
+        {
+          "t_ns": 1793329682972602340,
+          "text": "早上"
+        },
+        {
+          "t_ns": 1793329683001341781,
+          "text": "好！"
+        },
+        {
+          "t_ns": 1793329683063835485,
+          "text": "阳光"
+        },
+        {
+          "t_ns": 1793329683080799006,
+          "text": "正好"
+        },
+        {
+          "t_ns": 1793329683156304914,
+          "text": "，心情也亮"
+        },
+        {
+          "t_ns": 1793329683270235319,
+          "text": "亮的～"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793329683001555160,
+      "done_rx_ns": 1793329683293564948,
+      "text_count": 3,
+      "texts": [
+        {
+          "t_ns": 1793329683001555160,
+          "text": "早上好！"
+        },
+        {
+          "t_ns": 1793329683156694819,
+          "text": "阳光正好，"
+        },
+        {
+          "t_ns": 1793329683293144295,
+          "text": "心情也亮亮的～"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 22,
+    "latency_events_total": 22,
+    "asr_events": 0,
+    "tts_events": 18,
+    "tts_play_pairs": 3,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793329681923432111,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793329681923173574,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "chitchat",
+        "keyword_medical": false,
+        "chitchat": true,
+        "judge_kind": null,
+        "judge_ms": 0.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793329681923173574, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"chitchat\", \"keyword_medical\": false, \"chitchat\": true, \"judge_kind\": null, \"judge_ms\": 0.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329682972375754,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793329682972030508,
+      "detail": {
+        "prompt_chars": 445,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793329682972030508, \"detail\": {\"prompt_chars\": 445, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329682972662598,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793329682972456559,
+      "detail": {
+        "prompt_chars": 445
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793329682972456559, \"detail\": {\"prompt_chars\": 445}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329682972952884,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793329682972818563,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793329682972818563, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329683001934168,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329683001800489,
+      "detail": {
+        "text_len": 4,
+        "head": "早上好！"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329683001800489, \"detail\": {\"text_len\": 4, \"head\": \"早上好！\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329683002119011,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329683001868978,
+      "detail": {
+        "text_len": 4
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329683001868978, \"detail\": {\"text_len\": 4}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329683292947142,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793329683292592104,
+      "detail": {
+        "chars": 16
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793329683292592104, \"detail\": {\"chars\": 16}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329683468702974,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329683466158204,
+      "detail": {
+        "text_len": 4,
+        "dur_ms": 464.283663,
+        "audio_sec": 1.2,
+        "rtf": 0.3869030525
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329683466158204, \"detail\": {\"text_len\": 4, \"dur_ms\": 464.283663, \"audio_sec\": 1.2, \"rtf\": 0.3869030525}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329683479926992,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329683479551515,
+      "detail": {
+        "text_len": 5,
+        "head": "阳光正好，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329683479551515, \"detail\": {\"text_len\": 5, \"head\": \"阳光正好，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329683480271859,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329683479630339,
+      "detail": {
+        "text_len": 5
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329683479630339, \"detail\": {\"text_len\": 5}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329683519211458,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329683518918040,
+      "detail": {
+        "text_len": 4,
+        "head": "早上好！"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329683518918040, \"detail\": {\"text_len\": 4, \"head\": \"早上好！\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329684127878709,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329684127606560,
+      "detail": {
+        "text_len": 5,
+        "dur_ms": 647.972214,
+        "audio_sec": 1.76,
+        "rtf": 0.3681660306818182
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329684127606560, \"detail\": {\"text_len\": 5, \"dur_ms\": 647.972214, \"audio_sec\": 1.76, \"rtf\": 0.3681660306818182}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329684128265872,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329684128118562,
+      "detail": {
+        "text_len": 7,
+        "head": "心情也亮亮的～"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329684128118562, \"detail\": {\"text_len\": 7, \"head\": \"心情也亮亮的～\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329684128463848,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329684128158139,
+      "detail": {
+        "text_len": 7
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329684128158139, \"detail\": {\"text_len\": 7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329684721373374,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329684720721453,
+      "detail": {
+        "text_len": 4,
+        "interrupted": false,
+        "dur_ms": 1201.801102
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329684720721453, \"detail\": {\"text_len\": 4, \"interrupted\": false, \"dur_ms\": 1201.801102}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329684723796122,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329684721996582,
+      "detail": {
+        "text_len": 5,
+        "head": "阳光正好，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329684721996582, \"detail\": {\"text_len\": 5, \"head\": \"阳光正好，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329684952260038,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329684951997290,
+      "detail": {
+        "text_len": 7,
+        "dur_ms": 823.834552,
+        "audio_sec": 2.32,
+        "rtf": 0.3551011
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329684951997290, \"detail\": {\"text_len\": 7, \"dur_ms\": 823.834552, \"audio_sec\": 2.32, \"rtf\": 0.3551011}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329684952651419,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793329684952523399,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793329684952523399, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329686483796147,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329686483481660,
+      "detail": {
+        "text_len": 5,
+        "interrupted": false,
+        "dur_ms": 1761.481397
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329686483481660, \"detail\": {\"text_len\": 5, \"interrupted\": false, \"dur_ms\": 1761.481397}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329686484279041,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329686484169183,
+      "detail": {
+        "text_len": 7,
+        "head": "心情也亮亮的～"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329686484169183, \"detail\": {\"text_len\": 7, \"head\": \"心情也亮亮的～\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329688802664894,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329688802326676,
+      "detail": {
+        "text_len": 7,
+        "interrupted": false,
+        "dur_ms": 2318.153611
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329688802326676, \"detail\": {\"text_len\": 7, \"interrupted\": false, \"dur_ms\": 2318.153611}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329688803202505,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793329688803040218,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793329688803040218, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793329681923173574,
+          "arrival_ns": 1793329681923432111,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "chitchat",
+            "keyword_medical": false,
+            "chitchat": true,
+            "judge_kind": null,
+            "judge_ms": 0.0
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793329682972030508,
+          "arrival_ns": 1793329682972375754,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 445,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793329682972456559,
+          "arrival_ns": 1793329682972662598,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 445
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793329683292592104,
+          "arrival_ns": 1793329683292947142,
+          "source": "round",
+          "detail": {
+            "chars": 16
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793329682972818563,
+          "arrival_ns": 1793329682972952884,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793329684952523399,
+          "arrival_ns": 1793329684952651419,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793329683001800489,
+          "arrival_ns": 1793329683001934168,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "早上好！"
+          }
+        },
+        {
+          "t_ns": 1793329683479551515,
+          "arrival_ns": 1793329683479926992,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "阳光正好，"
+          }
+        },
+        {
+          "t_ns": 1793329684128118562,
+          "arrival_ns": 1793329684128265872,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "心情也亮亮的～"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793329683001868978,
+          "arrival_ns": 1793329683002119011,
+          "source": "round",
+          "detail": {
+            "text_len": 4
+          }
+        },
+        {
+          "t_ns": 1793329683479630339,
+          "arrival_ns": 1793329683480271859,
+          "source": "round",
+          "detail": {
+            "text_len": 5
+          }
+        },
+        {
+          "t_ns": 1793329684128158139,
+          "arrival_ns": 1793329684128463848,
+          "source": "round",
+          "detail": {
+            "text_len": 7
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793329683466158204,
+          "arrival_ns": 1793329683468702974,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "dur_ms": 464.283663,
+            "audio_sec": 1.2,
+            "rtf": 0.3869030525
+          }
+        },
+        {
+          "t_ns": 1793329684127606560,
+          "arrival_ns": 1793329684127878709,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "dur_ms": 647.972214,
+            "audio_sec": 1.76,
+            "rtf": 0.3681660306818182
+          }
+        },
+        {
+          "t_ns": 1793329684951997290,
+          "arrival_ns": 1793329684952260038,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "dur_ms": 823.834552,
+            "audio_sec": 2.32,
+            "rtf": 0.3551011
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793329683518918040,
+          "arrival_ns": 1793329683519211458,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "早上好！"
+          }
+        },
+        {
+          "t_ns": 1793329684721996582,
+          "arrival_ns": 1793329684723796122,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "阳光正好，"
+          }
+        },
+        {
+          "t_ns": 1793329686484169183,
+          "arrival_ns": 1793329686484279041,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "心情也亮亮的～"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793329684720721453,
+          "arrival_ns": 1793329684721373374,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "interrupted": false,
+            "dur_ms": 1201.801102
+          }
+        },
+        {
+          "t_ns": 1793329686483481660,
+          "arrival_ns": 1793329686483796147,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "interrupted": false,
+            "dur_ms": 1761.481397
+          }
+        },
+        {
+          "t_ns": 1793329688802326676,
+          "arrival_ns": 1793329688802664894,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "interrupted": false,
+            "dur_ms": 2318.153611
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793329688803040218,
+          "arrival_ns": 1793329688803202505,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 10,
+    "interval_s": 2.0
+  }
+}

@@ -1,0 +1,817 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1162930",
+  "host": "artrc",
+  "tag": "ol2_chat10",
+  "round_index": 3,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T16:19:35.172",
+  "finished_at": "2026-10-30T16:19:42.927",
+  "duration_s": 7.755,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "你会做什么",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793348375172729563,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793348375172314043,
+    "t_publish_question_ns": 1793348375172729563,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793348375173269292,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793348375173632848,
+      "ali_llm_output_start": 1793348375325471545,
+      "ali_llm_output_first_text": 1793348375325844565,
+      "ali_llm_output_done": 1793348375941671145,
+      "tts_realtime_data_start": 1793348375325902516,
+      "tts_realtime_data_first_text": 1793348375377965898,
+      "tts_realtime_data_done": 1793348375941982171,
+      "tts_session_finished": 1793348382625765697
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793348375423999789,
+      "tts_local.synth_start_first": 1793348375424077424,
+      "tts_local.synth_end_first": 1793348376238979878,
+      "tts_local.play_start_first": 1793348376243049250,
+      "tts_local.play_end_last": 1793348382624667557,
+      "tts_local.session_finished": 1793348382625414321
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.903,
+    "router_to_llm_first_ms": 152.212,
+    "question_to_llm_first_ms": 153.115,
+    "llm_first_to_done_ms": 615.827,
+    "question_to_llm_done_ms": 768.942,
+    "llm_first_to_tts_first_text_ms": 52.121,
+    "question_to_tts_first_text_ms": 205.236,
+    "first_tts_text_to_first_play_start_ms": 865.083,
+    "tts_rx_to_synth_end_ms": 814.98,
+    "tts_rx_to_play_start_ms": 819.049,
+    "tts_synth_end_to_play_start_ms": 4.069,
+    "question_to_first_audio_ms": 1070.32,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 7453.036,
+    "audio_total_sum_ms": 6380.165,
+    "audio_first_to_last_ms": 6381.618
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 903285,
+    "router_to_llm_first_ns": 152211717,
+    "question_to_llm_first_ns": 153115002,
+    "llm_first_to_done_ns": 615826580,
+    "question_to_llm_done_ns": 768941582,
+    "llm_first_to_tts_first_text_ns": 52121333,
+    "question_to_tts_first_text_ns": 205236335,
+    "first_tts_text_to_first_play_start_ns": 865083352,
+    "tts_rx_to_synth_end_ns": 814980089,
+    "tts_rx_to_play_start_ns": 819049461,
+    "tts_synth_end_to_play_start_ns": 4069372,
+    "question_to_first_audio_ns": 1070319687,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 7453036134,
+    "audio_total_sum_ns": 6380164636,
+    "audio_first_to_last_ns": 6381618307
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 153115002,
+      "ms": 153.115
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 615826580,
+      "ms": 615.827
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 52121333,
+      "ms": 52.121
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 865083352,
+      "ms": 865.083
+    },
+    "question_to_first_play_start": {
+      "ns": 1070319687,
+      "ms": 1070.32
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 7453036134,
+      "ms": 7453.036
+    },
+    "audio_total_sec": {
+      "ns": 6380164636,
+      "ms": 6380.165,
+      "sec": 6.38
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.903,
+    "router_to_llm_first_ms": 152.212,
+    "question_to_llm_first_ms": 153.115,
+    "llm_first_to_done_ms": 615.827,
+    "question_to_llm_done_ms": 768.942,
+    "llm_first_to_tts_first_text_ms": 52.121,
+    "question_to_tts_first_text_ms": 205.236,
+    "first_tts_text_to_first_play_start_ms": 865.083,
+    "tts_rx_to_synth_end_ms": 814.98,
+    "tts_rx_to_play_start_ms": 819.049,
+    "tts_synth_end_to_play_start_ms": 4.069,
+    "question_to_first_audio_ms": 1070.32,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 7453.036,
+    "audio_total_sum_ms": 6380.165,
+    "audio_first_to_last_ms": 6381.618
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793348375325471545,
+      "first_text_rx_ns": 1793348375325844565,
+      "done_rx_ns": 1793348375941671145,
+      "chunk_count": 18,
+      "char_count": 31,
+      "chunks": [
+        {
+          "t_ns": 1793348375325844565,
+          "text": "我可以"
+        },
+        {
+          "t_ns": 1793348375342169165,
+          "text": "陪你"
+        },
+        {
+          "t_ns": 1793348375359570964,
+          "text": "聊天"
+        },
+        {
+          "t_ns": 1793348375377715968,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793348375395433585,
+          "text": "帮你"
+        },
+        {
+          "t_ns": 1793348375413584414,
+          "text": "解答"
+        },
+        {
+          "t_ns": 1793348375430159034,
+          "text": "一些"
+        },
+        {
+          "t_ns": 1793348375460832982,
+          "text": "问题"
+        },
+        {
+          "t_ns": 1793348375515408265,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793348375561661351,
+          "text": "还能"
+        },
+        {
+          "t_ns": 1793348375603311044,
+          "text": "提醒"
+        },
+        {
+          "t_ns": 1793348375645573805,
+          "text": "你"
+        },
+        {
+          "t_ns": 1793348375688420662,
+          "text": "注意"
+        },
+        {
+          "t_ns": 1793348375730847440,
+          "text": "休息"
+        },
+        {
+          "t_ns": 1793348375772954583,
+          "text": "和"
+        },
+        {
+          "t_ns": 1793348375825909699,
+          "text": "饮食"
+        },
+        {
+          "t_ns": 1793348375863415359,
+          "text": "呢"
+        },
+        {
+          "t_ns": 1793348375899750650,
+          "text": "。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793348375377965898,
+      "done_rx_ns": 1793348375941982171,
+      "text_count": 3,
+      "texts": [
+        {
+          "t_ns": 1793348375377965898,
+          "text": "我可以陪你聊天，"
+        },
+        {
+          "t_ns": 1793348375515900702,
+          "text": "帮你解答一些问题，"
+        },
+        {
+          "t_ns": 1793348375900503490,
+          "text": "还能提醒你注意休息和饮食呢。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 22,
+    "latency_events_total": 22,
+    "asr_events": 0,
+    "tts_events": 18,
+    "tts_play_pairs": 3,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793348375194725244,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793348375194507126,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "chitchat",
+        "keyword_medical": false,
+        "chitchat": true,
+        "judge_kind": null,
+        "judge_ms": 0.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793348375194507126, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"chitchat\", \"keyword_medical\": false, \"chitchat\": true, \"judge_kind\": null, \"judge_ms\": 0.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348375195068532,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793348375194965102,
+      "detail": {
+        "provider": "ollama",
+        "prompt_chars": 441,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793348375194965102, \"detail\": {\"provider\": \"ollama\", \"prompt_chars\": 441, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348375325963030,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793348375325445256,
+      "detail": {
+        "prompt_chars": 441
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793348375325445256, \"detail\": {\"prompt_chars\": 441}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348375326281060,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793348375326001789,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793348375326001789, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348375424222509,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793348375423999789,
+      "detail": {
+        "text_len": 8,
+        "head": "我可以陪你聊天，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793348375423999789, \"detail\": {\"text_len\": 8, \"head\": \"我可以陪你聊天，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348375424463691,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793348375424077424,
+      "detail": {
+        "text_len": 8
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793348375424077424, \"detail\": {\"text_len\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348375941723508,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793348375941340463,
+      "detail": {
+        "chars": 31
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793348375941340463, \"detail\": {\"chars\": 31}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348376239293053,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793348376238979878,
+      "detail": {
+        "text_len": 8,
+        "dur_ms": 814.897186,
+        "audio_sec": 1.68,
+        "rtf": 0.48505784880952385
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793348376238979878, \"detail\": {\"text_len\": 8, \"dur_ms\": 814.897186, \"audio_sec\": 1.68, \"rtf\": 0.48505784880952385}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348376239793735,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793348376239643452,
+      "detail": {
+        "text_len": 9,
+        "head": "帮你解答一些问题，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793348376239643452, \"detail\": {\"text_len\": 9, \"head\": \"帮你解答一些问题，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348376239975524,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793348376239705888,
+      "detail": {
+        "text_len": 9
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793348376239705888, \"detail\": {\"text_len\": 9}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348376243281657,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793348376243049250,
+      "detail": {
+        "text_len": 8,
+        "head": "我可以陪你聊天，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793348376243049250, \"detail\": {\"text_len\": 8, \"head\": \"我可以陪你聊天，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348376923452284,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793348376923111967,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 683.401369,
+        "audio_sec": 1.84,
+        "rtf": 0.3714137875
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793348376923111967, \"detail\": {\"text_len\": 9, \"dur_ms\": 683.401369, \"audio_sec\": 1.84, \"rtf\": 0.3714137875}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348376923898525,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793348376923706082,
+      "detail": {
+        "text_len": 14,
+        "head": "还能提醒你注意休息和饮食呢。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793348376923706082, \"detail\": {\"text_len\": 14, \"head\": \"还能提醒你注意休息和饮食呢。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348376924111713,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793348376923760641,
+      "detail": {
+        "text_len": 14
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793348376923760641, \"detail\": {\"text_len\": 14}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348377941245202,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793348377940896788,
+      "detail": {
+        "text_len": 8,
+        "interrupted": false,
+        "dur_ms": 1697.842794
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793348377940896788, \"detail\": {\"text_len\": 8, \"interrupted\": false, \"dur_ms\": 1697.842794}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348377941802943,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793348377941635887,
+      "detail": {
+        "text_len": 9,
+        "head": "帮你解答一些问题，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793348377941635887, \"detail\": {\"text_len\": 9, \"head\": \"帮你解答一些问题，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348377946879793,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793348377946461817,
+      "detail": {
+        "text_len": 14,
+        "dur_ms": 1022.693442,
+        "audio_sec": 2.8,
+        "rtf": 0.36524765785714286
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793348377946461817, \"detail\": {\"text_len\": 14, \"dur_ms\": 1022.693442, \"audio_sec\": 2.8, \"rtf\": 0.36524765785714286}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348377947311692,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793348377947153289,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793348377947153289, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348379799617214,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793348379799291974,
+      "detail": {
+        "text_len": 9,
+        "interrupted": false,
+        "dur_ms": 1857.653778
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793348379799291974, \"detail\": {\"text_len\": 9, \"interrupted\": false, \"dur_ms\": 1857.653778}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348379800151359,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793348379800006546,
+      "detail": {
+        "text_len": 14,
+        "head": "还能提醒你注意休息和饮食呢。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793348379800006546, \"detail\": {\"text_len\": 14, \"head\": \"还能提醒你注意休息和饮食呢。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348382625010414,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793348382624667557,
+      "detail": {
+        "text_len": 14,
+        "interrupted": false,
+        "dur_ms": 2824.658179
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793348382624667557, \"detail\": {\"text_len\": 14, \"interrupted\": false, \"dur_ms\": 2824.658179}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348382625585419,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793348382625414321,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793348382625414321, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793348375194507126,
+          "arrival_ns": 1793348375194725244,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "chitchat",
+            "keyword_medical": false,
+            "chitchat": true,
+            "judge_kind": null,
+            "judge_ms": 0.0
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793348375194965102,
+          "arrival_ns": 1793348375195068532,
+          "source": "round",
+          "detail": {
+            "provider": "ollama",
+            "prompt_chars": 441,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793348375325445256,
+          "arrival_ns": 1793348375325963030,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 441
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793348375941340463,
+          "arrival_ns": 1793348375941723508,
+          "source": "round",
+          "detail": {
+            "chars": 31
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793348375326001789,
+          "arrival_ns": 1793348375326281060,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793348377947153289,
+          "arrival_ns": 1793348377947311692,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793348375423999789,
+          "arrival_ns": 1793348375424222509,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "我可以陪你聊天，"
+          }
+        },
+        {
+          "t_ns": 1793348376239643452,
+          "arrival_ns": 1793348376239793735,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "帮你解答一些问题，"
+          }
+        },
+        {
+          "t_ns": 1793348376923706082,
+          "arrival_ns": 1793348376923898525,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "head": "还能提醒你注意休息和饮食呢。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793348375424077424,
+          "arrival_ns": 1793348375424463691,
+          "source": "round",
+          "detail": {
+            "text_len": 8
+          }
+        },
+        {
+          "t_ns": 1793348376239705888,
+          "arrival_ns": 1793348376239975524,
+          "source": "round",
+          "detail": {
+            "text_len": 9
+          }
+        },
+        {
+          "t_ns": 1793348376923760641,
+          "arrival_ns": 1793348376924111713,
+          "source": "round",
+          "detail": {
+            "text_len": 14
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793348376238979878,
+          "arrival_ns": 1793348376239293053,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "dur_ms": 814.897186,
+            "audio_sec": 1.68,
+            "rtf": 0.48505784880952385
+          }
+        },
+        {
+          "t_ns": 1793348376923111967,
+          "arrival_ns": 1793348376923452284,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 683.401369,
+            "audio_sec": 1.84,
+            "rtf": 0.3714137875
+          }
+        },
+        {
+          "t_ns": 1793348377946461817,
+          "arrival_ns": 1793348377946879793,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "dur_ms": 1022.693442,
+            "audio_sec": 2.8,
+            "rtf": 0.36524765785714286
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793348376243049250,
+          "arrival_ns": 1793348376243281657,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "我可以陪你聊天，"
+          }
+        },
+        {
+          "t_ns": 1793348377941635887,
+          "arrival_ns": 1793348377941802943,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "帮你解答一些问题，"
+          }
+        },
+        {
+          "t_ns": 1793348379800006546,
+          "arrival_ns": 1793348379800151359,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "head": "还能提醒你注意休息和饮食呢。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793348377940896788,
+          "arrival_ns": 1793348377941245202,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "interrupted": false,
+            "dur_ms": 1697.842794
+          }
+        },
+        {
+          "t_ns": 1793348379799291974,
+          "arrival_ns": 1793348379799617214,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "interrupted": false,
+            "dur_ms": 1857.653778
+          }
+        },
+        {
+          "t_ns": 1793348382624667557,
+          "arrival_ns": 1793348382625010414,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "interrupted": false,
+            "dur_ms": 2824.658179
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793348382625414321,
+          "arrival_ns": 1793348382625585419,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 10,
+    "interval_s": 2.0
+  }
+}

@@ -1,0 +1,810 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1081137",
+  "host": "artrc",
+  "tag": "opt2_chatgen",
+  "round_index": 4,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T11:10:50.266",
+  "finished_at": "2026-10-30T11:11:00.204",
+  "duration_s": 9.938,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "手机没电了怎么办",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793329850267222770,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793329850266842460,
+    "t_publish_question_ns": 1793329850267222770,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793329850267707225,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793329850268146280,
+      "ali_llm_output_start": 1793329851255606004,
+      "ali_llm_output_first_text": 1793329851256021866,
+      "ali_llm_output_done": 1793329851974822368,
+      "tts_realtime_data_start": 1793329851255854966,
+      "tts_realtime_data_first_text": 1793329851437841592,
+      "tts_realtime_data_done": 1793329851975067366,
+      "tts_session_finished": 1793329859899702269
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793329851442432901,
+      "tts_local.synth_start_first": 1793329851442513975,
+      "tts_local.synth_end_first": 1793329852129866550,
+      "tts_local.play_start_first": 1793329852218886013,
+      "tts_local.play_end_last": 1793329859898861669,
+      "tts_local.session_finished": 1793329859899568040
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.924,
+    "router_to_llm_first_ms": 987.876,
+    "question_to_llm_first_ms": 988.799,
+    "llm_first_to_done_ms": 718.801,
+    "question_to_llm_done_ms": 1707.6,
+    "llm_first_to_tts_first_text_ms": 181.82,
+    "question_to_tts_first_text_ms": 1170.619,
+    "first_tts_text_to_first_play_start_ms": 781.044,
+    "tts_rx_to_synth_end_ms": 687.434,
+    "tts_rx_to_play_start_ms": 776.453,
+    "tts_synth_end_to_play_start_ms": 89.019,
+    "question_to_first_audio_ms": 1951.663,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 9632.479,
+    "audio_total_sum_ms": 7678.45,
+    "audio_first_to_last_ms": 7679.976
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 923510,
+    "router_to_llm_first_ns": 987875586,
+    "question_to_llm_first_ns": 988799096,
+    "llm_first_to_done_ns": 718800502,
+    "question_to_llm_done_ns": 1707599598,
+    "llm_first_to_tts_first_text_ns": 181819726,
+    "question_to_tts_first_text_ns": 1170618822,
+    "first_tts_text_to_first_play_start_ns": 781044421,
+    "tts_rx_to_synth_end_ns": 687433649,
+    "tts_rx_to_play_start_ns": 776453112,
+    "tts_synth_end_to_play_start_ns": 89019463,
+    "question_to_first_audio_ns": 1951663243,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 9632479499,
+    "audio_total_sum_ns": 7678450066,
+    "audio_first_to_last_ns": 7679975656
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 988799096,
+      "ms": 988.799
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 718800502,
+      "ms": 718.801
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 181819726,
+      "ms": 181.82
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 781044421,
+      "ms": 781.044
+    },
+    "question_to_first_play_start": {
+      "ns": 1951663243,
+      "ms": 1951.663
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 9632479499,
+      "ms": 9632.479
+    },
+    "audio_total_sec": {
+      "ns": 7678450066,
+      "ms": 7678.45,
+      "sec": 7.678
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.924,
+    "router_to_llm_first_ms": 987.876,
+    "question_to_llm_first_ms": 988.799,
+    "llm_first_to_done_ms": 718.801,
+    "question_to_llm_done_ms": 1707.6,
+    "llm_first_to_tts_first_text_ms": 181.82,
+    "question_to_tts_first_text_ms": 1170.619,
+    "first_tts_text_to_first_play_start_ms": 781.044,
+    "tts_rx_to_synth_end_ms": 687.434,
+    "tts_rx_to_play_start_ms": 776.453,
+    "tts_synth_end_to_play_start_ms": 89.019,
+    "question_to_first_audio_ms": 1951.663,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 9632.479,
+    "audio_total_sum_ms": 7678.45,
+    "audio_first_to_last_ms": 7679.976
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793329851255606004,
+      "first_text_rx_ns": 1793329851256021866,
+      "done_rx_ns": 1793329851974822368,
+      "chunk_count": 10,
+      "char_count": 41,
+      "chunks": [
+        {
+          "t_ns": 1793329851256021866,
+          "text": "赶紧"
+        },
+        {
+          "t_ns": 1793329851291814883,
+          "text": "找个"
+        },
+        {
+          "t_ns": 1793329851329819664,
+          "text": "充电器"
+        },
+        {
+          "t_ns": 1793329851364625665,
+          "text": "充"
+        },
+        {
+          "t_ns": 1793329851436802591,
+          "text": "上，别等"
+        },
+        {
+          "t_ns": 1793329851546777884,
+          "text": "自动关机啦"
+        },
+        {
+          "t_ns": 1793329851656523435,
+          "text": "～  \n要是着急"
+        },
+        {
+          "t_ns": 1793329851725683468,
+          "text": "用，还可以开"
+        },
+        {
+          "t_ns": 1793329851868708768,
+          "text": "省电模式多"
+        },
+        {
+          "t_ns": 1793329851942752828,
+          "text": "撑一会儿。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793329851437841592,
+      "done_rx_ns": 1793329851975067366,
+      "text_count": 3,
+      "texts": [
+        {
+          "t_ns": 1793329851437841592,
+          "text": "赶紧找个充电器充上，"
+        },
+        {
+          "t_ns": 1793329851725924930,
+          "text": "别等自动关机啦～  \n要是着急用，"
+        },
+        {
+          "t_ns": 1793329851942977458,
+          "text": "还可以开省电模式多撑一会儿。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 23,
+    "latency_events_total": 23,
+    "asr_events": 0,
+    "tts_events": 18,
+    "tts_play_pairs": 3,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793329850869980316,
+      "node": "llm_medical",
+      "stage": "intent_judge",
+      "t_ns": 1793329850869584515,
+      "detail": {
+        "model": "qwen-flash",
+        "ms": 600.6,
+        "answer": "聊",
+        "kind": "chat"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent_judge\", \"t_ns\": 1793329850869584515, \"detail\": {\"model\": \"qwen-flash\", \"ms\": 600.6, \"answer\": \"聊\", \"kind\": \"chat\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329850870207567,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793329850869791367,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "llm:qwen-flash",
+        "keyword_medical": false,
+        "chitchat": false,
+        "judge_kind": "chat",
+        "judge_ms": 600.6
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793329850869791367, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"llm:qwen-flash\", \"keyword_medical\": false, \"chitchat\": false, \"judge_kind\": \"chat\", \"judge_ms\": 600.6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329851255659563,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793329851255327320,
+      "detail": {
+        "prompt_chars": 446,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793329851255327320, \"detail\": {\"prompt_chars\": 446, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329851256051239,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793329851255784785,
+      "detail": {
+        "prompt_chars": 446
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793329851255784785, \"detail\": {\"prompt_chars\": 446}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329851256346780,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793329851256147340,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793329851256147340, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329851442662645,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329851442432901,
+      "detail": {
+        "text_len": 10,
+        "head": "赶紧找个充电器充上，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329851442432901, \"detail\": {\"text_len\": 10, \"head\": \"赶紧找个充电器充上，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329851442932684,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329851442513975,
+      "detail": {
+        "text_len": 10
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329851442513975, \"detail\": {\"text_len\": 10}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329851974866824,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793329851974565643,
+      "detail": {
+        "chars": 41
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793329851974565643, \"detail\": {\"chars\": 41}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329852130246237,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329852129866550,
+      "detail": {
+        "text_len": 10,
+        "dur_ms": 687.347615,
+        "audio_sec": 1.76,
+        "rtf": 0.39053841761363634
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329852129866550, \"detail\": {\"text_len\": 10, \"dur_ms\": 687.347615, \"audio_sec\": 1.76, \"rtf\": 0.39053841761363634}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329852132466916,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329852132281533,
+      "detail": {
+        "text_len": 17,
+        "head": "别等自动关机啦～  \n要是着急用，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329852132281533, \"detail\": {\"text_len\": 17, \"head\": \"别等自动关机啦～  \\n要是着急用，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329852132667937,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329852132326909,
+      "detail": {
+        "text_len": 17
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329852132326909, \"detail\": {\"text_len\": 17}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329852219250974,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329852218886013,
+      "detail": {
+        "text_len": 10,
+        "head": "赶紧找个充电器充上，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329852218886013, \"detail\": {\"text_len\": 10, \"head\": \"赶紧找个充电器充上，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329853230586954,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329853230284283,
+      "detail": {
+        "text_len": 17,
+        "dur_ms": 1097.951677,
+        "audio_sec": 3.04,
+        "rtf": 0.36116831480263156
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329853230284283, \"detail\": {\"text_len\": 17, \"dur_ms\": 1097.951677, \"audio_sec\": 3.04, \"rtf\": 0.36116831480263156}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329853231011616,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329853230875927,
+      "detail": {
+        "text_len": 14,
+        "head": "还可以开省电模式多撑一会儿。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329853230875927, \"detail\": {\"text_len\": 14, \"head\": \"还可以开省电模式多撑一会儿。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329853231197640,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329853230923353,
+      "detail": {
+        "text_len": 14
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329853230923353, \"detail\": {\"text_len\": 14}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329853978373367,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329853977972944,
+      "detail": {
+        "text_len": 10,
+        "interrupted": false,
+        "dur_ms": 1759.085432
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329853977972944, \"detail\": {\"text_len\": 10, \"interrupted\": false, \"dur_ms\": 1759.085432}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329853978881143,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329853978668270,
+      "detail": {
+        "text_len": 17,
+        "head": "别等自动关机啦～  \n要是着急用，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329853978668270, \"detail\": {\"text_len\": 17, \"head\": \"别等自动关机啦～  \\n要是着急用，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329854240141434,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329854239810159,
+      "detail": {
+        "text_len": 14,
+        "dur_ms": 1008.882162,
+        "audio_sec": 2.88,
+        "rtf": 0.35030630625
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329854239810159, \"detail\": {\"text_len\": 14, \"dur_ms\": 1008.882162, \"audio_sec\": 2.88, \"rtf\": 0.35030630625}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329854240506960,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793329854240349174,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793329854240349174, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329857020775031,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329857020407691,
+      "detail": {
+        "text_len": 17,
+        "interrupted": false,
+        "dur_ms": 3041.735841
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329857020407691, \"detail\": {\"text_len\": 17, \"interrupted\": false, \"dur_ms\": 3041.735841}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329857021428869,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329857021237955,
+      "detail": {
+        "text_len": 14,
+        "head": "还可以开省电模式多撑一会儿。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329857021237955, \"detail\": {\"text_len\": 14, \"head\": \"还可以开省电模式多撑一会儿。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329859899229531,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329859898861669,
+      "detail": {
+        "text_len": 14,
+        "interrupted": false,
+        "dur_ms": 2877.619976
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329859898861669, \"detail\": {\"text_len\": 14, \"interrupted\": false, \"dur_ms\": 2877.619976}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329859899737965,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793329859899568040,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793329859899568040, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent_judge": [
+        {
+          "t_ns": 1793329850869584515,
+          "arrival_ns": 1793329850869980316,
+          "source": "round",
+          "detail": {
+            "model": "qwen-flash",
+            "ms": 600.6,
+            "answer": "聊",
+            "kind": "chat"
+          }
+        }
+      ],
+      "intent": [
+        {
+          "t_ns": 1793329850869791367,
+          "arrival_ns": 1793329850870207567,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "llm:qwen-flash",
+            "keyword_medical": false,
+            "chitchat": false,
+            "judge_kind": "chat",
+            "judge_ms": 600.6
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793329851255327320,
+          "arrival_ns": 1793329851255659563,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 446,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793329851255784785,
+          "arrival_ns": 1793329851256051239,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 446
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793329851974565643,
+          "arrival_ns": 1793329851974866824,
+          "source": "round",
+          "detail": {
+            "chars": 41
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793329851256147340,
+          "arrival_ns": 1793329851256346780,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793329854240349174,
+          "arrival_ns": 1793329854240506960,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793329851442432901,
+          "arrival_ns": 1793329851442662645,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "赶紧找个充电器充上，"
+          }
+        },
+        {
+          "t_ns": 1793329852132281533,
+          "arrival_ns": 1793329852132466916,
+          "source": "round",
+          "detail": {
+            "text_len": 17,
+            "head": "别等自动关机啦～  \n要是着急用，"
+          }
+        },
+        {
+          "t_ns": 1793329853230875927,
+          "arrival_ns": 1793329853231011616,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "head": "还可以开省电模式多撑一会儿。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793329851442513975,
+          "arrival_ns": 1793329851442932684,
+          "source": "round",
+          "detail": {
+            "text_len": 10
+          }
+        },
+        {
+          "t_ns": 1793329852132326909,
+          "arrival_ns": 1793329852132667937,
+          "source": "round",
+          "detail": {
+            "text_len": 17
+          }
+        },
+        {
+          "t_ns": 1793329853230923353,
+          "arrival_ns": 1793329853231197640,
+          "source": "round",
+          "detail": {
+            "text_len": 14
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793329852129866550,
+          "arrival_ns": 1793329852130246237,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "dur_ms": 687.347615,
+            "audio_sec": 1.76,
+            "rtf": 0.39053841761363634
+          }
+        },
+        {
+          "t_ns": 1793329853230284283,
+          "arrival_ns": 1793329853230586954,
+          "source": "round",
+          "detail": {
+            "text_len": 17,
+            "dur_ms": 1097.951677,
+            "audio_sec": 3.04,
+            "rtf": 0.36116831480263156
+          }
+        },
+        {
+          "t_ns": 1793329854239810159,
+          "arrival_ns": 1793329854240141434,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "dur_ms": 1008.882162,
+            "audio_sec": 2.88,
+            "rtf": 0.35030630625
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793329852218886013,
+          "arrival_ns": 1793329852219250974,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "赶紧找个充电器充上，"
+          }
+        },
+        {
+          "t_ns": 1793329853978668270,
+          "arrival_ns": 1793329853978881143,
+          "source": "round",
+          "detail": {
+            "text_len": 17,
+            "head": "别等自动关机啦～  \n要是着急用，"
+          }
+        },
+        {
+          "t_ns": 1793329857021237955,
+          "arrival_ns": 1793329857021428869,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "head": "还可以开省电模式多撑一会儿。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793329853977972944,
+          "arrival_ns": 1793329853978373367,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "interrupted": false,
+            "dur_ms": 1759.085432
+          }
+        },
+        {
+          "t_ns": 1793329857020407691,
+          "arrival_ns": 1793329857020775031,
+          "source": "round",
+          "detail": {
+            "text_len": 17,
+            "interrupted": false,
+            "dur_ms": 3041.735841
+          }
+        },
+        {
+          "t_ns": 1793329859898861669,
+          "arrival_ns": 1793329859899229531,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "interrupted": false,
+            "dur_ms": 2877.619976
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793329859899568040,
+          "arrival_ns": 1793329859899737965,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 10,
+    "interval_s": 2.0
+  }
+}

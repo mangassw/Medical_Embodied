@@ -1,0 +1,996 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1195061",
+  "host": "artrc",
+  "tag": "ol3_kb10",
+  "round_index": 9,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T18:11:02.955",
+  "finished_at": "2026-10-30T18:11:12.683",
+  "duration_s": 9.728,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "内瘘摸不到震颤了，是不是堵了？",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793355062955569629,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793355062955021651,
+    "t_publish_question_ns": 1793355062955569629,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793355062958212941,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793355062958583556,
+      "ali_llm_output_start": 1793355063698725337,
+      "ali_llm_output_first_text": 1793355063701722004,
+      "ali_llm_output_done": 1793355064618989930,
+      "tts_realtime_data_start": 1793355063699104192,
+      "tts_realtime_data_first_text": 1793355063757424992,
+      "tts_realtime_data_done": 1793355064622752701,
+      "tts_session_finished": 1793355072378546415
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793355063758244994,
+      "tts_local.synth_start_first": 1793355063758329924,
+      "tts_local.synth_end_first": 1793355064595949235,
+      "tts_local.play_start_first": 1793355064663758455,
+      "tts_local.play_end_last": 1793355072377110821,
+      "tts_local.session_finished": 1793355072378101043
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 3.014,
+    "router_to_llm_first_ms": 743.138,
+    "question_to_llm_first_ms": 746.152,
+    "llm_first_to_done_ms": 917.268,
+    "question_to_llm_done_ms": 1663.42,
+    "llm_first_to_tts_first_text_ms": 55.703,
+    "question_to_tts_first_text_ms": 801.855,
+    "first_tts_text_to_first_play_start_ms": 906.333,
+    "tts_rx_to_synth_end_ms": 837.704,
+    "tts_rx_to_play_start_ms": 905.513,
+    "tts_synth_end_to_play_start_ms": 67.809,
+    "question_to_first_audio_ms": 1708.189,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 9422.977,
+    "audio_total_sum_ms": 7710.077,
+    "audio_first_to_last_ms": 7713.352
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 3013927,
+    "router_to_llm_first_ns": 743138448,
+    "question_to_llm_first_ns": 746152375,
+    "llm_first_to_done_ns": 917267926,
+    "question_to_llm_done_ns": 1663420301,
+    "llm_first_to_tts_first_text_ns": 55702988,
+    "question_to_tts_first_text_ns": 801855363,
+    "first_tts_text_to_first_play_start_ns": 906333463,
+    "tts_rx_to_synth_end_ns": 837704241,
+    "tts_rx_to_play_start_ns": 905513461,
+    "tts_synth_end_to_play_start_ns": 67809220,
+    "question_to_first_audio_ns": 1708188826,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 9422976786,
+    "audio_total_sum_ns": 7710077174,
+    "audio_first_to_last_ns": 7713352366
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 746152375,
+      "ms": 746.152
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 917267926,
+      "ms": 917.268
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 55702988,
+      "ms": 55.703
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 906333463,
+      "ms": 906.333
+    },
+    "question_to_first_play_start": {
+      "ns": 1708188826,
+      "ms": 1708.189
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 9422976786,
+      "ms": 9422.977
+    },
+    "audio_total_sec": {
+      "ns": 7710077174,
+      "ms": 7710.077,
+      "sec": 7.71
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 3.014,
+    "router_to_llm_first_ms": 743.138,
+    "question_to_llm_first_ms": 746.152,
+    "llm_first_to_done_ms": 917.268,
+    "question_to_llm_done_ms": 1663.42,
+    "llm_first_to_tts_first_text_ms": 55.703,
+    "question_to_tts_first_text_ms": 801.855,
+    "first_tts_text_to_first_play_start_ms": 906.333,
+    "tts_rx_to_synth_end_ms": 837.704,
+    "tts_rx_to_play_start_ms": 905.513,
+    "tts_synth_end_to_play_start_ms": 67.809,
+    "question_to_first_audio_ms": 1708.189,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 9422.977,
+    "audio_total_sum_ms": 7710.077,
+    "audio_first_to_last_ms": 7713.352
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793355063698725337,
+      "first_text_rx_ns": 1793355063701722004,
+      "done_rx_ns": 1793355064618989930,
+      "chunk_count": 24,
+      "char_count": 32,
+      "chunks": [
+        {
+          "t_ns": 1793355063701722004,
+          "text": "先"
+        },
+        {
+          "t_ns": 1793355063719757505,
+          "text": "别"
+        },
+        {
+          "t_ns": 1793355063737073293,
+          "text": "慌"
+        },
+        {
+          "t_ns": 1793355063756748725,
+          "text": "。"
+        },
+        {
+          "t_ns": 1793355063776127170,
+          "text": "摸"
+        },
+        {
+          "t_ns": 1793355063802488340,
+          "text": "不到"
+        },
+        {
+          "t_ns": 1793355063828598593,
+          "text": "震"
+        },
+        {
+          "t_ns": 1793355063879078292,
+          "text": "颤"
+        },
+        {
+          "t_ns": 1793355063928814156,
+          "text": "可能是"
+        },
+        {
+          "t_ns": 1793355063974532244,
+          "text": "内"
+        },
+        {
+          "t_ns": 1793355064020421006,
+          "text": "瘘"
+        },
+        {
+          "t_ns": 1793355064068192128,
+          "text": "不"
+        },
+        {
+          "t_ns": 1793355064118189441,
+          "text": "畅"
+        },
+        {
+          "t_ns": 1793355064170029860,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793355064203150462,
+          "text": "要"
+        },
+        {
+          "t_ns": 1793355064242087978,
+          "text": "立即"
+        },
+        {
+          "t_ns": 1793355064292316267,
+          "text": "就医"
+        },
+        {
+          "t_ns": 1793355064344092246,
+          "text": "检查"
+        },
+        {
+          "t_ns": 1793355064396973547,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793355064433645380,
+          "text": "避免"
+        },
+        {
+          "t_ns": 1793355064475889680,
+          "text": "影响"
+        },
+        {
+          "t_ns": 1793355064538837922,
+          "text": "透"
+        },
+        {
+          "t_ns": 1793355064562820159,
+          "text": "析"
+        },
+        {
+          "t_ns": 1793355064582169250,
+          "text": "。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793355063757424992,
+      "done_rx_ns": 1793355064622752701,
+      "text_count": 4,
+      "texts": [
+        {
+          "t_ns": 1793355063757424992,
+          "text": "先别慌。"
+        },
+        {
+          "t_ns": 1793355064176555814,
+          "text": "摸不到震颤可能是内瘘不畅，"
+        },
+        {
+          "t_ns": 1793355064397061433,
+          "text": "要立即就医检查，"
+        },
+        {
+          "t_ns": 1793355064582908047,
+          "text": "避免影响透析。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 29,
+    "latency_events_total": 29,
+    "asr_events": 0,
+    "tts_events": 23,
+    "tts_play_pairs": 4,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793355062980141298,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793355062979546144,
+      "detail": {
+        "kind": "medical",
+        "chat_mode": false,
+        "source": "keyword",
+        "keyword_medical": true,
+        "chitchat": false,
+        "judge_kind": null,
+        "judge_ms": 0.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793355062979546144, \"detail\": {\"kind\": \"medical\", \"chat_mode\": false, \"source\": \"keyword\", \"keyword_medical\": true, \"chitchat\": false, \"judge_kind\": null, \"judge_ms\": 0.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355062980456909,
+      "node": "llm_medical",
+      "stage": "rag_start",
+      "t_ns": 1793355062980213495,
+      "detail": {},
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_start\", \"t_ns\": 1793355062980213495, \"detail\": {}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355063290188150,
+      "node": "llm_medical",
+      "stage": "rag_end",
+      "t_ns": 1793355063288060575,
+      "detail": {
+        "n_chunks": 3,
+        "took_ms": 307.74,
+        "top1": "内瘘的居家护理"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_end\", \"t_ns\": 1793355063288060575, \"detail\": {\"n_chunks\": 3, \"took_ms\": 307.74, \"top1\": \"内瘘的居家护理\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355063290655522,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793355063288634588,
+      "detail": {
+        "provider": "ollama",
+        "prompt_chars": 1222,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793355063288634588, \"detail\": {\"provider\": \"ollama\", \"prompt_chars\": 1222, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355063700451026,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793355063700081483,
+      "detail": {
+        "prompt_chars": 1222
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793355063700081483, \"detail\": {\"prompt_chars\": 1222}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355063702045730,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793355063701725945,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793355063701725945, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355063758495726,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793355063758244994,
+      "detail": {
+        "text_len": 4,
+        "head": "先别慌。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793355063758244994, \"detail\": {\"text_len\": 4, \"head\": \"先别慌。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355063758786165,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793355063758329924,
+      "detail": {
+        "text_len": 4
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793355063758329924, \"detail\": {\"text_len\": 4}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355064597515036,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793355064595949235,
+      "detail": {
+        "text_len": 4,
+        "dur_ms": 837.611795,
+        "audio_sec": 1.28,
+        "rtf": 0.65438421484375
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793355064595949235, \"detail\": {\"text_len\": 4, \"dur_ms\": 837.611795, \"audio_sec\": 1.28, \"rtf\": 0.65438421484375}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355064604099525,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793355064600795126,
+      "detail": {
+        "text_len": 13,
+        "head": "摸不到震颤可能是内瘘不畅，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793355064600795126, \"detail\": {\"text_len\": 13, \"head\": \"摸不到震颤可能是内瘘不畅，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355064604513858,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793355064600896844,
+      "detail": {
+        "text_len": 13
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793355064600896844, \"detail\": {\"text_len\": 13}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355064619049951,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793355064618486175,
+      "detail": {
+        "chars": 32
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793355064618486175, \"detail\": {\"chars\": 32}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355064666401979,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793355064663758455,
+      "detail": {
+        "text_len": 4,
+        "head": "先别慌。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793355064663758455, \"detail\": {\"text_len\": 4, \"head\": \"先别慌。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355065773731857,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793355065771428523,
+      "detail": {
+        "text_len": 13,
+        "dur_ms": 1170.523074,
+        "audio_sec": 2.8,
+        "rtf": 0.41804395499999997
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793355065771428523, \"detail\": {\"text_len\": 13, \"dur_ms\": 1170.523074, \"audio_sec\": 2.8, \"rtf\": 0.41804395499999997}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355065777822633,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793355065777487507,
+      "detail": {
+        "text_len": 8,
+        "head": "要立即就医检查，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793355065777487507, \"detail\": {\"text_len\": 8, \"head\": \"要立即就医检查，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355065778114751,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793355065777596835,
+      "detail": {
+        "text_len": 8
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793355065777596835, \"detail\": {\"text_len\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355065960548343,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793355065960111020,
+      "detail": {
+        "text_len": 4,
+        "interrupted": false,
+        "dur_ms": 1296.349162
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793355065960111020, \"detail\": {\"text_len\": 4, \"interrupted\": false, \"dur_ms\": 1296.349162}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355065961401875,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793355065961176629,
+      "detail": {
+        "text_len": 13,
+        "head": "摸不到震颤可能是内瘘不畅，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793355065961176629, \"detail\": {\"text_len\": 13, \"head\": \"摸不到震颤可能是内瘘不畅，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355066553155353,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793355066552807989,
+      "detail": {
+        "text_len": 8,
+        "dur_ms": 775.205799,
+        "audio_sec": 1.84,
+        "rtf": 0.4213074994565217
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793355066552807989, \"detail\": {\"text_len\": 8, \"dur_ms\": 775.205799, \"audio_sec\": 1.84, \"rtf\": 0.4213074994565217}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355066553639351,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793355066553510947,
+      "detail": {
+        "text_len": 7,
+        "head": "避免影响透析。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793355066553510947, \"detail\": {\"text_len\": 7, \"head\": \"避免影响透析。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355066553821319,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793355066553549536,
+      "detail": {
+        "text_len": 7
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793355066553549536, \"detail\": {\"text_len\": 7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355067298808248,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793355067296967035,
+      "detail": {
+        "text_len": 7,
+        "dur_ms": 743.408509,
+        "audio_sec": 1.76,
+        "rtf": 0.4223911982954545
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793355067296967035, \"detail\": {\"text_len\": 7, \"dur_ms\": 743.408509, \"audio_sec\": 1.76, \"rtf\": 0.4223911982954545}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355067302283223,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793355067301920645,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793355067301920645, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355068762448179,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793355068762087510,
+      "detail": {
+        "text_len": 13,
+        "interrupted": false,
+        "dur_ms": 2800.905005
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793355068762087510, \"detail\": {\"text_len\": 13, \"interrupted\": false, \"dur_ms\": 2800.905005}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355068763228337,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793355068763046635,
+      "detail": {
+        "text_len": 8,
+        "head": "要立即就医检查，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793355068763046635, \"detail\": {\"text_len\": 8, \"head\": \"要立即就医检查，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355070613534523,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793355070612868730,
+      "detail": {
+        "text_len": 8,
+        "interrupted": false,
+        "dur_ms": 1849.814798
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793355070612868730, \"detail\": {\"text_len\": 8, \"interrupted\": false, \"dur_ms\": 1849.814798}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355070614357153,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793355070614119188,
+      "detail": {
+        "text_len": 7,
+        "head": "避免影响透析。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793355070614119188, \"detail\": {\"text_len\": 7, \"head\": \"避免影响透析。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355072377476531,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793355072377110821,
+      "detail": {
+        "text_len": 7,
+        "interrupted": false,
+        "dur_ms": 1762.987469
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793355072377110821, \"detail\": {\"text_len\": 7, \"interrupted\": false, \"dur_ms\": 1762.987469}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355072378310020,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793355072378101043,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793355072378101043, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793355062979546144,
+          "arrival_ns": 1793355062980141298,
+          "source": "round",
+          "detail": {
+            "kind": "medical",
+            "chat_mode": false,
+            "source": "keyword",
+            "keyword_medical": true,
+            "chitchat": false,
+            "judge_kind": null,
+            "judge_ms": 0.0
+          }
+        }
+      ],
+      "rag_start": [
+        {
+          "t_ns": 1793355062980213495,
+          "arrival_ns": 1793355062980456909,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "rag_end": [
+        {
+          "t_ns": 1793355063288060575,
+          "arrival_ns": 1793355063290188150,
+          "source": "round",
+          "detail": {
+            "n_chunks": 3,
+            "took_ms": 307.74,
+            "top1": "内瘘的居家护理"
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793355063288634588,
+          "arrival_ns": 1793355063290655522,
+          "source": "round",
+          "detail": {
+            "provider": "ollama",
+            "prompt_chars": 1222,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793355063700081483,
+          "arrival_ns": 1793355063700451026,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1222
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793355064618486175,
+          "arrival_ns": 1793355064619049951,
+          "source": "round",
+          "detail": {
+            "chars": 32
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793355063701725945,
+          "arrival_ns": 1793355063702045730,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793355067301920645,
+          "arrival_ns": 1793355067302283223,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793355063758244994,
+          "arrival_ns": 1793355063758495726,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "先别慌。"
+          }
+        },
+        {
+          "t_ns": 1793355064600795126,
+          "arrival_ns": 1793355064604099525,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "head": "摸不到震颤可能是内瘘不畅，"
+          }
+        },
+        {
+          "t_ns": 1793355065777487507,
+          "arrival_ns": 1793355065777822633,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "要立即就医检查，"
+          }
+        },
+        {
+          "t_ns": 1793355066553510947,
+          "arrival_ns": 1793355066553639351,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "避免影响透析。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793355063758329924,
+          "arrival_ns": 1793355063758786165,
+          "source": "round",
+          "detail": {
+            "text_len": 4
+          }
+        },
+        {
+          "t_ns": 1793355064600896844,
+          "arrival_ns": 1793355064604513858,
+          "source": "round",
+          "detail": {
+            "text_len": 13
+          }
+        },
+        {
+          "t_ns": 1793355065777596835,
+          "arrival_ns": 1793355065778114751,
+          "source": "round",
+          "detail": {
+            "text_len": 8
+          }
+        },
+        {
+          "t_ns": 1793355066553549536,
+          "arrival_ns": 1793355066553821319,
+          "source": "round",
+          "detail": {
+            "text_len": 7
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793355064595949235,
+          "arrival_ns": 1793355064597515036,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "dur_ms": 837.611795,
+            "audio_sec": 1.28,
+            "rtf": 0.65438421484375
+          }
+        },
+        {
+          "t_ns": 1793355065771428523,
+          "arrival_ns": 1793355065773731857,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "dur_ms": 1170.523074,
+            "audio_sec": 2.8,
+            "rtf": 0.41804395499999997
+          }
+        },
+        {
+          "t_ns": 1793355066552807989,
+          "arrival_ns": 1793355066553155353,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "dur_ms": 775.205799,
+            "audio_sec": 1.84,
+            "rtf": 0.4213074994565217
+          }
+        },
+        {
+          "t_ns": 1793355067296967035,
+          "arrival_ns": 1793355067298808248,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "dur_ms": 743.408509,
+            "audio_sec": 1.76,
+            "rtf": 0.4223911982954545
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793355064663758455,
+          "arrival_ns": 1793355064666401979,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "先别慌。"
+          }
+        },
+        {
+          "t_ns": 1793355065961176629,
+          "arrival_ns": 1793355065961401875,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "head": "摸不到震颤可能是内瘘不畅，"
+          }
+        },
+        {
+          "t_ns": 1793355068763046635,
+          "arrival_ns": 1793355068763228337,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "要立即就医检查，"
+          }
+        },
+        {
+          "t_ns": 1793355070614119188,
+          "arrival_ns": 1793355070614357153,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "避免影响透析。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793355065960111020,
+          "arrival_ns": 1793355065960548343,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "interrupted": false,
+            "dur_ms": 1296.349162
+          }
+        },
+        {
+          "t_ns": 1793355068762087510,
+          "arrival_ns": 1793355068762448179,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "interrupted": false,
+            "dur_ms": 2800.905005
+          }
+        },
+        {
+          "t_ns": 1793355070612868730,
+          "arrival_ns": 1793355070613534523,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "interrupted": false,
+            "dur_ms": 1849.814798
+          }
+        },
+        {
+          "t_ns": 1793355072377110821,
+          "arrival_ns": 1793355072377476531,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "interrupted": false,
+            "dur_ms": 1762.987469
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793355072378101043,
+          "arrival_ns": 1793355072378310020,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 10,
+    "interval_s": 2.0
+  }
+}

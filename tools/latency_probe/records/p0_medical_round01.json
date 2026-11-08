@@ -1,0 +1,1006 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_475421",
+  "host": "artrc",
+  "tag": "p0_medical",
+  "round_index": 1,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-28T10:44:23.902",
+  "finished_at": "2026-10-28T10:44:41.786",
+  "duration_s": 17.884,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "肾病患者运动时有哪些注意事项？",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793155463902794244,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793155463902347276,
+    "t_publish_question_ns": 1793155463902794244,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793155463903330458,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793155463903716907,
+      "ali_llm_output_start": 1793155465120659721,
+      "ali_llm_output_first_text": 1793155465122045982,
+      "ali_llm_output_done": 1793155466037574487,
+      "tts_realtime_data_start": 1793155465121776058,
+      "tts_realtime_data_first_text": 1793155465400470761,
+      "tts_realtime_data_done": 1793155466037842770,
+      "tts_session_finished": 1793155481483169847
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793155465400501702,
+      "tts_local.synth_start_first": 1793155465400579887,
+      "tts_local.synth_end_first": 1793155466808457407,
+      "tts_local.play_start_first": 1793155466893689740,
+      "tts_local.play_end_last": 1793155481482138537,
+      "tts_local.session_finished": 1793155481482779816
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.923,
+    "router_to_llm_first_ms": 1218.329,
+    "question_to_llm_first_ms": 1219.252,
+    "llm_first_to_done_ms": 915.529,
+    "question_to_llm_done_ms": 2134.78,
+    "llm_first_to_tts_first_text_ms": 278.425,
+    "question_to_tts_first_text_ms": 1497.677,
+    "first_tts_text_to_first_play_start_ms": 1493.219,
+    "tts_rx_to_synth_end_ms": 1407.956,
+    "tts_rx_to_play_start_ms": 1493.188,
+    "tts_synth_end_to_play_start_ms": 85.232,
+    "question_to_first_audio_ms": 2990.895,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 17580.376,
+    "audio_total_sum_ms": 14585.487,
+    "audio_first_to_last_ms": 14588.449
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 922663,
+    "router_to_llm_first_ns": 1218329075,
+    "question_to_llm_first_ns": 1219251738,
+    "llm_first_to_done_ns": 915528505,
+    "question_to_llm_done_ns": 2134780243,
+    "llm_first_to_tts_first_text_ns": 278424779,
+    "question_to_tts_first_text_ns": 1497676517,
+    "first_tts_text_to_first_play_start_ns": 1493218979,
+    "tts_rx_to_synth_end_ns": 1407955705,
+    "tts_rx_to_play_start_ns": 1493188038,
+    "tts_synth_end_to_play_start_ns": 85232333,
+    "question_to_first_audio_ns": 2990895496,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 17580375603,
+    "audio_total_sum_ns": 14585487115,
+    "audio_first_to_last_ns": 14588448797
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 1219251738,
+      "ms": 1219.252
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 915528505,
+      "ms": 915.529
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 278424779,
+      "ms": 278.425
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 1493218979,
+      "ms": 1493.219
+    },
+    "question_to_first_play_start": {
+      "ns": 2990895496,
+      "ms": 2990.895
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 17580375603,
+      "ms": 17580.376
+    },
+    "audio_total_sec": {
+      "ns": 14585487115,
+      "ms": 14585.487,
+      "sec": 14.585
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.923,
+    "router_to_llm_first_ms": 1218.329,
+    "question_to_llm_first_ms": 1219.252,
+    "llm_first_to_done_ms": 915.529,
+    "question_to_llm_done_ms": 2134.78,
+    "llm_first_to_tts_first_text_ms": 278.425,
+    "question_to_tts_first_text_ms": 1497.677,
+    "first_tts_text_to_first_play_start_ms": 1493.219,
+    "tts_rx_to_synth_end_ms": 1407.956,
+    "tts_rx_to_play_start_ms": 1493.188,
+    "tts_synth_end_to_play_start_ms": 85.232,
+    "question_to_first_audio_ms": 2990.895,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 17580.376,
+    "audio_total_sum_ms": 14585.487,
+    "audio_first_to_last_ms": 14588.449
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793155465120659721,
+      "first_text_rx_ns": 1793155465122045982,
+      "done_rx_ns": 1793155466037574487,
+      "chunk_count": 10,
+      "char_count": 61,
+      "chunks": [
+        {
+          "t_ns": 1793155465122045982,
+          "text": "避开"
+        },
+        {
+          "t_ns": 1793155465129936764,
+          "text": "透析刚"
+        },
+        {
+          "t_ns": 1793155465146989706,
+          "text": "结束的几"
+        },
+        {
+          "t_ns": 1793155465400138494,
+          "text": "小时，那时"
+        },
+        {
+          "t_ns": 1793155465400312703,
+          "text": "容易乏力、低血压。"
+        },
+        {
+          "t_ns": 1793155465488389742,
+          "text": "内瘘侧手臂别"
+        },
+        {
+          "t_ns": 1793155465720710084,
+          "text": "做大幅度负重和拉"
+        },
+        {
+          "t_ns": 1793155465804450517,
+          "text": "伸动作。  \n运动前后"
+        },
+        {
+          "t_ns": 1793155465875936505,
+          "text": "测血压，头晕心慌"
+        },
+        {
+          "t_ns": 1793155465996451416,
+          "text": "就停下来。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793155465400470761,
+      "done_rx_ns": 1793155466037842770,
+      "text_count": 5,
+      "texts": [
+        {
+          "t_ns": 1793155465400470761,
+          "text": "避开透析刚结束的几小时，"
+        },
+        {
+          "t_ns": 1793155465401049323,
+          "text": "那时容易乏力、低血压。"
+        },
+        {
+          "t_ns": 1793155465805024994,
+          "text": "内瘘侧手臂别做大幅度负重和拉伸动作。"
+        },
+        {
+          "t_ns": 1793155465876134067,
+          "text": "运动前后测血压，"
+        },
+        {
+          "t_ns": 1793155465996658120,
+          "text": "头晕心慌就停下来。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 33,
+    "latency_events_total": 33,
+    "asr_events": 0,
+    "tts_events": 28,
+    "tts_play_pairs": 5,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793155463924731711,
+      "node": "llm_medical",
+      "stage": "rag_start",
+      "t_ns": 1793155463924541858,
+      "detail": {},
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_start\", \"t_ns\": 1793155463924541858, \"detail\": {}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793155463938578517,
+      "node": "llm_medical",
+      "stage": "rag_end",
+      "t_ns": 1793155463938350309,
+      "detail": {
+        "n_chunks": 4,
+        "took_ms": 13.67,
+        "top1": "透析患者怎么运动更安全"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_end\", \"t_ns\": 1793155463938350309, \"detail\": {\"n_chunks\": 4, \"took_ms\": 13.67, \"top1\": \"透析患者怎么运动更安全\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793155465120711438,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793155465120343837,
+      "detail": {
+        "prompt_chars": 876,
+        "n_messages": 4
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793155465120343837, \"detail\": {\"prompt_chars\": 876, \"n_messages\": 4}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793155465121816910,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793155465120873515,
+      "detail": {
+        "prompt_chars": 876
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793155465120873515, \"detail\": {\"prompt_chars\": 876}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793155465122081266,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793155465121206351,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793155465121206351, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793155465400642224,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793155465400501702,
+      "detail": {
+        "text_len": 12,
+        "head": "避开透析刚结束的几小时，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793155465400501702, \"detail\": {\"text_len\": 12, \"head\": \"避开透析刚结束的几小时，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793155465400875230,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793155465400579887,
+      "detail": {
+        "text_len": 12
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793155465400579887, \"detail\": {\"text_len\": 12}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793155466037618722,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793155466037318107,
+      "detail": {
+        "chars": 64
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793155466037318107, \"detail\": {\"chars\": 64}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793155466808748816,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793155466808457407,
+      "detail": {
+        "text_len": 12,
+        "dur_ms": 1407.872128,
+        "audio_sec": 3.36,
+        "rtf": 0.4190095619047619
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793155466808457407, \"detail\": {\"text_len\": 12, \"dur_ms\": 1407.872128, \"audio_sec\": 3.36, \"rtf\": 0.4190095619047619}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793155466810669543,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793155466810510786,
+      "detail": {
+        "text_len": 11,
+        "head": "那时容易乏力、低血压。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793155466810510786, \"detail\": {\"text_len\": 11, \"head\": \"那时容易乏力、低血压。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793155466810867014,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793155466810569844,
+      "detail": {
+        "text_len": 11
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793155466810569844, \"detail\": {\"text_len\": 11}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793155466893955989,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793155466893689740,
+      "detail": {
+        "text_len": 12,
+        "head": "避开透析刚结束的几小时，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793155466893689740, \"detail\": {\"text_len\": 12, \"head\": \"避开透析刚结束的几小时，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793155468056882609,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793155468056489139,
+      "detail": {
+        "text_len": 11,
+        "dur_ms": 1245.912591,
+        "audio_sec": 2.96,
+        "rtf": 0.42091641587837836
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793155468056489139, \"detail\": {\"text_len\": 11, \"dur_ms\": 1245.912591, \"audio_sec\": 2.96, \"rtf\": 0.42091641587837836}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793155468057393314,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793155468057097390,
+      "detail": {
+        "text_len": 18,
+        "head": "内瘘侧手臂别做大幅度负重和拉伸动作。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793155468057097390, \"detail\": {\"text_len\": 18, \"head\": \"内瘘侧手臂别做大幅度负重和拉伸动作。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793155468057633484,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793155468057152034,
+      "detail": {
+        "text_len": 18
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793155468057152034, \"detail\": {\"text_len\": 18}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793155469656963692,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793155469655408442,
+      "detail": {
+        "text_len": 18,
+        "dur_ms": 1598.248628,
+        "audio_sec": 3.92,
+        "rtf": 0.4077164867346939
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793155469655408442, \"detail\": {\"text_len\": 18, \"dur_ms\": 1598.248628, \"audio_sec\": 3.92, \"rtf\": 0.4077164867346939}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793155469658263391,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793155469658041462,
+      "detail": {
+        "text_len": 8,
+        "head": "运动前后测血压，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793155469658041462, \"detail\": {\"text_len\": 8, \"head\": \"运动前后测血压，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793155469658558521,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793155469658108726,
+      "detail": {
+        "text_len": 8
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793155469658108726, \"detail\": {\"text_len\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793155470290005751,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793155470289639409,
+      "detail": {
+        "text_len": 12,
+        "dur_ms": 3395.946389
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793155470289639409, \"detail\": {\"text_len\": 12, \"dur_ms\": 3395.946389}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793155470290507665,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793155470290351334,
+      "detail": {
+        "text_len": 11,
+        "head": "那时容易乏力、低血压。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793155470290351334, \"detail\": {\"text_len\": 11, \"head\": \"那时容易乏力、低血压。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793155470598610424,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793155470598280765,
+      "detail": {
+        "text_len": 8,
+        "dur_ms": 940.16626,
+        "audio_sec": 2.24,
+        "rtf": 0.4197170803571428
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793155470598280765, \"detail\": {\"text_len\": 8, \"dur_ms\": 940.16626, \"audio_sec\": 2.24, \"rtf\": 0.4197170803571428}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793155470599936524,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793155470599707998,
+      "detail": {
+        "text_len": 9,
+        "head": "头晕心慌就停下来。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793155470599707998, \"detail\": {\"text_len\": 9, \"head\": \"头晕心慌就停下来。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793155470600260255,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793155470599778777,
+      "detail": {
+        "text_len": 9
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793155470599778777, \"detail\": {\"text_len\": 9}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793155471471701880,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793155471471412933,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 871.629729,
+        "audio_sec": 2.08,
+        "rtf": 0.41905275432692307
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793155471471412933, \"detail\": {\"text_len\": 9, \"dur_ms\": 871.629729, \"audio_sec\": 2.08, \"rtf\": 0.41905275432692307}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793155471472200263,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793155471472074491,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793155471472074491, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793155473249591964,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793155473249230665,
+      "detail": {
+        "text_len": 11,
+        "dur_ms": 2958.874671
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793155473249230665, \"detail\": {\"text_len\": 11, \"dur_ms\": 2958.874671}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793155473250270539,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793155473250103232,
+      "detail": {
+        "text_len": 18,
+        "head": "内瘘侧手臂别做大幅度负重和拉伸动作。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793155473250103232, \"detail\": {\"text_len\": 18, \"head\": \"内瘘侧手臂别做大幅度负重和拉伸动作。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793155477168012490,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793155477167699591,
+      "detail": {
+        "text_len": 18,
+        "dur_ms": 3917.592671
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793155477167699591, \"detail\": {\"text_len\": 18, \"dur_ms\": 3917.592671}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793155477168530904,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793155477168372380,
+      "detail": {
+        "text_len": 8,
+        "head": "运动前后测血压，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793155477168372380, \"detail\": {\"text_len\": 8, \"head\": \"运动前后测血压，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793155479405043259,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793155479404709002,
+      "detail": {
+        "text_len": 8,
+        "dur_ms": 2236.334271
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793155479404709002, \"detail\": {\"text_len\": 8, \"dur_ms\": 2236.334271}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793155479405584094,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793155479405413403,
+      "detail": {
+        "text_len": 9,
+        "head": "头晕心慌就停下来。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793155479405413403, \"detail\": {\"text_len\": 9, \"head\": \"头晕心慌就停下来。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793155481482477902,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793155481482138537,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 2076.721855
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793155481482138537, \"detail\": {\"text_len\": 9, \"dur_ms\": 2076.721855}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793155481482975302,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793155481482779816,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793155481482779816, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "rag_start": [
+        {
+          "t_ns": 1793155463924541858,
+          "arrival_ns": 1793155463924731711,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "rag_end": [
+        {
+          "t_ns": 1793155463938350309,
+          "arrival_ns": 1793155463938578517,
+          "source": "round",
+          "detail": {
+            "n_chunks": 4,
+            "took_ms": 13.67,
+            "top1": "透析患者怎么运动更安全"
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793155465120343837,
+          "arrival_ns": 1793155465120711438,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 876,
+            "n_messages": 4
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793155465120873515,
+          "arrival_ns": 1793155465121816910,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 876
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793155466037318107,
+          "arrival_ns": 1793155466037618722,
+          "source": "round",
+          "detail": {
+            "chars": 64
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793155465121206351,
+          "arrival_ns": 1793155465122081266,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793155471472074491,
+          "arrival_ns": 1793155471472200263,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793155465400501702,
+          "arrival_ns": 1793155465400642224,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "避开透析刚结束的几小时，"
+          }
+        },
+        {
+          "t_ns": 1793155466810510786,
+          "arrival_ns": 1793155466810669543,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "那时容易乏力、低血压。"
+          }
+        },
+        {
+          "t_ns": 1793155468057097390,
+          "arrival_ns": 1793155468057393314,
+          "source": "round",
+          "detail": {
+            "text_len": 18,
+            "head": "内瘘侧手臂别做大幅度负重和拉伸动作。"
+          }
+        },
+        {
+          "t_ns": 1793155469658041462,
+          "arrival_ns": 1793155469658263391,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "运动前后测血压，"
+          }
+        },
+        {
+          "t_ns": 1793155470599707998,
+          "arrival_ns": 1793155470599936524,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "头晕心慌就停下来。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793155465400579887,
+          "arrival_ns": 1793155465400875230,
+          "source": "round",
+          "detail": {
+            "text_len": 12
+          }
+        },
+        {
+          "t_ns": 1793155466810569844,
+          "arrival_ns": 1793155466810867014,
+          "source": "round",
+          "detail": {
+            "text_len": 11
+          }
+        },
+        {
+          "t_ns": 1793155468057152034,
+          "arrival_ns": 1793155468057633484,
+          "source": "round",
+          "detail": {
+            "text_len": 18
+          }
+        },
+        {
+          "t_ns": 1793155469658108726,
+          "arrival_ns": 1793155469658558521,
+          "source": "round",
+          "detail": {
+            "text_len": 8
+          }
+        },
+        {
+          "t_ns": 1793155470599778777,
+          "arrival_ns": 1793155470600260255,
+          "source": "round",
+          "detail": {
+            "text_len": 9
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793155466808457407,
+          "arrival_ns": 1793155466808748816,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "dur_ms": 1407.872128,
+            "audio_sec": 3.36,
+            "rtf": 0.4190095619047619
+          }
+        },
+        {
+          "t_ns": 1793155468056489139,
+          "arrival_ns": 1793155468056882609,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "dur_ms": 1245.912591,
+            "audio_sec": 2.96,
+            "rtf": 0.42091641587837836
+          }
+        },
+        {
+          "t_ns": 1793155469655408442,
+          "arrival_ns": 1793155469656963692,
+          "source": "round",
+          "detail": {
+            "text_len": 18,
+            "dur_ms": 1598.248628,
+            "audio_sec": 3.92,
+            "rtf": 0.4077164867346939
+          }
+        },
+        {
+          "t_ns": 1793155470598280765,
+          "arrival_ns": 1793155470598610424,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "dur_ms": 940.16626,
+            "audio_sec": 2.24,
+            "rtf": 0.4197170803571428
+          }
+        },
+        {
+          "t_ns": 1793155471471412933,
+          "arrival_ns": 1793155471471701880,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 871.629729,
+            "audio_sec": 2.08,
+            "rtf": 0.41905275432692307
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793155466893689740,
+          "arrival_ns": 1793155466893955989,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "避开透析刚结束的几小时，"
+          }
+        },
+        {
+          "t_ns": 1793155470290351334,
+          "arrival_ns": 1793155470290507665,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "那时容易乏力、低血压。"
+          }
+        },
+        {
+          "t_ns": 1793155473250103232,
+          "arrival_ns": 1793155473250270539,
+          "source": "round",
+          "detail": {
+            "text_len": 18,
+            "head": "内瘘侧手臂别做大幅度负重和拉伸动作。"
+          }
+        },
+        {
+          "t_ns": 1793155477168372380,
+          "arrival_ns": 1793155477168530904,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "运动前后测血压，"
+          }
+        },
+        {
+          "t_ns": 1793155479405413403,
+          "arrival_ns": 1793155479405584094,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "头晕心慌就停下来。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793155470289639409,
+          "arrival_ns": 1793155470290005751,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "dur_ms": 3395.946389
+          }
+        },
+        {
+          "t_ns": 1793155473249230665,
+          "arrival_ns": 1793155473249591964,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "dur_ms": 2958.874671
+          }
+        },
+        {
+          "t_ns": 1793155477167699591,
+          "arrival_ns": 1793155477168012490,
+          "source": "round",
+          "detail": {
+            "text_len": 18,
+            "dur_ms": 3917.592671
+          }
+        },
+        {
+          "t_ns": 1793155479404709002,
+          "arrival_ns": 1793155479405043259,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "dur_ms": 2236.334271
+          }
+        },
+        {
+          "t_ns": 1793155481482138537,
+          "arrival_ns": 1793155481482477902,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 2076.721855
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793155481482779816,
+          "arrival_ns": 1793155481482975302,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 3,
+    "interval_s": 3.0
+  }
+}

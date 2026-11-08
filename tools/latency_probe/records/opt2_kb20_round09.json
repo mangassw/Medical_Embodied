@@ -1,0 +1,934 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1077670",
+  "host": "artrc",
+  "tag": "opt2_kb20",
+  "round_index": 9,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T11:03:53.741",
+  "finished_at": "2026-10-30T11:04:27.532",
+  "duration_s": 33.791,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "内瘘摸不到震颤了，是不是堵了？",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793329433742426057,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793329433741681895,
+    "t_publish_question_ns": 1793329433742426057,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793329433743369408,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793329433744106803,
+      "ali_llm_output_start": 1793329434343297077,
+      "ali_llm_output_first_text": 1793329434344040834,
+      "ali_llm_output_done": 1793329435148354970,
+      "tts_realtime_data_start": 1793329434343720726,
+      "tts_realtime_data_first_text": 1793329434448032652,
+      "tts_realtime_data_done": 1793329435148916343,
+      "tts_session_finished": 1793329467230516978
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793329434448545744,
+      "tts_local.synth_start_first": 1793329434448655169,
+      "tts_local.synth_end_first": 1793329440533175232,
+      "tts_local.play_start_first": 1793329440618941075,
+      "tts_local.play_end_last": 1793329467229236975,
+      "tts_local.session_finished": 1793329467230169480
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.681,
+    "router_to_llm_first_ms": 599.934,
+    "question_to_llm_first_ms": 601.615,
+    "llm_first_to_done_ms": 804.314,
+    "question_to_llm_done_ms": 1405.929,
+    "llm_first_to_tts_first_text_ms": 103.992,
+    "question_to_tts_first_text_ms": 705.607,
+    "first_tts_text_to_first_play_start_ms": 6170.908,
+    "tts_rx_to_synth_end_ms": 6084.629,
+    "tts_rx_to_play_start_ms": 6170.395,
+    "tts_synth_end_to_play_start_ms": 85.766,
+    "question_to_first_audio_ms": 6876.515,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 33488.091,
+    "audio_total_sum_ms": 10269.507,
+    "audio_first_to_last_ms": 26610.296
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 1680746,
+    "router_to_llm_first_ns": 599934031,
+    "question_to_llm_first_ns": 601614777,
+    "llm_first_to_done_ns": 804314136,
+    "question_to_llm_done_ns": 1405928913,
+    "llm_first_to_tts_first_text_ns": 103991818,
+    "question_to_tts_first_text_ns": 705606595,
+    "first_tts_text_to_first_play_start_ns": 6170908423,
+    "tts_rx_to_synth_end_ns": 6084629488,
+    "tts_rx_to_play_start_ns": 6170395331,
+    "tts_synth_end_to_play_start_ns": 85765843,
+    "question_to_first_audio_ns": 6876515018,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 33488090921,
+    "audio_total_sum_ns": 10269507445,
+    "audio_first_to_last_ns": 26610295900
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 601614777,
+      "ms": 601.615
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 804314136,
+      "ms": 804.314
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 103991818,
+      "ms": 103.992
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 6170908423,
+      "ms": 6170.908
+    },
+    "question_to_first_play_start": {
+      "ns": 6876515018,
+      "ms": 6876.515
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 33488090921,
+      "ms": 33488.091
+    },
+    "audio_total_sec": {
+      "ns": 10269507445,
+      "ms": 10269.507,
+      "sec": 10.27
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.681,
+    "router_to_llm_first_ms": 599.934,
+    "question_to_llm_first_ms": 601.615,
+    "llm_first_to_done_ms": 804.314,
+    "question_to_llm_done_ms": 1405.929,
+    "llm_first_to_tts_first_text_ms": 103.992,
+    "question_to_tts_first_text_ms": 705.607,
+    "first_tts_text_to_first_play_start_ms": 6170.908,
+    "tts_rx_to_synth_end_ms": 6084.629,
+    "tts_rx_to_play_start_ms": 6170.395,
+    "tts_synth_end_to_play_start_ms": 85.766,
+    "question_to_first_audio_ms": 6876.515,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 33488.091,
+    "audio_total_sum_ms": 10269.507,
+    "audio_first_to_last_ms": 26610.296
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793329434343297077,
+      "first_text_rx_ns": 1793329434344040834,
+      "done_rx_ns": 1793329435148354970,
+      "chunk_count": 9,
+      "char_count": 44,
+      "chunks": [
+        {
+          "t_ns": 1793329434344040834,
+          "text": "内"
+        },
+        {
+          "t_ns": 1793329434397212873,
+          "text": "瘘堵"
+        },
+        {
+          "t_ns": 1793329434408085433,
+          "text": "了可能"
+        },
+        {
+          "t_ns": 1793329434447753432,
+          "text": "。  \n摸"
+        },
+        {
+          "t_ns": 1793329434579464272,
+          "text": "不到震颤或听不到"
+        },
+        {
+          "t_ns": 1793329434737701208,
+          "text": "杂音，应"
+        },
+        {
+          "t_ns": 1793329434807267229,
+          "text": "立即就医。  \n早"
+        },
+        {
+          "t_ns": 1793329434909752844,
+          "text": "中晚都要自查"
+        },
+        {
+          "t_ns": 1793329435117573589,
+          "text": "震颤和杂音。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793329434448032652,
+      "done_rx_ns": 1793329435148916343,
+      "text_count": 4,
+      "texts": [
+        {
+          "t_ns": 1793329434448032652,
+          "text": "内瘘堵了可能。"
+        },
+        {
+          "t_ns": 1793329434738184321,
+          "text": "摸不到震颤或听不到杂音，"
+        },
+        {
+          "t_ns": 1793329434807655461,
+          "text": "应立即就医。"
+        },
+        {
+          "t_ns": 1793329435117844533,
+          "text": "早中晚都要自查震颤和杂音。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 29,
+    "latency_events_total": 29,
+    "asr_events": 0,
+    "tts_events": 23,
+    "tts_play_pairs": 4,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793329433766118587,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793329433765259959,
+      "detail": {
+        "kind": "medical",
+        "chat_mode": false,
+        "source": "keyword",
+        "keyword_medical": true,
+        "chitchat": false,
+        "judge_kind": null,
+        "judge_ms": 0.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793329433765259959, \"detail\": {\"kind\": \"medical\", \"chat_mode\": false, \"source\": \"keyword\", \"keyword_medical\": true, \"chitchat\": false, \"judge_kind\": null, \"judge_ms\": 0.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329433766669446,
+      "node": "llm_medical",
+      "stage": "rag_start",
+      "t_ns": 1793329433766287321,
+      "detail": {},
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_start\", \"t_ns\": 1793329433766287321, \"detail\": {}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329433808030037,
+      "node": "llm_medical",
+      "stage": "rag_end",
+      "t_ns": 1793329433807652927,
+      "detail": {
+        "n_chunks": 3,
+        "took_ms": 41.19,
+        "top1": "内瘘的居家护理"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_end\", \"t_ns\": 1793329433807652927, \"detail\": {\"n_chunks\": 3, \"took_ms\": 41.19, \"top1\": \"内瘘的居家护理\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329434343357833,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793329434342921367,
+      "detail": {
+        "prompt_chars": 1019,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793329434342921367, \"detail\": {\"prompt_chars\": 1019, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329434344117346,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793329434343742834,
+      "detail": {
+        "prompt_chars": 1019
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793329434343742834, \"detail\": {\"prompt_chars\": 1019}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329434348387273,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793329434346660658,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793329434346660658, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329434448774029,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329434448545744,
+      "detail": {
+        "text_len": 7,
+        "head": "内瘘堵了可能。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329434448545744, \"detail\": {\"text_len\": 7, \"head\": \"内瘘堵了可能。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329434449096255,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329434448655169,
+      "detail": {
+        "text_len": 7
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329434448655169, \"detail\": {\"text_len\": 7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329435148425778,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793329435147855083,
+      "detail": {
+        "chars": 44
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793329435147855083, \"detail\": {\"chars\": 44}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329440533546224,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329440533175232,
+      "detail": {
+        "text_len": 7,
+        "dur_ms": 6084.512684,
+        "audio_sec": 2.0,
+        "rtf": 3.042256342
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329440533175232, \"detail\": {\"text_len\": 7, \"dur_ms\": 6084.512684, \"audio_sec\": 2.0, \"rtf\": 3.042256342}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329440609199341,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329440608847200,
+      "detail": {
+        "text_len": 12,
+        "head": "摸不到震颤或听不到杂音，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329440608847200, \"detail\": {\"text_len\": 12, \"head\": \"摸不到震颤或听不到杂音，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329440609672806,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329440608962104,
+      "detail": {
+        "text_len": 12
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329440608962104, \"detail\": {\"text_len\": 12}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329440619240230,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329440618941075,
+      "detail": {
+        "text_len": 7,
+        "head": "内瘘堵了可能。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329440618941075, \"detail\": {\"text_len\": 7, \"head\": \"内瘘堵了可能。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329442715838395,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329442715144393,
+      "detail": {
+        "text_len": 7,
+        "interrupted": false,
+        "dur_ms": 2096.199172
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329442715144393, \"detail\": {\"text_len\": 7, \"interrupted\": false, \"dur_ms\": 2096.199172}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329449094806585,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329449092704389,
+      "detail": {
+        "text_len": 12,
+        "dur_ms": 8483.73221,
+        "audio_sec": 2.72,
+        "rtf": 3.1190191948529407
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329449092704389, \"detail\": {\"text_len\": 12, \"dur_ms\": 8483.73221, \"audio_sec\": 2.72, \"rtf\": 3.1190191948529407}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329449095897665,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329449095513098,
+      "detail": {
+        "text_len": 6,
+        "head": "应立即就医。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329449095513098, \"detail\": {\"text_len\": 6, \"head\": \"应立即就医。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329449099745133,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329449096252845,
+      "detail": {
+        "text_len": 6
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329449096252845, \"detail\": {\"text_len\": 6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329449119445751,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329449119121412,
+      "detail": {
+        "text_len": 12,
+        "head": "摸不到震颤或听不到杂音，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329449119121412, \"detail\": {\"text_len\": 12, \"head\": \"摸不到震颤或听不到杂音，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329451877636955,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329451877197888,
+      "detail": {
+        "text_len": 12,
+        "interrupted": false,
+        "dur_ms": 2758.072603
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329451877197888, \"detail\": {\"text_len\": 12, \"interrupted\": false, \"dur_ms\": 2758.072603}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329455093482166,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329455091871796,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 5995.592429,
+        "audio_sec": 2.0,
+        "rtf": 2.9977962145
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329455091871796, \"detail\": {\"text_len\": 6, \"dur_ms\": 5995.592429, \"audio_sec\": 2.0, \"rtf\": 2.9977962145}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329455097752855,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329455095363040,
+      "detail": {
+        "text_len": 13,
+        "head": "早中晚都要自查震颤和杂音。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329455095363040, \"detail\": {\"text_len\": 13, \"head\": \"早中晚都要自查震颤和杂音。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329455099185634,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329455095721662,
+      "detail": {
+        "text_len": 13
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329455095721662, \"detail\": {\"text_len\": 13}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329455122227990,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329455120942842,
+      "detail": {
+        "text_len": 6,
+        "head": "应立即就医。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329455120942842, \"detail\": {\"text_len\": 6, \"head\": \"应立即就医。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329457229517127,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329457226055500,
+      "detail": {
+        "text_len": 6,
+        "interrupted": false,
+        "dur_ms": 2105.101794
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329457226055500, \"detail\": {\"text_len\": 6, \"interrupted\": false, \"dur_ms\": 2105.101794}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329463881298462,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329463880847565,
+      "detail": {
+        "text_len": 13,
+        "dur_ms": 8785.110997,
+        "audio_sec": 3.2,
+        "rtf": 2.7453471865625
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329463880847565, \"detail\": {\"text_len\": 13, \"dur_ms\": 8785.110997, \"audio_sec\": 3.2, \"rtf\": 2.7453471865625}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329463882229651,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793329463881966571,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793329463881966571, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329463919517557,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329463919121982,
+      "detail": {
+        "text_len": 13,
+        "head": "早中晚都要自查震颤和杂音。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329463919121982, \"detail\": {\"text_len\": 13, \"head\": \"早中晚都要自查震颤和杂音。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329467229646494,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329467229236975,
+      "detail": {
+        "text_len": 13,
+        "interrupted": false,
+        "dur_ms": 3310.11247
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329467229236975, \"detail\": {\"text_len\": 13, \"interrupted\": false, \"dur_ms\": 3310.11247}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329467230603252,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793329467230169480,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793329467230169480, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793329433765259959,
+          "arrival_ns": 1793329433766118587,
+          "source": "round",
+          "detail": {
+            "kind": "medical",
+            "chat_mode": false,
+            "source": "keyword",
+            "keyword_medical": true,
+            "chitchat": false,
+            "judge_kind": null,
+            "judge_ms": 0.0
+          }
+        }
+      ],
+      "rag_start": [
+        {
+          "t_ns": 1793329433766287321,
+          "arrival_ns": 1793329433766669446,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "rag_end": [
+        {
+          "t_ns": 1793329433807652927,
+          "arrival_ns": 1793329433808030037,
+          "source": "round",
+          "detail": {
+            "n_chunks": 3,
+            "took_ms": 41.19,
+            "top1": "内瘘的居家护理"
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793329434342921367,
+          "arrival_ns": 1793329434343357833,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1019,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793329434343742834,
+          "arrival_ns": 1793329434344117346,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1019
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793329435147855083,
+          "arrival_ns": 1793329435148425778,
+          "source": "round",
+          "detail": {
+            "chars": 44
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793329434346660658,
+          "arrival_ns": 1793329434348387273,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793329463881966571,
+          "arrival_ns": 1793329463882229651,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793329434448545744,
+          "arrival_ns": 1793329434448774029,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "内瘘堵了可能。"
+          }
+        },
+        {
+          "t_ns": 1793329440608847200,
+          "arrival_ns": 1793329440609199341,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "摸不到震颤或听不到杂音，"
+          }
+        },
+        {
+          "t_ns": 1793329449095513098,
+          "arrival_ns": 1793329449095897665,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "应立即就医。"
+          }
+        },
+        {
+          "t_ns": 1793329455095363040,
+          "arrival_ns": 1793329455097752855,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "head": "早中晚都要自查震颤和杂音。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793329434448655169,
+          "arrival_ns": 1793329434449096255,
+          "source": "round",
+          "detail": {
+            "text_len": 7
+          }
+        },
+        {
+          "t_ns": 1793329440608962104,
+          "arrival_ns": 1793329440609672806,
+          "source": "round",
+          "detail": {
+            "text_len": 12
+          }
+        },
+        {
+          "t_ns": 1793329449096252845,
+          "arrival_ns": 1793329449099745133,
+          "source": "round",
+          "detail": {
+            "text_len": 6
+          }
+        },
+        {
+          "t_ns": 1793329455095721662,
+          "arrival_ns": 1793329455099185634,
+          "source": "round",
+          "detail": {
+            "text_len": 13
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793329440533175232,
+          "arrival_ns": 1793329440533546224,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "dur_ms": 6084.512684,
+            "audio_sec": 2.0,
+            "rtf": 3.042256342
+          }
+        },
+        {
+          "t_ns": 1793329449092704389,
+          "arrival_ns": 1793329449094806585,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "dur_ms": 8483.73221,
+            "audio_sec": 2.72,
+            "rtf": 3.1190191948529407
+          }
+        },
+        {
+          "t_ns": 1793329455091871796,
+          "arrival_ns": 1793329455093482166,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 5995.592429,
+            "audio_sec": 2.0,
+            "rtf": 2.9977962145
+          }
+        },
+        {
+          "t_ns": 1793329463880847565,
+          "arrival_ns": 1793329463881298462,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "dur_ms": 8785.110997,
+            "audio_sec": 3.2,
+            "rtf": 2.7453471865625
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793329440618941075,
+          "arrival_ns": 1793329440619240230,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "内瘘堵了可能。"
+          }
+        },
+        {
+          "t_ns": 1793329449119121412,
+          "arrival_ns": 1793329449119445751,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "摸不到震颤或听不到杂音，"
+          }
+        },
+        {
+          "t_ns": 1793329455120942842,
+          "arrival_ns": 1793329455122227990,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "应立即就医。"
+          }
+        },
+        {
+          "t_ns": 1793329463919121982,
+          "arrival_ns": 1793329463919517557,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "head": "早中晚都要自查震颤和杂音。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793329442715144393,
+          "arrival_ns": 1793329442715838395,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "interrupted": false,
+            "dur_ms": 2096.199172
+          }
+        },
+        {
+          "t_ns": 1793329451877197888,
+          "arrival_ns": 1793329451877636955,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "interrupted": false,
+            "dur_ms": 2758.072603
+          }
+        },
+        {
+          "t_ns": 1793329457226055500,
+          "arrival_ns": 1793329457229517127,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "interrupted": false,
+            "dur_ms": 2105.101794
+          }
+        },
+        {
+          "t_ns": 1793329467229236975,
+          "arrival_ns": 1793329467229646494,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "interrupted": false,
+            "dur_ms": 3310.11247
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793329467230169480,
+          "arrival_ns": 1793329467230603252,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 20,
+    "interval_s": 2.0
+  }
+}

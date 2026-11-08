@@ -1,0 +1,940 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1058399",
+  "host": "artrc",
+  "tag": "kb50",
+  "round_index": 12,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T10:18:40.637",
+  "finished_at": "2026-10-30T10:18:54.196",
+  "duration_s": 13.559,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "新做的内瘘什么时候能用来透析？",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793326720638154109,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793326720637731978,
+    "t_publish_question_ns": 1793326720638154109,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793326720638630474,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793326720638992014,
+      "ali_llm_output_start": 1793326721707460783,
+      "ali_llm_output_first_text": 1793326721707723016,
+      "ali_llm_output_done": 1793326722572463367,
+      "tts_realtime_data_start": 1793326721707754453,
+      "tts_realtime_data_first_text": 1793326721813050154,
+      "tts_realtime_data_done": 1793326722572856281,
+      "tts_session_finished": 1793326733892116657
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793326721813354699,
+      "tts_local.synth_start_first": 1793326721813439458,
+      "tts_local.synth_end_first": 1793326722446481697,
+      "tts_local.play_start_first": 1793326722495152780,
+      "tts_local.play_end_last": 1793326733888445012,
+      "tts_local.session_finished": 1793326733891782228
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.838,
+    "router_to_llm_first_ms": 1068.731,
+    "question_to_llm_first_ms": 1069.569,
+    "llm_first_to_done_ms": 864.74,
+    "question_to_llm_done_ms": 1934.309,
+    "llm_first_to_tts_first_text_ms": 105.327,
+    "question_to_tts_first_text_ms": 1174.896,
+    "first_tts_text_to_first_play_start_ms": 682.103,
+    "tts_rx_to_synth_end_ms": 633.127,
+    "tts_rx_to_play_start_ms": 681.798,
+    "tts_synth_end_to_play_start_ms": 48.671,
+    "question_to_first_audio_ms": 1856.999,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 13253.963,
+    "audio_total_sum_ms": 11391.099,
+    "audio_first_to_last_ms": 11393.292
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 837905,
+    "router_to_llm_first_ns": 1068731002,
+    "question_to_llm_first_ns": 1069568907,
+    "llm_first_to_done_ns": 864740351,
+    "question_to_llm_done_ns": 1934309258,
+    "llm_first_to_tts_first_text_ns": 105327138,
+    "question_to_tts_first_text_ns": 1174896045,
+    "first_tts_text_to_first_play_start_ns": 682102626,
+    "tts_rx_to_synth_end_ns": 633126998,
+    "tts_rx_to_play_start_ns": 681798081,
+    "tts_synth_end_to_play_start_ns": 48671083,
+    "question_to_first_audio_ns": 1856998671,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 13253962548,
+    "audio_total_sum_ns": 11391099208,
+    "audio_first_to_last_ns": 11393292232
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 1069568907,
+      "ms": 1069.569
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 864740351,
+      "ms": 864.74
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 105327138,
+      "ms": 105.327
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 682102626,
+      "ms": 682.103
+    },
+    "question_to_first_play_start": {
+      "ns": 1856998671,
+      "ms": 1856.999
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 13253962548,
+      "ms": 13253.963
+    },
+    "audio_total_sec": {
+      "ns": 11391099208,
+      "ms": 11391.099,
+      "sec": 11.391
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.838,
+    "router_to_llm_first_ms": 1068.731,
+    "question_to_llm_first_ms": 1069.569,
+    "llm_first_to_done_ms": 864.74,
+    "question_to_llm_done_ms": 1934.309,
+    "llm_first_to_tts_first_text_ms": 105.327,
+    "question_to_tts_first_text_ms": 1174.896,
+    "first_tts_text_to_first_play_start_ms": 682.103,
+    "tts_rx_to_synth_end_ms": 633.127,
+    "tts_rx_to_play_start_ms": 681.798,
+    "tts_synth_end_to_play_start_ms": 48.671,
+    "question_to_first_audio_ms": 1856.999,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 13253.963,
+    "audio_total_sum_ms": 11391.099,
+    "audio_first_to_last_ms": 11393.292
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793326721707460783,
+      "first_text_rx_ns": 1793326721707723016,
+      "done_rx_ns": 1793326722572463367,
+      "chunk_count": 11,
+      "char_count": 55,
+      "chunks": [
+        {
+          "t_ns": 1793326721707723016,
+          "text": "一般"
+        },
+        {
+          "t_ns": 1793326721750001141,
+          "text": "要"
+        },
+        {
+          "t_ns": 1793326721790759780,
+          "text": "6～8"
+        },
+        {
+          "t_ns": 1793326721812851465,
+          "text": "周。"
+        },
+        {
+          "t_ns": 1793326721968540443,
+          "text": "新瘘需成熟"
+        },
+        {
+          "t_ns": 1793326722097217878,
+          "text": "后才能使用，具体"
+        },
+        {
+          "t_ns": 1793326722166877806,
+          "text": "时间由医生和护士评估"
+        },
+        {
+          "t_ns": 1793326722238736032,
+          "text": "决定。  \n最好"
+        },
+        {
+          "t_ns": 1793326722541170610,
+          "text": "在术后3～4"
+        },
+        {
+          "t_ns": 1793326722541366660,
+          "text": "个月再开始穿"
+        },
+        {
+          "t_ns": 1793326722572118280,
+          "text": "刺透析。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793326721813050154,
+      "done_rx_ns": 1793326722572856281,
+      "text_count": 4,
+      "texts": [
+        {
+          "t_ns": 1793326721813050154,
+          "text": "一般要6～8周。"
+        },
+        {
+          "t_ns": 1793326722097476054,
+          "text": "新瘘需成熟后才能使用，"
+        },
+        {
+          "t_ns": 1793326722238916711,
+          "text": "具体时间由医生和护士评估决定。"
+        },
+        {
+          "t_ns": 1793326722572305041,
+          "text": "最好在术后3～4个月再开始穿刺透析。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 29,
+    "latency_events_total": 29,
+    "asr_events": 0,
+    "tts_events": 23,
+    "tts_play_pairs": 4,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793326720659958427,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793326720659725843,
+      "detail": {
+        "kind": "medical",
+        "chat_mode": false,
+        "source": "keyword",
+        "keyword_medical": true,
+        "judge_kind": null,
+        "judge_ms": 0.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793326720659725843, \"detail\": {\"kind\": \"medical\", \"chat_mode\": false, \"source\": \"keyword\", \"keyword_medical\": true, \"judge_kind\": null, \"judge_ms\": 0.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326720660257488,
+      "node": "llm_medical",
+      "stage": "rag_start",
+      "t_ns": 1793326720660145257,
+      "detail": {},
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_start\", \"t_ns\": 1793326720660145257, \"detail\": {}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326720677315867,
+      "node": "llm_medical",
+      "stage": "rag_end",
+      "t_ns": 1793326720677041596,
+      "detail": {
+        "n_chunks": 4,
+        "took_ms": 16.82,
+        "top1": "内瘘患者透析后注意事项"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_end\", \"t_ns\": 1793326720677041596, \"detail\": {\"n_chunks\": 4, \"took_ms\": 16.82, \"top1\": \"内瘘患者透析后注意事项\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326721707520888,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793326721707156189,
+      "detail": {
+        "prompt_chars": 1999,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793326721707156189, \"detail\": {\"prompt_chars\": 1999, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326721707781091,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793326721707594149,
+      "detail": {
+        "prompt_chars": 1999
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793326721707594149, \"detail\": {\"prompt_chars\": 1999}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326721708175929,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793326721708048175,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793326721708048175, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326721813522923,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793326721813354699,
+      "detail": {
+        "text_len": 8,
+        "head": "一般要6～8周。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793326721813354699, \"detail\": {\"text_len\": 8, \"head\": \"一般要6～8周。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326721813745167,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793326721813439458,
+      "detail": {
+        "text_len": 8
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793326721813439458, \"detail\": {\"text_len\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326722447713300,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793326722446481697,
+      "detail": {
+        "text_len": 8,
+        "dur_ms": 633.036944,
+        "audio_sec": 1.76,
+        "rtf": 0.3596800818181818
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793326722446481697, \"detail\": {\"text_len\": 8, \"dur_ms\": 633.036944, \"audio_sec\": 1.76, \"rtf\": 0.3596800818181818}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326722494627949,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793326722494384076,
+      "detail": {
+        "text_len": 11,
+        "head": "新瘘需成熟后才能使用，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793326722494384076, \"detail\": {\"text_len\": 11, \"head\": \"新瘘需成熟后才能使用，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326722494845868,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793326722494468308,
+      "detail": {
+        "text_len": 11
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793326722494468308, \"detail\": {\"text_len\": 11}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326722495291023,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793326722495152780,
+      "detail": {
+        "text_len": 8,
+        "head": "一般要6～8周。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793326722495152780, \"detail\": {\"text_len\": 8, \"head\": \"一般要6～8周。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326722572507989,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793326722572238080,
+      "detail": {
+        "chars": 58
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793326722572238080, \"detail\": {\"chars\": 58}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326723524810780,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793326723524537072,
+      "detail": {
+        "text_len": 11,
+        "dur_ms": 1030.064204,
+        "audio_sec": 2.96,
+        "rtf": 0.34799466351351355
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793326723524537072, \"detail\": {\"text_len\": 11, \"dur_ms\": 1030.064204, \"audio_sec\": 2.96, \"rtf\": 0.34799466351351355}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326723550961439,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793326723550714475,
+      "detail": {
+        "text_len": 15,
+        "head": "具体时间由医生和护士评估决定。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793326723550714475, \"detail\": {\"text_len\": 15, \"head\": \"具体时间由医生和护士评估决定。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326723551189143,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793326723550799910,
+      "detail": {
+        "text_len": 15
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793326723550799910, \"detail\": {\"text_len\": 15}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326724257414102,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793326724257083705,
+      "detail": {
+        "text_len": 8,
+        "interrupted": false,
+        "dur_ms": 1761.927859
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793326724257083705, \"detail\": {\"text_len\": 8, \"interrupted\": false, \"dur_ms\": 1761.927859}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326724258025206,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793326724257868041,
+      "detail": {
+        "text_len": 11,
+        "head": "新瘘需成熟后才能使用，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793326724257868041, \"detail\": {\"text_len\": 11, \"head\": \"新瘘需成熟后才能使用，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326724686720702,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793326724686374678,
+      "detail": {
+        "text_len": 15,
+        "dur_ms": 1135.567065,
+        "audio_sec": 3.2,
+        "rtf": 0.3548647078125
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793326724686374678, \"detail\": {\"text_len\": 15, \"dur_ms\": 1135.567065, \"audio_sec\": 3.2, \"rtf\": 0.3548647078125}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326724687249785,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793326724687091549,
+      "detail": {
+        "text_len": 18,
+        "head": "最好在术后3～4个月再开始穿刺透析。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793326724687091549, \"detail\": {\"text_len\": 18, \"head\": \"最好在术后3～4个月再开始穿刺透析。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326724687482195,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793326724687163153,
+      "detail": {
+        "text_len": 18
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793326724687163153, \"detail\": {\"text_len\": 18}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326725889745917,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793326725889459348,
+      "detail": {
+        "text_len": 18,
+        "dur_ms": 1202.290674,
+        "audio_sec": 3.44,
+        "rtf": 0.3495031029069768
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793326725889459348, \"detail\": {\"text_len\": 18, \"dur_ms\": 1202.290674, \"audio_sec\": 3.44, \"rtf\": 0.3495031029069768}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326725890232220,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793326725890086244,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793326725890086244, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326727227392125,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793326727226532507,
+      "detail": {
+        "text_len": 11,
+        "interrupted": false,
+        "dur_ms": 2968.660184
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793326727226532507, \"detail\": {\"text_len\": 11, \"interrupted\": false, \"dur_ms\": 2968.660184}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326727228158008,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793326727227274112,
+      "detail": {
+        "text_len": 15,
+        "head": "具体时间由医生和护士评估决定。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793326727227274112, \"detail\": {\"text_len\": 15, \"head\": \"具体时间由医生和护士评估决定。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326730434856711,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793326730434563865,
+      "detail": {
+        "text_len": 15,
+        "interrupted": false,
+        "dur_ms": 3207.286879
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793326730434563865, \"detail\": {\"text_len\": 15, \"interrupted\": false, \"dur_ms\": 3207.286879}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326730435390637,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793326730435230948,
+      "detail": {
+        "text_len": 18,
+        "head": "最好在术后3～4个月再开始穿刺透析。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793326730435230948, \"detail\": {\"text_len\": 18, \"head\": \"最好在术后3～4个月再开始穿刺透析。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326733888832903,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793326733888445012,
+      "detail": {
+        "text_len": 18,
+        "interrupted": false,
+        "dur_ms": 3453.209988
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793326733888445012, \"detail\": {\"text_len\": 18, \"interrupted\": false, \"dur_ms\": 3453.209988}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326733892169043,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793326733891782228,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793326733891782228, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793326720659725843,
+          "arrival_ns": 1793326720659958427,
+          "source": "round",
+          "detail": {
+            "kind": "medical",
+            "chat_mode": false,
+            "source": "keyword",
+            "keyword_medical": true,
+            "judge_kind": null,
+            "judge_ms": 0.0
+          }
+        }
+      ],
+      "rag_start": [
+        {
+          "t_ns": 1793326720660145257,
+          "arrival_ns": 1793326720660257488,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "rag_end": [
+        {
+          "t_ns": 1793326720677041596,
+          "arrival_ns": 1793326720677315867,
+          "source": "round",
+          "detail": {
+            "n_chunks": 4,
+            "took_ms": 16.82,
+            "top1": "内瘘患者透析后注意事项"
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793326721707156189,
+          "arrival_ns": 1793326721707520888,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1999,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793326721707594149,
+          "arrival_ns": 1793326721707781091,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1999
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793326722572238080,
+          "arrival_ns": 1793326722572507989,
+          "source": "round",
+          "detail": {
+            "chars": 58
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793326721708048175,
+          "arrival_ns": 1793326721708175929,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793326725890086244,
+          "arrival_ns": 1793326725890232220,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793326721813354699,
+          "arrival_ns": 1793326721813522923,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "一般要6～8周。"
+          }
+        },
+        {
+          "t_ns": 1793326722494384076,
+          "arrival_ns": 1793326722494627949,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "新瘘需成熟后才能使用，"
+          }
+        },
+        {
+          "t_ns": 1793326723550714475,
+          "arrival_ns": 1793326723550961439,
+          "source": "round",
+          "detail": {
+            "text_len": 15,
+            "head": "具体时间由医生和护士评估决定。"
+          }
+        },
+        {
+          "t_ns": 1793326724687091549,
+          "arrival_ns": 1793326724687249785,
+          "source": "round",
+          "detail": {
+            "text_len": 18,
+            "head": "最好在术后3～4个月再开始穿刺透析。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793326721813439458,
+          "arrival_ns": 1793326721813745167,
+          "source": "round",
+          "detail": {
+            "text_len": 8
+          }
+        },
+        {
+          "t_ns": 1793326722494468308,
+          "arrival_ns": 1793326722494845868,
+          "source": "round",
+          "detail": {
+            "text_len": 11
+          }
+        },
+        {
+          "t_ns": 1793326723550799910,
+          "arrival_ns": 1793326723551189143,
+          "source": "round",
+          "detail": {
+            "text_len": 15
+          }
+        },
+        {
+          "t_ns": 1793326724687163153,
+          "arrival_ns": 1793326724687482195,
+          "source": "round",
+          "detail": {
+            "text_len": 18
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793326722446481697,
+          "arrival_ns": 1793326722447713300,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "dur_ms": 633.036944,
+            "audio_sec": 1.76,
+            "rtf": 0.3596800818181818
+          }
+        },
+        {
+          "t_ns": 1793326723524537072,
+          "arrival_ns": 1793326723524810780,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "dur_ms": 1030.064204,
+            "audio_sec": 2.96,
+            "rtf": 0.34799466351351355
+          }
+        },
+        {
+          "t_ns": 1793326724686374678,
+          "arrival_ns": 1793326724686720702,
+          "source": "round",
+          "detail": {
+            "text_len": 15,
+            "dur_ms": 1135.567065,
+            "audio_sec": 3.2,
+            "rtf": 0.3548647078125
+          }
+        },
+        {
+          "t_ns": 1793326725889459348,
+          "arrival_ns": 1793326725889745917,
+          "source": "round",
+          "detail": {
+            "text_len": 18,
+            "dur_ms": 1202.290674,
+            "audio_sec": 3.44,
+            "rtf": 0.3495031029069768
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793326722495152780,
+          "arrival_ns": 1793326722495291023,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "一般要6～8周。"
+          }
+        },
+        {
+          "t_ns": 1793326724257868041,
+          "arrival_ns": 1793326724258025206,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "新瘘需成熟后才能使用，"
+          }
+        },
+        {
+          "t_ns": 1793326727227274112,
+          "arrival_ns": 1793326727228158008,
+          "source": "round",
+          "detail": {
+            "text_len": 15,
+            "head": "具体时间由医生和护士评估决定。"
+          }
+        },
+        {
+          "t_ns": 1793326730435230948,
+          "arrival_ns": 1793326730435390637,
+          "source": "round",
+          "detail": {
+            "text_len": 18,
+            "head": "最好在术后3～4个月再开始穿刺透析。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793326724257083705,
+          "arrival_ns": 1793326724257414102,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "interrupted": false,
+            "dur_ms": 1761.927859
+          }
+        },
+        {
+          "t_ns": 1793326727226532507,
+          "arrival_ns": 1793326727227392125,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "interrupted": false,
+            "dur_ms": 2968.660184
+          }
+        },
+        {
+          "t_ns": 1793326730434563865,
+          "arrival_ns": 1793326730434856711,
+          "source": "round",
+          "detail": {
+            "text_len": 15,
+            "interrupted": false,
+            "dur_ms": 3207.286879
+          }
+        },
+        {
+          "t_ns": 1793326733888445012,
+          "arrival_ns": 1793326733888832903,
+          "source": "round",
+          "detail": {
+            "text_len": 18,
+            "interrupted": false,
+            "dur_ms": 3453.209988
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793326733891782228,
+          "arrival_ns": 1793326733892169043,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 50,
+    "interval_s": 2.0
+  }
+}

@@ -1,0 +1,712 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1087678",
+  "host": "artrc",
+  "tag": "opt3_kb20",
+  "round_index": 15,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T11:32:19.657",
+  "finished_at": "2026-10-30T11:32:33.549",
+  "duration_s": 13.892,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "透析室的联系电话是多少？",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793331139657919568,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793331139657554191,
+    "t_publish_question_ns": 1793331139657919568,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793331139658345039,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793331139659007309,
+      "ali_llm_output_start": 1793331140088805044,
+      "ali_llm_output_first_text": 1793331140089272528,
+      "ali_llm_output_done": 1793331140946520258,
+      "tts_realtime_data_start": 1793331140089059792,
+      "tts_realtime_data_first_text": 1793331140727399595,
+      "tts_realtime_data_done": 1793331140946793478,
+      "tts_session_finished": 1793331153246093256
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793331140727614568,
+      "tts_local.synth_start_first": 1793331140727674181,
+      "tts_local.synth_end_first": 1793331142929177546,
+      "tts_local.play_start_first": 1793331143066892569,
+      "tts_local.play_end_last": 1793331153245267617,
+      "tts_local.session_finished": 1793331153245937561
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.088,
+    "router_to_llm_first_ms": 430.265,
+    "question_to_llm_first_ms": 431.353,
+    "llm_first_to_done_ms": 857.248,
+    "question_to_llm_done_ms": 1288.601,
+    "llm_first_to_tts_first_text_ms": 638.127,
+    "question_to_tts_first_text_ms": 1069.48,
+    "first_tts_text_to_first_play_start_ms": 2339.493,
+    "tts_rx_to_synth_end_ms": 2201.563,
+    "tts_rx_to_play_start_ms": 2339.278,
+    "tts_synth_end_to_play_start_ms": 137.715,
+    "question_to_first_audio_ms": 3408.973,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 13588.174,
+    "audio_total_sum_ms": 10177.673,
+    "audio_first_to_last_ms": 10178.375
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 1087741,
+    "router_to_llm_first_ns": 430265219,
+    "question_to_llm_first_ns": 431352960,
+    "llm_first_to_done_ns": 857247730,
+    "question_to_llm_done_ns": 1288600690,
+    "llm_first_to_tts_first_text_ns": 638127067,
+    "question_to_tts_first_text_ns": 1069480027,
+    "first_tts_text_to_first_play_start_ns": 2339492974,
+    "tts_rx_to_synth_end_ns": 2201562978,
+    "tts_rx_to_play_start_ns": 2339278001,
+    "tts_synth_end_to_play_start_ns": 137715023,
+    "question_to_first_audio_ns": 3408973001,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 13588173688,
+    "audio_total_sum_ns": 10177673393,
+    "audio_first_to_last_ns": 10178375048
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 431352960,
+      "ms": 431.353
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 857247730,
+      "ms": 857.248
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 638127067,
+      "ms": 638.127
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 2339492974,
+      "ms": 2339.493
+    },
+    "question_to_first_play_start": {
+      "ns": 3408973001,
+      "ms": 3408.973
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 13588173688,
+      "ms": 13588.174
+    },
+    "audio_total_sec": {
+      "ns": 10177673393,
+      "ms": 10177.673,
+      "sec": 10.178
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.088,
+    "router_to_llm_first_ms": 430.265,
+    "question_to_llm_first_ms": 431.353,
+    "llm_first_to_done_ms": 857.248,
+    "question_to_llm_done_ms": 1288.601,
+    "llm_first_to_tts_first_text_ms": 638.127,
+    "question_to_tts_first_text_ms": 1069.48,
+    "first_tts_text_to_first_play_start_ms": 2339.493,
+    "tts_rx_to_synth_end_ms": 2201.563,
+    "tts_rx_to_play_start_ms": 2339.278,
+    "tts_synth_end_to_play_start_ms": 137.715,
+    "question_to_first_audio_ms": 3408.973,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 13588.174,
+    "audio_total_sum_ms": 10177.673,
+    "audio_first_to_last_ms": 10178.375
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793331140088805044,
+      "first_text_rx_ns": 1793331140089272528,
+      "done_rx_ns": 1793331140946520258,
+      "chunk_count": 10,
+      "char_count": 45,
+      "chunks": [
+        {
+          "t_ns": 1793331140089272528,
+          "text": "0"
+        },
+        {
+          "t_ns": 1793331140128719803,
+          "text": "571"
+        },
+        {
+          "t_ns": 1793331140178824605,
+          "text": "-86"
+        },
+        {
+          "t_ns": 1793331140242286347,
+          "text": "932"
+        },
+        {
+          "t_ns": 1793331140374648482,
+          "text": "991 或"
+        },
+        {
+          "t_ns": 1793331140487958939,
+          "text": "0571-"
+        },
+        {
+          "t_ns": 1793331140601384771,
+          "text": "869186"
+        },
+        {
+          "t_ns": 1793331140727223831,
+          "text": "01。  \n这是"
+        },
+        {
+          "t_ns": 1793331140891432119,
+          "text": "本院血透中心"
+        },
+        {
+          "t_ns": 1793331140902374693,
+          "text": "咨询电话。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793331140727399595,
+      "done_rx_ns": 1793331140946793478,
+      "text_count": 2,
+      "texts": [
+        {
+          "t_ns": 1793331140727399595,
+          "text": "0571-86932991 或0571-86918601。"
+        },
+        {
+          "t_ns": 1793331140902612188,
+          "text": "这是本院血透中心咨询电话。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 19,
+    "latency_events_total": 19,
+    "asr_events": 0,
+    "tts_events": 13,
+    "tts_play_pairs": 2,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793331139680114840,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793331139679798499,
+      "detail": {
+        "kind": "medical",
+        "chat_mode": false,
+        "source": "keyword",
+        "keyword_medical": true,
+        "chitchat": false,
+        "judge_kind": null,
+        "judge_ms": 0.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793331139679798499, \"detail\": {\"kind\": \"medical\", \"chat_mode\": false, \"source\": \"keyword\", \"keyword_medical\": true, \"chitchat\": false, \"judge_kind\": null, \"judge_ms\": 0.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331139680310344,
+      "node": "llm_medical",
+      "stage": "rag_start",
+      "t_ns": 1793331139680212901,
+      "detail": {},
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_start\", \"t_ns\": 1793331139680212901, \"detail\": {}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331139692264960,
+      "node": "llm_medical",
+      "stage": "rag_end",
+      "t_ns": 1793331139691931181,
+      "detail": {
+        "n_chunks": 3,
+        "took_ms": 11.62,
+        "top1": "血液净化中心规章制度"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_end\", \"t_ns\": 1793331139691931181, \"detail\": {\"n_chunks\": 3, \"took_ms\": 11.62, \"top1\": \"血液净化中心规章制度\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331140088852140,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793331140088535783,
+      "detail": {
+        "prompt_chars": 1234,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793331140088535783, \"detail\": {\"prompt_chars\": 1234, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331140089091579,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793331140088967737,
+      "detail": {
+        "prompt_chars": 1234
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793331140088967737, \"detail\": {\"prompt_chars\": 1234}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331140089432742,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793331140089239977,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793331140089239977, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331140727754128,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793331140727614568,
+      "detail": {
+        "text_len": 29,
+        "head": "0571-86932991 或0571-8691"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793331140727614568, \"detail\": {\"text_len\": 29, \"head\": \"0571-86932991 或0571-8691\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331140727937796,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793331140727674181,
+      "detail": {
+        "text_len": 29
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793331140727674181, \"detail\": {\"text_len\": 29}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331140946563849,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793331140946242001,
+      "detail": {
+        "chars": 46
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793331140946242001, \"detail\": {\"chars\": 46}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331142929516302,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793331142929177546,
+      "detail": {
+        "text_len": 29,
+        "dur_ms": 2201.498695,
+        "audio_sec": 7.28,
+        "rtf": 0.3024036668956044
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793331142929177546, \"detail\": {\"text_len\": 29, \"dur_ms\": 2201.498695, \"audio_sec\": 7.28, \"rtf\": 0.3024036668956044}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331143066597837,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793331143066395369,
+      "detail": {
+        "text_len": 13,
+        "head": "这是本院血透中心咨询电话。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793331143066395369, \"detail\": {\"text_len\": 13, \"head\": \"这是本院血透中心咨询电话。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331143066812811,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793331143066459320,
+      "detail": {
+        "text_len": 13
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793331143066459320, \"detail\": {\"text_len\": 13}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331143067112826,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793331143066892569,
+      "detail": {
+        "text_len": 29,
+        "head": "0571-86932991 或0571-8691"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793331143066892569, \"detail\": {\"text_len\": 29, \"head\": \"0571-86932991 或0571-8691\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331143948316275,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793331143948017951,
+      "detail": {
+        "text_len": 13,
+        "dur_ms": 881.554701,
+        "audio_sec": 2.88,
+        "rtf": 0.30609538229166666
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793331143948017951, \"detail\": {\"text_len\": 13, \"dur_ms\": 881.554701, \"audio_sec\": 2.88, \"rtf\": 0.30609538229166666}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331143948757076,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793331143948510021,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793331143948510021, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331150368488124,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793331150368048532,
+      "detail": {
+        "text_len": 29,
+        "interrupted": false,
+        "dur_ms": 7301.153706
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793331150368048532, \"detail\": {\"text_len\": 29, \"interrupted\": false, \"dur_ms\": 7301.153706}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331150369102837,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793331150368750187,
+      "detail": {
+        "text_len": 13,
+        "head": "这是本院血透中心咨询电话。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793331150368750187, \"detail\": {\"text_len\": 13, \"head\": \"这是本院血透中心咨询电话。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331153245575718,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793331153245267617,
+      "detail": {
+        "text_len": 13,
+        "interrupted": false,
+        "dur_ms": 2876.514491
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793331153245267617, \"detail\": {\"text_len\": 13, \"interrupted\": false, \"dur_ms\": 2876.514491}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331153246127661,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793331153245937561,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793331153245937561, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793331139679798499,
+          "arrival_ns": 1793331139680114840,
+          "source": "round",
+          "detail": {
+            "kind": "medical",
+            "chat_mode": false,
+            "source": "keyword",
+            "keyword_medical": true,
+            "chitchat": false,
+            "judge_kind": null,
+            "judge_ms": 0.0
+          }
+        }
+      ],
+      "rag_start": [
+        {
+          "t_ns": 1793331139680212901,
+          "arrival_ns": 1793331139680310344,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "rag_end": [
+        {
+          "t_ns": 1793331139691931181,
+          "arrival_ns": 1793331139692264960,
+          "source": "round",
+          "detail": {
+            "n_chunks": 3,
+            "took_ms": 11.62,
+            "top1": "血液净化中心规章制度"
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793331140088535783,
+          "arrival_ns": 1793331140088852140,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1234,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793331140088967737,
+          "arrival_ns": 1793331140089091579,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1234
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793331140946242001,
+          "arrival_ns": 1793331140946563849,
+          "source": "round",
+          "detail": {
+            "chars": 46
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793331140089239977,
+          "arrival_ns": 1793331140089432742,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793331143948510021,
+          "arrival_ns": 1793331143948757076,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793331140727614568,
+          "arrival_ns": 1793331140727754128,
+          "source": "round",
+          "detail": {
+            "text_len": 29,
+            "head": "0571-86932991 或0571-8691"
+          }
+        },
+        {
+          "t_ns": 1793331143066395369,
+          "arrival_ns": 1793331143066597837,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "head": "这是本院血透中心咨询电话。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793331140727674181,
+          "arrival_ns": 1793331140727937796,
+          "source": "round",
+          "detail": {
+            "text_len": 29
+          }
+        },
+        {
+          "t_ns": 1793331143066459320,
+          "arrival_ns": 1793331143066812811,
+          "source": "round",
+          "detail": {
+            "text_len": 13
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793331142929177546,
+          "arrival_ns": 1793331142929516302,
+          "source": "round",
+          "detail": {
+            "text_len": 29,
+            "dur_ms": 2201.498695,
+            "audio_sec": 7.28,
+            "rtf": 0.3024036668956044
+          }
+        },
+        {
+          "t_ns": 1793331143948017951,
+          "arrival_ns": 1793331143948316275,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "dur_ms": 881.554701,
+            "audio_sec": 2.88,
+            "rtf": 0.30609538229166666
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793331143066892569,
+          "arrival_ns": 1793331143067112826,
+          "source": "round",
+          "detail": {
+            "text_len": 29,
+            "head": "0571-86932991 或0571-8691"
+          }
+        },
+        {
+          "t_ns": 1793331150368750187,
+          "arrival_ns": 1793331150369102837,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "head": "这是本院血透中心咨询电话。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793331150368048532,
+          "arrival_ns": 1793331150368488124,
+          "source": "round",
+          "detail": {
+            "text_len": 29,
+            "interrupted": false,
+            "dur_ms": 7301.153706
+          }
+        },
+        {
+          "t_ns": 1793331153245267617,
+          "arrival_ns": 1793331153245575718,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "interrupted": false,
+            "dur_ms": 2876.514491
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793331153245937561,
+          "arrival_ns": 1793331153246127661,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 45.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 20,
+    "interval_s": 2.0
+  }
+}

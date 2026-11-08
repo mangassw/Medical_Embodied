@@ -1,0 +1,934 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1077670",
+  "host": "artrc",
+  "tag": "opt2_kb20",
+  "round_index": 10,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T11:04:29.536",
+  "finished_at": "2026-10-30T11:05:04.653",
+  "duration_s": 35.117,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "透析完回家路上内瘘还在渗血怎么办？",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793329469537306497,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793329469536416015,
+    "t_publish_question_ns": 1793329469537306497,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793329469538562203,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793329469539038863,
+      "ali_llm_output_start": 1793329470836526910,
+      "ali_llm_output_first_text": 1793329470840990046,
+      "ali_llm_output_done": 1793329471580344619,
+      "tts_realtime_data_start": 1793329470841169842,
+      "tts_realtime_data_first_text": 1793329470950997715,
+      "tts_realtime_data_done": 1793329471580409401,
+      "tts_session_finished": 1793329504346413594
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793329470951372535,
+      "tts_local.synth_start_first": 1793329470951470370,
+      "tts_local.synth_end_first": 1793329476944984096,
+      "tts_local.play_start_first": 1793329477019132664,
+      "tts_local.play_end_last": 1793329504333341076,
+      "tts_local.session_finished": 1793329504340210347
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.732,
+    "router_to_llm_first_ms": 1301.951,
+    "question_to_llm_first_ms": 1303.684,
+    "llm_first_to_done_ms": 739.355,
+    "question_to_llm_done_ms": 2043.038,
+    "llm_first_to_tts_first_text_ms": 110.008,
+    "question_to_tts_first_text_ms": 1413.691,
+    "first_tts_text_to_first_play_start_ms": 6068.135,
+    "tts_rx_to_synth_end_ms": 5993.612,
+    "tts_rx_to_play_start_ms": 6067.76,
+    "tts_synth_end_to_play_start_ms": 74.149,
+    "question_to_first_audio_ms": 7481.826,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 34809.107,
+    "audio_total_sum_ms": 11410.909,
+    "audio_first_to_last_ms": 27314.208
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 1732366,
+    "router_to_llm_first_ns": 1301951183,
+    "question_to_llm_first_ns": 1303683549,
+    "llm_first_to_done_ns": 739354573,
+    "question_to_llm_done_ns": 2043038122,
+    "llm_first_to_tts_first_text_ns": 110007669,
+    "question_to_tts_first_text_ns": 1413691218,
+    "first_tts_text_to_first_play_start_ns": 6068134949,
+    "tts_rx_to_synth_end_ns": 5993611561,
+    "tts_rx_to_play_start_ns": 6067760129,
+    "tts_synth_end_to_play_start_ns": 74148568,
+    "question_to_first_audio_ns": 7481826167,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 34809107097,
+    "audio_total_sum_ns": 11410908657,
+    "audio_first_to_last_ns": 27314208412
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 1303683549,
+      "ms": 1303.684
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 739354573,
+      "ms": 739.355
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 110007669,
+      "ms": 110.008
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 6068134949,
+      "ms": 6068.135
+    },
+    "question_to_first_play_start": {
+      "ns": 7481826167,
+      "ms": 7481.826
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 34809107097,
+      "ms": 34809.107
+    },
+    "audio_total_sec": {
+      "ns": 11410908657,
+      "ms": 11410.909,
+      "sec": 11.411
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.732,
+    "router_to_llm_first_ms": 1301.951,
+    "question_to_llm_first_ms": 1303.684,
+    "llm_first_to_done_ms": 739.355,
+    "question_to_llm_done_ms": 2043.038,
+    "llm_first_to_tts_first_text_ms": 110.008,
+    "question_to_tts_first_text_ms": 1413.691,
+    "first_tts_text_to_first_play_start_ms": 6068.135,
+    "tts_rx_to_synth_end_ms": 5993.612,
+    "tts_rx_to_play_start_ms": 6067.76,
+    "tts_synth_end_to_play_start_ms": 74.149,
+    "question_to_first_audio_ms": 7481.826,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 34809.107,
+    "audio_total_sum_ms": 11410.909,
+    "audio_first_to_last_ms": 27314.208
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793329470836526910,
+      "first_text_rx_ns": 1793329470840990046,
+      "done_rx_ns": 1793329471580344619,
+      "chunk_count": 9,
+      "char_count": 41,
+      "chunks": [
+        {
+          "t_ns": 1793329470840990046,
+          "text": "先"
+        },
+        {
+          "t_ns": 1793329470868303945,
+          "text": "按"
+        },
+        {
+          "t_ns": 1793329470898784376,
+          "text": "压止血"
+        },
+        {
+          "t_ns": 1793329470950680779,
+          "text": "。  \n用"
+        },
+        {
+          "t_ns": 1793329471032563920,
+          "text": "75%酒精"
+        },
+        {
+          "t_ns": 1793329471192271753,
+          "text": "或PVP碘棉球"
+        },
+        {
+          "t_ns": 1793329471271705234,
+          "text": "消毒穿刺点。"
+        },
+        {
+          "t_ns": 1793329471403960523,
+          "text": "如持续渗血，"
+        },
+        {
+          "t_ns": 1793329471516695030,
+          "text": "马上通知医生。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793329470950997715,
+      "done_rx_ns": 1793329471580409401,
+      "text_count": 4,
+      "texts": [
+        {
+          "t_ns": 1793329470950997715,
+          "text": "先按压止血。"
+        },
+        {
+          "t_ns": 1793329471272152067,
+          "text": "用75%酒精或PVP碘棉球消毒穿刺点。"
+        },
+        {
+          "t_ns": 1793329471404232575,
+          "text": "如持续渗血，"
+        },
+        {
+          "t_ns": 1793329471518057348,
+          "text": "马上通知医生。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 29,
+    "latency_events_total": 29,
+    "asr_events": 0,
+    "tts_events": 23,
+    "tts_play_pairs": 4,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793329469561065500,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793329469560524825,
+      "detail": {
+        "kind": "medical",
+        "chat_mode": false,
+        "source": "keyword",
+        "keyword_medical": true,
+        "chitchat": false,
+        "judge_kind": null,
+        "judge_ms": 0.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793329469560524825, \"detail\": {\"kind\": \"medical\", \"chat_mode\": false, \"source\": \"keyword\", \"keyword_medical\": true, \"chitchat\": false, \"judge_kind\": null, \"judge_ms\": 0.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329469562275263,
+      "node": "llm_medical",
+      "stage": "rag_start",
+      "t_ns": 1793329469561811717,
+      "detail": {},
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_start\", \"t_ns\": 1793329469561811717, \"detail\": {}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329469648827814,
+      "node": "llm_medical",
+      "stage": "rag_end",
+      "t_ns": 1793329469648492377,
+      "detail": {
+        "n_chunks": 3,
+        "took_ms": 86.41,
+        "top1": "内瘘患者透析后注意事项"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_end\", \"t_ns\": 1793329469648492377, \"detail\": {\"n_chunks\": 3, \"took_ms\": 86.41, \"top1\": \"内瘘患者透析后注意事项\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329470836720144,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793329470835706427,
+      "detail": {
+        "prompt_chars": 1419,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793329470835706427, \"detail\": {\"prompt_chars\": 1419, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329470841303579,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793329470837184218,
+      "detail": {
+        "prompt_chars": 1419
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793329470837184218, \"detail\": {\"prompt_chars\": 1419}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329470862675493,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793329470861835578,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793329470861835578, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329470951596131,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329470951372535,
+      "detail": {
+        "text_len": 6,
+        "head": "先按压止血。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329470951372535, \"detail\": {\"text_len\": 6, \"head\": \"先按压止血。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329470951875420,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329470951470370,
+      "detail": {
+        "text_len": 6
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329470951470370, \"detail\": {\"text_len\": 6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329471579913844,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793329471579490382,
+      "detail": {
+        "chars": 44
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793329471579490382, \"detail\": {\"chars\": 44}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329476945372805,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329476944984096,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 5993.504421,
+        "audio_sec": 2.16,
+        "rtf": 2.7747705652777777
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329476944984096, \"detail\": {\"text_len\": 6, \"dur_ms\": 5993.504421, \"audio_sec\": 2.16, \"rtf\": 2.7747705652777777}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329476949152048,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329476948777075,
+      "detail": {
+        "text_len": 19,
+        "head": "用75%酒精或PVP碘棉球消毒穿刺点。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329476948777075, \"detail\": {\"text_len\": 19, \"head\": \"用75%酒精或PVP碘棉球消毒穿刺点。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329476949722687,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329476948870131,
+      "detail": {
+        "text_len": 19
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329476948870131, \"detail\": {\"text_len\": 19}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329477019649810,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329477019132664,
+      "detail": {
+        "text_len": 6,
+        "head": "先按压止血。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329477019132664, \"detail\": {\"text_len\": 6, \"head\": \"先按压止血。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329479264488131,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329479263986545,
+      "detail": {
+        "text_len": 6,
+        "interrupted": false,
+        "dur_ms": 2244.848469
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329479263986545, \"detail\": {\"text_len\": 6, \"interrupted\": false, \"dur_ms\": 2244.848469}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329491369150849,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329491368747352,
+      "detail": {
+        "text_len": 19,
+        "dur_ms": 14419.866238,
+        "audio_sec": 5.04,
+        "rtf": 2.8610845710317463
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329491368747352, \"detail\": {\"text_len\": 19, \"dur_ms\": 14419.866238, \"audio_sec\": 5.04, \"rtf\": 2.8610845710317463}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329491369875282,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329491369557619,
+      "detail": {
+        "text_len": 6,
+        "head": "如持续渗血，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329491369557619, \"detail\": {\"text_len\": 6, \"head\": \"如持续渗血，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329491370195480,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329491369672962,
+      "detail": {
+        "text_len": 6
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329491369672962, \"detail\": {\"text_len\": 6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329491419507161,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329491419056736,
+      "detail": {
+        "text_len": 19,
+        "head": "用75%酒精或PVP碘棉球消毒穿刺点。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329491419056736, \"detail\": {\"text_len\": 19, \"head\": \"用75%酒精或PVP碘棉球消毒穿刺点。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329496587477465,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329496587037157,
+      "detail": {
+        "text_len": 19,
+        "interrupted": false,
+        "dur_ms": 5167.976819
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329496587037157, \"detail\": {\"text_len\": 19, \"interrupted\": false, \"dur_ms\": 5167.976819}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329498840596450,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329498840195097,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 7470.515213,
+        "audio_sec": 2.48,
+        "rtf": 3.0123045213709676
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329498840195097, \"detail\": {\"text_len\": 6, \"dur_ms\": 7470.515213, \"audio_sec\": 2.48, \"rtf\": 3.0123045213709676}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329498841165060,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329498840986731,
+      "detail": {
+        "text_len": 7,
+        "head": "马上通知医生。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329498840986731, \"detail\": {\"text_len\": 7, \"head\": \"马上通知医生。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329498841441006,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329498841056896,
+      "detail": {
+        "text_len": 7
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329498841056896, \"detail\": {\"text_len\": 7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329498919572497,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329498919177088,
+      "detail": {
+        "text_len": 6,
+        "head": "如持续渗血，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329498919177088, \"detail\": {\"text_len\": 6, \"head\": \"如持续渗血，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329501404616488,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329501404172654,
+      "detail": {
+        "text_len": 6,
+        "interrupted": false,
+        "dur_ms": 2484.993927
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329501404172654, \"detail\": {\"text_len\": 6, \"interrupted\": false, \"dur_ms\": 2484.993927}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329502807599933,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329502806028983,
+      "detail": {
+        "text_len": 7,
+        "dur_ms": 3964.939998,
+        "audio_sec": 1.36,
+        "rtf": 2.9153970573529406
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329502806028983, \"detail\": {\"text_len\": 7, \"dur_ms\": 3964.939998, \"audio_sec\": 1.36, \"rtf\": 2.9153970573529406}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329502811867465,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793329502810248985,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793329502810248985, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329502821718628,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329502820262287,
+      "detail": {
+        "text_len": 7,
+        "head": "马上通知医生。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329502820262287, \"detail\": {\"text_len\": 7, \"head\": \"马上通知医生。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329504336386974,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329504333341076,
+      "detail": {
+        "text_len": 7,
+        "interrupted": false,
+        "dur_ms": 1513.074234
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329504333341076, \"detail\": {\"text_len\": 7, \"interrupted\": false, \"dur_ms\": 1513.074234}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329504349820752,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793329504340210347,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793329504340210347, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793329469560524825,
+          "arrival_ns": 1793329469561065500,
+          "source": "round",
+          "detail": {
+            "kind": "medical",
+            "chat_mode": false,
+            "source": "keyword",
+            "keyword_medical": true,
+            "chitchat": false,
+            "judge_kind": null,
+            "judge_ms": 0.0
+          }
+        }
+      ],
+      "rag_start": [
+        {
+          "t_ns": 1793329469561811717,
+          "arrival_ns": 1793329469562275263,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "rag_end": [
+        {
+          "t_ns": 1793329469648492377,
+          "arrival_ns": 1793329469648827814,
+          "source": "round",
+          "detail": {
+            "n_chunks": 3,
+            "took_ms": 86.41,
+            "top1": "内瘘患者透析后注意事项"
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793329470835706427,
+          "arrival_ns": 1793329470836720144,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1419,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793329470837184218,
+          "arrival_ns": 1793329470841303579,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1419
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793329471579490382,
+          "arrival_ns": 1793329471579913844,
+          "source": "round",
+          "detail": {
+            "chars": 44
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793329470861835578,
+          "arrival_ns": 1793329470862675493,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793329502810248985,
+          "arrival_ns": 1793329502811867465,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793329470951372535,
+          "arrival_ns": 1793329470951596131,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "先按压止血。"
+          }
+        },
+        {
+          "t_ns": 1793329476948777075,
+          "arrival_ns": 1793329476949152048,
+          "source": "round",
+          "detail": {
+            "text_len": 19,
+            "head": "用75%酒精或PVP碘棉球消毒穿刺点。"
+          }
+        },
+        {
+          "t_ns": 1793329491369557619,
+          "arrival_ns": 1793329491369875282,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "如持续渗血，"
+          }
+        },
+        {
+          "t_ns": 1793329498840986731,
+          "arrival_ns": 1793329498841165060,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "马上通知医生。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793329470951470370,
+          "arrival_ns": 1793329470951875420,
+          "source": "round",
+          "detail": {
+            "text_len": 6
+          }
+        },
+        {
+          "t_ns": 1793329476948870131,
+          "arrival_ns": 1793329476949722687,
+          "source": "round",
+          "detail": {
+            "text_len": 19
+          }
+        },
+        {
+          "t_ns": 1793329491369672962,
+          "arrival_ns": 1793329491370195480,
+          "source": "round",
+          "detail": {
+            "text_len": 6
+          }
+        },
+        {
+          "t_ns": 1793329498841056896,
+          "arrival_ns": 1793329498841441006,
+          "source": "round",
+          "detail": {
+            "text_len": 7
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793329476944984096,
+          "arrival_ns": 1793329476945372805,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 5993.504421,
+            "audio_sec": 2.16,
+            "rtf": 2.7747705652777777
+          }
+        },
+        {
+          "t_ns": 1793329491368747352,
+          "arrival_ns": 1793329491369150849,
+          "source": "round",
+          "detail": {
+            "text_len": 19,
+            "dur_ms": 14419.866238,
+            "audio_sec": 5.04,
+            "rtf": 2.8610845710317463
+          }
+        },
+        {
+          "t_ns": 1793329498840195097,
+          "arrival_ns": 1793329498840596450,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 7470.515213,
+            "audio_sec": 2.48,
+            "rtf": 3.0123045213709676
+          }
+        },
+        {
+          "t_ns": 1793329502806028983,
+          "arrival_ns": 1793329502807599933,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "dur_ms": 3964.939998,
+            "audio_sec": 1.36,
+            "rtf": 2.9153970573529406
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793329477019132664,
+          "arrival_ns": 1793329477019649810,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "先按压止血。"
+          }
+        },
+        {
+          "t_ns": 1793329491419056736,
+          "arrival_ns": 1793329491419507161,
+          "source": "round",
+          "detail": {
+            "text_len": 19,
+            "head": "用75%酒精或PVP碘棉球消毒穿刺点。"
+          }
+        },
+        {
+          "t_ns": 1793329498919177088,
+          "arrival_ns": 1793329498919572497,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "如持续渗血，"
+          }
+        },
+        {
+          "t_ns": 1793329502820262287,
+          "arrival_ns": 1793329502821718628,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "马上通知医生。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793329479263986545,
+          "arrival_ns": 1793329479264488131,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "interrupted": false,
+            "dur_ms": 2244.848469
+          }
+        },
+        {
+          "t_ns": 1793329496587037157,
+          "arrival_ns": 1793329496587477465,
+          "source": "round",
+          "detail": {
+            "text_len": 19,
+            "interrupted": false,
+            "dur_ms": 5167.976819
+          }
+        },
+        {
+          "t_ns": 1793329501404172654,
+          "arrival_ns": 1793329501404616488,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "interrupted": false,
+            "dur_ms": 2484.993927
+          }
+        },
+        {
+          "t_ns": 1793329504333341076,
+          "arrival_ns": 1793329504336386974,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "interrupted": false,
+            "dur_ms": 1513.074234
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793329504340210347,
+          "arrival_ns": 1793329504349820752,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 20,
+    "interval_s": 2.0
+  }
+}

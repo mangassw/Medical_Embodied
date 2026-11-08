@@ -1,0 +1,819 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1058399",
+  "host": "artrc",
+  "tag": "kb50",
+  "round_index": 21,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T10:20:46.035",
+  "finished_at": "2026-10-30T10:20:55.837",
+  "duration_s": 9.802,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "透析患者能做哪些运动？",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793326846036337110,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793326846035781432,
+    "t_publish_question_ns": 1793326846036337110,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793326846036977726,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793326846037282497,
+      "ali_llm_output_start": 1793326847072286891,
+      "ali_llm_output_first_text": 1793326847072669094,
+      "ali_llm_output_done": 1793326847659004518,
+      "tts_realtime_data_start": 1793326847072704908,
+      "tts_realtime_data_first_text": 1793326847180179499,
+      "tts_realtime_data_done": 1793326847659387560,
+      "tts_session_finished": 1793326855535805448
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793326847185525457,
+      "tts_local.synth_start_first": 1793326847185608127,
+      "tts_local.synth_end_first": 1793326847821370486,
+      "tts_local.play_start_first": 1793326847855152061,
+      "tts_local.play_end_last": 1793326855534636679,
+      "tts_local.session_finished": 1793326855535461262
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.945,
+    "router_to_llm_first_ms": 1035.387,
+    "question_to_llm_first_ms": 1036.332,
+    "llm_first_to_done_ms": 586.335,
+    "question_to_llm_done_ms": 1622.667,
+    "llm_first_to_tts_first_text_ms": 107.51,
+    "question_to_tts_first_text_ms": 1143.842,
+    "first_tts_text_to_first_play_start_ms": 674.973,
+    "tts_rx_to_synth_end_ms": 635.845,
+    "tts_rx_to_play_start_ms": 669.627,
+    "tts_synth_end_to_play_start_ms": 33.782,
+    "question_to_first_audio_ms": 1818.815,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 9499.468,
+    "audio_total_sum_ms": 7677.681,
+    "audio_first_to_last_ms": 7679.485
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 945387,
+    "router_to_llm_first_ns": 1035386597,
+    "question_to_llm_first_ns": 1036331984,
+    "llm_first_to_done_ns": 586335424,
+    "question_to_llm_done_ns": 1622667408,
+    "llm_first_to_tts_first_text_ns": 107510405,
+    "question_to_tts_first_text_ns": 1143842389,
+    "first_tts_text_to_first_play_start_ns": 674972562,
+    "tts_rx_to_synth_end_ns": 635845029,
+    "tts_rx_to_play_start_ns": 669626604,
+    "tts_synth_end_to_play_start_ns": 33781575,
+    "question_to_first_audio_ns": 1818814951,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 9499468338,
+    "audio_total_sum_ns": 7677680545,
+    "audio_first_to_last_ns": 7679484618
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 1036331984,
+      "ms": 1036.332
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 586335424,
+      "ms": 586.335
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 107510405,
+      "ms": 107.51
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 674972562,
+      "ms": 674.973
+    },
+    "question_to_first_play_start": {
+      "ns": 1818814951,
+      "ms": 1818.815
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 9499468338,
+      "ms": 9499.468
+    },
+    "audio_total_sec": {
+      "ns": 7677680545,
+      "ms": 7677.681,
+      "sec": 7.678
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.945,
+    "router_to_llm_first_ms": 1035.387,
+    "question_to_llm_first_ms": 1036.332,
+    "llm_first_to_done_ms": 586.335,
+    "question_to_llm_done_ms": 1622.667,
+    "llm_first_to_tts_first_text_ms": 107.51,
+    "question_to_tts_first_text_ms": 1143.842,
+    "first_tts_text_to_first_play_start_ms": 674.973,
+    "tts_rx_to_synth_end_ms": 635.845,
+    "tts_rx_to_play_start_ms": 669.627,
+    "tts_synth_end_to_play_start_ms": 33.782,
+    "question_to_first_audio_ms": 1818.815,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 9499.468,
+    "audio_total_sum_ms": 7677.681,
+    "audio_first_to_last_ms": 7679.485
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793326847072286891,
+      "first_text_rx_ns": 1793326847072669094,
+      "done_rx_ns": 1793326847659004518,
+      "chunk_count": 9,
+      "char_count": 30,
+      "chunks": [
+        {
+          "t_ns": 1793326847072669094,
+          "text": "可以"
+        },
+        {
+          "t_ns": 1793326847100789253,
+          "text": "做"
+        },
+        {
+          "t_ns": 1793326847154251297,
+          "text": "握"
+        },
+        {
+          "t_ns": 1793326847179854899,
+          "text": "力球。"
+        },
+        {
+          "t_ns": 1793326847260927952,
+          "text": "抬腿和"
+        },
+        {
+          "t_ns": 1793326847337272358,
+          "text": "床上脚踏车"
+        },
+        {
+          "t_ns": 1793326847421770458,
+          "text": "也适合。"
+        },
+        {
+          "t_ns": 1793326847530751287,
+          "text": "运动前要征"
+        },
+        {
+          "t_ns": 1793326847595218071,
+          "text": "得医生同意。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793326847180179499,
+      "done_rx_ns": 1793326847659387560,
+      "text_count": 3,
+      "texts": [
+        {
+          "t_ns": 1793326847180179499,
+          "text": "可以做握力球。"
+        },
+        {
+          "t_ns": 1793326847422113474,
+          "text": "抬腿和床上脚踏车也适合。"
+        },
+        {
+          "t_ns": 1793326847595421815,
+          "text": "运动前要征得医生同意。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 24,
+    "latency_events_total": 24,
+    "asr_events": 0,
+    "tts_events": 18,
+    "tts_play_pairs": 3,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793326846058279645,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793326846057937669,
+      "detail": {
+        "kind": "medical",
+        "chat_mode": false,
+        "source": "keyword",
+        "keyword_medical": true,
+        "judge_kind": null,
+        "judge_ms": 0.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793326846057937669, \"detail\": {\"kind\": \"medical\", \"chat_mode\": false, \"source\": \"keyword\", \"keyword_medical\": true, \"judge_kind\": null, \"judge_ms\": 0.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326846058598389,
+      "node": "llm_medical",
+      "stage": "rag_start",
+      "t_ns": 1793326846058387325,
+      "detail": {},
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_start\", \"t_ns\": 1793326846058387325, \"detail\": {}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326846068198352,
+      "node": "llm_medical",
+      "stage": "rag_end",
+      "t_ns": 1793326846067816384,
+      "detail": {
+        "n_chunks": 4,
+        "took_ms": 9.33,
+        "top1": "透析患者该如何运动"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_end\", \"t_ns\": 1793326846067816384, \"detail\": {\"n_chunks\": 4, \"took_ms\": 9.33, \"top1\": \"透析患者该如何运动\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326847072362649,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793326847071889411,
+      "detail": {
+        "prompt_chars": 1360,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793326847071889411, \"detail\": {\"prompt_chars\": 1360, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326847072733785,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793326847072394047,
+      "detail": {
+        "prompt_chars": 1360
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793326847072394047, \"detail\": {\"prompt_chars\": 1360}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326847073057477,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793326847072832050,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793326847072832050, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326847185836403,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793326847185525457,
+      "detail": {
+        "text_len": 7,
+        "head": "可以做握力球。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793326847185525457, \"detail\": {\"text_len\": 7, \"head\": \"可以做握力球。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326847186082447,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793326847185608127,
+      "detail": {
+        "text_len": 7
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793326847185608127, \"detail\": {\"text_len\": 7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326847659092617,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793326847658631219,
+      "detail": {
+        "chars": 36
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793326847658631219, \"detail\": {\"chars\": 36}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326847821856164,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793326847821370486,
+      "detail": {
+        "text_len": 7,
+        "dur_ms": 635.755478,
+        "audio_sec": 1.68,
+        "rtf": 0.3784258797619048
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793326847821370486, \"detail\": {\"text_len\": 7, \"dur_ms\": 635.755478, \"audio_sec\": 1.68, \"rtf\": 0.3784258797619048}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326847831714979,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793326847825342409,
+      "detail": {
+        "text_len": 12,
+        "head": "抬腿和床上脚踏车也适合。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793326847825342409, \"detail\": {\"text_len\": 12, \"head\": \"抬腿和床上脚踏车也适合。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326847832027173,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793326847825446730,
+      "detail": {
+        "text_len": 12
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793326847825446730, \"detail\": {\"text_len\": 12}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326847855548887,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793326847855152061,
+      "detail": {
+        "text_len": 7,
+        "head": "可以做握力球。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793326847855152061, \"detail\": {\"text_len\": 7, \"head\": \"可以做握力球。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326848958605057,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793326848958251313,
+      "detail": {
+        "text_len": 12,
+        "dur_ms": 1132.798614,
+        "audio_sec": 3.2,
+        "rtf": 0.353999566875
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793326848958251313, \"detail\": {\"text_len\": 12, \"dur_ms\": 1132.798614, \"audio_sec\": 3.2, \"rtf\": 0.353999566875}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326848959008150,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793326848958842612,
+      "detail": {
+        "text_len": 11,
+        "head": "运动前要征得医生同意。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793326848958842612, \"detail\": {\"text_len\": 11, \"head\": \"运动前要征得医生同意。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326848959188945,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793326848958911746,
+      "detail": {
+        "text_len": 11
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793326848958911746, \"detail\": {\"text_len\": 11}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326849536206697,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793326849535840829,
+      "detail": {
+        "text_len": 7,
+        "interrupted": false,
+        "dur_ms": 1680.68701
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793326849535840829, \"detail\": {\"text_len\": 7, \"interrupted\": false, \"dur_ms\": 1680.68701}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326849536787268,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793326849536667671,
+      "detail": {
+        "text_len": 12,
+        "head": "抬腿和床上脚踏车也适合。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793326849536667671, \"detail\": {\"text_len\": 12, \"head\": \"抬腿和床上脚踏车也适合。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326849957538586,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793326849957246173,
+      "detail": {
+        "text_len": 11,
+        "dur_ms": 998.328289,
+        "audio_sec": 2.8,
+        "rtf": 0.35654581750000003
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793326849957246173, \"detail\": {\"text_len\": 11, \"dur_ms\": 998.328289, \"audio_sec\": 2.8, \"rtf\": 0.35654581750000003}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326849958152205,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793326849958003999,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793326849958003999, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326852735983812,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793326852735664311,
+      "detail": {
+        "text_len": 12,
+        "interrupted": false,
+        "dur_ms": 3198.993009
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793326852735664311, \"detail\": {\"text_len\": 12, \"interrupted\": false, \"dur_ms\": 3198.993009}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326852736782666,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793326852736641542,
+      "detail": {
+        "text_len": 11,
+        "head": "运动前要征得医生同意。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793326852736641542, \"detail\": {\"text_len\": 11, \"head\": \"运动前要征得医生同意。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326855535031338,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793326855534636679,
+      "detail": {
+        "text_len": 11,
+        "interrupted": false,
+        "dur_ms": 2797.99102
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793326855534636679, \"detail\": {\"text_len\": 11, \"interrupted\": false, \"dur_ms\": 2797.99102}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326855535630415,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793326855535461262,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793326855535461262, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793326846057937669,
+          "arrival_ns": 1793326846058279645,
+          "source": "round",
+          "detail": {
+            "kind": "medical",
+            "chat_mode": false,
+            "source": "keyword",
+            "keyword_medical": true,
+            "judge_kind": null,
+            "judge_ms": 0.0
+          }
+        }
+      ],
+      "rag_start": [
+        {
+          "t_ns": 1793326846058387325,
+          "arrival_ns": 1793326846058598389,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "rag_end": [
+        {
+          "t_ns": 1793326846067816384,
+          "arrival_ns": 1793326846068198352,
+          "source": "round",
+          "detail": {
+            "n_chunks": 4,
+            "took_ms": 9.33,
+            "top1": "透析患者该如何运动"
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793326847071889411,
+          "arrival_ns": 1793326847072362649,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1360,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793326847072394047,
+          "arrival_ns": 1793326847072733785,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1360
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793326847658631219,
+          "arrival_ns": 1793326847659092617,
+          "source": "round",
+          "detail": {
+            "chars": 36
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793326847072832050,
+          "arrival_ns": 1793326847073057477,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793326849958003999,
+          "arrival_ns": 1793326849958152205,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793326847185525457,
+          "arrival_ns": 1793326847185836403,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "可以做握力球。"
+          }
+        },
+        {
+          "t_ns": 1793326847825342409,
+          "arrival_ns": 1793326847831714979,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "抬腿和床上脚踏车也适合。"
+          }
+        },
+        {
+          "t_ns": 1793326848958842612,
+          "arrival_ns": 1793326848959008150,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "运动前要征得医生同意。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793326847185608127,
+          "arrival_ns": 1793326847186082447,
+          "source": "round",
+          "detail": {
+            "text_len": 7
+          }
+        },
+        {
+          "t_ns": 1793326847825446730,
+          "arrival_ns": 1793326847832027173,
+          "source": "round",
+          "detail": {
+            "text_len": 12
+          }
+        },
+        {
+          "t_ns": 1793326848958911746,
+          "arrival_ns": 1793326848959188945,
+          "source": "round",
+          "detail": {
+            "text_len": 11
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793326847821370486,
+          "arrival_ns": 1793326847821856164,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "dur_ms": 635.755478,
+            "audio_sec": 1.68,
+            "rtf": 0.3784258797619048
+          }
+        },
+        {
+          "t_ns": 1793326848958251313,
+          "arrival_ns": 1793326848958605057,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "dur_ms": 1132.798614,
+            "audio_sec": 3.2,
+            "rtf": 0.353999566875
+          }
+        },
+        {
+          "t_ns": 1793326849957246173,
+          "arrival_ns": 1793326849957538586,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "dur_ms": 998.328289,
+            "audio_sec": 2.8,
+            "rtf": 0.35654581750000003
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793326847855152061,
+          "arrival_ns": 1793326847855548887,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "可以做握力球。"
+          }
+        },
+        {
+          "t_ns": 1793326849536667671,
+          "arrival_ns": 1793326849536787268,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "抬腿和床上脚踏车也适合。"
+          }
+        },
+        {
+          "t_ns": 1793326852736641542,
+          "arrival_ns": 1793326852736782666,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "运动前要征得医生同意。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793326849535840829,
+          "arrival_ns": 1793326849536206697,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "interrupted": false,
+            "dur_ms": 1680.68701
+          }
+        },
+        {
+          "t_ns": 1793326852735664311,
+          "arrival_ns": 1793326852735983812,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "interrupted": false,
+            "dur_ms": 3198.993009
+          }
+        },
+        {
+          "t_ns": 1793326855534636679,
+          "arrival_ns": 1793326855535031338,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "interrupted": false,
+            "dur_ms": 2797.99102
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793326855535461262,
+          "arrival_ns": 1793326855535630415,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 50,
+    "interval_s": 2.0
+  }
+}

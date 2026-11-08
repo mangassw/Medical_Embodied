@@ -1,0 +1,825 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1077670",
+  "host": "artrc",
+  "tag": "opt2_kb20",
+  "round_index": 5,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T11:01:51.243",
+  "finished_at": "2026-10-30T11:02:04.509",
+  "duration_s": 13.267,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "干体重是什么意思？",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793329311243562189,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793329311243099722,
+    "t_publish_question_ns": 1793329311243562189,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793329311244297386,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793329311244590366,
+      "ali_llm_output_start": 1793329313555761754,
+      "ali_llm_output_first_text": 1793329313556172336,
+      "ali_llm_output_done": 1793329314228939329,
+      "tts_realtime_data_start": 1793329313556224849,
+      "tts_realtime_data_first_text": 1793329313619732368,
+      "tts_realtime_data_done": 1793329314229218167,
+      "tts_session_finished": 1793329324204741456
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793329313652366482,
+      "tts_local.synth_start_first": 1793329313652450191,
+      "tts_local.synth_end_first": 1793329314288313151,
+      "tts_local.play_start_first": 1793329314318963276,
+      "tts_local.play_end_last": 1793329324203468840,
+      "tts_local.session_finished": 1793329324204485222
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.028,
+    "router_to_llm_first_ms": 2311.582,
+    "question_to_llm_first_ms": 2312.61,
+    "llm_first_to_done_ms": 672.767,
+    "question_to_llm_done_ms": 2985.377,
+    "llm_first_to_tts_first_text_ms": 63.56,
+    "question_to_tts_first_text_ms": 2376.17,
+    "first_tts_text_to_first_play_start_ms": 699.231,
+    "tts_rx_to_synth_end_ms": 635.947,
+    "tts_rx_to_play_start_ms": 666.597,
+    "tts_synth_end_to_play_start_ms": 30.65,
+    "question_to_first_audio_ms": 3075.401,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 12961.179,
+    "audio_total_sum_ms": 9882.977,
+    "audio_first_to_last_ms": 9884.506
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 1028177,
+    "router_to_llm_first_ns": 2311581970,
+    "question_to_llm_first_ns": 2312610147,
+    "llm_first_to_done_ns": 672766993,
+    "question_to_llm_done_ns": 2985377140,
+    "llm_first_to_tts_first_text_ns": 63560032,
+    "question_to_tts_first_text_ns": 2376170179,
+    "first_tts_text_to_first_play_start_ns": 699230908,
+    "tts_rx_to_synth_end_ns": 635946669,
+    "tts_rx_to_play_start_ns": 666596794,
+    "tts_synth_end_to_play_start_ns": 30650125,
+    "question_to_first_audio_ns": 3075401087,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 12961179267,
+    "audio_total_sum_ns": 9882976547,
+    "audio_first_to_last_ns": 9884505564
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 2312610147,
+      "ms": 2312.61
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 672766993,
+      "ms": 672.767
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 63560032,
+      "ms": 63.56
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 699230908,
+      "ms": 699.231
+    },
+    "question_to_first_play_start": {
+      "ns": 3075401087,
+      "ms": 3075.401
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 12961179267,
+      "ms": 12961.179
+    },
+    "audio_total_sec": {
+      "ns": 9882976547,
+      "ms": 9882.977,
+      "sec": 9.883
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.028,
+    "router_to_llm_first_ms": 2311.582,
+    "question_to_llm_first_ms": 2312.61,
+    "llm_first_to_done_ms": 672.767,
+    "question_to_llm_done_ms": 2985.377,
+    "llm_first_to_tts_first_text_ms": 63.56,
+    "question_to_tts_first_text_ms": 2376.17,
+    "first_tts_text_to_first_play_start_ms": 699.231,
+    "tts_rx_to_synth_end_ms": 635.947,
+    "tts_rx_to_play_start_ms": 666.597,
+    "tts_synth_end_to_play_start_ms": 30.65,
+    "question_to_first_audio_ms": 3075.401,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 12961.179,
+    "audio_total_sum_ms": 9882.977,
+    "audio_first_to_last_ms": 9884.506
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793329313555761754,
+      "first_text_rx_ns": 1793329313556172336,
+      "done_rx_ns": 1793329314228939329,
+      "chunk_count": 10,
+      "char_count": 43,
+      "chunks": [
+        {
+          "t_ns": 1793329313556172336,
+          "text": "是"
+        },
+        {
+          "t_ns": 1793329313577167247,
+          "text": "目标"
+        },
+        {
+          "t_ns": 1793329313619423020,
+          "text": "体重。"
+        },
+        {
+          "t_ns": 1793329313657529958,
+          "text": "干体重指"
+        },
+        {
+          "t_ns": 1793329313794884273,
+          "text": "透析后身体"
+        },
+        {
+          "t_ns": 1793329313900066507,
+          "text": "水分最适宜时"
+        },
+        {
+          "t_ns": 1793329313979247860,
+          "text": "的体重。  \n医生"
+        },
+        {
+          "t_ns": 1793329314096599786,
+          "text": "会根据它来"
+        },
+        {
+          "t_ns": 1793329314194615169,
+          "text": "设定每次脱水量"
+        },
+        {
+          "t_ns": 1793329314204461879,
+          "text": "。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793329313619732368,
+      "done_rx_ns": 1793329314229218167,
+      "text_count": 3,
+      "texts": [
+        {
+          "t_ns": 1793329313619732368,
+          "text": "是目标体重。"
+        },
+        {
+          "t_ns": 1793329313979603191,
+          "text": "干体重指透析后身体水分最适宜时的体重。"
+        },
+        {
+          "t_ns": 1793329314204670603,
+          "text": "医生会根据它来设定每次脱水量。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 24,
+    "latency_events_total": 24,
+    "asr_events": 0,
+    "tts_events": 18,
+    "tts_play_pairs": 3,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793329311265743554,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793329311265270151,
+      "detail": {
+        "kind": "medical",
+        "chat_mode": false,
+        "source": "keyword",
+        "keyword_medical": true,
+        "chitchat": false,
+        "judge_kind": null,
+        "judge_ms": 0.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793329311265270151, \"detail\": {\"kind\": \"medical\", \"chat_mode\": false, \"source\": \"keyword\", \"keyword_medical\": true, \"chitchat\": false, \"judge_kind\": null, \"judge_ms\": 0.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329311265940728,
+      "node": "llm_medical",
+      "stage": "rag_start",
+      "t_ns": 1793329311265766279,
+      "detail": {},
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_start\", \"t_ns\": 1793329311265766279, \"detail\": {}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329311278612396,
+      "node": "llm_medical",
+      "stage": "rag_end",
+      "t_ns": 1793329311278263483,
+      "detail": {
+        "n_chunks": 3,
+        "took_ms": 12.41,
+        "top1": "血液透析患者如何控水（水平衡管理）"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_end\", \"t_ns\": 1793329311278263483, \"detail\": {\"n_chunks\": 3, \"took_ms\": 12.41, \"top1\": \"血液透析患者如何控水（水平衡管理）\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329313555824559,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793329313555438915,
+      "detail": {
+        "prompt_chars": 994,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793329313555438915, \"detail\": {\"prompt_chars\": 994, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329313556268172,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793329313555877535,
+      "detail": {
+        "prompt_chars": 994
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793329313555877535, \"detail\": {\"prompt_chars\": 994}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329313556581987,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793329313556327279,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793329313556327279, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329313652619016,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329313652366482,
+      "detail": {
+        "text_len": 6,
+        "head": "是目标体重。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329313652366482, \"detail\": {\"text_len\": 6, \"head\": \"是目标体重。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329313652851461,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329313652450191,
+      "detail": {
+        "text_len": 6
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329313652450191, \"detail\": {\"text_len\": 6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329314228991915,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793329314228624255,
+      "detail": {
+        "chars": 46
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793329314228624255, \"detail\": {\"chars\": 46}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329314288708784,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329314288313151,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 635.854579,
+        "audio_sec": 1.76,
+        "rtf": 0.36128101079545455
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329314288313151, \"detail\": {\"text_len\": 6, \"dur_ms\": 635.854579, \"audio_sec\": 1.76, \"rtf\": 0.36128101079545455}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329314292189134,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329314291928229,
+      "detail": {
+        "text_len": 19,
+        "head": "干体重指透析后身体水分最适宜时的体重。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329314291928229, \"detail\": {\"text_len\": 19, \"head\": \"干体重指透析后身体水分最适宜时的体重。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329314292471349,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329314292002836,
+      "detail": {
+        "text_len": 19
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329314292002836, \"detail\": {\"text_len\": 19}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329314319294156,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329314318963276,
+      "detail": {
+        "text_len": 6,
+        "head": "是目标体重。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329314318963276, \"detail\": {\"text_len\": 6, \"head\": \"是目标体重。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329315937586586,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329315937244371,
+      "detail": {
+        "text_len": 19,
+        "dur_ms": 1645.233415,
+        "audio_sec": 4.88,
+        "rtf": 0.33713799487704915
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329315937244371, \"detail\": {\"text_len\": 19, \"dur_ms\": 1645.233415, \"audio_sec\": 4.88, \"rtf\": 0.33713799487704915}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329315938263860,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329315938034757,
+      "detail": {
+        "text_len": 15,
+        "head": "医生会根据它来设定每次脱水量。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329315938034757, \"detail\": {\"text_len\": 15, \"head\": \"医生会根据它来设定每次脱水量。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329315938551633,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329315938083417,
+      "detail": {
+        "text_len": 15
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329315938083417, \"detail\": {\"text_len\": 15}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329316102086546,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329316101726981,
+      "detail": {
+        "text_len": 6,
+        "interrupted": false,
+        "dur_ms": 1782.76265
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329316101726981, \"detail\": {\"text_len\": 6, \"interrupted\": false, \"dur_ms\": 1782.76265}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329316102699578,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329316102398754,
+      "detail": {
+        "text_len": 19,
+        "head": "干体重指透析后身体水分最适宜时的体重。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329316102398754, \"detail\": {\"text_len\": 19, \"head\": \"干体重指透析后身体水分最适宜时的体重。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329317044939228,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329317044660802,
+      "detail": {
+        "text_len": 15,
+        "dur_ms": 1106.57106,
+        "audio_sec": 3.2,
+        "rtf": 0.34580345625
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329317044660802, \"detail\": {\"text_len\": 15, \"dur_ms\": 1106.57106, \"audio_sec\": 3.2, \"rtf\": 0.34580345625}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329317045529910,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793329317045349918,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793329317045349918, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329320980791681,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329320980404953,
+      "detail": {
+        "text_len": 19,
+        "interrupted": false,
+        "dur_ms": 4878.001978
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329320980404953, \"detail\": {\"text_len\": 19, \"interrupted\": false, \"dur_ms\": 4878.001978}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329320981489507,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329320981262197,
+      "detail": {
+        "text_len": 15,
+        "head": "医生会根据它来设定每次脱水量。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329320981262197, \"detail\": {\"text_len\": 15, \"head\": \"医生会根据它来设定每次脱水量。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329324203791535,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329324203468840,
+      "detail": {
+        "text_len": 15,
+        "interrupted": false,
+        "dur_ms": 3222.202537
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329324203468840, \"detail\": {\"text_len\": 15, \"interrupted\": false, \"dur_ms\": 3222.202537}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329324204792845,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793329324204485222,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793329324204485222, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793329311265270151,
+          "arrival_ns": 1793329311265743554,
+          "source": "round",
+          "detail": {
+            "kind": "medical",
+            "chat_mode": false,
+            "source": "keyword",
+            "keyword_medical": true,
+            "chitchat": false,
+            "judge_kind": null,
+            "judge_ms": 0.0
+          }
+        }
+      ],
+      "rag_start": [
+        {
+          "t_ns": 1793329311265766279,
+          "arrival_ns": 1793329311265940728,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "rag_end": [
+        {
+          "t_ns": 1793329311278263483,
+          "arrival_ns": 1793329311278612396,
+          "source": "round",
+          "detail": {
+            "n_chunks": 3,
+            "took_ms": 12.41,
+            "top1": "血液透析患者如何控水（水平衡管理）"
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793329313555438915,
+          "arrival_ns": 1793329313555824559,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 994,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793329313555877535,
+          "arrival_ns": 1793329313556268172,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 994
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793329314228624255,
+          "arrival_ns": 1793329314228991915,
+          "source": "round",
+          "detail": {
+            "chars": 46
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793329313556327279,
+          "arrival_ns": 1793329313556581987,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793329317045349918,
+          "arrival_ns": 1793329317045529910,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793329313652366482,
+          "arrival_ns": 1793329313652619016,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "是目标体重。"
+          }
+        },
+        {
+          "t_ns": 1793329314291928229,
+          "arrival_ns": 1793329314292189134,
+          "source": "round",
+          "detail": {
+            "text_len": 19,
+            "head": "干体重指透析后身体水分最适宜时的体重。"
+          }
+        },
+        {
+          "t_ns": 1793329315938034757,
+          "arrival_ns": 1793329315938263860,
+          "source": "round",
+          "detail": {
+            "text_len": 15,
+            "head": "医生会根据它来设定每次脱水量。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793329313652450191,
+          "arrival_ns": 1793329313652851461,
+          "source": "round",
+          "detail": {
+            "text_len": 6
+          }
+        },
+        {
+          "t_ns": 1793329314292002836,
+          "arrival_ns": 1793329314292471349,
+          "source": "round",
+          "detail": {
+            "text_len": 19
+          }
+        },
+        {
+          "t_ns": 1793329315938083417,
+          "arrival_ns": 1793329315938551633,
+          "source": "round",
+          "detail": {
+            "text_len": 15
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793329314288313151,
+          "arrival_ns": 1793329314288708784,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 635.854579,
+            "audio_sec": 1.76,
+            "rtf": 0.36128101079545455
+          }
+        },
+        {
+          "t_ns": 1793329315937244371,
+          "arrival_ns": 1793329315937586586,
+          "source": "round",
+          "detail": {
+            "text_len": 19,
+            "dur_ms": 1645.233415,
+            "audio_sec": 4.88,
+            "rtf": 0.33713799487704915
+          }
+        },
+        {
+          "t_ns": 1793329317044660802,
+          "arrival_ns": 1793329317044939228,
+          "source": "round",
+          "detail": {
+            "text_len": 15,
+            "dur_ms": 1106.57106,
+            "audio_sec": 3.2,
+            "rtf": 0.34580345625
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793329314318963276,
+          "arrival_ns": 1793329314319294156,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "是目标体重。"
+          }
+        },
+        {
+          "t_ns": 1793329316102398754,
+          "arrival_ns": 1793329316102699578,
+          "source": "round",
+          "detail": {
+            "text_len": 19,
+            "head": "干体重指透析后身体水分最适宜时的体重。"
+          }
+        },
+        {
+          "t_ns": 1793329320981262197,
+          "arrival_ns": 1793329320981489507,
+          "source": "round",
+          "detail": {
+            "text_len": 15,
+            "head": "医生会根据它来设定每次脱水量。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793329316101726981,
+          "arrival_ns": 1793329316102086546,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "interrupted": false,
+            "dur_ms": 1782.76265
+          }
+        },
+        {
+          "t_ns": 1793329320980404953,
+          "arrival_ns": 1793329320980791681,
+          "source": "round",
+          "detail": {
+            "text_len": 19,
+            "interrupted": false,
+            "dur_ms": 4878.001978
+          }
+        },
+        {
+          "t_ns": 1793329324203468840,
+          "arrival_ns": 1793329324203791535,
+          "source": "round",
+          "detail": {
+            "text_len": 15,
+            "interrupted": false,
+            "dur_ms": 3222.202537
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793329324204485222,
+          "arrival_ns": 1793329324204792845,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 20,
+    "interval_s": 2.0
+  }
+}

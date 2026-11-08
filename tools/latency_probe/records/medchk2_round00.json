@@ -1,0 +1,1033 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1046479",
+  "host": "artrc",
+  "tag": "medchk2",
+  "round_index": 0,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T09:42:55.208",
+  "finished_at": "2026-10-30T09:43:08.207",
+  "duration_s": 13.0,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "我身上的导管能不能洗澡？",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793324575208469760,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793324575208025132,
+    "t_publish_question_ns": 1793324575208469760,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793324575486369607,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793324575486718280,
+      "ali_llm_output_start": 1793324577392804334,
+      "ali_llm_output_first_text": 1793324577393299056,
+      "ali_llm_output_done": 1793324577907682432,
+      "tts_realtime_data_start": 1793324577393094443,
+      "tts_realtime_data_first_text": 1793324577477701653,
+      "tts_realtime_data_done": 1793324577908582846,
+      "tts_session_finished": 1793324587907391627
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793324577477888777,
+      "tts_local.synth_start_first": 1793324577477948937,
+      "tts_local.synth_end_first": 1793324578163970164,
+      "tts_local.play_start_first": 1793324578261872113,
+      "tts_local.play_end_last": 1793324587906351333,
+      "tts_local.session_finished": 1793324587907165711
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 278.249,
+    "router_to_llm_first_ms": 1906.581,
+    "question_to_llm_first_ms": 2184.829,
+    "llm_first_to_done_ms": 514.383,
+    "question_to_llm_done_ms": 2699.213,
+    "llm_first_to_tts_first_text_ms": 84.403,
+    "question_to_tts_first_text_ms": 2269.232,
+    "first_tts_text_to_first_play_start_ms": 784.17,
+    "tts_rx_to_synth_end_ms": 686.081,
+    "tts_rx_to_play_start_ms": 783.983,
+    "tts_synth_end_to_play_start_ms": 97.902,
+    "question_to_first_audio_ms": 3053.402,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 12698.922,
+    "audio_total_sum_ms": 9641.7,
+    "audio_first_to_last_ms": 9644.479
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 278248520,
+    "router_to_llm_first_ns": 1906580776,
+    "question_to_llm_first_ns": 2184829296,
+    "llm_first_to_done_ns": 514383376,
+    "question_to_llm_done_ns": 2699212672,
+    "llm_first_to_tts_first_text_ns": 84402597,
+    "question_to_tts_first_text_ns": 2269231893,
+    "first_tts_text_to_first_play_start_ns": 784170460,
+    "tts_rx_to_synth_end_ns": 686081387,
+    "tts_rx_to_play_start_ns": 783983336,
+    "tts_synth_end_to_play_start_ns": 97901949,
+    "question_to_first_audio_ns": 3053402353,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 12698921867,
+    "audio_total_sum_ns": 9641700365,
+    "audio_first_to_last_ns": 9644479220
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 2184829296,
+      "ms": 2184.829
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 514383376,
+      "ms": 514.383
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 84402597,
+      "ms": 84.403
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 784170460,
+      "ms": 784.17
+    },
+    "question_to_first_play_start": {
+      "ns": 3053402353,
+      "ms": 3053.402
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 12698921867,
+      "ms": 12698.922
+    },
+    "audio_total_sec": {
+      "ns": 9641700365,
+      "ms": 9641.7,
+      "sec": 9.642
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 278.249,
+    "router_to_llm_first_ms": 1906.581,
+    "question_to_llm_first_ms": 2184.829,
+    "llm_first_to_done_ms": 514.383,
+    "question_to_llm_done_ms": 2699.213,
+    "llm_first_to_tts_first_text_ms": 84.403,
+    "question_to_tts_first_text_ms": 2269.232,
+    "first_tts_text_to_first_play_start_ms": 784.17,
+    "tts_rx_to_synth_end_ms": 686.081,
+    "tts_rx_to_play_start_ms": 783.983,
+    "tts_synth_end_to_play_start_ms": 97.902,
+    "question_to_first_audio_ms": 3053.402,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 12698.922,
+    "audio_total_sum_ms": 9641.7,
+    "audio_first_to_last_ms": 9644.479
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793324577392804334,
+      "first_text_rx_ns": 1793324577393299056,
+      "done_rx_ns": 1793324577907682432,
+      "chunk_count": 8,
+      "char_count": 33,
+      "chunks": [
+        {
+          "t_ns": 1793324577393299056,
+          "text": "绝对"
+        },
+        {
+          "t_ns": 1793324577427901685,
+          "text": "禁止洗澡"
+        },
+        {
+          "t_ns": 1793324577477482950,
+          "text": "。  \n淋"
+        },
+        {
+          "t_ns": 1793324577524630634,
+          "text": "浴、盆"
+        },
+        {
+          "t_ns": 1793324577673698531,
+          "text": "浴、游泳都不"
+        },
+        {
+          "t_ns": 1793324577777907274,
+          "text": "行，擦浴也要"
+        },
+        {
+          "t_ns": 1793324577808626872,
+          "text": "避开导管区域"
+        },
+        {
+          "t_ns": 1793324577873628724,
+          "text": "。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793324577477701653,
+      "done_rx_ns": 1793324577908582846,
+      "text_count": 5,
+      "texts": [
+        {
+          "t_ns": 1793324577477701653,
+          "text": "绝对禁止洗澡。"
+        },
+        {
+          "t_ns": 1793324577524832703,
+          "text": "淋浴、"
+        },
+        {
+          "t_ns": 1793324577673953572,
+          "text": "盆浴、"
+        },
+        {
+          "t_ns": 1793324577778126094,
+          "text": "游泳都不行，"
+        },
+        {
+          "t_ns": 1793324577873975546,
+          "text": "擦浴也要避开导管区域。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 34,
+    "latency_events_total": 34,
+    "asr_events": 0,
+    "tts_events": 28,
+    "tts_play_pairs": 5,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793324575507524219,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793324575507194843,
+      "detail": {
+        "kind": "medical",
+        "chat_mode": false
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793324575507194843, \"detail\": {\"kind\": \"medical\", \"chat_mode\": false}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324575507901366,
+      "node": "llm_medical",
+      "stage": "rag_start",
+      "t_ns": 1793324575507620385,
+      "detail": {},
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_start\", \"t_ns\": 1793324575507620385, \"detail\": {}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324575528358177,
+      "node": "llm_medical",
+      "stage": "rag_end",
+      "t_ns": 1793324575528010177,
+      "detail": {
+        "n_chunks": 4,
+        "took_ms": 20.28,
+        "top1": "血液透析导管的日常护理"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_end\", \"t_ns\": 1793324575528010177, \"detail\": {\"n_chunks\": 4, \"took_ms\": 20.28, \"top1\": \"血液透析导管的日常护理\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324577392850424,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793324577392440877,
+      "detail": {
+        "prompt_chars": 1061,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793324577392440877, \"detail\": {\"prompt_chars\": 1061, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324577393126055,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793324577392953735,
+      "detail": {
+        "prompt_chars": 1061
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793324577392953735, \"detail\": {\"prompt_chars\": 1061}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324577393595545,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793324577393387275,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793324577393387275, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324577478017667,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793324577477888777,
+      "detail": {
+        "text_len": 7,
+        "head": "绝对禁止洗澡。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793324577477888777, \"detail\": {\"text_len\": 7, \"head\": \"绝对禁止洗澡。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324577478193136,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793324577477948937,
+      "detail": {
+        "text_len": 7
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793324577477948937, \"detail\": {\"text_len\": 7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324577907739139,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793324577907351896,
+      "detail": {
+        "chars": 33
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793324577907351896, \"detail\": {\"chars\": 33}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324578164275557,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793324578163970164,
+      "detail": {
+        "text_len": 7,
+        "dur_ms": 686.016473,
+        "audio_sec": 1.84,
+        "rtf": 0.372835039673913
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793324578163970164, \"detail\": {\"text_len\": 7, \"dur_ms\": 686.016473, \"audio_sec\": 1.84, \"rtf\": 0.372835039673913}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324578164606012,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793324578164476689,
+      "detail": {
+        "text_len": 3,
+        "head": "淋浴、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793324578164476689, \"detail\": {\"text_len\": 3, \"head\": \"淋浴、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324578164790625,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793324578164528503,
+      "detail": {
+        "text_len": 3
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793324578164528503, \"detail\": {\"text_len\": 3}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324578263694929,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793324578261872113,
+      "detail": {
+        "text_len": 7,
+        "head": "绝对禁止洗澡。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793324578261872113, \"detail\": {\"text_len\": 7, \"head\": \"绝对禁止洗澡。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324578751364764,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793324578751111910,
+      "detail": {
+        "text_len": 3,
+        "dur_ms": 586.577921,
+        "audio_sec": 1.52,
+        "rtf": 0.38590652697368416
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793324578751111910, \"detail\": {\"text_len\": 3, \"dur_ms\": 586.577921, \"audio_sec\": 1.52, \"rtf\": 0.38590652697368416}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324578751733209,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793324578751630384,
+      "detail": {
+        "text_len": 3,
+        "head": "盆浴、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793324578751630384, \"detail\": {\"text_len\": 3, \"head\": \"盆浴、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324578751911306,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793324578751668220,
+      "detail": {
+        "text_len": 3
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793324578751668220, \"detail\": {\"text_len\": 3}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324579553718622,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793324579553377170,
+      "detail": {
+        "text_len": 3,
+        "dur_ms": 801.702767,
+        "audio_sec": 2.24,
+        "rtf": 0.3579030209821428
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793324579553377170, \"detail\": {\"text_len\": 3, \"dur_ms\": 801.702767, \"audio_sec\": 2.24, \"rtf\": 0.3579030209821428}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324579554173575,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793324579554019553,
+      "detail": {
+        "text_len": 6,
+        "head": "游泳都不行，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793324579554019553, \"detail\": {\"text_len\": 6, \"head\": \"游泳都不行，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324579554410763,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793324579554083997,
+      "detail": {
+        "text_len": 6
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793324579554083997, \"detail\": {\"text_len\": 6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324580098205849,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793324580097894678,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 543.806304,
+        "audio_sec": 1.44,
+        "rtf": 0.37764326666666664
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793324580097894678, \"detail\": {\"text_len\": 6, \"dur_ms\": 543.806304, \"audio_sec\": 1.44, \"rtf\": 0.37764326666666664}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324580098632142,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793324580098492317,
+      "detail": {
+        "text_len": 11,
+        "head": "擦浴也要避开导管区域。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793324580098492317, \"detail\": {\"text_len\": 11, \"head\": \"擦浴也要避开导管区域。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324580098819042,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793324580098547574,
+      "detail": {
+        "text_len": 11
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793324580098547574, \"detail\": {\"text_len\": 11}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324580136355588,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793324580136059014,
+      "detail": {
+        "text_len": 7,
+        "interrupted": false,
+        "dur_ms": 1874.186811
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793324580136059014, \"detail\": {\"text_len\": 7, \"interrupted\": false, \"dur_ms\": 1874.186811}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324580136870426,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793324580136700487,
+      "detail": {
+        "text_len": 3,
+        "head": "淋浴、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793324580136700487, \"detail\": {\"text_len\": 3, \"head\": \"淋浴、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324580998058018,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793324580997753185,
+      "detail": {
+        "text_len": 11,
+        "dur_ms": 899.20828,
+        "audio_sec": 2.48,
+        "rtf": 0.36258398387096774
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793324580997753185, \"detail\": {\"text_len\": 11, \"dur_ms\": 899.20828, \"audio_sec\": 2.48, \"rtf\": 0.36258398387096774}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324580998383086,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793324580998277179,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793324580998277179, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324581674591383,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793324581674254123,
+      "detail": {
+        "text_len": 3,
+        "interrupted": false,
+        "dur_ms": 1537.549029
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793324581674254123, \"detail\": {\"text_len\": 3, \"interrupted\": false, \"dur_ms\": 1537.549029}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324581675118578,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793324581674960153,
+      "detail": {
+        "text_len": 3,
+        "head": "盆浴、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793324581674960153, \"detail\": {\"text_len\": 3, \"head\": \"盆浴、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324583941279344,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793324583940946053,
+      "detail": {
+        "text_len": 3,
+        "interrupted": false,
+        "dur_ms": 2265.981417
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793324583940946053, \"detail\": {\"text_len\": 3, \"interrupted\": false, \"dur_ms\": 2265.981417}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324583941804919,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793324583941664308,
+      "detail": {
+        "text_len": 6,
+        "head": "游泳都不行，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793324583941664308, \"detail\": {\"text_len\": 6, \"head\": \"游泳都不行，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324585399929372,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793324585399579287,
+      "detail": {
+        "text_len": 6,
+        "interrupted": false,
+        "dur_ms": 1457.912155
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793324585399579287, \"detail\": {\"text_len\": 6, \"interrupted\": false, \"dur_ms\": 1457.912155}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324585400448230,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793324585400292384,
+      "detail": {
+        "text_len": 11,
+        "head": "擦浴也要避开导管区域。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793324585400292384, \"detail\": {\"text_len\": 11, \"head\": \"擦浴也要避开导管区域。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324587906664758,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793324587906351333,
+      "detail": {
+        "text_len": 11,
+        "interrupted": false,
+        "dur_ms": 2506.054639
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793324587906351333, \"detail\": {\"text_len\": 11, \"interrupted\": false, \"dur_ms\": 2506.054639}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324587907437210,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793324587907165711,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793324587907165711, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793324575507194843,
+          "arrival_ns": 1793324575507524219,
+          "source": "round",
+          "detail": {
+            "kind": "medical",
+            "chat_mode": false
+          }
+        }
+      ],
+      "rag_start": [
+        {
+          "t_ns": 1793324575507620385,
+          "arrival_ns": 1793324575507901366,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "rag_end": [
+        {
+          "t_ns": 1793324575528010177,
+          "arrival_ns": 1793324575528358177,
+          "source": "round",
+          "detail": {
+            "n_chunks": 4,
+            "took_ms": 20.28,
+            "top1": "血液透析导管的日常护理"
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793324577392440877,
+          "arrival_ns": 1793324577392850424,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1061,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793324577392953735,
+          "arrival_ns": 1793324577393126055,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1061
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793324577907351896,
+          "arrival_ns": 1793324577907739139,
+          "source": "round",
+          "detail": {
+            "chars": 33
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793324577393387275,
+          "arrival_ns": 1793324577393595545,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793324580998277179,
+          "arrival_ns": 1793324580998383086,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793324577477888777,
+          "arrival_ns": 1793324577478017667,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "绝对禁止洗澡。"
+          }
+        },
+        {
+          "t_ns": 1793324578164476689,
+          "arrival_ns": 1793324578164606012,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "head": "淋浴、"
+          }
+        },
+        {
+          "t_ns": 1793324578751630384,
+          "arrival_ns": 1793324578751733209,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "head": "盆浴、"
+          }
+        },
+        {
+          "t_ns": 1793324579554019553,
+          "arrival_ns": 1793324579554173575,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "游泳都不行，"
+          }
+        },
+        {
+          "t_ns": 1793324580098492317,
+          "arrival_ns": 1793324580098632142,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "擦浴也要避开导管区域。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793324577477948937,
+          "arrival_ns": 1793324577478193136,
+          "source": "round",
+          "detail": {
+            "text_len": 7
+          }
+        },
+        {
+          "t_ns": 1793324578164528503,
+          "arrival_ns": 1793324578164790625,
+          "source": "round",
+          "detail": {
+            "text_len": 3
+          }
+        },
+        {
+          "t_ns": 1793324578751668220,
+          "arrival_ns": 1793324578751911306,
+          "source": "round",
+          "detail": {
+            "text_len": 3
+          }
+        },
+        {
+          "t_ns": 1793324579554083997,
+          "arrival_ns": 1793324579554410763,
+          "source": "round",
+          "detail": {
+            "text_len": 6
+          }
+        },
+        {
+          "t_ns": 1793324580098547574,
+          "arrival_ns": 1793324580098819042,
+          "source": "round",
+          "detail": {
+            "text_len": 11
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793324578163970164,
+          "arrival_ns": 1793324578164275557,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "dur_ms": 686.016473,
+            "audio_sec": 1.84,
+            "rtf": 0.372835039673913
+          }
+        },
+        {
+          "t_ns": 1793324578751111910,
+          "arrival_ns": 1793324578751364764,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "dur_ms": 586.577921,
+            "audio_sec": 1.52,
+            "rtf": 0.38590652697368416
+          }
+        },
+        {
+          "t_ns": 1793324579553377170,
+          "arrival_ns": 1793324579553718622,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "dur_ms": 801.702767,
+            "audio_sec": 2.24,
+            "rtf": 0.3579030209821428
+          }
+        },
+        {
+          "t_ns": 1793324580097894678,
+          "arrival_ns": 1793324580098205849,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 543.806304,
+            "audio_sec": 1.44,
+            "rtf": 0.37764326666666664
+          }
+        },
+        {
+          "t_ns": 1793324580997753185,
+          "arrival_ns": 1793324580998058018,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "dur_ms": 899.20828,
+            "audio_sec": 2.48,
+            "rtf": 0.36258398387096774
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793324578261872113,
+          "arrival_ns": 1793324578263694929,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "绝对禁止洗澡。"
+          }
+        },
+        {
+          "t_ns": 1793324580136700487,
+          "arrival_ns": 1793324580136870426,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "head": "淋浴、"
+          }
+        },
+        {
+          "t_ns": 1793324581674960153,
+          "arrival_ns": 1793324581675118578,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "head": "盆浴、"
+          }
+        },
+        {
+          "t_ns": 1793324583941664308,
+          "arrival_ns": 1793324583941804919,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "游泳都不行，"
+          }
+        },
+        {
+          "t_ns": 1793324585400292384,
+          "arrival_ns": 1793324585400448230,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "擦浴也要避开导管区域。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793324580136059014,
+          "arrival_ns": 1793324580136355588,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "interrupted": false,
+            "dur_ms": 1874.186811
+          }
+        },
+        {
+          "t_ns": 1793324581674254123,
+          "arrival_ns": 1793324581674591383,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "interrupted": false,
+            "dur_ms": 1537.549029
+          }
+        },
+        {
+          "t_ns": 1793324583940946053,
+          "arrival_ns": 1793324583941279344,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "interrupted": false,
+            "dur_ms": 2265.981417
+          }
+        },
+        {
+          "t_ns": 1793324585399579287,
+          "arrival_ns": 1793324585399929372,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "interrupted": false,
+            "dur_ms": 1457.912155
+          }
+        },
+        {
+          "t_ns": 1793324587906351333,
+          "arrival_ns": 1793324587906664758,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "interrupted": false,
+            "dur_ms": 2506.054639
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793324587907165711,
+          "arrival_ns": 1793324587907437210,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 40.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 1,
+    "interval_s": 1.0
+  }
+}

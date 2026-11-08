@@ -1,0 +1,25 @@
+metric,label,count,mean_ms,median_ms,p95_ms,min_ms,max_ms,stdev_ms
+asr_kws_to_start_asr_ms,ASR: kws_detected→start_asr,3,0.906,0.883,0.977,0.858,0.977,0.063
+asr_start_asr_to_endpoint_ms,ASR: start_asr→endpoint,3,800.0,800.0,800.0,800.0,800.0,0.0
+asr_endpoint_to_nurse_req_ms,ASR: endpoint→nurse_req,3,50.0,50.0,50.0,50.0,50.0,0.0
+asr_nurse_req_to_nurse_resp_ms,ASR: nurse_req→nurse_resp,3,250.0,250.0,250.0,250.0,250.0,0.0
+asr_nurse_resp_to_publish_question_ms,ASR: nurse_resp→publish_question,3,5.0,5.0,5.0,5.0,5.0,0.0
+asr_endpoint_to_question_rx_ms,ASR: endpoint→probe收到question,3,307.863,307.953,308.372,307.264,308.372,0.559
+asr_publish_question_to_rx_ms,ASR: publish_question→probe收到,3,2.863,2.953,3.372,2.264,3.372,0.559
+question_to_router_ms,Router: question→路由话题到达,3,29.667,29.785,30.162,29.054,30.162,0.563
+router_to_llm_first_ms,LLM: 路由话题→首块,3,119.911,119.97,120.112,119.651,120.112,0.236
+question_to_llm_first_ms,LLM TTFT: question→首块,3,149.579,149.437,150.133,149.166,150.133,0.499
+llm_first_to_done_ms,LLM 总时长: 首块→[DONE],3,599.949,599.92,600.043,599.884,600.043,0.083
+question_to_llm_done_ms,LLM: question→[DONE],3,749.528,749.357,750.176,749.051,750.176,0.582
+llm_first_to_tts_first_text_ms,断句: LLM首块→首个TTS文本,3,201.057,200.773,201.872,200.525,201.872,0.717
+question_to_tts_first_text_ms,断句: question→首个TTS文本,3,350.635,350.21,352.004,349.691,352.004,1.214
+first_tts_text_to_first_play_start_ms,断句: 首个TTS文本→首音,3,1203.502,1203.837,1203.937,1202.732,1203.937,0.669
+tts_rx_to_synth_end_ms,TTS 首句合成: rx→synth_end,3,800.0,800.0,800.0,800.0,800.0,0.0
+tts_rx_to_play_start_ms,TTS 首音: rx→play_start,3,1200.0,1200.0,1200.0,1200.0,1200.0,0.0
+tts_synth_end_to_play_start_ms,TTS 首句: synth_end→play_start,3,400.0,400.0,400.0,400.0,400.0,0.0
+question_to_first_audio_ms,端到端: question→首个play_start,3,1554.137,1554.047,1554.736,1553.628,1554.736,0.559
+speech_end_to_first_audio_ms,语音结束→首音 (endpoint-静音阈值),3,4262.0,4262.0,4262.0,4262.0,4262.0,0.0
+playback_end_to_first_audio_ms,问句播放结束→首音 (wav触发),3,2205.535,2205.005,2207.785,2203.816,2207.785,2.037
+question_to_session_finished_ms,会话总时长: question→session_finished,3,3404.539,3404.387,3405.241,3403.99,3405.241,0.639
+audio_total_sum_ms,音频总时长(各段play相加),3,2400.0,2400.0,2400.0,2400.0,2400.0,0.0
+audio_first_to_last_ms,音频跨距: 首play_start→末play_end,3,1800.0,1800.0,1800.0,1800.0,1800.0,0.0

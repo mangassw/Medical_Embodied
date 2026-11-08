@@ -1,0 +1,2027 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_175142",
+  "host": "artrc",
+  "tag": "voice_medical",
+  "round_index": 0,
+  "mode": "wake-wav",
+  "status": "timeout",
+  "notes": [
+    "超时 60.0s 未收到 /tts_session_finished"
+  ],
+  "started_at": "2026-10-27T15:49:41.589",
+  "finished_at": "2026-10-27T15:50:41.592",
+  "duration_s": 60.004,
+  "trigger": {
+    "mode": "wake-wav",
+    "t0_source": "question_asr_rx",
+    "inject_text": null,
+    "question_wav": "audio/q_medical_exercise.wav",
+    "wake_wav": "audio/wake_xiaoyi.wav",
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": [
+      {
+        "role": "wake",
+        "wav": "audio/wake_xiaoyi.wav",
+        "cmd": "pw-play --target latency_sink audio/wake_xiaoyi.wav",
+        "start_ns": 1793087381589991748,
+        "end_ns": 1793087383504024545,
+        "ok": true,
+        "error": null
+      },
+      {
+        "role": "question",
+        "wav": "audio/q_medical_exercise.wav",
+        "cmd": "pw-play --target latency_sink audio/q_medical_exercise.wav",
+        "start_ns": 1793087383939266028,
+        "end_ns": 1793087387441591765,
+        "ok": true,
+        "error": null
+      }
+    ]
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793087389900513956,
+    "t0_source": "question_asr_rx",
+    "t_trigger_begin_ns": 1793087381589215201,
+    "t_publish_question_ns": null,
+    "t_start_asr_pub_ns": 1793087383636574480,
+    "t_question_play_start_ns": 1793087383939266028,
+    "t_question_play_end_ns": 1793087387441591765,
+    "probe_rx_ns": {
+      "question_asr": 1793087389900513956,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793087389901288214,
+      "ali_llm_output_start": 1793087389954665081,
+      "ali_llm_output_first_text": 1793087411351486203,
+      "ali_llm_output_done": 1793087412314856527,
+      "tts_realtime_data_start": 1793087389955024572,
+      "tts_realtime_data_first_text": 1793087411351877535,
+      "tts_realtime_data_done": 1793087412315218091,
+      "tts_session_finished": null
+    },
+    "node_event_ns": {
+      "asr.kws_detected": 1793087383636091317,
+      "asr.start_asr": 1793087383637042962,
+      "asr.endpoint": 1793087388649658676,
+      "asr.asr_callback": 1793087388652609111,
+      "asr.nurse_req": 1793087388653565256,
+      "asr.nurse_resp": 1793087389900060875,
+      "asr.publish_question": 1793087389900180944,
+      "tts_local.rx_first": 1793087411352118670,
+      "tts_local.synth_start_first": 1793087411352189013,
+      "tts_local.synth_end_first": 1793087411905340910,
+      "tts_local.play_start_first": 1793087411976312211,
+      "tts_local.play_end_last": 1793087439846954011,
+      "tts_local.session_finished": null
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": 0.952,
+    "asr_start_asr_to_endpoint_ms": 5012.616,
+    "asr_endpoint_to_nurse_req_ms": 3.907,
+    "asr_nurse_req_to_nurse_resp_ms": 1246.496,
+    "asr_nurse_resp_to_publish_question_ms": 0.12,
+    "asr_endpoint_to_question_rx_ms": 1250.855,
+    "asr_publish_question_to_rx_ms": 0.333,
+    "question_to_router_ms": 0.774,
+    "router_to_llm_first_ms": 21450.198,
+    "question_to_llm_first_ms": 21450.972,
+    "llm_first_to_done_ms": 963.37,
+    "question_to_llm_done_ms": 22414.343,
+    "llm_first_to_tts_first_text_ms": 0.391,
+    "question_to_tts_first_text_ms": 21451.364,
+    "first_tts_text_to_first_play_start_ms": 624.435,
+    "tts_rx_to_synth_end_ms": 553.222,
+    "tts_rx_to_play_start_ms": 624.194,
+    "tts_synth_end_to_play_start_ms": 70.971,
+    "question_to_first_audio_ms": 22075.798,
+    "speech_end_to_first_audio_ms": 24626.654,
+    "playback_end_to_first_audio_ms": 24534.72,
+    "question_to_session_finished_ms": null,
+    "audio_total_sum_ms": 27861.624,
+    "audio_first_to_last_ms": 27870.642
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": 951645,
+    "asr_start_asr_to_endpoint_ns": 5012615714,
+    "asr_endpoint_to_nurse_req_ns": 3906580,
+    "asr_nurse_req_to_nurse_resp_ns": 1246495619,
+    "asr_nurse_resp_to_publish_question_ns": 120069,
+    "asr_endpoint_to_question_rx_ns": 1250855280,
+    "asr_publish_question_to_rx_ns": 333012,
+    "question_to_router_ns": 774258,
+    "router_to_llm_first_ns": 21450197989,
+    "question_to_llm_first_ns": 21450972247,
+    "llm_first_to_done_ns": 963370324,
+    "question_to_llm_done_ns": 22414342571,
+    "llm_first_to_tts_first_text_ns": 391332,
+    "question_to_tts_first_text_ns": 21451363579,
+    "first_tts_text_to_first_play_start_ns": 624434676,
+    "tts_rx_to_synth_end_ns": 553222240,
+    "tts_rx_to_play_start_ns": 624193541,
+    "tts_synth_end_to_play_start_ns": 70971301,
+    "question_to_first_audio_ns": 22075798255,
+    "speech_end_to_first_audio_ns": 24626653535,
+    "playback_end_to_first_audio_ns": 24534720446,
+    "question_to_session_finished_ns": null,
+    "audio_total_sum_ns": 27861623517,
+    "audio_first_to_last_ns": 27870641800
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": 3906580,
+      "ms": 3.907
+    },
+    "nurse_dur": {
+      "ns": 1246495619,
+      "ms": 1246.496
+    },
+    "nurse_resp_to_question": {
+      "ns": 453081,
+      "ms": 0.453
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 21450972247,
+      "ms": 21450.972
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 963370324,
+      "ms": 963.37
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 391332,
+      "ms": 0.391
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 624434676,
+      "ms": 624.435
+    },
+    "question_to_first_play_start": {
+      "ns": 22075798255,
+      "ms": 22075.798
+    },
+    "speech_end_to_first_play_start": {
+      "ns": 24626653535,
+      "ms": 24626.654
+    },
+    "question_to_session_finished": {
+      "ns": null,
+      "ms": null
+    },
+    "audio_total_sec": {
+      "ns": 27861623517,
+      "ms": 27861.624,
+      "sec": 27.862
+    }
+  },
+  "asr_chain": {
+    "kws_detected": {
+      "t_ns": 1793087383636091317,
+      "arrival_ns": 1793087383636493947,
+      "detail": {
+        "keyword": "{\"start_time\":0.00, \"keyword\": \"小艺小艺\", \"timestamps\": [0.04, 0.36, 0.52, 0.64, 0.88, 1.00, 1.12, 1.20], \"tokens\":[\"x\", \"iǎo\", \"y\", \"ì\", \"x\", \"iǎo\", \"y\", \"ì\"]}"
+      }
+    },
+    "start_asr": {
+      "t_ns": 1793087383637042962,
+      "arrival_ns": 1793087383637834500,
+      "detail": {}
+    },
+    "endpoint": {
+      "t_ns": 1793087388649658676,
+      "arrival_ns": 1793087388650054587,
+      "detail": {}
+    },
+    "asr_callback": {
+      "t_ns": 1793087388652609111,
+      "arrival_ns": 1793087388653002896,
+      "detail": {
+        "text_len": 45
+      }
+    },
+    "nurse_req": {
+      "t_ns": 1793087388653565256,
+      "arrival_ns": 1793087388653811891,
+      "detail": {
+        "text_len": 45
+      }
+    },
+    "nurse_resp": {
+      "t_ns": 1793087389900060875,
+      "arrival_ns": 1793087389900285173,
+      "detail": {
+        "dur_ms": 1246.489
+      }
+    },
+    "publish_question": {
+      "t_ns": 1793087389900180944,
+      "arrival_ns": 1793087389900869981,
+      "detail": {
+        "text_len": 97
+      }
+    }
+  },
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": 1793087389900180944,
+    "publish_question_found": true
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": 0.952,
+    "asr_start_asr_to_endpoint_ms": 5012.616,
+    "asr_endpoint_to_nurse_req_ms": 3.907,
+    "asr_nurse_req_to_nurse_resp_ms": 1246.496,
+    "asr_nurse_resp_to_publish_question_ms": 0.12,
+    "asr_endpoint_to_question_rx_ms": 1250.855,
+    "asr_publish_question_to_rx_ms": 0.333,
+    "question_to_router_ms": 0.774,
+    "router_to_llm_first_ms": 21450.198,
+    "question_to_llm_first_ms": 21450.972,
+    "llm_first_to_done_ms": 963.37,
+    "question_to_llm_done_ms": 22414.343,
+    "llm_first_to_tts_first_text_ms": 0.391,
+    "question_to_tts_first_text_ms": 21451.364,
+    "first_tts_text_to_first_play_start_ms": 624.435,
+    "tts_rx_to_synth_end_ms": 553.222,
+    "tts_rx_to_play_start_ms": 624.194,
+    "tts_synth_end_to_play_start_ms": 70.971,
+    "question_to_first_audio_ms": 22075.798,
+    "speech_end_to_first_audio_ms": 24626.654,
+    "playback_end_to_first_audio_ms": 24534.72,
+    "question_to_session_finished_ms": null,
+    "audio_total_sum_ms": 27861.624,
+    "audio_first_to_last_ms": 27870.642
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793087389954665081,
+      "first_text_rx_ns": 1793087411351486203,
+      "done_rx_ns": 1793087412314856527,
+      "chunk_count": 11,
+      "char_count": 149,
+      "chunks": [
+        {
+          "t_ns": 1793087411351486203,
+          "text": "您好，您现在在血透中心，运动更要轻柔"
+        },
+        {
+          "t_ns": 1793087411351835079,
+          "text": "。一、"
+        },
+        {
+          "t_ns": 1793087411450992346,
+          "text": "透析中避免起身、弯腰、提重物，防止管路牵拉和"
+        },
+        {
+          "t_ns": 1793087411494123694,
+          "text": "血压波动。二"
+        },
+        {
+          "t_ns": 1793087411731357208,
+          "text": "、透析后先休息，选择慢走、伸展等温和活动，"
+        },
+        {
+          "t_ns": 1793087411731641433,
+          "text": "以微微出汗、"
+        },
+        {
+          "t_ns": 1793087411826316493,
+          "text": "不气短为宜。三、留意血压、心率，若头晕、胸闷"
+        },
+        {
+          "t_ns": 1793087411895486207,
+          "text": "、心慌、乏力"
+        },
+        {
+          "t_ns": 1793087412013125799,
+          "text": "，立即停下并告知医护。四、按医嘱控制饮水和"
+        },
+        {
+          "t_ns": 1793087412013525298,
+          "text": "饮食，避免过"
+        },
+        {
+          "t_ns": 1793087412210710292,
+          "text": "劳。中医讲究动静结合，以养正气为先。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793087411351877535,
+      "done_rx_ns": 1793087412315218091,
+      "text_count": 15,
+      "texts": [
+        {
+          "t_ns": 1793087411351877535,
+          "text": "您好，"
+        },
+        {
+          "t_ns": 1793087411352215569,
+          "text": "您现在在血透中心，"
+        },
+        {
+          "t_ns": 1793087411353182766,
+          "text": "运动更要轻柔。"
+        },
+        {
+          "t_ns": 1793087411451872153,
+          "text": "一、透析中避免起身、弯腰、提重物，"
+        },
+        {
+          "t_ns": 1793087411494370090,
+          "text": "防止管路牵拉和血压波动。"
+        },
+        {
+          "t_ns": 1793087411731675932,
+          "text": "二、透析后先休息，"
+        },
+        {
+          "t_ns": 1793087411732129303,
+          "text": "选择慢走、伸展等温和活动，"
+        },
+        {
+          "t_ns": 1793087411826399258,
+          "text": "以微微出汗、不气短为宜。"
+        },
+        {
+          "t_ns": 1793087411826790296,
+          "text": "三、留意血压、心率，"
+        },
+        {
+          "t_ns": 1793087412013580001,
+          "text": "若头晕、胸闷、心慌、乏力，"
+        },
+        {
+          "t_ns": 1793087412013803650,
+          "text": "立即停下并告知医护。"
+        },
+        {
+          "t_ns": 1793087412014509579,
+          "text": "四、按医嘱控制饮水和饮食，"
+        },
+        {
+          "t_ns": 1793087412210898412,
+          "text": "避免过劳。"
+        },
+        {
+          "t_ns": 1793087412211298289,
+          "text": "中医讲究动静结合，"
+        },
+        {
+          "t_ns": 1793087412211466995,
+          "text": "以养正气为先。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 76,
+    "latency_events_total": 76,
+    "asr_events": 8,
+    "tts_events": 68,
+    "tts_play_pairs": 10,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793087383636493947,
+      "node": "asr",
+      "stage": "kws_detected",
+      "t_ns": 1793087383636091317,
+      "detail": {
+        "keyword": "{\"start_time\":0.00, \"keyword\": \"小艺小艺\", \"timestamps\": [0.04, 0.36, 0.52, 0.64, 0.88, 1.00, 1.12, 1.20], \"tokens\":[\"x\", \"iǎo\", \"y\", \"ì\", \"x\", \"iǎo\", \"y\", \"ì\"]}"
+      },
+      "raw": "{\"node\":\"asr\",\"stage\":\"kws_detected\",\"t_ns\":1793087383636091317,\"detail\":{\"keyword\":\"{\\\"start_time\\\":0.00, \\\"keyword\\\": \\\"小艺小艺\\\", \\\"timestamps\\\": [0.04, 0.36, 0.52, 0.64, 0.88, 1.00, 1.12, 1.20], \\\"tokens\\\":[\\\"x\\\", \\\"iǎo\\\", \\\"y\\\", \\\"ì\\\", \\\"x\\\", \\\"iǎo\\\", \\\"y\\\", \\\"ì\\\"]}\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087383637834500,
+      "node": "asr",
+      "stage": "start_asr",
+      "t_ns": 1793087383637042962,
+      "detail": {},
+      "raw": "{\"node\":\"asr\",\"stage\":\"start_asr\",\"t_ns\":1793087383637042962}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087384693668991,
+      "node": "asr",
+      "stage": "endpoint",
+      "t_ns": 1793087384693208843,
+      "detail": {},
+      "raw": "{\"node\":\"asr\",\"stage\":\"endpoint\",\"t_ns\":1793087384693208843}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087388650054587,
+      "node": "asr",
+      "stage": "endpoint",
+      "t_ns": 1793087388649658676,
+      "detail": {},
+      "raw": "{\"node\":\"asr\",\"stage\":\"endpoint\",\"t_ns\":1793087388649658676}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087388653002896,
+      "node": "asr",
+      "stage": "asr_callback",
+      "t_ns": 1793087388652609111,
+      "detail": {
+        "text_len": 45
+      },
+      "raw": "{\"node\":\"asr\",\"stage\":\"asr_callback\",\"t_ns\":1793087388652609111,\"detail\":{\"text_len\":45}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087388653811891,
+      "node": "asr",
+      "stage": "nurse_req",
+      "t_ns": 1793087388653565256,
+      "detail": {
+        "text_len": 45
+      },
+      "raw": "{\"node\":\"asr\",\"stage\":\"nurse_req\",\"t_ns\":1793087388653565256,\"detail\":{\"text_len\":45}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087389900285173,
+      "node": "asr",
+      "stage": "nurse_resp",
+      "t_ns": 1793087389900060875,
+      "detail": {
+        "dur_ms": 1246.489
+      },
+      "raw": "{\"node\":\"asr\",\"stage\":\"nurse_resp\",\"t_ns\":1793087389900060875,\"detail\":{\"dur_ms\":1246.489}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087389900869981,
+      "node": "asr",
+      "stage": "publish_question",
+      "t_ns": 1793087389900180944,
+      "detail": {
+        "text_len": 97
+      },
+      "raw": "{\"node\":\"asr\",\"stage\":\"publish_question\",\"t_ns\":1793087389900180944,\"detail\":{\"text_len\":97}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087389955552421,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793087389955325116,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793087389955325116, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087411352502935,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087411352118670,
+      "detail": {
+        "text_len": 3,
+        "head": "您好，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087411352118670, \"detail\": {\"text_len\": 3, \"head\": \"您好，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087411352842126,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087411352189013,
+      "detail": {
+        "text_len": 3
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087411352189013, \"detail\": {\"text_len\": 3}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087411905835661,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087411905340910,
+      "detail": {
+        "text_len": 3,
+        "dur_ms": 553.146548,
+        "audio_sec": 1.2,
+        "rtf": 0.46095545666666676
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087411905340910, \"detail\": {\"text_len\": 3, \"dur_ms\": 553.146548, \"audio_sec\": 1.2, \"rtf\": 0.46095545666666676}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087411906274906,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087411906073347,
+      "detail": {
+        "text_len": 9,
+        "head": "您现在在血透中心，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087411906073347, \"detail\": {\"text_len\": 9, \"head\": \"您现在在血透中心，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087411906481737,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087411906134517,
+      "detail": {
+        "text_len": 9
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087411906134517, \"detail\": {\"text_len\": 9}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087411976634305,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793087411976312211,
+      "detail": {
+        "text_len": 3,
+        "head": "您好，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793087411976312211, \"detail\": {\"text_len\": 3, \"head\": \"您好，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087412754240996,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087412753782442,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 847.640425,
+        "audio_sec": 2.16,
+        "rtf": 0.3924261226851852
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087412753782442, \"detail\": {\"text_len\": 9, \"dur_ms\": 847.640425, \"audio_sec\": 2.16, \"rtf\": 0.3924261226851852}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087412755333609,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087412755076965,
+      "detail": {
+        "text_len": 7,
+        "head": "运动更要轻柔。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087412755076965, \"detail\": {\"text_len\": 7, \"head\": \"运动更要轻柔。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087412755684191,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087412755121362,
+      "detail": {
+        "text_len": 7
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087412755121362, \"detail\": {\"text_len\": 7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087413324052542,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793087413323670846,
+      "detail": {
+        "text_len": 3,
+        "dur_ms": 1347.355659
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793087413323670846, \"detail\": {\"text_len\": 3, \"dur_ms\": 1347.355659}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087413324654282,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793087413324424447,
+      "detail": {
+        "text_len": 9,
+        "head": "您现在在血透中心，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793087413324424447, \"detail\": {\"text_len\": 9, \"head\": \"您现在在血透中心，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087413523238340,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087413522746022,
+      "detail": {
+        "text_len": 7,
+        "dur_ms": 767.616632,
+        "audio_sec": 1.92,
+        "rtf": 0.3998003291666667
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087413522746022, \"detail\": {\"text_len\": 7, \"dur_ms\": 767.616632, \"audio_sec\": 1.92, \"rtf\": 0.3998003291666667}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087413523657551,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087413523427590,
+      "detail": {
+        "text_len": 17,
+        "head": "一、透析中避免起身、弯腰、提重物，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087413523427590, \"detail\": {\"text_len\": 17, \"head\": \"一、透析中避免起身、弯腰、提重物，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087413523912122,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087413523514396,
+      "detail": {
+        "text_len": 17
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087413523514396, \"detail\": {\"text_len\": 17}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087415482270834,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087415481897445,
+      "detail": {
+        "text_len": 17,
+        "dur_ms": 1958.376215,
+        "audio_sec": 5.2,
+        "rtf": 0.376610810576923
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087415481897445, \"detail\": {\"text_len\": 17, \"dur_ms\": 1958.376215, \"audio_sec\": 5.2, \"rtf\": 0.376610810576923}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087415482772399,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087415482609546,
+      "detail": {
+        "text_len": 12,
+        "head": "防止管路牵拉和血压波动。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087415482609546, \"detail\": {\"text_len\": 12, \"head\": \"防止管路牵拉和血压波动。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087415483007477,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087415482674564,
+      "detail": {
+        "text_len": 12
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087415482674564, \"detail\": {\"text_len\": 12}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087415488883604,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793087415488548445,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 2164.12094
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793087415488548445, \"detail\": {\"text_len\": 9, \"dur_ms\": 2164.12094}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087415489614033,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793087415489389119,
+      "detail": {
+        "text_len": 7,
+        "head": "运动更要轻柔。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793087415489389119, \"detail\": {\"text_len\": 7, \"head\": \"运动更要轻柔。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087416532486605,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087416532072460,
+      "detail": {
+        "text_len": 12,
+        "dur_ms": 1049.39203,
+        "audio_sec": 2.72,
+        "rtf": 0.3858058933823529
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087416532072460, \"detail\": {\"text_len\": 12, \"dur_ms\": 1049.39203, \"audio_sec\": 2.72, \"rtf\": 0.3858058933823529}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087416532950315,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087416532615462,
+      "detail": {
+        "text_len": 9,
+        "head": "二、透析后先休息，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087416532615462, \"detail\": {\"text_len\": 9, \"head\": \"二、透析后先休息，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087416533310040,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087416532664608,
+      "detail": {
+        "text_len": 9
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087416532664608, \"detail\": {\"text_len\": 9}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087417414781877,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793087417414352140,
+      "detail": {
+        "text_len": 7,
+        "dur_ms": 1924.96128
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793087417414352140, \"detail\": {\"text_len\": 7, \"dur_ms\": 1924.96128}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087417416551992,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793087417416320731,
+      "detail": {
+        "text_len": 17,
+        "head": "一、透析中避免起身、弯腰、提重物，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793087417416320731, \"detail\": {\"text_len\": 17, \"head\": \"一、透析中避免起身、弯腰、提重物，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087417453091472,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087417452169180,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 919.494695,
+        "audio_sec": 2.4,
+        "rtf": 0.38312278958333335
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087417452169180, \"detail\": {\"text_len\": 9, \"dur_ms\": 919.494695, \"audio_sec\": 2.4, \"rtf\": 0.38312278958333335}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087417453513816,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087417452968321,
+      "detail": {
+        "text_len": 13,
+        "head": "选择慢走、伸展等温和活动，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087417452968321, \"detail\": {\"text_len\": 13, \"head\": \"选择慢走、伸展等温和活动，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087417453810774,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087417453048058,
+      "detail": {
+        "text_len": 13
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087417453048058, \"detail\": {\"text_len\": 13}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087418777297224,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087418776902353,
+      "detail": {
+        "text_len": 13,
+        "dur_ms": 1323.845337,
+        "audio_sec": 3.44,
+        "rtf": 0.38483876075581397
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087418776902353, \"detail\": {\"text_len\": 13, \"dur_ms\": 1323.845337, \"audio_sec\": 3.44, \"rtf\": 0.38483876075581397}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087418777797009,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087418777671335,
+      "detail": {
+        "text_len": 12,
+        "head": "以微微出汗、不气短为宜。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087418777671335, \"detail\": {\"text_len\": 12, \"head\": \"以微微出汗、不气短为宜。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087418777990677,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087418777715893,
+      "detail": {
+        "text_len": 12
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087418777715893, \"detail\": {\"text_len\": 12}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087419903749608,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087419903336819,
+      "detail": {
+        "text_len": 12,
+        "dur_ms": 1125.611441,
+        "audio_sec": 2.88,
+        "rtf": 0.39083730590277777
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087419903336819, \"detail\": {\"text_len\": 12, \"dur_ms\": 1125.611441, \"audio_sec\": 2.88, \"rtf\": 0.39083730590277777}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087419904193035,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087419903958288,
+      "detail": {
+        "text_len": 10,
+        "head": "三、留意血压、心率，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087419903958288, \"detail\": {\"text_len\": 10, \"head\": \"三、留意血压、心率，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087419904401521,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087419904036334,
+      "detail": {
+        "text_len": 10
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087419904036334, \"detail\": {\"text_len\": 10}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087420990380098,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087420990020764,
+      "detail": {
+        "text_len": 10,
+        "dur_ms": 1085.976631,
+        "audio_sec": 2.72,
+        "rtf": 0.39925611433823527
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087420990020764, \"detail\": {\"text_len\": 10, \"dur_ms\": 1085.976631, \"audio_sec\": 2.72, \"rtf\": 0.39925611433823527}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087420990744130,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087420990590313,
+      "detail": {
+        "text_len": 13,
+        "head": "若头晕、胸闷、心慌、乏力，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087420990590313, \"detail\": {\"text_len\": 13, \"head\": \"若头晕、胸闷、心慌、乏力，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087420990924048,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087420990632903,
+      "detail": {
+        "text_len": 13
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087420990632903, \"detail\": {\"text_len\": 13}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087422117575593,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087422117174495,
+      "detail": {
+        "text_len": 13,
+        "dur_ms": 1126.533509,
+        "audio_sec": 2.96,
+        "rtf": 0.38058564493243247
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087422117174495, \"detail\": {\"text_len\": 13, \"dur_ms\": 1126.533509, \"audio_sec\": 2.96, \"rtf\": 0.38058564493243247}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087422117862864,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087422117736850,
+      "detail": {
+        "text_len": 10,
+        "head": "立即停下并告知医护。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087422117736850, \"detail\": {\"text_len\": 10, \"head\": \"立即停下并告知医护。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087422118045132,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087422117778544,
+      "detail": {
+        "text_len": 10
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087422117778544, \"detail\": {\"text_len\": 10}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087422630261258,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793087422629775041,
+      "detail": {
+        "text_len": 17,
+        "dur_ms": 5213.450354
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793087422629775041, \"detail\": {\"text_len\": 17, \"dur_ms\": 5213.450354}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087422631467319,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793087422630815001,
+      "detail": {
+        "text_len": 12,
+        "head": "防止管路牵拉和血压波动。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793087422630815001, \"detail\": {\"text_len\": 12, \"head\": \"防止管路牵拉和血压波动。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087423210011065,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087423209570106,
+      "detail": {
+        "text_len": 10,
+        "dur_ms": 1091.779782,
+        "audio_sec": 2.8,
+        "rtf": 0.3899213507142858
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087423209570106, \"detail\": {\"text_len\": 10, \"dur_ms\": 1091.779782, \"audio_sec\": 2.8, \"rtf\": 0.3899213507142858}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087423210401278,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087423210256492,
+      "detail": {
+        "text_len": 13,
+        "head": "四、按医嘱控制饮水和饮食，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087423210256492, \"detail\": {\"text_len\": 13, \"head\": \"四、按医嘱控制饮水和饮食，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087423210591032,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087423210325056,
+      "detail": {
+        "text_len": 13
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087423210325056, \"detail\": {\"text_len\": 13}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087424560770303,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087424560295631,
+      "detail": {
+        "text_len": 13,
+        "dur_ms": 1349.963404,
+        "audio_sec": 3.52,
+        "rtf": 0.3835123306818182
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087424560295631, \"detail\": {\"text_len\": 13, \"dur_ms\": 1349.963404, \"audio_sec\": 3.52, \"rtf\": 0.3835123306818182}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087424561198262,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087424560987758,
+      "detail": {
+        "text_len": 5,
+        "head": "避免过劳。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087424560987758, \"detail\": {\"text_len\": 5, \"head\": \"避免过劳。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087424561487556,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087424561050079,
+      "detail": {
+        "text_len": 5
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087424561050079, \"detail\": {\"text_len\": 5}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087425129880182,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087425129376456,
+      "detail": {
+        "text_len": 5,
+        "dur_ms": 568.321456,
+        "audio_sec": 1.36,
+        "rtf": 0.41788342352941177
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087425129376456, \"detail\": {\"text_len\": 5, \"dur_ms\": 568.321456, \"audio_sec\": 1.36, \"rtf\": 0.41788342352941177}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087425130343024,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087425130198907,
+      "detail": {
+        "text_len": 9,
+        "head": "中医讲究动静结合，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087425130198907, \"detail\": {\"text_len\": 9, \"head\": \"中医讲究动静结合，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087425130534174,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087425130265267,
+      "detail": {
+        "text_len": 9
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087425130265267, \"detail\": {\"text_len\": 9}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087425357648927,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793087425357225402,
+      "detail": {
+        "text_len": 12,
+        "dur_ms": 2726.407631
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793087425357225402, \"detail\": {\"text_len\": 12, \"dur_ms\": 2726.407631}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087425358331136,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793087425358136865,
+      "detail": {
+        "text_len": 9,
+        "head": "二、透析后先休息，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793087425358136865, \"detail\": {\"text_len\": 9, \"head\": \"二、透析后先休息，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087426069177669,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087426068787465,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 938.516109,
+        "audio_sec": 2.4,
+        "rtf": 0.39104837875000004
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087426068787465, \"detail\": {\"text_len\": 9, \"dur_ms\": 938.516109, \"audio_sec\": 2.4, \"rtf\": 0.39104837875000004}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087426069561377,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087426069420595,
+      "detail": {
+        "text_len": 7,
+        "head": "以养正气为先。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087426069420595, \"detail\": {\"text_len\": 7, \"head\": \"以养正气为先。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087426069742409,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087426069476631,
+      "detail": {
+        "text_len": 7
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087426069476631, \"detail\": {\"text_len\": 7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087426766715556,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087426766239738,
+      "detail": {
+        "text_len": 7,
+        "dur_ms": 696.754458,
+        "audio_sec": 1.76,
+        "rtf": 0.3958832147727273
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087426766239738, \"detail\": {\"text_len\": 7, \"dur_ms\": 696.754458, \"audio_sec\": 1.76, \"rtf\": 0.3958832147727273}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087426767367232,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793087426767145408,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793087426767145408, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087427767661210,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793087427767269094,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 2409.126612
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793087427767269094, \"detail\": {\"text_len\": 9, \"dur_ms\": 2409.126612}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087427768271927,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793087427768111760,
+      "detail": {
+        "text_len": 13,
+        "head": "选择慢走、伸展等温和活动，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793087427768111760, \"detail\": {\"text_len\": 13, \"head\": \"选择慢走、伸展等温和活动，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087431227104662,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793087431226649172,
+      "detail": {
+        "text_len": 13,
+        "dur_ms": 3458.532046
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793087431226649172, \"detail\": {\"text_len\": 13, \"dur_ms\": 3458.532046}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087431227618258,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793087431227428492,
+      "detail": {
+        "text_len": 12,
+        "head": "以微微出汗、不气短为宜。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793087431227428492, \"detail\": {\"text_len\": 12, \"head\": \"以微微出汗、不气短为宜。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087434119251921,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793087434118771332,
+      "detail": {
+        "text_len": 12,
+        "dur_ms": 2891.337527
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793087434118771332, \"detail\": {\"text_len\": 12, \"dur_ms\": 2891.337527}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087434119994357,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793087434119805171,
+      "detail": {
+        "text_len": 10,
+        "head": "三、留意血压、心率，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793087434119805171, \"detail\": {\"text_len\": 10, \"head\": \"三、留意血压、心率，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087436855062382,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793087436854644359,
+      "detail": {
+        "text_len": 10,
+        "dur_ms": 2734.835156
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793087436854644359, \"detail\": {\"text_len\": 10, \"dur_ms\": 2734.835156}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087436855710684,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793087436855492528,
+      "detail": {
+        "text_len": 13,
+        "head": "若头晕、胸闷、心慌、乏力，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793087436855492528, \"detail\": {\"text_len\": 13, \"head\": \"若头晕、胸闷、心慌、乏力，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087439847402640,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793087439846954011,
+      "detail": {
+        "text_len": 13,
+        "dur_ms": 2991.452181
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793087439846954011, \"detail\": {\"text_len\": 13, \"dur_ms\": 2991.452181}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087439847965638,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793087439847739298,
+      "detail": {
+        "text_len": 10,
+        "head": "立即停下并告知医护。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793087439847739298, \"detail\": {\"text_len\": 10, \"head\": \"立即停下并告知医护。\"}}"
+    }
+  ],
+  "events_by_stage": {
+    "asr": {
+      "kws_detected": [
+        {
+          "t_ns": 1793087383636091317,
+          "arrival_ns": 1793087383636493947,
+          "source": "round",
+          "detail": {
+            "keyword": "{\"start_time\":0.00, \"keyword\": \"小艺小艺\", \"timestamps\": [0.04, 0.36, 0.52, 0.64, 0.88, 1.00, 1.12, 1.20], \"tokens\":[\"x\", \"iǎo\", \"y\", \"ì\", \"x\", \"iǎo\", \"y\", \"ì\"]}"
+          }
+        }
+      ],
+      "start_asr": [
+        {
+          "t_ns": 1793087383637042962,
+          "arrival_ns": 1793087383637834500,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "endpoint": [
+        {
+          "t_ns": 1793087384693208843,
+          "arrival_ns": 1793087384693668991,
+          "source": "round",
+          "detail": {}
+        },
+        {
+          "t_ns": 1793087388649658676,
+          "arrival_ns": 1793087388650054587,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "asr_callback": [
+        {
+          "t_ns": 1793087388652609111,
+          "arrival_ns": 1793087388653002896,
+          "source": "round",
+          "detail": {
+            "text_len": 45
+          }
+        }
+      ],
+      "nurse_req": [
+        {
+          "t_ns": 1793087388653565256,
+          "arrival_ns": 1793087388653811891,
+          "source": "round",
+          "detail": {
+            "text_len": 45
+          }
+        }
+      ],
+      "nurse_resp": [
+        {
+          "t_ns": 1793087389900060875,
+          "arrival_ns": 1793087389900285173,
+          "source": "round",
+          "detail": {
+            "dur_ms": 1246.489
+          }
+        }
+      ],
+      "publish_question": [
+        {
+          "t_ns": 1793087389900180944,
+          "arrival_ns": 1793087389900869981,
+          "source": "round",
+          "detail": {
+            "text_len": 97
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793087389955325116,
+          "arrival_ns": 1793087389955552421,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793087426767145408,
+          "arrival_ns": 1793087426767367232,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793087411352118670,
+          "arrival_ns": 1793087411352502935,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "head": "您好，"
+          }
+        },
+        {
+          "t_ns": 1793087411906073347,
+          "arrival_ns": 1793087411906274906,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "您现在在血透中心，"
+          }
+        },
+        {
+          "t_ns": 1793087412755076965,
+          "arrival_ns": 1793087412755333609,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "运动更要轻柔。"
+          }
+        },
+        {
+          "t_ns": 1793087413523427590,
+          "arrival_ns": 1793087413523657551,
+          "source": "round",
+          "detail": {
+            "text_len": 17,
+            "head": "一、透析中避免起身、弯腰、提重物，"
+          }
+        },
+        {
+          "t_ns": 1793087415482609546,
+          "arrival_ns": 1793087415482772399,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "防止管路牵拉和血压波动。"
+          }
+        },
+        {
+          "t_ns": 1793087416532615462,
+          "arrival_ns": 1793087416532950315,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "二、透析后先休息，"
+          }
+        },
+        {
+          "t_ns": 1793087417452968321,
+          "arrival_ns": 1793087417453513816,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "head": "选择慢走、伸展等温和活动，"
+          }
+        },
+        {
+          "t_ns": 1793087418777671335,
+          "arrival_ns": 1793087418777797009,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "以微微出汗、不气短为宜。"
+          }
+        },
+        {
+          "t_ns": 1793087419903958288,
+          "arrival_ns": 1793087419904193035,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "三、留意血压、心率，"
+          }
+        },
+        {
+          "t_ns": 1793087420990590313,
+          "arrival_ns": 1793087420990744130,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "head": "若头晕、胸闷、心慌、乏力，"
+          }
+        },
+        {
+          "t_ns": 1793087422117736850,
+          "arrival_ns": 1793087422117862864,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "立即停下并告知医护。"
+          }
+        },
+        {
+          "t_ns": 1793087423210256492,
+          "arrival_ns": 1793087423210401278,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "head": "四、按医嘱控制饮水和饮食，"
+          }
+        },
+        {
+          "t_ns": 1793087424560987758,
+          "arrival_ns": 1793087424561198262,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "避免过劳。"
+          }
+        },
+        {
+          "t_ns": 1793087425130198907,
+          "arrival_ns": 1793087425130343024,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "中医讲究动静结合，"
+          }
+        },
+        {
+          "t_ns": 1793087426069420595,
+          "arrival_ns": 1793087426069561377,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "以养正气为先。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793087411352189013,
+          "arrival_ns": 1793087411352842126,
+          "source": "round",
+          "detail": {
+            "text_len": 3
+          }
+        },
+        {
+          "t_ns": 1793087411906134517,
+          "arrival_ns": 1793087411906481737,
+          "source": "round",
+          "detail": {
+            "text_len": 9
+          }
+        },
+        {
+          "t_ns": 1793087412755121362,
+          "arrival_ns": 1793087412755684191,
+          "source": "round",
+          "detail": {
+            "text_len": 7
+          }
+        },
+        {
+          "t_ns": 1793087413523514396,
+          "arrival_ns": 1793087413523912122,
+          "source": "round",
+          "detail": {
+            "text_len": 17
+          }
+        },
+        {
+          "t_ns": 1793087415482674564,
+          "arrival_ns": 1793087415483007477,
+          "source": "round",
+          "detail": {
+            "text_len": 12
+          }
+        },
+        {
+          "t_ns": 1793087416532664608,
+          "arrival_ns": 1793087416533310040,
+          "source": "round",
+          "detail": {
+            "text_len": 9
+          }
+        },
+        {
+          "t_ns": 1793087417453048058,
+          "arrival_ns": 1793087417453810774,
+          "source": "round",
+          "detail": {
+            "text_len": 13
+          }
+        },
+        {
+          "t_ns": 1793087418777715893,
+          "arrival_ns": 1793087418777990677,
+          "source": "round",
+          "detail": {
+            "text_len": 12
+          }
+        },
+        {
+          "t_ns": 1793087419904036334,
+          "arrival_ns": 1793087419904401521,
+          "source": "round",
+          "detail": {
+            "text_len": 10
+          }
+        },
+        {
+          "t_ns": 1793087420990632903,
+          "arrival_ns": 1793087420990924048,
+          "source": "round",
+          "detail": {
+            "text_len": 13
+          }
+        },
+        {
+          "t_ns": 1793087422117778544,
+          "arrival_ns": 1793087422118045132,
+          "source": "round",
+          "detail": {
+            "text_len": 10
+          }
+        },
+        {
+          "t_ns": 1793087423210325056,
+          "arrival_ns": 1793087423210591032,
+          "source": "round",
+          "detail": {
+            "text_len": 13
+          }
+        },
+        {
+          "t_ns": 1793087424561050079,
+          "arrival_ns": 1793087424561487556,
+          "source": "round",
+          "detail": {
+            "text_len": 5
+          }
+        },
+        {
+          "t_ns": 1793087425130265267,
+          "arrival_ns": 1793087425130534174,
+          "source": "round",
+          "detail": {
+            "text_len": 9
+          }
+        },
+        {
+          "t_ns": 1793087426069476631,
+          "arrival_ns": 1793087426069742409,
+          "source": "round",
+          "detail": {
+            "text_len": 7
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793087411905340910,
+          "arrival_ns": 1793087411905835661,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "dur_ms": 553.146548,
+            "audio_sec": 1.2,
+            "rtf": 0.46095545666666676
+          }
+        },
+        {
+          "t_ns": 1793087412753782442,
+          "arrival_ns": 1793087412754240996,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 847.640425,
+            "audio_sec": 2.16,
+            "rtf": 0.3924261226851852
+          }
+        },
+        {
+          "t_ns": 1793087413522746022,
+          "arrival_ns": 1793087413523238340,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "dur_ms": 767.616632,
+            "audio_sec": 1.92,
+            "rtf": 0.3998003291666667
+          }
+        },
+        {
+          "t_ns": 1793087415481897445,
+          "arrival_ns": 1793087415482270834,
+          "source": "round",
+          "detail": {
+            "text_len": 17,
+            "dur_ms": 1958.376215,
+            "audio_sec": 5.2,
+            "rtf": 0.376610810576923
+          }
+        },
+        {
+          "t_ns": 1793087416532072460,
+          "arrival_ns": 1793087416532486605,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "dur_ms": 1049.39203,
+            "audio_sec": 2.72,
+            "rtf": 0.3858058933823529
+          }
+        },
+        {
+          "t_ns": 1793087417452169180,
+          "arrival_ns": 1793087417453091472,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 919.494695,
+            "audio_sec": 2.4,
+            "rtf": 0.38312278958333335
+          }
+        },
+        {
+          "t_ns": 1793087418776902353,
+          "arrival_ns": 1793087418777297224,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "dur_ms": 1323.845337,
+            "audio_sec": 3.44,
+            "rtf": 0.38483876075581397
+          }
+        },
+        {
+          "t_ns": 1793087419903336819,
+          "arrival_ns": 1793087419903749608,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "dur_ms": 1125.611441,
+            "audio_sec": 2.88,
+            "rtf": 0.39083730590277777
+          }
+        },
+        {
+          "t_ns": 1793087420990020764,
+          "arrival_ns": 1793087420990380098,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "dur_ms": 1085.976631,
+            "audio_sec": 2.72,
+            "rtf": 0.39925611433823527
+          }
+        },
+        {
+          "t_ns": 1793087422117174495,
+          "arrival_ns": 1793087422117575593,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "dur_ms": 1126.533509,
+            "audio_sec": 2.96,
+            "rtf": 0.38058564493243247
+          }
+        },
+        {
+          "t_ns": 1793087423209570106,
+          "arrival_ns": 1793087423210011065,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "dur_ms": 1091.779782,
+            "audio_sec": 2.8,
+            "rtf": 0.3899213507142858
+          }
+        },
+        {
+          "t_ns": 1793087424560295631,
+          "arrival_ns": 1793087424560770303,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "dur_ms": 1349.963404,
+            "audio_sec": 3.52,
+            "rtf": 0.3835123306818182
+          }
+        },
+        {
+          "t_ns": 1793087425129376456,
+          "arrival_ns": 1793087425129880182,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "dur_ms": 568.321456,
+            "audio_sec": 1.36,
+            "rtf": 0.41788342352941177
+          }
+        },
+        {
+          "t_ns": 1793087426068787465,
+          "arrival_ns": 1793087426069177669,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 938.516109,
+            "audio_sec": 2.4,
+            "rtf": 0.39104837875000004
+          }
+        },
+        {
+          "t_ns": 1793087426766239738,
+          "arrival_ns": 1793087426766715556,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "dur_ms": 696.754458,
+            "audio_sec": 1.76,
+            "rtf": 0.3958832147727273
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793087411976312211,
+          "arrival_ns": 1793087411976634305,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "head": "您好，"
+          }
+        },
+        {
+          "t_ns": 1793087413324424447,
+          "arrival_ns": 1793087413324654282,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "您现在在血透中心，"
+          }
+        },
+        {
+          "t_ns": 1793087415489389119,
+          "arrival_ns": 1793087415489614033,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "运动更要轻柔。"
+          }
+        },
+        {
+          "t_ns": 1793087417416320731,
+          "arrival_ns": 1793087417416551992,
+          "source": "round",
+          "detail": {
+            "text_len": 17,
+            "head": "一、透析中避免起身、弯腰、提重物，"
+          }
+        },
+        {
+          "t_ns": 1793087422630815001,
+          "arrival_ns": 1793087422631467319,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "防止管路牵拉和血压波动。"
+          }
+        },
+        {
+          "t_ns": 1793087425358136865,
+          "arrival_ns": 1793087425358331136,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "二、透析后先休息，"
+          }
+        },
+        {
+          "t_ns": 1793087427768111760,
+          "arrival_ns": 1793087427768271927,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "head": "选择慢走、伸展等温和活动，"
+          }
+        },
+        {
+          "t_ns": 1793087431227428492,
+          "arrival_ns": 1793087431227618258,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "以微微出汗、不气短为宜。"
+          }
+        },
+        {
+          "t_ns": 1793087434119805171,
+          "arrival_ns": 1793087434119994357,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "三、留意血压、心率，"
+          }
+        },
+        {
+          "t_ns": 1793087436855492528,
+          "arrival_ns": 1793087436855710684,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "head": "若头晕、胸闷、心慌、乏力，"
+          }
+        },
+        {
+          "t_ns": 1793087439847739298,
+          "arrival_ns": 1793087439847965638,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "立即停下并告知医护。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793087413323670846,
+          "arrival_ns": 1793087413324052542,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "dur_ms": 1347.355659
+          }
+        },
+        {
+          "t_ns": 1793087415488548445,
+          "arrival_ns": 1793087415488883604,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 2164.12094
+          }
+        },
+        {
+          "t_ns": 1793087417414352140,
+          "arrival_ns": 1793087417414781877,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "dur_ms": 1924.96128
+          }
+        },
+        {
+          "t_ns": 1793087422629775041,
+          "arrival_ns": 1793087422630261258,
+          "source": "round",
+          "detail": {
+            "text_len": 17,
+            "dur_ms": 5213.450354
+          }
+        },
+        {
+          "t_ns": 1793087425357225402,
+          "arrival_ns": 1793087425357648927,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "dur_ms": 2726.407631
+          }
+        },
+        {
+          "t_ns": 1793087427767269094,
+          "arrival_ns": 1793087427767661210,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 2409.126612
+          }
+        },
+        {
+          "t_ns": 1793087431226649172,
+          "arrival_ns": 1793087431227104662,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "dur_ms": 3458.532046
+          }
+        },
+        {
+          "t_ns": 1793087434118771332,
+          "arrival_ns": 1793087434119251921,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "dur_ms": 2891.337527
+          }
+        },
+        {
+          "t_ns": 1793087436854644359,
+          "arrival_ns": 1793087436855062382,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "dur_ms": 2734.835156
+          }
+        },
+        {
+          "t_ns": 1793087439846954011,
+          "arrival_ns": 1793087439847402640,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "dur_ms": 2991.452181
+          }
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 1.3,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 2,
+    "interval_s": 18.0
+  }
+}

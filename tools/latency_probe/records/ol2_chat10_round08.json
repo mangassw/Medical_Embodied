@@ -1,0 +1,821 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1162930",
+  "host": "artrc",
+  "tag": "ol2_chat10",
+  "round_index": 8,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T16:20:26.709",
+  "finished_at": "2026-10-30T16:20:34.548",
+  "duration_s": 7.839,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "唱首歌吧",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793348426710238847,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793348426709748313,
+    "t_publish_question_ns": 1793348426710238847,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793348426710858060,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793348426711548759,
+      "ali_llm_output_start": 1793348426884893299,
+      "ali_llm_output_first_text": 1793348426885108865,
+      "ali_llm_output_done": 1793348427586838933,
+      "tts_realtime_data_start": 1793348426885143674,
+      "tts_realtime_data_first_text": 1793348426935901434,
+      "tts_realtime_data_done": 1793348427587109731,
+      "tts_session_finished": 1793348434243918517
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793348426936150886,
+      "tts_local.synth_start_first": 1793348426936214964,
+      "tts_local.synth_end_first": 1793348427659298322,
+      "tts_local.play_start_first": 1793348427743199114,
+      "tts_local.play_end_last": 1793348434242647055,
+      "tts_local.session_finished": 1793348434243550209
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.31,
+    "router_to_llm_first_ms": 173.56,
+    "question_to_llm_first_ms": 174.87,
+    "llm_first_to_done_ms": 701.73,
+    "question_to_llm_done_ms": 876.6,
+    "llm_first_to_tts_first_text_ms": 50.793,
+    "question_to_tts_first_text_ms": 225.663,
+    "first_tts_text_to_first_play_start_ms": 807.298,
+    "tts_rx_to_synth_end_ms": 723.147,
+    "tts_rx_to_play_start_ms": 807.048,
+    "tts_synth_end_to_play_start_ms": 83.901,
+    "question_to_first_audio_ms": 1032.96,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 7533.68,
+    "audio_total_sum_ms": 6495.488,
+    "audio_first_to_last_ms": 6499.448
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 1309912,
+    "router_to_llm_first_ns": 173560106,
+    "question_to_llm_first_ns": 174870018,
+    "llm_first_to_done_ns": 701730068,
+    "question_to_llm_done_ns": 876600086,
+    "llm_first_to_tts_first_text_ns": 50792569,
+    "question_to_tts_first_text_ns": 225662587,
+    "first_tts_text_to_first_play_start_ns": 807297680,
+    "tts_rx_to_synth_end_ns": 723147436,
+    "tts_rx_to_play_start_ns": 807048228,
+    "tts_synth_end_to_play_start_ns": 83900792,
+    "question_to_first_audio_ns": 1032960267,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 7533679670,
+    "audio_total_sum_ns": 6495488002,
+    "audio_first_to_last_ns": 6499447941
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 174870018,
+      "ms": 174.87
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 701730068,
+      "ms": 701.73
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 50792569,
+      "ms": 50.793
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 807297680,
+      "ms": 807.298
+    },
+    "question_to_first_play_start": {
+      "ns": 1032960267,
+      "ms": 1032.96
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 7533679670,
+      "ms": 7533.68
+    },
+    "audio_total_sec": {
+      "ns": 6495488002,
+      "ms": 6495.488,
+      "sec": 6.495
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.31,
+    "router_to_llm_first_ms": 173.56,
+    "question_to_llm_first_ms": 174.87,
+    "llm_first_to_done_ms": 701.73,
+    "question_to_llm_done_ms": 876.6,
+    "llm_first_to_tts_first_text_ms": 50.793,
+    "question_to_tts_first_text_ms": 225.663,
+    "first_tts_text_to_first_play_start_ms": 807.298,
+    "tts_rx_to_synth_end_ms": 723.147,
+    "tts_rx_to_play_start_ms": 807.048,
+    "tts_synth_end_to_play_start_ms": 83.901,
+    "question_to_first_audio_ms": 1032.96,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 7533.68,
+    "audio_total_sum_ms": 6495.488,
+    "audio_first_to_last_ms": 6499.448
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793348426884893299,
+      "first_text_rx_ns": 1793348426885108865,
+      "done_rx_ns": 1793348427586838933,
+      "chunk_count": 19,
+      "char_count": 28,
+      "chunks": [
+        {
+          "t_ns": 1793348426885108865,
+          "text": "我"
+        },
+        {
+          "t_ns": 1793348426901606652,
+          "text": "不会"
+        },
+        {
+          "t_ns": 1793348426918754672,
+          "text": "唱歌"
+        },
+        {
+          "t_ns": 1793348426935666639,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793348426953842461,
+          "text": "不过"
+        },
+        {
+          "t_ns": 1793348426981956542,
+          "text": "我可以"
+        },
+        {
+          "t_ns": 1793348427038359364,
+          "text": "陪你"
+        },
+        {
+          "t_ns": 1793348427080444428,
+          "text": "一起"
+        },
+        {
+          "t_ns": 1793348427123051234,
+          "text": "哼"
+        },
+        {
+          "t_ns": 1793348427164992313,
+          "text": "哼"
+        },
+        {
+          "t_ns": 1793348427208066623,
+          "text": "小"
+        },
+        {
+          "t_ns": 1793348427249996151,
+          "text": "调"
+        },
+        {
+          "t_ns": 1793348427291484784,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793348427334443050,
+          "text": "你"
+        },
+        {
+          "t_ns": 1793348427378417175,
+          "text": "来"
+        },
+        {
+          "t_ns": 1793348427421688493,
+          "text": "领"
+        },
+        {
+          "t_ns": 1793348427461437079,
+          "text": "唱"
+        },
+        {
+          "t_ns": 1793348427501057937,
+          "text": "怎么样"
+        },
+        {
+          "t_ns": 1793348427545108225,
+          "text": "？"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793348426935901434,
+      "done_rx_ns": 1793348427587109731,
+      "text_count": 3,
+      "texts": [
+        {
+          "t_ns": 1793348426935901434,
+          "text": "我不会唱歌，"
+        },
+        {
+          "t_ns": 1793348427291727157,
+          "text": "不过我可以陪你一起哼哼小调，"
+        },
+        {
+          "t_ns": 1793348427545293783,
+          "text": "你来领唱怎么样？"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 22,
+    "latency_events_total": 22,
+    "asr_events": 0,
+    "tts_events": 18,
+    "tts_play_pairs": 3,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793348426735865575,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793348426735511071,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "chitchat",
+        "keyword_medical": false,
+        "chitchat": true,
+        "judge_kind": null,
+        "judge_ms": 0.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793348426735511071, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"chitchat\", \"keyword_medical\": false, \"chitchat\": true, \"judge_kind\": null, \"judge_ms\": 0.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348426736248811,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793348426736015784,
+      "detail": {
+        "provider": "ollama",
+        "prompt_chars": 488,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793348426736015784, \"detail\": {\"provider\": \"ollama\", \"prompt_chars\": 488, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348426885171409,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793348426884959961,
+      "detail": {
+        "prompt_chars": 488
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793348426884959961, \"detail\": {\"prompt_chars\": 488}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348426890688893,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793348426890502753,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793348426890502753, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348426936292755,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793348426936150886,
+      "detail": {
+        "text_len": 6,
+        "head": "我不会唱歌，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793348426936150886, \"detail\": {\"text_len\": 6, \"head\": \"我不会唱歌，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348426936527161,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793348426936214964,
+      "detail": {
+        "text_len": 6
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793348426936214964, \"detail\": {\"text_len\": 6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348427586885520,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793348427586534095,
+      "detail": {
+        "chars": 28
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793348427586534095, \"detail\": {\"chars\": 28}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348427659662598,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793348427659298322,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 723.077762,
+        "audio_sec": 1.28,
+        "rtf": 0.5649045015624999
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793348427659298322, \"detail\": {\"text_len\": 6, \"dur_ms\": 723.077762, \"audio_sec\": 1.28, \"rtf\": 0.5649045015624999}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348427660473016,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793348427660286345,
+      "detail": {
+        "text_len": 14,
+        "head": "不过我可以陪你一起哼哼小调，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793348427660286345, \"detail\": {\"text_len\": 14, \"head\": \"不过我可以陪你一起哼哼小调，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348427660723857,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793348427660362949,
+      "detail": {
+        "text_len": 14
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793348427660362949, \"detail\": {\"text_len\": 14}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348427743494157,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793348427743199114,
+      "detail": {
+        "text_len": 6,
+        "head": "我不会唱歌，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793348427743199114, \"detail\": {\"text_len\": 6, \"head\": \"我不会唱歌，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348428940512380,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793348428940066758,
+      "detail": {
+        "text_len": 14,
+        "dur_ms": 1279.697915,
+        "audio_sec": 3.6,
+        "rtf": 0.35547164305555556
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793348428940066758, \"detail\": {\"text_len\": 14, \"dur_ms\": 1279.697915, \"audio_sec\": 3.6, \"rtf\": 0.35547164305555556}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348428940953188,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793348428940787042,
+      "detail": {
+        "text_len": 8,
+        "head": "你来领唱怎么样？"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793348428940787042, \"detail\": {\"text_len\": 8, \"head\": \"你来领唱怎么样？\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348428941133745,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793348428940858630,
+      "detail": {
+        "text_len": 8
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793348428940858630, \"detail\": {\"text_len\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348429039370316,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793348429036646940,
+      "detail": {
+        "text_len": 6,
+        "interrupted": false,
+        "dur_ms": 1293.444703
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793348429036646940, \"detail\": {\"text_len\": 6, \"interrupted\": false, \"dur_ms\": 1293.444703}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348429040083394,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793348429039878935,
+      "detail": {
+        "text_len": 14,
+        "head": "不过我可以陪你一起哼哼小调，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793348429039878935, \"detail\": {\"text_len\": 14, \"head\": \"不过我可以陪你一起哼哼小调，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348429535458832,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793348429535163112,
+      "detail": {
+        "text_len": 8,
+        "dur_ms": 594.299211,
+        "audio_sec": 1.6,
+        "rtf": 0.37143700687500003
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793348429535163112, \"detail\": {\"text_len\": 8, \"dur_ms\": 594.299211, \"audio_sec\": 1.6, \"rtf\": 0.37143700687500003}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348429535999147,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793348429535856225,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793348429535856225, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348432643820854,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793348432643491851,
+      "detail": {
+        "text_len": 14,
+        "interrupted": false,
+        "dur_ms": 3603.610158
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793348432643491851, \"detail\": {\"text_len\": 14, \"interrupted\": false, \"dur_ms\": 3603.610158}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348432644381599,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793348432644219795,
+      "detail": {
+        "text_len": 8,
+        "head": "你来领唱怎么样？"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793348432644219795, \"detail\": {\"text_len\": 8, \"head\": \"你来领唱怎么样？\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348434243024699,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793348434242647055,
+      "detail": {
+        "text_len": 8,
+        "interrupted": false,
+        "dur_ms": 1598.423524
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793348434242647055, \"detail\": {\"text_len\": 8, \"interrupted\": false, \"dur_ms\": 1598.423524}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348434243725523,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793348434243550209,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793348434243550209, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793348426735511071,
+          "arrival_ns": 1793348426735865575,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "chitchat",
+            "keyword_medical": false,
+            "chitchat": true,
+            "judge_kind": null,
+            "judge_ms": 0.0
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793348426736015784,
+          "arrival_ns": 1793348426736248811,
+          "source": "round",
+          "detail": {
+            "provider": "ollama",
+            "prompt_chars": 488,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793348426884959961,
+          "arrival_ns": 1793348426885171409,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 488
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793348427586534095,
+          "arrival_ns": 1793348427586885520,
+          "source": "round",
+          "detail": {
+            "chars": 28
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793348426890502753,
+          "arrival_ns": 1793348426890688893,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793348429535856225,
+          "arrival_ns": 1793348429535999147,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793348426936150886,
+          "arrival_ns": 1793348426936292755,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "我不会唱歌，"
+          }
+        },
+        {
+          "t_ns": 1793348427660286345,
+          "arrival_ns": 1793348427660473016,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "head": "不过我可以陪你一起哼哼小调，"
+          }
+        },
+        {
+          "t_ns": 1793348428940787042,
+          "arrival_ns": 1793348428940953188,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "你来领唱怎么样？"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793348426936214964,
+          "arrival_ns": 1793348426936527161,
+          "source": "round",
+          "detail": {
+            "text_len": 6
+          }
+        },
+        {
+          "t_ns": 1793348427660362949,
+          "arrival_ns": 1793348427660723857,
+          "source": "round",
+          "detail": {
+            "text_len": 14
+          }
+        },
+        {
+          "t_ns": 1793348428940858630,
+          "arrival_ns": 1793348428941133745,
+          "source": "round",
+          "detail": {
+            "text_len": 8
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793348427659298322,
+          "arrival_ns": 1793348427659662598,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 723.077762,
+            "audio_sec": 1.28,
+            "rtf": 0.5649045015624999
+          }
+        },
+        {
+          "t_ns": 1793348428940066758,
+          "arrival_ns": 1793348428940512380,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "dur_ms": 1279.697915,
+            "audio_sec": 3.6,
+            "rtf": 0.35547164305555556
+          }
+        },
+        {
+          "t_ns": 1793348429535163112,
+          "arrival_ns": 1793348429535458832,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "dur_ms": 594.299211,
+            "audio_sec": 1.6,
+            "rtf": 0.37143700687500003
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793348427743199114,
+          "arrival_ns": 1793348427743494157,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "我不会唱歌，"
+          }
+        },
+        {
+          "t_ns": 1793348429039878935,
+          "arrival_ns": 1793348429040083394,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "head": "不过我可以陪你一起哼哼小调，"
+          }
+        },
+        {
+          "t_ns": 1793348432644219795,
+          "arrival_ns": 1793348432644381599,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "你来领唱怎么样？"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793348429036646940,
+          "arrival_ns": 1793348429039370316,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "interrupted": false,
+            "dur_ms": 1293.444703
+          }
+        },
+        {
+          "t_ns": 1793348432643491851,
+          "arrival_ns": 1793348432643820854,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "interrupted": false,
+            "dur_ms": 3603.610158
+          }
+        },
+        {
+          "t_ns": 1793348434242647055,
+          "arrival_ns": 1793348434243024699,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "interrupted": false,
+            "dur_ms": 1598.423524
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793348434243550209,
+          "arrival_ns": 1793348434243725523,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 10,
+    "interval_s": 2.0
+  }
+}

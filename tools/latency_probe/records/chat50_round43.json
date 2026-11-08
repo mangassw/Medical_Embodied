@@ -1,0 +1,917 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1064920",
+  "host": "artrc",
+  "tag": "chat50",
+  "round_index": 43,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T10:34:53.180",
+  "finished_at": "2026-10-30T10:35:02.839",
+  "duration_s": 9.658,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "红烧肉怎么做",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793327693181289286,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793327693180763923,
+    "t_publish_question_ns": 1793327693181289286,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793327693181919111,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793327693182300914,
+      "ali_llm_output_start": 1793327693902871405,
+      "ali_llm_output_first_text": 1793327693904210559,
+      "ali_llm_output_done": 1793327694689406866,
+      "tts_realtime_data_start": 1793327693903282829,
+      "tts_realtime_data_first_text": 1793327693988720181,
+      "tts_realtime_data_done": 1793327694689640806,
+      "tts_session_finished": 1793327702534781343
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793327693988969471,
+      "tts_local.synth_start_first": 1793327693989039924,
+      "tts_local.synth_end_first": 1793327694679920994,
+      "tts_local.play_start_first": 1793327694755193749,
+      "tts_local.play_end_last": 1793327702533904811,
+      "tts_local.session_finished": 1793327702534625820
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.012,
+    "router_to_llm_first_ms": 721.91,
+    "question_to_llm_first_ms": 722.921,
+    "llm_first_to_done_ms": 785.196,
+    "question_to_llm_done_ms": 1508.118,
+    "llm_first_to_tts_first_text_ms": 84.51,
+    "question_to_tts_first_text_ms": 807.431,
+    "first_tts_text_to_first_play_start_ms": 766.474,
+    "tts_rx_to_synth_end_ms": 690.952,
+    "tts_rx_to_play_start_ms": 766.224,
+    "tts_synth_end_to_play_start_ms": 75.273,
+    "question_to_first_audio_ms": 1573.904,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 9353.492,
+    "audio_total_sum_ms": 7776.322,
+    "audio_first_to_last_ms": 7778.711
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 1011628,
+    "router_to_llm_first_ns": 721909645,
+    "question_to_llm_first_ns": 722921273,
+    "llm_first_to_done_ns": 785196307,
+    "question_to_llm_done_ns": 1508117580,
+    "llm_first_to_tts_first_text_ns": 84509622,
+    "question_to_tts_first_text_ns": 807430895,
+    "first_tts_text_to_first_play_start_ns": 766473568,
+    "tts_rx_to_synth_end_ns": 690951523,
+    "tts_rx_to_play_start_ns": 766224278,
+    "tts_synth_end_to_play_start_ns": 75272755,
+    "question_to_first_audio_ns": 1573904463,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 9353492057,
+    "audio_total_sum_ns": 7776322470,
+    "audio_first_to_last_ns": 7778711062
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 722921273,
+      "ms": 722.921
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 785196307,
+      "ms": 785.196
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 84509622,
+      "ms": 84.51
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 766473568,
+      "ms": 766.474
+    },
+    "question_to_first_play_start": {
+      "ns": 1573904463,
+      "ms": 1573.904
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 9353492057,
+      "ms": 9353.492
+    },
+    "audio_total_sec": {
+      "ns": 7776322470,
+      "ms": 7776.322,
+      "sec": 7.776
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.012,
+    "router_to_llm_first_ms": 721.91,
+    "question_to_llm_first_ms": 722.921,
+    "llm_first_to_done_ms": 785.196,
+    "question_to_llm_done_ms": 1508.118,
+    "llm_first_to_tts_first_text_ms": 84.51,
+    "question_to_tts_first_text_ms": 807.431,
+    "first_tts_text_to_first_play_start_ms": 766.474,
+    "tts_rx_to_synth_end_ms": 690.952,
+    "tts_rx_to_play_start_ms": 766.224,
+    "tts_synth_end_to_play_start_ms": 75.273,
+    "question_to_first_audio_ms": 1573.904,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 9353.492,
+    "audio_total_sum_ms": 7776.322,
+    "audio_first_to_last_ms": 7778.711
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793327693902871405,
+      "first_text_rx_ns": 1793327693904210559,
+      "done_rx_ns": 1793327694689406866,
+      "chunk_count": 9,
+      "char_count": 31,
+      "chunks": [
+        {
+          "t_ns": 1793327693904210559,
+          "text": "五"
+        },
+        {
+          "t_ns": 1793327693936642211,
+          "text": "花肉焯"
+        },
+        {
+          "t_ns": 1793327693988492190,
+          "text": "水、"
+        },
+        {
+          "t_ns": 1793327694038631173,
+          "text": "炒"
+        },
+        {
+          "t_ns": 1793327694120874453,
+          "text": "糖色、加"
+        },
+        {
+          "t_ns": 1793327694290506383,
+          "text": "酱油炖软烂"
+        },
+        {
+          "t_ns": 1793327694585712509,
+          "text": "，  \n小火慢"
+        },
+        {
+          "t_ns": 1793327694586121411,
+          "text": "煨才香糯"
+        },
+        {
+          "t_ns": 1793327694652123598,
+          "text": "入味呢。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793327693988720181,
+      "done_rx_ns": 1793327694689640806,
+      "text_count": 4,
+      "texts": [
+        {
+          "t_ns": 1793327693988720181,
+          "text": "五花肉焯水、"
+        },
+        {
+          "t_ns": 1793327694121101741,
+          "text": "炒糖色、"
+        },
+        {
+          "t_ns": 1793327694585791746,
+          "text": "加酱油炖软烂，"
+        },
+        {
+          "t_ns": 1793327694652313251,
+          "text": "小火慢煨才香糯入味呢。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 28,
+    "latency_events_total": 28,
+    "asr_events": 0,
+    "tts_events": 23,
+    "tts_play_pairs": 4,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793327693576674157,
+      "node": "llm_medical",
+      "stage": "intent_judge",
+      "t_ns": 1793327693576417217,
+      "detail": {
+        "model": "qwen-flash",
+        "ms": 393.5,
+        "answer": "聊",
+        "kind": "chat"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent_judge\", \"t_ns\": 1793327693576417217, \"detail\": {\"model\": \"qwen-flash\", \"ms\": 393.5, \"answer\": \"聊\", \"kind\": \"chat\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327693576888890,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793327693576558026,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "llm:qwen-flash",
+        "keyword_medical": false,
+        "judge_kind": "chat",
+        "judge_ms": 393.5
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793327693576558026, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"llm:qwen-flash\", \"keyword_medical\": false, \"judge_kind\": \"chat\", \"judge_ms\": 393.5}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327693902937270,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793327693902432924,
+      "detail": {
+        "prompt_chars": 397,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793327693902432924, \"detail\": {\"prompt_chars\": 397, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327693903593120,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793327693903385674,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793327693903385674, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327693903937651,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793327693903634417,
+      "detail": {
+        "prompt_chars": 397
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793327693903634417, \"detail\": {\"prompt_chars\": 397}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327693989129019,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327693988969471,
+      "detail": {
+        "text_len": 6,
+        "head": "五花肉焯水、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327693988969471, \"detail\": {\"text_len\": 6, \"head\": \"五花肉焯水、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327693989310587,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327693989039924,
+      "detail": {
+        "text_len": 6
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327693989039924, \"detail\": {\"text_len\": 6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327694680206951,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327694679920994,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 690.875978,
+        "audio_sec": 1.84,
+        "rtf": 0.37547607499999996
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327694679920994, \"detail\": {\"text_len\": 6, \"dur_ms\": 690.875978, \"audio_sec\": 1.84, \"rtf\": 0.37547607499999996}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327694686666317,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327694686463480,
+      "detail": {
+        "text_len": 4,
+        "head": "炒糖色、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327694686463480, \"detail\": {\"text_len\": 4, \"head\": \"炒糖色、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327694686878349,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327694686523509,
+      "detail": {
+        "text_len": 4
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327694686523509, \"detail\": {\"text_len\": 4}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327694689446595,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793327694689095342,
+      "detail": {
+        "chars": 31
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793327694689095342, \"detail\": {\"chars\": 31}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327694755447728,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327694755193749,
+      "detail": {
+        "text_len": 6,
+        "head": "五花肉焯水、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327694755193749, \"detail\": {\"text_len\": 6, \"head\": \"五花肉焯水、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327695211784324,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327695211449864,
+      "detail": {
+        "text_len": 4,
+        "dur_ms": 524.922076,
+        "audio_sec": 1.44,
+        "rtf": 0.36452921944444444
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327695211449864, \"detail\": {\"text_len\": 4, \"dur_ms\": 524.922076, \"audio_sec\": 1.44, \"rtf\": 0.36452921944444444}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327695212547073,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327695212309468,
+      "detail": {
+        "text_len": 7,
+        "head": "加酱油炖软烂，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327695212309468, \"detail\": {\"text_len\": 7, \"head\": \"加酱油炖软烂，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327695212738072,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327695212358958,
+      "detail": {
+        "text_len": 7
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327695212358958, \"detail\": {\"text_len\": 7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327695816654077,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327695816404512,
+      "detail": {
+        "text_len": 7,
+        "dur_ms": 604.041337,
+        "audio_sec": 1.68,
+        "rtf": 0.35954841488095235
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327695816404512, \"detail\": {\"text_len\": 7, \"dur_ms\": 604.041337, \"audio_sec\": 1.68, \"rtf\": 0.35954841488095235}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327695817109026,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327695816963785,
+      "detail": {
+        "text_len": 11,
+        "head": "小火慢煨才香糯入味呢。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327695816963785, \"detail\": {\"text_len\": 11, \"head\": \"小火慢煨才香糯入味呢。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327695817304556,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327695817004076,
+      "detail": {
+        "text_len": 11
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327695817004076, \"detail\": {\"text_len\": 11}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327696598668068,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327696598371985,
+      "detail": {
+        "text_len": 6,
+        "interrupted": false,
+        "dur_ms": 1843.176743
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327696598371985, \"detail\": {\"text_len\": 6, \"interrupted\": false, \"dur_ms\": 1843.176743}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327696599213786,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327696599073143,
+      "detail": {
+        "text_len": 4,
+        "head": "炒糖色、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327696599073143, \"detail\": {\"text_len\": 4, \"head\": \"炒糖色、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327696811906572,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327696811547130,
+      "detail": {
+        "text_len": 11,
+        "dur_ms": 994.536695,
+        "audio_sec": 2.8,
+        "rtf": 0.3551916767857143
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327696811547130, \"detail\": {\"text_len\": 11, \"dur_ms\": 994.536695, \"audio_sec\": 2.8, \"rtf\": 0.3551916767857143}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327696812602980,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793327696812393597,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793327696812393597, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327698041424271,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327698040985354,
+      "detail": {
+        "text_len": 4,
+        "interrupted": false,
+        "dur_ms": 1441.905803
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327698040985354, \"detail\": {\"text_len\": 4, \"interrupted\": false, \"dur_ms\": 1441.905803}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327698042207255,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327698041946106,
+      "detail": {
+        "text_len": 7,
+        "head": "加酱油炖软烂，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327698041946106, \"detail\": {\"text_len\": 7, \"head\": \"加酱油炖软烂，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327699731851630,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327699731526237,
+      "detail": {
+        "text_len": 7,
+        "interrupted": false,
+        "dur_ms": 1689.577637
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327699731526237, \"detail\": {\"text_len\": 7, \"interrupted\": false, \"dur_ms\": 1689.577637}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327699732395880,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327699732252919,
+      "detail": {
+        "text_len": 11,
+        "head": "小火慢煨才香糯入味呢。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327699732252919, \"detail\": {\"text_len\": 11, \"head\": \"小火慢煨才香糯入味呢。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327702534211281,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327702533904811,
+      "detail": {
+        "text_len": 11,
+        "interrupted": false,
+        "dur_ms": 2801.648642
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327702533904811, \"detail\": {\"text_len\": 11, \"interrupted\": false, \"dur_ms\": 2801.648642}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327702534820966,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793327702534625820,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793327702534625820, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent_judge": [
+        {
+          "t_ns": 1793327693576417217,
+          "arrival_ns": 1793327693576674157,
+          "source": "round",
+          "detail": {
+            "model": "qwen-flash",
+            "ms": 393.5,
+            "answer": "聊",
+            "kind": "chat"
+          }
+        }
+      ],
+      "intent": [
+        {
+          "t_ns": 1793327693576558026,
+          "arrival_ns": 1793327693576888890,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "llm:qwen-flash",
+            "keyword_medical": false,
+            "judge_kind": "chat",
+            "judge_ms": 393.5
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793327693902432924,
+          "arrival_ns": 1793327693902937270,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 397,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793327693903634417,
+          "arrival_ns": 1793327693903937651,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 397
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793327694689095342,
+          "arrival_ns": 1793327694689446595,
+          "source": "round",
+          "detail": {
+            "chars": 31
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793327693903385674,
+          "arrival_ns": 1793327693903593120,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793327696812393597,
+          "arrival_ns": 1793327696812602980,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793327693988969471,
+          "arrival_ns": 1793327693989129019,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "五花肉焯水、"
+          }
+        },
+        {
+          "t_ns": 1793327694686463480,
+          "arrival_ns": 1793327694686666317,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "炒糖色、"
+          }
+        },
+        {
+          "t_ns": 1793327695212309468,
+          "arrival_ns": 1793327695212547073,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "加酱油炖软烂，"
+          }
+        },
+        {
+          "t_ns": 1793327695816963785,
+          "arrival_ns": 1793327695817109026,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "小火慢煨才香糯入味呢。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793327693989039924,
+          "arrival_ns": 1793327693989310587,
+          "source": "round",
+          "detail": {
+            "text_len": 6
+          }
+        },
+        {
+          "t_ns": 1793327694686523509,
+          "arrival_ns": 1793327694686878349,
+          "source": "round",
+          "detail": {
+            "text_len": 4
+          }
+        },
+        {
+          "t_ns": 1793327695212358958,
+          "arrival_ns": 1793327695212738072,
+          "source": "round",
+          "detail": {
+            "text_len": 7
+          }
+        },
+        {
+          "t_ns": 1793327695817004076,
+          "arrival_ns": 1793327695817304556,
+          "source": "round",
+          "detail": {
+            "text_len": 11
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793327694679920994,
+          "arrival_ns": 1793327694680206951,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 690.875978,
+            "audio_sec": 1.84,
+            "rtf": 0.37547607499999996
+          }
+        },
+        {
+          "t_ns": 1793327695211449864,
+          "arrival_ns": 1793327695211784324,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "dur_ms": 524.922076,
+            "audio_sec": 1.44,
+            "rtf": 0.36452921944444444
+          }
+        },
+        {
+          "t_ns": 1793327695816404512,
+          "arrival_ns": 1793327695816654077,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "dur_ms": 604.041337,
+            "audio_sec": 1.68,
+            "rtf": 0.35954841488095235
+          }
+        },
+        {
+          "t_ns": 1793327696811547130,
+          "arrival_ns": 1793327696811906572,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "dur_ms": 994.536695,
+            "audio_sec": 2.8,
+            "rtf": 0.3551916767857143
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793327694755193749,
+          "arrival_ns": 1793327694755447728,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "五花肉焯水、"
+          }
+        },
+        {
+          "t_ns": 1793327696599073143,
+          "arrival_ns": 1793327696599213786,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "炒糖色、"
+          }
+        },
+        {
+          "t_ns": 1793327698041946106,
+          "arrival_ns": 1793327698042207255,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "加酱油炖软烂，"
+          }
+        },
+        {
+          "t_ns": 1793327699732252919,
+          "arrival_ns": 1793327699732395880,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "小火慢煨才香糯入味呢。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793327696598371985,
+          "arrival_ns": 1793327696598668068,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "interrupted": false,
+            "dur_ms": 1843.176743
+          }
+        },
+        {
+          "t_ns": 1793327698040985354,
+          "arrival_ns": 1793327698041424271,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "interrupted": false,
+            "dur_ms": 1441.905803
+          }
+        },
+        {
+          "t_ns": 1793327699731526237,
+          "arrival_ns": 1793327699731851630,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "interrupted": false,
+            "dur_ms": 1689.577637
+          }
+        },
+        {
+          "t_ns": 1793327702533904811,
+          "arrival_ns": 1793327702534211281,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "interrupted": false,
+            "dur_ms": 2801.648642
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793327702534625820,
+          "arrival_ns": 1793327702534820966,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 50,
+    "interval_s": 2.0
+  }
+}

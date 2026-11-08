@@ -1,0 +1,549 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_167831",
+  "host": "artrc",
+  "tag": "selftest_inject",
+  "round_index": 2,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-27T15:38:25.475",
+  "finished_at": "2026-10-27T15:38:29.183",
+  "duration_s": 3.708,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "病人血压偏高怎么办？",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793086705475603165,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793086705475125515,
+    "t_publish_question_ns": 1793086705475603165,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793086705476265987,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793086705506410869,
+      "ali_llm_output_start": 1793086705621826788,
+      "ali_llm_output_first_text": 1793086705627535611,
+      "ali_llm_output_done": 1793086706226400400,
+      "tts_realtime_data_start": null,
+      "tts_realtime_data_first_text": 1793086705826344562,
+      "tts_realtime_data_done": 1793086706231333279,
+      "tts_session_finished": 1793086708881324971
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793086705830943153,
+      "tts_local.synth_start_first": 1793086705850943153,
+      "tts_local.synth_end_first": 1793086706630943153,
+      "tts_local.play_start_first": 1793086707030943153,
+      "tts_local.play_end_last": 1793086708830943153,
+      "tts_local.session_finished": 1793086708880943153
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 30.808,
+    "router_to_llm_first_ms": 121.125,
+    "question_to_llm_first_ms": 151.932,
+    "llm_first_to_done_ms": 598.865,
+    "question_to_llm_done_ms": 750.797,
+    "llm_first_to_tts_first_text_ms": 198.809,
+    "question_to_tts_first_text_ms": 350.741,
+    "first_tts_text_to_first_play_start_ms": 1204.599,
+    "tts_rx_to_synth_end_ms": 800.0,
+    "tts_rx_to_play_start_ms": 1200.0,
+    "tts_synth_end_to_play_start_ms": 400.0,
+    "question_to_first_audio_ms": 1555.34,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 3405.722,
+    "audio_total_sum_ms": 2400.0,
+    "audio_first_to_last_ms": 1800.0
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 30807704,
+    "router_to_llm_first_ns": 121124742,
+    "question_to_llm_first_ns": 151932446,
+    "llm_first_to_done_ns": 598864789,
+    "question_to_llm_done_ns": 750797235,
+    "llm_first_to_tts_first_text_ns": 198808951,
+    "question_to_tts_first_text_ns": 350741397,
+    "first_tts_text_to_first_play_start_ns": 1204598591,
+    "tts_rx_to_synth_end_ns": 800000000,
+    "tts_rx_to_play_start_ns": 1200000000,
+    "tts_synth_end_to_play_start_ns": 400000000,
+    "question_to_first_audio_ns": 1555339988,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 3405721806,
+    "audio_total_sum_ns": 2400000000,
+    "audio_first_to_last_ns": 1800000000
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 151932446,
+      "ms": 151.932
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 598864789,
+      "ms": 598.865
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 198808951,
+      "ms": 198.809
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 1204598591,
+      "ms": 1204.599
+    },
+    "question_to_first_play_start": {
+      "ns": 1555339988,
+      "ms": 1555.34
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 3405721806,
+      "ms": 3405.722
+    },
+    "audio_total_sec": {
+      "ns": 2400000000,
+      "ms": 2400.0,
+      "sec": 2.4
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 30.808,
+    "router_to_llm_first_ms": 121.125,
+    "question_to_llm_first_ms": 151.932,
+    "llm_first_to_done_ms": 598.865,
+    "question_to_llm_done_ms": 750.797,
+    "llm_first_to_tts_first_text_ms": 198.809,
+    "question_to_tts_first_text_ms": 350.741,
+    "first_tts_text_to_first_play_start_ms": 1204.599,
+    "tts_rx_to_synth_end_ms": 800.0,
+    "tts_rx_to_play_start_ms": 1200.0,
+    "tts_synth_end_to_play_start_ms": 400.0,
+    "question_to_first_audio_ms": 1555.34,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 3405.722,
+    "audio_total_sum_ms": 2400.0,
+    "audio_first_to_last_ms": 1800.0
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793086705621826788,
+      "first_text_rx_ns": 1793086705627535611,
+      "done_rx_ns": 1793086706226400400,
+      "chunk_count": 8,
+      "char_count": 20,
+      "chunks": [
+        {
+          "t_ns": 1793086705627535611,
+          "text": "病人"
+        },
+        {
+          "t_ns": 1793086705706345867,
+          "text": "血压"
+        },
+        {
+          "t_ns": 1793086705786214107,
+          "text": "偏高，"
+        },
+        {
+          "t_ns": 1793086705866392379,
+          "text": "建议"
+        },
+        {
+          "t_ns": 1793086705946336693,
+          "text": "先安静"
+        },
+        {
+          "t_ns": 1793086706026360235,
+          "text": "休息，"
+        },
+        {
+          "t_ns": 1793086706106302416,
+          "text": "不要"
+        },
+        {
+          "t_ns": 1793086706186312266,
+          "text": "紧张。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793086705826344562,
+      "done_rx_ns": 1793086706231333279,
+      "text_count": 2,
+      "texts": [
+        {
+          "t_ns": 1793086705826344562,
+          "text": "测试分句1。"
+        },
+        {
+          "t_ns": 1793086706426329475,
+          "text": "测试分句2。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 12,
+    "latency_events_total": 12,
+    "asr_events": 0,
+    "tts_events": 12,
+    "tts_play_pairs": 2,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793086705831476395,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793086705830943153,
+      "detail": {
+        "text_len": 6,
+        "head": "测试分句1。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793086705830943153, \"detail\": {\"text_len\": 6, \"head\": \"测试分句1。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793086705851353340,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793086705850943153,
+      "detail": {
+        "text_len": 5,
+        "sentence": 0
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793086705850943153, \"detail\": {\"text_len\": 5, \"sentence\": 0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793086706232133309,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793086706231943153,
+      "detail": {
+        "control": [
+          "DONE"
+        ]
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793086706231943153, \"detail\": {\"control\": [\"DONE\"]}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793086706431452152,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793086706430943153,
+      "detail": {
+        "text_len": 6,
+        "head": "测试分句2。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793086706430943153, \"detail\": {\"text_len\": 6, \"head\": \"测试分句2。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793086706451374609,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793086706450943153,
+      "detail": {
+        "text_len": 5,
+        "sentence": 1
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793086706450943153, \"detail\": {\"text_len\": 5, \"sentence\": 1}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793086706633726315,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793086706630943153,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 800.0,
+        "audio_sec": 1.2,
+        "sentence": 0
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793086706630943153, \"detail\": {\"text_len\": 6, \"dur_ms\": 800.0, \"audio_sec\": 1.2, \"sentence\": 0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793086707031484653,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793086707030943153,
+      "detail": {
+        "text_len": 6,
+        "head": "测试分句1。",
+        "sentence": 0
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793086707030943153, \"detail\": {\"text_len\": 6, \"head\": \"测试分句1。\", \"sentence\": 0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793086707233026365,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793086707230943153,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 800.0,
+        "audio_sec": 1.2,
+        "sentence": 1
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793086707230943153, \"detail\": {\"text_len\": 6, \"dur_ms\": 800.0, \"audio_sec\": 1.2, \"sentence\": 1}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793086707631719516,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793086707630943153,
+      "detail": {
+        "text_len": 6,
+        "head": "测试分句2。",
+        "sentence": 1
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793086707630943153, \"detail\": {\"text_len\": 6, \"head\": \"测试分句2。\", \"sentence\": 1}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793086708231417479,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793086708230943153,
+      "detail": {
+        "dur_ms": 1200.0,
+        "sentence": 0
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793086708230943153, \"detail\": {\"dur_ms\": 1200.0, \"sentence\": 0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793086708831594868,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793086708830943153,
+      "detail": {
+        "dur_ms": 1200.0,
+        "sentence": 1
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793086708830943153, \"detail\": {\"dur_ms\": 1200.0, \"sentence\": 1}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793086708882158622,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793086708880943153,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793086708880943153, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "tts_local": {
+      "rx": [
+        {
+          "t_ns": 1793086705830943153,
+          "arrival_ns": 1793086705831476395,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "测试分句1。"
+          }
+        },
+        {
+          "t_ns": 1793086706430943153,
+          "arrival_ns": 1793086706431452152,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "测试分句2。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793086705850943153,
+          "arrival_ns": 1793086705851353340,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "sentence": 0
+          }
+        },
+        {
+          "t_ns": 1793086706450943153,
+          "arrival_ns": 1793086706451374609,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "sentence": 1
+          }
+        }
+      ],
+      "rx_control": [
+        {
+          "t_ns": 1793086706231943153,
+          "arrival_ns": 1793086706232133309,
+          "source": "round",
+          "detail": {
+            "control": [
+              "DONE"
+            ]
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793086706630943153,
+          "arrival_ns": 1793086706633726315,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 800.0,
+            "audio_sec": 1.2,
+            "sentence": 0
+          }
+        },
+        {
+          "t_ns": 1793086707230943153,
+          "arrival_ns": 1793086707233026365,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 800.0,
+            "audio_sec": 1.2,
+            "sentence": 1
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793086707030943153,
+          "arrival_ns": 1793086707031484653,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "测试分句1。",
+            "sentence": 0
+          }
+        },
+        {
+          "t_ns": 1793086707630943153,
+          "arrival_ns": 1793086707631719516,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "测试分句2。",
+            "sentence": 1
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793086708230943153,
+          "arrival_ns": 1793086708231417479,
+          "source": "round",
+          "detail": {
+            "dur_ms": 1200.0,
+            "sentence": 0
+          }
+        },
+        {
+          "t_ns": 1793086708830943153,
+          "arrival_ns": 1793086708831594868,
+          "source": "round",
+          "detail": {
+            "dur_ms": 1200.0,
+            "sentence": 1
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793086708880943153,
+          "arrival_ns": 1793086708882158622,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 30.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 3,
+    "interval_s": 0.8
+  }
+}

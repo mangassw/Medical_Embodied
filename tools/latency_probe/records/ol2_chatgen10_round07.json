@@ -1,0 +1,842 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1163519",
+  "host": "artrc",
+  "tag": "ol2_chatgen10",
+  "round_index": 7,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T16:21:48.936",
+  "finished_at": "2026-10-30T16:21:55.869",
+  "duration_s": 6.933,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "红烧肉怎么做",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793348508936833116,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793348508936262951,
+    "t_publish_question_ns": 1793348508936833116,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793348508937598038,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793348508937872774,
+      "ali_llm_output_start": 1793348509178020129,
+      "ali_llm_output_first_text": 1793348509178401610,
+      "ali_llm_output_done": 1793348509729375278,
+      "tts_realtime_data_start": 1793348509178195041,
+      "tts_realtime_data_first_text": 1793348509264164758,
+      "tts_realtime_data_done": 1793348509729651715,
+      "tts_session_finished": 1793348515569631996
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793348509264369672,
+      "tts_local.synth_start_first": 1793348509264439732,
+      "tts_local.synth_end_first": 1793348510058827214,
+      "tts_local.play_start_first": 1793348510143169309,
+      "tts_local.play_end_last": 1793348515568607531,
+      "tts_local.session_finished": 1793348515569287693
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.04,
+    "router_to_llm_first_ms": 240.529,
+    "question_to_llm_first_ms": 241.568,
+    "llm_first_to_done_ms": 550.974,
+    "question_to_llm_done_ms": 792.542,
+    "llm_first_to_tts_first_text_ms": 85.763,
+    "question_to_tts_first_text_ms": 327.332,
+    "first_tts_text_to_first_play_start_ms": 879.005,
+    "tts_rx_to_synth_end_ms": 794.458,
+    "tts_rx_to_play_start_ms": 878.8,
+    "tts_synth_end_to_play_start_ms": 84.342,
+    "question_to_first_audio_ms": 1206.336,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 6632.799,
+    "audio_total_sum_ms": 5423.766,
+    "audio_first_to_last_ms": 5425.438
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 1039658,
+    "router_to_llm_first_ns": 240528836,
+    "question_to_llm_first_ns": 241568494,
+    "llm_first_to_done_ns": 550973668,
+    "question_to_llm_done_ns": 792542162,
+    "llm_first_to_tts_first_text_ns": 85763148,
+    "question_to_tts_first_text_ns": 327331642,
+    "first_tts_text_to_first_play_start_ns": 879004551,
+    "tts_rx_to_synth_end_ns": 794457542,
+    "tts_rx_to_play_start_ns": 878799637,
+    "tts_synth_end_to_play_start_ns": 84342095,
+    "question_to_first_audio_ns": 1206336193,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 6632798880,
+    "audio_total_sum_ns": 5423766419,
+    "audio_first_to_last_ns": 5425438222
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 241568494,
+      "ms": 241.568
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 550973668,
+      "ms": 550.974
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 85763148,
+      "ms": 85.763
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 879004551,
+      "ms": 879.005
+    },
+    "question_to_first_play_start": {
+      "ns": 1206336193,
+      "ms": 1206.336
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 6632798880,
+      "ms": 6632.799
+    },
+    "audio_total_sec": {
+      "ns": 5423766419,
+      "ms": 5423.766,
+      "sec": 5.424
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.04,
+    "router_to_llm_first_ms": 240.529,
+    "question_to_llm_first_ms": 241.568,
+    "llm_first_to_done_ms": 550.974,
+    "question_to_llm_done_ms": 792.542,
+    "llm_first_to_tts_first_text_ms": 85.763,
+    "question_to_tts_first_text_ms": 327.332,
+    "first_tts_text_to_first_play_start_ms": 879.005,
+    "tts_rx_to_synth_end_ms": 794.458,
+    "tts_rx_to_play_start_ms": 878.8,
+    "tts_synth_end_to_play_start_ms": 84.342,
+    "question_to_first_audio_ms": 1206.336,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 6632.799,
+    "audio_total_sum_ms": 5423.766,
+    "audio_first_to_last_ms": 5425.438
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793348509178020129,
+      "first_text_rx_ns": 1793348509178401610,
+      "done_rx_ns": 1793348509729375278,
+      "chunk_count": 17,
+      "char_count": 22,
+      "chunks": [
+        {
+          "t_ns": 1793348509178401610,
+          "text": "先"
+        },
+        {
+          "t_ns": 1793348509195338727,
+          "text": "焯"
+        },
+        {
+          "t_ns": 1793348509212478346,
+          "text": "水"
+        },
+        {
+          "t_ns": 1793348509232104652,
+          "text": "去"
+        },
+        {
+          "t_ns": 1793348509246459199,
+          "text": "腥"
+        },
+        {
+          "t_ns": 1793348509263845582,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793348509286346439,
+          "text": "再"
+        },
+        {
+          "t_ns": 1793348509309154528,
+          "text": "加"
+        },
+        {
+          "t_ns": 1793348509331802271,
+          "text": "调料"
+        },
+        {
+          "t_ns": 1793348509374588905,
+          "text": "炖"
+        },
+        {
+          "t_ns": 1793348509425757198,
+          "text": "煮"
+        },
+        {
+          "t_ns": 1793348509473052423,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793348509516392973,
+          "text": "最后"
+        },
+        {
+          "t_ns": 1793348509566786180,
+          "text": "收"
+        },
+        {
+          "t_ns": 1793348509601942692,
+          "text": "汁"
+        },
+        {
+          "t_ns": 1793348509650324877,
+          "text": "就可以了"
+        },
+        {
+          "t_ns": 1793348509685651224,
+          "text": "。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793348509264164758,
+      "done_rx_ns": 1793348509729651715,
+      "text_count": 3,
+      "texts": [
+        {
+          "t_ns": 1793348509264164758,
+          "text": "先焯水去腥，"
+        },
+        {
+          "t_ns": 1793348509473325197,
+          "text": "再加调料炖煮，"
+        },
+        {
+          "t_ns": 1793348509685920885,
+          "text": "最后收汁就可以了。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 23,
+    "latency_events_total": 23,
+    "asr_events": 0,
+    "tts_events": 18,
+    "tts_play_pairs": 3,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793348509021068926,
+      "node": "llm_medical",
+      "stage": "intent_judge",
+      "t_ns": 1793348509020791099,
+      "detail": {
+        "model": "qwen3:8b",
+        "ms": 82.3,
+        "answer": "聊",
+        "kind": "chat",
+        "provider": "ollama"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent_judge\", \"t_ns\": 1793348509020791099, \"detail\": {\"model\": \"qwen3:8b\", \"ms\": 82.3, \"answer\": \"聊\", \"kind\": \"chat\", \"provider\": \"ollama\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348509021320297,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793348509020937292,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "llm:qwen3:8b",
+        "keyword_medical": false,
+        "chitchat": false,
+        "judge_kind": "chat",
+        "judge_ms": 82.3
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793348509020937292, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"llm:qwen3:8b\", \"keyword_medical\": false, \"chitchat\": false, \"judge_kind\": \"chat\", \"judge_ms\": 82.3}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348509021517496,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793348509021339407,
+      "detail": {
+        "provider": "ollama",
+        "prompt_chars": 476,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793348509021339407, \"detail\": {\"provider\": \"ollama\", \"prompt_chars\": 476, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348509178226173,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793348509178089487,
+      "detail": {
+        "prompt_chars": 476
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793348509178089487, \"detail\": {\"prompt_chars\": 476}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348509178675291,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793348509178504734,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793348509178504734, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348509264697487,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793348509264369672,
+      "detail": {
+        "text_len": 6,
+        "head": "先焯水去腥，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793348509264369672, \"detail\": {\"text_len\": 6, \"head\": \"先焯水去腥，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348509265024829,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793348509264439732,
+      "detail": {
+        "text_len": 6
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793348509264439732, \"detail\": {\"text_len\": 6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348509729421689,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793348509729068587,
+      "detail": {
+        "chars": 22
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793348509729068587, \"detail\": {\"chars\": 22}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348510059161587,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793348510058827214,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 794.380458,
+        "audio_sec": 1.6,
+        "rtf": 0.49648778625
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793348510058827214, \"detail\": {\"text_len\": 6, \"dur_ms\": 794.380458, \"audio_sec\": 1.6, \"rtf\": 0.49648778625}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348510062835648,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793348510062592606,
+      "detail": {
+        "text_len": 7,
+        "head": "再加调料炖煮，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793348510062592606, \"detail\": {\"text_len\": 7, \"head\": \"再加调料炖煮，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348510063056356,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793348510062692080,
+      "detail": {
+        "text_len": 7
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793348510062692080, \"detail\": {\"text_len\": 7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348510143418000,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793348510143169309,
+      "detail": {
+        "text_len": 6,
+        "head": "先焯水去腥，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793348510143169309, \"detail\": {\"text_len\": 6, \"head\": \"先焯水去腥，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348510765378030,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793348510765130133,
+      "detail": {
+        "text_len": 7,
+        "dur_ms": 702.432828,
+        "audio_sec": 1.84,
+        "rtf": 0.38175697173913037
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793348510765130133, \"detail\": {\"text_len\": 7, \"dur_ms\": 702.432828, \"audio_sec\": 1.84, \"rtf\": 0.38175697173913037}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348510765802591,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793348510765681077,
+      "detail": {
+        "text_len": 9,
+        "head": "最后收汁就可以了。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793348510765681077, \"detail\": {\"text_len\": 9, \"head\": \"最后收汁就可以了。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348510765986781,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793348510765729961,
+      "detail": {
+        "text_len": 9
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793348510765729961, \"detail\": {\"text_len\": 9}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348511476916558,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793348511476626054,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 710.890685,
+        "audio_sec": 1.92,
+        "rtf": 0.3702555651041667
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793348511476626054, \"detail\": {\"text_len\": 9, \"dur_ms\": 710.890685, \"audio_sec\": 1.92, \"rtf\": 0.3702555651041667}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348511477291158,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793348511477159696,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793348511477159696, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348511762919021,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793348511762617645,
+      "detail": {
+        "text_len": 6,
+        "interrupted": false,
+        "dur_ms": 1619.44551
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793348511762617645, \"detail\": {\"text_len\": 6, \"interrupted\": false, \"dur_ms\": 1619.44551}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348511763596815,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793348511763438138,
+      "detail": {
+        "text_len": 7,
+        "head": "再加调料炖煮，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793348511763438138, \"detail\": {\"text_len\": 7, \"head\": \"再加调料炖煮，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348513629111475,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793348513628794657,
+      "detail": {
+        "text_len": 7,
+        "interrupted": false,
+        "dur_ms": 1865.353146
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793348513628794657, \"detail\": {\"text_len\": 7, \"interrupted\": false, \"dur_ms\": 1865.353146}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348513629764587,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793348513629645967,
+      "detail": {
+        "text_len": 9,
+        "head": "最后收汁就可以了。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793348513629645967, \"detail\": {\"text_len\": 9, \"head\": \"最后收汁就可以了。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348515568891547,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793348515568607531,
+      "detail": {
+        "text_len": 9,
+        "interrupted": false,
+        "dur_ms": 1938.958082
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793348515568607531, \"detail\": {\"text_len\": 9, \"interrupted\": false, \"dur_ms\": 1938.958082}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348515569445110,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793348515569287693,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793348515569287693, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent_judge": [
+        {
+          "t_ns": 1793348509020791099,
+          "arrival_ns": 1793348509021068926,
+          "source": "round",
+          "detail": {
+            "model": "qwen3:8b",
+            "ms": 82.3,
+            "answer": "聊",
+            "kind": "chat",
+            "provider": "ollama"
+          }
+        }
+      ],
+      "intent": [
+        {
+          "t_ns": 1793348509020937292,
+          "arrival_ns": 1793348509021320297,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "llm:qwen3:8b",
+            "keyword_medical": false,
+            "chitchat": false,
+            "judge_kind": "chat",
+            "judge_ms": 82.3
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793348509021339407,
+          "arrival_ns": 1793348509021517496,
+          "source": "round",
+          "detail": {
+            "provider": "ollama",
+            "prompt_chars": 476,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793348509178089487,
+          "arrival_ns": 1793348509178226173,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 476
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793348509729068587,
+          "arrival_ns": 1793348509729421689,
+          "source": "round",
+          "detail": {
+            "chars": 22
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793348509178504734,
+          "arrival_ns": 1793348509178675291,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793348511477159696,
+          "arrival_ns": 1793348511477291158,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793348509264369672,
+          "arrival_ns": 1793348509264697487,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "先焯水去腥，"
+          }
+        },
+        {
+          "t_ns": 1793348510062592606,
+          "arrival_ns": 1793348510062835648,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "再加调料炖煮，"
+          }
+        },
+        {
+          "t_ns": 1793348510765681077,
+          "arrival_ns": 1793348510765802591,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "最后收汁就可以了。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793348509264439732,
+          "arrival_ns": 1793348509265024829,
+          "source": "round",
+          "detail": {
+            "text_len": 6
+          }
+        },
+        {
+          "t_ns": 1793348510062692080,
+          "arrival_ns": 1793348510063056356,
+          "source": "round",
+          "detail": {
+            "text_len": 7
+          }
+        },
+        {
+          "t_ns": 1793348510765729961,
+          "arrival_ns": 1793348510765986781,
+          "source": "round",
+          "detail": {
+            "text_len": 9
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793348510058827214,
+          "arrival_ns": 1793348510059161587,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 794.380458,
+            "audio_sec": 1.6,
+            "rtf": 0.49648778625
+          }
+        },
+        {
+          "t_ns": 1793348510765130133,
+          "arrival_ns": 1793348510765378030,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "dur_ms": 702.432828,
+            "audio_sec": 1.84,
+            "rtf": 0.38175697173913037
+          }
+        },
+        {
+          "t_ns": 1793348511476626054,
+          "arrival_ns": 1793348511476916558,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 710.890685,
+            "audio_sec": 1.92,
+            "rtf": 0.3702555651041667
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793348510143169309,
+          "arrival_ns": 1793348510143418000,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "先焯水去腥，"
+          }
+        },
+        {
+          "t_ns": 1793348511763438138,
+          "arrival_ns": 1793348511763596815,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "再加调料炖煮，"
+          }
+        },
+        {
+          "t_ns": 1793348513629645967,
+          "arrival_ns": 1793348513629764587,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "最后收汁就可以了。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793348511762617645,
+          "arrival_ns": 1793348511762919021,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "interrupted": false,
+            "dur_ms": 1619.44551
+          }
+        },
+        {
+          "t_ns": 1793348513628794657,
+          "arrival_ns": 1793348513629111475,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "interrupted": false,
+            "dur_ms": 1865.353146
+          }
+        },
+        {
+          "t_ns": 1793348515568607531,
+          "arrival_ns": 1793348515568891547,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "interrupted": false,
+            "dur_ms": 1938.958082
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793348515569287693,
+          "arrival_ns": 1793348515569445110,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 10,
+    "interval_s": 2.0
+  }
+}

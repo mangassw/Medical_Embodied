@@ -1,0 +1,1239 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_826839",
+  "host": "artrc",
+  "tag": "optB_u01",
+  "round_index": 0,
+  "mode": "wake-wav",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-29T14:30:21.473",
+  "finished_at": "2026-10-29T14:30:51.851",
+  "duration_s": 30.378,
+  "trigger": {
+    "mode": "wake-wav",
+    "t0_source": "question_asr_rx",
+    "inject_text": null,
+    "question_wav": "tools/latency_probe/audio/u01_first_dialysis.wav",
+    "wake_wav": "tools/latency_probe/audio/wake_xiaoyi.wav",
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": [
+      {
+        "role": "wake",
+        "wav": "tools/latency_probe/audio/wake_xiaoyi.wav",
+        "cmd": "pw-play --target latency_sink tools/latency_probe/audio/wake_xiaoyi.wav",
+        "start_ns": 1793255421473668042,
+        "end_ns": 1793255423381005271,
+        "ok": true,
+        "error": null
+      },
+      {
+        "role": "question",
+        "wav": "tools/latency_probe/audio/u01_first_dialysis.wav",
+        "cmd": "pw-play --target latency_sink tools/latency_probe/audio/u01_first_dialysis.wav",
+        "start_ns": 1793255423686144691,
+        "end_ns": 1793255427903470670,
+        "ok": true,
+        "error": null
+      }
+    ]
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793255428795710381,
+    "t0_source": "question_asr_rx",
+    "t_trigger_begin_ns": 1793255421473062012,
+    "t_publish_question_ns": null,
+    "t_start_asr_pub_ns": 1793255423385819361,
+    "t_question_play_start_ns": 1793255423686144691,
+    "t_question_play_end_ns": 1793255427903470670,
+    "probe_rx_ns": {
+      "question_asr": 1793255428795710381,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793255428796806068,
+      "ali_llm_output_start": 1793255437215232111,
+      "ali_llm_output_first_text": 1793255437218654053,
+      "ali_llm_output_done": 1793255438150271459,
+      "tts_realtime_data_start": 1793255437215534908,
+      "tts_realtime_data_first_text": 1793255437548496164,
+      "tts_realtime_data_done": 1793255438150304213,
+      "tts_session_finished": 1793255451549616734
+    },
+    "node_event_ns": {
+      "asr.kws_detected": 1793255423385193493,
+      "asr.start_asr": 1793255423386581188,
+      "asr.endpoint": 1793255428784806362,
+      "asr.asr_callback": 1793255428791163555,
+      "asr.nurse_req": 1793255428794623460,
+      "asr.nurse_resp": null,
+      "asr.publish_question": 1793255428794744912,
+      "tts_local.rx_first": 1793255437549515413,
+      "tts_local.synth_start_first": 1793255437549579759,
+      "tts_local.synth_end_first": 1793255438923665630,
+      "tts_local.play_start_first": 1793255439006608105,
+      "tts_local.play_end_last": 1793255451548428497,
+      "tts_local.session_finished": 1793255451549358055
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": 1.388,
+    "asr_start_asr_to_endpoint_ms": 5398.225,
+    "asr_endpoint_to_nurse_req_ms": 9.817,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": 10.904,
+    "asr_publish_question_to_rx_ms": 0.965,
+    "question_to_router_ms": 1.096,
+    "router_to_llm_first_ms": 8421.848,
+    "question_to_llm_first_ms": 8422.944,
+    "llm_first_to_done_ms": 931.617,
+    "question_to_llm_done_ms": 9354.561,
+    "llm_first_to_tts_first_text_ms": 329.842,
+    "question_to_tts_first_text_ms": 8752.786,
+    "first_tts_text_to_first_play_start_ms": 1458.112,
+    "tts_rx_to_synth_end_ms": 1374.15,
+    "tts_rx_to_play_start_ms": 1457.093,
+    "tts_synth_end_to_play_start_ms": 82.942,
+    "question_to_first_audio_ms": 10210.898,
+    "speech_end_to_first_audio_ms": 11021.802,
+    "playback_end_to_first_audio_ms": 11103.137,
+    "question_to_session_finished_ms": 22753.906,
+    "audio_total_sum_ms": 12538.886,
+    "audio_first_to_last_ms": 12541.82
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": 1387695,
+    "asr_start_asr_to_endpoint_ns": 5398225174,
+    "asr_endpoint_to_nurse_req_ns": 9817098,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": 10904019,
+    "asr_publish_question_to_rx_ns": 965469,
+    "question_to_router_ns": 1095687,
+    "router_to_llm_first_ns": 8421847985,
+    "question_to_llm_first_ns": 8422943672,
+    "llm_first_to_done_ns": 931617406,
+    "question_to_llm_done_ns": 9354561078,
+    "llm_first_to_tts_first_text_ns": 329842111,
+    "question_to_tts_first_text_ns": 8752785783,
+    "first_tts_text_to_first_play_start_ns": 1458111941,
+    "tts_rx_to_synth_end_ns": 1374150217,
+    "tts_rx_to_play_start_ns": 1457092692,
+    "tts_synth_end_to_play_start_ns": 82942475,
+    "question_to_first_audio_ns": 10210897724,
+    "speech_end_to_first_audio_ns": 11021801743,
+    "playback_end_to_first_audio_ns": 11103137435,
+    "question_to_session_finished_ns": 22753906353,
+    "audio_total_sum_ns": 12538885669,
+    "audio_first_to_last_ns": 12541820392
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": 9817098,
+      "ms": 9.817
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 8422943672,
+      "ms": 8422.944
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 931617406,
+      "ms": 931.617
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 329842111,
+      "ms": 329.842
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 1458111941,
+      "ms": 1458.112
+    },
+    "question_to_first_play_start": {
+      "ns": 10210897724,
+      "ms": 10210.898
+    },
+    "speech_end_to_first_play_start": {
+      "ns": 11021801743,
+      "ms": 11021.802
+    },
+    "question_to_session_finished": {
+      "ns": 22753906353,
+      "ms": 22753.906
+    },
+    "audio_total_sec": {
+      "ns": 12538885669,
+      "ms": 12538.886,
+      "sec": 12.539
+    }
+  },
+  "asr_chain": {
+    "kws_detected": {
+      "t_ns": 1793255423385193493,
+      "arrival_ns": 1793255423385720839,
+      "detail": {
+        "keyword": "{\"start_time\":0.00, \"keyword\": \"小艺小艺\", \"timestamps\": [0.68, 0.76, 1.00, 1.08, 1.40, 1.44, 1.64, 1.68], \"tokens\":[\"x\", \"iǎo\", \"y\", \"ì\", \"x\", \"iǎo\", \"y\", \"ì\"]}"
+      }
+    },
+    "start_asr": {
+      "t_ns": 1793255423386581188,
+      "arrival_ns": 1793255423386963058,
+      "detail": {}
+    },
+    "endpoint": {
+      "t_ns": 1793255428784806362,
+      "arrival_ns": 1793255428790719352,
+      "detail": {}
+    },
+    "asr_callback": {
+      "t_ns": 1793255428791163555,
+      "arrival_ns": 1793255428796169386,
+      "detail": {
+        "text_len": 54
+      }
+    },
+    "nurse_req": {
+      "t_ns": 1793255428794623460,
+      "arrival_ns": 1793255428796862401,
+      "detail": {
+        "text_len": 54
+      }
+    },
+    "publish_question": {
+      "t_ns": 1793255428794744912,
+      "arrival_ns": 1793255428797148039,
+      "detail": {
+        "text_len": 88
+      }
+    }
+  },
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": 1793255428794744912,
+    "publish_question_found": true
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": 1.388,
+    "asr_start_asr_to_endpoint_ms": 5398.225,
+    "asr_endpoint_to_nurse_req_ms": 9.817,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": 10.904,
+    "asr_publish_question_to_rx_ms": 0.965,
+    "question_to_router_ms": 1.096,
+    "router_to_llm_first_ms": 8421.848,
+    "question_to_llm_first_ms": 8422.944,
+    "llm_first_to_done_ms": 931.617,
+    "question_to_llm_done_ms": 9354.561,
+    "llm_first_to_tts_first_text_ms": 329.842,
+    "question_to_tts_first_text_ms": 8752.786,
+    "first_tts_text_to_first_play_start_ms": 1458.112,
+    "tts_rx_to_synth_end_ms": 1374.15,
+    "tts_rx_to_play_start_ms": 1457.093,
+    "tts_synth_end_to_play_start_ms": 82.942,
+    "question_to_first_audio_ms": 10210.898,
+    "speech_end_to_first_audio_ms": 11021.802,
+    "playback_end_to_first_audio_ms": 11103.137,
+    "question_to_session_finished_ms": 22753.906,
+    "audio_total_sum_ms": 12538.886,
+    "audio_first_to_last_ms": 12541.82
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793255437215232111,
+      "first_text_rx_ns": 1793255437218654053,
+      "done_rx_ns": 1793255438150271459,
+      "chunk_count": 12,
+      "char_count": 63,
+      "chunks": [
+        {
+          "t_ns": 1793255437218654053,
+          "text": "第一次"
+        },
+        {
+          "t_ns": 1793255437257536777,
+          "text": "透析要"
+        },
+        {
+          "t_ns": 1793255437287438036,
+          "text": "准备："
+        },
+        {
+          "t_ns": 1793255437352501356,
+          "text": "先"
+        },
+        {
+          "t_ns": 1793255437427237341,
+          "text": "短时透析"
+        },
+        {
+          "t_ns": 1793255437548156678,
+          "text": "，第一次不超过2小时"
+        },
+        {
+          "t_ns": 1793255437727008808,
+          "text": "。  \n记得提前"
+        },
+        {
+          "t_ns": 1793255437740244173,
+          "text": "放松心情，血"
+        },
+        {
+          "t_ns": 1793255437915534736,
+          "text": "流量会慢慢增加"
+        },
+        {
+          "t_ns": 1793255437915889942,
+          "text": "。  \n透析中"
+        },
+        {
+          "t_ns": 1793255438014293835,
+          "text": "不舒服马上告诉护士"
+        },
+        {
+          "t_ns": 1793255438149348118,
+          "text": "哦。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793255437548496164,
+      "done_rx_ns": 1793255438150304213,
+      "text_count": 5,
+      "texts": [
+        {
+          "t_ns": 1793255437548496164,
+          "text": "第一次透析要准备：先短时透析，"
+        },
+        {
+          "t_ns": 1793255437727236505,
+          "text": "第一次不超过2小时。"
+        },
+        {
+          "t_ns": 1793255437740513377,
+          "text": "记得提前放松心情，"
+        },
+        {
+          "t_ns": 1793255437916064001,
+          "text": "血流量会慢慢增加。"
+        },
+        {
+          "t_ns": 1793255438149556381,
+          "text": "透析中不舒服马上告诉护士哦。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 41,
+    "latency_events_total": 41,
+    "asr_events": 8,
+    "tts_events": 28,
+    "tts_play_pairs": 5,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793255423385720839,
+      "node": "asr",
+      "stage": "kws_detected",
+      "t_ns": 1793255423385193493,
+      "detail": {
+        "keyword": "{\"start_time\":0.00, \"keyword\": \"小艺小艺\", \"timestamps\": [0.68, 0.76, 1.00, 1.08, 1.40, 1.44, 1.64, 1.68], \"tokens\":[\"x\", \"iǎo\", \"y\", \"ì\", \"x\", \"iǎo\", \"y\", \"ì\"]}"
+      },
+      "raw": "{\"node\":\"asr\",\"stage\":\"kws_detected\",\"t_ns\":1793255423385193493,\"detail\":{\"keyword\":\"{\\\"start_time\\\":0.00, \\\"keyword\\\": \\\"小艺小艺\\\", \\\"timestamps\\\": [0.68, 0.76, 1.00, 1.08, 1.40, 1.44, 1.64, 1.68], \\\"tokens\\\":[\\\"x\\\", \\\"iǎo\\\", \\\"y\\\", \\\"ì\\\", \\\"x\\\", \\\"iǎo\\\", \\\"y\\\", \\\"ì\\\"]}\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255423386963058,
+      "node": "asr",
+      "stage": "start_asr",
+      "t_ns": 1793255423386581188,
+      "detail": {},
+      "raw": "{\"node\":\"asr\",\"stage\":\"start_asr\",\"t_ns\":1793255423386581188}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255428790719352,
+      "node": "asr",
+      "stage": "endpoint",
+      "t_ns": 1793255428784806362,
+      "detail": {},
+      "raw": "{\"node\":\"asr\",\"stage\":\"endpoint\",\"t_ns\":1793255428784806362}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255428796169386,
+      "node": "asr",
+      "stage": "asr_callback",
+      "t_ns": 1793255428791163555,
+      "detail": {
+        "text_len": 54
+      },
+      "raw": "{\"node\":\"asr\",\"stage\":\"asr_callback\",\"t_ns\":1793255428791163555,\"detail\":{\"text_len\":54}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255428796504127,
+      "node": "asr",
+      "stage": "nurse_parallel_start",
+      "t_ns": 1793255428794597489,
+      "detail": {},
+      "raw": "{\"node\":\"asr\",\"stage\":\"nurse_parallel_start\",\"t_ns\":1793255428794597489}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255428796862401,
+      "node": "asr",
+      "stage": "nurse_req",
+      "t_ns": 1793255428794623460,
+      "detail": {
+        "text_len": 54
+      },
+      "raw": "{\"node\":\"asr\",\"stage\":\"nurse_req\",\"t_ns\":1793255428794623460,\"detail\":{\"text_len\":54}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255428797148039,
+      "node": "asr",
+      "stage": "publish_question",
+      "t_ns": 1793255428794744912,
+      "detail": {
+        "text_len": 88
+      },
+      "raw": "{\"node\":\"asr\",\"stage\":\"publish_question\",\"t_ns\":1793255428794744912,\"detail\":{\"text_len\":88}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255428820876544,
+      "node": "llm_medical",
+      "stage": "rag_start",
+      "t_ns": 1793255428820632429,
+      "detail": {},
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_start\", \"t_ns\": 1793255428820632429, \"detail\": {}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255429092990727,
+      "node": "llm_medical",
+      "stage": "rag_end",
+      "t_ns": 1793255429092699192,
+      "detail": {
+        "n_chunks": 4,
+        "took_ms": 271.46,
+        "top1": "首次透析要注意什么"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_end\", \"t_ns\": 1793255429092699192, \"detail\": {\"n_chunks\": 4, \"took_ms\": 271.46, \"top1\": \"首次透析要注意什么\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255431225488760,
+      "node": "asr",
+      "stage": "nurse_resp",
+      "t_ns": 1793255431225224298,
+      "detail": {
+        "dur_ms": 2430.597
+      },
+      "raw": "{\"node\":\"asr\",\"stage\":\"nurse_resp\",\"t_ns\":1793255431225224298,\"detail\":{\"dur_ms\":2430.597}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255437215282013,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793255437214915936,
+      "detail": {
+        "prompt_chars": 1202,
+        "n_messages": 2
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793255437214915936, \"detail\": {\"prompt_chars\": 1202, \"n_messages\": 2}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255437216049859,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793255437215900319,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793255437215900319, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255437218452732,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793255437218245024,
+      "detail": {
+        "prompt_chars": 1202
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793255437218245024, \"detail\": {\"prompt_chars\": 1202}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255437549680144,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793255437549515413,
+      "detail": {
+        "text_len": 15,
+        "head": "第一次透析要准备：先短时透析，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793255437549515413, \"detail\": {\"text_len\": 15, \"head\": \"第一次透析要准备：先短时透析，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255437549868915,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793255437549579759,
+      "detail": {
+        "text_len": 15
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793255437549579759, \"detail\": {\"text_len\": 15}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255438150066404,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793255438149925391,
+      "detail": {
+        "chars": 66
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793255438149925391, \"detail\": {\"chars\": 66}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255438923997852,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793255438923665630,
+      "detail": {
+        "text_len": 15,
+        "dur_ms": 1374.077523,
+        "audio_sec": 3.84,
+        "rtf": 0.35783268828125
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793255438923665630, \"detail\": {\"text_len\": 15, \"dur_ms\": 1374.077523, \"audio_sec\": 3.84, \"rtf\": 0.35783268828125}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255438924571489,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793255438924396676,
+      "detail": {
+        "text_len": 10,
+        "head": "第一次不超过2小时。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793255438924396676, \"detail\": {\"text_len\": 10, \"head\": \"第一次不超过2小时。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255438924759256,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793255438924451136,
+      "detail": {
+        "text_len": 10
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793255438924451136, \"detail\": {\"text_len\": 10}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255439006969359,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793255439006608105,
+      "detail": {
+        "text_len": 15,
+        "head": "第一次透析要准备：先短时透析，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793255439006608105, \"detail\": {\"text_len\": 15, \"head\": \"第一次透析要准备：先短时透析，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255439655965336,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793255439655605700,
+      "detail": {
+        "text_len": 10,
+        "dur_ms": 731.147903,
+        "audio_sec": 1.92,
+        "rtf": 0.38080619947916666
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793255439655605700, \"detail\": {\"text_len\": 10, \"dur_ms\": 731.147903, \"audio_sec\": 1.92, \"rtf\": 0.38080619947916666}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255439656370785,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793255439656216298,
+      "detail": {
+        "text_len": 9,
+        "head": "记得提前放松心情，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793255439656216298, \"detail\": {\"text_len\": 9, \"head\": \"记得提前放松心情，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255439656574318,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793255439656260282,
+      "detail": {
+        "text_len": 9
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793255439656260282, \"detail\": {\"text_len\": 9}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255440402375872,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793255440401974783,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 745.709876,
+        "audio_sec": 2.0,
+        "rtf": 0.372854938
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793255440401974783, \"detail\": {\"text_len\": 9, \"dur_ms\": 745.709876, \"audio_sec\": 2.0, \"rtf\": 0.372854938}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255440402880067,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793255440402751785,
+      "detail": {
+        "text_len": 9,
+        "head": "血流量会慢慢增加。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793255440402751785, \"detail\": {\"text_len\": 9, \"head\": \"血流量会慢慢增加。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255440403061357,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793255440402792972,
+      "detail": {
+        "text_len": 9
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793255440402792972, \"detail\": {\"text_len\": 9}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255441163775079,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793255441163466663,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 760.668423,
+        "audio_sec": 2.08,
+        "rtf": 0.3657059725961538
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793255441163466663, \"detail\": {\"text_len\": 9, \"dur_ms\": 760.668423, \"audio_sec\": 2.08, \"rtf\": 0.3657059725961538}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255441164176835,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793255441164038179,
+      "detail": {
+        "text_len": 14,
+        "head": "透析中不舒服马上告诉护士哦。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793255441164038179, \"detail\": {\"text_len\": 14, \"head\": \"透析中不舒服马上告诉护士哦。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255441164354066,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793255441164092004,
+      "detail": {
+        "text_len": 14
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793255441164092004, \"detail\": {\"text_len\": 14}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255442078754420,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793255442078387176,
+      "detail": {
+        "text_len": 14,
+        "dur_ms": 914.289834,
+        "audio_sec": 2.56,
+        "rtf": 0.35714446640625
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793255442078387176, \"detail\": {\"text_len\": 14, \"dur_ms\": 914.289834, \"audio_sec\": 2.56, \"rtf\": 0.35714446640625}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255442079147925,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793255442078955085,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793255442078955085, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255442988930216,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793255442988603066,
+      "detail": {
+        "text_len": 15,
+        "interrupted": false,
+        "dur_ms": 3981.992016
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793255442988603066, \"detail\": {\"text_len\": 15, \"interrupted\": false, \"dur_ms\": 3981.992016}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255442989517431,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793255442989305516,
+      "detail": {
+        "text_len": 10,
+        "head": "第一次不超过2小时。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793255442989305516, \"detail\": {\"text_len\": 10, \"head\": \"第一次不超过2小时。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255444912919223,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793255444912516938,
+      "detail": {
+        "text_len": 10,
+        "interrupted": false,
+        "dur_ms": 1923.208422
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793255444912516938, \"detail\": {\"text_len\": 10, \"interrupted\": false, \"dur_ms\": 1923.208422}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255444913409667,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793255444913219454,
+      "detail": {
+        "text_len": 9,
+        "head": "记得提前放松心情，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793255444913219454, \"detail\": {\"text_len\": 9, \"head\": \"记得提前放松心情，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255446912443325,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793255446912087630,
+      "detail": {
+        "text_len": 9,
+        "interrupted": false,
+        "dur_ms": 1998.86284
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793255446912087630, \"detail\": {\"text_len\": 9, \"interrupted\": false, \"dur_ms\": 1998.86284}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255446912999585,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793255446912833029,
+      "detail": {
+        "text_len": 9,
+        "head": "血流量会慢慢增加。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793255446912833029, \"detail\": {\"text_len\": 9, \"head\": \"血流量会慢慢增加。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255448990794507,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793255448990372287,
+      "detail": {
+        "text_len": 9,
+        "interrupted": false,
+        "dur_ms": 2077.534845
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793255448990372287, \"detail\": {\"text_len\": 9, \"interrupted\": false, \"dur_ms\": 2077.534845}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255448991314320,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793255448991156645,
+      "detail": {
+        "text_len": 14,
+        "head": "透析中不舒服马上告诉护士哦。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793255448991156645, \"detail\": {\"text_len\": 14, \"head\": \"透析中不舒服马上告诉护士哦。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255451548733759,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793255451548428497,
+      "detail": {
+        "text_len": 14,
+        "interrupted": false,
+        "dur_ms": 2557.266908
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793255451548428497, \"detail\": {\"text_len\": 14, \"interrupted\": false, \"dur_ms\": 2557.266908}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793255451549659844,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793255451549358055,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793255451549358055, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "asr": {
+      "kws_detected": [
+        {
+          "t_ns": 1793255423385193493,
+          "arrival_ns": 1793255423385720839,
+          "source": "round",
+          "detail": {
+            "keyword": "{\"start_time\":0.00, \"keyword\": \"小艺小艺\", \"timestamps\": [0.68, 0.76, 1.00, 1.08, 1.40, 1.44, 1.64, 1.68], \"tokens\":[\"x\", \"iǎo\", \"y\", \"ì\", \"x\", \"iǎo\", \"y\", \"ì\"]}"
+          }
+        }
+      ],
+      "start_asr": [
+        {
+          "t_ns": 1793255423386581188,
+          "arrival_ns": 1793255423386963058,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "endpoint": [
+        {
+          "t_ns": 1793255428784806362,
+          "arrival_ns": 1793255428790719352,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "asr_callback": [
+        {
+          "t_ns": 1793255428791163555,
+          "arrival_ns": 1793255428796169386,
+          "source": "round",
+          "detail": {
+            "text_len": 54
+          }
+        }
+      ],
+      "nurse_parallel_start": [
+        {
+          "t_ns": 1793255428794597489,
+          "arrival_ns": 1793255428796504127,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "nurse_req": [
+        {
+          "t_ns": 1793255428794623460,
+          "arrival_ns": 1793255428796862401,
+          "source": "round",
+          "detail": {
+            "text_len": 54
+          }
+        }
+      ],
+      "publish_question": [
+        {
+          "t_ns": 1793255428794744912,
+          "arrival_ns": 1793255428797148039,
+          "source": "round",
+          "detail": {
+            "text_len": 88
+          }
+        }
+      ],
+      "nurse_resp": [
+        {
+          "t_ns": 1793255431225224298,
+          "arrival_ns": 1793255431225488760,
+          "source": "round",
+          "detail": {
+            "dur_ms": 2430.597
+          }
+        }
+      ]
+    },
+    "llm_medical": {
+      "rag_start": [
+        {
+          "t_ns": 1793255428820632429,
+          "arrival_ns": 1793255428820876544,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "rag_end": [
+        {
+          "t_ns": 1793255429092699192,
+          "arrival_ns": 1793255429092990727,
+          "source": "round",
+          "detail": {
+            "n_chunks": 4,
+            "took_ms": 271.46,
+            "top1": "首次透析要注意什么"
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793255437214915936,
+          "arrival_ns": 1793255437215282013,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1202,
+            "n_messages": 2
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793255437218245024,
+          "arrival_ns": 1793255437218452732,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1202
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793255438149925391,
+          "arrival_ns": 1793255438150066404,
+          "source": "round",
+          "detail": {
+            "chars": 66
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793255437215900319,
+          "arrival_ns": 1793255437216049859,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793255442078955085,
+          "arrival_ns": 1793255442079147925,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793255437549515413,
+          "arrival_ns": 1793255437549680144,
+          "source": "round",
+          "detail": {
+            "text_len": 15,
+            "head": "第一次透析要准备：先短时透析，"
+          }
+        },
+        {
+          "t_ns": 1793255438924396676,
+          "arrival_ns": 1793255438924571489,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "第一次不超过2小时。"
+          }
+        },
+        {
+          "t_ns": 1793255439656216298,
+          "arrival_ns": 1793255439656370785,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "记得提前放松心情，"
+          }
+        },
+        {
+          "t_ns": 1793255440402751785,
+          "arrival_ns": 1793255440402880067,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "血流量会慢慢增加。"
+          }
+        },
+        {
+          "t_ns": 1793255441164038179,
+          "arrival_ns": 1793255441164176835,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "head": "透析中不舒服马上告诉护士哦。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793255437549579759,
+          "arrival_ns": 1793255437549868915,
+          "source": "round",
+          "detail": {
+            "text_len": 15
+          }
+        },
+        {
+          "t_ns": 1793255438924451136,
+          "arrival_ns": 1793255438924759256,
+          "source": "round",
+          "detail": {
+            "text_len": 10
+          }
+        },
+        {
+          "t_ns": 1793255439656260282,
+          "arrival_ns": 1793255439656574318,
+          "source": "round",
+          "detail": {
+            "text_len": 9
+          }
+        },
+        {
+          "t_ns": 1793255440402792972,
+          "arrival_ns": 1793255440403061357,
+          "source": "round",
+          "detail": {
+            "text_len": 9
+          }
+        },
+        {
+          "t_ns": 1793255441164092004,
+          "arrival_ns": 1793255441164354066,
+          "source": "round",
+          "detail": {
+            "text_len": 14
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793255438923665630,
+          "arrival_ns": 1793255438923997852,
+          "source": "round",
+          "detail": {
+            "text_len": 15,
+            "dur_ms": 1374.077523,
+            "audio_sec": 3.84,
+            "rtf": 0.35783268828125
+          }
+        },
+        {
+          "t_ns": 1793255439655605700,
+          "arrival_ns": 1793255439655965336,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "dur_ms": 731.147903,
+            "audio_sec": 1.92,
+            "rtf": 0.38080619947916666
+          }
+        },
+        {
+          "t_ns": 1793255440401974783,
+          "arrival_ns": 1793255440402375872,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 745.709876,
+            "audio_sec": 2.0,
+            "rtf": 0.372854938
+          }
+        },
+        {
+          "t_ns": 1793255441163466663,
+          "arrival_ns": 1793255441163775079,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 760.668423,
+            "audio_sec": 2.08,
+            "rtf": 0.3657059725961538
+          }
+        },
+        {
+          "t_ns": 1793255442078387176,
+          "arrival_ns": 1793255442078754420,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "dur_ms": 914.289834,
+            "audio_sec": 2.56,
+            "rtf": 0.35714446640625
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793255439006608105,
+          "arrival_ns": 1793255439006969359,
+          "source": "round",
+          "detail": {
+            "text_len": 15,
+            "head": "第一次透析要准备：先短时透析，"
+          }
+        },
+        {
+          "t_ns": 1793255442989305516,
+          "arrival_ns": 1793255442989517431,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "第一次不超过2小时。"
+          }
+        },
+        {
+          "t_ns": 1793255444913219454,
+          "arrival_ns": 1793255444913409667,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "记得提前放松心情，"
+          }
+        },
+        {
+          "t_ns": 1793255446912833029,
+          "arrival_ns": 1793255446912999585,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "血流量会慢慢增加。"
+          }
+        },
+        {
+          "t_ns": 1793255448991156645,
+          "arrival_ns": 1793255448991314320,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "head": "透析中不舒服马上告诉护士哦。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793255442988603066,
+          "arrival_ns": 1793255442988930216,
+          "source": "round",
+          "detail": {
+            "text_len": 15,
+            "interrupted": false,
+            "dur_ms": 3981.992016
+          }
+        },
+        {
+          "t_ns": 1793255444912516938,
+          "arrival_ns": 1793255444912919223,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "interrupted": false,
+            "dur_ms": 1923.208422
+          }
+        },
+        {
+          "t_ns": 1793255446912087630,
+          "arrival_ns": 1793255446912443325,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "interrupted": false,
+            "dur_ms": 1998.86284
+          }
+        },
+        {
+          "t_ns": 1793255448990372287,
+          "arrival_ns": 1793255448990794507,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "interrupted": false,
+            "dur_ms": 2077.534845
+          }
+        },
+        {
+          "t_ns": 1793255451548428497,
+          "arrival_ns": 1793255451548733759,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "interrupted": false,
+            "dur_ms": 2557.266908
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793255451549358055,
+          "arrival_ns": 1793255451549659844,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 0.8,
+    "event_lookback_s": 60.0,
+    "timeout_s": 120.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 1,
+    "interval_s": 25.0
+  }
+}

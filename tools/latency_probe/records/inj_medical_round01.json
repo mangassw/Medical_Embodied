@@ -1,0 +1,873 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_171797",
+  "host": "artrc",
+  "tag": "inj_medical",
+  "round_index": 1,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-27T15:45:13.207",
+  "finished_at": "2026-10-27T15:45:36.314",
+  "duration_s": 23.107,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "肾病患者运动时有哪些注意事项？",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793087113208290470,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793087113207662443,
+    "t_publish_question_ns": 1793087113208290470,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793087113209143883,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793087113209439686,
+      "ali_llm_output_start": 1793087113260880251,
+      "ali_llm_output_first_text": 1793087120285411562,
+      "ali_llm_output_done": 1793087120664347414,
+      "tts_realtime_data_start": 1793087113261461147,
+      "tts_realtime_data_first_text": 1793087120285783616,
+      "tts_realtime_data_done": 1793087120664595992,
+      "tts_session_finished": 1793087136010071567
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793087120285868633,
+      "tts_local.synth_start_first": 1793087120285956314,
+      "tts_local.synth_end_first": 1793087121314828959,
+      "tts_local.play_start_first": 1793087121382477820,
+      "tts_local.play_end_last": 1793087136008895028,
+      "tts_local.session_finished": 1793087136009733688
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.149,
+    "router_to_llm_first_ms": 7075.972,
+    "question_to_llm_first_ms": 7077.121,
+    "llm_first_to_done_ms": 378.936,
+    "question_to_llm_done_ms": 7456.057,
+    "llm_first_to_tts_first_text_ms": 0.372,
+    "question_to_tts_first_text_ms": 7077.493,
+    "first_tts_text_to_first_play_start_ms": 1096.694,
+    "tts_rx_to_synth_end_ms": 1028.96,
+    "tts_rx_to_play_start_ms": 1096.609,
+    "tts_synth_end_to_play_start_ms": 67.649,
+    "question_to_first_audio_ms": 8174.187,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 22801.781,
+    "audio_total_sum_ms": 14623.123,
+    "audio_first_to_last_ms": 14626.417
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 1149216,
+    "router_to_llm_first_ns": 7075971876,
+    "question_to_llm_first_ns": 7077121092,
+    "llm_first_to_done_ns": 378935852,
+    "question_to_llm_done_ns": 7456056944,
+    "llm_first_to_tts_first_text_ns": 372054,
+    "question_to_tts_first_text_ns": 7077493146,
+    "first_tts_text_to_first_play_start_ns": 1096694204,
+    "tts_rx_to_synth_end_ns": 1028960326,
+    "tts_rx_to_play_start_ns": 1096609187,
+    "tts_synth_end_to_play_start_ns": 67648861,
+    "question_to_first_audio_ns": 8174187350,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 22801781097,
+    "audio_total_sum_ns": 14623122782,
+    "audio_first_to_last_ns": 14626417208
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 7077121092,
+      "ms": 7077.121
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 378935852,
+      "ms": 378.936
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 372054,
+      "ms": 0.372
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 1096694204,
+      "ms": 1096.694
+    },
+    "question_to_first_play_start": {
+      "ns": 8174187350,
+      "ms": 8174.187
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 22801781097,
+      "ms": 22801.781
+    },
+    "audio_total_sec": {
+      "ns": 14623122782,
+      "ms": 14623.123,
+      "sec": 14.623
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.149,
+    "router_to_llm_first_ms": 7075.972,
+    "question_to_llm_first_ms": 7077.121,
+    "llm_first_to_done_ms": 378.936,
+    "question_to_llm_done_ms": 7456.057,
+    "llm_first_to_tts_first_text_ms": 0.372,
+    "question_to_tts_first_text_ms": 7077.493,
+    "first_tts_text_to_first_play_start_ms": 1096.694,
+    "tts_rx_to_synth_end_ms": 1028.96,
+    "tts_rx_to_play_start_ms": 1096.609,
+    "tts_synth_end_to_play_start_ms": 67.649,
+    "question_to_first_audio_ms": 8174.187,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 22801.781,
+    "audio_total_sum_ms": 14623.123,
+    "audio_first_to_last_ms": 14626.417
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793087113260880251,
+      "first_text_rx_ns": 1793087120285411562,
+      "done_rx_ns": 1793087120664347414,
+      "chunk_count": 4,
+      "char_count": 58,
+      "chunks": [
+        {
+          "t_ns": 1793087120285411562,
+          "text": "数据库中还没有该项知识。您现在在血透中心，如果"
+        },
+        {
+          "t_ns": 1793087120387789835,
+          "text": "运动前后出现胸闷"
+        },
+        {
+          "t_ns": 1793087120594140653,
+          "text": "、头晕、乏力或伤口不适，请告诉我，我会协助您联系"
+        },
+        {
+          "t_ns": 1793087120636415597,
+          "text": "医护。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793087120285783616,
+      "done_rx_ns": 1793087120664595992,
+      "text_count": 5,
+      "texts": [
+        {
+          "t_ns": 1793087120285783616,
+          "text": "数据库中还没有该项知识。"
+        },
+        {
+          "t_ns": 1793087120286059980,
+          "text": "您现在在血透中心，"
+        },
+        {
+          "t_ns": 1793087120594355233,
+          "text": "如果运动前后出现胸闷、头晕、乏力或伤口不适，"
+        },
+        {
+          "t_ns": 1793087120594649418,
+          "text": "请告诉我，"
+        },
+        {
+          "t_ns": 1793087120636636769,
+          "text": "我会协助您联系医护。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 28,
+    "latency_events_total": 28,
+    "asr_events": 0,
+    "tts_events": 28,
+    "tts_play_pairs": 5,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793087113263253145,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793087113262997927,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793087113262997927, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087120286104106,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087120285868633,
+      "detail": {
+        "text_len": 12,
+        "head": "数据库中还没有该项知识。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087120285868633, \"detail\": {\"text_len\": 12, \"head\": \"数据库中还没有该项知识。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087120286399031,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087120285956314,
+      "detail": {
+        "text_len": 12
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087120285956314, \"detail\": {\"text_len\": 12}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087121315256810,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087121314828959,
+      "detail": {
+        "text_len": 12,
+        "dur_ms": 1028.864011,
+        "audio_sec": 2.72,
+        "rtf": 0.3782588275735293
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087121314828959, \"detail\": {\"text_len\": 12, \"dur_ms\": 1028.864011, \"audio_sec\": 2.72, \"rtf\": 0.3782588275735293}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087121319301099,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087121319017309,
+      "detail": {
+        "text_len": 9,
+        "head": "您现在在血透中心，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087121319017309, \"detail\": {\"text_len\": 9, \"head\": \"您现在在血透中心，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087121319657985,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087121319095669,
+      "detail": {
+        "text_len": 9
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087121319095669, \"detail\": {\"text_len\": 9}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087121382938958,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793087121382477820,
+      "detail": {
+        "text_len": 12,
+        "head": "数据库中还没有该项知识。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793087121382477820, \"detail\": {\"text_len\": 12, \"head\": \"数据库中还没有该项知识。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087122074043837,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087122073613966,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 754.509002,
+        "audio_sec": 1.92,
+        "rtf": 0.3929734385416667
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087122073613966, \"detail\": {\"text_len\": 9, \"dur_ms\": 754.509002, \"audio_sec\": 1.92, \"rtf\": 0.3929734385416667}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087122074552648,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087122074377932,
+      "detail": {
+        "text_len": 22,
+        "head": "如果运动前后出现胸闷、头晕、乏力或伤口不适，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087122074377932, \"detail\": {\"text_len\": 22, \"head\": \"如果运动前后出现胸闷、头晕、乏力或伤口不适，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087122074784532,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087122074444693,
+      "detail": {
+        "text_len": 22
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087122074444693, \"detail\": {\"text_len\": 22}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087124132616724,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793087124132137655,
+      "detail": {
+        "text_len": 12,
+        "dur_ms": 2749.657378
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793087124132137655, \"detail\": {\"text_len\": 12, \"dur_ms\": 2749.657378}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087124133418946,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793087124133159478,
+      "detail": {
+        "text_len": 9,
+        "head": "您现在在血透中心，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793087124133159478, \"detail\": {\"text_len\": 9, \"head\": \"您现在在血透中心，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087124252355870,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087124251949969,
+      "detail": {
+        "text_len": 22,
+        "dur_ms": 2177.497465,
+        "audio_sec": 5.68,
+        "rtf": 0.38336222975352113
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087124251949969, \"detail\": {\"text_len\": 22, \"dur_ms\": 2177.497465, \"audio_sec\": 5.68, \"rtf\": 0.38336222975352113}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087124252965421,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087124252662925,
+      "detail": {
+        "text_len": 5,
+        "head": "请告诉我，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087124252662925, \"detail\": {\"text_len\": 5, \"head\": \"请告诉我，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087124253282607,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087124252708520,
+      "detail": {
+        "text_len": 5
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087124252708520, \"detail\": {\"text_len\": 5}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087124800416099,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087124800024472,
+      "detail": {
+        "text_len": 5,
+        "dur_ms": 547.309406,
+        "audio_sec": 1.28,
+        "rtf": 0.4275854734375
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087124800024472, \"detail\": {\"text_len\": 5, \"dur_ms\": 547.309406, \"audio_sec\": 1.28, \"rtf\": 0.4275854734375}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087124800777227,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087124800600361,
+      "detail": {
+        "text_len": 10,
+        "head": "我会协助您联系医护。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087124800600361, \"detail\": {\"text_len\": 10, \"head\": \"我会协助您联系医护。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087124800996654,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087124800653094,
+      "detail": {
+        "text_len": 10
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087124800653094, \"detail\": {\"text_len\": 10}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087125854561765,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087125854106426,
+      "detail": {
+        "text_len": 10,
+        "dur_ms": 1053.445756,
+        "audio_sec": 2.88,
+        "rtf": 0.3657797763888889
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087125854106426, \"detail\": {\"text_len\": 10, \"dur_ms\": 1053.445756, \"audio_sec\": 2.88, \"rtf\": 0.3657797763888889}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087125855045127,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793087125854746921,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793087125854746921, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087126072808357,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793087126072405135,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 1939.242247
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793087126072405135, \"detail\": {\"text_len\": 9, \"dur_ms\": 1939.242247}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087126073400845,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793087126073195473,
+      "detail": {
+        "text_len": 22,
+        "head": "如果运动前后出现胸闷、头晕、乏力或伤口不适，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793087126073195473, \"detail\": {\"text_len\": 22, \"head\": \"如果运动前后出现胸闷、头晕、乏力或伤口不适，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087131799600706,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793087131799228569,
+      "detail": {
+        "text_len": 22,
+        "dur_ms": 5726.029637
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793087131799228569, \"detail\": {\"text_len\": 22, \"dur_ms\": 5726.029637}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087131800173639,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793087131799946332,
+      "detail": {
+        "text_len": 5,
+        "head": "请告诉我，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793087131799946332, \"detail\": {\"text_len\": 5, \"head\": \"请告诉我，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087133098566817,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793087133098145896,
+      "detail": {
+        "text_len": 5,
+        "dur_ms": 1298.196479
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793087133098145896, \"detail\": {\"text_len\": 5, \"dur_ms\": 1298.196479}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087133099218347,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793087133098910398,
+      "detail": {
+        "text_len": 10,
+        "head": "我会协助您联系医护。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793087133098910398, \"detail\": {\"text_len\": 10, \"head\": \"我会协助您联系医护。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087136009252755,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793087136008895028,
+      "detail": {
+        "text_len": 10,
+        "dur_ms": 2909.981189
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793087136008895028, \"detail\": {\"text_len\": 10, \"dur_ms\": 2909.981189}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087136009859032,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793087136009733688,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793087136009733688, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793087113262997927,
+          "arrival_ns": 1793087113263253145,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793087125854746921,
+          "arrival_ns": 1793087125855045127,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793087120285868633,
+          "arrival_ns": 1793087120286104106,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "数据库中还没有该项知识。"
+          }
+        },
+        {
+          "t_ns": 1793087121319017309,
+          "arrival_ns": 1793087121319301099,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "您现在在血透中心，"
+          }
+        },
+        {
+          "t_ns": 1793087122074377932,
+          "arrival_ns": 1793087122074552648,
+          "source": "round",
+          "detail": {
+            "text_len": 22,
+            "head": "如果运动前后出现胸闷、头晕、乏力或伤口不适，"
+          }
+        },
+        {
+          "t_ns": 1793087124252662925,
+          "arrival_ns": 1793087124252965421,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "请告诉我，"
+          }
+        },
+        {
+          "t_ns": 1793087124800600361,
+          "arrival_ns": 1793087124800777227,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "我会协助您联系医护。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793087120285956314,
+          "arrival_ns": 1793087120286399031,
+          "source": "round",
+          "detail": {
+            "text_len": 12
+          }
+        },
+        {
+          "t_ns": 1793087121319095669,
+          "arrival_ns": 1793087121319657985,
+          "source": "round",
+          "detail": {
+            "text_len": 9
+          }
+        },
+        {
+          "t_ns": 1793087122074444693,
+          "arrival_ns": 1793087122074784532,
+          "source": "round",
+          "detail": {
+            "text_len": 22
+          }
+        },
+        {
+          "t_ns": 1793087124252708520,
+          "arrival_ns": 1793087124253282607,
+          "source": "round",
+          "detail": {
+            "text_len": 5
+          }
+        },
+        {
+          "t_ns": 1793087124800653094,
+          "arrival_ns": 1793087124800996654,
+          "source": "round",
+          "detail": {
+            "text_len": 10
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793087121314828959,
+          "arrival_ns": 1793087121315256810,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "dur_ms": 1028.864011,
+            "audio_sec": 2.72,
+            "rtf": 0.3782588275735293
+          }
+        },
+        {
+          "t_ns": 1793087122073613966,
+          "arrival_ns": 1793087122074043837,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 754.509002,
+            "audio_sec": 1.92,
+            "rtf": 0.3929734385416667
+          }
+        },
+        {
+          "t_ns": 1793087124251949969,
+          "arrival_ns": 1793087124252355870,
+          "source": "round",
+          "detail": {
+            "text_len": 22,
+            "dur_ms": 2177.497465,
+            "audio_sec": 5.68,
+            "rtf": 0.38336222975352113
+          }
+        },
+        {
+          "t_ns": 1793087124800024472,
+          "arrival_ns": 1793087124800416099,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "dur_ms": 547.309406,
+            "audio_sec": 1.28,
+            "rtf": 0.4275854734375
+          }
+        },
+        {
+          "t_ns": 1793087125854106426,
+          "arrival_ns": 1793087125854561765,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "dur_ms": 1053.445756,
+            "audio_sec": 2.88,
+            "rtf": 0.3657797763888889
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793087121382477820,
+          "arrival_ns": 1793087121382938958,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "数据库中还没有该项知识。"
+          }
+        },
+        {
+          "t_ns": 1793087124133159478,
+          "arrival_ns": 1793087124133418946,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "您现在在血透中心，"
+          }
+        },
+        {
+          "t_ns": 1793087126073195473,
+          "arrival_ns": 1793087126073400845,
+          "source": "round",
+          "detail": {
+            "text_len": 22,
+            "head": "如果运动前后出现胸闷、头晕、乏力或伤口不适，"
+          }
+        },
+        {
+          "t_ns": 1793087131799946332,
+          "arrival_ns": 1793087131800173639,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "请告诉我，"
+          }
+        },
+        {
+          "t_ns": 1793087133098910398,
+          "arrival_ns": 1793087133099218347,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "我会协助您联系医护。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793087124132137655,
+          "arrival_ns": 1793087124132616724,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "dur_ms": 2749.657378
+          }
+        },
+        {
+          "t_ns": 1793087126072405135,
+          "arrival_ns": 1793087126072808357,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 1939.242247
+          }
+        },
+        {
+          "t_ns": 1793087131799228569,
+          "arrival_ns": 1793087131799600706,
+          "source": "round",
+          "detail": {
+            "text_len": 22,
+            "dur_ms": 5726.029637
+          }
+        },
+        {
+          "t_ns": 1793087133098145896,
+          "arrival_ns": 1793087133098566817,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "dur_ms": 1298.196479
+          }
+        },
+        {
+          "t_ns": 1793087136008895028,
+          "arrival_ns": 1793087136009252755,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "dur_ms": 2909.981189
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793087136009733688,
+          "arrival_ns": 1793087136009859032,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 3,
+    "interval_s": 3.0
+  }
+}

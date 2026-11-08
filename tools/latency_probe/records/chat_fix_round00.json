@@ -1,0 +1,959 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_12867",
+  "host": "artrc",
+  "tag": "chat_fix",
+  "round_index": 0,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-11-02T16:03:00.761",
+  "finished_at": "2026-11-02T16:03:14.055",
+  "duration_s": 13.294,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "给我讲个故事",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793606580762463808,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793606580761963508,
+    "t_publish_question_ns": 1793606580762463808,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793606580763054164,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793606580763298207,
+      "ali_llm_output_start": 1793606580863802791,
+      "ali_llm_output_first_text": 1793606580864156744,
+      "ali_llm_output_done": 1793606581985625977,
+      "tts_realtime_data_start": 1793606580863989518,
+      "tts_realtime_data_first_text": 1793606580986463056,
+      "tts_realtime_data_done": 1793606581988726894,
+      "tts_session_finished": 1793606593752109429
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793606582204128650,
+      "tts_local.synth_start_first": 1793606582204168290,
+      "tts_local.synth_end_first": 1793606582200795483,
+      "tts_local.play_start_first": 1793606582275742285,
+      "tts_local.play_end_last": 1793606593751241754,
+      "tts_local.session_finished": 1793606593751952867
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.834,
+    "router_to_llm_first_ms": 100.859,
+    "question_to_llm_first_ms": 101.693,
+    "llm_first_to_done_ms": 1121.469,
+    "question_to_llm_done_ms": 1223.162,
+    "llm_first_to_tts_first_text_ms": 122.306,
+    "question_to_tts_first_text_ms": 223.999,
+    "first_tts_text_to_first_play_start_ms": 1289.279,
+    "tts_rx_to_synth_end_ms": 831.21,
+    "tts_rx_to_play_start_ms": 71.614,
+    "tts_synth_end_to_play_start_ms": -759.596,
+    "question_to_first_audio_ms": 1513.278,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 12989.646,
+    "audio_total_sum_ms": 11473.36,
+    "audio_first_to_last_ms": 11475.499
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 834399,
+    "router_to_llm_first_ns": 100858537,
+    "question_to_llm_first_ns": 101692936,
+    "llm_first_to_done_ns": 1121469233,
+    "question_to_llm_done_ns": 1223162169,
+    "llm_first_to_tts_first_text_ns": 122306312,
+    "question_to_tts_first_text_ns": 223999248,
+    "first_tts_text_to_first_play_start_ns": 1289279229,
+    "tts_rx_to_synth_end_ns": 831209626,
+    "tts_rx_to_play_start_ns": 71613635,
+    "tts_synth_end_to_play_start_ns": -759595991,
+    "question_to_first_audio_ns": 1513278477,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 12989645621,
+    "audio_total_sum_ns": 11473359793,
+    "audio_first_to_last_ns": 11475499469
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 101692936,
+      "ms": 101.693
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 1121469233,
+      "ms": 1121.469
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 122306312,
+      "ms": 122.306
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 1289279229,
+      "ms": 1289.279
+    },
+    "question_to_first_play_start": {
+      "ns": 1513278477,
+      "ms": 1513.278
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 12989645621,
+      "ms": 12989.646
+    },
+    "audio_total_sec": {
+      "ns": 11473359793,
+      "ms": 11473.36,
+      "sec": 11.473
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.834,
+    "router_to_llm_first_ms": 100.859,
+    "question_to_llm_first_ms": 101.693,
+    "llm_first_to_done_ms": 1121.469,
+    "question_to_llm_done_ms": 1223.162,
+    "llm_first_to_tts_first_text_ms": 122.306,
+    "question_to_tts_first_text_ms": 223.999,
+    "first_tts_text_to_first_play_start_ms": 1289.279,
+    "tts_rx_to_synth_end_ms": 831.21,
+    "tts_rx_to_play_start_ms": 71.614,
+    "tts_synth_end_to_play_start_ms": -759.596,
+    "question_to_first_audio_ms": 1513.278,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 12989.646,
+    "audio_total_sum_ms": 11473.36,
+    "audio_first_to_last_ms": 11475.499
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793606580863802791,
+      "first_text_rx_ns": 1793606580864156744,
+      "done_rx_ns": 1793606581985625977,
+      "chunk_count": 40,
+      "char_count": 51,
+      "chunks": [
+        {
+          "t_ns": 1793606580864156744,
+          "text": "老"
+        },
+        {
+          "t_ns": 1793606580874258326,
+          "text": "李"
+        },
+        {
+          "t_ns": 1793606580884245369,
+          "text": "总"
+        },
+        {
+          "t_ns": 1793606580894235210,
+          "text": "说自己"
+        },
+        {
+          "t_ns": 1793606580905274735,
+          "text": "是"
+        },
+        {
+          "t_ns": 1793606580926279568,
+          "text": "透"
+        },
+        {
+          "t_ns": 1793606580936324323,
+          "text": "析"
+        },
+        {
+          "t_ns": 1793606580946147247,
+          "text": "室"
+        },
+        {
+          "t_ns": 1793606580956835893,
+          "text": "的"
+        },
+        {
+          "t_ns": 1793606580966810313,
+          "text": "活"
+        },
+        {
+          "t_ns": 1793606580976766716,
+          "text": "人"
+        },
+        {
+          "t_ns": 1793606580986192555,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793606580997850512,
+          "text": "可"
+        },
+        {
+          "t_ns": 1793606581019608830,
+          "text": "每次"
+        },
+        {
+          "t_ns": 1793606581057635311,
+          "text": "他"
+        },
+        {
+          "t_ns": 1793606581096046667,
+          "text": "一"
+        },
+        {
+          "t_ns": 1793606581127926911,
+          "text": "进"
+        },
+        {
+          "t_ns": 1793606581160542130,
+          "text": "病房"
+        },
+        {
+          "t_ns": 1793606581193283107,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793606581226171530,
+          "text": "护士"
+        },
+        {
+          "t_ns": 1793606581259277827,
+          "text": "们"
+        },
+        {
+          "t_ns": 1793606581291931304,
+          "text": "就"
+        },
+        {
+          "t_ns": 1793606581324456915,
+          "text": "赶紧"
+        },
+        {
+          "t_ns": 1793606581361035268,
+          "text": "把"
+        },
+        {
+          "t_ns": 1793606581390691113,
+          "text": "椅子"
+        },
+        {
+          "t_ns": 1793606581423295745,
+          "text": "挪"
+        },
+        {
+          "t_ns": 1793606581458497508,
+          "text": "开"
+        },
+        {
+          "t_ns": 1793606581488743502,
+          "text": "——"
+        },
+        {
+          "t_ns": 1793606581526783062,
+          "text": "怕"
+        },
+        {
+          "t_ns": 1793606581556233371,
+          "text": "他"
+        },
+        {
+          "t_ns": 1793606581591440528,
+          "text": "一"
+        },
+        {
+          "t_ns": 1793606581622253674,
+          "text": "坐"
+        },
+        {
+          "t_ns": 1793606581657222007,
+          "text": "下来"
+        },
+        {
+          "t_ns": 1793606581687765711,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793606581723588038,
+          "text": "就"
+        },
+        {
+          "t_ns": 1793606581753669051,
+          "text": "真的"
+        },
+        {
+          "t_ns": 1793606581819471098,
+          "text": "透"
+        },
+        {
+          "t_ns": 1793606581885410338,
+          "text": "出去"
+        },
+        {
+          "t_ns": 1793606581923463186,
+          "text": "了"
+        },
+        {
+          "t_ns": 1793606581951966678,
+          "text": "。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793606580986463056,
+      "done_rx_ns": 1793606581988726894,
+      "text_count": 4,
+      "texts": [
+        {
+          "t_ns": 1793606580986463056,
+          "text": "老李总说自己是透析室的活人，"
+        },
+        {
+          "t_ns": 1793606581193495013,
+          "text": "可每次他一进病房，"
+        },
+        {
+          "t_ns": 1793606581687949956,
+          "text": "护士们就赶紧把椅子挪开——怕他一坐下来，"
+        },
+        {
+          "t_ns": 1793606581952166086,
+          "text": "就真的透出去了。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 24,
+    "latency_events_total": 24,
+    "asr_events": 0,
+    "tts_events": 20,
+    "tts_play_pairs": 4,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793606580784268049,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793606580783965761,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "chitchat",
+        "keyword_medical": false,
+        "chitchat": true,
+        "judge_kind": null,
+        "judge_ms": 0.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793606580783965761, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"chitchat\", \"keyword_medical\": false, \"chitchat\": true, \"judge_kind\": null, \"judge_ms\": 0.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606580784521483,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793606580784343082,
+      "detail": {
+        "provider": "ollama",
+        "prompt_chars": 673,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793606580784343082, \"detail\": {\"provider\": \"ollama\", \"prompt_chars\": 673, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606580864190526,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793606580863872332,
+      "detail": {
+        "prompt_chars": 673
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793606580863872332, \"detail\": {\"prompt_chars\": 673}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606581985407561,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793606581985096391,
+      "detail": {
+        "chars": 51
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793606581985096391, \"detail\": {\"chars\": 51}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606582201075427,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793606582200795483,
+      "detail": {
+        "text_len": 14,
+        "dur_ms": 1214.147486,
+        "audio_sec": 2.96,
+        "rtf": 0.41018496148648653
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793606582200795483, \"detail\": {\"text_len\": 14, \"dur_ms\": 1214.147486, \"audio_sec\": 2.96, \"rtf\": 0.41018496148648653}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606582204309569,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793606582204128650,
+      "detail": {
+        "text_len": 9,
+        "head": "可每次他一进病房，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793606582204128650, \"detail\": {\"text_len\": 9, \"head\": \"可每次他一进病房，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606582204489737,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793606582204168290,
+      "detail": {
+        "text_len": 9
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793606582204168290, \"detail\": {\"text_len\": 9}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606582275954474,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793606582275742285,
+      "detail": {
+        "text_len": 14,
+        "head": "老李总说自己是透析室的活人，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793606582275742285, \"detail\": {\"text_len\": 14, \"head\": \"老李总说自己是透析室的活人，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606583035640547,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793606583035338276,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 831.166036,
+        "audio_sec": 2.56,
+        "rtf": 0.32467423281249996
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793606583035338276, \"detail\": {\"text_len\": 9, \"dur_ms\": 831.166036, \"audio_sec\": 2.56, \"rtf\": 0.32467423281249996}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606583036012474,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793606583035875950,
+      "detail": {
+        "text_len": 20,
+        "head": "护士们就赶紧把椅子挪开——怕他一坐下来，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793606583035875950, \"detail\": {\"text_len\": 20, \"head\": \"护士们就赶紧把椅子挪开——怕他一坐下来，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606583036194710,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793606583035918073,
+      "detail": {
+        "text_len": 20
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793606583035918073, \"detail\": {\"text_len\": 20}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606584188978069,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793606584188637261,
+      "detail": {
+        "text_len": 20,
+        "dur_ms": 1152.715201,
+        "audio_sec": 3.68,
+        "rtf": 0.3132378263586956
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793606584188637261, \"detail\": {\"text_len\": 20, \"dur_ms\": 1152.715201, \"audio_sec\": 3.68, \"rtf\": 0.3132378263586956}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606584189476385,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793606584189183498,
+      "detail": {
+        "text_len": 8,
+        "head": "就真的透出去了。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793606584189183498, \"detail\": {\"text_len\": 8, \"head\": \"就真的透出去了。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606584189774147,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793606584189246517,
+      "detail": {
+        "text_len": 8
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793606584189246517, \"detail\": {\"text_len\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606584858415713,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793606584858117797,
+      "detail": {
+        "text_len": 8,
+        "dur_ms": 668.86645,
+        "audio_sec": 2.08,
+        "rtf": 0.3215704086538461
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793606584858117797, \"detail\": {\"text_len\": 8, \"dur_ms\": 668.86645, \"audio_sec\": 2.08, \"rtf\": 0.3215704086538461}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606584858790283,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793606584858635625,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793606584858635625, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606585286294377,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793606585286009670,
+      "detail": {
+        "text_len": 14,
+        "interrupted": false,
+        "dur_ms": 3010.265664
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793606585286009670, \"detail\": {\"text_len\": 14, \"interrupted\": false, \"dur_ms\": 3010.265664}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606585286931567,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793606585286788040,
+      "detail": {
+        "text_len": 9,
+        "head": "可每次他一进病房，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793606585286788040, \"detail\": {\"text_len\": 9, \"head\": \"可每次他一进病房，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606587892284462,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793606587892025136,
+      "detail": {
+        "text_len": 9,
+        "interrupted": false,
+        "dur_ms": 2605.235129
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793606587892025136, \"detail\": {\"text_len\": 9, \"interrupted\": false, \"dur_ms\": 2605.235129}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606587892832396,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793606587892705277,
+      "detail": {
+        "text_len": 20,
+        "head": "护士们就赶紧把椅子挪开——怕他一坐下来，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793606587892705277, \"detail\": {\"text_len\": 20, \"head\": \"护士们就赶紧把椅子挪开——怕他一坐下来，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606591618632452,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793606591618335218,
+      "detail": {
+        "text_len": 20,
+        "interrupted": false,
+        "dur_ms": 3725.627944
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793606591618335218, \"detail\": {\"text_len\": 20, \"interrupted\": false, \"dur_ms\": 3725.627944}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606591619163691,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793606591619016383,
+      "detail": {
+        "text_len": 8,
+        "head": "就真的透出去了。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793606591619016383, \"detail\": {\"text_len\": 8, \"head\": \"就真的透出去了。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606593751533836,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793606593751241754,
+      "detail": {
+        "text_len": 8,
+        "interrupted": false,
+        "dur_ms": 2132.222626
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793606593751241754, \"detail\": {\"text_len\": 8, \"interrupted\": false, \"dur_ms\": 2132.222626}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606593752145649,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793606593751952867,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793606593751952867, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793606580783965761,
+          "arrival_ns": 1793606580784268049,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "chitchat",
+            "keyword_medical": false,
+            "chitchat": true,
+            "judge_kind": null,
+            "judge_ms": 0.0
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793606580784343082,
+          "arrival_ns": 1793606580784521483,
+          "source": "round",
+          "detail": {
+            "provider": "ollama",
+            "prompt_chars": 673,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793606580863872332,
+          "arrival_ns": 1793606580864190526,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 673
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793606581985096391,
+          "arrival_ns": 1793606581985407561,
+          "source": "round",
+          "detail": {
+            "chars": 51
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "synth_end": [
+        {
+          "t_ns": 1793606582200795483,
+          "arrival_ns": 1793606582201075427,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "dur_ms": 1214.147486,
+            "audio_sec": 2.96,
+            "rtf": 0.41018496148648653
+          }
+        },
+        {
+          "t_ns": 1793606583035338276,
+          "arrival_ns": 1793606583035640547,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 831.166036,
+            "audio_sec": 2.56,
+            "rtf": 0.32467423281249996
+          }
+        },
+        {
+          "t_ns": 1793606584188637261,
+          "arrival_ns": 1793606584188978069,
+          "source": "round",
+          "detail": {
+            "text_len": 20,
+            "dur_ms": 1152.715201,
+            "audio_sec": 3.68,
+            "rtf": 0.3132378263586956
+          }
+        },
+        {
+          "t_ns": 1793606584858117797,
+          "arrival_ns": 1793606584858415713,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "dur_ms": 668.86645,
+            "audio_sec": 2.08,
+            "rtf": 0.3215704086538461
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793606582204128650,
+          "arrival_ns": 1793606582204309569,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "可每次他一进病房，"
+          }
+        },
+        {
+          "t_ns": 1793606583035875950,
+          "arrival_ns": 1793606583036012474,
+          "source": "round",
+          "detail": {
+            "text_len": 20,
+            "head": "护士们就赶紧把椅子挪开——怕他一坐下来，"
+          }
+        },
+        {
+          "t_ns": 1793606584189183498,
+          "arrival_ns": 1793606584189476385,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "就真的透出去了。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793606582204168290,
+          "arrival_ns": 1793606582204489737,
+          "source": "round",
+          "detail": {
+            "text_len": 9
+          }
+        },
+        {
+          "t_ns": 1793606583035918073,
+          "arrival_ns": 1793606583036194710,
+          "source": "round",
+          "detail": {
+            "text_len": 20
+          }
+        },
+        {
+          "t_ns": 1793606584189246517,
+          "arrival_ns": 1793606584189774147,
+          "source": "round",
+          "detail": {
+            "text_len": 8
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793606582275742285,
+          "arrival_ns": 1793606582275954474,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "head": "老李总说自己是透析室的活人，"
+          }
+        },
+        {
+          "t_ns": 1793606585286788040,
+          "arrival_ns": 1793606585286931567,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "可每次他一进病房，"
+          }
+        },
+        {
+          "t_ns": 1793606587892705277,
+          "arrival_ns": 1793606587892832396,
+          "source": "round",
+          "detail": {
+            "text_len": 20,
+            "head": "护士们就赶紧把椅子挪开——怕他一坐下来，"
+          }
+        },
+        {
+          "t_ns": 1793606591619016383,
+          "arrival_ns": 1793606591619163691,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "就真的透出去了。"
+          }
+        }
+      ],
+      "rx_control": [
+        {
+          "t_ns": 1793606584858635625,
+          "arrival_ns": 1793606584858790283,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793606585286009670,
+          "arrival_ns": 1793606585286294377,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "interrupted": false,
+            "dur_ms": 3010.265664
+          }
+        },
+        {
+          "t_ns": 1793606587892025136,
+          "arrival_ns": 1793606587892284462,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "interrupted": false,
+            "dur_ms": 2605.235129
+          }
+        },
+        {
+          "t_ns": 1793606591618335218,
+          "arrival_ns": 1793606591618632452,
+          "source": "round",
+          "detail": {
+            "text_len": 20,
+            "interrupted": false,
+            "dur_ms": 3725.627944
+          }
+        },
+        {
+          "t_ns": 1793606593751241754,
+          "arrival_ns": 1793606593751533836,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "interrupted": false,
+            "dur_ms": 2132.222626
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793606593751952867,
+          "arrival_ns": 1793606593752145649,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 0.0,
+    "event_lookback_s": 60.0,
+    "timeout_s": 40.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 1,
+    "interval_s": 1.0
+  }
+}

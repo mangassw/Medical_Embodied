@@ -1,0 +1,1377 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1148759",
+  "host": "artrc",
+  "tag": "ol_chat10",
+  "round_index": 6,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T15:39:06.275",
+  "finished_at": "2026-10-30T15:39:24.028",
+  "duration_s": 17.753,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "讲个睡前故事",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793345946275782719,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793345946275333030,
+    "t_publish_question_ns": 1793345946275782719,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793345946276275382,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793345946276701495,
+      "ali_llm_output_start": 1793345946444375624,
+      "ali_llm_output_first_text": 1793345946444908034,
+      "ali_llm_output_done": 1793345948179473220,
+      "tts_realtime_data_start": 1793345946444685903,
+      "tts_realtime_data_first_text": 1793345946535889939,
+      "tts_realtime_data_done": 1793345948179744463,
+      "tts_session_finished": 1793345963728021992
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793345946540378994,
+      "tts_local.synth_start_first": 1793345946540505808,
+      "tts_local.synth_end_first": 1793345947908941489,
+      "tts_local.play_start_first": 1793345947926047429,
+      "tts_local.play_end_last": 1793345963726969405,
+      "tts_local.session_finished": 1793345963727693175
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.919,
+    "router_to_llm_first_ms": 168.207,
+    "question_to_llm_first_ms": 169.125,
+    "llm_first_to_done_ms": 1734.565,
+    "question_to_llm_done_ms": 1903.691,
+    "llm_first_to_tts_first_text_ms": 90.982,
+    "question_to_tts_first_text_ms": 260.107,
+    "first_tts_text_to_first_play_start_ms": 1390.157,
+    "tts_rx_to_synth_end_ms": 1368.562,
+    "tts_rx_to_play_start_ms": 1385.668,
+    "tts_synth_end_to_play_start_ms": 17.106,
+    "question_to_first_audio_ms": 1650.265,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 17452.239,
+    "audio_total_sum_ms": 15796.117,
+    "audio_first_to_last_ms": 15800.922
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 918776,
+    "router_to_llm_first_ns": 168206539,
+    "question_to_llm_first_ns": 169125315,
+    "llm_first_to_done_ns": 1734565186,
+    "question_to_llm_done_ns": 1903690501,
+    "llm_first_to_tts_first_text_ns": 90981905,
+    "question_to_tts_first_text_ns": 260107220,
+    "first_tts_text_to_first_play_start_ns": 1390157490,
+    "tts_rx_to_synth_end_ns": 1368562495,
+    "tts_rx_to_play_start_ns": 1385668435,
+    "tts_synth_end_to_play_start_ns": 17105940,
+    "question_to_first_audio_ns": 1650264710,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 17452239273,
+    "audio_total_sum_ns": 15796116676,
+    "audio_first_to_last_ns": 15800921976
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 169125315,
+      "ms": 169.125
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 1734565186,
+      "ms": 1734.565
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 90981905,
+      "ms": 90.982
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 1390157490,
+      "ms": 1390.157
+    },
+    "question_to_first_play_start": {
+      "ns": 1650264710,
+      "ms": 1650.265
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 17452239273,
+      "ms": 17452.239
+    },
+    "audio_total_sec": {
+      "ns": 15796116676,
+      "ms": 15796.117,
+      "sec": 15.796
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.919,
+    "router_to_llm_first_ms": 168.207,
+    "question_to_llm_first_ms": 169.125,
+    "llm_first_to_done_ms": 1734.565,
+    "question_to_llm_done_ms": 1903.691,
+    "llm_first_to_tts_first_text_ms": 90.982,
+    "question_to_tts_first_text_ms": 260.107,
+    "first_tts_text_to_first_play_start_ms": 1390.157,
+    "tts_rx_to_synth_end_ms": 1368.562,
+    "tts_rx_to_play_start_ms": 1385.668,
+    "tts_synth_end_to_play_start_ms": 17.106,
+    "question_to_first_audio_ms": 1650.265,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 17452.239,
+    "audio_total_sum_ms": 15796.117,
+    "audio_first_to_last_ms": 15800.922
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793345946444375624,
+      "first_text_rx_ns": 1793345946444908034,
+      "done_rx_ns": 1793345948179473220,
+      "chunk_count": 45,
+      "char_count": 68,
+      "chunks": [
+        {
+          "t_ns": 1793345946444908034,
+          "text": "从前"
+        },
+        {
+          "t_ns": 1793345946461803796,
+          "text": "有一"
+        },
+        {
+          "t_ns": 1793345946478759014,
+          "text": "只"
+        },
+        {
+          "t_ns": 1793345946496215531,
+          "text": "小"
+        },
+        {
+          "t_ns": 1793345946512410721,
+          "text": "兔子"
+        },
+        {
+          "t_ns": 1793345946534801972,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793345946549688365,
+          "text": "它"
+        },
+        {
+          "t_ns": 1793345946576837989,
+          "text": "总是"
+        },
+        {
+          "t_ns": 1793345946608680817,
+          "text": "梦想"
+        },
+        {
+          "t_ns": 1793345946649857499,
+          "text": "着"
+        },
+        {
+          "t_ns": 1793345946698205188,
+          "text": "能"
+        },
+        {
+          "t_ns": 1793345946739822116,
+          "text": "飞"
+        },
+        {
+          "t_ns": 1793345946781502240,
+          "text": "上"
+        },
+        {
+          "t_ns": 1793345946832773050,
+          "text": "天空"
+        },
+        {
+          "t_ns": 1793345946878619253,
+          "text": "。"
+        },
+        {
+          "t_ns": 1793345946929825892,
+          "text": "有一天"
+        },
+        {
+          "t_ns": 1793345946974431330,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793345947016548903,
+          "text": "它"
+        },
+        {
+          "t_ns": 1793345947058600227,
+          "text": "终于"
+        },
+        {
+          "t_ns": 1793345947099757438,
+          "text": "找到了"
+        },
+        {
+          "t_ns": 1793345947141236907,
+          "text": "一片"
+        },
+        {
+          "t_ns": 1793345947182338677,
+          "text": "神奇"
+        },
+        {
+          "t_ns": 1793345947224706464,
+          "text": "的"
+        },
+        {
+          "t_ns": 1793345947267155921,
+          "text": "草地"
+        },
+        {
+          "t_ns": 1793345947307724265,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793345947362832829,
+          "text": "草"
+        },
+        {
+          "t_ns": 1793345947411770274,
+          "text": "地上"
+        },
+        {
+          "t_ns": 1793345947459088765,
+          "text": "有一"
+        },
+        {
+          "t_ns": 1793345947503378043,
+          "text": "朵"
+        },
+        {
+          "t_ns": 1793345947542479933,
+          "text": "会"
+        },
+        {
+          "t_ns": 1793345947584459102,
+          "text": "发光"
+        },
+        {
+          "t_ns": 1793345947626715089,
+          "text": "的"
+        },
+        {
+          "t_ns": 1793345947669303843,
+          "text": "花"
+        },
+        {
+          "t_ns": 1793345947718668800,
+          "text": "。"
+        },
+        {
+          "t_ns": 1793345947759451744,
+          "text": "小"
+        },
+        {
+          "t_ns": 1793345947795720121,
+          "text": "兔子"
+        },
+        {
+          "t_ns": 1793345947836056347,
+          "text": "轻轻"
+        },
+        {
+          "t_ns": 1793345947867548769,
+          "text": "一"
+        },
+        {
+          "t_ns": 1793345947892182879,
+          "text": "跳"
+        },
+        {
+          "t_ns": 1793345947923741426,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793345947952904979,
+          "text": "竟然"
+        },
+        {
+          "t_ns": 1793345947998755179,
+          "text": "真的"
+        },
+        {
+          "t_ns": 1793345948050192223,
+          "text": "飞"
+        },
+        {
+          "t_ns": 1793345948092431132,
+          "text": "起来了"
+        },
+        {
+          "t_ns": 1793345948144679822,
+          "text": "！"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793345946535889939,
+      "done_rx_ns": 1793345948179744463,
+      "text_count": 7,
+      "texts": [
+        {
+          "t_ns": 1793345946535889939,
+          "text": "从前有一只小兔子，"
+        },
+        {
+          "t_ns": 1793345946878852426,
+          "text": "它总是梦想着能飞上天空。"
+        },
+        {
+          "t_ns": 1793345946974641646,
+          "text": "有一天，"
+        },
+        {
+          "t_ns": 1793345947307945793,
+          "text": "它终于找到了一片神奇的草地，"
+        },
+        {
+          "t_ns": 1793345947718721537,
+          "text": "草地上有一朵会发光的花。"
+        },
+        {
+          "t_ns": 1793345947924922455,
+          "text": "小兔子轻轻一跳，"
+        },
+        {
+          "t_ns": 1793345948144888701,
+          "text": "竟然真的飞起来了！"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 42,
+    "latency_events_total": 42,
+    "asr_events": 0,
+    "tts_events": 38,
+    "tts_play_pairs": 7,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793345946297836929,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793345946297453828,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "chitchat",
+        "keyword_medical": false,
+        "chitchat": true,
+        "judge_kind": null,
+        "judge_ms": 0.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793345946297453828, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"chitchat\", \"keyword_medical\": false, \"chitchat\": true, \"judge_kind\": null, \"judge_ms\": 0.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345946298579738,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793345946298361720,
+      "detail": {
+        "provider": "ollama",
+        "prompt_chars": 437,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793345946298361720, \"detail\": {\"provider\": \"ollama\", \"prompt_chars\": 437, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345946444728701,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793345946444448326,
+      "detail": {
+        "prompt_chars": 437
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793345946444448326, \"detail\": {\"prompt_chars\": 437}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345946445068636,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793345946444875040,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793345946444875040, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345946540789847,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793345946540378994,
+      "detail": {
+        "text_len": 9,
+        "head": "从前有一只小兔子，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793345946540378994, \"detail\": {\"text_len\": 9, \"head\": \"从前有一只小兔子，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345946541121680,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793345946540505808,
+      "detail": {
+        "text_len": 9
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793345946540505808, \"detail\": {\"text_len\": 9}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345947909241471,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793345947908941489,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 1368.429298,
+        "audio_sec": 2.48,
+        "rtf": 0.5517860072580646
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793345947908941489, \"detail\": {\"text_len\": 9, \"dur_ms\": 1368.429298, \"audio_sec\": 2.48, \"rtf\": 0.5517860072580646}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345947910625848,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793345947910387178,
+      "detail": {
+        "text_len": 12,
+        "head": "它总是梦想着能飞上天空。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793345947910387178, \"detail\": {\"text_len\": 12, \"head\": \"它总是梦想着能飞上天空。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345947910946180,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793345947910437690,
+      "detail": {
+        "text_len": 12
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793345947910437690, \"detail\": {\"text_len\": 12}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345947926273420,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793345947926047429,
+      "detail": {
+        "text_len": 9,
+        "head": "从前有一只小兔子，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793345947926047429, \"detail\": {\"text_len\": 9, \"head\": \"从前有一只小兔子，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345948179524011,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793345948179203398,
+      "detail": {
+        "chars": 68
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793345948179203398, \"detail\": {\"chars\": 68}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345948945566304,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793345948945261153,
+      "detail": {
+        "text_len": 12,
+        "dur_ms": 1034.818488,
+        "audio_sec": 2.64,
+        "rtf": 0.39197669999999996
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793345948945261153, \"detail\": {\"text_len\": 12, \"dur_ms\": 1034.818488, \"audio_sec\": 2.64, \"rtf\": 0.39197669999999996}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345948947007426,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793345948946833589,
+      "detail": {
+        "text_len": 4,
+        "head": "有一天，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793345948946833589, \"detail\": {\"text_len\": 4, \"head\": \"有一天，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345948947188167,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793345948946870752,
+      "detail": {
+        "text_len": 4
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793345948946870752, \"detail\": {\"text_len\": 4}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345949425665017,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793345949425369575,
+      "detail": {
+        "text_len": 4,
+        "dur_ms": 478.494685,
+        "audio_sec": 1.28,
+        "rtf": 0.37382397265625
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793345949425369575, \"detail\": {\"text_len\": 4, \"dur_ms\": 478.494685, \"audio_sec\": 1.28, \"rtf\": 0.37382397265625}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345949426178659,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793345949425994222,
+      "detail": {
+        "text_len": 14,
+        "head": "它终于找到了一片神奇的草地，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793345949425994222, \"detail\": {\"text_len\": 14, \"head\": \"它终于找到了一片神奇的草地，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345949426531048,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793345949426048031,
+      "detail": {
+        "text_len": 14
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793345949426048031, \"detail\": {\"text_len\": 14}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345950323949792,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793345950323596114,
+      "detail": {
+        "text_len": 14,
+        "dur_ms": 897.541017,
+        "audio_sec": 2.56,
+        "rtf": 0.35060195976562497
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793345950323596114, \"detail\": {\"text_len\": 14, \"dur_ms\": 897.541017, \"audio_sec\": 2.56, \"rtf\": 0.35060195976562497}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345950324455689,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793345950324259824,
+      "detail": {
+        "text_len": 12,
+        "head": "草地上有一朵会发光的花。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793345950324259824, \"detail\": {\"text_len\": 12, \"head\": \"草地上有一朵会发光的花。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345950324772896,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793345950324326237,
+      "detail": {
+        "text_len": 12
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793345950324326237, \"detail\": {\"text_len\": 12}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345950427055544,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793345950426643624,
+      "detail": {
+        "text_len": 9,
+        "interrupted": false,
+        "dur_ms": 2500.594213
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793345950426643624, \"detail\": {\"text_len\": 9, \"interrupted\": false, \"dur_ms\": 2500.594213}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345950427566392,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793345950427366858,
+      "detail": {
+        "text_len": 12,
+        "head": "它总是梦想着能飞上天空。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793345950427366858, \"detail\": {\"text_len\": 12, \"head\": \"它总是梦想着能飞上天空。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345951253511139,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793345951253178002,
+      "detail": {
+        "text_len": 12,
+        "dur_ms": 928.845854,
+        "audio_sec": 2.64,
+        "rtf": 0.3518355507575758
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793345951253178002, \"detail\": {\"text_len\": 12, \"dur_ms\": 928.845854, \"audio_sec\": 2.64, \"rtf\": 0.3518355507575758}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345951253965964,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793345951253740119,
+      "detail": {
+        "text_len": 8,
+        "head": "小兔子轻轻一跳，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793345951253740119, \"detail\": {\"text_len\": 8, \"head\": \"小兔子轻轻一跳，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345951254143522,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793345951253776826,
+      "detail": {
+        "text_len": 8
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793345951253776826, \"detail\": {\"text_len\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345951916263255,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793345951915927009,
+      "detail": {
+        "text_len": 8,
+        "dur_ms": 662.145471,
+        "audio_sec": 1.84,
+        "rtf": 0.35986166902173916
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793345951915927009, \"detail\": {\"text_len\": 8, \"dur_ms\": 662.145471, \"audio_sec\": 1.84, \"rtf\": 0.35986166902173916}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345951916630501,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793345951916464939,
+      "detail": {
+        "text_len": 9,
+        "head": "竟然真的飞起来了！"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793345951916464939, \"detail\": {\"text_len\": 9, \"head\": \"竟然真的飞起来了！\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345951916803447,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793345951916504639,
+      "detail": {
+        "text_len": 9
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793345951916504639, \"detail\": {\"text_len\": 9}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345952708969819,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793345952708631671,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 792.122328,
+        "audio_sec": 2.24,
+        "rtf": 0.3536260392857143
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793345952708631671, \"detail\": {\"text_len\": 9, \"dur_ms\": 792.122328, \"audio_sec\": 2.24, \"rtf\": 0.3536260392857143}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345952709349971,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793345952709176251,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793345952709176251, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345953089022709,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793345953088622338,
+      "detail": {
+        "text_len": 12,
+        "interrupted": false,
+        "dur_ms": 2661.24988
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793345953088622338, \"detail\": {\"text_len\": 12, \"interrupted\": false, \"dur_ms\": 2661.24988}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345953089530510,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793345953089374636,
+      "detail": {
+        "text_len": 4,
+        "head": "有一天，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793345953089374636, \"detail\": {\"text_len\": 4, \"head\": \"有一天，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345954382827517,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793345954382530344,
+      "detail": {
+        "text_len": 4,
+        "interrupted": false,
+        "dur_ms": 1293.151872
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793345954382530344, \"detail\": {\"text_len\": 4, \"interrupted\": false, \"dur_ms\": 1293.151872}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345954383598427,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793345954383333667,
+      "detail": {
+        "text_len": 14,
+        "head": "它终于找到了一片神奇的草地，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793345954383333667, \"detail\": {\"text_len\": 14, \"head\": \"它终于找到了一片神奇的草地，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345956966222193,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793345956965871149,
+      "detail": {
+        "text_len": 14,
+        "interrupted": false,
+        "dur_ms": 2582.534041
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793345956965871149, \"detail\": {\"text_len\": 14, \"interrupted\": false, \"dur_ms\": 2582.534041}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345956966809216,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793345956966634745,
+      "detail": {
+        "text_len": 12,
+        "head": "草地上有一朵会发光的花。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793345956966634745, \"detail\": {\"text_len\": 12, \"head\": \"草地上有一朵会发光的花。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345959622623249,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793345959622114616,
+      "detail": {
+        "text_len": 12,
+        "interrupted": false,
+        "dur_ms": 2655.478412
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793345959622114616, \"detail\": {\"text_len\": 12, \"interrupted\": false, \"dur_ms\": 2655.478412}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345959623351559,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793345959623095707,
+      "detail": {
+        "text_len": 8,
+        "head": "小兔子轻轻一跳，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793345959623095707, \"detail\": {\"text_len\": 8, \"head\": \"小兔子轻轻一跳，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345961474556846,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793345961474129997,
+      "detail": {
+        "text_len": 8,
+        "interrupted": false,
+        "dur_ms": 1851.029847
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793345961474129997, \"detail\": {\"text_len\": 8, \"interrupted\": false, \"dur_ms\": 1851.029847}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345961475055714,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793345961474911755,
+      "detail": {
+        "text_len": 9,
+        "head": "竟然真的飞起来了！"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793345961474911755, \"detail\": {\"text_len\": 9, \"head\": \"竟然真的飞起来了！\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345963727353007,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793345963726969405,
+      "detail": {
+        "text_len": 9,
+        "interrupted": false,
+        "dur_ms": 2252.053917
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793345963726969405, \"detail\": {\"text_len\": 9, \"interrupted\": false, \"dur_ms\": 2252.053917}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345963727819558,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793345963727693175,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793345963727693175, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793345946297453828,
+          "arrival_ns": 1793345946297836929,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "chitchat",
+            "keyword_medical": false,
+            "chitchat": true,
+            "judge_kind": null,
+            "judge_ms": 0.0
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793345946298361720,
+          "arrival_ns": 1793345946298579738,
+          "source": "round",
+          "detail": {
+            "provider": "ollama",
+            "prompt_chars": 437,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793345946444448326,
+          "arrival_ns": 1793345946444728701,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 437
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793345948179203398,
+          "arrival_ns": 1793345948179524011,
+          "source": "round",
+          "detail": {
+            "chars": 68
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793345946444875040,
+          "arrival_ns": 1793345946445068636,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793345952709176251,
+          "arrival_ns": 1793345952709349971,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793345946540378994,
+          "arrival_ns": 1793345946540789847,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "从前有一只小兔子，"
+          }
+        },
+        {
+          "t_ns": 1793345947910387178,
+          "arrival_ns": 1793345947910625848,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "它总是梦想着能飞上天空。"
+          }
+        },
+        {
+          "t_ns": 1793345948946833589,
+          "arrival_ns": 1793345948947007426,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "有一天，"
+          }
+        },
+        {
+          "t_ns": 1793345949425994222,
+          "arrival_ns": 1793345949426178659,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "head": "它终于找到了一片神奇的草地，"
+          }
+        },
+        {
+          "t_ns": 1793345950324259824,
+          "arrival_ns": 1793345950324455689,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "草地上有一朵会发光的花。"
+          }
+        },
+        {
+          "t_ns": 1793345951253740119,
+          "arrival_ns": 1793345951253965964,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "小兔子轻轻一跳，"
+          }
+        },
+        {
+          "t_ns": 1793345951916464939,
+          "arrival_ns": 1793345951916630501,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "竟然真的飞起来了！"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793345946540505808,
+          "arrival_ns": 1793345946541121680,
+          "source": "round",
+          "detail": {
+            "text_len": 9
+          }
+        },
+        {
+          "t_ns": 1793345947910437690,
+          "arrival_ns": 1793345947910946180,
+          "source": "round",
+          "detail": {
+            "text_len": 12
+          }
+        },
+        {
+          "t_ns": 1793345948946870752,
+          "arrival_ns": 1793345948947188167,
+          "source": "round",
+          "detail": {
+            "text_len": 4
+          }
+        },
+        {
+          "t_ns": 1793345949426048031,
+          "arrival_ns": 1793345949426531048,
+          "source": "round",
+          "detail": {
+            "text_len": 14
+          }
+        },
+        {
+          "t_ns": 1793345950324326237,
+          "arrival_ns": 1793345950324772896,
+          "source": "round",
+          "detail": {
+            "text_len": 12
+          }
+        },
+        {
+          "t_ns": 1793345951253776826,
+          "arrival_ns": 1793345951254143522,
+          "source": "round",
+          "detail": {
+            "text_len": 8
+          }
+        },
+        {
+          "t_ns": 1793345951916504639,
+          "arrival_ns": 1793345951916803447,
+          "source": "round",
+          "detail": {
+            "text_len": 9
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793345947908941489,
+          "arrival_ns": 1793345947909241471,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 1368.429298,
+            "audio_sec": 2.48,
+            "rtf": 0.5517860072580646
+          }
+        },
+        {
+          "t_ns": 1793345948945261153,
+          "arrival_ns": 1793345948945566304,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "dur_ms": 1034.818488,
+            "audio_sec": 2.64,
+            "rtf": 0.39197669999999996
+          }
+        },
+        {
+          "t_ns": 1793345949425369575,
+          "arrival_ns": 1793345949425665017,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "dur_ms": 478.494685,
+            "audio_sec": 1.28,
+            "rtf": 0.37382397265625
+          }
+        },
+        {
+          "t_ns": 1793345950323596114,
+          "arrival_ns": 1793345950323949792,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "dur_ms": 897.541017,
+            "audio_sec": 2.56,
+            "rtf": 0.35060195976562497
+          }
+        },
+        {
+          "t_ns": 1793345951253178002,
+          "arrival_ns": 1793345951253511139,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "dur_ms": 928.845854,
+            "audio_sec": 2.64,
+            "rtf": 0.3518355507575758
+          }
+        },
+        {
+          "t_ns": 1793345951915927009,
+          "arrival_ns": 1793345951916263255,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "dur_ms": 662.145471,
+            "audio_sec": 1.84,
+            "rtf": 0.35986166902173916
+          }
+        },
+        {
+          "t_ns": 1793345952708631671,
+          "arrival_ns": 1793345952708969819,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 792.122328,
+            "audio_sec": 2.24,
+            "rtf": 0.3536260392857143
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793345947926047429,
+          "arrival_ns": 1793345947926273420,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "从前有一只小兔子，"
+          }
+        },
+        {
+          "t_ns": 1793345950427366858,
+          "arrival_ns": 1793345950427566392,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "它总是梦想着能飞上天空。"
+          }
+        },
+        {
+          "t_ns": 1793345953089374636,
+          "arrival_ns": 1793345953089530510,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "有一天，"
+          }
+        },
+        {
+          "t_ns": 1793345954383333667,
+          "arrival_ns": 1793345954383598427,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "head": "它终于找到了一片神奇的草地，"
+          }
+        },
+        {
+          "t_ns": 1793345956966634745,
+          "arrival_ns": 1793345956966809216,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "草地上有一朵会发光的花。"
+          }
+        },
+        {
+          "t_ns": 1793345959623095707,
+          "arrival_ns": 1793345959623351559,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "小兔子轻轻一跳，"
+          }
+        },
+        {
+          "t_ns": 1793345961474911755,
+          "arrival_ns": 1793345961475055714,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "竟然真的飞起来了！"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793345950426643624,
+          "arrival_ns": 1793345950427055544,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "interrupted": false,
+            "dur_ms": 2500.594213
+          }
+        },
+        {
+          "t_ns": 1793345953088622338,
+          "arrival_ns": 1793345953089022709,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "interrupted": false,
+            "dur_ms": 2661.24988
+          }
+        },
+        {
+          "t_ns": 1793345954382530344,
+          "arrival_ns": 1793345954382827517,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "interrupted": false,
+            "dur_ms": 1293.151872
+          }
+        },
+        {
+          "t_ns": 1793345956965871149,
+          "arrival_ns": 1793345956966222193,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "interrupted": false,
+            "dur_ms": 2582.534041
+          }
+        },
+        {
+          "t_ns": 1793345959622114616,
+          "arrival_ns": 1793345959622623249,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "interrupted": false,
+            "dur_ms": 2655.478412
+          }
+        },
+        {
+          "t_ns": 1793345961474129997,
+          "arrival_ns": 1793345961474556846,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "interrupted": false,
+            "dur_ms": 1851.029847
+          }
+        },
+        {
+          "t_ns": 1793345963726969405,
+          "arrival_ns": 1793345963727353007,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "interrupted": false,
+            "dur_ms": 2252.053917
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793345963727693175,
+          "arrival_ns": 1793345963727819558,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 10,
+    "interval_s": 2.0
+  }
+}

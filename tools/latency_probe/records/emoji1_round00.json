@@ -1,0 +1,683 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1052624",
+  "host": "artrc",
+  "tag": "emoji1",
+  "round_index": 0,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T09:59:01.723",
+  "finished_at": "2026-10-30T09:59:10.068",
+  "duration_s": 8.346,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "给我讲个笑话吧",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793325541723897741,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793325541723433902,
+    "t_publish_question_ns": 1793325541723897741,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793325541724449355,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793325541725074305,
+      "ali_llm_output_start": 1793325542945909896,
+      "ali_llm_output_first_text": 1793325542949052851,
+      "ali_llm_output_done": 1793325543469520478,
+      "tts_realtime_data_start": 1793325542946293030,
+      "tts_realtime_data_first_text": 1793325543162000881,
+      "tts_realtime_data_done": 1793325543469562016,
+      "tts_session_finished": 1793325549764299934
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793325543162390970,
+      "tts_local.synth_start_first": 1793325543162464732,
+      "tts_local.synth_end_first": 1793325544138827234,
+      "tts_local.play_start_first": 1793325544231229101,
+      "tts_local.play_end_last": 1793325549763294849,
+      "tts_local.session_finished": 1793325549763983233
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.177,
+    "router_to_llm_first_ms": 1223.979,
+    "question_to_llm_first_ms": 1225.155,
+    "llm_first_to_done_ms": 520.468,
+    "question_to_llm_done_ms": 1745.623,
+    "llm_first_to_tts_first_text_ms": 212.948,
+    "question_to_tts_first_text_ms": 1438.103,
+    "first_tts_text_to_first_play_start_ms": 1069.228,
+    "tts_rx_to_synth_end_ms": 976.436,
+    "tts_rx_to_play_start_ms": 1068.838,
+    "tts_synth_end_to_play_start_ms": 92.402,
+    "question_to_first_audio_ms": 2507.331,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 8040.402,
+    "audio_total_sum_ms": 5530.967,
+    "audio_first_to_last_ms": 5532.066
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 1176564,
+    "router_to_llm_first_ns": 1223978546,
+    "question_to_llm_first_ns": 1225155110,
+    "llm_first_to_done_ns": 520467627,
+    "question_to_llm_done_ns": 1745622737,
+    "llm_first_to_tts_first_text_ns": 212948030,
+    "question_to_tts_first_text_ns": 1438103140,
+    "first_tts_text_to_first_play_start_ns": 1069228220,
+    "tts_rx_to_synth_end_ns": 976436264,
+    "tts_rx_to_play_start_ns": 1068838131,
+    "tts_synth_end_to_play_start_ns": 92401867,
+    "question_to_first_audio_ns": 2507331360,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 8040402193,
+    "audio_total_sum_ns": 5530966880,
+    "audio_first_to_last_ns": 5532065748
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 1225155110,
+      "ms": 1225.155
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 520467627,
+      "ms": 520.468
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 212948030,
+      "ms": 212.948
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 1069228220,
+      "ms": 1069.228
+    },
+    "question_to_first_play_start": {
+      "ns": 2507331360,
+      "ms": 2507.331
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 8040402193,
+      "ms": 8040.402
+    },
+    "audio_total_sec": {
+      "ns": 5530966880,
+      "ms": 5530.967,
+      "sec": 5.531
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.177,
+    "router_to_llm_first_ms": 1223.979,
+    "question_to_llm_first_ms": 1225.155,
+    "llm_first_to_done_ms": 520.468,
+    "question_to_llm_done_ms": 1745.623,
+    "llm_first_to_tts_first_text_ms": 212.948,
+    "question_to_tts_first_text_ms": 1438.103,
+    "first_tts_text_to_first_play_start_ms": 1069.228,
+    "tts_rx_to_synth_end_ms": 976.436,
+    "tts_rx_to_play_start_ms": 1068.838,
+    "tts_synth_end_to_play_start_ms": 92.402,
+    "question_to_first_audio_ms": 2507.331,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 8040.402,
+    "audio_total_sum_ms": 5530.967,
+    "audio_first_to_last_ms": 5532.066
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793325542945909896,
+      "first_text_rx_ns": 1793325542949052851,
+      "done_rx_ns": 1793325543469520478,
+      "chunk_count": 7,
+      "char_count": 25,
+      "chunks": [
+        {
+          "t_ns": 1793325542949052851,
+          "text": "为什么"
+        },
+        {
+          "t_ns": 1793325542984868526,
+          "text": "透"
+        },
+        {
+          "t_ns": 1793325543015091880,
+          "text": "析"
+        },
+        {
+          "t_ns": 1793325543059092505,
+          "text": "机"
+        },
+        {
+          "t_ns": 1793325543161802511,
+          "text": "从不生气？"
+        },
+        {
+          "t_ns": 1793325543282785514,
+          "text": "因为它心里——“"
+        },
+        {
+          "t_ns": 1793325543402916660,
+          "text": "滤”得很清！"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793325543162000881,
+      "done_rx_ns": 1793325543469562016,
+      "text_count": 2,
+      "texts": [
+        {
+          "t_ns": 1793325543162000881,
+          "text": "为什么透析机从不生气？"
+        },
+        {
+          "t_ns": 1793325543403100263,
+          "text": "因为它心里——“滤”得很清！"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 18,
+    "latency_events_total": 18,
+    "asr_events": 0,
+    "tts_events": 13,
+    "tts_play_pairs": 2,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793325542301866160,
+      "node": "llm_medical",
+      "stage": "intent_judge",
+      "t_ns": 1793325542301591188,
+      "detail": {
+        "model": "qwen-flash",
+        "ms": 575.8,
+        "answer": "聊",
+        "kind": "chat"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent_judge\", \"t_ns\": 1793325542301591188, \"detail\": {\"model\": \"qwen-flash\", \"ms\": 575.8, \"answer\": \"聊\", \"kind\": \"chat\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793325542302072724,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793325542301769992,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "llm:qwen-flash",
+        "keyword_medical": false,
+        "judge_kind": "chat",
+        "judge_ms": 575.8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793325542301769992, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"llm:qwen-flash\", \"keyword_medical\": false, \"judge_kind\": \"chat\", \"judge_ms\": 575.8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793325542945953242,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793325542945637326,
+      "detail": {
+        "prompt_chars": 300,
+        "n_messages": 2
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793325542945637326, \"detail\": {\"prompt_chars\": 300, \"n_messages\": 2}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793325542946731016,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793325542946587362,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793325542946587362, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793325542949092841,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793325542948867775,
+      "detail": {
+        "prompt_chars": 300
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793325542948867775, \"detail\": {\"prompt_chars\": 300}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793325543162570551,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793325543162390970,
+      "detail": {
+        "text_len": 11,
+        "head": "为什么透析机从不生气？"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793325543162390970, \"detail\": {\"text_len\": 11, \"head\": \"为什么透析机从不生气？\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793325543162778174,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793325543162464732,
+      "detail": {
+        "text_len": 11
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793325543162464732, \"detail\": {\"text_len\": 11}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793325543469242359,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793325543468875416,
+      "detail": {
+        "chars": 28
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793325543468875416, \"detail\": {\"chars\": 28}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793325544139141609,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793325544138827234,
+      "detail": {
+        "text_len": 11,
+        "dur_ms": 976.35711,
+        "audio_sec": 2.72,
+        "rtf": 0.35895481985294114
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793325544138827234, \"detail\": {\"text_len\": 11, \"dur_ms\": 976.35711, \"audio_sec\": 2.72, \"rtf\": 0.35895481985294114}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793325544139919802,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793325544139703727,
+      "detail": {
+        "text_len": 14,
+        "head": "因为它心里——“滤”得很清！"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793325544139703727, \"detail\": {\"text_len\": 14, \"head\": \"因为它心里——“滤”得很清！\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793325544140145932,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793325544139759301,
+      "detail": {
+        "text_len": 14
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793325544139759301, \"detail\": {\"text_len\": 14}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793325544231492259,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793325544231229101,
+      "detail": {
+        "text_len": 11,
+        "head": "为什么透析机从不生气？"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793325544231229101, \"detail\": {\"text_len\": 11, \"head\": \"为什么透析机从不生气？\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793325545099647308,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793325545099307242,
+      "detail": {
+        "text_len": 14,
+        "dur_ms": 959.541843,
+        "audio_sec": 2.72,
+        "rtf": 0.3527727363970588
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793325545099307242, \"detail\": {\"text_len\": 14, \"dur_ms\": 959.541843, \"audio_sec\": 2.72, \"rtf\": 0.3527727363970588}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793325545100053743,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793325545099942338,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793325545099942338, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793325547041324266,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793325547040885999,
+      "detail": {
+        "text_len": 11,
+        "interrupted": false,
+        "dur_ms": 2809.653672
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793325547040885999, \"detail\": {\"text_len\": 11, \"interrupted\": false, \"dur_ms\": 2809.653672}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793325547042266678,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793325547041984867,
+      "detail": {
+        "text_len": 14,
+        "head": "因为它心里——“滤”得很清！"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793325547041984867, \"detail\": {\"text_len\": 14, \"head\": \"因为它心里——“滤”得很清！\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793325549763643050,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793325549763294849,
+      "detail": {
+        "text_len": 14,
+        "interrupted": false,
+        "dur_ms": 2721.308286
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793325549763294849, \"detail\": {\"text_len\": 14, \"interrupted\": false, \"dur_ms\": 2721.308286}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793325549764114447,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793325549763983233,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793325549763983233, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent_judge": [
+        {
+          "t_ns": 1793325542301591188,
+          "arrival_ns": 1793325542301866160,
+          "source": "round",
+          "detail": {
+            "model": "qwen-flash",
+            "ms": 575.8,
+            "answer": "聊",
+            "kind": "chat"
+          }
+        }
+      ],
+      "intent": [
+        {
+          "t_ns": 1793325542301769992,
+          "arrival_ns": 1793325542302072724,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "llm:qwen-flash",
+            "keyword_medical": false,
+            "judge_kind": "chat",
+            "judge_ms": 575.8
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793325542945637326,
+          "arrival_ns": 1793325542945953242,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 300,
+            "n_messages": 2
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793325542948867775,
+          "arrival_ns": 1793325542949092841,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 300
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793325543468875416,
+          "arrival_ns": 1793325543469242359,
+          "source": "round",
+          "detail": {
+            "chars": 28
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793325542946587362,
+          "arrival_ns": 1793325542946731016,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793325545099942338,
+          "arrival_ns": 1793325545100053743,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793325543162390970,
+          "arrival_ns": 1793325543162570551,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "为什么透析机从不生气？"
+          }
+        },
+        {
+          "t_ns": 1793325544139703727,
+          "arrival_ns": 1793325544139919802,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "head": "因为它心里——“滤”得很清！"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793325543162464732,
+          "arrival_ns": 1793325543162778174,
+          "source": "round",
+          "detail": {
+            "text_len": 11
+          }
+        },
+        {
+          "t_ns": 1793325544139759301,
+          "arrival_ns": 1793325544140145932,
+          "source": "round",
+          "detail": {
+            "text_len": 14
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793325544138827234,
+          "arrival_ns": 1793325544139141609,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "dur_ms": 976.35711,
+            "audio_sec": 2.72,
+            "rtf": 0.35895481985294114
+          }
+        },
+        {
+          "t_ns": 1793325545099307242,
+          "arrival_ns": 1793325545099647308,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "dur_ms": 959.541843,
+            "audio_sec": 2.72,
+            "rtf": 0.3527727363970588
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793325544231229101,
+          "arrival_ns": 1793325544231492259,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "为什么透析机从不生气？"
+          }
+        },
+        {
+          "t_ns": 1793325547041984867,
+          "arrival_ns": 1793325547042266678,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "head": "因为它心里——“滤”得很清！"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793325547040885999,
+          "arrival_ns": 1793325547041324266,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "interrupted": false,
+            "dur_ms": 2809.653672
+          }
+        },
+        {
+          "t_ns": 1793325549763294849,
+          "arrival_ns": 1793325549763643050,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "interrupted": false,
+            "dur_ms": 2721.308286
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793325549763983233,
+          "arrival_ns": 1793325549764114447,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 45.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 1,
+    "interval_s": 1.0
+  }
+}

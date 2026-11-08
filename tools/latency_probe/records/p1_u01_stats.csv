@@ -1,0 +1,23 @@
+metric,label,count,mean_ms,median_ms,p95_ms,min_ms,max_ms,stdev_ms
+asr_kws_to_start_asr_ms,ASR: kws_detected→start_asr,1,2.392,2.392,2.392,2.392,2.392,0.0
+asr_start_asr_to_endpoint_ms,ASR: start_asr→endpoint,1,4942.339,4942.339,4942.339,4942.339,4942.339,0.0
+asr_endpoint_to_nurse_req_ms,ASR: endpoint→nurse_req,1,2.526,2.526,2.526,2.526,2.526,0.0
+asr_endpoint_to_question_rx_ms,ASR: endpoint→probe收到question,1,3.067,3.067,3.067,3.067,3.067,0.0
+asr_publish_question_to_rx_ms,ASR: publish_question→probe收到,1,0.469,0.469,0.469,0.469,0.469,0.0
+question_to_router_ms,Router: question→路由话题到达,1,0.643,0.643,0.643,0.643,0.643,0.0
+router_to_llm_first_ms,LLM: 路由话题→首块,1,917.639,917.639,917.639,917.639,917.639,0.0
+question_to_llm_first_ms,LLM TTFT: question→首块,1,918.282,918.282,918.282,918.282,918.282,0.0
+llm_first_to_done_ms,LLM 总时长: 首块→[DONE],1,699.878,699.878,699.878,699.878,699.878,0.0
+question_to_llm_done_ms,LLM: question→[DONE],1,1618.16,1618.16,1618.16,1618.16,1618.16,0.0
+llm_first_to_tts_first_text_ms,断句: LLM首块→首个TTS文本,1,206.476,206.476,206.476,206.476,206.476,0.0
+question_to_tts_first_text_ms,断句: question→首个TTS文本,1,1124.758,1124.758,1124.758,1124.758,1124.758,0.0
+first_tts_text_to_first_play_start_ms,断句: 首个TTS文本→首音,1,814.541,814.541,814.541,814.541,814.541,0.0
+tts_rx_to_synth_end_ms,TTS 首句合成: rx→synth_end,1,721.05,721.05,721.05,721.05,721.05,0.0
+tts_rx_to_play_start_ms,TTS 首音: rx→play_start,1,814.374,814.374,814.374,814.374,814.374,0.0
+tts_synth_end_to_play_start_ms,TTS 首句: synth_end→play_start,1,93.324,93.324,93.324,93.324,93.324,0.0
+question_to_first_audio_ms,端到端: question→首个play_start,1,1939.299,1939.299,1939.299,1939.299,1939.299,0.0
+speech_end_to_first_audio_ms,语音结束→首音 (endpoint-静音阈值),1,2497.366,2497.366,2497.366,2497.366,2497.366,0.0
+playback_end_to_first_audio_ms,问句播放结束→首音 (wav触发),1,2367.911,2367.911,2367.911,2367.911,2367.911,0.0
+question_to_session_finished_ms,会话总时长: question→session_finished,1,11460.837,11460.837,11460.837,11460.837,11460.837,0.0
+audio_total_sum_ms,音频总时长(各段play相加),1,9517.695,9517.695,9517.695,9517.695,9517.695,0.0
+audio_first_to_last_ms,音频跨距: 首play_start→末play_end,1,9520.491,9520.491,9520.491,9520.491,9520.491,0.0

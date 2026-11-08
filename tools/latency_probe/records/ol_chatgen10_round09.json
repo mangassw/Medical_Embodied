@@ -1,0 +1,584 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1150446",
+  "host": "artrc",
+  "tag": "ol_chatgen10",
+  "round_index": 9,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T15:41:19.381",
+  "finished_at": "2026-10-30T15:41:25.288",
+  "duration_s": 5.907,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "世界上最高的山是哪座",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793346079381558136,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793346079381048959,
+    "t_publish_question_ns": 1793346079381558136,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793346079382143284,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793346079382532645,
+      "ali_llm_output_start": 1793346080723780900,
+      "ali_llm_output_first_text": 1793346080724113353,
+      "ali_llm_output_done": 1793346080898135987,
+      "tts_realtime_data_start": 1793346080723953439,
+      "tts_realtime_data_first_text": 1793346080880191056,
+      "tts_realtime_data_done": 1793346080898442106,
+      "tts_session_finished": 1793346084986137321
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793346080880423139,
+      "tts_local.synth_start_first": 1793346080880493747,
+      "tts_local.synth_end_first": 1793346081981204170,
+      "tts_local.play_start_first": 1793346082026089456,
+      "tts_local.play_end_last": 1793346084984974418,
+      "tts_local.session_finished": 1793346084985935064
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.975,
+    "router_to_llm_first_ms": 1341.581,
+    "question_to_llm_first_ms": 1342.555,
+    "llm_first_to_done_ms": 174.023,
+    "question_to_llm_done_ms": 1516.578,
+    "llm_first_to_tts_first_text_ms": 156.078,
+    "question_to_tts_first_text_ms": 1498.633,
+    "first_tts_text_to_first_play_start_ms": 1145.898,
+    "tts_rx_to_synth_end_ms": 1100.781,
+    "tts_rx_to_play_start_ms": 1145.666,
+    "tts_synth_end_to_play_start_ms": 44.885,
+    "question_to_first_audio_ms": 2644.531,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 5604.579,
+    "audio_total_sum_ms": 2958.885,
+    "audio_first_to_last_ms": 2958.885
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 974509,
+    "router_to_llm_first_ns": 1341580708,
+    "question_to_llm_first_ns": 1342555217,
+    "llm_first_to_done_ns": 174022634,
+    "question_to_llm_done_ns": 1516577851,
+    "llm_first_to_tts_first_text_ns": 156077703,
+    "question_to_tts_first_text_ns": 1498632920,
+    "first_tts_text_to_first_play_start_ns": 1145898400,
+    "tts_rx_to_synth_end_ns": 1100781031,
+    "tts_rx_to_play_start_ns": 1145666317,
+    "tts_synth_end_to_play_start_ns": 44885286,
+    "question_to_first_audio_ns": 2644531320,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 5604579185,
+    "audio_total_sum_ns": 2958884962,
+    "audio_first_to_last_ns": 2958884962
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 1342555217,
+      "ms": 1342.555
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 174022634,
+      "ms": 174.023
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 156077703,
+      "ms": 156.078
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 1145898400,
+      "ms": 1145.898
+    },
+    "question_to_first_play_start": {
+      "ns": 2644531320,
+      "ms": 2644.531
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 5604579185,
+      "ms": 5604.579
+    },
+    "audio_total_sec": {
+      "ns": 2958884962,
+      "ms": 2958.885,
+      "sec": 2.959
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.975,
+    "router_to_llm_first_ms": 1341.581,
+    "question_to_llm_first_ms": 1342.555,
+    "llm_first_to_done_ms": 174.023,
+    "question_to_llm_done_ms": 1516.578,
+    "llm_first_to_tts_first_text_ms": 156.078,
+    "question_to_tts_first_text_ms": 1498.633,
+    "first_tts_text_to_first_play_start_ms": 1145.898,
+    "tts_rx_to_synth_end_ms": 1100.781,
+    "tts_rx_to_play_start_ms": 1145.666,
+    "tts_synth_end_to_play_start_ms": 44.885,
+    "question_to_first_audio_ms": 2644.531,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 5604.579,
+    "audio_total_sum_ms": 2958.885,
+    "audio_first_to_last_ms": 2958.885
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793346080723780900,
+      "first_text_rx_ns": 1793346080724113353,
+      "done_rx_ns": 1793346080898135987,
+      "chunk_count": 10,
+      "char_count": 14,
+      "chunks": [
+        {
+          "t_ns": 1793346080724113353,
+          "text": "世界上"
+        },
+        {
+          "t_ns": 1793346080741040963,
+          "text": "最高的"
+        },
+        {
+          "t_ns": 1793346080758410542,
+          "text": "山"
+        },
+        {
+          "t_ns": 1793346080776088336,
+          "text": "是"
+        },
+        {
+          "t_ns": 1793346080794251006,
+          "text": "珠"
+        },
+        {
+          "t_ns": 1793346080811046095,
+          "text": "穆"
+        },
+        {
+          "t_ns": 1793346080827811974,
+          "text": "朗"
+        },
+        {
+          "t_ns": 1793346080845157512,
+          "text": "玛"
+        },
+        {
+          "t_ns": 1793346080862544322,
+          "text": "峰"
+        },
+        {
+          "t_ns": 1793346080879957129,
+          "text": "。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793346080880191056,
+      "done_rx_ns": 1793346080898442106,
+      "text_count": 1,
+      "texts": [
+        {
+          "t_ns": 1793346080880191056,
+          "text": "世界上最高的山是珠穆朗玛峰。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 13,
+    "latency_events_total": 13,
+    "asr_events": 0,
+    "tts_events": 8,
+    "tts_play_pairs": 1,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793346080587043526,
+      "node": "llm_medical",
+      "stage": "intent_judge_error",
+      "t_ns": 1793346080586692956,
+      "detail": {
+        "model": "qwen-flash",
+        "ms": 1203.3,
+        "error": "Request timed out."
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent_judge_error\", \"t_ns\": 1793346080586692956, \"detail\": {\"model\": \"qwen-flash\", \"ms\": 1203.3, \"error\": \"Request timed out.\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346080587421806,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793346080586918274,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "keyword-fallback",
+        "keyword_medical": false,
+        "chitchat": false,
+        "judge_kind": null,
+        "judge_ms": 1203.3
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793346080586918274, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"keyword-fallback\", \"keyword_medical\": false, \"chitchat\": false, \"judge_kind\": null, \"judge_ms\": 1203.3}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346080587766271,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793346080587513667,
+      "detail": {
+        "provider": "ollama",
+        "prompt_chars": 389,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793346080587513667, \"detail\": {\"provider\": \"ollama\", \"prompt_chars\": 389, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346080724152166,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793346080723883373,
+      "detail": {
+        "prompt_chars": 389
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793346080723883373, \"detail\": {\"prompt_chars\": 389}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346080726193824,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793346080725981416,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793346080725981416, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346080880573475,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793346080880423139,
+      "detail": {
+        "text_len": 14,
+        "head": "世界上最高的山是珠穆朗玛峰。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793346080880423139, \"detail\": {\"text_len\": 14, \"head\": \"世界上最高的山是珠穆朗玛峰。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346080880793606,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793346080880493747,
+      "detail": {
+        "text_len": 14
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793346080880493747, \"detail\": {\"text_len\": 14}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346080898185340,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793346080897854931,
+      "detail": {
+        "chars": 14
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793346080897854931, \"detail\": {\"chars\": 14}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346081981596103,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793346081981204170,
+      "detail": {
+        "text_len": 14,
+        "dur_ms": 1100.704611,
+        "audio_sec": 2.96,
+        "rtf": 0.3718596658783784
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793346081981204170, \"detail\": {\"text_len\": 14, \"dur_ms\": 1100.704611, \"audio_sec\": 2.96, \"rtf\": 0.3718596658783784}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346081983831588,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793346081983626559,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793346081983626559, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346082026358705,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793346082026089456,
+      "detail": {
+        "text_len": 14,
+        "head": "世界上最高的山是珠穆朗玛峰。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793346082026089456, \"detail\": {\"text_len\": 14, \"head\": \"世界上最高的山是珠穆朗玛峰。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346084985309288,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793346084984974418,
+      "detail": {
+        "text_len": 14,
+        "interrupted": false,
+        "dur_ms": 2958.88158
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793346084984974418, \"detail\": {\"text_len\": 14, \"interrupted\": false, \"dur_ms\": 2958.88158}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346084986187052,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793346084985935064,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793346084985935064, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent_judge_error": [
+        {
+          "t_ns": 1793346080586692956,
+          "arrival_ns": 1793346080587043526,
+          "source": "round",
+          "detail": {
+            "model": "qwen-flash",
+            "ms": 1203.3,
+            "error": "Request timed out."
+          }
+        }
+      ],
+      "intent": [
+        {
+          "t_ns": 1793346080586918274,
+          "arrival_ns": 1793346080587421806,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "keyword-fallback",
+            "keyword_medical": false,
+            "chitchat": false,
+            "judge_kind": null,
+            "judge_ms": 1203.3
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793346080587513667,
+          "arrival_ns": 1793346080587766271,
+          "source": "round",
+          "detail": {
+            "provider": "ollama",
+            "prompt_chars": 389,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793346080723883373,
+          "arrival_ns": 1793346080724152166,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 389
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793346080897854931,
+          "arrival_ns": 1793346080898185340,
+          "source": "round",
+          "detail": {
+            "chars": 14
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793346080725981416,
+          "arrival_ns": 1793346080726193824,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793346081983626559,
+          "arrival_ns": 1793346081983831588,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793346080880423139,
+          "arrival_ns": 1793346080880573475,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "head": "世界上最高的山是珠穆朗玛峰。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793346080880493747,
+          "arrival_ns": 1793346080880793606,
+          "source": "round",
+          "detail": {
+            "text_len": 14
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793346081981204170,
+          "arrival_ns": 1793346081981596103,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "dur_ms": 1100.704611,
+            "audio_sec": 2.96,
+            "rtf": 0.3718596658783784
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793346082026089456,
+          "arrival_ns": 1793346082026358705,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "head": "世界上最高的山是珠穆朗玛峰。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793346084984974418,
+          "arrival_ns": 1793346084985309288,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "interrupted": false,
+            "dur_ms": 2958.88158
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793346084985935064,
+          "arrival_ns": 1793346084986187052,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 10,
+    "interval_s": 2.0
+  }
+}

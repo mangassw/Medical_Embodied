@@ -1,0 +1,804 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1064920",
+  "host": "artrc",
+  "tag": "chat50",
+  "round_index": 42,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T10:34:42.411",
+  "finished_at": "2026-10-30T10:34:51.175",
+  "duration_s": 8.763,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "中秋节要吃什么",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793327682412322114,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793327682411915523,
+    "t_publish_question_ns": 1793327682412322114,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793327682413047958,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793327682413464415,
+      "ali_llm_output_start": 1793327683096477281,
+      "ali_llm_output_first_text": 1793327683096788752,
+      "ali_llm_output_done": 1793327683761064317,
+      "tts_realtime_data_start": 1793327683096820212,
+      "tts_realtime_data_first_text": 1793327683295438325,
+      "tts_realtime_data_done": 1793327683761294221,
+      "tts_session_finished": 1793327690870694306
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793327683295714064,
+      "tts_local.synth_start_first": 1793327683295779723,
+      "tts_local.synth_end_first": 1793327683900787516,
+      "tts_local.play_start_first": 1793327683955135314,
+      "tts_local.play_end_last": 1793327690869649895,
+      "tts_local.session_finished": 1793327690870440991
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.142,
+    "router_to_llm_first_ms": 683.324,
+    "question_to_llm_first_ms": 684.467,
+    "llm_first_to_done_ms": 664.276,
+    "question_to_llm_done_ms": 1348.742,
+    "llm_first_to_tts_first_text_ms": 198.65,
+    "question_to_tts_first_text_ms": 883.116,
+    "first_tts_text_to_first_play_start_ms": 659.697,
+    "tts_rx_to_synth_end_ms": 605.073,
+    "tts_rx_to_play_start_ms": 659.421,
+    "tts_synth_end_to_play_start_ms": 54.348,
+    "question_to_first_audio_ms": 1542.813,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 8458.372,
+    "audio_total_sum_ms": 6913.066,
+    "audio_first_to_last_ms": 6914.515
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 1142301,
+    "router_to_llm_first_ns": 683324337,
+    "question_to_llm_first_ns": 684466638,
+    "llm_first_to_done_ns": 664275565,
+    "question_to_llm_done_ns": 1348742203,
+    "llm_first_to_tts_first_text_ns": 198649573,
+    "question_to_tts_first_text_ns": 883116211,
+    "first_tts_text_to_first_play_start_ns": 659696989,
+    "tts_rx_to_synth_end_ns": 605073452,
+    "tts_rx_to_play_start_ns": 659421250,
+    "tts_synth_end_to_play_start_ns": 54347798,
+    "question_to_first_audio_ns": 1542813200,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 8458372192,
+    "audio_total_sum_ns": 6913066376,
+    "audio_first_to_last_ns": 6914514581
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 684466638,
+      "ms": 684.467
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 664275565,
+      "ms": 664.276
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 198649573,
+      "ms": 198.65
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 659696989,
+      "ms": 659.697
+    },
+    "question_to_first_play_start": {
+      "ns": 1542813200,
+      "ms": 1542.813
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 8458372192,
+      "ms": 8458.372
+    },
+    "audio_total_sec": {
+      "ns": 6913066376,
+      "ms": 6913.066,
+      "sec": 6.913
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.142,
+    "router_to_llm_first_ms": 683.324,
+    "question_to_llm_first_ms": 684.467,
+    "llm_first_to_done_ms": 664.276,
+    "question_to_llm_done_ms": 1348.742,
+    "llm_first_to_tts_first_text_ms": 198.65,
+    "question_to_tts_first_text_ms": 883.116,
+    "first_tts_text_to_first_play_start_ms": 659.697,
+    "tts_rx_to_synth_end_ms": 605.073,
+    "tts_rx_to_play_start_ms": 659.421,
+    "tts_synth_end_to_play_start_ms": 54.348,
+    "question_to_first_audio_ms": 1542.813,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 8458.372,
+    "audio_total_sum_ms": 6913.066,
+    "audio_first_to_last_ms": 6914.515
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793327683096477281,
+      "first_text_rx_ns": 1793327683096788752,
+      "done_rx_ns": 1793327683761064317,
+      "chunk_count": 9,
+      "char_count": 28,
+      "chunks": [
+        {
+          "t_ns": 1793327683096788752,
+          "text": "月饼"
+        },
+        {
+          "t_ns": 1793327683125974551,
+          "text": "最"
+        },
+        {
+          "t_ns": 1793327683158424497,
+          "text": "应"
+        },
+        {
+          "t_ns": 1793327683190018868,
+          "text": "景"
+        },
+        {
+          "t_ns": 1793327683295226194,
+          "text": "，圆圆的"
+        },
+        {
+          "t_ns": 1793327683425202315,
+          "text": "像月亮～  \n家人"
+        },
+        {
+          "t_ns": 1793327683543715799,
+          "text": "围坐，吃"
+        },
+        {
+          "t_ns": 1793327683669493656,
+          "text": "点瓜果也"
+        },
+        {
+          "t_ns": 1793327683744652611,
+          "text": "甜。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793327683295438325,
+      "done_rx_ns": 1793327683761294221,
+      "text_count": 3,
+      "texts": [
+        {
+          "t_ns": 1793327683295438325,
+          "text": "月饼最应景，"
+        },
+        {
+          "t_ns": 1793327683543966297,
+          "text": "圆圆的像月亮～  \n家人围坐，"
+        },
+        {
+          "t_ns": 1793327683744852561,
+          "text": "吃点瓜果也甜。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 23,
+    "latency_events_total": 23,
+    "asr_events": 0,
+    "tts_events": 18,
+    "tts_play_pairs": 3,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793327682777137859,
+      "node": "llm_medical",
+      "stage": "intent_judge",
+      "t_ns": 1793327682776743186,
+      "detail": {
+        "model": "qwen-flash",
+        "ms": 362.5,
+        "answer": "聊",
+        "kind": "chat"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent_judge\", \"t_ns\": 1793327682776743186, \"detail\": {\"model\": \"qwen-flash\", \"ms\": 362.5, \"answer\": \"聊\", \"kind\": \"chat\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327682777352302,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793327682776953589,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "llm:qwen-flash",
+        "keyword_medical": false,
+        "judge_kind": "chat",
+        "judge_ms": 362.5
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793327682776953589, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"llm:qwen-flash\", \"keyword_medical\": false, \"judge_kind\": \"chat\", \"judge_ms\": 362.5}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327683096524590,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793327683096098190,
+      "detail": {
+        "prompt_chars": 396,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793327683096098190, \"detail\": {\"prompt_chars\": 396, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327683096847934,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793327683096591016,
+      "detail": {
+        "prompt_chars": 396
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793327683096591016, \"detail\": {\"prompt_chars\": 396}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327683097347427,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793327683097116788,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793327683097116788, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327683295845621,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327683295714064,
+      "detail": {
+        "text_len": 6,
+        "head": "月饼最应景，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327683295714064, \"detail\": {\"text_len\": 6, \"head\": \"月饼最应景，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327683296030326,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327683295779723,
+      "detail": {
+        "text_len": 6
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327683295779723, \"detail\": {\"text_len\": 6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327683761103154,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793327683760798149,
+      "detail": {
+        "chars": 28
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793327683760798149, \"detail\": {\"chars\": 28}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327683901063931,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327683900787516,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 605.003635,
+        "audio_sec": 1.6,
+        "rtf": 0.37812727187499995
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327683900787516, \"detail\": {\"text_len\": 6, \"dur_ms\": 605.003635, \"audio_sec\": 1.6, \"rtf\": 0.37812727187499995}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327683902394623,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327683902240669,
+      "detail": {
+        "text_len": 15,
+        "head": "圆圆的像月亮～  \n家人围坐，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327683902240669, \"detail\": {\"text_len\": 15, \"head\": \"圆圆的像月亮～  \\n家人围坐，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327683902596239,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327683902294041,
+      "detail": {
+        "text_len": 15
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327683902294041, \"detail\": {\"text_len\": 15}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327683955373560,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327683955135314,
+      "detail": {
+        "text_len": 6,
+        "head": "月饼最应景，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327683955135314, \"detail\": {\"text_len\": 6, \"head\": \"月饼最应景，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327685093620654,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327685093278064,
+      "detail": {
+        "text_len": 15,
+        "dur_ms": 1190.9765,
+        "audio_sec": 3.36,
+        "rtf": 0.3544572916666666
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327685093278064, \"detail\": {\"text_len\": 15, \"dur_ms\": 1190.9765, \"audio_sec\": 3.36, \"rtf\": 0.3544572916666666}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327685094020588,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327685093884956,
+      "detail": {
+        "text_len": 7,
+        "head": "吃点瓜果也甜。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327685093884956, \"detail\": {\"text_len\": 7, \"head\": \"吃点瓜果也甜。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327685094196883,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327685093945388,
+      "detail": {
+        "text_len": 7
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327685093945388, \"detail\": {\"text_len\": 7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327685561237796,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327685560916590,
+      "detail": {
+        "text_len": 6,
+        "interrupted": false,
+        "dur_ms": 1605.779914
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327685560916590, \"detail\": {\"text_len\": 6, \"interrupted\": false, \"dur_ms\": 1605.779914}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327685561854051,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327685561659819,
+      "detail": {
+        "text_len": 15,
+        "head": "圆圆的像月亮～  \n家人围坐，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327685561659819, \"detail\": {\"text_len\": 15, \"head\": \"圆圆的像月亮～  \\n家人围坐，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327685813492699,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327685813154037,
+      "detail": {
+        "text_len": 7,
+        "dur_ms": 719.203272,
+        "audio_sec": 1.92,
+        "rtf": 0.3745850375
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327685813154037, \"detail\": {\"text_len\": 7, \"dur_ms\": 719.203272, \"audio_sec\": 1.92, \"rtf\": 0.3745850375}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327685813973293,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793327685813790915,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793327685813790915, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327688944142152,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327688943841116,
+      "detail": {
+        "text_len": 15,
+        "interrupted": false,
+        "dur_ms": 3382.179295
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327688943841116, \"detail\": {\"text_len\": 15, \"interrupted\": false, \"dur_ms\": 3382.179295}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327688944676001,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327688944546092,
+      "detail": {
+        "text_len": 7,
+        "head": "吃点瓜果也甜。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327688944546092, \"detail\": {\"text_len\": 7, \"head\": \"吃点瓜果也甜。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327690869947429,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327690869649895,
+      "detail": {
+        "text_len": 7,
+        "interrupted": false,
+        "dur_ms": 1925.099292
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327690869649895, \"detail\": {\"text_len\": 7, \"interrupted\": false, \"dur_ms\": 1925.099292}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327690870753946,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793327690870440991,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793327690870440991, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent_judge": [
+        {
+          "t_ns": 1793327682776743186,
+          "arrival_ns": 1793327682777137859,
+          "source": "round",
+          "detail": {
+            "model": "qwen-flash",
+            "ms": 362.5,
+            "answer": "聊",
+            "kind": "chat"
+          }
+        }
+      ],
+      "intent": [
+        {
+          "t_ns": 1793327682776953589,
+          "arrival_ns": 1793327682777352302,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "llm:qwen-flash",
+            "keyword_medical": false,
+            "judge_kind": "chat",
+            "judge_ms": 362.5
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793327683096098190,
+          "arrival_ns": 1793327683096524590,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 396,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793327683096591016,
+          "arrival_ns": 1793327683096847934,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 396
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793327683760798149,
+          "arrival_ns": 1793327683761103154,
+          "source": "round",
+          "detail": {
+            "chars": 28
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793327683097116788,
+          "arrival_ns": 1793327683097347427,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793327685813790915,
+          "arrival_ns": 1793327685813973293,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793327683295714064,
+          "arrival_ns": 1793327683295845621,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "月饼最应景，"
+          }
+        },
+        {
+          "t_ns": 1793327683902240669,
+          "arrival_ns": 1793327683902394623,
+          "source": "round",
+          "detail": {
+            "text_len": 15,
+            "head": "圆圆的像月亮～  \n家人围坐，"
+          }
+        },
+        {
+          "t_ns": 1793327685093884956,
+          "arrival_ns": 1793327685094020588,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "吃点瓜果也甜。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793327683295779723,
+          "arrival_ns": 1793327683296030326,
+          "source": "round",
+          "detail": {
+            "text_len": 6
+          }
+        },
+        {
+          "t_ns": 1793327683902294041,
+          "arrival_ns": 1793327683902596239,
+          "source": "round",
+          "detail": {
+            "text_len": 15
+          }
+        },
+        {
+          "t_ns": 1793327685093945388,
+          "arrival_ns": 1793327685094196883,
+          "source": "round",
+          "detail": {
+            "text_len": 7
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793327683900787516,
+          "arrival_ns": 1793327683901063931,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 605.003635,
+            "audio_sec": 1.6,
+            "rtf": 0.37812727187499995
+          }
+        },
+        {
+          "t_ns": 1793327685093278064,
+          "arrival_ns": 1793327685093620654,
+          "source": "round",
+          "detail": {
+            "text_len": 15,
+            "dur_ms": 1190.9765,
+            "audio_sec": 3.36,
+            "rtf": 0.3544572916666666
+          }
+        },
+        {
+          "t_ns": 1793327685813154037,
+          "arrival_ns": 1793327685813492699,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "dur_ms": 719.203272,
+            "audio_sec": 1.92,
+            "rtf": 0.3745850375
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793327683955135314,
+          "arrival_ns": 1793327683955373560,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "月饼最应景，"
+          }
+        },
+        {
+          "t_ns": 1793327685561659819,
+          "arrival_ns": 1793327685561854051,
+          "source": "round",
+          "detail": {
+            "text_len": 15,
+            "head": "圆圆的像月亮～  \n家人围坐，"
+          }
+        },
+        {
+          "t_ns": 1793327688944546092,
+          "arrival_ns": 1793327688944676001,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "吃点瓜果也甜。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793327685560916590,
+          "arrival_ns": 1793327685561237796,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "interrupted": false,
+            "dur_ms": 1605.779914
+          }
+        },
+        {
+          "t_ns": 1793327688943841116,
+          "arrival_ns": 1793327688944142152,
+          "source": "round",
+          "detail": {
+            "text_len": 15,
+            "interrupted": false,
+            "dur_ms": 3382.179295
+          }
+        },
+        {
+          "t_ns": 1793327690869649895,
+          "arrival_ns": 1793327690869947429,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "interrupted": false,
+            "dur_ms": 1925.099292
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793327690870440991,
+          "arrival_ns": 1793327690870753946,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 50,
+    "interval_s": 2.0
+  }
+}

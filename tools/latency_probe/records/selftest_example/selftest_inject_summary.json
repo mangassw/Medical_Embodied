@@ -1,0 +1,310 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_167831",
+  "host": "artrc",
+  "tag": "selftest_inject",
+  "generated_at": "2026-10-27T15:38:29.191",
+  "mode": "inject-text",
+  "run_count": 3,
+  "ok_count": 3,
+  "non_ok": [],
+  "config": {
+    "record_dir": "/tmp/latency_probe_selftest_wnd0gx_6/records",
+    "tag": "selftest_inject",
+    "mode": "inject-text",
+    "repeat": 3,
+    "interval_s": 0.8,
+    "inject_text": "病人血压偏高怎么办？",
+    "question_wav": null,
+    "wake_wav": null,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "timeout_s": 30.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "start_asr": false
+  },
+  "metric_order": [
+    "asr_kws_to_start_asr_ms",
+    "asr_start_asr_to_endpoint_ms",
+    "asr_endpoint_to_nurse_req_ms",
+    "asr_nurse_req_to_nurse_resp_ms",
+    "asr_nurse_resp_to_publish_question_ms",
+    "asr_endpoint_to_question_rx_ms",
+    "asr_publish_question_to_rx_ms",
+    "question_to_router_ms",
+    "router_to_llm_first_ms",
+    "question_to_llm_first_ms",
+    "llm_first_to_done_ms",
+    "question_to_llm_done_ms",
+    "llm_first_to_tts_first_text_ms",
+    "question_to_tts_first_text_ms",
+    "first_tts_text_to_first_play_start_ms",
+    "tts_rx_to_synth_end_ms",
+    "tts_rx_to_play_start_ms",
+    "tts_synth_end_to_play_start_ms",
+    "question_to_first_audio_ms",
+    "speech_end_to_first_audio_ms",
+    "playback_end_to_first_audio_ms",
+    "question_to_session_finished_ms",
+    "audio_total_sum_ms",
+    "audio_first_to_last_ms"
+  ],
+  "metrics": {
+    "question_to_router_ms": {
+      "count": 3,
+      "mean_ms": 30.765,
+      "median_ms": 30.753,
+      "p95_ms": 30.808,
+      "min_ms": 30.733,
+      "max_ms": 30.808,
+      "stdev_ms": 0.039
+    },
+    "router_to_llm_first_ms": {
+      "count": 3,
+      "mean_ms": 120.38,
+      "median_ms": 120.02,
+      "p95_ms": 121.125,
+      "min_ms": 119.995,
+      "max_ms": 121.125,
+      "stdev_ms": 0.645
+    },
+    "question_to_llm_first_ms": {
+      "count": 3,
+      "mean_ms": 151.144,
+      "median_ms": 150.753,
+      "p95_ms": 151.932,
+      "min_ms": 150.748,
+      "max_ms": 151.932,
+      "stdev_ms": 0.682
+    },
+    "llm_first_to_done_ms": {
+      "count": 3,
+      "mean_ms": 599.657,
+      "median_ms": 600.032,
+      "p95_ms": 600.074,
+      "min_ms": 598.865,
+      "max_ms": 600.074,
+      "stdev_ms": 0.686
+    },
+    "question_to_llm_done_ms": {
+      "count": 3,
+      "mean_ms": 750.802,
+      "median_ms": 750.797,
+      "p95_ms": 750.827,
+      "min_ms": 750.781,
+      "max_ms": 750.827,
+      "stdev_ms": 0.023
+    },
+    "llm_first_to_tts_first_text_ms": {
+      "count": 3,
+      "mean_ms": 199.577,
+      "median_ms": 199.953,
+      "p95_ms": 199.968,
+      "min_ms": 198.809,
+      "max_ms": 199.968,
+      "stdev_ms": 0.665
+    },
+    "question_to_tts_first_text_ms": {
+      "count": 3,
+      "mean_ms": 350.721,
+      "median_ms": 350.721,
+      "p95_ms": 350.741,
+      "min_ms": 350.701,
+      "max_ms": 350.741,
+      "stdev_ms": 0.02
+    },
+    "first_tts_text_to_first_play_start_ms": {
+      "count": 3,
+      "mean_ms": 1204.647,
+      "median_ms": 1204.666,
+      "p95_ms": 1204.676,
+      "min_ms": 1204.599,
+      "max_ms": 1204.676,
+      "stdev_ms": 0.042
+    },
+    "tts_rx_to_synth_end_ms": {
+      "count": 3,
+      "mean_ms": 800.0,
+      "median_ms": 800.0,
+      "p95_ms": 800.0,
+      "min_ms": 800.0,
+      "max_ms": 800.0,
+      "stdev_ms": 0.0
+    },
+    "tts_rx_to_play_start_ms": {
+      "count": 3,
+      "mean_ms": 1200.0,
+      "median_ms": 1200.0,
+      "p95_ms": 1200.0,
+      "min_ms": 1200.0,
+      "max_ms": 1200.0,
+      "stdev_ms": 0.0
+    },
+    "tts_synth_end_to_play_start_ms": {
+      "count": 3,
+      "mean_ms": 400.0,
+      "median_ms": 400.0,
+      "p95_ms": 400.0,
+      "min_ms": 400.0,
+      "max_ms": 400.0,
+      "stdev_ms": 0.0
+    },
+    "question_to_first_audio_ms": {
+      "count": 3,
+      "mean_ms": 1555.368,
+      "median_ms": 1555.377,
+      "p95_ms": 1555.387,
+      "min_ms": 1555.34,
+      "max_ms": 1555.387,
+      "stdev_ms": 0.025
+    },
+    "question_to_session_finished_ms": {
+      "count": 3,
+      "mean_ms": 3405.764,
+      "median_ms": 3405.751,
+      "p95_ms": 3405.818,
+      "min_ms": 3405.722,
+      "max_ms": 3405.818,
+      "stdev_ms": 0.049
+    },
+    "audio_total_sum_ms": {
+      "count": 3,
+      "mean_ms": 2400.0,
+      "median_ms": 2400.0,
+      "p95_ms": 2400.0,
+      "min_ms": 2400.0,
+      "max_ms": 2400.0,
+      "stdev_ms": 0.0
+    },
+    "audio_first_to_last_ms": {
+      "count": 3,
+      "mean_ms": 1800.0,
+      "median_ms": 1800.0,
+      "p95_ms": 1800.0,
+      "min_ms": 1800.0,
+      "max_ms": 1800.0,
+      "stdev_ms": 0.0
+    }
+  },
+  "rounds": [
+    {
+      "round_index": 0,
+      "round_file": "/tmp/latency_probe_selftest_wnd0gx_6/records/selftest_inject_round00.json",
+      "status": "ok",
+      "t0_source": "publish_question",
+      "trigger": {
+        "t0_ns": 1793086696449425458,
+        "play_start_ns": null,
+        "play_end_ns": null
+      },
+      "metrics": {
+        "asr_kws_to_start_asr_ms": null,
+        "asr_start_asr_to_endpoint_ms": null,
+        "asr_endpoint_to_nurse_req_ms": null,
+        "asr_nurse_req_to_nurse_resp_ms": null,
+        "asr_nurse_resp_to_publish_question_ms": null,
+        "asr_endpoint_to_question_rx_ms": null,
+        "asr_publish_question_to_rx_ms": null,
+        "question_to_router_ms": 30.753,
+        "router_to_llm_first_ms": 119.995,
+        "question_to_llm_first_ms": 150.748,
+        "llm_first_to_done_ms": 600.032,
+        "question_to_llm_done_ms": 750.781,
+        "llm_first_to_tts_first_text_ms": 199.953,
+        "question_to_tts_first_text_ms": 350.701,
+        "first_tts_text_to_first_play_start_ms": 1204.676,
+        "tts_rx_to_synth_end_ms": 800.0,
+        "tts_rx_to_play_start_ms": 1200.0,
+        "tts_synth_end_to_play_start_ms": 400.0,
+        "question_to_first_audio_ms": 1555.377,
+        "speech_end_to_first_audio_ms": null,
+        "playback_end_to_first_audio_ms": null,
+        "question_to_session_finished_ms": 3405.818,
+        "audio_total_sum_ms": 2400.0,
+        "audio_first_to_last_ms": 1800.0
+      }
+    },
+    {
+      "round_index": 1,
+      "round_file": "/tmp/latency_probe_selftest_wnd0gx_6/records/selftest_inject_round01.json",
+      "status": "ok",
+      "t0_source": "publish_question",
+      "trigger": {
+        "t0_ns": 1793086700961872037,
+        "play_start_ns": null,
+        "play_end_ns": null
+      },
+      "metrics": {
+        "asr_kws_to_start_asr_ms": null,
+        "asr_start_asr_to_endpoint_ms": null,
+        "asr_endpoint_to_nurse_req_ms": null,
+        "asr_nurse_req_to_nurse_resp_ms": null,
+        "asr_nurse_resp_to_publish_question_ms": null,
+        "asr_endpoint_to_question_rx_ms": null,
+        "asr_publish_question_to_rx_ms": null,
+        "question_to_router_ms": 30.733,
+        "router_to_llm_first_ms": 120.02,
+        "question_to_llm_first_ms": 150.753,
+        "llm_first_to_done_ms": 600.074,
+        "question_to_llm_done_ms": 750.827,
+        "llm_first_to_tts_first_text_ms": 199.968,
+        "question_to_tts_first_text_ms": 350.721,
+        "first_tts_text_to_first_play_start_ms": 1204.666,
+        "tts_rx_to_synth_end_ms": 800.0,
+        "tts_rx_to_play_start_ms": 1200.0,
+        "tts_synth_end_to_play_start_ms": 400.0,
+        "question_to_first_audio_ms": 1555.387,
+        "speech_end_to_first_audio_ms": null,
+        "playback_end_to_first_audio_ms": null,
+        "question_to_session_finished_ms": 3405.751,
+        "audio_total_sum_ms": 2400.0,
+        "audio_first_to_last_ms": 1800.0
+      }
+    },
+    {
+      "round_index": 2,
+      "round_file": "/tmp/latency_probe_selftest_wnd0gx_6/records/selftest_inject_round02.json",
+      "status": "ok",
+      "t0_source": "publish_question",
+      "trigger": {
+        "t0_ns": 1793086705475603165,
+        "play_start_ns": null,
+        "play_end_ns": null
+      },
+      "metrics": {
+        "asr_kws_to_start_asr_ms": null,
+        "asr_start_asr_to_endpoint_ms": null,
+        "asr_endpoint_to_nurse_req_ms": null,
+        "asr_nurse_req_to_nurse_resp_ms": null,
+        "asr_nurse_resp_to_publish_question_ms": null,
+        "asr_endpoint_to_question_rx_ms": null,
+        "asr_publish_question_to_rx_ms": null,
+        "question_to_router_ms": 30.808,
+        "router_to_llm_first_ms": 121.125,
+        "question_to_llm_first_ms": 151.932,
+        "llm_first_to_done_ms": 598.865,
+        "question_to_llm_done_ms": 750.797,
+        "llm_first_to_tts_first_text_ms": 198.809,
+        "question_to_tts_first_text_ms": 350.741,
+        "first_tts_text_to_first_play_start_ms": 1204.599,
+        "tts_rx_to_synth_end_ms": 800.0,
+        "tts_rx_to_play_start_ms": 1200.0,
+        "tts_synth_end_to_play_start_ms": 400.0,
+        "question_to_first_audio_ms": 1555.34,
+        "speech_end_to_first_audio_ms": null,
+        "playback_end_to_first_audio_ms": null,
+        "question_to_session_finished_ms": 3405.722,
+        "audio_total_sum_ms": 2400.0,
+        "audio_first_to_last_ms": 1800.0
+      }
+    }
+  ],
+  "round_files": [
+    "selftest_inject_round00.json",
+    "selftest_inject_round01.json",
+    "selftest_inject_round02.json"
+  ]
+}

@@ -1,0 +1,815 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1058399",
+  "host": "artrc",
+  "tag": "kb50",
+  "round_index": 30,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T10:22:22.841",
+  "finished_at": "2026-10-30T10:22:32.072",
+  "duration_s": 9.232,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "导管口那块纱布多久换一次？",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793326942841663965,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793326942841152150,
+    "t_publish_question_ns": 1793326942841663965,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793326942842282475,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793326942842681337,
+      "ali_llm_output_start": 1793326943291239442,
+      "ali_llm_output_first_text": 1793326943291679030,
+      "ali_llm_output_done": 1793326943863444844,
+      "tts_realtime_data_start": 1793326943291730024,
+      "tts_realtime_data_first_text": 1793326943399331116,
+      "tts_realtime_data_done": 1793326943863695848,
+      "tts_session_finished": 1793326951772578309
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793326943399710938,
+      "tts_local.synth_start_first": 1793326943399778257,
+      "tts_local.synth_end_first": 1793326944210294873,
+      "tts_local.play_start_first": 1793326944255075330,
+      "tts_local.play_end_last": 1793326951771320122,
+      "tts_local.session_finished": 1793326951772394507
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.017,
+    "router_to_llm_first_ms": 448.998,
+    "question_to_llm_first_ms": 450.015,
+    "llm_first_to_done_ms": 571.766,
+    "question_to_llm_done_ms": 1021.781,
+    "llm_first_to_tts_first_text_ms": 107.652,
+    "question_to_tts_first_text_ms": 557.667,
+    "first_tts_text_to_first_play_start_ms": 855.744,
+    "tts_rx_to_synth_end_ms": 810.584,
+    "tts_rx_to_play_start_ms": 855.364,
+    "tts_synth_end_to_play_start_ms": 44.78,
+    "question_to_first_audio_ms": 1413.411,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 8930.914,
+    "audio_total_sum_ms": 7514.686,
+    "audio_first_to_last_ms": 7516.245
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 1017372,
+    "router_to_llm_first_ns": 448997693,
+    "question_to_llm_first_ns": 450015065,
+    "llm_first_to_done_ns": 571765814,
+    "question_to_llm_done_ns": 1021780879,
+    "llm_first_to_tts_first_text_ns": 107652086,
+    "question_to_tts_first_text_ns": 557667151,
+    "first_tts_text_to_first_play_start_ns": 855744214,
+    "tts_rx_to_synth_end_ns": 810583935,
+    "tts_rx_to_play_start_ns": 855364392,
+    "tts_synth_end_to_play_start_ns": 44780457,
+    "question_to_first_audio_ns": 1413411365,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 8930914344,
+    "audio_total_sum_ns": 7514685986,
+    "audio_first_to_last_ns": 7516244792
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 450015065,
+      "ms": 450.015
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 571765814,
+      "ms": 571.766
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 107652086,
+      "ms": 107.652
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 855744214,
+      "ms": 855.744
+    },
+    "question_to_first_play_start": {
+      "ns": 1413411365,
+      "ms": 1413.411
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 8930914344,
+      "ms": 8930.914
+    },
+    "audio_total_sec": {
+      "ns": 7514685986,
+      "ms": 7514.686,
+      "sec": 7.515
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.017,
+    "router_to_llm_first_ms": 448.998,
+    "question_to_llm_first_ms": 450.015,
+    "llm_first_to_done_ms": 571.766,
+    "question_to_llm_done_ms": 1021.781,
+    "llm_first_to_tts_first_text_ms": 107.652,
+    "question_to_tts_first_text_ms": 557.667,
+    "first_tts_text_to_first_play_start_ms": 855.744,
+    "tts_rx_to_synth_end_ms": 810.584,
+    "tts_rx_to_play_start_ms": 855.364,
+    "tts_synth_end_to_play_start_ms": 44.78,
+    "question_to_first_audio_ms": 1413.411,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 8930.914,
+    "audio_total_sum_ms": 7514.686,
+    "audio_first_to_last_ms": 7516.245
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793326943291239442,
+      "first_text_rx_ns": 1793326943291679030,
+      "done_rx_ns": 1793326943863444844,
+      "chunk_count": 8,
+      "char_count": 28,
+      "chunks": [
+        {
+          "t_ns": 1793326943291679030,
+          "text": "每"
+        },
+        {
+          "t_ns": 1793326943319020742,
+          "text": "2"
+        },
+        {
+          "t_ns": 1793326943355992918,
+          "text": "天换一次"
+        },
+        {
+          "t_ns": 1793326943399135012,
+          "text": "。"
+        },
+        {
+          "t_ns": 1793326943509039527,
+          "text": "纱布渗血或污染"
+        },
+        {
+          "t_ns": 1793326943652927999,
+          "text": "要马上换。"
+        },
+        {
+          "t_ns": 1793326943709239781,
+          "text": "换药必须"
+        },
+        {
+          "t_ns": 1793326943773927795,
+          "text": "无菌操作。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793326943399331116,
+      "done_rx_ns": 1793326943863695848,
+      "text_count": 3,
+      "texts": [
+        {
+          "t_ns": 1793326943399331116,
+          "text": "每2天换一次。"
+        },
+        {
+          "t_ns": 1793326943653178718,
+          "text": "纱布渗血或污染要马上换。"
+        },
+        {
+          "t_ns": 1793326943774272723,
+          "text": "换药必须无菌操作。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 24,
+    "latency_events_total": 24,
+    "asr_events": 0,
+    "tts_events": 18,
+    "tts_play_pairs": 3,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793326942863819678,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793326942863440084,
+      "detail": {
+        "kind": "medical",
+        "chat_mode": false,
+        "source": "keyword",
+        "keyword_medical": true,
+        "judge_kind": null,
+        "judge_ms": 0.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793326942863440084, \"detail\": {\"kind\": \"medical\", \"chat_mode\": false, \"source\": \"keyword\", \"keyword_medical\": true, \"judge_kind\": null, \"judge_ms\": 0.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326942864229425,
+      "node": "llm_medical",
+      "stage": "rag_start",
+      "t_ns": 1793326942864010466,
+      "detail": {},
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_start\", \"t_ns\": 1793326942864010466, \"detail\": {}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326942875422565,
+      "node": "llm_medical",
+      "stage": "rag_end",
+      "t_ns": 1793326942875154104,
+      "detail": {
+        "n_chunks": 4,
+        "took_ms": 11.04,
+        "top1": "血液透析导管的日常护理"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_end\", \"t_ns\": 1793326942875154104, \"detail\": {\"n_chunks\": 4, \"took_ms\": 11.04, \"top1\": \"血液透析导管的日常护理\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326943291310501,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793326943290792325,
+      "detail": {
+        "prompt_chars": 1038,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793326943290792325, \"detail\": {\"prompt_chars\": 1038, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326943291771501,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793326943291250660,
+      "detail": {
+        "prompt_chars": 1038
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793326943291250660, \"detail\": {\"prompt_chars\": 1038}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326943292063606,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793326943291758529,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793326943291758529, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326943399944593,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793326943399710938,
+      "detail": {
+        "text_len": 7,
+        "head": "每2天换一次。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793326943399710938, \"detail\": {\"text_len\": 7, \"head\": \"每2天换一次。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326943400150044,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793326943399778257,
+      "detail": {
+        "text_len": 7
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793326943399778257, \"detail\": {\"text_len\": 7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326943863486034,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793326943863084143,
+      "detail": {
+        "chars": 34
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793326943863084143, \"detail\": {\"chars\": 34}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326944210619596,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793326944210294873,
+      "detail": {
+        "text_len": 7,
+        "dur_ms": 810.512376,
+        "audio_sec": 2.24,
+        "rtf": 0.3618358821428571
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793326944210294873, \"detail\": {\"text_len\": 7, \"dur_ms\": 810.512376, \"audio_sec\": 2.24, \"rtf\": 0.3618358821428571}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326944216263818,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793326944215972607,
+      "detail": {
+        "text_len": 12,
+        "head": "纱布渗血或污染要马上换。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793326944215972607, \"detail\": {\"text_len\": 12, \"head\": \"纱布渗血或污染要马上换。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326944216615700,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793326944216039448,
+      "detail": {
+        "text_len": 12
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793326944216039448, \"detail\": {\"text_len\": 12}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326944255339792,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793326944255075330,
+      "detail": {
+        "text_len": 7,
+        "head": "每2天换一次。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793326944255075330, \"detail\": {\"text_len\": 7, \"head\": \"每2天换一次。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326945238523363,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793326945238138033,
+      "detail": {
+        "text_len": 12,
+        "dur_ms": 1022.093898,
+        "audio_sec": 2.88,
+        "rtf": 0.35489371458333335
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793326945238138033, \"detail\": {\"text_len\": 12, \"dur_ms\": 1022.093898, \"audio_sec\": 2.88, \"rtf\": 0.35489371458333335}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326945239006042,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793326945238845449,
+      "detail": {
+        "text_len": 9,
+        "head": "换药必须无菌操作。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793326945238845449, \"detail\": {\"text_len\": 9, \"head\": \"换药必须无菌操作。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326945239194704,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793326945238893789,
+      "detail": {
+        "text_len": 9
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793326945238893789, \"detail\": {\"text_len\": 9}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326946074384523,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793326946074129792,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 835.231377,
+        "audio_sec": 2.4,
+        "rtf": 0.34801307375
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793326946074129792, \"detail\": {\"text_len\": 9, \"dur_ms\": 835.231377, \"audio_sec\": 2.4, \"rtf\": 0.34801307375}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326946074924297,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793326946074727217,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793326946074727217, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326946495141078,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793326946494777345,
+      "detail": {
+        "text_len": 7,
+        "interrupted": false,
+        "dur_ms": 2239.679186
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793326946494777345, \"detail\": {\"text_len\": 7, \"interrupted\": false, \"dur_ms\": 2239.679186}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326946495827296,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793326946495599654,
+      "detail": {
+        "text_len": 12,
+        "head": "纱布渗血或污染要马上换。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793326946495599654, \"detail\": {\"text_len\": 12, \"head\": \"纱布渗血或污染要马上换。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326949373680495,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793326949373332523,
+      "detail": {
+        "text_len": 12,
+        "interrupted": false,
+        "dur_ms": 2877.729568
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793326949373332523, \"detail\": {\"text_len\": 12, \"interrupted\": false, \"dur_ms\": 2877.729568}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326949374214352,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793326949374069020,
+      "detail": {
+        "text_len": 9,
+        "head": "换药必须无菌操作。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793326949374069020, \"detail\": {\"text_len\": 9, \"head\": \"换药必须无菌操作。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326951771724813,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793326951771320122,
+      "detail": {
+        "text_len": 9,
+        "interrupted": false,
+        "dur_ms": 2397.245443
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793326951771320122, \"detail\": {\"text_len\": 9, \"interrupted\": false, \"dur_ms\": 2397.245443}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326951772613927,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793326951772394507,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793326951772394507, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793326942863440084,
+          "arrival_ns": 1793326942863819678,
+          "source": "round",
+          "detail": {
+            "kind": "medical",
+            "chat_mode": false,
+            "source": "keyword",
+            "keyword_medical": true,
+            "judge_kind": null,
+            "judge_ms": 0.0
+          }
+        }
+      ],
+      "rag_start": [
+        {
+          "t_ns": 1793326942864010466,
+          "arrival_ns": 1793326942864229425,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "rag_end": [
+        {
+          "t_ns": 1793326942875154104,
+          "arrival_ns": 1793326942875422565,
+          "source": "round",
+          "detail": {
+            "n_chunks": 4,
+            "took_ms": 11.04,
+            "top1": "血液透析导管的日常护理"
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793326943290792325,
+          "arrival_ns": 1793326943291310501,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1038,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793326943291250660,
+          "arrival_ns": 1793326943291771501,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1038
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793326943863084143,
+          "arrival_ns": 1793326943863486034,
+          "source": "round",
+          "detail": {
+            "chars": 34
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793326943291758529,
+          "arrival_ns": 1793326943292063606,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793326946074727217,
+          "arrival_ns": 1793326946074924297,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793326943399710938,
+          "arrival_ns": 1793326943399944593,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "每2天换一次。"
+          }
+        },
+        {
+          "t_ns": 1793326944215972607,
+          "arrival_ns": 1793326944216263818,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "纱布渗血或污染要马上换。"
+          }
+        },
+        {
+          "t_ns": 1793326945238845449,
+          "arrival_ns": 1793326945239006042,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "换药必须无菌操作。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793326943399778257,
+          "arrival_ns": 1793326943400150044,
+          "source": "round",
+          "detail": {
+            "text_len": 7
+          }
+        },
+        {
+          "t_ns": 1793326944216039448,
+          "arrival_ns": 1793326944216615700,
+          "source": "round",
+          "detail": {
+            "text_len": 12
+          }
+        },
+        {
+          "t_ns": 1793326945238893789,
+          "arrival_ns": 1793326945239194704,
+          "source": "round",
+          "detail": {
+            "text_len": 9
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793326944210294873,
+          "arrival_ns": 1793326944210619596,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "dur_ms": 810.512376,
+            "audio_sec": 2.24,
+            "rtf": 0.3618358821428571
+          }
+        },
+        {
+          "t_ns": 1793326945238138033,
+          "arrival_ns": 1793326945238523363,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "dur_ms": 1022.093898,
+            "audio_sec": 2.88,
+            "rtf": 0.35489371458333335
+          }
+        },
+        {
+          "t_ns": 1793326946074129792,
+          "arrival_ns": 1793326946074384523,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 835.231377,
+            "audio_sec": 2.4,
+            "rtf": 0.34801307375
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793326944255075330,
+          "arrival_ns": 1793326944255339792,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "每2天换一次。"
+          }
+        },
+        {
+          "t_ns": 1793326946495599654,
+          "arrival_ns": 1793326946495827296,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "纱布渗血或污染要马上换。"
+          }
+        },
+        {
+          "t_ns": 1793326949374069020,
+          "arrival_ns": 1793326949374214352,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "换药必须无菌操作。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793326946494777345,
+          "arrival_ns": 1793326946495141078,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "interrupted": false,
+            "dur_ms": 2239.679186
+          }
+        },
+        {
+          "t_ns": 1793326949373332523,
+          "arrival_ns": 1793326949373680495,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "interrupted": false,
+            "dur_ms": 2877.729568
+          }
+        },
+        {
+          "t_ns": 1793326951771320122,
+          "arrival_ns": 1793326951771724813,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "interrupted": false,
+            "dur_ms": 2397.245443
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793326951772394507,
+          "arrival_ns": 1793326951772613927,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 50,
+    "interval_s": 2.0
+  }
+}

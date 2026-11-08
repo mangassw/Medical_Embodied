@@ -1,0 +1,866 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1154958",
+  "host": "artrc",
+  "tag": "ol_fix5",
+  "round_index": 4,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T15:53:00.832",
+  "finished_at": "2026-10-30T15:53:12.653",
+  "duration_s": 11.821,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "我家猫最近不爱吃饭怎么办",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793346780832628503,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793346780832133513,
+    "t_publish_question_ns": 1793346780832628503,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793346780833220305,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793346780833620824,
+      "ali_llm_output_start": 1793346782178879906,
+      "ali_llm_output_first_text": 1793346782179127936,
+      "ali_llm_output_done": 1793346782963694205,
+      "tts_realtime_data_start": 1793346782179162262,
+      "tts_realtime_data_first_text": 1793346782322316064,
+      "tts_realtime_data_done": 1793346782963955416,
+      "tts_session_finished": 1793346792352553259
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793346782318255303,
+      "tts_local.synth_start_first": 1793346782318340923,
+      "tts_local.synth_end_first": 1793346783581187750,
+      "tts_local.play_start_first": 1793346783607515357,
+      "tts_local.play_end_last": 1793346792351351787,
+      "tts_local.session_finished": 1793346792352186419
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.992,
+    "router_to_llm_first_ms": 1345.507,
+    "question_to_llm_first_ms": 1346.499,
+    "llm_first_to_done_ms": 784.566,
+    "question_to_llm_done_ms": 2131.066,
+    "llm_first_to_tts_first_text_ms": 143.188,
+    "question_to_tts_first_text_ms": 1489.688,
+    "first_tts_text_to_first_play_start_ms": 1285.199,
+    "tts_rx_to_synth_end_ms": 1262.932,
+    "tts_rx_to_play_start_ms": 1289.26,
+    "tts_synth_end_to_play_start_ms": 26.328,
+    "question_to_first_audio_ms": 2774.887,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 11519.925,
+    "audio_total_sum_ms": 8742.222,
+    "audio_first_to_last_ms": 8743.836
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 992321,
+    "router_to_llm_first_ns": 1345507112,
+    "question_to_llm_first_ns": 1346499433,
+    "llm_first_to_done_ns": 784566269,
+    "question_to_llm_done_ns": 2131065702,
+    "llm_first_to_tts_first_text_ns": 143188128,
+    "question_to_tts_first_text_ns": 1489687561,
+    "first_tts_text_to_first_play_start_ns": 1285199293,
+    "tts_rx_to_synth_end_ns": 1262932447,
+    "tts_rx_to_play_start_ns": 1289260054,
+    "tts_synth_end_to_play_start_ns": 26327607,
+    "question_to_first_audio_ns": 2774886854,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 11519924756,
+    "audio_total_sum_ns": 8742221644,
+    "audio_first_to_last_ns": 8743836430
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 1346499433,
+      "ms": 1346.499
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 784566269,
+      "ms": 784.566
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 143188128,
+      "ms": 143.188
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 1285199293,
+      "ms": 1285.199
+    },
+    "question_to_first_play_start": {
+      "ns": 2774886854,
+      "ms": 2774.887
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 11519924756,
+      "ms": 11519.925
+    },
+    "audio_total_sec": {
+      "ns": 8742221644,
+      "ms": 8742.222,
+      "sec": 8.742
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.992,
+    "router_to_llm_first_ms": 1345.507,
+    "question_to_llm_first_ms": 1346.499,
+    "llm_first_to_done_ms": 784.566,
+    "question_to_llm_done_ms": 2131.066,
+    "llm_first_to_tts_first_text_ms": 143.188,
+    "question_to_tts_first_text_ms": 1489.688,
+    "first_tts_text_to_first_play_start_ms": 1285.199,
+    "tts_rx_to_synth_end_ms": 1262.932,
+    "tts_rx_to_play_start_ms": 1289.26,
+    "tts_synth_end_to_play_start_ms": 26.328,
+    "question_to_first_audio_ms": 2774.887,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 11519.925,
+    "audio_total_sum_ms": 8742.222,
+    "audio_first_to_last_ms": 8743.836
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793346782178879906,
+      "first_text_rx_ns": 1793346782179127936,
+      "done_rx_ns": 1793346782963694205,
+      "chunk_count": 24,
+      "char_count": 39,
+      "chunks": [
+        {
+          "t_ns": 1793346782179127936,
+          "text": "猫咪"
+        },
+        {
+          "t_ns": 1793346782196071477,
+          "text": "食欲"
+        },
+        {
+          "t_ns": 1793346782212681031,
+          "text": "不"
+        },
+        {
+          "t_ns": 1793346782229621930,
+          "text": "振"
+        },
+        {
+          "t_ns": 1793346782246904041,
+          "text": "可能"
+        },
+        {
+          "t_ns": 1793346782264828004,
+          "text": "有"
+        },
+        {
+          "t_ns": 1793346782281947034,
+          "text": "多种"
+        },
+        {
+          "t_ns": 1793346782300284400,
+          "text": "原因"
+        },
+        {
+          "t_ns": 1793346782322256861,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793346782341052697,
+          "text": "建议"
+        },
+        {
+          "t_ns": 1793346782364225880,
+          "text": "观察"
+        },
+        {
+          "t_ns": 1793346782412463646,
+          "text": "它"
+        },
+        {
+          "t_ns": 1793346782460873179,
+          "text": "是否有"
+        },
+        {
+          "t_ns": 1793346782502891026,
+          "text": "其他"
+        },
+        {
+          "t_ns": 1793346782541508932,
+          "text": "异常"
+        },
+        {
+          "t_ns": 1793346782586301945,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793346782628228522,
+          "text": "比如"
+        },
+        {
+          "t_ns": 1793346782673646776,
+          "text": "精神"
+        },
+        {
+          "t_ns": 1793346782713725321,
+          "text": "状态"
+        },
+        {
+          "t_ns": 1793346782754859687,
+          "text": "或"
+        },
+        {
+          "t_ns": 1793346782796738281,
+          "text": "排"
+        },
+        {
+          "t_ns": 1793346782837948587,
+          "text": "泄"
+        },
+        {
+          "t_ns": 1793346782879350956,
+          "text": "情况"
+        },
+        {
+          "t_ns": 1793346782925885563,
+          "text": "。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793346782322316064,
+      "done_rx_ns": 1793346782963955416,
+      "text_count": 3,
+      "texts": [
+        {
+          "t_ns": 1793346782322316064,
+          "text": "猫咪食欲不振可能有多种原因，"
+        },
+        {
+          "t_ns": 1793346782586563997,
+          "text": "建议观察它是否有其他异常，"
+        },
+        {
+          "t_ns": 1793346782926139362,
+          "text": "比如精神状态或排泄情况。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 23,
+    "latency_events_total": 23,
+    "asr_events": 0,
+    "tts_events": 18,
+    "tts_play_pairs": 3,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793346782046105264,
+      "node": "llm_medical",
+      "stage": "intent_judge_error",
+      "t_ns": 1793346782045704437,
+      "detail": {
+        "model": "qwen-flash",
+        "ms": 1211.4,
+        "error": "Request timed out."
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent_judge_error\", \"t_ns\": 1793346782045704437, \"detail\": {\"model\": \"qwen-flash\", \"ms\": 1211.4, \"error\": \"Request timed out.\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346782046324835,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793346782045874562,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "keyword-fallback",
+        "keyword_medical": false,
+        "chitchat": false,
+        "judge_kind": null,
+        "judge_ms": 1211.4
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793346782045874562, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"keyword-fallback\", \"keyword_medical\": false, \"chitchat\": false, \"judge_kind\": null, \"judge_ms\": 1211.4}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346782046528493,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793346782046296664,
+      "detail": {
+        "provider": "ollama",
+        "prompt_chars": 455,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793346782046296664, \"detail\": {\"provider\": \"ollama\", \"prompt_chars\": 455, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346782179190590,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793346782178896563,
+      "detail": {
+        "prompt_chars": 455
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793346782178896563, \"detail\": {\"prompt_chars\": 455}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346782180971274,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793346782180699570,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793346782180699570, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346782322357512,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793346782318255303,
+      "detail": {
+        "text_len": 14,
+        "head": "猫咪食欲不振可能有多种原因，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793346782318255303, \"detail\": {\"text_len\": 14, \"head\": \"猫咪食欲不振可能有多种原因，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346782322655725,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793346782318340923,
+      "detail": {
+        "text_len": 14
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793346782318340923, \"detail\": {\"text_len\": 14}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346782963739584,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793346782963396128,
+      "detail": {
+        "chars": 39
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793346782963396128, \"detail\": {\"chars\": 39}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346783581466003,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793346783581187750,
+      "detail": {
+        "text_len": 14,
+        "dur_ms": 1262.841396,
+        "audio_sec": 2.8,
+        "rtf": 0.45101478428571434
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793346783581187750, \"detail\": {\"text_len\": 14, \"dur_ms\": 1262.841396, \"audio_sec\": 2.8, \"rtf\": 0.45101478428571434}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346783581907018,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793346783581763474,
+      "detail": {
+        "text_len": 13,
+        "head": "建议观察它是否有其他异常，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793346783581763474, \"detail\": {\"text_len\": 13, \"head\": \"建议观察它是否有其他异常，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346783582094333,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793346783581818806,
+      "detail": {
+        "text_len": 13
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793346783581818806, \"detail\": {\"text_len\": 13}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346783607836373,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793346783607515357,
+      "detail": {
+        "text_len": 14,
+        "head": "猫咪食欲不振可能有多种原因，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793346783607515357, \"detail\": {\"text_len\": 14, \"head\": \"猫咪食欲不振可能有多种原因，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346784661325742,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793346784660985133,
+      "detail": {
+        "text_len": 13,
+        "dur_ms": 1079.159634,
+        "audio_sec": 2.96,
+        "rtf": 0.36458095743243246
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793346784660985133, \"detail\": {\"text_len\": 13, \"dur_ms\": 1079.159634, \"audio_sec\": 2.96, \"rtf\": 0.36458095743243246}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346784661797201,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793346784661629784,
+      "detail": {
+        "text_len": 12,
+        "head": "比如精神状态或排泄情况。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793346784661629784, \"detail\": {\"text_len\": 12, \"head\": \"比如精神状态或排泄情况。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346784662034573,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793346784661686524,
+      "detail": {
+        "text_len": 12
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793346784661686524, \"detail\": {\"text_len\": 12}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346785701208924,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793346785700802200,
+      "detail": {
+        "text_len": 12,
+        "dur_ms": 1039.109499,
+        "audio_sec": 2.96,
+        "rtf": 0.3510505064189189
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793346785700802200, \"detail\": {\"text_len\": 12, \"dur_ms\": 1039.109499, \"audio_sec\": 2.96, \"rtf\": 0.3510505064189189}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346785701624066,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793346785701405051,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793346785701405051, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346786431805414,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793346786431372027,
+      "detail": {
+        "text_len": 14,
+        "interrupted": false,
+        "dur_ms": 2823.850502
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793346786431372027, \"detail\": {\"text_len\": 14, \"interrupted\": false, \"dur_ms\": 2823.850502}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346786432386641,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793346786432180470,
+      "detail": {
+        "text_len": 13,
+        "head": "建议观察它是否有其他异常，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793346786432180470, \"detail\": {\"text_len\": 13, \"head\": \"建议观察它是否有其他异常，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346789390007227,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793346789389671683,
+      "detail": {
+        "text_len": 13,
+        "interrupted": false,
+        "dur_ms": 2957.486621
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793346789389671683, \"detail\": {\"text_len\": 13, \"interrupted\": false, \"dur_ms\": 2957.486621}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346789390760295,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793346789390478026,
+      "detail": {
+        "text_len": 12,
+        "head": "比如精神状态或排泄情况。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793346789390478026, \"detail\": {\"text_len\": 12, \"head\": \"比如精神状态或排泄情况。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346792351687662,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793346792351351787,
+      "detail": {
+        "text_len": 12,
+        "interrupted": false,
+        "dur_ms": 2960.86841
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793346792351351787, \"detail\": {\"text_len\": 12, \"interrupted\": false, \"dur_ms\": 2960.86841}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346792352347906,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793346792352186419,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793346792352186419, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent_judge_error": [
+        {
+          "t_ns": 1793346782045704437,
+          "arrival_ns": 1793346782046105264,
+          "source": "round",
+          "detail": {
+            "model": "qwen-flash",
+            "ms": 1211.4,
+            "error": "Request timed out."
+          }
+        }
+      ],
+      "intent": [
+        {
+          "t_ns": 1793346782045874562,
+          "arrival_ns": 1793346782046324835,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "keyword-fallback",
+            "keyword_medical": false,
+            "chitchat": false,
+            "judge_kind": null,
+            "judge_ms": 1211.4
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793346782046296664,
+          "arrival_ns": 1793346782046528493,
+          "source": "round",
+          "detail": {
+            "provider": "ollama",
+            "prompt_chars": 455,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793346782178896563,
+          "arrival_ns": 1793346782179190590,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 455
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793346782963396128,
+          "arrival_ns": 1793346782963739584,
+          "source": "round",
+          "detail": {
+            "chars": 39
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793346782180699570,
+          "arrival_ns": 1793346782180971274,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793346785701405051,
+          "arrival_ns": 1793346785701624066,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793346782318255303,
+          "arrival_ns": 1793346782322357512,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "head": "猫咪食欲不振可能有多种原因，"
+          }
+        },
+        {
+          "t_ns": 1793346783581763474,
+          "arrival_ns": 1793346783581907018,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "head": "建议观察它是否有其他异常，"
+          }
+        },
+        {
+          "t_ns": 1793346784661629784,
+          "arrival_ns": 1793346784661797201,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "比如精神状态或排泄情况。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793346782318340923,
+          "arrival_ns": 1793346782322655725,
+          "source": "round",
+          "detail": {
+            "text_len": 14
+          }
+        },
+        {
+          "t_ns": 1793346783581818806,
+          "arrival_ns": 1793346783582094333,
+          "source": "round",
+          "detail": {
+            "text_len": 13
+          }
+        },
+        {
+          "t_ns": 1793346784661686524,
+          "arrival_ns": 1793346784662034573,
+          "source": "round",
+          "detail": {
+            "text_len": 12
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793346783581187750,
+          "arrival_ns": 1793346783581466003,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "dur_ms": 1262.841396,
+            "audio_sec": 2.8,
+            "rtf": 0.45101478428571434
+          }
+        },
+        {
+          "t_ns": 1793346784660985133,
+          "arrival_ns": 1793346784661325742,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "dur_ms": 1079.159634,
+            "audio_sec": 2.96,
+            "rtf": 0.36458095743243246
+          }
+        },
+        {
+          "t_ns": 1793346785700802200,
+          "arrival_ns": 1793346785701208924,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "dur_ms": 1039.109499,
+            "audio_sec": 2.96,
+            "rtf": 0.3510505064189189
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793346783607515357,
+          "arrival_ns": 1793346783607836373,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "head": "猫咪食欲不振可能有多种原因，"
+          }
+        },
+        {
+          "t_ns": 1793346786432180470,
+          "arrival_ns": 1793346786432386641,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "head": "建议观察它是否有其他异常，"
+          }
+        },
+        {
+          "t_ns": 1793346789390478026,
+          "arrival_ns": 1793346789390760295,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "比如精神状态或排泄情况。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793346786431372027,
+          "arrival_ns": 1793346786431805414,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "interrupted": false,
+            "dur_ms": 2823.850502
+          }
+        },
+        {
+          "t_ns": 1793346789389671683,
+          "arrival_ns": 1793346789390007227,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "interrupted": false,
+            "dur_ms": 2957.486621
+          }
+        },
+        {
+          "t_ns": 1793346792351351787,
+          "arrival_ns": 1793346792351687662,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "interrupted": false,
+            "dur_ms": 2960.86841
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793346792352186419,
+          "arrival_ns": 1793346792352347906,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 5,
+    "interval_s": 2.0
+  }
+}

@@ -1,0 +1,804 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1064920",
+  "host": "artrc",
+  "tag": "chat50",
+  "round_index": 25,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T10:31:22.758",
+  "finished_at": "2026-10-30T10:31:35.409",
+  "duration_s": 12.651,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "世界上最长的河是哪条",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793327482759394469,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793327482758925007,
+    "t_publish_question_ns": 1793327482759394469,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793327482759993091,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793327482760313898,
+      "ali_llm_output_start": 1793327484778812493,
+      "ali_llm_output_first_text": 1793327484779114156,
+      "ali_llm_output_done": 1793327485501433399,
+      "tts_realtime_data_start": 1793327484779159733,
+      "tts_realtime_data_first_text": 1793327485087126184,
+      "tts_realtime_data_done": 1793327485502131553,
+      "tts_session_finished": 1793327495108765831
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793327485087360370,
+      "tts_local.synth_start_first": 1793327485087426766,
+      "tts_local.synth_end_first": 1793327486568161595,
+      "tts_local.play_start_first": 1793327486655023103,
+      "tts_local.play_end_last": 1793327495107435836,
+      "tts_local.session_finished": 1793327495108402530
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.919,
+    "router_to_llm_first_ms": 2018.8,
+    "question_to_llm_first_ms": 2019.72,
+    "llm_first_to_done_ms": 722.319,
+    "question_to_llm_done_ms": 2742.039,
+    "llm_first_to_tts_first_text_ms": 308.012,
+    "question_to_tts_first_text_ms": 2327.732,
+    "first_tts_text_to_first_play_start_ms": 1567.897,
+    "tts_rx_to_synth_end_ms": 1480.801,
+    "tts_rx_to_play_start_ms": 1567.663,
+    "tts_synth_end_to_play_start_ms": 86.862,
+    "question_to_first_audio_ms": 3895.629,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 12349.371,
+    "audio_total_sum_ms": 8450.69,
+    "audio_first_to_last_ms": 8452.413
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 919429,
+    "router_to_llm_first_ns": 2018800258,
+    "question_to_llm_first_ns": 2019719687,
+    "llm_first_to_done_ns": 722319243,
+    "question_to_llm_done_ns": 2742038930,
+    "llm_first_to_tts_first_text_ns": 308012028,
+    "question_to_tts_first_text_ns": 2327731715,
+    "first_tts_text_to_first_play_start_ns": 1567896919,
+    "tts_rx_to_synth_end_ns": 1480801225,
+    "tts_rx_to_play_start_ns": 1567662733,
+    "tts_synth_end_to_play_start_ns": 86861508,
+    "question_to_first_audio_ns": 3895628634,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 12349371362,
+    "audio_total_sum_ns": 8450690128,
+    "audio_first_to_last_ns": 8452412733
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 2019719687,
+      "ms": 2019.72
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 722319243,
+      "ms": 722.319
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 308012028,
+      "ms": 308.012
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 1567896919,
+      "ms": 1567.897
+    },
+    "question_to_first_play_start": {
+      "ns": 3895628634,
+      "ms": 3895.629
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 12349371362,
+      "ms": 12349.371
+    },
+    "audio_total_sec": {
+      "ns": 8450690128,
+      "ms": 8450.69,
+      "sec": 8.451
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.919,
+    "router_to_llm_first_ms": 2018.8,
+    "question_to_llm_first_ms": 2019.72,
+    "llm_first_to_done_ms": 722.319,
+    "question_to_llm_done_ms": 2742.039,
+    "llm_first_to_tts_first_text_ms": 308.012,
+    "question_to_tts_first_text_ms": 2327.732,
+    "first_tts_text_to_first_play_start_ms": 1567.897,
+    "tts_rx_to_synth_end_ms": 1480.801,
+    "tts_rx_to_play_start_ms": 1567.663,
+    "tts_synth_end_to_play_start_ms": 86.862,
+    "question_to_first_audio_ms": 3895.629,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 12349.371,
+    "audio_total_sum_ms": 8450.69,
+    "audio_first_to_last_ms": 8452.413
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793327484778812493,
+      "first_text_rx_ns": 1793327484779114156,
+      "done_rx_ns": 1793327485501433399,
+      "chunk_count": 9,
+      "char_count": 35,
+      "chunks": [
+        {
+          "t_ns": 1793327484779114156,
+          "text": "尼"
+        },
+        {
+          "t_ns": 1793327484782220740,
+          "text": "罗河和"
+        },
+        {
+          "t_ns": 1793327484818516036,
+          "text": "亚马"
+        },
+        {
+          "t_ns": 1793327484818732897,
+          "text": "孙"
+        },
+        {
+          "t_ns": 1793327484982708168,
+          "text": "河常被并"
+        },
+        {
+          "t_ns": 1793327485086813632,
+          "text": "列说最长，"
+        },
+        {
+          "t_ns": 1793327485264354250,
+          "text": "具体谁第一，"
+        },
+        {
+          "t_ns": 1793327485364091409,
+          "text": "科学家们还在温柔"
+        },
+        {
+          "t_ns": 1793327485475358009,
+          "text": "地讨论呢～"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793327485087126184,
+      "done_rx_ns": 1793327485502131553,
+      "text_count": 3,
+      "texts": [
+        {
+          "t_ns": 1793327485087126184,
+          "text": "尼罗河和亚马孙河常被并列说最长，"
+        },
+        {
+          "t_ns": 1793327485270084843,
+          "text": "具体谁第一，"
+        },
+        {
+          "t_ns": 1793327485501688276,
+          "text": "科学家们还在温柔地讨论呢～"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 23,
+    "latency_events_total": 23,
+    "asr_events": 0,
+    "tts_events": 18,
+    "tts_play_pairs": 3,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793327483860262591,
+      "node": "llm_medical",
+      "stage": "intent_judge",
+      "t_ns": 1793327483859927072,
+      "detail": {
+        "model": "qwen-flash",
+        "ms": 1098.6,
+        "answer": "聊",
+        "kind": "chat"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent_judge\", \"t_ns\": 1793327483859927072, \"detail\": {\"model\": \"qwen-flash\", \"ms\": 1098.6, \"answer\": \"聊\", \"kind\": \"chat\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327483860489387,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793327483860111012,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "llm:qwen-flash",
+        "keyword_medical": false,
+        "judge_kind": "chat",
+        "judge_ms": 1098.6
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793327483860111012, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"llm:qwen-flash\", \"keyword_medical\": false, \"judge_kind\": \"chat\", \"judge_ms\": 1098.6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327484778868687,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793327484778462885,
+      "detail": {
+        "prompt_chars": 397,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793327484778462885, \"detail\": {\"prompt_chars\": 397, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327484779200724,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793327484778951914,
+      "detail": {
+        "prompt_chars": 397
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793327484778951914, \"detail\": {\"prompt_chars\": 397}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327484779533877,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793327484779320325,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793327484779320325, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327485087653049,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327485087360370,
+      "detail": {
+        "text_len": 16,
+        "head": "尼罗河和亚马孙河常被并列说最长，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327485087360370, \"detail\": {\"text_len\": 16, \"head\": \"尼罗河和亚马孙河常被并列说最长，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327485087927736,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327485087426766,
+      "detail": {
+        "text_len": 16
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327485087426766, \"detail\": {\"text_len\": 16}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327485501476127,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793327485501121863,
+      "detail": {
+        "chars": 38
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793327485501121863, \"detail\": {\"chars\": 38}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327486568493425,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327486568161595,
+      "detail": {
+        "text_len": 16,
+        "dur_ms": 1480.728492,
+        "audio_sec": 4.0,
+        "rtf": 0.370182123
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327486568161595, \"detail\": {\"text_len\": 16, \"dur_ms\": 1480.728492, \"audio_sec\": 4.0, \"rtf\": 0.370182123}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327486582322785,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327486581920766,
+      "detail": {
+        "text_len": 6,
+        "head": "具体谁第一，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327486581920766, \"detail\": {\"text_len\": 6, \"head\": \"具体谁第一，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327486582740062,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327486582045867,
+      "detail": {
+        "text_len": 6
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327486582045867, \"detail\": {\"text_len\": 6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327486655337773,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327486655023103,
+      "detail": {
+        "text_len": 16,
+        "head": "尼罗河和亚马孙河常被并列说最长，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327486655023103, \"detail\": {\"text_len\": 16, \"head\": \"尼罗河和亚马孙河常被并列说最长，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327487309422653,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327487308919707,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 726.864581,
+        "audio_sec": 1.84,
+        "rtf": 0.39503509836956524
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327487308919707, \"detail\": {\"text_len\": 6, \"dur_ms\": 726.864581, \"audio_sec\": 1.84, \"rtf\": 0.39503509836956524}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327487310108773,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327487309835806,
+      "detail": {
+        "text_len": 13,
+        "head": "科学家们还在温柔地讨论呢～"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327487309835806, \"detail\": {\"text_len\": 13, \"head\": \"科学家们还在温柔地讨论呢～\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327487310372674,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327487309926742,
+      "detail": {
+        "text_len": 13
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327487309926742, \"detail\": {\"text_len\": 13}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327488250575948,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327488250230002,
+      "detail": {
+        "text_len": 13,
+        "dur_ms": 940.297734,
+        "audio_sec": 2.56,
+        "rtf": 0.36730380234375
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327488250230002, \"detail\": {\"text_len\": 13, \"dur_ms\": 940.297734, \"audio_sec\": 2.56, \"rtf\": 0.36730380234375}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327488251114378,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793327488250865884,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793327488250865884, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327490686705185,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327490686203871,
+      "detail": {
+        "text_len": 16,
+        "interrupted": false,
+        "dur_ms": 4031.176144
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327490686203871, \"detail\": {\"text_len\": 16, \"interrupted\": false, \"dur_ms\": 4031.176144}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327490687237501,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327490687065752,
+      "detail": {
+        "text_len": 6,
+        "head": "具体谁第一，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327490687065752, \"detail\": {\"text_len\": 6, \"head\": \"具体谁第一，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327492527653311,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327492527304845,
+      "detail": {
+        "text_len": 6,
+        "interrupted": false,
+        "dur_ms": 1840.23578
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327492527304845, \"detail\": {\"text_len\": 6, \"interrupted\": false, \"dur_ms\": 1840.23578}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327492528369920,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327492528165569,
+      "detail": {
+        "text_len": 13,
+        "head": "科学家们还在温柔地讨论呢～"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327492528165569, \"detail\": {\"text_len\": 13, \"head\": \"科学家们还在温柔地讨论呢～\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327495107857082,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327495107435836,
+      "detail": {
+        "text_len": 13,
+        "interrupted": false,
+        "dur_ms": 2579.265734
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327495107435836, \"detail\": {\"text_len\": 13, \"interrupted\": false, \"dur_ms\": 2579.265734}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327495108562841,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793327495108402530,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793327495108402530, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent_judge": [
+        {
+          "t_ns": 1793327483859927072,
+          "arrival_ns": 1793327483860262591,
+          "source": "round",
+          "detail": {
+            "model": "qwen-flash",
+            "ms": 1098.6,
+            "answer": "聊",
+            "kind": "chat"
+          }
+        }
+      ],
+      "intent": [
+        {
+          "t_ns": 1793327483860111012,
+          "arrival_ns": 1793327483860489387,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "llm:qwen-flash",
+            "keyword_medical": false,
+            "judge_kind": "chat",
+            "judge_ms": 1098.6
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793327484778462885,
+          "arrival_ns": 1793327484778868687,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 397,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793327484778951914,
+          "arrival_ns": 1793327484779200724,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 397
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793327485501121863,
+          "arrival_ns": 1793327485501476127,
+          "source": "round",
+          "detail": {
+            "chars": 38
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793327484779320325,
+          "arrival_ns": 1793327484779533877,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793327488250865884,
+          "arrival_ns": 1793327488251114378,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793327485087360370,
+          "arrival_ns": 1793327485087653049,
+          "source": "round",
+          "detail": {
+            "text_len": 16,
+            "head": "尼罗河和亚马孙河常被并列说最长，"
+          }
+        },
+        {
+          "t_ns": 1793327486581920766,
+          "arrival_ns": 1793327486582322785,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "具体谁第一，"
+          }
+        },
+        {
+          "t_ns": 1793327487309835806,
+          "arrival_ns": 1793327487310108773,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "head": "科学家们还在温柔地讨论呢～"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793327485087426766,
+          "arrival_ns": 1793327485087927736,
+          "source": "round",
+          "detail": {
+            "text_len": 16
+          }
+        },
+        {
+          "t_ns": 1793327486582045867,
+          "arrival_ns": 1793327486582740062,
+          "source": "round",
+          "detail": {
+            "text_len": 6
+          }
+        },
+        {
+          "t_ns": 1793327487309926742,
+          "arrival_ns": 1793327487310372674,
+          "source": "round",
+          "detail": {
+            "text_len": 13
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793327486568161595,
+          "arrival_ns": 1793327486568493425,
+          "source": "round",
+          "detail": {
+            "text_len": 16,
+            "dur_ms": 1480.728492,
+            "audio_sec": 4.0,
+            "rtf": 0.370182123
+          }
+        },
+        {
+          "t_ns": 1793327487308919707,
+          "arrival_ns": 1793327487309422653,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 726.864581,
+            "audio_sec": 1.84,
+            "rtf": 0.39503509836956524
+          }
+        },
+        {
+          "t_ns": 1793327488250230002,
+          "arrival_ns": 1793327488250575948,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "dur_ms": 940.297734,
+            "audio_sec": 2.56,
+            "rtf": 0.36730380234375
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793327486655023103,
+          "arrival_ns": 1793327486655337773,
+          "source": "round",
+          "detail": {
+            "text_len": 16,
+            "head": "尼罗河和亚马孙河常被并列说最长，"
+          }
+        },
+        {
+          "t_ns": 1793327490687065752,
+          "arrival_ns": 1793327490687237501,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "具体谁第一，"
+          }
+        },
+        {
+          "t_ns": 1793327492528165569,
+          "arrival_ns": 1793327492528369920,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "head": "科学家们还在温柔地讨论呢～"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793327490686203871,
+          "arrival_ns": 1793327490686705185,
+          "source": "round",
+          "detail": {
+            "text_len": 16,
+            "interrupted": false,
+            "dur_ms": 4031.176144
+          }
+        },
+        {
+          "t_ns": 1793327492527304845,
+          "arrival_ns": 1793327492527653311,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "interrupted": false,
+            "dur_ms": 1840.23578
+          }
+        },
+        {
+          "t_ns": 1793327495107435836,
+          "arrival_ns": 1793327495107857082,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "interrupted": false,
+            "dur_ms": 2579.265734
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793327495108402530,
+          "arrival_ns": 1793327495108562841,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 50,
+    "interval_s": 2.0
+  }
+}

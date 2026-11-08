@@ -1,0 +1,761 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1046126",
+  "host": "artrc",
+  "tag": "chat",
+  "round_index": 0,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T09:42:02.480",
+  "finished_at": "2026-10-30T09:42:11.608",
+  "duration_s": 9.128,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "我家猫最近不爱吃饭怎么办",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793324522480875333,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793324522480458939,
+    "t_publish_question_ns": 1793324522480875333,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793324522481377854,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793324522481966176,
+      "ali_llm_output_start": 1793324523363577124,
+      "ali_llm_output_first_text": 1793324523364047979,
+      "ali_llm_output_done": 1793324523869315746,
+      "tts_realtime_data_start": 1793324523363875777,
+      "tts_realtime_data_first_text": 1793324523588430314,
+      "tts_realtime_data_done": 1793324523869846967,
+      "tts_session_finished": 1793324531304887093
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793324523588710154,
+      "tts_local.synth_start_first": 1793324523588769588,
+      "tts_local.synth_end_first": 1793324524531531028,
+      "tts_local.play_start_first": 1793324524561678090,
+      "tts_local.play_end_last": 1793324531303891019,
+      "tts_local.session_finished": 1793324531304709419
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.091,
+    "router_to_llm_first_ms": 882.082,
+    "question_to_llm_first_ms": 883.173,
+    "llm_first_to_done_ms": 505.268,
+    "question_to_llm_done_ms": 1388.44,
+    "llm_first_to_tts_first_text_ms": 224.382,
+    "question_to_tts_first_text_ms": 1107.555,
+    "first_tts_text_to_first_play_start_ms": 973.248,
+    "tts_rx_to_synth_end_ms": 942.821,
+    "tts_rx_to_play_start_ms": 972.968,
+    "tts_synth_end_to_play_start_ms": 30.147,
+    "question_to_first_audio_ms": 2080.803,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 8824.012,
+    "audio_total_sum_ms": 6740.803,
+    "audio_first_to_last_ms": 6742.213
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 1090843,
+    "router_to_llm_first_ns": 882081803,
+    "question_to_llm_first_ns": 883172646,
+    "llm_first_to_done_ns": 505267767,
+    "question_to_llm_done_ns": 1388440413,
+    "llm_first_to_tts_first_text_ns": 224382335,
+    "question_to_tts_first_text_ns": 1107554981,
+    "first_tts_text_to_first_play_start_ns": 973247776,
+    "tts_rx_to_synth_end_ns": 942820874,
+    "tts_rx_to_play_start_ns": 972967936,
+    "tts_synth_end_to_play_start_ns": 30147062,
+    "question_to_first_audio_ns": 2080802757,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 8824011760,
+    "audio_total_sum_ns": 6740803354,
+    "audio_first_to_last_ns": 6742212929
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 883172646,
+      "ms": 883.173
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 505267767,
+      "ms": 505.268
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 224382335,
+      "ms": 224.382
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 973247776,
+      "ms": 973.248
+    },
+    "question_to_first_play_start": {
+      "ns": 2080802757,
+      "ms": 2080.803
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 8824011760,
+      "ms": 8824.012
+    },
+    "audio_total_sec": {
+      "ns": 6740803354,
+      "ms": 6740.803,
+      "sec": 6.741
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.091,
+    "router_to_llm_first_ms": 882.082,
+    "question_to_llm_first_ms": 883.173,
+    "llm_first_to_done_ms": 505.268,
+    "question_to_llm_done_ms": 1388.44,
+    "llm_first_to_tts_first_text_ms": 224.382,
+    "question_to_tts_first_text_ms": 1107.555,
+    "first_tts_text_to_first_play_start_ms": 973.248,
+    "tts_rx_to_synth_end_ms": 942.821,
+    "tts_rx_to_play_start_ms": 972.968,
+    "tts_synth_end_to_play_start_ms": 30.147,
+    "question_to_first_audio_ms": 2080.803,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 8824.012,
+    "audio_total_sum_ms": 6740.803,
+    "audio_first_to_last_ms": 6742.213
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793324523363577124,
+      "first_text_rx_ns": 1793324523364047979,
+      "done_rx_ns": 1793324523869315746,
+      "chunk_count": 7,
+      "char_count": 27,
+      "chunks": [
+        {
+          "t_ns": 1793324523364047979,
+          "text": "猫"
+        },
+        {
+          "t_ns": 1793324523401211597,
+          "text": "挑"
+        },
+        {
+          "t_ns": 1793324523428208339,
+          "text": "食可能"
+        },
+        {
+          "t_ns": 1793324523463370201,
+          "text": "跟"
+        },
+        {
+          "t_ns": 1793324523588250341,
+          "text": "心情、环境或身体"
+        },
+        {
+          "t_ns": 1793324523652829265,
+          "text": "有关，建议带"
+        },
+        {
+          "t_ns": 1793324523843295838,
+          "text": "它看看兽医哦～"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793324523588430314,
+      "done_rx_ns": 1793324523869846967,
+      "text_count": 3,
+      "texts": [
+        {
+          "t_ns": 1793324523588430314,
+          "text": "猫挑食可能跟心情、"
+        },
+        {
+          "t_ns": 1793324523653131394,
+          "text": "环境或身体有关，"
+        },
+        {
+          "t_ns": 1793324523869559974,
+          "text": "建议带它看看兽医哦～"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 22,
+    "latency_events_total": 22,
+    "asr_events": 0,
+    "tts_events": 18,
+    "tts_play_pairs": 3,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793324522503026377,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793324522502783076,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793324522502783076, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324523363641557,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793324523363287862,
+      "detail": {
+        "prompt_chars": 357,
+        "n_messages": 6
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793324523363287862, \"detail\": {\"prompt_chars\": 357, \"n_messages\": 6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324523364082668,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793324523363900675,
+      "detail": {
+        "prompt_chars": 357
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793324523363900675, \"detail\": {\"prompt_chars\": 357}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324523364259908,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793324523364046744,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793324523364046744, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324523588916034,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793324523588710154,
+      "detail": {
+        "text_len": 9,
+        "head": "猫挑食可能跟心情、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793324523588710154, \"detail\": {\"text_len\": 9, \"head\": \"猫挑食可能跟心情、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324523589097265,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793324523588769588,
+      "detail": {
+        "text_len": 9
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793324523588769588, \"detail\": {\"text_len\": 9}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324523869359529,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793324523868895033,
+      "detail": {
+        "chars": 27
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793324523868895033, \"detail\": {\"chars\": 27}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324524531857149,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793324524531531028,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 942.756077,
+        "audio_sec": 2.64,
+        "rtf": 0.3571045746212121
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793324524531531028, \"detail\": {\"text_len\": 9, \"dur_ms\": 942.756077, \"audio_sec\": 2.64, \"rtf\": 0.3571045746212121}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324524532443926,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793324524532285864,
+      "detail": {
+        "text_len": 8,
+        "head": "环境或身体有关，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793324524532285864, \"detail\": {\"text_len\": 8, \"head\": \"环境或身体有关，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324524532651726,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793324524532336601,
+      "detail": {
+        "text_len": 8
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793324524532336601, \"detail\": {\"text_len\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324524561974430,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793324524561678090,
+      "detail": {
+        "text_len": 9,
+        "head": "猫挑食可能跟心情、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793324524561678090, \"detail\": {\"text_len\": 9, \"head\": \"猫挑食可能跟心情、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324525227816839,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793324525227508870,
+      "detail": {
+        "text_len": 8,
+        "dur_ms": 695.166684,
+        "audio_sec": 1.92,
+        "rtf": 0.36206598125000006
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793324525227508870, \"detail\": {\"text_len\": 8, \"dur_ms\": 695.166684, \"audio_sec\": 1.92, \"rtf\": 0.36206598125000006}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324525228183060,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793324525228042864,
+      "detail": {
+        "text_len": 10,
+        "head": "建议带它看看兽医哦～"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793324525228042864, \"detail\": {\"text_len\": 10, \"head\": \"建议带它看看兽医哦～\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324525228360150,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793324525228078498,
+      "detail": {
+        "text_len": 10
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793324525228078498, \"detail\": {\"text_len\": 10}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324525967988808,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793324525967680139,
+      "detail": {
+        "text_len": 10,
+        "dur_ms": 739.596358,
+        "audio_sec": 2.08,
+        "rtf": 0.3555751721153846
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793324525967680139, \"detail\": {\"text_len\": 10, \"dur_ms\": 739.596358, \"audio_sec\": 2.08, \"rtf\": 0.3555751721153846}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324525968330691,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793324525968214608,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793324525968214608, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324527243218986,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793324527242941052,
+      "detail": {
+        "text_len": 9,
+        "interrupted": false,
+        "dur_ms": 2681.261263
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793324527242941052, \"detail\": {\"text_len\": 9, \"interrupted\": false, \"dur_ms\": 2681.261263}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324527243748837,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793324527243620345,
+      "detail": {
+        "text_len": 8,
+        "head": "环境或身体有关，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793324527243620345, \"detail\": {\"text_len\": 8, \"head\": \"环境或身体有关，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324529192056276,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793324529191695913,
+      "detail": {
+        "text_len": 8,
+        "interrupted": false,
+        "dur_ms": 1948.072496
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793324529191695913, \"detail\": {\"text_len\": 8, \"interrupted\": false, \"dur_ms\": 1948.072496}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324529192580361,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793324529192426195,
+      "detail": {
+        "text_len": 10,
+        "head": "建议带它看看兽医哦～"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793324529192426195, \"detail\": {\"text_len\": 10, \"head\": \"建议带它看看兽医哦～\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324531304183726,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793324531303891019,
+      "detail": {
+        "text_len": 10,
+        "interrupted": false,
+        "dur_ms": 2111.462018
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793324531303891019, \"detail\": {\"text_len\": 10, \"interrupted\": false, \"dur_ms\": 2111.462018}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324531304928570,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793324531304709419,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793324531304709419, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793324522502783076,
+          "arrival_ns": 1793324522503026377,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793324523363287862,
+          "arrival_ns": 1793324523363641557,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 357,
+            "n_messages": 6
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793324523363900675,
+          "arrival_ns": 1793324523364082668,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 357
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793324523868895033,
+          "arrival_ns": 1793324523869359529,
+          "source": "round",
+          "detail": {
+            "chars": 27
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793324523364046744,
+          "arrival_ns": 1793324523364259908,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793324525968214608,
+          "arrival_ns": 1793324525968330691,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793324523588710154,
+          "arrival_ns": 1793324523588916034,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "猫挑食可能跟心情、"
+          }
+        },
+        {
+          "t_ns": 1793324524532285864,
+          "arrival_ns": 1793324524532443926,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "环境或身体有关，"
+          }
+        },
+        {
+          "t_ns": 1793324525228042864,
+          "arrival_ns": 1793324525228183060,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "建议带它看看兽医哦～"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793324523588769588,
+          "arrival_ns": 1793324523589097265,
+          "source": "round",
+          "detail": {
+            "text_len": 9
+          }
+        },
+        {
+          "t_ns": 1793324524532336601,
+          "arrival_ns": 1793324524532651726,
+          "source": "round",
+          "detail": {
+            "text_len": 8
+          }
+        },
+        {
+          "t_ns": 1793324525228078498,
+          "arrival_ns": 1793324525228360150,
+          "source": "round",
+          "detail": {
+            "text_len": 10
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793324524531531028,
+          "arrival_ns": 1793324524531857149,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 942.756077,
+            "audio_sec": 2.64,
+            "rtf": 0.3571045746212121
+          }
+        },
+        {
+          "t_ns": 1793324525227508870,
+          "arrival_ns": 1793324525227816839,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "dur_ms": 695.166684,
+            "audio_sec": 1.92,
+            "rtf": 0.36206598125000006
+          }
+        },
+        {
+          "t_ns": 1793324525967680139,
+          "arrival_ns": 1793324525967988808,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "dur_ms": 739.596358,
+            "audio_sec": 2.08,
+            "rtf": 0.3555751721153846
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793324524561678090,
+          "arrival_ns": 1793324524561974430,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "猫挑食可能跟心情、"
+          }
+        },
+        {
+          "t_ns": 1793324527243620345,
+          "arrival_ns": 1793324527243748837,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "环境或身体有关，"
+          }
+        },
+        {
+          "t_ns": 1793324529192426195,
+          "arrival_ns": 1793324529192580361,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "建议带它看看兽医哦～"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793324527242941052,
+          "arrival_ns": 1793324527243218986,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "interrupted": false,
+            "dur_ms": 2681.261263
+          }
+        },
+        {
+          "t_ns": 1793324529191695913,
+          "arrival_ns": 1793324529192056276,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "interrupted": false,
+            "dur_ms": 1948.072496
+          }
+        },
+        {
+          "t_ns": 1793324531303891019,
+          "arrival_ns": 1793324531304183726,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "interrupted": false,
+            "dur_ms": 2111.462018
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793324531304709419,
+          "arrival_ns": 1793324531304928570,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 40.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 1,
+    "interval_s": 1.0
+  }
+}

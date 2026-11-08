@@ -1,0 +1,927 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1081137",
+  "host": "artrc",
+  "tag": "opt2_chatgen",
+  "round_index": 2,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T11:10:21.801",
+  "finished_at": "2026-10-30T11:10:33.759",
+  "duration_s": 11.958,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "推荐一部好看的电影",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793329821802330290,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793329821801922482,
+    "t_publish_question_ns": 1793329821802330290,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793329821802888721,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793329821803223311,
+      "ali_llm_output_start": 1793329822570015560,
+      "ali_llm_output_first_text": 1793329822570467884,
+      "ali_llm_output_done": 1793329823501635225,
+      "tts_realtime_data_start": 1793329822570274675,
+      "tts_realtime_data_first_text": 1793329822946112402,
+      "tts_realtime_data_done": 1793329823501868331,
+      "tts_session_finished": 1793329833455229757
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793329823000227398,
+      "tts_local.synth_start_first": 1793329823000307666,
+      "tts_local.synth_end_first": 1793329823922582889,
+      "tts_local.play_start_first": 1793329824019071565,
+      "tts_local.play_end_last": 1793329833454182755,
+      "tts_local.session_finished": 1793329833454885723
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.893,
+    "router_to_llm_first_ms": 767.245,
+    "question_to_llm_first_ms": 768.138,
+    "llm_first_to_done_ms": 931.167,
+    "question_to_llm_done_ms": 1699.305,
+    "llm_first_to_tts_first_text_ms": 375.645,
+    "question_to_tts_first_text_ms": 1143.782,
+    "first_tts_text_to_first_play_start_ms": 1072.959,
+    "tts_rx_to_synth_end_ms": 922.355,
+    "tts_rx_to_play_start_ms": 1018.844,
+    "tts_synth_end_to_play_start_ms": 96.489,
+    "question_to_first_audio_ms": 2216.741,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 11652.899,
+    "audio_total_sum_ms": 9432.888,
+    "audio_first_to_last_ms": 9435.111
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 893021,
+    "router_to_llm_first_ns": 767244573,
+    "question_to_llm_first_ns": 768137594,
+    "llm_first_to_done_ns": 931167341,
+    "question_to_llm_done_ns": 1699304935,
+    "llm_first_to_tts_first_text_ns": 375644518,
+    "question_to_tts_first_text_ns": 1143782112,
+    "first_tts_text_to_first_play_start_ns": 1072959163,
+    "tts_rx_to_synth_end_ns": 922355491,
+    "tts_rx_to_play_start_ns": 1018844167,
+    "tts_synth_end_to_play_start_ns": 96488676,
+    "question_to_first_audio_ns": 2216741275,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 11652899467,
+    "audio_total_sum_ns": 9432887566,
+    "audio_first_to_last_ns": 9435111190
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 768137594,
+      "ms": 768.138
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 931167341,
+      "ms": 931.167
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 375644518,
+      "ms": 375.645
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 1072959163,
+      "ms": 1072.959
+    },
+    "question_to_first_play_start": {
+      "ns": 2216741275,
+      "ms": 2216.741
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 11652899467,
+      "ms": 11652.899
+    },
+    "audio_total_sec": {
+      "ns": 9432887566,
+      "ms": 9432.888,
+      "sec": 9.433
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.893,
+    "router_to_llm_first_ms": 767.245,
+    "question_to_llm_first_ms": 768.138,
+    "llm_first_to_done_ms": 931.167,
+    "question_to_llm_done_ms": 1699.305,
+    "llm_first_to_tts_first_text_ms": 375.645,
+    "question_to_tts_first_text_ms": 1143.782,
+    "first_tts_text_to_first_play_start_ms": 1072.959,
+    "tts_rx_to_synth_end_ms": 922.355,
+    "tts_rx_to_play_start_ms": 1018.844,
+    "tts_synth_end_to_play_start_ms": 96.489,
+    "question_to_first_audio_ms": 2216.741,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 11652.899,
+    "audio_total_sum_ms": 9432.888,
+    "audio_first_to_last_ms": 9435.111
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793329822570015560,
+      "first_text_rx_ns": 1793329822570467884,
+      "done_rx_ns": 1793329823501635225,
+      "chunk_count": 11,
+      "char_count": 42,
+      "chunks": [
+        {
+          "t_ns": 1793329822570467884,
+          "text": "《"
+        },
+        {
+          "t_ns": 1793329822624296298,
+          "text": "海"
+        },
+        {
+          "t_ns": 1793329822699111638,
+          "text": "蒂"
+        },
+        {
+          "t_ns": 1793329822699415636,
+          "text": "和"
+        },
+        {
+          "t_ns": 1793329822828162847,
+          "text": "爷爷》特别治愈"
+        },
+        {
+          "t_ns": 1793329822945888393,
+          "text": "，像喝了一杯"
+        },
+        {
+          "t_ns": 1793329823056267728,
+          "text": "温热的牛奶"
+        },
+        {
+          "t_ns": 1793329823126333917,
+          "text": "～  \n画面美"
+        },
+        {
+          "t_ns": 1793329823271231347,
+          "text": "，故事暖，看完"
+        },
+        {
+          "t_ns": 1793329823362357622,
+          "text": "心都软软"
+        },
+        {
+          "t_ns": 1793329823481539121,
+          "text": "的。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793329822946112402,
+      "done_rx_ns": 1793329823501868331,
+      "text_count": 4,
+      "texts": [
+        {
+          "t_ns": 1793329822946112402,
+          "text": "《海蒂和爷爷》特别治愈，"
+        },
+        {
+          "t_ns": 1793329823272548177,
+          "text": "像喝了一杯温热的牛奶～  \n画面美，"
+        },
+        {
+          "t_ns": 1793329823272783048,
+          "text": "故事暖，"
+        },
+        {
+          "t_ns": 1793329823481834288,
+          "text": "看完心都软软的。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 28,
+    "latency_events_total": 28,
+    "asr_events": 0,
+    "tts_events": 23,
+    "tts_play_pairs": 4,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793329822196810683,
+      "node": "llm_medical",
+      "stage": "intent_judge",
+      "t_ns": 1793329822196474038,
+      "detail": {
+        "model": "qwen-flash",
+        "ms": 392.5,
+        "answer": "聊",
+        "kind": "chat"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent_judge\", \"t_ns\": 1793329822196474038, \"detail\": {\"model\": \"qwen-flash\", \"ms\": 392.5, \"answer\": \"聊\", \"kind\": \"chat\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329822197024631,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793329822196640016,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "llm:qwen-flash",
+        "keyword_medical": false,
+        "chitchat": false,
+        "judge_kind": "chat",
+        "judge_ms": 392.5
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793329822196640016, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"llm:qwen-flash\", \"keyword_medical\": false, \"chitchat\": false, \"judge_kind\": \"chat\", \"judge_ms\": 392.5}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329822570060250,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793329822569681514,
+      "detail": {
+        "prompt_chars": 408,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793329822569681514, \"detail\": {\"prompt_chars\": 408, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329822570303738,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793329822570163564,
+      "detail": {
+        "prompt_chars": 408
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793329822570163564, \"detail\": {\"prompt_chars\": 408}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329822570636993,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793329822570478978,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793329822570478978, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329823000458446,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329823000227398,
+      "detail": {
+        "text_len": 12,
+        "head": "《海蒂和爷爷》特别治愈，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329823000227398, \"detail\": {\"text_len\": 12, \"head\": \"《海蒂和爷爷》特别治愈，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329823000706080,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329823000307666,
+      "detail": {
+        "text_len": 12
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329823000307666, \"detail\": {\"text_len\": 12}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329823501677591,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793329823501394801,
+      "detail": {
+        "chars": 42
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793329823501394801, \"detail\": {\"chars\": 42}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329823922836851,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329823922582889,
+      "detail": {
+        "text_len": 12,
+        "dur_ms": 922.270821,
+        "audio_sec": 2.56,
+        "rtf": 0.36026203945312496
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329823922582889, \"detail\": {\"text_len\": 12, \"dur_ms\": 922.270821, \"audio_sec\": 2.56, \"rtf\": 0.36026203945312496}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329823930553444,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329823930358617,
+      "detail": {
+        "text_len": 18,
+        "head": "像喝了一杯温热的牛奶～  \n画面美，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329823930358617, \"detail\": {\"text_len\": 18, \"head\": \"像喝了一杯温热的牛奶～  \\n画面美，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329823930772055,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329823930423805,
+      "detail": {
+        "text_len": 18
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329823930423805, \"detail\": {\"text_len\": 18}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329824019461697,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329824019071565,
+      "detail": {
+        "text_len": 12,
+        "head": "《海蒂和爷爷》特别治愈，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329824019071565, \"detail\": {\"text_len\": 12, \"head\": \"《海蒂和爷爷》特别治愈，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329825291779127,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329825291479108,
+      "detail": {
+        "text_len": 18,
+        "dur_ms": 1361.048601,
+        "audio_sec": 3.92,
+        "rtf": 0.34720627576530616
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329825291479108, \"detail\": {\"text_len\": 18, \"dur_ms\": 1361.048601, \"audio_sec\": 3.92, \"rtf\": 0.34720627576530616}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329825292133175,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329825292000151,
+      "detail": {
+        "text_len": 4,
+        "head": "故事暖，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329825292000151, \"detail\": {\"text_len\": 4, \"head\": \"故事暖，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329825292315384,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329825292033522,
+      "detail": {
+        "text_len": 4
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329825292033522, \"detail\": {\"text_len\": 4}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329825680598620,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329825680298038,
+      "detail": {
+        "text_len": 4,
+        "dur_ms": 388.260089,
+        "audio_sec": 1.04,
+        "rtf": 0.3733270086538461
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329825680298038, \"detail\": {\"text_len\": 4, \"dur_ms\": 388.260089, \"audio_sec\": 1.04, \"rtf\": 0.3733270086538461}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329825680989469,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329825680858708,
+      "detail": {
+        "text_len": 8,
+        "head": "看完心都软软的。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329825680858708, \"detail\": {\"text_len\": 8, \"head\": \"看完心都软软的。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329825681166814,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329825680900496,
+      "detail": {
+        "text_len": 8
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329825680900496, \"detail\": {\"text_len\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329826375490278,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329826375196109,
+      "detail": {
+        "text_len": 8,
+        "dur_ms": 694.290681,
+        "audio_sec": 1.92,
+        "rtf": 0.3616097296875
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329826375196109, \"detail\": {\"text_len\": 8, \"dur_ms\": 694.290681, \"audio_sec\": 1.92, \"rtf\": 0.3616097296875}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329826375878793,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793329826375750469,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793329826375750469, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329826579672533,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329826579328074,
+      "detail": {
+        "text_len": 12,
+        "interrupted": false,
+        "dur_ms": 2560.254817
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329826579328074, \"detail\": {\"text_len\": 12, \"interrupted\": false, \"dur_ms\": 2560.254817}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329826580322249,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329826580138367,
+      "detail": {
+        "text_len": 18,
+        "head": "像喝了一杯温热的牛奶～  \n画面美，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329826580138367, \"detail\": {\"text_len\": 18, \"head\": \"像喝了一杯温热的牛奶～  \\n画面美，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329830498372941,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329830498035344,
+      "detail": {
+        "text_len": 18,
+        "interrupted": false,
+        "dur_ms": 3917.893827
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329830498035344, \"detail\": {\"text_len\": 18, \"interrupted\": false, \"dur_ms\": 3917.893827}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329830498913146,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329830498718813,
+      "detail": {
+        "text_len": 4,
+        "head": "故事暖，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329830498718813, \"detail\": {\"text_len\": 4, \"head\": \"故事暖，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329831535951183,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329831535527374,
+      "detail": {
+        "text_len": 4,
+        "interrupted": false,
+        "dur_ms": 1036.803648
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329831535527374, \"detail\": {\"text_len\": 4, \"interrupted\": false, \"dur_ms\": 1036.803648}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329831536608658,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329831536257236,
+      "detail": {
+        "text_len": 8,
+        "head": "看完心都软软的。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329831536257236, \"detail\": {\"text_len\": 8, \"head\": \"看完心都软软的。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329833454545914,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329833454182755,
+      "detail": {
+        "text_len": 8,
+        "interrupted": false,
+        "dur_ms": 1917.921739
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329833454182755, \"detail\": {\"text_len\": 8, \"interrupted\": false, \"dur_ms\": 1917.921739}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329833455051537,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793329833454885723,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793329833454885723, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent_judge": [
+        {
+          "t_ns": 1793329822196474038,
+          "arrival_ns": 1793329822196810683,
+          "source": "round",
+          "detail": {
+            "model": "qwen-flash",
+            "ms": 392.5,
+            "answer": "聊",
+            "kind": "chat"
+          }
+        }
+      ],
+      "intent": [
+        {
+          "t_ns": 1793329822196640016,
+          "arrival_ns": 1793329822197024631,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "llm:qwen-flash",
+            "keyword_medical": false,
+            "chitchat": false,
+            "judge_kind": "chat",
+            "judge_ms": 392.5
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793329822569681514,
+          "arrival_ns": 1793329822570060250,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 408,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793329822570163564,
+          "arrival_ns": 1793329822570303738,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 408
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793329823501394801,
+          "arrival_ns": 1793329823501677591,
+          "source": "round",
+          "detail": {
+            "chars": 42
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793329822570478978,
+          "arrival_ns": 1793329822570636993,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793329826375750469,
+          "arrival_ns": 1793329826375878793,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793329823000227398,
+          "arrival_ns": 1793329823000458446,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "《海蒂和爷爷》特别治愈，"
+          }
+        },
+        {
+          "t_ns": 1793329823930358617,
+          "arrival_ns": 1793329823930553444,
+          "source": "round",
+          "detail": {
+            "text_len": 18,
+            "head": "像喝了一杯温热的牛奶～  \n画面美，"
+          }
+        },
+        {
+          "t_ns": 1793329825292000151,
+          "arrival_ns": 1793329825292133175,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "故事暖，"
+          }
+        },
+        {
+          "t_ns": 1793329825680858708,
+          "arrival_ns": 1793329825680989469,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "看完心都软软的。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793329823000307666,
+          "arrival_ns": 1793329823000706080,
+          "source": "round",
+          "detail": {
+            "text_len": 12
+          }
+        },
+        {
+          "t_ns": 1793329823930423805,
+          "arrival_ns": 1793329823930772055,
+          "source": "round",
+          "detail": {
+            "text_len": 18
+          }
+        },
+        {
+          "t_ns": 1793329825292033522,
+          "arrival_ns": 1793329825292315384,
+          "source": "round",
+          "detail": {
+            "text_len": 4
+          }
+        },
+        {
+          "t_ns": 1793329825680900496,
+          "arrival_ns": 1793329825681166814,
+          "source": "round",
+          "detail": {
+            "text_len": 8
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793329823922582889,
+          "arrival_ns": 1793329823922836851,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "dur_ms": 922.270821,
+            "audio_sec": 2.56,
+            "rtf": 0.36026203945312496
+          }
+        },
+        {
+          "t_ns": 1793329825291479108,
+          "arrival_ns": 1793329825291779127,
+          "source": "round",
+          "detail": {
+            "text_len": 18,
+            "dur_ms": 1361.048601,
+            "audio_sec": 3.92,
+            "rtf": 0.34720627576530616
+          }
+        },
+        {
+          "t_ns": 1793329825680298038,
+          "arrival_ns": 1793329825680598620,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "dur_ms": 388.260089,
+            "audio_sec": 1.04,
+            "rtf": 0.3733270086538461
+          }
+        },
+        {
+          "t_ns": 1793329826375196109,
+          "arrival_ns": 1793329826375490278,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "dur_ms": 694.290681,
+            "audio_sec": 1.92,
+            "rtf": 0.3616097296875
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793329824019071565,
+          "arrival_ns": 1793329824019461697,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "《海蒂和爷爷》特别治愈，"
+          }
+        },
+        {
+          "t_ns": 1793329826580138367,
+          "arrival_ns": 1793329826580322249,
+          "source": "round",
+          "detail": {
+            "text_len": 18,
+            "head": "像喝了一杯温热的牛奶～  \n画面美，"
+          }
+        },
+        {
+          "t_ns": 1793329830498718813,
+          "arrival_ns": 1793329830498913146,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "故事暖，"
+          }
+        },
+        {
+          "t_ns": 1793329831536257236,
+          "arrival_ns": 1793329831536608658,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "看完心都软软的。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793329826579328074,
+          "arrival_ns": 1793329826579672533,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "interrupted": false,
+            "dur_ms": 2560.254817
+          }
+        },
+        {
+          "t_ns": 1793329830498035344,
+          "arrival_ns": 1793329830498372941,
+          "source": "round",
+          "detail": {
+            "text_len": 18,
+            "interrupted": false,
+            "dur_ms": 3917.893827
+          }
+        },
+        {
+          "t_ns": 1793329831535527374,
+          "arrival_ns": 1793329831535951183,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "interrupted": false,
+            "dur_ms": 1036.803648
+          }
+        },
+        {
+          "t_ns": 1793329833454182755,
+          "arrival_ns": 1793329833454545914,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "interrupted": false,
+            "dur_ms": 1917.921739
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793329833454885723,
+          "arrival_ns": 1793329833455051537,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 10,
+    "interval_s": 2.0
+  }
+}

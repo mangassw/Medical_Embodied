@@ -1,0 +1,913 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1064920",
+  "host": "artrc",
+  "tag": "chat50",
+  "round_index": 45,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T10:35:17.632",
+  "finished_at": "2026-10-30T10:35:28.199",
+  "duration_s": 10.567,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "咖啡怎么冲才好喝",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793327717632947520,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793327717632451885,
+    "t_publish_question_ns": 1793327717632947520,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793327717633536715,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793327717633959800,
+      "ali_llm_output_start": 1793327718382345932,
+      "ali_llm_output_first_text": 1793327718382823458,
+      "ali_llm_output_done": 1793327718905210130,
+      "tts_realtime_data_start": 1793327718382614379,
+      "tts_realtime_data_first_text": 1793327718486874084,
+      "tts_realtime_data_done": 1793327718905824976,
+      "tts_session_finished": 1793327727894642752
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793327718487091220,
+      "tts_local.synth_start_first": 1793327718487152565,
+      "tts_local.synth_end_first": 1793327719125914053,
+      "tts_local.play_start_first": 1793327719154997023,
+      "tts_local.play_end_last": 1793327727893598315,
+      "tts_local.session_finished": 1793327727894288025
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.012,
+    "router_to_llm_first_ms": 748.864,
+    "question_to_llm_first_ms": 749.876,
+    "llm_first_to_done_ms": 522.387,
+    "question_to_llm_done_ms": 1272.263,
+    "llm_first_to_tts_first_text_ms": 104.051,
+    "question_to_tts_first_text_ms": 853.927,
+    "first_tts_text_to_first_play_start_ms": 668.123,
+    "tts_rx_to_synth_end_ms": 638.823,
+    "tts_rx_to_play_start_ms": 667.906,
+    "tts_synth_end_to_play_start_ms": 29.083,
+    "question_to_first_audio_ms": 1522.05,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 10261.695,
+    "audio_total_sum_ms": 8736.535,
+    "audio_first_to_last_ms": 8738.601
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 1012280,
+    "router_to_llm_first_ns": 748863658,
+    "question_to_llm_first_ns": 749875938,
+    "llm_first_to_done_ns": 522386672,
+    "question_to_llm_done_ns": 1272262610,
+    "llm_first_to_tts_first_text_ns": 104050626,
+    "question_to_tts_first_text_ns": 853926564,
+    "first_tts_text_to_first_play_start_ns": 668122939,
+    "tts_rx_to_synth_end_ns": 638822833,
+    "tts_rx_to_play_start_ns": 667905803,
+    "tts_synth_end_to_play_start_ns": 29082970,
+    "question_to_first_audio_ns": 1522049503,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 10261695232,
+    "audio_total_sum_ns": 8736534785,
+    "audio_first_to_last_ns": 8738601292
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 749875938,
+      "ms": 749.876
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 522386672,
+      "ms": 522.387
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 104050626,
+      "ms": 104.051
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 668122939,
+      "ms": 668.123
+    },
+    "question_to_first_play_start": {
+      "ns": 1522049503,
+      "ms": 1522.05
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 10261695232,
+      "ms": 10261.695
+    },
+    "audio_total_sec": {
+      "ns": 8736534785,
+      "ms": 8736.535,
+      "sec": 8.737
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.012,
+    "router_to_llm_first_ms": 748.864,
+    "question_to_llm_first_ms": 749.876,
+    "llm_first_to_done_ms": 522.387,
+    "question_to_llm_done_ms": 1272.263,
+    "llm_first_to_tts_first_text_ms": 104.051,
+    "question_to_tts_first_text_ms": 853.927,
+    "first_tts_text_to_first_play_start_ms": 668.123,
+    "tts_rx_to_synth_end_ms": 638.823,
+    "tts_rx_to_play_start_ms": 667.906,
+    "tts_synth_end_to_play_start_ms": 29.083,
+    "question_to_first_audio_ms": 1522.05,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 10261.695,
+    "audio_total_sum_ms": 8736.535,
+    "audio_first_to_last_ms": 8738.601
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793327718382345932,
+      "first_text_rx_ns": 1793327718382823458,
+      "done_rx_ns": 1793327718905210130,
+      "chunk_count": 8,
+      "char_count": 32,
+      "chunks": [
+        {
+          "t_ns": 1793327718382823458,
+          "text": "新鲜"
+        },
+        {
+          "t_ns": 1793327718409780742,
+          "text": "咖啡"
+        },
+        {
+          "t_ns": 1793327718444756266,
+          "text": "粉"
+        },
+        {
+          "t_ns": 1793327718486652003,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793327718603456475,
+          "text": "水温九十度左右"
+        },
+        {
+          "t_ns": 1793327718706427332,
+          "text": "，  \n慢慢注"
+        },
+        {
+          "t_ns": 1793327718804264176,
+          "text": "水，萃取两"
+        },
+        {
+          "t_ns": 1793327718890822893,
+          "text": "分钟左右最香。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793327718486874084,
+      "done_rx_ns": 1793327718905824976,
+      "text_count": 4,
+      "texts": [
+        {
+          "t_ns": 1793327718486874084,
+          "text": "新鲜咖啡粉，"
+        },
+        {
+          "t_ns": 1793327718706676642,
+          "text": "水温九十度左右，"
+        },
+        {
+          "t_ns": 1793327718804513700,
+          "text": "慢慢注水，"
+        },
+        {
+          "t_ns": 1793327718892120289,
+          "text": "萃取两分钟左右最香。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 28,
+    "latency_events_total": 28,
+    "asr_events": 0,
+    "tts_events": 23,
+    "tts_play_pairs": 4,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793327717988553464,
+      "node": "llm_medical",
+      "stage": "intent_judge",
+      "t_ns": 1793327717988208775,
+      "detail": {
+        "model": "qwen-flash",
+        "ms": 353.4,
+        "answer": "聊",
+        "kind": "chat"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent_judge\", \"t_ns\": 1793327717988208775, \"detail\": {\"model\": \"qwen-flash\", \"ms\": 353.4, \"answer\": \"聊\", \"kind\": \"chat\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327717988761501,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793327717988360684,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "llm:qwen-flash",
+        "keyword_medical": false,
+        "judge_kind": "chat",
+        "judge_ms": 353.4
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793327717988360684, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"llm:qwen-flash\", \"keyword_medical\": false, \"judge_kind\": \"chat\", \"judge_ms\": 353.4}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327718382391306,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793327718382025524,
+      "detail": {
+        "prompt_chars": 415,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793327718382025524, \"detail\": {\"prompt_chars\": 415, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327718382646470,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793327718382495098,
+      "detail": {
+        "prompt_chars": 415
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793327718382495098, \"detail\": {\"prompt_chars\": 415}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327718382993284,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793327718382867270,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793327718382867270, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327718487270634,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327718487091220,
+      "detail": {
+        "text_len": 6,
+        "head": "新鲜咖啡粉，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327718487091220, \"detail\": {\"text_len\": 6, \"head\": \"新鲜咖啡粉，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327718487583084,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327718487152565,
+      "detail": {
+        "text_len": 6
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327718487152565, \"detail\": {\"text_len\": 6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327718904940642,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793327718904692110,
+      "detail": {
+        "chars": 32
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793327718904692110, \"detail\": {\"chars\": 32}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327719126249709,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327719125914053,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 638.757479,
+        "audio_sec": 1.76,
+        "rtf": 0.36293038579545456
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327719125914053, \"detail\": {\"text_len\": 6, \"dur_ms\": 638.757479, \"audio_sec\": 1.76, \"rtf\": 0.36293038579545456}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327719126663976,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327719126481615,
+      "detail": {
+        "text_len": 8,
+        "head": "水温九十度左右，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327719126481615, \"detail\": {\"text_len\": 8, \"head\": \"水温九十度左右，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327719126848933,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327719126541014,
+      "detail": {
+        "text_len": 8
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327719126541014, \"detail\": {\"text_len\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327719155234280,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327719154997023,
+      "detail": {
+        "text_len": 6,
+        "head": "新鲜咖啡粉，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327719154997023, \"detail\": {\"text_len\": 6, \"head\": \"新鲜咖啡粉，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327719971237887,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327719970956111,
+      "detail": {
+        "text_len": 8,
+        "dur_ms": 844.410281,
+        "audio_sec": 1.92,
+        "rtf": 0.4397970213541667
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327719970956111, \"detail\": {\"text_len\": 8, \"dur_ms\": 844.410281, \"audio_sec\": 1.92, \"rtf\": 0.4397970213541667}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327719971616590,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327719971501766,
+      "detail": {
+        "text_len": 5,
+        "head": "慢慢注水，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327719971501766, \"detail\": {\"text_len\": 5, \"head\": \"慢慢注水，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327719971818104,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327719971545850,
+      "detail": {
+        "text_len": 5
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327719971545850, \"detail\": {\"text_len\": 5}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327720878133885,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327720877814750,
+      "detail": {
+        "text_len": 5,
+        "dur_ms": 906.264209,
+        "audio_sec": 2.56,
+        "rtf": 0.354009456640625
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327720877814750, \"detail\": {\"text_len\": 5, \"dur_ms\": 906.264209, \"audio_sec\": 2.56, \"rtf\": 0.354009456640625}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327720878527685,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327720878389689,
+      "detail": {
+        "text_len": 10,
+        "head": "萃取两分钟左右最香。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327720878389689, \"detail\": {\"text_len\": 10, \"head\": \"萃取两分钟左右最香。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327720878712709,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327720878440684,
+      "detail": {
+        "text_len": 10
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327720878440684, \"detail\": {\"text_len\": 10}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327721002695193,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327721002354420,
+      "detail": {
+        "text_len": 6,
+        "interrupted": false,
+        "dur_ms": 1847.355788
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327721002354420, \"detail\": {\"text_len\": 6, \"interrupted\": false, \"dur_ms\": 1847.355788}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327721003216327,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327721003029846,
+      "detail": {
+        "text_len": 8,
+        "head": "水温九十度左右，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327721003029846, \"detail\": {\"text_len\": 8, \"head\": \"水温九十度左右，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327721715712517,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327721715407451,
+      "detail": {
+        "text_len": 10,
+        "dur_ms": 836.961829,
+        "audio_sec": 2.4,
+        "rtf": 0.34873409541666667
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327721715407451, \"detail\": {\"text_len\": 10, \"dur_ms\": 836.961829, \"audio_sec\": 2.4, \"rtf\": 0.34873409541666667}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327721716260152,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793327721716096233,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793327721716096233, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327722924344209,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327722924063562,
+      "detail": {
+        "text_len": 8,
+        "interrupted": false,
+        "dur_ms": 1921.031399
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327722924063562, \"detail\": {\"text_len\": 8, \"interrupted\": false, \"dur_ms\": 1921.031399}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327722924906186,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327722924745838,
+      "detail": {
+        "text_len": 5,
+        "head": "慢慢注水，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327722924745838, \"detail\": {\"text_len\": 5, \"head\": \"慢慢注水，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327725485323650,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327725484987763,
+      "detail": {
+        "text_len": 5,
+        "interrupted": false,
+        "dur_ms": 2560.238819
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327725484987763, \"detail\": {\"text_len\": 5, \"interrupted\": false, \"dur_ms\": 2560.238819}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327725485945644,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327725485696568,
+      "detail": {
+        "text_len": 10,
+        "head": "萃取两分钟左右最香。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327725485696568, \"detail\": {\"text_len\": 10, \"head\": \"萃取两分钟左右最香。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327727893936638,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327727893598315,
+      "detail": {
+        "text_len": 10,
+        "interrupted": false,
+        "dur_ms": 2407.898333
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327727893598315, \"detail\": {\"text_len\": 10, \"interrupted\": false, \"dur_ms\": 2407.898333}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327727894429708,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793327727894288025,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793327727894288025, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent_judge": [
+        {
+          "t_ns": 1793327717988208775,
+          "arrival_ns": 1793327717988553464,
+          "source": "round",
+          "detail": {
+            "model": "qwen-flash",
+            "ms": 353.4,
+            "answer": "聊",
+            "kind": "chat"
+          }
+        }
+      ],
+      "intent": [
+        {
+          "t_ns": 1793327717988360684,
+          "arrival_ns": 1793327717988761501,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "llm:qwen-flash",
+            "keyword_medical": false,
+            "judge_kind": "chat",
+            "judge_ms": 353.4
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793327718382025524,
+          "arrival_ns": 1793327718382391306,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 415,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793327718382495098,
+          "arrival_ns": 1793327718382646470,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 415
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793327718904692110,
+          "arrival_ns": 1793327718904940642,
+          "source": "round",
+          "detail": {
+            "chars": 32
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793327718382867270,
+          "arrival_ns": 1793327718382993284,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793327721716096233,
+          "arrival_ns": 1793327721716260152,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793327718487091220,
+          "arrival_ns": 1793327718487270634,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "新鲜咖啡粉，"
+          }
+        },
+        {
+          "t_ns": 1793327719126481615,
+          "arrival_ns": 1793327719126663976,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "水温九十度左右，"
+          }
+        },
+        {
+          "t_ns": 1793327719971501766,
+          "arrival_ns": 1793327719971616590,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "慢慢注水，"
+          }
+        },
+        {
+          "t_ns": 1793327720878389689,
+          "arrival_ns": 1793327720878527685,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "萃取两分钟左右最香。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793327718487152565,
+          "arrival_ns": 1793327718487583084,
+          "source": "round",
+          "detail": {
+            "text_len": 6
+          }
+        },
+        {
+          "t_ns": 1793327719126541014,
+          "arrival_ns": 1793327719126848933,
+          "source": "round",
+          "detail": {
+            "text_len": 8
+          }
+        },
+        {
+          "t_ns": 1793327719971545850,
+          "arrival_ns": 1793327719971818104,
+          "source": "round",
+          "detail": {
+            "text_len": 5
+          }
+        },
+        {
+          "t_ns": 1793327720878440684,
+          "arrival_ns": 1793327720878712709,
+          "source": "round",
+          "detail": {
+            "text_len": 10
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793327719125914053,
+          "arrival_ns": 1793327719126249709,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 638.757479,
+            "audio_sec": 1.76,
+            "rtf": 0.36293038579545456
+          }
+        },
+        {
+          "t_ns": 1793327719970956111,
+          "arrival_ns": 1793327719971237887,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "dur_ms": 844.410281,
+            "audio_sec": 1.92,
+            "rtf": 0.4397970213541667
+          }
+        },
+        {
+          "t_ns": 1793327720877814750,
+          "arrival_ns": 1793327720878133885,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "dur_ms": 906.264209,
+            "audio_sec": 2.56,
+            "rtf": 0.354009456640625
+          }
+        },
+        {
+          "t_ns": 1793327721715407451,
+          "arrival_ns": 1793327721715712517,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "dur_ms": 836.961829,
+            "audio_sec": 2.4,
+            "rtf": 0.34873409541666667
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793327719154997023,
+          "arrival_ns": 1793327719155234280,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "新鲜咖啡粉，"
+          }
+        },
+        {
+          "t_ns": 1793327721003029846,
+          "arrival_ns": 1793327721003216327,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "水温九十度左右，"
+          }
+        },
+        {
+          "t_ns": 1793327722924745838,
+          "arrival_ns": 1793327722924906186,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "慢慢注水，"
+          }
+        },
+        {
+          "t_ns": 1793327725485696568,
+          "arrival_ns": 1793327725485945644,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "萃取两分钟左右最香。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793327721002354420,
+          "arrival_ns": 1793327721002695193,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "interrupted": false,
+            "dur_ms": 1847.355788
+          }
+        },
+        {
+          "t_ns": 1793327722924063562,
+          "arrival_ns": 1793327722924344209,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "interrupted": false,
+            "dur_ms": 1921.031399
+          }
+        },
+        {
+          "t_ns": 1793327725484987763,
+          "arrival_ns": 1793327725485323650,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "interrupted": false,
+            "dur_ms": 2560.238819
+          }
+        },
+        {
+          "t_ns": 1793327727893598315,
+          "arrival_ns": 1793327727893936638,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "interrupted": false,
+            "dur_ms": 2407.898333
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793327727894288025,
+          "arrival_ns": 1793327727894429708,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 50,
+    "interval_s": 2.0
+  }
+}

@@ -1,0 +1,913 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1064920",
+  "host": "artrc",
+  "tag": "chat50",
+  "round_index": 31,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T10:32:39.863",
+  "finished_at": "2026-10-30T10:32:48.931",
+  "duration_s": 9.069,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "怎么学英语比较快",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793327559863575386,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793327559863116806,
+    "t_publish_question_ns": 1793327559863575386,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793327559864245378,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793327559864533621,
+      "ali_llm_output_start": 1793327561189145005,
+      "ali_llm_output_first_text": 1793327561189576831,
+      "ali_llm_output_done": 1793327561710768175,
+      "tts_realtime_data_start": 1793327561189629689,
+      "tts_realtime_data_first_text": 1793327561385855999,
+      "tts_realtime_data_done": 1793327561711454150,
+      "tts_session_finished": 1793327568631830363
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793327561386134054,
+      "tts_local.synth_start_first": 1793327561386202271,
+      "tts_local.synth_end_first": 1793327562070876176,
+      "tts_local.play_start_first": 1793327562155127218,
+      "tts_local.play_end_last": 1793327568630566793,
+      "tts_local.session_finished": 1793327568631396015
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.958,
+    "router_to_llm_first_ms": 1325.043,
+    "question_to_llm_first_ms": 1326.001,
+    "llm_first_to_done_ms": 521.191,
+    "question_to_llm_done_ms": 1847.193,
+    "llm_first_to_tts_first_text_ms": 196.279,
+    "question_to_tts_first_text_ms": 1522.281,
+    "first_tts_text_to_first_play_start_ms": 769.271,
+    "tts_rx_to_synth_end_ms": 684.742,
+    "tts_rx_to_play_start_ms": 768.993,
+    "tts_synth_end_to_play_start_ms": 84.251,
+    "question_to_first_audio_ms": 2291.552,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 8768.255,
+    "audio_total_sum_ms": 6472.925,
+    "audio_first_to_last_ms": 6475.44
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 958235,
+    "router_to_llm_first_ns": 1325043210,
+    "question_to_llm_first_ns": 1326001445,
+    "llm_first_to_done_ns": 521191344,
+    "question_to_llm_done_ns": 1847192789,
+    "llm_first_to_tts_first_text_ns": 196279168,
+    "question_to_tts_first_text_ns": 1522280613,
+    "first_tts_text_to_first_play_start_ns": 769271219,
+    "tts_rx_to_synth_end_ns": 684742122,
+    "tts_rx_to_play_start_ns": 768993164,
+    "tts_synth_end_to_play_start_ns": 84251042,
+    "question_to_first_audio_ns": 2291551832,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 8768254977,
+    "audio_total_sum_ns": 6472925024,
+    "audio_first_to_last_ns": 6475439575
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 1326001445,
+      "ms": 1326.001
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 521191344,
+      "ms": 521.191
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 196279168,
+      "ms": 196.279
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 769271219,
+      "ms": 769.271
+    },
+    "question_to_first_play_start": {
+      "ns": 2291551832,
+      "ms": 2291.552
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 8768254977,
+      "ms": 8768.255
+    },
+    "audio_total_sec": {
+      "ns": 6472925024,
+      "ms": 6472.925,
+      "sec": 6.473
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.958,
+    "router_to_llm_first_ms": 1325.043,
+    "question_to_llm_first_ms": 1326.001,
+    "llm_first_to_done_ms": 521.191,
+    "question_to_llm_done_ms": 1847.193,
+    "llm_first_to_tts_first_text_ms": 196.279,
+    "question_to_tts_first_text_ms": 1522.281,
+    "first_tts_text_to_first_play_start_ms": 769.271,
+    "tts_rx_to_synth_end_ms": 684.742,
+    "tts_rx_to_play_start_ms": 768.993,
+    "tts_synth_end_to_play_start_ms": 84.251,
+    "question_to_first_audio_ms": 2291.552,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 8768.255,
+    "audio_total_sum_ms": 6472.925,
+    "audio_first_to_last_ms": 6475.44
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793327561189145005,
+      "first_text_rx_ns": 1793327561189576831,
+      "done_rx_ns": 1793327561710768175,
+      "chunk_count": 8,
+      "char_count": 29,
+      "chunks": [
+        {
+          "t_ns": 1793327561189576831,
+          "text": "每天"
+        },
+        {
+          "t_ns": 1793327561229469797,
+          "text": "听"
+        },
+        {
+          "t_ns": 1793327561343684177,
+          "text": "一首"
+        },
+        {
+          "t_ns": 1793327561343996368,
+          "text": "英文"
+        },
+        {
+          "t_ns": 1793327561385646965,
+          "text": "歌，跟唱"
+        },
+        {
+          "t_ns": 1793327561511165393,
+          "text": "几句，  \n坚持"
+        },
+        {
+          "t_ns": 1793327561634278062,
+          "text": "一个月，耳朵就熟"
+        },
+        {
+          "t_ns": 1793327561684980464,
+          "text": "了～"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793327561385855999,
+      "done_rx_ns": 1793327561711454150,
+      "text_count": 4,
+      "texts": [
+        {
+          "t_ns": 1793327561385855999,
+          "text": "每天听一首英文歌，"
+        },
+        {
+          "t_ns": 1793327561511351258,
+          "text": "跟唱几句，"
+        },
+        {
+          "t_ns": 1793327561634467510,
+          "text": "坚持一个月，"
+        },
+        {
+          "t_ns": 1793327561711195517,
+          "text": "耳朵就熟了～"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 28,
+    "latency_events_total": 28,
+    "asr_events": 0,
+    "tts_events": 23,
+    "tts_play_pairs": 4,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793327560701125898,
+      "node": "llm_medical",
+      "stage": "intent_judge",
+      "t_ns": 1793327560700789332,
+      "detail": {
+        "model": "qwen-flash",
+        "ms": 835.6,
+        "answer": "聊",
+        "kind": "chat"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent_judge\", \"t_ns\": 1793327560700789332, \"detail\": {\"model\": \"qwen-flash\", \"ms\": 835.6, \"answer\": \"聊\", \"kind\": \"chat\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327560701458356,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793327560700966880,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "llm:qwen-flash",
+        "keyword_medical": false,
+        "judge_kind": "chat",
+        "judge_ms": 835.6
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793327560700966880, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"llm:qwen-flash\", \"keyword_medical\": false, \"judge_kind\": \"chat\", \"judge_ms\": 835.6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327561189200669,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793327561188828274,
+      "detail": {
+        "prompt_chars": 418,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793327561188828274, \"detail\": {\"prompt_chars\": 418, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327561189675967,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793327561189245348,
+      "detail": {
+        "prompt_chars": 418
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793327561189245348, \"detail\": {\"prompt_chars\": 418}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327561189975571,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793327561189710165,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793327561189710165, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327561386283263,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327561386134054,
+      "detail": {
+        "text_len": 9,
+        "head": "每天听一首英文歌，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327561386134054, \"detail\": {\"text_len\": 9, \"head\": \"每天听一首英文歌，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327561386466763,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327561386202271,
+      "detail": {
+        "text_len": 9
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327561386202271, \"detail\": {\"text_len\": 9}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327561710837524,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793327561710437415,
+      "detail": {
+        "chars": 29
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793327561710437415, \"detail\": {\"chars\": 29}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327562071301259,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327562070876176,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 684.668999,
+        "audio_sec": 1.84,
+        "rtf": 0.3721027168478261
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327562070876176, \"detail\": {\"text_len\": 9, \"dur_ms\": 684.668999, \"audio_sec\": 1.84, \"rtf\": 0.3721027168478261}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327562071715116,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327562071522762,
+      "detail": {
+        "text_len": 5,
+        "head": "跟唱几句，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327562071522762, \"detail\": {\"text_len\": 5, \"head\": \"跟唱几句，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327562072044381,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327562071578960,
+      "detail": {
+        "text_len": 5
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327562071578960, \"detail\": {\"text_len\": 5}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327562155452434,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327562155127218,
+      "detail": {
+        "text_len": 9,
+        "head": "每天听一首英文歌，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327562155127218, \"detail\": {\"text_len\": 9, \"head\": \"每天听一首英文歌，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327562703331828,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327562702898712,
+      "detail": {
+        "text_len": 5,
+        "dur_ms": 631.312934,
+        "audio_sec": 1.76,
+        "rtf": 0.3587005306818182
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327562702898712, \"detail\": {\"text_len\": 5, \"dur_ms\": 631.312934, \"audio_sec\": 1.76, \"rtf\": 0.3587005306818182}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327562703892666,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327562703607571,
+      "detail": {
+        "text_len": 6,
+        "head": "坚持一个月，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327562703607571, \"detail\": {\"text_len\": 6, \"head\": \"坚持一个月，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327562704132334,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327562703667954,
+      "detail": {
+        "text_len": 6
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327562703667954, \"detail\": {\"text_len\": 6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327563240454191,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327563240167896,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 536.49608,
+        "audio_sec": 1.44,
+        "rtf": 0.37256672222222226
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327563240167896, \"detail\": {\"text_len\": 6, \"dur_ms\": 536.49608, \"audio_sec\": 1.44, \"rtf\": 0.37256672222222226}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327563240921556,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327563240796406,
+      "detail": {
+        "text_len": 6,
+        "head": "耳朵就熟了～"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327563240796406, \"detail\": {\"text_len\": 6, \"head\": \"耳朵就熟了～\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327563241117643,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327563240839590,
+      "detail": {
+        "text_len": 6
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327563240839590, \"detail\": {\"text_len\": 6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327563767910702,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327563767628768,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 526.784742,
+        "audio_sec": 1.44,
+        "rtf": 0.36582273750000005
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327563767628768, \"detail\": {\"text_len\": 6, \"dur_ms\": 526.784742, \"audio_sec\": 1.44, \"rtf\": 0.36582273750000005}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327563768329782,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793327563768199780,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793327563768199780, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327563995064252,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327563994705951,
+      "detail": {
+        "text_len": 9,
+        "interrupted": false,
+        "dur_ms": 1839.574279
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327563994705951, \"detail\": {\"text_len\": 9, \"interrupted\": false, \"dur_ms\": 1839.574279}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327563995718616,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327563995557055,
+      "detail": {
+        "text_len": 5,
+        "head": "跟唱几句，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327563995557055, \"detail\": {\"text_len\": 5, \"head\": \"跟唱几句，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327565754503727,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327565754167569,
+      "detail": {
+        "text_len": 5,
+        "interrupted": false,
+        "dur_ms": 1758.606002
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327565754167569, \"detail\": {\"text_len\": 5, \"interrupted\": false, \"dur_ms\": 1758.606002}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327565755026090,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327565754880882,
+      "detail": {
+        "text_len": 6,
+        "head": "坚持一个月，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327565754880882, \"detail\": {\"text_len\": 6, \"head\": \"坚持一个月，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327567192253686,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327567191913551,
+      "detail": {
+        "text_len": 6,
+        "interrupted": false,
+        "dur_ms": 1437.028573
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327567191913551, \"detail\": {\"text_len\": 6, \"interrupted\": false, \"dur_ms\": 1437.028573}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327567192999747,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327567192863685,
+      "detail": {
+        "text_len": 6,
+        "head": "耳朵就熟了～"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327567192863685, \"detail\": {\"text_len\": 6, \"head\": \"耳朵就熟了～\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327568630935769,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327568630566793,
+      "detail": {
+        "text_len": 6,
+        "interrupted": false,
+        "dur_ms": 1437.697376
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327568630566793, \"detail\": {\"text_len\": 6, \"interrupted\": false, \"dur_ms\": 1437.697376}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327568631568780,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793327568631396015,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793327568631396015, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent_judge": [
+        {
+          "t_ns": 1793327560700789332,
+          "arrival_ns": 1793327560701125898,
+          "source": "round",
+          "detail": {
+            "model": "qwen-flash",
+            "ms": 835.6,
+            "answer": "聊",
+            "kind": "chat"
+          }
+        }
+      ],
+      "intent": [
+        {
+          "t_ns": 1793327560700966880,
+          "arrival_ns": 1793327560701458356,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "llm:qwen-flash",
+            "keyword_medical": false,
+            "judge_kind": "chat",
+            "judge_ms": 835.6
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793327561188828274,
+          "arrival_ns": 1793327561189200669,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 418,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793327561189245348,
+          "arrival_ns": 1793327561189675967,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 418
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793327561710437415,
+          "arrival_ns": 1793327561710837524,
+          "source": "round",
+          "detail": {
+            "chars": 29
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793327561189710165,
+          "arrival_ns": 1793327561189975571,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793327563768199780,
+          "arrival_ns": 1793327563768329782,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793327561386134054,
+          "arrival_ns": 1793327561386283263,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "每天听一首英文歌，"
+          }
+        },
+        {
+          "t_ns": 1793327562071522762,
+          "arrival_ns": 1793327562071715116,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "跟唱几句，"
+          }
+        },
+        {
+          "t_ns": 1793327562703607571,
+          "arrival_ns": 1793327562703892666,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "坚持一个月，"
+          }
+        },
+        {
+          "t_ns": 1793327563240796406,
+          "arrival_ns": 1793327563240921556,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "耳朵就熟了～"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793327561386202271,
+          "arrival_ns": 1793327561386466763,
+          "source": "round",
+          "detail": {
+            "text_len": 9
+          }
+        },
+        {
+          "t_ns": 1793327562071578960,
+          "arrival_ns": 1793327562072044381,
+          "source": "round",
+          "detail": {
+            "text_len": 5
+          }
+        },
+        {
+          "t_ns": 1793327562703667954,
+          "arrival_ns": 1793327562704132334,
+          "source": "round",
+          "detail": {
+            "text_len": 6
+          }
+        },
+        {
+          "t_ns": 1793327563240839590,
+          "arrival_ns": 1793327563241117643,
+          "source": "round",
+          "detail": {
+            "text_len": 6
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793327562070876176,
+          "arrival_ns": 1793327562071301259,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 684.668999,
+            "audio_sec": 1.84,
+            "rtf": 0.3721027168478261
+          }
+        },
+        {
+          "t_ns": 1793327562702898712,
+          "arrival_ns": 1793327562703331828,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "dur_ms": 631.312934,
+            "audio_sec": 1.76,
+            "rtf": 0.3587005306818182
+          }
+        },
+        {
+          "t_ns": 1793327563240167896,
+          "arrival_ns": 1793327563240454191,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 536.49608,
+            "audio_sec": 1.44,
+            "rtf": 0.37256672222222226
+          }
+        },
+        {
+          "t_ns": 1793327563767628768,
+          "arrival_ns": 1793327563767910702,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 526.784742,
+            "audio_sec": 1.44,
+            "rtf": 0.36582273750000005
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793327562155127218,
+          "arrival_ns": 1793327562155452434,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "每天听一首英文歌，"
+          }
+        },
+        {
+          "t_ns": 1793327563995557055,
+          "arrival_ns": 1793327563995718616,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "跟唱几句，"
+          }
+        },
+        {
+          "t_ns": 1793327565754880882,
+          "arrival_ns": 1793327565755026090,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "坚持一个月，"
+          }
+        },
+        {
+          "t_ns": 1793327567192863685,
+          "arrival_ns": 1793327567192999747,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "耳朵就熟了～"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793327563994705951,
+          "arrival_ns": 1793327563995064252,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "interrupted": false,
+            "dur_ms": 1839.574279
+          }
+        },
+        {
+          "t_ns": 1793327565754167569,
+          "arrival_ns": 1793327565754503727,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "interrupted": false,
+            "dur_ms": 1758.606002
+          }
+        },
+        {
+          "t_ns": 1793327567191913551,
+          "arrival_ns": 1793327567192253686,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "interrupted": false,
+            "dur_ms": 1437.028573
+          }
+        },
+        {
+          "t_ns": 1793327568630566793,
+          "arrival_ns": 1793327568630935769,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "interrupted": false,
+            "dur_ms": 1437.697376
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793327568631396015,
+          "arrival_ns": 1793327568631568780,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 50,
+    "interval_s": 2.0
+  }
+}

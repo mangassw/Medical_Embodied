@@ -1,0 +1,925 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1064920",
+  "host": "artrc",
+  "tag": "chat50",
+  "round_index": 16,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T10:29:45.602",
+  "finished_at": "2026-10-30T10:29:57.863",
+  "duration_s": 12.261,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "背首诗听听",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793327385603200231,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793327385602817817,
+    "t_publish_question_ns": 1793327385603200231,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793327385603679228,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793327385604133602,
+      "ali_llm_output_start": 1793327386884209831,
+      "ali_llm_output_first_text": 1793327386884630699,
+      "ali_llm_output_done": 1793327387612818406,
+      "tts_realtime_data_start": 1793327386884683937,
+      "tts_realtime_data_first_text": 1793327387043319321,
+      "tts_realtime_data_done": 1793327387613091886,
+      "tts_session_finished": 1793327397558704675
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793327387043679404,
+      "tts_local.synth_start_first": 1793327387043750724,
+      "tts_local.synth_end_first": 1793327387856153611,
+      "tts_local.play_start_first": 1793327387955087459,
+      "tts_local.play_end_last": 1793327397557629299,
+      "tts_local.session_finished": 1793327397558353929
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.933,
+    "router_to_llm_first_ms": 1280.497,
+    "question_to_llm_first_ms": 1281.43,
+    "llm_first_to_done_ms": 728.188,
+    "question_to_llm_done_ms": 2009.618,
+    "llm_first_to_tts_first_text_ms": 158.689,
+    "question_to_tts_first_text_ms": 1440.119,
+    "first_tts_text_to_first_play_start_ms": 911.768,
+    "tts_rx_to_synth_end_ms": 812.474,
+    "tts_rx_to_play_start_ms": 911.408,
+    "tts_synth_end_to_play_start_ms": 98.934,
+    "question_to_first_audio_ms": 2351.887,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 11955.504,
+    "audio_total_sum_ms": 9600.293,
+    "audio_first_to_last_ms": 9602.542
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 933371,
+    "router_to_llm_first_ns": 1280497097,
+    "question_to_llm_first_ns": 1281430468,
+    "llm_first_to_done_ns": 728187707,
+    "question_to_llm_done_ns": 2009618175,
+    "llm_first_to_tts_first_text_ns": 158688622,
+    "question_to_tts_first_text_ns": 1440119090,
+    "first_tts_text_to_first_play_start_ns": 911768138,
+    "tts_rx_to_synth_end_ns": 812474207,
+    "tts_rx_to_play_start_ns": 911408055,
+    "tts_synth_end_to_play_start_ns": 98933848,
+    "question_to_first_audio_ns": 2351887228,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 11955504444,
+    "audio_total_sum_ns": 9600292801,
+    "audio_first_to_last_ns": 9602541840
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 1281430468,
+      "ms": 1281.43
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 728187707,
+      "ms": 728.188
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 158688622,
+      "ms": 158.689
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 911768138,
+      "ms": 911.768
+    },
+    "question_to_first_play_start": {
+      "ns": 2351887228,
+      "ms": 2351.887
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 11955504444,
+      "ms": 11955.504
+    },
+    "audio_total_sec": {
+      "ns": 9600292801,
+      "ms": 9600.293,
+      "sec": 9.6
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.933,
+    "router_to_llm_first_ms": 1280.497,
+    "question_to_llm_first_ms": 1281.43,
+    "llm_first_to_done_ms": 728.188,
+    "question_to_llm_done_ms": 2009.618,
+    "llm_first_to_tts_first_text_ms": 158.689,
+    "question_to_tts_first_text_ms": 1440.119,
+    "first_tts_text_to_first_play_start_ms": 911.768,
+    "tts_rx_to_synth_end_ms": 812.474,
+    "tts_rx_to_play_start_ms": 911.408,
+    "tts_synth_end_to_play_start_ms": 98.934,
+    "question_to_first_audio_ms": 2351.887,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 11955.504,
+    "audio_total_sum_ms": 9600.293,
+    "audio_first_to_last_ms": 9602.542
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793327386884209831,
+      "first_text_rx_ns": 1793327386884630699,
+      "done_rx_ns": 1793327387612818406,
+      "chunk_count": 11,
+      "char_count": 41,
+      "chunks": [
+        {
+          "t_ns": 1793327386884630699,
+          "text": "晨"
+        },
+        {
+          "t_ns": 1793327386904069172,
+          "text": "光轻"
+        },
+        {
+          "t_ns": 1793327386947819498,
+          "text": "抚透"
+        },
+        {
+          "t_ns": 1793327386988309536,
+          "text": "析"
+        },
+        {
+          "t_ns": 1793327387043096766,
+          "text": "室，  \n管"
+        },
+        {
+          "t_ns": 1793327387153104844,
+          "text": "路蜿蜒如"
+        },
+        {
+          "t_ns": 1793327387252509050,
+          "text": "春溪。  \n一"
+        },
+        {
+          "t_ns": 1793327387345839023,
+          "text": "滴一滴守"
+        },
+        {
+          "t_ns": 1793327387443923129,
+          "text": "时光，  \n静"
+        },
+        {
+          "t_ns": 1793327387514876282,
+          "text": "水深流亦"
+        },
+        {
+          "t_ns": 1793327387577905837,
+          "text": "有力。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793327387043319321,
+      "done_rx_ns": 1793327387613091886,
+      "text_count": 4,
+      "texts": [
+        {
+          "t_ns": 1793327387043319321,
+          "text": "晨光轻抚透析室，"
+        },
+        {
+          "t_ns": 1793327387252702145,
+          "text": "管路蜿蜒如春溪。"
+        },
+        {
+          "t_ns": 1793327387444151014,
+          "text": "一滴一滴守时光，"
+        },
+        {
+          "t_ns": 1793327387578105681,
+          "text": "静水深流亦有力。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 28,
+    "latency_events_total": 28,
+    "asr_events": 0,
+    "tts_events": 23,
+    "tts_play_pairs": 4,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793327386414798623,
+      "node": "llm_medical",
+      "stage": "intent_judge",
+      "t_ns": 1793327386414467969,
+      "detail": {
+        "model": "qwen-flash",
+        "ms": 809.5,
+        "answer": "聊",
+        "kind": "chat"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent_judge\", \"t_ns\": 1793327386414467969, \"detail\": {\"model\": \"qwen-flash\", \"ms\": 809.5, \"answer\": \"聊\", \"kind\": \"chat\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327386415260920,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793327386414654237,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "llm:qwen-flash",
+        "keyword_medical": false,
+        "judge_kind": "chat",
+        "judge_ms": 809.5
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793327386414654237, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"llm:qwen-flash\", \"keyword_medical\": false, \"judge_kind\": \"chat\", \"judge_ms\": 809.5}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327386884275903,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793327386883863866,
+      "detail": {
+        "prompt_chars": 437,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793327386883863866, \"detail\": {\"prompt_chars\": 437, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327386884726324,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793327386884306261,
+      "detail": {
+        "prompt_chars": 437
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793327386884306261, \"detail\": {\"prompt_chars\": 437}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327386885020550,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793327386884707710,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793327386884707710, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327387043921078,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327387043679404,
+      "detail": {
+        "text_len": 8,
+        "head": "晨光轻抚透析室，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327387043679404, \"detail\": {\"text_len\": 8, \"head\": \"晨光轻抚透析室，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327387044196913,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327387043750724,
+      "detail": {
+        "text_len": 8
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327387043750724, \"detail\": {\"text_len\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327387612861764,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793327387612493334,
+      "detail": {
+        "chars": 41
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793327387612493334, \"detail\": {\"chars\": 41}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327387856486510,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327387856153611,
+      "detail": {
+        "text_len": 8,
+        "dur_ms": 812.39847,
+        "audio_sec": 2.24,
+        "rtf": 0.3626778883928571
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327387856153611, \"detail\": {\"text_len\": 8, \"dur_ms\": 812.39847, \"audio_sec\": 2.24, \"rtf\": 0.3626778883928571}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327387858931853,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327387858680721,
+      "detail": {
+        "text_len": 8,
+        "head": "管路蜿蜒如春溪。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327387858680721, \"detail\": {\"text_len\": 8, \"head\": \"管路蜿蜒如春溪。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327387859139510,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327387858746808,
+      "detail": {
+        "text_len": 8
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327387858746808, \"detail\": {\"text_len\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327387955407565,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327387955087459,
+      "detail": {
+        "text_len": 8,
+        "head": "晨光轻抚透析室，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327387955087459, \"detail\": {\"text_len\": 8, \"head\": \"晨光轻抚透析室，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327388646481402,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327388646149301,
+      "detail": {
+        "text_len": 8,
+        "dur_ms": 787.396309,
+        "audio_sec": 2.24,
+        "rtf": 0.351516209375
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327388646149301, \"detail\": {\"text_len\": 8, \"dur_ms\": 787.396309, \"audio_sec\": 2.24, \"rtf\": 0.351516209375}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327388646985698,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327388646817230,
+      "detail": {
+        "text_len": 8,
+        "head": "一滴一滴守时光，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327388646817230, \"detail\": {\"text_len\": 8, \"head\": \"一滴一滴守时光，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327388647229584,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327388646881405,
+      "detail": {
+        "text_len": 8
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327388646881405, \"detail\": {\"text_len\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327389726697328,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327389726420361,
+      "detail": {
+        "text_len": 8,
+        "dur_ms": 1079.534595,
+        "audio_sec": 3.04,
+        "rtf": 0.3551100641447369
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327389726420361, \"detail\": {\"text_len\": 8, \"dur_ms\": 1079.534595, \"audio_sec\": 3.04, \"rtf\": 0.3551100641447369}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327389727132912,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327389726971893,
+      "detail": {
+        "text_len": 8,
+        "head": "静水深流亦有力。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327389726971893, \"detail\": {\"text_len\": 8, \"head\": \"静水深流亦有力。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327389727335547,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327389727031712,
+      "detail": {
+        "text_len": 8
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327389727031712, \"detail\": {\"text_len\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327390211961050,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327390211682835,
+      "detail": {
+        "text_len": 8,
+        "interrupted": false,
+        "dur_ms": 2256.594047
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327390211682835, \"detail\": {\"text_len\": 8, \"interrupted\": false, \"dur_ms\": 2256.594047}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327390212506412,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327390212357614,
+      "detail": {
+        "text_len": 8,
+        "head": "管路蜿蜒如春溪。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327390212357614, \"detail\": {\"text_len\": 8, \"head\": \"管路蜿蜒如春溪。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327390450043861,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327390449754054,
+      "detail": {
+        "text_len": 8,
+        "dur_ms": 722.717384,
+        "audio_sec": 2.0,
+        "rtf": 0.36135869200000004
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327390449754054, \"detail\": {\"text_len\": 8, \"dur_ms\": 722.717384, \"audio_sec\": 2.0, \"rtf\": 0.36135869200000004}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327390450443101,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793327390450301940,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793327390450301940, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327392474843066,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327392474477894,
+      "detail": {
+        "text_len": 8,
+        "interrupted": false,
+        "dur_ms": 2262.115252
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327392474477894, \"detail\": {\"text_len\": 8, \"interrupted\": false, \"dur_ms\": 2262.115252}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327392476097957,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327392475340177,
+      "detail": {
+        "text_len": 8,
+        "head": "一滴一滴守时光，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327392475340177, \"detail\": {\"text_len\": 8, \"head\": \"一滴一滴守时光，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327395541030720,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327395540710788,
+      "detail": {
+        "text_len": 8,
+        "interrupted": false,
+        "dur_ms": 3065.368884
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327395540710788, \"detail\": {\"text_len\": 8, \"interrupted\": false, \"dur_ms\": 3065.368884}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327395541589772,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327395541422765,
+      "detail": {
+        "text_len": 8,
+        "head": "静水深流亦有力。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327395541422765, \"detail\": {\"text_len\": 8, \"head\": \"静水深流亦有力。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327397557942399,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327397557629299,
+      "detail": {
+        "text_len": 8,
+        "interrupted": false,
+        "dur_ms": 2016.201219
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327397557629299, \"detail\": {\"text_len\": 8, \"interrupted\": false, \"dur_ms\": 2016.201219}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327397558481844,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793327397558353929,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793327397558353929, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent_judge": [
+        {
+          "t_ns": 1793327386414467969,
+          "arrival_ns": 1793327386414798623,
+          "source": "round",
+          "detail": {
+            "model": "qwen-flash",
+            "ms": 809.5,
+            "answer": "聊",
+            "kind": "chat"
+          }
+        }
+      ],
+      "intent": [
+        {
+          "t_ns": 1793327386414654237,
+          "arrival_ns": 1793327386415260920,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "llm:qwen-flash",
+            "keyword_medical": false,
+            "judge_kind": "chat",
+            "judge_ms": 809.5
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793327386883863866,
+          "arrival_ns": 1793327386884275903,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 437,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793327386884306261,
+          "arrival_ns": 1793327386884726324,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 437
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793327387612493334,
+          "arrival_ns": 1793327387612861764,
+          "source": "round",
+          "detail": {
+            "chars": 41
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793327386884707710,
+          "arrival_ns": 1793327386885020550,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793327390450301940,
+          "arrival_ns": 1793327390450443101,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793327387043679404,
+          "arrival_ns": 1793327387043921078,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "晨光轻抚透析室，"
+          }
+        },
+        {
+          "t_ns": 1793327387858680721,
+          "arrival_ns": 1793327387858931853,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "管路蜿蜒如春溪。"
+          }
+        },
+        {
+          "t_ns": 1793327388646817230,
+          "arrival_ns": 1793327388646985698,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "一滴一滴守时光，"
+          }
+        },
+        {
+          "t_ns": 1793327389726971893,
+          "arrival_ns": 1793327389727132912,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "静水深流亦有力。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793327387043750724,
+          "arrival_ns": 1793327387044196913,
+          "source": "round",
+          "detail": {
+            "text_len": 8
+          }
+        },
+        {
+          "t_ns": 1793327387858746808,
+          "arrival_ns": 1793327387859139510,
+          "source": "round",
+          "detail": {
+            "text_len": 8
+          }
+        },
+        {
+          "t_ns": 1793327388646881405,
+          "arrival_ns": 1793327388647229584,
+          "source": "round",
+          "detail": {
+            "text_len": 8
+          }
+        },
+        {
+          "t_ns": 1793327389727031712,
+          "arrival_ns": 1793327389727335547,
+          "source": "round",
+          "detail": {
+            "text_len": 8
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793327387856153611,
+          "arrival_ns": 1793327387856486510,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "dur_ms": 812.39847,
+            "audio_sec": 2.24,
+            "rtf": 0.3626778883928571
+          }
+        },
+        {
+          "t_ns": 1793327388646149301,
+          "arrival_ns": 1793327388646481402,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "dur_ms": 787.396309,
+            "audio_sec": 2.24,
+            "rtf": 0.351516209375
+          }
+        },
+        {
+          "t_ns": 1793327389726420361,
+          "arrival_ns": 1793327389726697328,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "dur_ms": 1079.534595,
+            "audio_sec": 3.04,
+            "rtf": 0.3551100641447369
+          }
+        },
+        {
+          "t_ns": 1793327390449754054,
+          "arrival_ns": 1793327390450043861,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "dur_ms": 722.717384,
+            "audio_sec": 2.0,
+            "rtf": 0.36135869200000004
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793327387955087459,
+          "arrival_ns": 1793327387955407565,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "晨光轻抚透析室，"
+          }
+        },
+        {
+          "t_ns": 1793327390212357614,
+          "arrival_ns": 1793327390212506412,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "管路蜿蜒如春溪。"
+          }
+        },
+        {
+          "t_ns": 1793327392475340177,
+          "arrival_ns": 1793327392476097957,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "一滴一滴守时光，"
+          }
+        },
+        {
+          "t_ns": 1793327395541422765,
+          "arrival_ns": 1793327395541589772,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "静水深流亦有力。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793327390211682835,
+          "arrival_ns": 1793327390211961050,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "interrupted": false,
+            "dur_ms": 2256.594047
+          }
+        },
+        {
+          "t_ns": 1793327392474477894,
+          "arrival_ns": 1793327392474843066,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "interrupted": false,
+            "dur_ms": 2262.115252
+          }
+        },
+        {
+          "t_ns": 1793327395540710788,
+          "arrival_ns": 1793327395541030720,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "interrupted": false,
+            "dur_ms": 3065.368884
+          }
+        },
+        {
+          "t_ns": 1793327397557629299,
+          "arrival_ns": 1793327397557942399,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "interrupted": false,
+            "dur_ms": 2016.201219
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793327397558353929,
+          "arrival_ns": 1793327397558481844,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 50,
+    "interval_s": 2.0
+  }
+}

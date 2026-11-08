@@ -1,0 +1,829 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1162930",
+  "host": "artrc",
+  "tag": "ol2_chat10",
+  "round_index": 2,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T16:19:24.706",
+  "finished_at": "2026-10-30T16:19:33.167",
+  "duration_s": 8.461,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "你是谁呀",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793348364706992494,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793348364706560105,
+    "t_publish_question_ns": 1793348364706992494,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793348364707458405,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793348364707902338,
+      "ali_llm_output_start": 1793348364869078470,
+      "ali_llm_output_first_text": 1793348364869282960,
+      "ali_llm_output_done": 1793348365663440396,
+      "tts_realtime_data_start": 1793348364869316247,
+      "tts_realtime_data_first_text": 1793348364921151124,
+      "tts_realtime_data_done": 1793348365663711334,
+      "tts_session_finished": 1793348372867464436
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793348364921461030,
+      "tts_local.synth_start_first": 1793348364921535206,
+      "tts_local.synth_end_first": 1793348365734884042,
+      "tts_local.play_start_first": 1793348365743133424,
+      "tts_local.play_end_last": 1793348372866391333,
+      "tts_local.session_finished": 1793348372867128004
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.91,
+    "router_to_llm_first_ms": 161.381,
+    "question_to_llm_first_ms": 162.29,
+    "llm_first_to_done_ms": 794.157,
+    "question_to_llm_done_ms": 956.448,
+    "llm_first_to_tts_first_text_ms": 51.868,
+    "question_to_tts_first_text_ms": 214.159,
+    "first_tts_text_to_first_play_start_ms": 821.982,
+    "tts_rx_to_synth_end_ms": 813.423,
+    "tts_rx_to_play_start_ms": 821.672,
+    "tts_synth_end_to_play_start_ms": 8.249,
+    "question_to_first_audio_ms": 1036.141,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 8160.472,
+    "audio_total_sum_ms": 7120.707,
+    "audio_first_to_last_ms": 7123.258
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 909844,
+    "router_to_llm_first_ns": 161380622,
+    "question_to_llm_first_ns": 162290466,
+    "llm_first_to_done_ns": 794157436,
+    "question_to_llm_done_ns": 956447902,
+    "llm_first_to_tts_first_text_ns": 51868164,
+    "question_to_tts_first_text_ns": 214158630,
+    "first_tts_text_to_first_play_start_ns": 821982300,
+    "tts_rx_to_synth_end_ns": 813423012,
+    "tts_rx_to_play_start_ns": 821672394,
+    "tts_synth_end_to_play_start_ns": 8249382,
+    "question_to_first_audio_ns": 1036140930,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 8160471942,
+    "audio_total_sum_ns": 7120706966,
+    "audio_first_to_last_ns": 7123257909
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 162290466,
+      "ms": 162.29
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 794157436,
+      "ms": 794.157
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 51868164,
+      "ms": 51.868
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 821982300,
+      "ms": 821.982
+    },
+    "question_to_first_play_start": {
+      "ns": 1036140930,
+      "ms": 1036.141
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 8160471942,
+      "ms": 8160.472
+    },
+    "audio_total_sec": {
+      "ns": 7120706966,
+      "ms": 7120.707,
+      "sec": 7.121
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.91,
+    "router_to_llm_first_ms": 161.381,
+    "question_to_llm_first_ms": 162.29,
+    "llm_first_to_done_ms": 794.157,
+    "question_to_llm_done_ms": 956.448,
+    "llm_first_to_tts_first_text_ms": 51.868,
+    "question_to_tts_first_text_ms": 214.159,
+    "first_tts_text_to_first_play_start_ms": 821.982,
+    "tts_rx_to_synth_end_ms": 813.423,
+    "tts_rx_to_play_start_ms": 821.672,
+    "tts_synth_end_to_play_start_ms": 8.249,
+    "question_to_first_audio_ms": 1036.141,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 8160.472,
+    "audio_total_sum_ms": 7120.707,
+    "audio_first_to_last_ms": 7123.258
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793348364869078470,
+      "first_text_rx_ns": 1793348364869282960,
+      "done_rx_ns": 1793348365663440396,
+      "chunk_count": 21,
+      "char_count": 30,
+      "chunks": [
+        {
+          "t_ns": 1793348364869282960,
+          "text": "我是"
+        },
+        {
+          "t_ns": 1793348364886821696,
+          "text": "小"
+        },
+        {
+          "t_ns": 1793348364903757086,
+          "text": "医"
+        },
+        {
+          "t_ns": 1793348364920918469,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793348364939239283,
+          "text": "是"
+        },
+        {
+          "t_ns": 1793348364968971069,
+          "text": "血"
+        },
+        {
+          "t_ns": 1793348365018819263,
+          "text": "透"
+        },
+        {
+          "t_ns": 1793348365069625328,
+          "text": "中心"
+        },
+        {
+          "t_ns": 1793348365111550975,
+          "text": "的"
+        },
+        {
+          "t_ns": 1793348365158873532,
+          "text": "巡"
+        },
+        {
+          "t_ns": 1793348365196858951,
+          "text": "诊"
+        },
+        {
+          "t_ns": 1793348365245674106,
+          "text": "机器人"
+        },
+        {
+          "t_ns": 1793348365282052926,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793348365323847310,
+          "text": "专门"
+        },
+        {
+          "t_ns": 1793348365366052383,
+          "text": "陪你"
+        },
+        {
+          "t_ns": 1793348365405781687,
+          "text": "聊天"
+        },
+        {
+          "t_ns": 1793348365447980316,
+          "text": "和"
+        },
+        {
+          "t_ns": 1793348365492044989,
+          "text": "提供"
+        },
+        {
+          "t_ns": 1793348365534338967,
+          "text": "帮助"
+        },
+        {
+          "t_ns": 1793348365576880562,
+          "text": "哦"
+        },
+        {
+          "t_ns": 1793348365619544948,
+          "text": "。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793348364921151124,
+      "done_rx_ns": 1793348365663711334,
+      "text_count": 3,
+      "texts": [
+        {
+          "t_ns": 1793348364921151124,
+          "text": "我是小医，"
+        },
+        {
+          "t_ns": 1793348365282555452,
+          "text": "是血透中心的巡诊机器人，"
+        },
+        {
+          "t_ns": 1793348365619824879,
+          "text": "专门陪你聊天和提供帮助哦。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 22,
+    "latency_events_total": 22,
+    "asr_events": 0,
+    "tts_events": 18,
+    "tts_play_pairs": 3,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793348364729192880,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793348364728887574,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "chitchat",
+        "keyword_medical": false,
+        "chitchat": true,
+        "judge_kind": null,
+        "judge_ms": 0.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793348364728887574, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"chitchat\", \"keyword_medical\": false, \"chitchat\": true, \"judge_kind\": null, \"judge_ms\": 0.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348364729555921,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793348364729368906,
+      "detail": {
+        "provider": "ollama",
+        "prompt_chars": 453,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793348364729368906, \"detail\": {\"provider\": \"ollama\", \"prompt_chars\": 453, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348364869363044,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793348364869131954,
+      "detail": {
+        "prompt_chars": 453
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793348364869131954, \"detail\": {\"prompt_chars\": 453}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348364869735879,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793348364869595783,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793348364869595783, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348364921621321,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793348364921461030,
+      "detail": {
+        "text_len": 5,
+        "head": "我是小医，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793348364921461030, \"detail\": {\"text_len\": 5, \"head\": \"我是小医，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348364921847580,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793348364921535206,
+      "detail": {
+        "text_len": 5
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793348364921535206, \"detail\": {\"text_len\": 5}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348365663486592,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793348365663142144,
+      "detail": {
+        "chars": 30
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793348365663142144, \"detail\": {\"chars\": 30}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348365735213903,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793348365734884042,
+      "detail": {
+        "text_len": 5,
+        "dur_ms": 813.344815,
+        "audio_sec": 1.44,
+        "rtf": 0.5648227881944444
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793348365734884042, \"detail\": {\"text_len\": 5, \"dur_ms\": 813.344815, \"audio_sec\": 1.44, \"rtf\": 0.5648227881944444}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348365737113252,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793348365736913033,
+      "detail": {
+        "text_len": 12,
+        "head": "是血透中心的巡诊机器人，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793348365736913033, \"detail\": {\"text_len\": 12, \"head\": \"是血透中心的巡诊机器人，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348365737344198,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793348365736959842,
+      "detail": {
+        "text_len": 12
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793348365736959842, \"detail\": {\"text_len\": 12}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348365743314762,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793348365743133424,
+      "detail": {
+        "text_len": 5,
+        "head": "我是小医，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793348365743133424, \"detail\": {\"text_len\": 5, \"head\": \"我是小医，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348366751966067,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793348366751567297,
+      "detail": {
+        "text_len": 12,
+        "dur_ms": 1014.600859,
+        "audio_sec": 2.8,
+        "rtf": 0.36235744964285715
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793348366751567297, \"detail\": {\"text_len\": 12, \"dur_ms\": 1014.600859, \"audio_sec\": 2.8, \"rtf\": 0.36235744964285715}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348366752344717,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793348366752193720,
+      "detail": {
+        "text_len": 13,
+        "head": "专门陪你聊天和提供帮助哦。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793348366752193720, \"detail\": {\"text_len\": 13, \"head\": \"专门陪你聊天和提供帮助哦。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348366752537036,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793348366752252648,
+      "detail": {
+        "text_len": 13
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793348366752252648, \"detail\": {\"text_len\": 13}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348367212631051,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793348367212229278,
+      "detail": {
+        "text_len": 5,
+        "interrupted": false,
+        "dur_ms": 1469.092408
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793348367212229278, \"detail\": {\"text_len\": 5, \"interrupted\": false, \"dur_ms\": 1469.092408}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348367217199329,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793348367214027764,
+      "detail": {
+        "text_len": 12,
+        "head": "是血透中心的巡诊机器人，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793348367214027764, \"detail\": {\"text_len\": 12, \"head\": \"是血透中心的巡诊机器人，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348367757845751,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793348367757547937,
+      "detail": {
+        "text_len": 13,
+        "dur_ms": 1005.289282,
+        "audio_sec": 2.8,
+        "rtf": 0.3590318864285714
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793348367757547937, \"detail\": {\"text_len\": 13, \"dur_ms\": 1005.289282, \"audio_sec\": 2.8, \"rtf\": 0.3590318864285714}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348367758417462,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793348367758098739,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793348367758098739, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348370042017213,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793348370041607741,
+      "detail": {
+        "text_len": 12,
+        "interrupted": false,
+        "dur_ms": 2827.574237
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793348370041607741, \"detail\": {\"text_len\": 12, \"interrupted\": false, \"dur_ms\": 2827.574237}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348370042523065,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793348370042360198,
+      "detail": {
+        "text_len": 13,
+        "head": "专门陪你聊天和提供帮助哦。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793348370042360198, \"detail\": {\"text_len\": 13, \"head\": \"专门陪你聊天和提供帮助哦。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348372866739925,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793348372866391333,
+      "detail": {
+        "text_len": 13,
+        "interrupted": false,
+        "dur_ms": 2824.02796
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793348372866391333, \"detail\": {\"text_len\": 13, \"interrupted\": false, \"dur_ms\": 2824.02796}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348372867270364,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793348372867128004,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793348372867128004, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793348364728887574,
+          "arrival_ns": 1793348364729192880,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "chitchat",
+            "keyword_medical": false,
+            "chitchat": true,
+            "judge_kind": null,
+            "judge_ms": 0.0
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793348364729368906,
+          "arrival_ns": 1793348364729555921,
+          "source": "round",
+          "detail": {
+            "provider": "ollama",
+            "prompt_chars": 453,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793348364869131954,
+          "arrival_ns": 1793348364869363044,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 453
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793348365663142144,
+          "arrival_ns": 1793348365663486592,
+          "source": "round",
+          "detail": {
+            "chars": 30
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793348364869595783,
+          "arrival_ns": 1793348364869735879,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793348367758098739,
+          "arrival_ns": 1793348367758417462,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793348364921461030,
+          "arrival_ns": 1793348364921621321,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "我是小医，"
+          }
+        },
+        {
+          "t_ns": 1793348365736913033,
+          "arrival_ns": 1793348365737113252,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "是血透中心的巡诊机器人，"
+          }
+        },
+        {
+          "t_ns": 1793348366752193720,
+          "arrival_ns": 1793348366752344717,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "head": "专门陪你聊天和提供帮助哦。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793348364921535206,
+          "arrival_ns": 1793348364921847580,
+          "source": "round",
+          "detail": {
+            "text_len": 5
+          }
+        },
+        {
+          "t_ns": 1793348365736959842,
+          "arrival_ns": 1793348365737344198,
+          "source": "round",
+          "detail": {
+            "text_len": 12
+          }
+        },
+        {
+          "t_ns": 1793348366752252648,
+          "arrival_ns": 1793348366752537036,
+          "source": "round",
+          "detail": {
+            "text_len": 13
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793348365734884042,
+          "arrival_ns": 1793348365735213903,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "dur_ms": 813.344815,
+            "audio_sec": 1.44,
+            "rtf": 0.5648227881944444
+          }
+        },
+        {
+          "t_ns": 1793348366751567297,
+          "arrival_ns": 1793348366751966067,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "dur_ms": 1014.600859,
+            "audio_sec": 2.8,
+            "rtf": 0.36235744964285715
+          }
+        },
+        {
+          "t_ns": 1793348367757547937,
+          "arrival_ns": 1793348367757845751,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "dur_ms": 1005.289282,
+            "audio_sec": 2.8,
+            "rtf": 0.3590318864285714
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793348365743133424,
+          "arrival_ns": 1793348365743314762,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "我是小医，"
+          }
+        },
+        {
+          "t_ns": 1793348367214027764,
+          "arrival_ns": 1793348367217199329,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "是血透中心的巡诊机器人，"
+          }
+        },
+        {
+          "t_ns": 1793348370042360198,
+          "arrival_ns": 1793348370042523065,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "head": "专门陪你聊天和提供帮助哦。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793348367212229278,
+          "arrival_ns": 1793348367212631051,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "interrupted": false,
+            "dur_ms": 1469.092408
+          }
+        },
+        {
+          "t_ns": 1793348370041607741,
+          "arrival_ns": 1793348370042017213,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "interrupted": false,
+            "dur_ms": 2827.574237
+          }
+        },
+        {
+          "t_ns": 1793348372866391333,
+          "arrival_ns": 1793348372866739925,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "interrupted": false,
+            "dur_ms": 2824.02796
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793348372867128004,
+          "arrival_ns": 1793348372867270364,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 10,
+    "interval_s": 2.0
+  }
+}

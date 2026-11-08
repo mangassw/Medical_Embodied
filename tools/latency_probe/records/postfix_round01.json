@@ -1,0 +1,1392 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1070639",
+  "host": "artrc",
+  "tag": "postfix",
+  "round_index": 1,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T10:40:23.863",
+  "finished_at": "2026-10-30T10:40:40.854",
+  "duration_s": 16.991,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "透析患者心情总是很低落怎么办？",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793328023863456001,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793328023863015101,
+    "t_publish_question_ns": 1793328023863456001,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793328023864056866,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793328023865055203,
+      "ali_llm_output_start": 1793328025117568524,
+      "ali_llm_output_first_text": 1793328025117832355,
+      "ali_llm_output_done": 1793328025930306655,
+      "tts_realtime_data_start": 1793328025117866579,
+      "tts_realtime_data_first_text": 1793328025148453173,
+      "tts_realtime_data_done": 1793328025930808031,
+      "tts_session_finished": 1793328040549693203
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793328025148662147,
+      "tts_local.synth_start_first": 1793328025148733818,
+      "tts_local.synth_end_first": 1793328025693792332,
+      "tts_local.play_start_first": 1793328025755155115,
+      "tts_local.play_end_last": 1793328040548756495,
+      "tts_local.session_finished": 1793328040549451825
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.599,
+    "router_to_llm_first_ms": 1252.777,
+    "question_to_llm_first_ms": 1254.376,
+    "llm_first_to_done_ms": 812.474,
+    "question_to_llm_done_ms": 2066.851,
+    "llm_first_to_tts_first_text_ms": 30.621,
+    "question_to_tts_first_text_ms": 1284.997,
+    "first_tts_text_to_first_play_start_ms": 606.702,
+    "tts_rx_to_synth_end_ms": 545.13,
+    "tts_rx_to_play_start_ms": 606.493,
+    "tts_synth_end_to_play_start_ms": 61.363,
+    "question_to_first_audio_ms": 1891.699,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 16686.237,
+    "audio_total_sum_ms": 14788.13,
+    "audio_first_to_last_ms": 14793.601
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 1599202,
+    "router_to_llm_first_ns": 1252777152,
+    "question_to_llm_first_ns": 1254376354,
+    "llm_first_to_done_ns": 812474300,
+    "question_to_llm_done_ns": 2066850654,
+    "llm_first_to_tts_first_text_ns": 30620818,
+    "question_to_tts_first_text_ns": 1284997172,
+    "first_tts_text_to_first_play_start_ns": 606701942,
+    "tts_rx_to_synth_end_ns": 545130185,
+    "tts_rx_to_play_start_ns": 606492968,
+    "tts_synth_end_to_play_start_ns": 61362783,
+    "question_to_first_audio_ns": 1891699114,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 16686237202,
+    "audio_total_sum_ns": 14788129502,
+    "audio_first_to_last_ns": 14793601380
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 1254376354,
+      "ms": 1254.376
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 812474300,
+      "ms": 812.474
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 30620818,
+      "ms": 30.621
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 606701942,
+      "ms": 606.702
+    },
+    "question_to_first_play_start": {
+      "ns": 1891699114,
+      "ms": 1891.699
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 16686237202,
+      "ms": 16686.237
+    },
+    "audio_total_sec": {
+      "ns": 14788129502,
+      "ms": 14788.13,
+      "sec": 14.788
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.599,
+    "router_to_llm_first_ms": 1252.777,
+    "question_to_llm_first_ms": 1254.376,
+    "llm_first_to_done_ms": 812.474,
+    "question_to_llm_done_ms": 2066.851,
+    "llm_first_to_tts_first_text_ms": 30.621,
+    "question_to_tts_first_text_ms": 1284.997,
+    "first_tts_text_to_first_play_start_ms": 606.702,
+    "tts_rx_to_synth_end_ms": 545.13,
+    "tts_rx_to_play_start_ms": 606.493,
+    "tts_synth_end_to_play_start_ms": 61.363,
+    "question_to_first_audio_ms": 1891.699,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 16686.237,
+    "audio_total_sum_ms": 14788.13,
+    "audio_first_to_last_ms": 14793.601
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793328025117568524,
+      "first_text_rx_ns": 1793328025117832355,
+      "done_rx_ns": 1793328025930306655,
+      "chunk_count": 11,
+      "char_count": 60,
+      "chunks": [
+        {
+          "t_ns": 1793328025117832355,
+          "text": "这个"
+        },
+        {
+          "t_ns": 1793328025148085584,
+          "text": "要注意。"
+        },
+        {
+          "t_ns": 1793328025214709868,
+          "text": "情绪低落"
+        },
+        {
+          "t_ns": 1793328025277431053,
+          "text": "超过"
+        },
+        {
+          "t_ns": 1793328025370252398,
+          "text": "两周、影响吃饭"
+        },
+        {
+          "t_ns": 1793328025461382917,
+          "text": "睡觉或透析，要"
+        },
+        {
+          "t_ns": 1793328025533747643,
+          "text": "找精神科医生"
+        },
+        {
+          "t_ns": 1793328025665992695,
+          "text": "帮忙；  \n说出来"
+        },
+        {
+          "t_ns": 1793328025731080692,
+          "text": "、写下来、哭"
+        },
+        {
+          "t_ns": 1793328025861379647,
+          "text": "出来，都是很好的"
+        },
+        {
+          "t_ns": 1793328025904179686,
+          "text": "释放方式。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793328025148453173,
+      "done_rx_ns": 1793328025930808031,
+      "text_count": 8,
+      "texts": [
+        {
+          "t_ns": 1793328025148453173,
+          "text": "这个要注意。"
+        },
+        {
+          "t_ns": 1793328025370574443,
+          "text": "情绪低落超过两周、"
+        },
+        {
+          "t_ns": 1793328025461703922,
+          "text": "影响吃饭睡觉或透析，"
+        },
+        {
+          "t_ns": 1793328025666318202,
+          "text": "要找精神科医生帮忙；"
+        },
+        {
+          "t_ns": 1793328025731345210,
+          "text": "说出来、"
+        },
+        {
+          "t_ns": 1793328025731747449,
+          "text": "写下来、"
+        },
+        {
+          "t_ns": 1793328025861564759,
+          "text": "哭出来，"
+        },
+        {
+          "t_ns": 1793328025904422437,
+          "text": "都是很好的释放方式。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 49,
+    "latency_events_total": 49,
+    "asr_events": 0,
+    "tts_events": 43,
+    "tts_play_pairs": 8,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793328023885787301,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793328023885484283,
+      "detail": {
+        "kind": "medical",
+        "chat_mode": false,
+        "source": "keyword",
+        "keyword_medical": true,
+        "judge_kind": null,
+        "judge_ms": 0.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793328023885484283, \"detail\": {\"kind\": \"medical\", \"chat_mode\": false, \"source\": \"keyword\", \"keyword_medical\": true, \"judge_kind\": null, \"judge_ms\": 0.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328023886167066,
+      "node": "llm_medical",
+      "stage": "rag_start",
+      "t_ns": 1793328023886051090,
+      "detail": {},
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_start\", \"t_ns\": 1793328023886051090, \"detail\": {}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328023898481847,
+      "node": "llm_medical",
+      "stage": "rag_end",
+      "t_ns": 1793328023898230493,
+      "detail": {
+        "n_chunks": 4,
+        "took_ms": 12.08,
+        "top1": "透析患者情志指导"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_end\", \"t_ns\": 1793328023898230493, \"detail\": {\"n_chunks\": 4, \"took_ms\": 12.08, \"top1\": \"透析患者情志指导\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328025117616494,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793328025117248451,
+      "detail": {
+        "prompt_chars": 1087,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793328025117248451, \"detail\": {\"prompt_chars\": 1087, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328025117893941,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793328025117702280,
+      "detail": {
+        "prompt_chars": 1087
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793328025117702280, \"detail\": {\"prompt_chars\": 1087}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328025118397323,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793328025118073631,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793328025118073631, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328025149050682,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793328025148662147,
+      "detail": {
+        "text_len": 6,
+        "head": "这个要注意。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793328025148662147, \"detail\": {\"text_len\": 6, \"head\": \"这个要注意。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328025149399766,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793328025148733818,
+      "detail": {
+        "text_len": 6
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793328025148733818, \"detail\": {\"text_len\": 6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328025694085770,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793328025693792332,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 545.054306,
+        "audio_sec": 1.44,
+        "rtf": 0.3785099347222223
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793328025693792332, \"detail\": {\"text_len\": 6, \"dur_ms\": 545.054306, \"audio_sec\": 1.44, \"rtf\": 0.3785099347222223}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328025707208419,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793328025706936434,
+      "detail": {
+        "text_len": 9,
+        "head": "情绪低落超过两周、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793328025706936434, \"detail\": {\"text_len\": 9, \"head\": \"情绪低落超过两周、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328025707452887,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793328025707027919,
+      "detail": {
+        "text_len": 9
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793328025707027919, \"detail\": {\"text_len\": 9}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328025755471288,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793328025755155115,
+      "detail": {
+        "text_len": 6,
+        "head": "这个要注意。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793328025755155115, \"detail\": {\"text_len\": 6, \"head\": \"这个要注意。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328025930384610,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793328025929904551,
+      "detail": {
+        "chars": 63
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793328025929904551, \"detail\": {\"chars\": 63}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328026625275104,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793328026624933491,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 917.900995,
+        "audio_sec": 2.56,
+        "rtf": 0.358555076171875
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793328026624933491, \"detail\": {\"text_len\": 9, \"dur_ms\": 917.900995, \"audio_sec\": 2.56, \"rtf\": 0.358555076171875}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328026625699401,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793328026625564239,
+      "detail": {
+        "text_len": 10,
+        "head": "影响吃饭睡觉或透析，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793328026625564239, \"detail\": {\"text_len\": 10, \"head\": \"影响吃饭睡觉或透析，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328026625902323,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793328026625611846,
+      "detail": {
+        "text_len": 10
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793328026625611846, \"detail\": {\"text_len\": 10}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328027198892143,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793328027198577174,
+      "detail": {
+        "text_len": 6,
+        "interrupted": false,
+        "dur_ms": 1443.420816
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793328027198577174, \"detail\": {\"text_len\": 6, \"interrupted\": false, \"dur_ms\": 1443.420816}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328027199435587,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793328027199282630,
+      "detail": {
+        "text_len": 9,
+        "head": "情绪低落超过两周、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793328027199282630, \"detail\": {\"text_len\": 9, \"head\": \"情绪低落超过两周、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328027548045405,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793328027547687204,
+      "detail": {
+        "text_len": 10,
+        "dur_ms": 922.069745,
+        "audio_sec": 2.56,
+        "rtf": 0.360183494140625
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793328027547687204, \"detail\": {\"text_len\": 10, \"dur_ms\": 922.069745, \"audio_sec\": 2.56, \"rtf\": 0.360183494140625}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328027548467880,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793328027548315399,
+      "detail": {
+        "text_len": 10,
+        "head": "要找精神科医生帮忙；"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793328027548315399, \"detail\": {\"text_len\": 10, \"head\": \"要找精神科医生帮忙；\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328027548669095,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793328027548377890,
+      "detail": {
+        "text_len": 10
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793328027548377890, \"detail\": {\"text_len\": 10}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328028275612235,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793328028275283680,
+      "detail": {
+        "text_len": 10,
+        "dur_ms": 726.900121,
+        "audio_sec": 2.0,
+        "rtf": 0.3634500605
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793328028275283680, \"detail\": {\"text_len\": 10, \"dur_ms\": 726.900121, \"audio_sec\": 2.0, \"rtf\": 0.3634500605}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328028276115373,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793328028275925043,
+      "detail": {
+        "text_len": 4,
+        "head": "说出来、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793328028275925043, \"detail\": {\"text_len\": 4, \"head\": \"说出来、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328028276412477,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793328028275987236,
+      "detail": {
+        "text_len": 4
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793328028275987236, \"detail\": {\"text_len\": 4}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328028752546980,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793328028752251711,
+      "detail": {
+        "text_len": 4,
+        "dur_ms": 476.259945,
+        "audio_sec": 1.28,
+        "rtf": 0.37207808203125
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793328028752251711, \"detail\": {\"text_len\": 4, \"dur_ms\": 476.259945, \"audio_sec\": 1.28, \"rtf\": 0.37207808203125}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328028753038615,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793328028752838166,
+      "detail": {
+        "text_len": 4,
+        "head": "写下来、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793328028752838166, \"detail\": {\"text_len\": 4, \"head\": \"写下来、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328028753342146,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793328028752891045,
+      "detail": {
+        "text_len": 4
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793328028752891045, \"detail\": {\"text_len\": 4}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328029265246304,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793328029264933593,
+      "detail": {
+        "text_len": 4,
+        "dur_ms": 512.036328,
+        "audio_sec": 1.36,
+        "rtf": 0.3764973
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793328029264933593, \"detail\": {\"text_len\": 4, \"dur_ms\": 512.036328, \"audio_sec\": 1.36, \"rtf\": 0.3764973}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328029265699643,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793328029265533293,
+      "detail": {
+        "text_len": 4,
+        "head": "哭出来，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793328029265533293, \"detail\": {\"text_len\": 4, \"head\": \"哭出来，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328029265954615,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793328029265590201,
+      "detail": {
+        "text_len": 4
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793328029265590201, \"detail\": {\"text_len\": 4}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328029739602816,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793328029739214981,
+      "detail": {
+        "text_len": 4,
+        "dur_ms": 473.620676,
+        "audio_sec": 1.28,
+        "rtf": 0.370016153125
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793328029739214981, \"detail\": {\"text_len\": 4, \"dur_ms\": 473.620676, \"audio_sec\": 1.28, \"rtf\": 0.370016153125}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328029739948887,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793328029739815759,
+      "detail": {
+        "text_len": 10,
+        "head": "都是很好的释放方式。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793328029739815759, \"detail\": {\"text_len\": 10, \"head\": \"都是很好的释放方式。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328029740127014,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793328029739857181,
+      "detail": {
+        "text_len": 10
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793328029739857181, \"detail\": {\"text_len\": 10}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328029758963756,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793328029758568584,
+      "detail": {
+        "text_len": 9,
+        "interrupted": false,
+        "dur_ms": 2559.282279
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793328029758568584, \"detail\": {\"text_len\": 9, \"interrupted\": false, \"dur_ms\": 2559.282279}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328029759546792,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793328029759356116,
+      "detail": {
+        "text_len": 10,
+        "head": "影响吃饭睡觉或透析，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793328029759356116, \"detail\": {\"text_len\": 10, \"head\": \"影响吃饭睡觉或透析，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328030571919927,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793328030571604130,
+      "detail": {
+        "text_len": 10,
+        "dur_ms": 831.74132,
+        "audio_sec": 2.32,
+        "rtf": 0.3585091896551724
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793328030571604130, \"detail\": {\"text_len\": 10, \"dur_ms\": 831.74132, \"audio_sec\": 2.32, \"rtf\": 0.3585091896551724}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328030572486472,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793328030572303678,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793328030572303678, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328032316837267,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793328032316528540,
+      "detail": {
+        "text_len": 10,
+        "interrupted": false,
+        "dur_ms": 2557.170937
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793328032316528540, \"detail\": {\"text_len\": 10, \"interrupted\": false, \"dur_ms\": 2557.170937}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328032317608604,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793328032317458016,
+      "detail": {
+        "text_len": 10,
+        "head": "要找精神科医生帮忙；"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793328032317458016, \"detail\": {\"text_len\": 10, \"head\": \"要找精神科医生帮忙；\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328034314314764,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793328034313997440,
+      "detail": {
+        "text_len": 10,
+        "interrupted": false,
+        "dur_ms": 1996.536395
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793328034313997440, \"detail\": {\"text_len\": 10, \"interrupted\": false, \"dur_ms\": 1996.536395}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328034314855642,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793328034314692143,
+      "detail": {
+        "text_len": 4,
+        "head": "说出来、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793328034314692143, \"detail\": {\"text_len\": 4, \"head\": \"说出来、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328035592804772,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793328035592505963,
+      "detail": {
+        "text_len": 4,
+        "interrupted": false,
+        "dur_ms": 1277.804743
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793328035592505963, \"detail\": {\"text_len\": 4, \"interrupted\": false, \"dur_ms\": 1277.804743}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328035593391009,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793328035593226869,
+      "detail": {
+        "text_len": 4,
+        "head": "写下来、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793328035593226869, \"detail\": {\"text_len\": 4, \"head\": \"写下来、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328036950035859,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793328036949729397,
+      "detail": {
+        "text_len": 4,
+        "interrupted": false,
+        "dur_ms": 1356.500925
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793328036949729397, \"detail\": {\"text_len\": 4, \"interrupted\": false, \"dur_ms\": 1356.500925}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328036950578803,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793328036950424116,
+      "detail": {
+        "text_len": 4,
+        "head": "哭出来，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793328036950424116, \"detail\": {\"text_len\": 4, \"head\": \"哭出来，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328038229862917,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793328038229062179,
+      "detail": {
+        "text_len": 4,
+        "interrupted": false,
+        "dur_ms": 1278.631417
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793328038229062179, \"detail\": {\"text_len\": 4, \"interrupted\": false, \"dur_ms\": 1278.631417}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328038230274743,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793328038230001265,
+      "detail": {
+        "text_len": 10,
+        "head": "都是很好的释放方式。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793328038230001265, \"detail\": {\"text_len\": 10, \"head\": \"都是很好的释放方式。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328040549027253,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793328040548756495,
+      "detail": {
+        "text_len": 10,
+        "interrupted": false,
+        "dur_ms": 2318.752765
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793328040548756495, \"detail\": {\"text_len\": 10, \"interrupted\": false, \"dur_ms\": 2318.752765}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328040549767822,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793328040549451825,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793328040549451825, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793328023885484283,
+          "arrival_ns": 1793328023885787301,
+          "source": "round",
+          "detail": {
+            "kind": "medical",
+            "chat_mode": false,
+            "source": "keyword",
+            "keyword_medical": true,
+            "judge_kind": null,
+            "judge_ms": 0.0
+          }
+        }
+      ],
+      "rag_start": [
+        {
+          "t_ns": 1793328023886051090,
+          "arrival_ns": 1793328023886167066,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "rag_end": [
+        {
+          "t_ns": 1793328023898230493,
+          "arrival_ns": 1793328023898481847,
+          "source": "round",
+          "detail": {
+            "n_chunks": 4,
+            "took_ms": 12.08,
+            "top1": "透析患者情志指导"
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793328025117248451,
+          "arrival_ns": 1793328025117616494,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1087,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793328025117702280,
+          "arrival_ns": 1793328025117893941,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1087
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793328025929904551,
+          "arrival_ns": 1793328025930384610,
+          "source": "round",
+          "detail": {
+            "chars": 63
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793328025118073631,
+          "arrival_ns": 1793328025118397323,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793328030572303678,
+          "arrival_ns": 1793328030572486472,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793328025148662147,
+          "arrival_ns": 1793328025149050682,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "这个要注意。"
+          }
+        },
+        {
+          "t_ns": 1793328025706936434,
+          "arrival_ns": 1793328025707208419,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "情绪低落超过两周、"
+          }
+        },
+        {
+          "t_ns": 1793328026625564239,
+          "arrival_ns": 1793328026625699401,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "影响吃饭睡觉或透析，"
+          }
+        },
+        {
+          "t_ns": 1793328027548315399,
+          "arrival_ns": 1793328027548467880,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "要找精神科医生帮忙；"
+          }
+        },
+        {
+          "t_ns": 1793328028275925043,
+          "arrival_ns": 1793328028276115373,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "说出来、"
+          }
+        },
+        {
+          "t_ns": 1793328028752838166,
+          "arrival_ns": 1793328028753038615,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "写下来、"
+          }
+        },
+        {
+          "t_ns": 1793328029265533293,
+          "arrival_ns": 1793328029265699643,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "哭出来，"
+          }
+        },
+        {
+          "t_ns": 1793328029739815759,
+          "arrival_ns": 1793328029739948887,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "都是很好的释放方式。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793328025148733818,
+          "arrival_ns": 1793328025149399766,
+          "source": "round",
+          "detail": {
+            "text_len": 6
+          }
+        },
+        {
+          "t_ns": 1793328025707027919,
+          "arrival_ns": 1793328025707452887,
+          "source": "round",
+          "detail": {
+            "text_len": 9
+          }
+        },
+        {
+          "t_ns": 1793328026625611846,
+          "arrival_ns": 1793328026625902323,
+          "source": "round",
+          "detail": {
+            "text_len": 10
+          }
+        },
+        {
+          "t_ns": 1793328027548377890,
+          "arrival_ns": 1793328027548669095,
+          "source": "round",
+          "detail": {
+            "text_len": 10
+          }
+        },
+        {
+          "t_ns": 1793328028275987236,
+          "arrival_ns": 1793328028276412477,
+          "source": "round",
+          "detail": {
+            "text_len": 4
+          }
+        },
+        {
+          "t_ns": 1793328028752891045,
+          "arrival_ns": 1793328028753342146,
+          "source": "round",
+          "detail": {
+            "text_len": 4
+          }
+        },
+        {
+          "t_ns": 1793328029265590201,
+          "arrival_ns": 1793328029265954615,
+          "source": "round",
+          "detail": {
+            "text_len": 4
+          }
+        },
+        {
+          "t_ns": 1793328029739857181,
+          "arrival_ns": 1793328029740127014,
+          "source": "round",
+          "detail": {
+            "text_len": 10
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793328025693792332,
+          "arrival_ns": 1793328025694085770,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 545.054306,
+            "audio_sec": 1.44,
+            "rtf": 0.3785099347222223
+          }
+        },
+        {
+          "t_ns": 1793328026624933491,
+          "arrival_ns": 1793328026625275104,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 917.900995,
+            "audio_sec": 2.56,
+            "rtf": 0.358555076171875
+          }
+        },
+        {
+          "t_ns": 1793328027547687204,
+          "arrival_ns": 1793328027548045405,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "dur_ms": 922.069745,
+            "audio_sec": 2.56,
+            "rtf": 0.360183494140625
+          }
+        },
+        {
+          "t_ns": 1793328028275283680,
+          "arrival_ns": 1793328028275612235,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "dur_ms": 726.900121,
+            "audio_sec": 2.0,
+            "rtf": 0.3634500605
+          }
+        },
+        {
+          "t_ns": 1793328028752251711,
+          "arrival_ns": 1793328028752546980,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "dur_ms": 476.259945,
+            "audio_sec": 1.28,
+            "rtf": 0.37207808203125
+          }
+        },
+        {
+          "t_ns": 1793328029264933593,
+          "arrival_ns": 1793328029265246304,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "dur_ms": 512.036328,
+            "audio_sec": 1.36,
+            "rtf": 0.3764973
+          }
+        },
+        {
+          "t_ns": 1793328029739214981,
+          "arrival_ns": 1793328029739602816,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "dur_ms": 473.620676,
+            "audio_sec": 1.28,
+            "rtf": 0.370016153125
+          }
+        },
+        {
+          "t_ns": 1793328030571604130,
+          "arrival_ns": 1793328030571919927,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "dur_ms": 831.74132,
+            "audio_sec": 2.32,
+            "rtf": 0.3585091896551724
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793328025755155115,
+          "arrival_ns": 1793328025755471288,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "这个要注意。"
+          }
+        },
+        {
+          "t_ns": 1793328027199282630,
+          "arrival_ns": 1793328027199435587,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "情绪低落超过两周、"
+          }
+        },
+        {
+          "t_ns": 1793328029759356116,
+          "arrival_ns": 1793328029759546792,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "影响吃饭睡觉或透析，"
+          }
+        },
+        {
+          "t_ns": 1793328032317458016,
+          "arrival_ns": 1793328032317608604,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "要找精神科医生帮忙；"
+          }
+        },
+        {
+          "t_ns": 1793328034314692143,
+          "arrival_ns": 1793328034314855642,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "说出来、"
+          }
+        },
+        {
+          "t_ns": 1793328035593226869,
+          "arrival_ns": 1793328035593391009,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "写下来、"
+          }
+        },
+        {
+          "t_ns": 1793328036950424116,
+          "arrival_ns": 1793328036950578803,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "哭出来，"
+          }
+        },
+        {
+          "t_ns": 1793328038230001265,
+          "arrival_ns": 1793328038230274743,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "都是很好的释放方式。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793328027198577174,
+          "arrival_ns": 1793328027198892143,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "interrupted": false,
+            "dur_ms": 1443.420816
+          }
+        },
+        {
+          "t_ns": 1793328029758568584,
+          "arrival_ns": 1793328029758963756,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "interrupted": false,
+            "dur_ms": 2559.282279
+          }
+        },
+        {
+          "t_ns": 1793328032316528540,
+          "arrival_ns": 1793328032316837267,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "interrupted": false,
+            "dur_ms": 2557.170937
+          }
+        },
+        {
+          "t_ns": 1793328034313997440,
+          "arrival_ns": 1793328034314314764,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "interrupted": false,
+            "dur_ms": 1996.536395
+          }
+        },
+        {
+          "t_ns": 1793328035592505963,
+          "arrival_ns": 1793328035592804772,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "interrupted": false,
+            "dur_ms": 1277.804743
+          }
+        },
+        {
+          "t_ns": 1793328036949729397,
+          "arrival_ns": 1793328036950035859,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "interrupted": false,
+            "dur_ms": 1356.500925
+          }
+        },
+        {
+          "t_ns": 1793328038229062179,
+          "arrival_ns": 1793328038229862917,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "interrupted": false,
+            "dur_ms": 1278.631417
+          }
+        },
+        {
+          "t_ns": 1793328040548756495,
+          "arrival_ns": 1793328040549027253,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "interrupted": false,
+            "dur_ms": 2318.752765
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793328040549451825,
+          "arrival_ns": 1793328040549767822,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 5,
+    "interval_s": 2.0
+  }
+}

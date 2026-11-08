@@ -1,0 +1,1001 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_777973",
+  "host": "artrc",
+  "tag": "e2e_u01",
+  "round_index": 0,
+  "mode": "wake-wav",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-29T10:54:31.881",
+  "finished_at": "2026-10-29T10:54:59.024",
+  "duration_s": 27.143,
+  "trigger": {
+    "mode": "wake-wav",
+    "t0_source": "question_asr_rx",
+    "inject_text": null,
+    "question_wav": "tools/latency_probe/audio/u01_first_dialysis.wav",
+    "wake_wav": "tools/latency_probe/audio/wake_xiaoyi.wav",
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": [
+      {
+        "role": "wake",
+        "wav": "tools/latency_probe/audio/wake_xiaoyi.wav",
+        "cmd": "pw-play --target latency_sink tools/latency_probe/audio/wake_xiaoyi.wav",
+        "start_ns": 1793242471882554709,
+        "end_ns": 1793242473814784843,
+        "ok": true,
+        "error": null
+      },
+      {
+        "role": "question",
+        "wav": "tools/latency_probe/audio/u01_first_dialysis.wav",
+        "cmd": "pw-play --target latency_sink tools/latency_probe/audio/u01_first_dialysis.wav",
+        "start_ns": 1793242474166585288,
+        "end_ns": 1793242478380130732,
+        "ok": true,
+        "error": null
+      }
+    ]
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793242481872156861,
+    "t0_source": "question_asr_rx",
+    "t_trigger_begin_ns": 1793242471881884178,
+    "t_publish_question_ns": null,
+    "t_start_asr_pub_ns": 1793242473861544045,
+    "t_question_play_start_ns": 1793242474166585288,
+    "t_question_play_end_ns": 1793242478380130732,
+    "probe_rx_ns": {
+      "question_asr": 1793242481872156861,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793242481872868449,
+      "ali_llm_output_start": 1793242482811806216,
+      "ali_llm_output_first_text": 1793242482814771551,
+      "ali_llm_output_done": 1793242483933691332,
+      "tts_realtime_data_start": 1793242482812061125,
+      "tts_realtime_data_first_text": 1793242482872551058,
+      "tts_realtime_data_done": 1793242483933942393,
+      "tts_session_finished": 1793242498721238796
+    },
+    "node_event_ns": {
+      "asr.kws_detected": 1793242473860965594,
+      "asr.start_asr": 1793242473861712108,
+      "asr.endpoint": 1793242479518183561,
+      "asr.asr_callback": 1793242479534207892,
+      "asr.nurse_req": 1793242479537594354,
+      "asr.nurse_resp": 1793242481871738092,
+      "asr.publish_question": 1793242481871882785,
+      "tts_local.rx_first": 1793242482872855519,
+      "tts_local.synth_start_first": 1793242482872933676,
+      "tts_local.synth_end_first": 1793242483452861492,
+      "tts_local.play_start_first": 1793242483482907813,
+      "tts_local.play_end_last": 1793242498720173579,
+      "tts_local.session_finished": 1793242498720904454
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": 0.747,
+    "asr_start_asr_to_endpoint_ms": 5656.471,
+    "asr_endpoint_to_nurse_req_ms": 19.411,
+    "asr_nurse_req_to_nurse_resp_ms": 2334.144,
+    "asr_nurse_resp_to_publish_question_ms": 0.145,
+    "asr_endpoint_to_question_rx_ms": 2353.973,
+    "asr_publish_question_to_rx_ms": 0.274,
+    "question_to_router_ms": 0.712,
+    "router_to_llm_first_ms": 941.903,
+    "question_to_llm_first_ms": 942.615,
+    "llm_first_to_done_ms": 1118.92,
+    "question_to_llm_done_ms": 2061.534,
+    "llm_first_to_tts_first_text_ms": 57.78,
+    "question_to_tts_first_text_ms": 1000.394,
+    "first_tts_text_to_first_play_start_ms": 610.357,
+    "tts_rx_to_synth_end_ms": 580.006,
+    "tts_rx_to_play_start_ms": 610.052,
+    "tts_synth_end_to_play_start_ms": 30.046,
+    "question_to_first_audio_ms": 1610.751,
+    "speech_end_to_first_audio_ms": 5264.724,
+    "playback_end_to_first_audio_ms": 5102.777,
+    "question_to_session_finished_ms": 16849.082,
+    "audio_total_sum_ms": 13901.062,
+    "audio_first_to_last_ms": 15237.266
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": 746514,
+    "asr_start_asr_to_endpoint_ns": 5656471453,
+    "asr_endpoint_to_nurse_req_ns": 19410793,
+    "asr_nurse_req_to_nurse_resp_ns": 2334143738,
+    "asr_nurse_resp_to_publish_question_ns": 144693,
+    "asr_endpoint_to_question_rx_ns": 2353973300,
+    "asr_publish_question_to_rx_ns": 274076,
+    "question_to_router_ns": 711588,
+    "router_to_llm_first_ns": 941903102,
+    "question_to_llm_first_ns": 942614690,
+    "llm_first_to_done_ns": 1118919781,
+    "question_to_llm_done_ns": 2061534471,
+    "llm_first_to_tts_first_text_ns": 57779507,
+    "question_to_tts_first_text_ns": 1000394197,
+    "first_tts_text_to_first_play_start_ns": 610356755,
+    "tts_rx_to_synth_end_ns": 580005973,
+    "tts_rx_to_play_start_ns": 610052294,
+    "tts_synth_end_to_play_start_ns": 30046321,
+    "question_to_first_audio_ns": 1610750952,
+    "speech_end_to_first_audio_ns": 5264724252,
+    "playback_end_to_first_audio_ns": 5102777081,
+    "question_to_session_finished_ns": 16849081935,
+    "audio_total_sum_ns": 13901062186,
+    "audio_first_to_last_ns": 15237265766
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": 19410793,
+      "ms": 19.411
+    },
+    "nurse_dur": {
+      "ns": 2334143738,
+      "ms": 2334.144
+    },
+    "nurse_resp_to_question": {
+      "ns": 418769,
+      "ms": 0.419
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 942614690,
+      "ms": 942.615
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 1118919781,
+      "ms": 1118.92
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 57779507,
+      "ms": 57.78
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 610356755,
+      "ms": 610.357
+    },
+    "question_to_first_play_start": {
+      "ns": 1610750952,
+      "ms": 1610.751
+    },
+    "speech_end_to_first_play_start": {
+      "ns": 5264724252,
+      "ms": 5264.724
+    },
+    "question_to_session_finished": {
+      "ns": 16849081935,
+      "ms": 16849.082
+    },
+    "audio_total_sec": {
+      "ns": 13901062186,
+      "ms": 13901.062,
+      "sec": 13.901
+    }
+  },
+  "asr_chain": {
+    "kws_detected": {
+      "t_ns": 1793242473860965594,
+      "arrival_ns": 1793242473861466358,
+      "detail": {
+        "keyword": "{\"start_time\":0.00, \"keyword\": \"小艺小艺\", \"timestamps\": [1.44, 1.64, 1.84, 1.96, 2.24, 2.28, 2.44, 2.48], \"tokens\":[\"x\", \"iǎo\", \"y\", \"ì\", \"x\", \"iǎo\", \"y\", \"ì\"]}"
+      }
+    },
+    "start_asr": {
+      "t_ns": 1793242473861712108,
+      "arrival_ns": 1793242473862008447,
+      "detail": {}
+    },
+    "endpoint": {
+      "t_ns": 1793242479518183561,
+      "arrival_ns": 1793242479523652763,
+      "detail": {}
+    },
+    "asr_callback": {
+      "t_ns": 1793242479534207892,
+      "arrival_ns": 1793242479537824203,
+      "detail": {
+        "text_len": 54
+      }
+    },
+    "nurse_req": {
+      "t_ns": 1793242479537594354,
+      "arrival_ns": 1793242479538064618,
+      "detail": {
+        "text_len": 54
+      }
+    },
+    "nurse_resp": {
+      "t_ns": 1793242481871738092,
+      "arrival_ns": 1793242481871954477,
+      "detail": {
+        "dur_ms": 2334.142
+      }
+    },
+    "publish_question": {
+      "t_ns": 1793242481871882785,
+      "arrival_ns": 1793242481872543238,
+      "detail": {
+        "text_len": 106
+      }
+    }
+  },
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": 1793242481871882785,
+    "publish_question_found": true
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": 0.747,
+    "asr_start_asr_to_endpoint_ms": 5656.471,
+    "asr_endpoint_to_nurse_req_ms": 19.411,
+    "asr_nurse_req_to_nurse_resp_ms": 2334.144,
+    "asr_nurse_resp_to_publish_question_ms": 0.145,
+    "asr_endpoint_to_question_rx_ms": 2353.973,
+    "asr_publish_question_to_rx_ms": 0.274,
+    "question_to_router_ms": 0.712,
+    "router_to_llm_first_ms": 941.903,
+    "question_to_llm_first_ms": 942.615,
+    "llm_first_to_done_ms": 1118.92,
+    "question_to_llm_done_ms": 2061.534,
+    "llm_first_to_tts_first_text_ms": 57.78,
+    "question_to_tts_first_text_ms": 1000.394,
+    "first_tts_text_to_first_play_start_ms": 610.357,
+    "tts_rx_to_synth_end_ms": 580.006,
+    "tts_rx_to_play_start_ms": 610.052,
+    "tts_synth_end_to_play_start_ms": 30.046,
+    "question_to_first_audio_ms": 1610.751,
+    "speech_end_to_first_audio_ms": 5264.724,
+    "playback_end_to_first_audio_ms": 5102.777,
+    "question_to_session_finished_ms": 16849.082,
+    "audio_total_sum_ms": 13901.062,
+    "audio_first_to_last_ms": 15237.266
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793242482811806216,
+      "first_text_rx_ns": 1793242482814771551,
+      "done_rx_ns": 1793242483933691332,
+      "chunk_count": 13,
+      "char_count": 58,
+      "chunks": [
+        {
+          "t_ns": 1793242482814771551,
+          "text": "放松"
+        },
+        {
+          "t_ns": 1793242482845461870,
+          "text": "心情"
+        },
+        {
+          "t_ns": 1793242482872369418,
+          "text": "，别紧张"
+        },
+        {
+          "t_ns": 1793242482929244528,
+          "text": "～"
+        },
+        {
+          "t_ns": 1793242483042170762,
+          "text": "去之前记得"
+        },
+        {
+          "t_ns": 1793242483154963575,
+          "text": "带好水杯、纸"
+        },
+        {
+          "t_ns": 1793242483248792149,
+          "text": "巾、医疗卡、透"
+        },
+        {
+          "t_ns": 1793242483379995412,
+          "text": "析卡、小点心"
+        },
+        {
+          "t_ns": 1793242483463062951,
+          "text": "和止血带"
+        },
+        {
+          "t_ns": 1793242483629311390,
+          "text": "。  \n进透析"
+        },
+        {
+          "t_ns": 1793242483684501407,
+          "text": "室先称体重、"
+        },
+        {
+          "t_ns": 1793242483824077171,
+          "text": "测血压和脉搏哦"
+        },
+        {
+          "t_ns": 1793242483895113304,
+          "text": "。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793242482872551058,
+      "done_rx_ns": 1793242483933942393,
+      "text_count": 3,
+      "texts": [
+        {
+          "t_ns": 1793242482872551058,
+          "text": "放松心情，"
+        },
+        {
+          "t_ns": 1793242483629522150,
+          "text": "别紧张～去之前记得带好水杯、纸巾、医疗卡、透析卡、小点心和止血带。"
+        },
+        {
+          "t_ns": 1793242483895300885,
+          "text": "进透析室先称体重、测血压和脉搏哦。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 30,
+    "latency_events_total": 30,
+    "asr_events": 7,
+    "tts_events": 18,
+    "tts_play_pairs": 3,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793242473861466358,
+      "node": "asr",
+      "stage": "kws_detected",
+      "t_ns": 1793242473860965594,
+      "detail": {
+        "keyword": "{\"start_time\":0.00, \"keyword\": \"小艺小艺\", \"timestamps\": [1.44, 1.64, 1.84, 1.96, 2.24, 2.28, 2.44, 2.48], \"tokens\":[\"x\", \"iǎo\", \"y\", \"ì\", \"x\", \"iǎo\", \"y\", \"ì\"]}"
+      },
+      "raw": "{\"node\":\"asr\",\"stage\":\"kws_detected\",\"t_ns\":1793242473860965594,\"detail\":{\"keyword\":\"{\\\"start_time\\\":0.00, \\\"keyword\\\": \\\"小艺小艺\\\", \\\"timestamps\\\": [1.44, 1.64, 1.84, 1.96, 2.24, 2.28, 2.44, 2.48], \\\"tokens\\\":[\\\"x\\\", \\\"iǎo\\\", \\\"y\\\", \\\"ì\\\", \\\"x\\\", \\\"iǎo\\\", \\\"y\\\", \\\"ì\\\"]}\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793242473862008447,
+      "node": "asr",
+      "stage": "start_asr",
+      "t_ns": 1793242473861712108,
+      "detail": {},
+      "raw": "{\"node\":\"asr\",\"stage\":\"start_asr\",\"t_ns\":1793242473861712108}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793242479523652763,
+      "node": "asr",
+      "stage": "endpoint",
+      "t_ns": 1793242479518183561,
+      "detail": {},
+      "raw": "{\"node\":\"asr\",\"stage\":\"endpoint\",\"t_ns\":1793242479518183561}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793242479537824203,
+      "node": "asr",
+      "stage": "asr_callback",
+      "t_ns": 1793242479534207892,
+      "detail": {
+        "text_len": 54
+      },
+      "raw": "{\"node\":\"asr\",\"stage\":\"asr_callback\",\"t_ns\":1793242479534207892,\"detail\":{\"text_len\":54}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793242479538064618,
+      "node": "asr",
+      "stage": "nurse_req",
+      "t_ns": 1793242479537594354,
+      "detail": {
+        "text_len": 54
+      },
+      "raw": "{\"node\":\"asr\",\"stage\":\"nurse_req\",\"t_ns\":1793242479537594354,\"detail\":{\"text_len\":54}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793242481871954477,
+      "node": "asr",
+      "stage": "nurse_resp",
+      "t_ns": 1793242481871738092,
+      "detail": {
+        "dur_ms": 2334.142
+      },
+      "raw": "{\"node\":\"asr\",\"stage\":\"nurse_resp\",\"t_ns\":1793242481871738092,\"detail\":{\"dur_ms\":2334.142}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793242481872543238,
+      "node": "asr",
+      "stage": "publish_question",
+      "t_ns": 1793242481871882785,
+      "detail": {
+        "text_len": 106
+      },
+      "raw": "{\"node\":\"asr\",\"stage\":\"publish_question\",\"t_ns\":1793242481871882785,\"detail\":{\"text_len\":106}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793242481893781893,
+      "node": "llm_medical",
+      "stage": "rag_start",
+      "t_ns": 1793242481893560154,
+      "detail": {},
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_start\", \"t_ns\": 1793242481893560154, \"detail\": {}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793242482140814948,
+      "node": "llm_medical",
+      "stage": "rag_end",
+      "t_ns": 1793242482140539760,
+      "detail": {
+        "n_chunks": 4,
+        "took_ms": 246.65,
+        "top1": "首次透析要注意什么"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_end\", \"t_ns\": 1793242482140539760, \"detail\": {\"n_chunks\": 4, \"took_ms\": 246.65, \"top1\": \"首次透析要注意什么\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793242482811848555,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793242482811526830,
+      "detail": {
+        "prompt_chars": 1099,
+        "n_messages": 2
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793242482811526830, \"detail\": {\"prompt_chars\": 1099, \"n_messages\": 2}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793242482812522870,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793242482812334190,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793242482812334190, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793242482814810060,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793242482814595594,
+      "detail": {
+        "prompt_chars": 1099
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793242482814595594, \"detail\": {\"prompt_chars\": 1099}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793242482873007635,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793242482872855519,
+      "detail": {
+        "text_len": 5,
+        "head": "放松心情，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793242482872855519, \"detail\": {\"text_len\": 5, \"head\": \"放松心情，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793242482873227595,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793242482872933676,
+      "detail": {
+        "text_len": 5
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793242482872933676, \"detail\": {\"text_len\": 5}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793242483453105234,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793242483452861492,
+      "detail": {
+        "text_len": 5,
+        "dur_ms": 579.923037,
+        "audio_sec": 1.52,
+        "rtf": 0.3815283138157895
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793242483452861492, \"detail\": {\"text_len\": 5, \"dur_ms\": 579.923037, \"audio_sec\": 1.52, \"rtf\": 0.3815283138157895}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793242483483150388,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793242483482907813,
+      "detail": {
+        "text_len": 5,
+        "head": "放松心情，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793242483482907813, \"detail\": {\"text_len\": 5, \"head\": \"放松心情，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793242483629955338,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793242483629807903,
+      "detail": {
+        "text_len": 33,
+        "head": "别紧张～去之前记得带好水杯、纸巾、医疗卡、透析卡"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793242483629807903, \"detail\": {\"text_len\": 33, \"head\": \"别紧张～去之前记得带好水杯、纸巾、医疗卡、透析卡\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793242483630135701,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793242483629871807,
+      "detail": {
+        "text_len": 33
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793242483629871807, \"detail\": {\"text_len\": 33}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793242483933735667,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793242483933396351,
+      "detail": {
+        "chars": 61
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793242483933396351, \"detail\": {\"chars\": 61}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793242485150297248,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793242485149987992,
+      "detail": {
+        "text_len": 5,
+        "dur_ms": 1667.078978
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793242485149987992, \"detail\": {\"text_len\": 5, \"dur_ms\": 1667.078978}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793242486481548439,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793242486481273425,
+      "detail": {
+        "text_len": 33,
+        "dur_ms": 2851.395032,
+        "audio_sec": 8.4,
+        "rtf": 0.3394517895238095
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793242486481273425, \"detail\": {\"text_len\": 33, \"dur_ms\": 2851.395032, \"audio_sec\": 8.4, \"rtf\": 0.3394517895238095}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793242486485010589,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793242486484832837,
+      "detail": {
+        "text_len": 17,
+        "head": "进透析室先称体重、测血压和脉搏哦。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793242486484832837, \"detail\": {\"text_len\": 17, \"head\": \"进透析室先称体重、测血压和脉搏哦。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793242486485198618,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793242486484887462,
+      "detail": {
+        "text_len": 17
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793242486484887462, \"detail\": {\"text_len\": 17}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793242486485633314,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793242486485518378,
+      "detail": {
+        "text_len": 33,
+        "head": "别紧张～去之前记得带好水杯、纸巾、医疗卡、透析卡"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793242486485518378, \"detail\": {\"text_len\": 33, \"head\": \"别紧张～去之前记得带好水杯、纸巾、医疗卡、透析卡\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793242487810542713,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793242487810228620,
+      "detail": {
+        "text_len": 17,
+        "dur_ms": 1325.335626,
+        "audio_sec": 3.84,
+        "rtf": 0.3451394859375
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793242487810228620, \"detail\": {\"text_len\": 17, \"dur_ms\": 1325.335626, \"audio_sec\": 3.84, \"rtf\": 0.3451394859375}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793242487810865706,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793242487810753247,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793242487810753247, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793242494883118214,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793242494882784435,
+      "detail": {
+        "text_len": 33,
+        "dur_ms": 8397.261136
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793242494882784435, \"detail\": {\"text_len\": 33, \"dur_ms\": 8397.261136}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793242494883604864,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793242494883457629,
+      "detail": {
+        "text_len": 17,
+        "head": "进透析室先称体重、测血压和脉搏哦。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793242494883457629, \"detail\": {\"text_len\": 17, \"head\": \"进透析室先称体重、测血压和脉搏哦。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793242498720568404,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793242498720173579,
+      "detail": {
+        "text_len": 17,
+        "dur_ms": 3836.710264
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793242498720173579, \"detail\": {\"text_len\": 17, \"dur_ms\": 3836.710264}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793242498721058247,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793242498720904454,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793242498720904454, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "asr": {
+      "kws_detected": [
+        {
+          "t_ns": 1793242473860965594,
+          "arrival_ns": 1793242473861466358,
+          "source": "round",
+          "detail": {
+            "keyword": "{\"start_time\":0.00, \"keyword\": \"小艺小艺\", \"timestamps\": [1.44, 1.64, 1.84, 1.96, 2.24, 2.28, 2.44, 2.48], \"tokens\":[\"x\", \"iǎo\", \"y\", \"ì\", \"x\", \"iǎo\", \"y\", \"ì\"]}"
+          }
+        }
+      ],
+      "start_asr": [
+        {
+          "t_ns": 1793242473861712108,
+          "arrival_ns": 1793242473862008447,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "endpoint": [
+        {
+          "t_ns": 1793242479518183561,
+          "arrival_ns": 1793242479523652763,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "asr_callback": [
+        {
+          "t_ns": 1793242479534207892,
+          "arrival_ns": 1793242479537824203,
+          "source": "round",
+          "detail": {
+            "text_len": 54
+          }
+        }
+      ],
+      "nurse_req": [
+        {
+          "t_ns": 1793242479537594354,
+          "arrival_ns": 1793242479538064618,
+          "source": "round",
+          "detail": {
+            "text_len": 54
+          }
+        }
+      ],
+      "nurse_resp": [
+        {
+          "t_ns": 1793242481871738092,
+          "arrival_ns": 1793242481871954477,
+          "source": "round",
+          "detail": {
+            "dur_ms": 2334.142
+          }
+        }
+      ],
+      "publish_question": [
+        {
+          "t_ns": 1793242481871882785,
+          "arrival_ns": 1793242481872543238,
+          "source": "round",
+          "detail": {
+            "text_len": 106
+          }
+        }
+      ]
+    },
+    "llm_medical": {
+      "rag_start": [
+        {
+          "t_ns": 1793242481893560154,
+          "arrival_ns": 1793242481893781893,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "rag_end": [
+        {
+          "t_ns": 1793242482140539760,
+          "arrival_ns": 1793242482140814948,
+          "source": "round",
+          "detail": {
+            "n_chunks": 4,
+            "took_ms": 246.65,
+            "top1": "首次透析要注意什么"
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793242482811526830,
+          "arrival_ns": 1793242482811848555,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1099,
+            "n_messages": 2
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793242482814595594,
+          "arrival_ns": 1793242482814810060,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1099
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793242483933396351,
+          "arrival_ns": 1793242483933735667,
+          "source": "round",
+          "detail": {
+            "chars": 61
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793242482812334190,
+          "arrival_ns": 1793242482812522870,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793242487810753247,
+          "arrival_ns": 1793242487810865706,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793242482872855519,
+          "arrival_ns": 1793242482873007635,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "放松心情，"
+          }
+        },
+        {
+          "t_ns": 1793242483629807903,
+          "arrival_ns": 1793242483629955338,
+          "source": "round",
+          "detail": {
+            "text_len": 33,
+            "head": "别紧张～去之前记得带好水杯、纸巾、医疗卡、透析卡"
+          }
+        },
+        {
+          "t_ns": 1793242486484832837,
+          "arrival_ns": 1793242486485010589,
+          "source": "round",
+          "detail": {
+            "text_len": 17,
+            "head": "进透析室先称体重、测血压和脉搏哦。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793242482872933676,
+          "arrival_ns": 1793242482873227595,
+          "source": "round",
+          "detail": {
+            "text_len": 5
+          }
+        },
+        {
+          "t_ns": 1793242483629871807,
+          "arrival_ns": 1793242483630135701,
+          "source": "round",
+          "detail": {
+            "text_len": 33
+          }
+        },
+        {
+          "t_ns": 1793242486484887462,
+          "arrival_ns": 1793242486485198618,
+          "source": "round",
+          "detail": {
+            "text_len": 17
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793242483452861492,
+          "arrival_ns": 1793242483453105234,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "dur_ms": 579.923037,
+            "audio_sec": 1.52,
+            "rtf": 0.3815283138157895
+          }
+        },
+        {
+          "t_ns": 1793242486481273425,
+          "arrival_ns": 1793242486481548439,
+          "source": "round",
+          "detail": {
+            "text_len": 33,
+            "dur_ms": 2851.395032,
+            "audio_sec": 8.4,
+            "rtf": 0.3394517895238095
+          }
+        },
+        {
+          "t_ns": 1793242487810228620,
+          "arrival_ns": 1793242487810542713,
+          "source": "round",
+          "detail": {
+            "text_len": 17,
+            "dur_ms": 1325.335626,
+            "audio_sec": 3.84,
+            "rtf": 0.3451394859375
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793242483482907813,
+          "arrival_ns": 1793242483483150388,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "放松心情，"
+          }
+        },
+        {
+          "t_ns": 1793242486485518378,
+          "arrival_ns": 1793242486485633314,
+          "source": "round",
+          "detail": {
+            "text_len": 33,
+            "head": "别紧张～去之前记得带好水杯、纸巾、医疗卡、透析卡"
+          }
+        },
+        {
+          "t_ns": 1793242494883457629,
+          "arrival_ns": 1793242494883604864,
+          "source": "round",
+          "detail": {
+            "text_len": 17,
+            "head": "进透析室先称体重、测血压和脉搏哦。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793242485149987992,
+          "arrival_ns": 1793242485150297248,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "dur_ms": 1667.078978
+          }
+        },
+        {
+          "t_ns": 1793242494882784435,
+          "arrival_ns": 1793242494883118214,
+          "source": "round",
+          "detail": {
+            "text_len": 33,
+            "dur_ms": 8397.261136
+          }
+        },
+        {
+          "t_ns": 1793242498720173579,
+          "arrival_ns": 1793242498720568404,
+          "source": "round",
+          "detail": {
+            "text_len": 17,
+            "dur_ms": 3836.710264
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793242498720904454,
+          "arrival_ns": 1793242498721058247,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 1.3,
+    "event_lookback_s": 60.0,
+    "timeout_s": 120.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 1,
+    "interval_s": 25.0
+  }
+}

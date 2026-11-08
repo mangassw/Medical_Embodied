@@ -1,0 +1,683 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1064920",
+  "host": "artrc",
+  "tag": "chat50",
+  "round_index": 24,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T10:31:12.827",
+  "finished_at": "2026-10-30T10:31:20.753",
+  "duration_s": 7.926,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "一公里等于多少米",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793327472828123831,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793327472827726087,
+    "t_publish_question_ns": 1793327472828123831,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793327472828599313,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793327472829093655,
+      "ali_llm_output_start": 1793327474144704123,
+      "ali_llm_output_first_text": 1793327474145143702,
+      "ali_llm_output_done": 1793327474553195276,
+      "tts_realtime_data_start": 1793327474145180098,
+      "tts_realtime_data_first_text": 1793327474289120448,
+      "tts_realtime_data_done": 1793327474553758583,
+      "tts_session_finished": 1793327480449143121
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793327474289467199,
+      "tts_local.synth_start_first": 1793327474289541995,
+      "tts_local.synth_end_first": 1793327475111077344,
+      "tts_local.play_start_first": 1793327475159675992,
+      "tts_local.play_end_last": 1793327480448046446,
+      "tts_local.session_finished": 1793327480448904204
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.97,
+    "router_to_llm_first_ms": 1316.05,
+    "question_to_llm_first_ms": 1317.02,
+    "llm_first_to_done_ms": 408.052,
+    "question_to_llm_done_ms": 1725.071,
+    "llm_first_to_tts_first_text_ms": 143.977,
+    "question_to_tts_first_text_ms": 1460.997,
+    "first_tts_text_to_first_play_start_ms": 870.556,
+    "tts_rx_to_synth_end_ms": 821.61,
+    "tts_rx_to_play_start_ms": 870.209,
+    "tts_synth_end_to_play_start_ms": 48.599,
+    "question_to_first_audio_ms": 2331.552,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 7621.019,
+    "audio_total_sum_ms": 5287.641,
+    "audio_first_to_last_ms": 5288.37
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 969824,
+    "router_to_llm_first_ns": 1316050047,
+    "question_to_llm_first_ns": 1317019871,
+    "llm_first_to_done_ns": 408051574,
+    "question_to_llm_done_ns": 1725071445,
+    "llm_first_to_tts_first_text_ns": 143976746,
+    "question_to_tts_first_text_ns": 1460996617,
+    "first_tts_text_to_first_play_start_ns": 870555544,
+    "tts_rx_to_synth_end_ns": 821610145,
+    "tts_rx_to_play_start_ns": 870208793,
+    "tts_synth_end_to_play_start_ns": 48598648,
+    "question_to_first_audio_ns": 2331552161,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 7621019290,
+    "audio_total_sum_ns": 5287641469,
+    "audio_first_to_last_ns": 5288370454
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 1317019871,
+      "ms": 1317.02
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 408051574,
+      "ms": 408.052
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 143976746,
+      "ms": 143.977
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 870555544,
+      "ms": 870.556
+    },
+    "question_to_first_play_start": {
+      "ns": 2331552161,
+      "ms": 2331.552
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 7621019290,
+      "ms": 7621.019
+    },
+    "audio_total_sec": {
+      "ns": 5287641469,
+      "ms": 5287.641,
+      "sec": 5.288
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.97,
+    "router_to_llm_first_ms": 1316.05,
+    "question_to_llm_first_ms": 1317.02,
+    "llm_first_to_done_ms": 408.052,
+    "question_to_llm_done_ms": 1725.071,
+    "llm_first_to_tts_first_text_ms": 143.977,
+    "question_to_tts_first_text_ms": 1460.997,
+    "first_tts_text_to_first_play_start_ms": 870.556,
+    "tts_rx_to_synth_end_ms": 821.61,
+    "tts_rx_to_play_start_ms": 870.209,
+    "tts_synth_end_to_play_start_ms": 48.599,
+    "question_to_first_audio_ms": 2331.552,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 7621.019,
+    "audio_total_sum_ms": 5287.641,
+    "audio_first_to_last_ms": 5288.37
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793327474144704123,
+      "first_text_rx_ns": 1793327474145143702,
+      "done_rx_ns": 1793327474553195276,
+      "chunk_count": 7,
+      "char_count": 23,
+      "chunks": [
+        {
+          "t_ns": 1793327474145143702,
+          "text": "一"
+        },
+        {
+          "t_ns": 1793327474200225788,
+          "text": "公里等于1"
+        },
+        {
+          "t_ns": 1793327474232191397,
+          "text": "000"
+        },
+        {
+          "t_ns": 1793327474288887321,
+          "text": "米。"
+        },
+        {
+          "t_ns": 1793327474425787399,
+          "text": "走路大约要走"
+        },
+        {
+          "t_ns": 1793327474498994312,
+          "text": "12分钟呢"
+        },
+        {
+          "t_ns": 1793327474527724619,
+          "text": "～"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793327474289120448,
+      "done_rx_ns": 1793327474553758583,
+      "text_count": 2,
+      "texts": [
+        {
+          "t_ns": 1793327474289120448,
+          "text": "一公里等于1000米。"
+        },
+        {
+          "t_ns": 1793327474553464791,
+          "text": "走路大约要走12分钟呢～"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 18,
+    "latency_events_total": 18,
+    "asr_events": 0,
+    "tts_events": 13,
+    "tts_play_pairs": 2,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793327473705130094,
+      "node": "llm_medical",
+      "stage": "intent_judge",
+      "t_ns": 1793327473704856117,
+      "detail": {
+        "model": "qwen-flash",
+        "ms": 874.9,
+        "answer": "聊",
+        "kind": "chat"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent_judge\", \"t_ns\": 1793327473704856117, \"detail\": {\"model\": \"qwen-flash\", \"ms\": 874.9, \"answer\": \"聊\", \"kind\": \"chat\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327473705347976,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793327473704989065,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "llm:qwen-flash",
+        "keyword_medical": false,
+        "judge_kind": "chat",
+        "judge_ms": 874.9
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793327473704989065, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"llm:qwen-flash\", \"keyword_medical\": false, \"judge_kind\": \"chat\", \"judge_ms\": 874.9}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327474144775714,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793327474144310267,
+      "detail": {
+        "prompt_chars": 392,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793327474144310267, \"detail\": {\"prompt_chars\": 392, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327474145209216,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793327474144953066,
+      "detail": {
+        "prompt_chars": 392
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793327474144953066, \"detail\": {\"prompt_chars\": 392}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327474145532433,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793327474145300429,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793327474145300429, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327474289608264,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327474289467199,
+      "detail": {
+        "text_len": 11,
+        "head": "一公里等于1000米。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327474289467199, \"detail\": {\"text_len\": 11, \"head\": \"一公里等于1000米。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327474289797758,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327474289541995,
+      "detail": {
+        "text_len": 11
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327474289541995, \"detail\": {\"text_len\": 11}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327474553243922,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793327474552890562,
+      "detail": {
+        "chars": 26
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793327474552890562, \"detail\": {\"chars\": 26}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327475111383845,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327475111077344,
+      "detail": {
+        "text_len": 11,
+        "dur_ms": 821.53139,
+        "audio_sec": 2.24,
+        "rtf": 0.36675508482142855
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327475111077344, \"detail\": {\"text_len\": 11, \"dur_ms\": 821.53139, \"audio_sec\": 2.24, \"rtf\": 0.36675508482142855}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327475159283004,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327475159024367,
+      "detail": {
+        "text_len": 12,
+        "head": "走路大约要走12分钟呢～"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327475159024367, \"detail\": {\"text_len\": 12, \"head\": \"走路大约要走12分钟呢～\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327475159491767,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327475159107336,
+      "detail": {
+        "text_len": 12
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327475159107336, \"detail\": {\"text_len\": 12}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327475159863012,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327475159675992,
+      "detail": {
+        "text_len": 11,
+        "head": "一公里等于1000米。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327475159675992, \"detail\": {\"text_len\": 11, \"head\": \"一公里等于1000米。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327476214670131,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327476214352412,
+      "detail": {
+        "text_len": 12,
+        "dur_ms": 1055.239726,
+        "audio_sec": 3.04,
+        "rtf": 0.3471183309210526
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327476214352412, \"detail\": {\"text_len\": 12, \"dur_ms\": 1055.239726, \"audio_sec\": 3.04, \"rtf\": 0.3471183309210526}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327476215157760,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793327476215018737,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793327476215018737, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327477403825133,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327477403495658,
+      "detail": {
+        "text_len": 11,
+        "interrupted": false,
+        "dur_ms": 2243.815955
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327477403495658, \"detail\": {\"text_len\": 11, \"interrupted\": false, \"dur_ms\": 2243.815955}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327477404383920,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327477404224643,
+      "detail": {
+        "text_len": 12,
+        "head": "走路大约要走12分钟呢～"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327477404224643, \"detail\": {\"text_len\": 12, \"head\": \"走路大约要走12分钟呢～\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327480448407277,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327480448046446,
+      "detail": {
+        "text_len": 12,
+        "interrupted": false,
+        "dur_ms": 3043.817871
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327480448046446, \"detail\": {\"text_len\": 12, \"interrupted\": false, \"dur_ms\": 3043.817871}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327480449194056,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793327480448904204,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793327480448904204, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent_judge": [
+        {
+          "t_ns": 1793327473704856117,
+          "arrival_ns": 1793327473705130094,
+          "source": "round",
+          "detail": {
+            "model": "qwen-flash",
+            "ms": 874.9,
+            "answer": "聊",
+            "kind": "chat"
+          }
+        }
+      ],
+      "intent": [
+        {
+          "t_ns": 1793327473704989065,
+          "arrival_ns": 1793327473705347976,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "llm:qwen-flash",
+            "keyword_medical": false,
+            "judge_kind": "chat",
+            "judge_ms": 874.9
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793327474144310267,
+          "arrival_ns": 1793327474144775714,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 392,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793327474144953066,
+          "arrival_ns": 1793327474145209216,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 392
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793327474552890562,
+          "arrival_ns": 1793327474553243922,
+          "source": "round",
+          "detail": {
+            "chars": 26
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793327474145300429,
+          "arrival_ns": 1793327474145532433,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793327476215018737,
+          "arrival_ns": 1793327476215157760,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793327474289467199,
+          "arrival_ns": 1793327474289608264,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "一公里等于1000米。"
+          }
+        },
+        {
+          "t_ns": 1793327475159024367,
+          "arrival_ns": 1793327475159283004,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "走路大约要走12分钟呢～"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793327474289541995,
+          "arrival_ns": 1793327474289797758,
+          "source": "round",
+          "detail": {
+            "text_len": 11
+          }
+        },
+        {
+          "t_ns": 1793327475159107336,
+          "arrival_ns": 1793327475159491767,
+          "source": "round",
+          "detail": {
+            "text_len": 12
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793327475111077344,
+          "arrival_ns": 1793327475111383845,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "dur_ms": 821.53139,
+            "audio_sec": 2.24,
+            "rtf": 0.36675508482142855
+          }
+        },
+        {
+          "t_ns": 1793327476214352412,
+          "arrival_ns": 1793327476214670131,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "dur_ms": 1055.239726,
+            "audio_sec": 3.04,
+            "rtf": 0.3471183309210526
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793327475159675992,
+          "arrival_ns": 1793327475159863012,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "一公里等于1000米。"
+          }
+        },
+        {
+          "t_ns": 1793327477404224643,
+          "arrival_ns": 1793327477404383920,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "走路大约要走12分钟呢～"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793327477403495658,
+          "arrival_ns": 1793327477403825133,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "interrupted": false,
+            "dur_ms": 2243.815955
+          }
+        },
+        {
+          "t_ns": 1793327480448046446,
+          "arrival_ns": 1793327480448407277,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "interrupted": false,
+            "dur_ms": 3043.817871
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793327480448904204,
+          "arrival_ns": 1793327480449194056,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 50,
+    "interval_s": 2.0
+  }
+}

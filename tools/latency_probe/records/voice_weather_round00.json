@@ -1,0 +1,1340 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_173473",
+  "host": "artrc",
+  "tag": "voice_weather",
+  "round_index": 0,
+  "mode": "wake-wav",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-27T15:47:22.447",
+  "finished_at": "2026-10-27T15:47:49.057",
+  "duration_s": 26.61,
+  "trigger": {
+    "mode": "wake-wav",
+    "t0_source": "question_asr_rx",
+    "inject_text": null,
+    "question_wav": "audio/q_weather.wav",
+    "wake_wav": "audio/wake_xiaoyi.wav",
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": [
+      {
+        "role": "wake",
+        "wav": "audio/wake_xiaoyi.wav",
+        "cmd": "pw-play --target latency_sink audio/wake_xiaoyi.wav",
+        "start_ns": 1793087242447997229,
+        "end_ns": 1793087244344601675,
+        "ok": true,
+        "error": null
+      },
+      {
+        "role": "question",
+        "wav": "audio/q_weather.wav",
+        "cmd": "pw-play --target latency_sink audio/q_weather.wav",
+        "start_ns": 1793087244661580560,
+        "end_ns": 1793087246819000041,
+        "ok": true,
+        "error": null
+      }
+    ]
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793087249045361423,
+    "t0_source": "question_asr_rx",
+    "t_trigger_begin_ns": 1793087242447308894,
+    "t_publish_question_ns": null,
+    "t_start_asr_pub_ns": 1793087244349721214,
+    "t_question_play_start_ns": 1793087244661580560,
+    "t_question_play_end_ns": 1793087246819000041,
+    "probe_rx_ns": {
+      "question_asr": 1793087249045361423,
+      "llm_to_openai": 1793087249046029264,
+      "llm_to_dashapp": null,
+      "ali_llm_output_start": null,
+      "ali_llm_output_first_text": 1793087250606088221,
+      "ali_llm_output_done": 1793087252137718708,
+      "tts_realtime_data_start": null,
+      "tts_realtime_data_first_text": 1793087250852245933,
+      "tts_realtime_data_done": 1793087252137964816,
+      "tts_session_finished": 1793087268755903005
+    },
+    "node_event_ns": {
+      "asr.kws_detected": 1793087244348771639,
+      "asr.start_asr": 1793087244350601176,
+      "asr.endpoint": 1793087247930343478,
+      "asr.asr_callback": 1793087247941980408,
+      "asr.nurse_req": 1793087247942104372,
+      "asr.nurse_resp": 1793087249044816254,
+      "asr.publish_question": 1793087249044914391,
+      "tts_local.rx_first": 1793087250852488341,
+      "tts_local.synth_start_first": 1793087250852565402,
+      "tts_local.synth_end_first": 1793087252010606350,
+      "tts_local.play_start_first": 1793087252076347268,
+      "tts_local.play_end_last": 1793087268754061422,
+      "tts_local.session_finished": 1793087268755213744
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": 1.83,
+    "asr_start_asr_to_endpoint_ms": 3579.742,
+    "asr_endpoint_to_nurse_req_ms": 11.761,
+    "asr_nurse_req_to_nurse_resp_ms": 1102.712,
+    "asr_nurse_resp_to_publish_question_ms": 0.098,
+    "asr_endpoint_to_question_rx_ms": 1115.018,
+    "asr_publish_question_to_rx_ms": 0.447,
+    "question_to_router_ms": 0.668,
+    "router_to_llm_first_ms": 1560.059,
+    "question_to_llm_first_ms": 1560.727,
+    "llm_first_to_done_ms": 1531.63,
+    "question_to_llm_done_ms": 3092.357,
+    "llm_first_to_tts_first_text_ms": 246.158,
+    "question_to_tts_first_text_ms": 1806.885,
+    "first_tts_text_to_first_play_start_ms": 1224.101,
+    "tts_rx_to_synth_end_ms": 1158.118,
+    "tts_rx_to_play_start_ms": 1223.859,
+    "tts_synth_end_to_play_start_ms": 65.741,
+    "question_to_first_audio_ms": 3030.986,
+    "speech_end_to_first_audio_ms": 5446.004,
+    "playback_end_to_first_audio_ms": 5257.347,
+    "question_to_session_finished_ms": 19710.542,
+    "audio_total_sum_ms": 16672.017,
+    "audio_first_to_last_ms": 16677.714
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": 1829537,
+    "asr_start_asr_to_endpoint_ns": 3579742302,
+    "asr_endpoint_to_nurse_req_ns": 11760894,
+    "asr_nurse_req_to_nurse_resp_ns": 1102711882,
+    "asr_nurse_resp_to_publish_question_ns": 98137,
+    "asr_endpoint_to_question_rx_ns": 1115017945,
+    "asr_publish_question_to_rx_ns": 447032,
+    "question_to_router_ns": 667841,
+    "router_to_llm_first_ns": 1560058957,
+    "question_to_llm_first_ns": 1560726798,
+    "llm_first_to_done_ns": 1531630487,
+    "question_to_llm_done_ns": 3092357285,
+    "llm_first_to_tts_first_text_ns": 246157712,
+    "question_to_tts_first_text_ns": 1806884510,
+    "first_tts_text_to_first_play_start_ns": 1224101335,
+    "tts_rx_to_synth_end_ns": 1158118009,
+    "tts_rx_to_play_start_ns": 1223858927,
+    "tts_synth_end_to_play_start_ns": 65740918,
+    "question_to_first_audio_ns": 3030985845,
+    "speech_end_to_first_audio_ns": 5446003790,
+    "playback_end_to_first_audio_ns": 5257347227,
+    "question_to_session_finished_ns": 19710541582,
+    "audio_total_sum_ns": 16672016748,
+    "audio_first_to_last_ns": 16677714154
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": 11760894,
+      "ms": 11.761
+    },
+    "nurse_dur": {
+      "ns": 1102711882,
+      "ms": 1102.712
+    },
+    "nurse_resp_to_question": {
+      "ns": 545169,
+      "ms": 0.545
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 1560726798,
+      "ms": 1560.727
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 1531630487,
+      "ms": 1531.63
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 246157712,
+      "ms": 246.158
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 1224101335,
+      "ms": 1224.101
+    },
+    "question_to_first_play_start": {
+      "ns": 3030985845,
+      "ms": 3030.986
+    },
+    "speech_end_to_first_play_start": {
+      "ns": 5446003790,
+      "ms": 5446.004
+    },
+    "question_to_session_finished": {
+      "ns": 19710541582,
+      "ms": 19710.542
+    },
+    "audio_total_sec": {
+      "ns": 16672016748,
+      "ms": 16672.017,
+      "sec": 16.672
+    }
+  },
+  "asr_chain": {
+    "kws_detected": {
+      "t_ns": 1793087244348771639,
+      "arrival_ns": 1793087244349646475,
+      "detail": {
+        "keyword": "{\"start_time\":0.00, \"keyword\": \"小艺小艺\", \"timestamps\": [1.12, 1.40, 1.52, 1.64, 1.92, 1.96, 2.12, 2.16], \"tokens\":[\"x\", \"iǎo\", \"y\", \"ì\", \"x\", \"iǎo\", \"y\", \"ì\"]}"
+      }
+    },
+    "start_asr": {
+      "t_ns": 1793087244350601176,
+      "arrival_ns": 1793087244350854335,
+      "detail": {}
+    },
+    "endpoint": {
+      "t_ns": 1793087247930343478,
+      "arrival_ns": 1793087247934597943,
+      "detail": {}
+    },
+    "asr_callback": {
+      "t_ns": 1793087247941980408,
+      "arrival_ns": 1793087247944754211,
+      "detail": {
+        "text_len": 21
+      }
+    },
+    "nurse_req": {
+      "t_ns": 1793087247942104372,
+      "arrival_ns": 1793087247945018789,
+      "detail": {
+        "text_len": 21
+      }
+    },
+    "nurse_resp": {
+      "t_ns": 1793087249044816254,
+      "arrival_ns": 1793087249045101483,
+      "detail": {
+        "dur_ms": 1102.706
+      }
+    },
+    "publish_question": {
+      "t_ns": 1793087249044914391,
+      "arrival_ns": 1793087249045705962,
+      "detail": {
+        "text_len": 73
+      }
+    }
+  },
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": 1793087249044914391,
+    "publish_question_found": true
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": 1.83,
+    "asr_start_asr_to_endpoint_ms": 3579.742,
+    "asr_endpoint_to_nurse_req_ms": 11.761,
+    "asr_nurse_req_to_nurse_resp_ms": 1102.712,
+    "asr_nurse_resp_to_publish_question_ms": 0.098,
+    "asr_endpoint_to_question_rx_ms": 1115.018,
+    "asr_publish_question_to_rx_ms": 0.447,
+    "question_to_router_ms": 0.668,
+    "router_to_llm_first_ms": 1560.059,
+    "question_to_llm_first_ms": 1560.727,
+    "llm_first_to_done_ms": 1531.63,
+    "question_to_llm_done_ms": 3092.357,
+    "llm_first_to_tts_first_text_ms": 246.158,
+    "question_to_tts_first_text_ms": 1806.885,
+    "first_tts_text_to_first_play_start_ms": 1224.101,
+    "tts_rx_to_synth_end_ms": 1158.118,
+    "tts_rx_to_play_start_ms": 1223.859,
+    "tts_synth_end_to_play_start_ms": 65.741,
+    "question_to_first_audio_ms": 3030.986,
+    "speech_end_to_first_audio_ms": 5446.004,
+    "playback_end_to_first_audio_ms": 5257.347,
+    "question_to_session_finished_ms": 19710.542,
+    "audio_total_sum_ms": 16672.017,
+    "audio_first_to_last_ms": 16677.714
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": null,
+      "first_text_rx_ns": 1793087250606088221,
+      "done_rx_ns": 1793087252137718708,
+      "chunk_count": 15,
+      "char_count": 71,
+      "chunks": [
+        {
+          "t_ns": 1793087250606088221,
+          "text": "今天"
+        },
+        {
+          "t_ns": 1793087250606320136,
+          "text": "杭州是"
+        },
+        {
+          "t_ns": 1793087250629135433,
+          "text": "多"
+        },
+        {
+          "t_ns": 1793087250686307147,
+          "text": "云转"
+        },
+        {
+          "t_ns": 1793087250851889081,
+          "text": "晴，气温十六"
+        },
+        {
+          "t_ns": 1793087250943066707,
+          "text": "到二十二摄"
+        },
+        {
+          "t_ns": 1793087250984904974,
+          "text": "氏度，湿度"
+        },
+        {
+          "t_ns": 1793087251096845175,
+          "text": "适中，风"
+        },
+        {
+          "t_ns": 1793087251359209684,
+          "text": "也很轻柔。  \n这样的"
+        },
+        {
+          "t_ns": 1793087251369679910,
+          "text": "天气很适合透"
+        },
+        {
+          "t_ns": 1793087251370042997,
+          "text": "析后适当休息，您"
+        },
+        {
+          "t_ns": 1793087251451072437,
+          "text": "要是靠窗坐着"
+        },
+        {
+          "t_ns": 1793087251564980825,
+          "text": "，记得别让"
+        },
+        {
+          "t_ns": 1793087251812197049,
+          "text": "风吹着后颈哦"
+        },
+        {
+          "t_ns": 1793087251812471009,
+          "text": "。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793087250852245933,
+      "done_rx_ns": 1793087252137964816,
+      "text_count": 7,
+      "texts": [
+        {
+          "t_ns": 1793087250852245933,
+          "text": "今天杭州是多云转晴，"
+        },
+        {
+          "t_ns": 1793087250985218515,
+          "text": "气温十六到二十二摄氏度，"
+        },
+        {
+          "t_ns": 1793087251097218361,
+          "text": "湿度适中，"
+        },
+        {
+          "t_ns": 1793087251359572301,
+          "text": "风也很轻柔。"
+        },
+        {
+          "t_ns": 1793087251370358148,
+          "text": "这样的天气很适合透析后适当休息，"
+        },
+        {
+          "t_ns": 1793087251565240788,
+          "text": "您要是靠窗坐着，"
+        },
+        {
+          "t_ns": 1793087251813169263,
+          "text": "记得别让风吹着后颈哦。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 45,
+    "latency_events_total": 45,
+    "asr_events": 8,
+    "tts_events": 37,
+    "tts_play_pairs": 7,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793087244349646475,
+      "node": "asr",
+      "stage": "kws_detected",
+      "t_ns": 1793087244348771639,
+      "detail": {
+        "keyword": "{\"start_time\":0.00, \"keyword\": \"小艺小艺\", \"timestamps\": [1.12, 1.40, 1.52, 1.64, 1.92, 1.96, 2.12, 2.16], \"tokens\":[\"x\", \"iǎo\", \"y\", \"ì\", \"x\", \"iǎo\", \"y\", \"ì\"]}"
+      },
+      "raw": "{\"node\":\"asr\",\"stage\":\"kws_detected\",\"t_ns\":1793087244348771639,\"detail\":{\"keyword\":\"{\\\"start_time\\\":0.00, \\\"keyword\\\": \\\"小艺小艺\\\", \\\"timestamps\\\": [1.12, 1.40, 1.52, 1.64, 1.92, 1.96, 2.12, 2.16], \\\"tokens\\\":[\\\"x\\\", \\\"iǎo\\\", \\\"y\\\", \\\"ì\\\", \\\"x\\\", \\\"iǎo\\\", \\\"y\\\", \\\"ì\\\"]}\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087244350854335,
+      "node": "asr",
+      "stage": "start_asr",
+      "t_ns": 1793087244350601176,
+      "detail": {},
+      "raw": "{\"node\":\"asr\",\"stage\":\"start_asr\",\"t_ns\":1793087244350601176}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087245242784316,
+      "node": "asr",
+      "stage": "endpoint",
+      "t_ns": 1793087245235164553,
+      "detail": {},
+      "raw": "{\"node\":\"asr\",\"stage\":\"endpoint\",\"t_ns\":1793087245235164553}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087247934597943,
+      "node": "asr",
+      "stage": "endpoint",
+      "t_ns": 1793087247930343478,
+      "detail": {},
+      "raw": "{\"node\":\"asr\",\"stage\":\"endpoint\",\"t_ns\":1793087247930343478}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087247944754211,
+      "node": "asr",
+      "stage": "asr_callback",
+      "t_ns": 1793087247941980408,
+      "detail": {
+        "text_len": 21
+      },
+      "raw": "{\"node\":\"asr\",\"stage\":\"asr_callback\",\"t_ns\":1793087247941980408,\"detail\":{\"text_len\":21}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087247945018789,
+      "node": "asr",
+      "stage": "nurse_req",
+      "t_ns": 1793087247942104372,
+      "detail": {
+        "text_len": 21
+      },
+      "raw": "{\"node\":\"asr\",\"stage\":\"nurse_req\",\"t_ns\":1793087247942104372,\"detail\":{\"text_len\":21}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087249045101483,
+      "node": "asr",
+      "stage": "nurse_resp",
+      "t_ns": 1793087249044816254,
+      "detail": {
+        "dur_ms": 1102.706
+      },
+      "raw": "{\"node\":\"asr\",\"stage\":\"nurse_resp\",\"t_ns\":1793087249044816254,\"detail\":{\"dur_ms\":1102.706}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087249045705962,
+      "node": "asr",
+      "stage": "publish_question",
+      "t_ns": 1793087249044914391,
+      "detail": {
+        "text_len": 73
+      },
+      "raw": "{\"node\":\"asr\",\"stage\":\"publish_question\",\"t_ns\":1793087249044914391,\"detail\":{\"text_len\":73}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087250852712980,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087250852488341,
+      "detail": {
+        "text_len": 10,
+        "head": "今天杭州是多云转晴，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087250852488341, \"detail\": {\"text_len\": 10, \"head\": \"今天杭州是多云转晴，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087250852945868,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087250852565402,
+      "detail": {
+        "text_len": 10
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087250852565402, \"detail\": {\"text_len\": 10}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087252010931869,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087252010606350,
+      "detail": {
+        "text_len": 10,
+        "dur_ms": 1158.034497,
+        "audio_sec": 3.04,
+        "rtf": 0.3809324003289474
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087252010606350, \"detail\": {\"text_len\": 10, \"dur_ms\": 1158.034497, \"audio_sec\": 3.04, \"rtf\": 0.3809324003289474}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087252019097714,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087252018786262,
+      "detail": {
+        "text_len": 12,
+        "head": "气温十六到二十二摄氏度，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087252018786262, \"detail\": {\"text_len\": 12, \"head\": \"气温十六到二十二摄氏度，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087252019334821,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087252018866437,
+      "detail": {
+        "text_len": 12
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087252018866437, \"detail\": {\"text_len\": 12}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087252076688626,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793087252076347268,
+      "detail": {
+        "text_len": 10,
+        "head": "今天杭州是多云转晴，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793087252076347268, \"detail\": {\"text_len\": 10, \"head\": \"今天杭州是多云转晴，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087252963872155,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087252963485371,
+      "detail": {
+        "text_len": 12,
+        "dur_ms": 944.613405,
+        "audio_sec": 2.48,
+        "rtf": 0.380892502016129
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087252963485371, \"detail\": {\"text_len\": 12, \"dur_ms\": 944.613405, \"audio_sec\": 2.48, \"rtf\": 0.380892502016129}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087252964547984,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087252964223514,
+      "detail": {
+        "text_len": 5,
+        "head": "湿度适中，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087252964223514, \"detail\": {\"text_len\": 5, \"head\": \"湿度适中，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087252964789884,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087252964273108,
+      "detail": {
+        "text_len": 5
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087252964273108, \"detail\": {\"text_len\": 5}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087253562265462,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087253561918235,
+      "detail": {
+        "text_len": 5,
+        "dur_ms": 597.640089,
+        "audio_sec": 1.52,
+        "rtf": 0.3931842690789474
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087253561918235, \"detail\": {\"text_len\": 5, \"dur_ms\": 597.640089, \"audio_sec\": 1.52, \"rtf\": 0.3931842690789474}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087253562663898,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087253562481052,
+      "detail": {
+        "text_len": 6,
+        "head": "风也很轻柔。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087253562481052, \"detail\": {\"text_len\": 6, \"head\": \"风也很轻柔。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087253562844955,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087253562526884,
+      "detail": {
+        "text_len": 6
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087253562526884, \"detail\": {\"text_len\": 6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087254285423523,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087254285118258,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 722.586352,
+        "audio_sec": 1.92,
+        "rtf": 0.3763470583333333
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087254285118258, \"detail\": {\"text_len\": 6, \"dur_ms\": 722.586352, \"audio_sec\": 1.92, \"rtf\": 0.3763470583333333}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087254285877970,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087254285678339,
+      "detail": {
+        "text_len": 16,
+        "head": "这样的天气很适合透析后适当休息，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087254285678339, \"detail\": {\"text_len\": 16, \"head\": \"这样的天气很适合透析后适当休息，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087254286073600,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087254285714585,
+      "detail": {
+        "text_len": 16
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087254285714585, \"detail\": {\"text_len\": 16}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087255272256318,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793087255271476329,
+      "detail": {
+        "text_len": 10,
+        "dur_ms": 3195.126669
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793087255271476329, \"detail\": {\"text_len\": 10, \"dur_ms\": 3195.126669}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087255272833155,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793087255272652911,
+      "detail": {
+        "text_len": 12,
+        "head": "气温十六到二十二摄氏度，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793087255272652911, \"detail\": {\"text_len\": 12, \"head\": \"气温十六到二十二摄氏度，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087255534608140,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087255534253970,
+      "detail": {
+        "text_len": 16,
+        "dur_ms": 1248.532173,
+        "audio_sec": 3.36,
+        "rtf": 0.37158695625000004
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087255534253970, \"detail\": {\"text_len\": 16, \"dur_ms\": 1248.532173, \"audio_sec\": 3.36, \"rtf\": 0.37158695625000004}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087255535003629,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087255534796101,
+      "detail": {
+        "text_len": 8,
+        "head": "您要是靠窗坐着，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087255534796101, \"detail\": {\"text_len\": 8, \"head\": \"您要是靠窗坐着，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087255535199991,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087255534840812,
+      "detail": {
+        "text_len": 8
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087255534840812, \"detail\": {\"text_len\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087256195512300,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087256195198947,
+      "detail": {
+        "text_len": 8,
+        "dur_ms": 660.353337,
+        "audio_sec": 1.84,
+        "rtf": 0.3588876831521739
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087256195198947, \"detail\": {\"text_len\": 8, \"dur_ms\": 660.353337, \"audio_sec\": 1.84, \"rtf\": 0.3588876831521739}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087256195884937,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793087256195731884,
+      "detail": {
+        "text_len": 11,
+        "head": "记得别让风吹着后颈哦。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793087256195731884, \"detail\": {\"text_len\": 11, \"head\": \"记得别让风吹着后颈哦。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087256196083647,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793087256195773258,
+      "detail": {
+        "text_len": 11
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793087256195773258, \"detail\": {\"text_len\": 11}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087257128672781,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793087257128236553,
+      "detail": {
+        "text_len": 11,
+        "dur_ms": 932.456924,
+        "audio_sec": 2.24,
+        "rtf": 0.41627541249999994
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793087257128236553, \"detail\": {\"text_len\": 11, \"dur_ms\": 932.456924, \"audio_sec\": 2.24, \"rtf\": 0.41627541249999994}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087257129332631,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793087257128887221,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793087257128887221, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087257766338748,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793087257765903743,
+      "detail": {
+        "text_len": 12,
+        "dur_ms": 2493.244296
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793087257765903743, \"detail\": {\"text_len\": 12, \"dur_ms\": 2493.244296}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087257767148892,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793087257766865059,
+      "detail": {
+        "text_len": 5,
+        "head": "湿度适中，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793087257766865059, \"detail\": {\"text_len\": 5, \"head\": \"湿度适中，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087259308391482,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793087259307923028,
+      "detail": {
+        "text_len": 5,
+        "dur_ms": 1541.051438
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793087259307923028, \"detail\": {\"text_len\": 5, \"dur_ms\": 1541.051438}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087259308962956,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793087259308725529,
+      "detail": {
+        "text_len": 6,
+        "head": "风也很轻柔。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793087259308725529, \"detail\": {\"text_len\": 6, \"head\": \"风也很轻柔。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087261245892650,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793087261245452437,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 1936.723203
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793087261245452437, \"detail\": {\"text_len\": 6, \"dur_ms\": 1936.723203}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087261246724231,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793087261246443668,
+      "detail": {
+        "text_len": 16,
+        "head": "这样的天气很适合透析后适当休息，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793087261246443668, \"detail\": {\"text_len\": 16, \"head\": \"这样的天气很适合透析后适当休息，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087264637538324,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793087264637037469,
+      "detail": {
+        "text_len": 16,
+        "dur_ms": 3390.586423
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793087264637037469, \"detail\": {\"text_len\": 16, \"dur_ms\": 3390.586423}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087264638008859,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793087264637859753,
+      "detail": {
+        "text_len": 8,
+        "head": "您要是靠窗坐着，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793087264637859753, \"detail\": {\"text_len\": 8, \"head\": \"您要是靠窗坐着，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087266495071583,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793087266494619912,
+      "detail": {
+        "text_len": 8,
+        "dur_ms": 1856.752188
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793087266494619912, \"detail\": {\"text_len\": 8, \"dur_ms\": 1856.752188}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087266495720613,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793087266495563404,
+      "detail": {
+        "text_len": 11,
+        "head": "记得别让风吹着后颈哦。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793087266495563404, \"detail\": {\"text_len\": 11, \"head\": \"记得别让风吹着后颈哦。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087268754584702,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793087268754061422,
+      "detail": {
+        "text_len": 11,
+        "dur_ms": 2258.489149
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793087268754061422, \"detail\": {\"text_len\": 11, \"dur_ms\": 2258.489149}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793087268755517222,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793087268755213744,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793087268755213744, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "asr": {
+      "kws_detected": [
+        {
+          "t_ns": 1793087244348771639,
+          "arrival_ns": 1793087244349646475,
+          "source": "round",
+          "detail": {
+            "keyword": "{\"start_time\":0.00, \"keyword\": \"小艺小艺\", \"timestamps\": [1.12, 1.40, 1.52, 1.64, 1.92, 1.96, 2.12, 2.16], \"tokens\":[\"x\", \"iǎo\", \"y\", \"ì\", \"x\", \"iǎo\", \"y\", \"ì\"]}"
+          }
+        }
+      ],
+      "start_asr": [
+        {
+          "t_ns": 1793087244350601176,
+          "arrival_ns": 1793087244350854335,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "endpoint": [
+        {
+          "t_ns": 1793087245235164553,
+          "arrival_ns": 1793087245242784316,
+          "source": "round",
+          "detail": {}
+        },
+        {
+          "t_ns": 1793087247930343478,
+          "arrival_ns": 1793087247934597943,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "asr_callback": [
+        {
+          "t_ns": 1793087247941980408,
+          "arrival_ns": 1793087247944754211,
+          "source": "round",
+          "detail": {
+            "text_len": 21
+          }
+        }
+      ],
+      "nurse_req": [
+        {
+          "t_ns": 1793087247942104372,
+          "arrival_ns": 1793087247945018789,
+          "source": "round",
+          "detail": {
+            "text_len": 21
+          }
+        }
+      ],
+      "nurse_resp": [
+        {
+          "t_ns": 1793087249044816254,
+          "arrival_ns": 1793087249045101483,
+          "source": "round",
+          "detail": {
+            "dur_ms": 1102.706
+          }
+        }
+      ],
+      "publish_question": [
+        {
+          "t_ns": 1793087249044914391,
+          "arrival_ns": 1793087249045705962,
+          "source": "round",
+          "detail": {
+            "text_len": 73
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx": [
+        {
+          "t_ns": 1793087250852488341,
+          "arrival_ns": 1793087250852712980,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "今天杭州是多云转晴，"
+          }
+        },
+        {
+          "t_ns": 1793087252018786262,
+          "arrival_ns": 1793087252019097714,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "气温十六到二十二摄氏度，"
+          }
+        },
+        {
+          "t_ns": 1793087252964223514,
+          "arrival_ns": 1793087252964547984,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "湿度适中，"
+          }
+        },
+        {
+          "t_ns": 1793087253562481052,
+          "arrival_ns": 1793087253562663898,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "风也很轻柔。"
+          }
+        },
+        {
+          "t_ns": 1793087254285678339,
+          "arrival_ns": 1793087254285877970,
+          "source": "round",
+          "detail": {
+            "text_len": 16,
+            "head": "这样的天气很适合透析后适当休息，"
+          }
+        },
+        {
+          "t_ns": 1793087255534796101,
+          "arrival_ns": 1793087255535003629,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "您要是靠窗坐着，"
+          }
+        },
+        {
+          "t_ns": 1793087256195731884,
+          "arrival_ns": 1793087256195884937,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "记得别让风吹着后颈哦。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793087250852565402,
+          "arrival_ns": 1793087250852945868,
+          "source": "round",
+          "detail": {
+            "text_len": 10
+          }
+        },
+        {
+          "t_ns": 1793087252018866437,
+          "arrival_ns": 1793087252019334821,
+          "source": "round",
+          "detail": {
+            "text_len": 12
+          }
+        },
+        {
+          "t_ns": 1793087252964273108,
+          "arrival_ns": 1793087252964789884,
+          "source": "round",
+          "detail": {
+            "text_len": 5
+          }
+        },
+        {
+          "t_ns": 1793087253562526884,
+          "arrival_ns": 1793087253562844955,
+          "source": "round",
+          "detail": {
+            "text_len": 6
+          }
+        },
+        {
+          "t_ns": 1793087254285714585,
+          "arrival_ns": 1793087254286073600,
+          "source": "round",
+          "detail": {
+            "text_len": 16
+          }
+        },
+        {
+          "t_ns": 1793087255534840812,
+          "arrival_ns": 1793087255535199991,
+          "source": "round",
+          "detail": {
+            "text_len": 8
+          }
+        },
+        {
+          "t_ns": 1793087256195773258,
+          "arrival_ns": 1793087256196083647,
+          "source": "round",
+          "detail": {
+            "text_len": 11
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793087252010606350,
+          "arrival_ns": 1793087252010931869,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "dur_ms": 1158.034497,
+            "audio_sec": 3.04,
+            "rtf": 0.3809324003289474
+          }
+        },
+        {
+          "t_ns": 1793087252963485371,
+          "arrival_ns": 1793087252963872155,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "dur_ms": 944.613405,
+            "audio_sec": 2.48,
+            "rtf": 0.380892502016129
+          }
+        },
+        {
+          "t_ns": 1793087253561918235,
+          "arrival_ns": 1793087253562265462,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "dur_ms": 597.640089,
+            "audio_sec": 1.52,
+            "rtf": 0.3931842690789474
+          }
+        },
+        {
+          "t_ns": 1793087254285118258,
+          "arrival_ns": 1793087254285423523,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 722.586352,
+            "audio_sec": 1.92,
+            "rtf": 0.3763470583333333
+          }
+        },
+        {
+          "t_ns": 1793087255534253970,
+          "arrival_ns": 1793087255534608140,
+          "source": "round",
+          "detail": {
+            "text_len": 16,
+            "dur_ms": 1248.532173,
+            "audio_sec": 3.36,
+            "rtf": 0.37158695625000004
+          }
+        },
+        {
+          "t_ns": 1793087256195198947,
+          "arrival_ns": 1793087256195512300,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "dur_ms": 660.353337,
+            "audio_sec": 1.84,
+            "rtf": 0.3588876831521739
+          }
+        },
+        {
+          "t_ns": 1793087257128236553,
+          "arrival_ns": 1793087257128672781,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "dur_ms": 932.456924,
+            "audio_sec": 2.24,
+            "rtf": 0.41627541249999994
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793087252076347268,
+          "arrival_ns": 1793087252076688626,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "今天杭州是多云转晴，"
+          }
+        },
+        {
+          "t_ns": 1793087255272652911,
+          "arrival_ns": 1793087255272833155,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "气温十六到二十二摄氏度，"
+          }
+        },
+        {
+          "t_ns": 1793087257766865059,
+          "arrival_ns": 1793087257767148892,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "湿度适中，"
+          }
+        },
+        {
+          "t_ns": 1793087259308725529,
+          "arrival_ns": 1793087259308962956,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "风也很轻柔。"
+          }
+        },
+        {
+          "t_ns": 1793087261246443668,
+          "arrival_ns": 1793087261246724231,
+          "source": "round",
+          "detail": {
+            "text_len": 16,
+            "head": "这样的天气很适合透析后适当休息，"
+          }
+        },
+        {
+          "t_ns": 1793087264637859753,
+          "arrival_ns": 1793087264638008859,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "您要是靠窗坐着，"
+          }
+        },
+        {
+          "t_ns": 1793087266495563404,
+          "arrival_ns": 1793087266495720613,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "记得别让风吹着后颈哦。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793087255271476329,
+          "arrival_ns": 1793087255272256318,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "dur_ms": 3195.126669
+          }
+        },
+        {
+          "t_ns": 1793087257765903743,
+          "arrival_ns": 1793087257766338748,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "dur_ms": 2493.244296
+          }
+        },
+        {
+          "t_ns": 1793087259307923028,
+          "arrival_ns": 1793087259308391482,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "dur_ms": 1541.051438
+          }
+        },
+        {
+          "t_ns": 1793087261245452437,
+          "arrival_ns": 1793087261245892650,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 1936.723203
+          }
+        },
+        {
+          "t_ns": 1793087264637037469,
+          "arrival_ns": 1793087264637538324,
+          "source": "round",
+          "detail": {
+            "text_len": 16,
+            "dur_ms": 3390.586423
+          }
+        },
+        {
+          "t_ns": 1793087266494619912,
+          "arrival_ns": 1793087266495071583,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "dur_ms": 1856.752188
+          }
+        },
+        {
+          "t_ns": 1793087268754061422,
+          "arrival_ns": 1793087268754584702,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "dur_ms": 2258.489149
+          }
+        }
+      ],
+      "rx_control": [
+        {
+          "t_ns": 1793087257128887221,
+          "arrival_ns": 1793087257129332631,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793087268755213744,
+          "arrival_ns": 1793087268755517222,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 1.3,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 3,
+    "interval_s": 18.0
+  }
+}

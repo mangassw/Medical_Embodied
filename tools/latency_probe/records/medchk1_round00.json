@@ -1,0 +1,1041 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1046346",
+  "host": "artrc",
+  "tag": "medchk1",
+  "round_index": 0,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T09:42:36.140",
+  "finished_at": "2026-10-30T09:42:50.231",
+  "duration_s": 14.09,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "透析完针眼什么时候能沾水？",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793324556141244802,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793324556140720999,
+    "t_publish_question_ns": 1793324556141244802,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793324556141884403,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793324556142136371,
+      "ali_llm_output_start": 1793324556868232804,
+      "ali_llm_output_first_text": 1793324556868474462,
+      "ali_llm_output_done": 1793324557752365090,
+      "tts_realtime_data_start": 1793324556868516675,
+      "tts_realtime_data_first_text": 1793324556981381143,
+      "tts_realtime_data_done": 1793324557752701125,
+      "tts_session_finished": 1793324569927185964
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793324556984282403,
+      "tts_local.synth_start_first": 1793324556984346477,
+      "tts_local.synth_end_first": 1793324557852722253,
+      "tts_local.play_start_first": 1793324557861738917,
+      "tts_local.play_end_last": 1793324569926217594,
+      "tts_local.session_finished": 1793324569926986976
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.892,
+    "router_to_llm_first_ms": 726.338,
+    "question_to_llm_first_ms": 727.23,
+    "llm_first_to_done_ms": 883.891,
+    "question_to_llm_done_ms": 1611.12,
+    "llm_first_to_tts_first_text_ms": 112.907,
+    "question_to_tts_first_text_ms": 840.136,
+    "first_tts_text_to_first_play_start_ms": 880.358,
+    "tts_rx_to_synth_end_ms": 868.44,
+    "tts_rx_to_play_start_ms": 877.457,
+    "tts_synth_end_to_play_start_ms": 9.017,
+    "question_to_first_audio_ms": 1720.494,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 13785.941,
+    "audio_total_sum_ms": 12061.554,
+    "audio_first_to_last_ms": 12064.479
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 891569,
+    "router_to_llm_first_ns": 726338091,
+    "question_to_llm_first_ns": 727229660,
+    "llm_first_to_done_ns": 883890628,
+    "question_to_llm_done_ns": 1611120288,
+    "llm_first_to_tts_first_text_ns": 112906681,
+    "question_to_tts_first_text_ns": 840136341,
+    "first_tts_text_to_first_play_start_ns": 880357774,
+    "tts_rx_to_synth_end_ns": 868439850,
+    "tts_rx_to_play_start_ns": 877456514,
+    "tts_synth_end_to_play_start_ns": 9016664,
+    "question_to_first_audio_ns": 1720494115,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 13785941162,
+    "audio_total_sum_ns": 12061554079,
+    "audio_first_to_last_ns": 12064478677
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 727229660,
+      "ms": 727.23
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 883890628,
+      "ms": 883.891
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 112906681,
+      "ms": 112.907
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 880357774,
+      "ms": 880.358
+    },
+    "question_to_first_play_start": {
+      "ns": 1720494115,
+      "ms": 1720.494
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 13785941162,
+      "ms": 13785.941
+    },
+    "audio_total_sec": {
+      "ns": 12061554079,
+      "ms": 12061.554,
+      "sec": 12.062
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.892,
+    "router_to_llm_first_ms": 726.338,
+    "question_to_llm_first_ms": 727.23,
+    "llm_first_to_done_ms": 883.891,
+    "question_to_llm_done_ms": 1611.12,
+    "llm_first_to_tts_first_text_ms": 112.907,
+    "question_to_tts_first_text_ms": 840.136,
+    "first_tts_text_to_first_play_start_ms": 880.358,
+    "tts_rx_to_synth_end_ms": 868.44,
+    "tts_rx_to_play_start_ms": 877.457,
+    "tts_synth_end_to_play_start_ms": 9.017,
+    "question_to_first_audio_ms": 1720.494,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 13785.941,
+    "audio_total_sum_ms": 12061.554,
+    "audio_first_to_last_ms": 12064.479
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793324556868232804,
+      "first_text_rx_ns": 1793324556868474462,
+      "done_rx_ns": 1793324557752365090,
+      "chunk_count": 10,
+      "char_count": 48,
+      "chunks": [
+        {
+          "t_ns": 1793324556868474462,
+          "text": "2"
+        },
+        {
+          "t_ns": 1793324556902439049,
+          "text": "4小时"
+        },
+        {
+          "t_ns": 1793324556945591979,
+          "text": "后能"
+        },
+        {
+          "t_ns": 1793324556981097053,
+          "text": "沾水。"
+        },
+        {
+          "t_ns": 1793324557113890254,
+          "text": "透析后当天"
+        },
+        {
+          "t_ns": 1793324557253654641,
+          "text": "不能洗澡，24小时"
+        },
+        {
+          "t_ns": 1793324557353756840,
+          "text": "后可撕去创可"
+        },
+        {
+          "t_ns": 1793324557535229543,
+          "text": "贴；若不慎沾"
+        },
+        {
+          "t_ns": 1793324557622793355,
+          "text": "水，立即用酒精或"
+        },
+        {
+          "t_ns": 1793324557727639498,
+          "text": "碘伏消毒。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793324556981381143,
+      "done_rx_ns": 1793324557752701125,
+      "text_count": 5,
+      "texts": [
+        {
+          "t_ns": 1793324556981381143,
+          "text": "24小时后能沾水。"
+        },
+        {
+          "t_ns": 1793324557253965022,
+          "text": "透析后当天不能洗澡，"
+        },
+        {
+          "t_ns": 1793324557535482086,
+          "text": "24小时后可撕去创可贴；"
+        },
+        {
+          "t_ns": 1793324557623140243,
+          "text": "若不慎沾水，"
+        },
+        {
+          "t_ns": 1793324557727991065,
+          "text": "立即用酒精或碘伏消毒。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 34,
+    "latency_events_total": 34,
+    "asr_events": 0,
+    "tts_events": 28,
+    "tts_play_pairs": 5,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793324556163285375,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793324556163033230,
+      "detail": {
+        "kind": "medical",
+        "chat_mode": false
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793324556163033230, \"detail\": {\"kind\": \"medical\", \"chat_mode\": false}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324556163705936,
+      "node": "llm_medical",
+      "stage": "rag_start",
+      "t_ns": 1793324556163512973,
+      "detail": {},
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_start\", \"t_ns\": 1793324556163512973, \"detail\": {}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324556401912796,
+      "node": "llm_medical",
+      "stage": "rag_end",
+      "t_ns": 1793324556401621276,
+      "detail": {
+        "n_chunks": 4,
+        "took_ms": 237.98,
+        "top1": "内瘘患者透析后注意事项"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_end\", \"t_ns\": 1793324556401621276, \"detail\": {\"n_chunks\": 4, \"took_ms\": 237.98, \"top1\": \"内瘘患者透析后注意事项\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324556868276384,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793324556867874159,
+      "detail": {
+        "prompt_chars": 1520,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793324556867874159, \"detail\": {\"prompt_chars\": 1520, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324556868546402,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793324556868318706,
+      "detail": {
+        "prompt_chars": 1520
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793324556868318706, \"detail\": {\"prompt_chars\": 1520}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324556872462384,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793324556872243089,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793324556872243089, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324556984466062,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793324556984282403,
+      "detail": {
+        "text_len": 9,
+        "head": "24小时后能沾水。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793324556984282403, \"detail\": {\"text_len\": 9, \"head\": \"24小时后能沾水。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324556984674562,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793324556984346477,
+      "detail": {
+        "text_len": 9
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793324556984346477, \"detail\": {\"text_len\": 9}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324557751754354,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793324557751384676,
+      "detail": {
+        "chars": 51
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793324557751384676, \"detail\": {\"chars\": 51}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324557853015750,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793324557852722253,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 868.37076,
+        "audio_sec": 2.32,
+        "rtf": 0.3742977413793104
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793324557852722253, \"detail\": {\"text_len\": 9, \"dur_ms\": 868.37076, \"audio_sec\": 2.32, \"rtf\": 0.3742977413793104}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324557857185638,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793324557856997957,
+      "detail": {
+        "text_len": 10,
+        "head": "透析后当天不能洗澡，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793324557856997957, \"detail\": {\"text_len\": 10, \"head\": \"透析后当天不能洗澡，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324557857393292,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793324557857050752,
+      "detail": {
+        "text_len": 10
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793324557857050752, \"detail\": {\"text_len\": 10}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324557862043650,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793324557861738917,
+      "detail": {
+        "text_len": 9,
+        "head": "24小时后能沾水。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793324557861738917, \"detail\": {\"text_len\": 9, \"head\": \"24小时后能沾水。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324558748138989,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793324558747790909,
+      "detail": {
+        "text_len": 10,
+        "dur_ms": 890.733575,
+        "audio_sec": 2.48,
+        "rtf": 0.3591667641129032
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793324558747790909, \"detail\": {\"text_len\": 10, \"dur_ms\": 890.733575, \"audio_sec\": 2.48, \"rtf\": 0.3591667641129032}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324558748625769,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793324558748491417,
+      "detail": {
+        "text_len": 12,
+        "head": "24小时后可撕去创可贴；"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793324558748491417, \"detail\": {\"text_len\": 12, \"head\": \"24小时后可撕去创可贴；\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324558748894487,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793324558748536160,
+      "detail": {
+        "text_len": 12
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793324558748536160, \"detail\": {\"text_len\": 12}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324559676211724,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793324559675934424,
+      "detail": {
+        "text_len": 12,
+        "dur_ms": 927.393433,
+        "audio_sec": 2.64,
+        "rtf": 0.3512853912878788
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793324559675934424, \"detail\": {\"text_len\": 12, \"dur_ms\": 927.393433, \"audio_sec\": 2.64, \"rtf\": 0.3512853912878788}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324559676600240,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793324559676468150,
+      "detail": {
+        "text_len": 6,
+        "head": "若不慎沾水，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793324559676468150, \"detail\": {\"text_len\": 6, \"head\": \"若不慎沾水，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324559676790701,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793324559676505114,
+      "detail": {
+        "text_len": 6
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793324559676505114, \"detail\": {\"text_len\": 6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324560211751842,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793324560211423363,
+      "detail": {
+        "text_len": 9,
+        "interrupted": false,
+        "dur_ms": 2349.681893
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793324560211423363, \"detail\": {\"text_len\": 9, \"interrupted\": false, \"dur_ms\": 2349.681893}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324560212300215,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793324560212149441,
+      "detail": {
+        "text_len": 10,
+        "head": "透析后当天不能洗澡，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793324560212149441, \"detail\": {\"text_len\": 10, \"head\": \"透析后当天不能洗澡，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324560315438099,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793324560315081611,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 638.570489,
+        "audio_sec": 1.76,
+        "rtf": 0.36282414147727265
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793324560315081611, \"detail\": {\"text_len\": 6, \"dur_ms\": 638.570489, \"audio_sec\": 1.76, \"rtf\": 0.36282414147727265}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324560315904289,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793324560315718879,
+      "detail": {
+        "text_len": 11,
+        "head": "立即用酒精或碘伏消毒。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793324560315718879, \"detail\": {\"text_len\": 11, \"head\": \"立即用酒精或碘伏消毒。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324560316157869,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793324560315757013,
+      "detail": {
+        "text_len": 11
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793324560315757013, \"detail\": {\"text_len\": 11}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324561267670126,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793324561267372234,
+      "detail": {
+        "text_len": 11,
+        "dur_ms": 951.609969,
+        "audio_sec": 2.72,
+        "rtf": 0.34985660625
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793324561267372234, \"detail\": {\"text_len\": 11, \"dur_ms\": 951.609969, \"audio_sec\": 2.72, \"rtf\": 0.34985660625}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324561268007057,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793324561267873850,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793324561267873850, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324562721748037,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793324562721383167,
+      "detail": {
+        "text_len": 10,
+        "interrupted": false,
+        "dur_ms": 2509.228955
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793324562721383167, \"detail\": {\"text_len\": 10, \"interrupted\": false, \"dur_ms\": 2509.228955}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324562722347970,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793324562722178331,
+      "detail": {
+        "text_len": 12,
+        "head": "24小时后可撕去创可贴；"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793324562722178331, \"detail\": {\"text_len\": 12, \"head\": \"24小时后可撕去创可贴；\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324565391222234,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793324565390934362,
+      "detail": {
+        "text_len": 12,
+        "interrupted": false,
+        "dur_ms": 2668.751603
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793324565390934362, \"detail\": {\"text_len\": 12, \"interrupted\": false, \"dur_ms\": 2668.751603}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324565391759054,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793324565391630300,
+      "detail": {
+        "text_len": 6,
+        "head": "若不慎沾水，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793324565391630300, \"detail\": {\"text_len\": 6, \"head\": \"若不慎沾水，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324567174259488,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793324567173950417,
+      "detail": {
+        "text_len": 6,
+        "interrupted": false,
+        "dur_ms": 1782.31795
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793324567173950417, \"detail\": {\"text_len\": 6, \"interrupted\": false, \"dur_ms\": 1782.31795}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324567174796538,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793324567174657835,
+      "detail": {
+        "text_len": 11,
+        "head": "立即用酒精或碘伏消毒。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793324567174657835, \"detail\": {\"text_len\": 11, \"head\": \"立即用酒精或碘伏消毒。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324569926545690,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793324569926217594,
+      "detail": {
+        "text_len": 11,
+        "interrupted": false,
+        "dur_ms": 2751.55667
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793324569926217594, \"detail\": {\"text_len\": 11, \"interrupted\": false, \"dur_ms\": 2751.55667}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793324569927246343,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793324569926986976,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793324569926986976, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793324556163033230,
+          "arrival_ns": 1793324556163285375,
+          "source": "round",
+          "detail": {
+            "kind": "medical",
+            "chat_mode": false
+          }
+        }
+      ],
+      "rag_start": [
+        {
+          "t_ns": 1793324556163512973,
+          "arrival_ns": 1793324556163705936,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "rag_end": [
+        {
+          "t_ns": 1793324556401621276,
+          "arrival_ns": 1793324556401912796,
+          "source": "round",
+          "detail": {
+            "n_chunks": 4,
+            "took_ms": 237.98,
+            "top1": "内瘘患者透析后注意事项"
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793324556867874159,
+          "arrival_ns": 1793324556868276384,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1520,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793324556868318706,
+          "arrival_ns": 1793324556868546402,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1520
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793324557751384676,
+          "arrival_ns": 1793324557751754354,
+          "source": "round",
+          "detail": {
+            "chars": 51
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793324556872243089,
+          "arrival_ns": 1793324556872462384,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793324561267873850,
+          "arrival_ns": 1793324561268007057,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793324556984282403,
+          "arrival_ns": 1793324556984466062,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "24小时后能沾水。"
+          }
+        },
+        {
+          "t_ns": 1793324557856997957,
+          "arrival_ns": 1793324557857185638,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "透析后当天不能洗澡，"
+          }
+        },
+        {
+          "t_ns": 1793324558748491417,
+          "arrival_ns": 1793324558748625769,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "24小时后可撕去创可贴；"
+          }
+        },
+        {
+          "t_ns": 1793324559676468150,
+          "arrival_ns": 1793324559676600240,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "若不慎沾水，"
+          }
+        },
+        {
+          "t_ns": 1793324560315718879,
+          "arrival_ns": 1793324560315904289,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "立即用酒精或碘伏消毒。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793324556984346477,
+          "arrival_ns": 1793324556984674562,
+          "source": "round",
+          "detail": {
+            "text_len": 9
+          }
+        },
+        {
+          "t_ns": 1793324557857050752,
+          "arrival_ns": 1793324557857393292,
+          "source": "round",
+          "detail": {
+            "text_len": 10
+          }
+        },
+        {
+          "t_ns": 1793324558748536160,
+          "arrival_ns": 1793324558748894487,
+          "source": "round",
+          "detail": {
+            "text_len": 12
+          }
+        },
+        {
+          "t_ns": 1793324559676505114,
+          "arrival_ns": 1793324559676790701,
+          "source": "round",
+          "detail": {
+            "text_len": 6
+          }
+        },
+        {
+          "t_ns": 1793324560315757013,
+          "arrival_ns": 1793324560316157869,
+          "source": "round",
+          "detail": {
+            "text_len": 11
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793324557852722253,
+          "arrival_ns": 1793324557853015750,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 868.37076,
+            "audio_sec": 2.32,
+            "rtf": 0.3742977413793104
+          }
+        },
+        {
+          "t_ns": 1793324558747790909,
+          "arrival_ns": 1793324558748138989,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "dur_ms": 890.733575,
+            "audio_sec": 2.48,
+            "rtf": 0.3591667641129032
+          }
+        },
+        {
+          "t_ns": 1793324559675934424,
+          "arrival_ns": 1793324559676211724,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "dur_ms": 927.393433,
+            "audio_sec": 2.64,
+            "rtf": 0.3512853912878788
+          }
+        },
+        {
+          "t_ns": 1793324560315081611,
+          "arrival_ns": 1793324560315438099,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 638.570489,
+            "audio_sec": 1.76,
+            "rtf": 0.36282414147727265
+          }
+        },
+        {
+          "t_ns": 1793324561267372234,
+          "arrival_ns": 1793324561267670126,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "dur_ms": 951.609969,
+            "audio_sec": 2.72,
+            "rtf": 0.34985660625
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793324557861738917,
+          "arrival_ns": 1793324557862043650,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "24小时后能沾水。"
+          }
+        },
+        {
+          "t_ns": 1793324560212149441,
+          "arrival_ns": 1793324560212300215,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "透析后当天不能洗澡，"
+          }
+        },
+        {
+          "t_ns": 1793324562722178331,
+          "arrival_ns": 1793324562722347970,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "24小时后可撕去创可贴；"
+          }
+        },
+        {
+          "t_ns": 1793324565391630300,
+          "arrival_ns": 1793324565391759054,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "若不慎沾水，"
+          }
+        },
+        {
+          "t_ns": 1793324567174657835,
+          "arrival_ns": 1793324567174796538,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "立即用酒精或碘伏消毒。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793324560211423363,
+          "arrival_ns": 1793324560211751842,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "interrupted": false,
+            "dur_ms": 2349.681893
+          }
+        },
+        {
+          "t_ns": 1793324562721383167,
+          "arrival_ns": 1793324562721748037,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "interrupted": false,
+            "dur_ms": 2509.228955
+          }
+        },
+        {
+          "t_ns": 1793324565390934362,
+          "arrival_ns": 1793324565391222234,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "interrupted": false,
+            "dur_ms": 2668.751603
+          }
+        },
+        {
+          "t_ns": 1793324567173950417,
+          "arrival_ns": 1793324567174259488,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "interrupted": false,
+            "dur_ms": 1782.31795
+          }
+        },
+        {
+          "t_ns": 1793324569926217594,
+          "arrival_ns": 1793324569926545690,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "interrupted": false,
+            "dur_ms": 2751.55667
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793324569926986976,
+          "arrival_ns": 1793324569927246343,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 40.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 1,
+    "interval_s": 1.0
+  }
+}

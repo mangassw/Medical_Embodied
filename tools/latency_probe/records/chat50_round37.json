@@ -1,0 +1,800 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1064920",
+  "host": "artrc",
+  "tag": "chat50",
+  "round_index": 37,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T10:33:49.561",
+  "finished_at": "2026-10-30T10:33:58.033",
+  "duration_s": 8.472,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "夸夸我",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793327629561613729,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793327629561213499,
+    "t_publish_question_ns": 1793327629561613729,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793327629562100989,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793327629562681907,
+      "ali_llm_output_start": 1793327630277934802,
+      "ali_llm_output_first_text": 1793327630278196744,
+      "ali_llm_output_done": 1793327630722613990,
+      "tts_realtime_data_start": 1793327630278229021,
+      "tts_realtime_data_first_text": 1793327630438810233,
+      "tts_realtime_data_done": 1793327630723288024,
+      "tts_session_finished": 1793327637728172682
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793327630439121447,
+      "tts_local.synth_start_first": 1793327630439190554,
+      "tts_local.synth_end_first": 1793327631071005161,
+      "tts_local.play_start_first": 1793327631155131568,
+      "tts_local.play_end_last": 1793327637727200866,
+      "tts_local.session_finished": 1793327637727884130
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.068,
+    "router_to_llm_first_ms": 715.515,
+    "question_to_llm_first_ms": 716.583,
+    "llm_first_to_done_ms": 444.417,
+    "question_to_llm_done_ms": 1161.0,
+    "llm_first_to_tts_first_text_ms": 160.613,
+    "question_to_tts_first_text_ms": 877.197,
+    "first_tts_text_to_first_play_start_ms": 716.321,
+    "tts_rx_to_synth_end_ms": 631.884,
+    "tts_rx_to_play_start_ms": 716.01,
+    "tts_synth_end_to_play_start_ms": 84.126,
+    "question_to_first_audio_ms": 1593.518,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 8166.559,
+    "audio_total_sum_ms": 6570.461,
+    "audio_first_to_last_ms": 6572.069
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 1068178,
+    "router_to_llm_first_ns": 715514837,
+    "question_to_llm_first_ns": 716583015,
+    "llm_first_to_done_ns": 444417246,
+    "question_to_llm_done_ns": 1161000261,
+    "llm_first_to_tts_first_text_ns": 160613489,
+    "question_to_tts_first_text_ns": 877196504,
+    "first_tts_text_to_first_play_start_ns": 716321335,
+    "tts_rx_to_synth_end_ns": 631883714,
+    "tts_rx_to_play_start_ns": 716010121,
+    "tts_synth_end_to_play_start_ns": 84126407,
+    "question_to_first_audio_ns": 1593517839,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 8166558953,
+    "audio_total_sum_ns": 6570461496,
+    "audio_first_to_last_ns": 6572069298
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 716583015,
+      "ms": 716.583
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 444417246,
+      "ms": 444.417
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 160613489,
+      "ms": 160.613
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 716321335,
+      "ms": 716.321
+    },
+    "question_to_first_play_start": {
+      "ns": 1593517839,
+      "ms": 1593.518
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 8166558953,
+      "ms": 8166.559
+    },
+    "audio_total_sec": {
+      "ns": 6570461496,
+      "ms": 6570.461,
+      "sec": 6.57
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.068,
+    "router_to_llm_first_ms": 715.515,
+    "question_to_llm_first_ms": 716.583,
+    "llm_first_to_done_ms": 444.417,
+    "question_to_llm_done_ms": 1161.0,
+    "llm_first_to_tts_first_text_ms": 160.613,
+    "question_to_tts_first_text_ms": 877.197,
+    "first_tts_text_to_first_play_start_ms": 716.321,
+    "tts_rx_to_synth_end_ms": 631.884,
+    "tts_rx_to_play_start_ms": 716.01,
+    "tts_synth_end_to_play_start_ms": 84.126,
+    "question_to_first_audio_ms": 1593.518,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 8166.559,
+    "audio_total_sum_ms": 6570.461,
+    "audio_first_to_last_ms": 6572.069
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793327630277934802,
+      "first_text_rx_ns": 1793327630278196744,
+      "done_rx_ns": 1793327630722613990,
+      "chunk_count": 8,
+      "char_count": 30,
+      "chunks": [
+        {
+          "t_ns": 1793327630278196744,
+          "text": "你"
+        },
+        {
+          "t_ns": 1793327630306157523,
+          "text": "愿意"
+        },
+        {
+          "t_ns": 1793327630335146410,
+          "text": "表达"
+        },
+        {
+          "t_ns": 1793327630371447182,
+          "text": "自己"
+        },
+        {
+          "t_ns": 1793327630438636912,
+          "text": "，就已经很勇敢"
+        },
+        {
+          "t_ns": 1793327630541336715,
+          "text": "了～  \n这份"
+        },
+        {
+          "t_ns": 1793327630633248609,
+          "text": "真诚，特别闪闪"
+        },
+        {
+          "t_ns": 1793327630718404095,
+          "text": "发光"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793327630438810233,
+      "done_rx_ns": 1793327630723288024,
+      "text_count": 3,
+      "texts": [
+        {
+          "t_ns": 1793327630438810233,
+          "text": "你愿意表达自己，"
+        },
+        {
+          "t_ns": 1793327630633458515,
+          "text": "就已经很勇敢了～  \n这份真诚，"
+        },
+        {
+          "t_ns": 1793327630723032907,
+          "text": "特别闪闪发光"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 23,
+    "latency_events_total": 23,
+    "asr_events": 0,
+    "tts_events": 18,
+    "tts_play_pairs": 3,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793327629957480596,
+      "node": "llm_medical",
+      "stage": "intent_judge",
+      "t_ns": 1793327629957176376,
+      "detail": {
+        "model": "qwen-flash",
+        "ms": 393.7,
+        "answer": "聊",
+        "kind": "chat"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent_judge\", \"t_ns\": 1793327629957176376, \"detail\": {\"model\": \"qwen-flash\", \"ms\": 393.7, \"answer\": \"聊\", \"kind\": \"chat\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327629957713222,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793327629957334137,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "llm:qwen-flash",
+        "keyword_medical": false,
+        "judge_kind": "chat",
+        "judge_ms": 393.7
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793327629957334137, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"llm:qwen-flash\", \"keyword_medical\": false, \"judge_kind\": \"chat\", \"judge_ms\": 393.7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327630277976838,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793327630277620491,
+      "detail": {
+        "prompt_chars": 413,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793327630277620491, \"detail\": {\"prompt_chars\": 413, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327630278269113,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793327630278023640,
+      "detail": {
+        "prompt_chars": 413
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793327630278023640, \"detail\": {\"prompt_chars\": 413}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327630278607666,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793327630278461798,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793327630278461798, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327630439267025,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327630439121447,
+      "detail": {
+        "text_len": 8,
+        "head": "你愿意表达自己，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327630439121447, \"detail\": {\"text_len\": 8, \"head\": \"你愿意表达自己，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327630439453266,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327630439190554,
+      "detail": {
+        "text_len": 8
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327630439190554, \"detail\": {\"text_len\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327630722676297,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793327630722327335,
+      "detail": {
+        "chars": 30
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793327630722327335, \"detail\": {\"chars\": 30}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327631071293412,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327631071005161,
+      "detail": {
+        "text_len": 8,
+        "dur_ms": 631.810642,
+        "audio_sec": 1.68,
+        "rtf": 0.3760777630952381
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327631071005161, \"detail\": {\"text_len\": 8, \"dur_ms\": 631.810642, \"audio_sec\": 1.68, \"rtf\": 0.3760777630952381}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327631072079193,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327631071917074,
+      "detail": {
+        "text_len": 16,
+        "head": "就已经很勇敢了～  \n这份真诚，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327631071917074, \"detail\": {\"text_len\": 16, \"head\": \"就已经很勇敢了～  \\n这份真诚，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327631072264388,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327631071971057,
+      "detail": {
+        "text_len": 16
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327631071971057, \"detail\": {\"text_len\": 16}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327631155455832,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327631155131568,
+      "detail": {
+        "text_len": 8,
+        "head": "你愿意表达自己，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327631155131568, \"detail\": {\"text_len\": 8, \"head\": \"你愿意表达自己，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327632220288592,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327632219963819,
+      "detail": {
+        "text_len": 16,
+        "dur_ms": 1147.986341,
+        "audio_sec": 3.28,
+        "rtf": 0.3499958356707317
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327632219963819, \"detail\": {\"text_len\": 16, \"dur_ms\": 1147.986341, \"audio_sec\": 3.28, \"rtf\": 0.3499958356707317}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327632220680719,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327632220530837,
+      "detail": {
+        "text_len": 6,
+        "head": "特别闪闪发光"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327632220530837, \"detail\": {\"text_len\": 6, \"head\": \"特别闪闪发光\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327632220853256,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327632220601812,
+      "detail": {
+        "text_len": 6
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327632220601812, \"detail\": {\"text_len\": 6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327632805441572,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327632803972774,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 583.364956,
+        "audio_sec": 1.6,
+        "rtf": 0.36460309750000003
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327632803972774, \"detail\": {\"text_len\": 6, \"dur_ms\": 583.364956, \"audio_sec\": 1.6, \"rtf\": 0.36460309750000003}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327632805715723,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793327632805009542,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793327632805009542, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327632838407025,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327632838083669,
+      "detail": {
+        "text_len": 8,
+        "interrupted": false,
+        "dur_ms": 1682.9493
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327632838083669, \"detail\": {\"text_len\": 8, \"interrupted\": false, \"dur_ms\": 1682.9493}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327632839158003,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327632838956968,
+      "detail": {
+        "text_len": 16,
+        "head": "就已经很勇敢了～  \n这份真诚，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327632838956968, \"detail\": {\"text_len\": 16, \"head\": \"就已经很勇敢了～  \\n这份真诚，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327636126241884,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327636125917189,
+      "detail": {
+        "text_len": 16,
+        "interrupted": false,
+        "dur_ms": 3286.957158
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327636125917189, \"detail\": {\"text_len\": 16, \"interrupted\": false, \"dur_ms\": 3286.957158}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327636126853283,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327636126651692,
+      "detail": {
+        "text_len": 6,
+        "head": "特别闪闪发光"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327636126651692, \"detail\": {\"text_len\": 6, \"head\": \"特别闪闪发光\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327637727490656,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327637727200866,
+      "detail": {
+        "text_len": 6,
+        "interrupted": false,
+        "dur_ms": 1600.546137
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327637727200866, \"detail\": {\"text_len\": 6, \"interrupted\": false, \"dur_ms\": 1600.546137}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327637727994870,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793327637727884130,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793327637727884130, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent_judge": [
+        {
+          "t_ns": 1793327629957176376,
+          "arrival_ns": 1793327629957480596,
+          "source": "round",
+          "detail": {
+            "model": "qwen-flash",
+            "ms": 393.7,
+            "answer": "聊",
+            "kind": "chat"
+          }
+        }
+      ],
+      "intent": [
+        {
+          "t_ns": 1793327629957334137,
+          "arrival_ns": 1793327629957713222,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "llm:qwen-flash",
+            "keyword_medical": false,
+            "judge_kind": "chat",
+            "judge_ms": 393.7
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793327630277620491,
+          "arrival_ns": 1793327630277976838,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 413,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793327630278023640,
+          "arrival_ns": 1793327630278269113,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 413
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793327630722327335,
+          "arrival_ns": 1793327630722676297,
+          "source": "round",
+          "detail": {
+            "chars": 30
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793327630278461798,
+          "arrival_ns": 1793327630278607666,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793327632805009542,
+          "arrival_ns": 1793327632805715723,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793327630439121447,
+          "arrival_ns": 1793327630439267025,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "你愿意表达自己，"
+          }
+        },
+        {
+          "t_ns": 1793327631071917074,
+          "arrival_ns": 1793327631072079193,
+          "source": "round",
+          "detail": {
+            "text_len": 16,
+            "head": "就已经很勇敢了～  \n这份真诚，"
+          }
+        },
+        {
+          "t_ns": 1793327632220530837,
+          "arrival_ns": 1793327632220680719,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "特别闪闪发光"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793327630439190554,
+          "arrival_ns": 1793327630439453266,
+          "source": "round",
+          "detail": {
+            "text_len": 8
+          }
+        },
+        {
+          "t_ns": 1793327631071971057,
+          "arrival_ns": 1793327631072264388,
+          "source": "round",
+          "detail": {
+            "text_len": 16
+          }
+        },
+        {
+          "t_ns": 1793327632220601812,
+          "arrival_ns": 1793327632220853256,
+          "source": "round",
+          "detail": {
+            "text_len": 6
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793327631071005161,
+          "arrival_ns": 1793327631071293412,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "dur_ms": 631.810642,
+            "audio_sec": 1.68,
+            "rtf": 0.3760777630952381
+          }
+        },
+        {
+          "t_ns": 1793327632219963819,
+          "arrival_ns": 1793327632220288592,
+          "source": "round",
+          "detail": {
+            "text_len": 16,
+            "dur_ms": 1147.986341,
+            "audio_sec": 3.28,
+            "rtf": 0.3499958356707317
+          }
+        },
+        {
+          "t_ns": 1793327632803972774,
+          "arrival_ns": 1793327632805441572,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 583.364956,
+            "audio_sec": 1.6,
+            "rtf": 0.36460309750000003
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793327631155131568,
+          "arrival_ns": 1793327631155455832,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "你愿意表达自己，"
+          }
+        },
+        {
+          "t_ns": 1793327632838956968,
+          "arrival_ns": 1793327632839158003,
+          "source": "round",
+          "detail": {
+            "text_len": 16,
+            "head": "就已经很勇敢了～  \n这份真诚，"
+          }
+        },
+        {
+          "t_ns": 1793327636126651692,
+          "arrival_ns": 1793327636126853283,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "特别闪闪发光"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793327632838083669,
+          "arrival_ns": 1793327632838407025,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "interrupted": false,
+            "dur_ms": 1682.9493
+          }
+        },
+        {
+          "t_ns": 1793327636125917189,
+          "arrival_ns": 1793327636126241884,
+          "source": "round",
+          "detail": {
+            "text_len": 16,
+            "interrupted": false,
+            "dur_ms": 3286.957158
+          }
+        },
+        {
+          "t_ns": 1793327637727200866,
+          "arrival_ns": 1793327637727490656,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "interrupted": false,
+            "dur_ms": 1600.546137
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793327637727884130,
+          "arrival_ns": 1793327637727994870,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 50,
+    "interval_s": 2.0
+  }
+}

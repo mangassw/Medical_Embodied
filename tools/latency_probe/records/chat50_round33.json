@@ -1,0 +1,792 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1064920",
+  "host": "artrc",
+  "tag": "chat50",
+  "round_index": 33,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T10:33:01.980",
+  "finished_at": "2026-10-30T10:33:10.124",
+  "duration_s": 8.144,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "快递迟迟不到怎么办",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793327581980387913,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793327581980003075,
+    "t_publish_question_ns": 1793327581980387913,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793327581981099328,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793327581981529972,
+      "ali_llm_output_start": 1793327583202197403,
+      "ali_llm_output_first_text": 1793327583202514584,
+      "ali_llm_output_done": 1793327583615329955,
+      "tts_realtime_data_start": 1793327583207998097,
+      "tts_realtime_data_first_text": 1793327583311060988,
+      "tts_realtime_data_done": 1793327583615806728,
+      "tts_session_finished": 1793327589819704750
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793327583311145829,
+      "tts_local.synth_start_first": 1793327583311211219,
+      "tts_local.synth_end_first": 1793327584151462195,
+      "tts_local.play_start_first": 1793327584154995132,
+      "tts_local.play_end_last": 1793327589818413711,
+      "tts_local.session_finished": 1793327589819367552
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.142,
+    "router_to_llm_first_ms": 1220.985,
+    "question_to_llm_first_ms": 1222.127,
+    "llm_first_to_done_ms": 412.815,
+    "question_to_llm_done_ms": 1634.942,
+    "llm_first_to_tts_first_text_ms": 108.546,
+    "question_to_tts_first_text_ms": 1330.673,
+    "first_tts_text_to_first_play_start_ms": 843.934,
+    "tts_rx_to_synth_end_ms": 840.316,
+    "tts_rx_to_play_start_ms": 843.849,
+    "tts_synth_end_to_play_start_ms": 3.533,
+    "question_to_first_audio_ms": 2174.607,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 7839.317,
+    "audio_total_sum_ms": 5661.942,
+    "audio_first_to_last_ms": 5663.419
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 1142059,
+    "router_to_llm_first_ns": 1220984612,
+    "question_to_llm_first_ns": 1222126671,
+    "llm_first_to_done_ns": 412815371,
+    "question_to_llm_done_ns": 1634942042,
+    "llm_first_to_tts_first_text_ns": 108546404,
+    "question_to_tts_first_text_ns": 1330673075,
+    "first_tts_text_to_first_play_start_ns": 843934144,
+    "tts_rx_to_synth_end_ns": 840316366,
+    "tts_rx_to_play_start_ns": 843849303,
+    "tts_synth_end_to_play_start_ns": 3532937,
+    "question_to_first_audio_ns": 2174607219,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 7839316837,
+    "audio_total_sum_ns": 5661941954,
+    "audio_first_to_last_ns": 5663418579
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 1222126671,
+      "ms": 1222.127
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 412815371,
+      "ms": 412.815
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 108546404,
+      "ms": 108.546
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 843934144,
+      "ms": 843.934
+    },
+    "question_to_first_play_start": {
+      "ns": 2174607219,
+      "ms": 2174.607
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 7839316837,
+      "ms": 7839.317
+    },
+    "audio_total_sec": {
+      "ns": 5661941954,
+      "ms": 5661.942,
+      "sec": 5.662
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.142,
+    "router_to_llm_first_ms": 1220.985,
+    "question_to_llm_first_ms": 1222.127,
+    "llm_first_to_done_ms": 412.815,
+    "question_to_llm_done_ms": 1634.942,
+    "llm_first_to_tts_first_text_ms": 108.546,
+    "question_to_tts_first_text_ms": 1330.673,
+    "first_tts_text_to_first_play_start_ms": 843.934,
+    "tts_rx_to_synth_end_ms": 840.316,
+    "tts_rx_to_play_start_ms": 843.849,
+    "tts_synth_end_to_play_start_ms": 3.533,
+    "question_to_first_audio_ms": 2174.607,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 7839.317,
+    "audio_total_sum_ms": 5661.942,
+    "audio_first_to_last_ms": 5663.419
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793327583202197403,
+      "first_text_rx_ns": 1793327583202514584,
+      "done_rx_ns": 1793327583615329955,
+      "chunk_count": 6,
+      "char_count": 23,
+      "chunks": [
+        {
+          "t_ns": 1793327583202514584,
+          "text": "先"
+        },
+        {
+          "t_ns": 1793327583238215330,
+          "text": "查下"
+        },
+        {
+          "t_ns": 1793327583269501119,
+          "text": "物流更新"
+        },
+        {
+          "t_ns": 1793327583310703030,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793327583454198336,
+          "text": "要是超期了，联系"
+        },
+        {
+          "t_ns": 1793327583584877787,
+          "text": "客服问问就好～"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793327583311060988,
+      "done_rx_ns": 1793327583615806728,
+      "text_count": 3,
+      "texts": [
+        {
+          "t_ns": 1793327583311060988,
+          "text": "先查下物流更新，"
+        },
+        {
+          "t_ns": 1793327583454419138,
+          "text": "要是超期了，"
+        },
+        {
+          "t_ns": 1793327583615626503,
+          "text": "联系客服问问就好～"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 23,
+    "latency_events_total": 23,
+    "asr_events": 0,
+    "tts_events": 18,
+    "tts_play_pairs": 3,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793327582740288414,
+      "node": "llm_medical",
+      "stage": "intent_judge",
+      "t_ns": 1793327582740031970,
+      "detail": {
+        "model": "qwen-flash",
+        "ms": 757.8,
+        "answer": "聊",
+        "kind": "chat"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent_judge\", \"t_ns\": 1793327582740031970, \"detail\": {\"model\": \"qwen-flash\", \"ms\": 757.8, \"answer\": \"聊\", \"kind\": \"chat\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327582740491417,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793327582740191074,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "llm:qwen-flash",
+        "keyword_medical": false,
+        "judge_kind": "chat",
+        "judge_ms": 757.8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793327582740191074, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"llm:qwen-flash\", \"keyword_medical\": false, \"judge_kind\": \"chat\", \"judge_ms\": 757.8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327583202249677,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793327583201904711,
+      "detail": {
+        "prompt_chars": 417,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793327583201904711, \"detail\": {\"prompt_chars\": 417, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327583202554668,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793327583202378112,
+      "detail": {
+        "prompt_chars": 417
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793327583202378112, \"detail\": {\"prompt_chars\": 417}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327583210872832,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793327583210652453,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793327583210652453, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327583311351318,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327583311145829,
+      "detail": {
+        "text_len": 8,
+        "head": "先查下物流更新，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327583311145829, \"detail\": {\"text_len\": 8, \"head\": \"先查下物流更新，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327583311683701,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327583311211219,
+      "detail": {
+        "text_len": 8
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327583311211219, \"detail\": {\"text_len\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327583615376721,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793327583614995099,
+      "detail": {
+        "chars": 26
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793327583614995099, \"detail\": {\"chars\": 26}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327584151782749,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327584151462195,
+      "detail": {
+        "text_len": 8,
+        "dur_ms": 840.245315,
+        "audio_sec": 2.32,
+        "rtf": 0.3621747047413793
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327584151462195, \"detail\": {\"text_len\": 8, \"dur_ms\": 840.245315, \"audio_sec\": 2.32, \"rtf\": 0.3621747047413793}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327584152624803,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327584152364310,
+      "detail": {
+        "text_len": 6,
+        "head": "要是超期了，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327584152364310, \"detail\": {\"text_len\": 6, \"head\": \"要是超期了，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327584152973381,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327584152434368,
+      "detail": {
+        "text_len": 6
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327584152434368, \"detail\": {\"text_len\": 6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327584155177635,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327584154995132,
+      "detail": {
+        "text_len": 8,
+        "head": "先查下物流更新，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327584154995132, \"detail\": {\"text_len\": 8, \"head\": \"先查下物流更新，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327584710631102,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327584710335504,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 557.896782,
+        "audio_sec": 1.52,
+        "rtf": 0.36703735657894737
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327584710335504, \"detail\": {\"text_len\": 6, \"dur_ms\": 557.896782, \"audio_sec\": 1.52, \"rtf\": 0.36703735657894737}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327584711043589,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327584710892698,
+      "detail": {
+        "text_len": 9,
+        "head": "联系客服问问就好～"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327584710892698, \"detail\": {\"text_len\": 9, \"head\": \"联系客服问问就好～\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327584711264094,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327584710945047,
+      "detail": {
+        "text_len": 9
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327584710945047, \"detail\": {\"text_len\": 9}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327585349744733,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327585349429638,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 638.480062,
+        "audio_sec": 1.76,
+        "rtf": 0.36277276249999996
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327585349429638, \"detail\": {\"text_len\": 9, \"dur_ms\": 638.480062, \"audio_sec\": 1.76, \"rtf\": 0.36277276249999996}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327585350210106,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793327585350046609,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793327585350046609, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327586508232870,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327586507948645,
+      "detail": {
+        "text_len": 8,
+        "interrupted": false,
+        "dur_ms": 2352.950863
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327586507948645, \"detail\": {\"text_len\": 8, \"interrupted\": false, \"dur_ms\": 2352.950863}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327586508935268,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327586508710829,
+      "detail": {
+        "text_len": 6,
+        "head": "要是超期了，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327586508710829, \"detail\": {\"text_len\": 6, \"head\": \"要是超期了，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327588042877234,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327588042522391,
+      "detail": {
+        "text_len": 6,
+        "interrupted": false,
+        "dur_ms": 1533.808382
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327588042522391, \"detail\": {\"text_len\": 6, \"interrupted\": false, \"dur_ms\": 1533.808382}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327588043360737,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327588043236832,
+      "detail": {
+        "text_len": 9,
+        "head": "联系客服问问就好～"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327588043236832, \"detail\": {\"text_len\": 9, \"head\": \"联系客服问问就好～\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327589818770415,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327589818413711,
+      "detail": {
+        "text_len": 9,
+        "interrupted": false,
+        "dur_ms": 1775.173044
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327589818413711, \"detail\": {\"text_len\": 9, \"interrupted\": false, \"dur_ms\": 1775.173044}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327589819518720,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793327589819367552,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793327589819367552, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent_judge": [
+        {
+          "t_ns": 1793327582740031970,
+          "arrival_ns": 1793327582740288414,
+          "source": "round",
+          "detail": {
+            "model": "qwen-flash",
+            "ms": 757.8,
+            "answer": "聊",
+            "kind": "chat"
+          }
+        }
+      ],
+      "intent": [
+        {
+          "t_ns": 1793327582740191074,
+          "arrival_ns": 1793327582740491417,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "llm:qwen-flash",
+            "keyword_medical": false,
+            "judge_kind": "chat",
+            "judge_ms": 757.8
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793327583201904711,
+          "arrival_ns": 1793327583202249677,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 417,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793327583202378112,
+          "arrival_ns": 1793327583202554668,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 417
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793327583614995099,
+          "arrival_ns": 1793327583615376721,
+          "source": "round",
+          "detail": {
+            "chars": 26
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793327583210652453,
+          "arrival_ns": 1793327583210872832,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793327585350046609,
+          "arrival_ns": 1793327585350210106,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793327583311145829,
+          "arrival_ns": 1793327583311351318,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "先查下物流更新，"
+          }
+        },
+        {
+          "t_ns": 1793327584152364310,
+          "arrival_ns": 1793327584152624803,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "要是超期了，"
+          }
+        },
+        {
+          "t_ns": 1793327584710892698,
+          "arrival_ns": 1793327584711043589,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "联系客服问问就好～"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793327583311211219,
+          "arrival_ns": 1793327583311683701,
+          "source": "round",
+          "detail": {
+            "text_len": 8
+          }
+        },
+        {
+          "t_ns": 1793327584152434368,
+          "arrival_ns": 1793327584152973381,
+          "source": "round",
+          "detail": {
+            "text_len": 6
+          }
+        },
+        {
+          "t_ns": 1793327584710945047,
+          "arrival_ns": 1793327584711264094,
+          "source": "round",
+          "detail": {
+            "text_len": 9
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793327584151462195,
+          "arrival_ns": 1793327584151782749,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "dur_ms": 840.245315,
+            "audio_sec": 2.32,
+            "rtf": 0.3621747047413793
+          }
+        },
+        {
+          "t_ns": 1793327584710335504,
+          "arrival_ns": 1793327584710631102,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 557.896782,
+            "audio_sec": 1.52,
+            "rtf": 0.36703735657894737
+          }
+        },
+        {
+          "t_ns": 1793327585349429638,
+          "arrival_ns": 1793327585349744733,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 638.480062,
+            "audio_sec": 1.76,
+            "rtf": 0.36277276249999996
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793327584154995132,
+          "arrival_ns": 1793327584155177635,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "先查下物流更新，"
+          }
+        },
+        {
+          "t_ns": 1793327586508710829,
+          "arrival_ns": 1793327586508935268,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "要是超期了，"
+          }
+        },
+        {
+          "t_ns": 1793327588043236832,
+          "arrival_ns": 1793327588043360737,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "联系客服问问就好～"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793327586507948645,
+          "arrival_ns": 1793327586508232870,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "interrupted": false,
+            "dur_ms": 2352.950863
+          }
+        },
+        {
+          "t_ns": 1793327588042522391,
+          "arrival_ns": 1793327588042877234,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "interrupted": false,
+            "dur_ms": 1533.808382
+          }
+        },
+        {
+          "t_ns": 1793327589818413711,
+          "arrival_ns": 1793327589818770415,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "interrupted": false,
+            "dur_ms": 1775.173044
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793327589819367552,
+          "arrival_ns": 1793327589819518720,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 50,
+    "interval_s": 2.0
+  }
+}

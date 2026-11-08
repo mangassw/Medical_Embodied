@@ -1,0 +1,1938 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_14974",
+  "host": "artrc",
+  "tag": "chat_fix3",
+  "round_index": 1,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-11-02T16:06:48.226",
+  "finished_at": "2026-11-02T16:07:05.902",
+  "duration_s": 17.675,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "再来一个",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793606808227199576,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793606808226829794,
+    "t_publish_question_ns": 1793606808227199576,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793606808227650441,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793606808228034493,
+      "ali_llm_output_start": 1793606808325486321,
+      "ali_llm_output_first_text": 1793606808325723230,
+      "ali_llm_output_done": 1793606809604884505,
+      "tts_realtime_data_start": 1793606808327228083,
+      "tts_realtime_data_first_text": 1793606808360079134,
+      "tts_realtime_data_done": 1793606809606644559,
+      "tts_session_finished": 1793606825601916632
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793606808360127765,
+      "tts_local.synth_start_first": 1793606808360180005,
+      "tts_local.synth_end_first": 1793606808952862826,
+      "tts_local.play_start_first": 1793606809031317083,
+      "tts_local.play_end_last": 1793606825600736272,
+      "tts_local.session_finished": 1793606825601539857
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.835,
+    "router_to_llm_first_ms": 97.689,
+    "question_to_llm_first_ms": 98.524,
+    "llm_first_to_done_ms": 1279.161,
+    "question_to_llm_done_ms": 1377.685,
+    "llm_first_to_tts_first_text_ms": 34.356,
+    "question_to_tts_first_text_ms": 132.88,
+    "first_tts_text_to_first_play_start_ms": 671.238,
+    "tts_rx_to_synth_end_ms": 592.735,
+    "tts_rx_to_play_start_ms": 671.189,
+    "tts_synth_end_to_play_start_ms": 78.454,
+    "question_to_first_audio_ms": 804.118,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 17374.717,
+    "audio_total_sum_ms": 16561.543,
+    "audio_first_to_last_ms": 16569.419
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 834917,
+    "router_to_llm_first_ns": 97688737,
+    "question_to_llm_first_ns": 98523654,
+    "llm_first_to_done_ns": 1279161275,
+    "question_to_llm_done_ns": 1377684929,
+    "llm_first_to_tts_first_text_ns": 34355904,
+    "question_to_tts_first_text_ns": 132879558,
+    "first_tts_text_to_first_play_start_ns": 671237949,
+    "tts_rx_to_synth_end_ns": 592735061,
+    "tts_rx_to_play_start_ns": 671189318,
+    "tts_synth_end_to_play_start_ns": 78454257,
+    "question_to_first_audio_ns": 804117507,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 17374717056,
+    "audio_total_sum_ns": 16561543133,
+    "audio_first_to_last_ns": 16569419189
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 98523654,
+      "ms": 98.524
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 1279161275,
+      "ms": 1279.161
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 34355904,
+      "ms": 34.356
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 671237949,
+      "ms": 671.238
+    },
+    "question_to_first_play_start": {
+      "ns": 804117507,
+      "ms": 804.118
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 17374717056,
+      "ms": 17374.717
+    },
+    "audio_total_sec": {
+      "ns": 16561543133,
+      "ms": 16561.543,
+      "sec": 16.562
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.835,
+    "router_to_llm_first_ms": 97.689,
+    "question_to_llm_first_ms": 98.524,
+    "llm_first_to_done_ms": 1279.161,
+    "question_to_llm_done_ms": 1377.685,
+    "llm_first_to_tts_first_text_ms": 34.356,
+    "question_to_tts_first_text_ms": 132.88,
+    "first_tts_text_to_first_play_start_ms": 671.238,
+    "tts_rx_to_synth_end_ms": 592.735,
+    "tts_rx_to_play_start_ms": 671.189,
+    "tts_synth_end_to_play_start_ms": 78.454,
+    "question_to_first_audio_ms": 804.118,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 17374.717,
+    "audio_total_sum_ms": 16561.543,
+    "audio_first_to_last_ms": 16569.419
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793606808325486321,
+      "first_text_rx_ns": 1793606808325723230,
+      "done_rx_ns": 1793606809604884505,
+      "chunk_count": 44,
+      "char_count": 53,
+      "chunks": [
+        {
+          "t_ns": 1793606808325723230,
+          "text": "我"
+        },
+        {
+          "t_ns": 1793606808337897739,
+          "text": "问"
+        },
+        {
+          "t_ns": 1793606808345939050,
+          "text": "妈妈"
+        },
+        {
+          "t_ns": 1793606808359856284,
+          "text": "："
+        },
+        {
+          "t_ns": 1793606808377705869,
+          "text": "你"
+        },
+        {
+          "t_ns": 1793606808395352589,
+          "text": "爱"
+        },
+        {
+          "t_ns": 1793606808433963159,
+          "text": "我"
+        },
+        {
+          "t_ns": 1793606808473707717,
+          "text": "吗"
+        },
+        {
+          "t_ns": 1793606808504583356,
+          "text": "？"
+        },
+        {
+          "t_ns": 1793606808537638543,
+          "text": "妈妈"
+        },
+        {
+          "t_ns": 1793606808570668084,
+          "text": "说"
+        },
+        {
+          "t_ns": 1793606808606034330,
+          "text": "："
+        },
+        {
+          "t_ns": 1793606808637109062,
+          "text": "爱你"
+        },
+        {
+          "t_ns": 1793606808671206079,
+          "text": "。"
+        },
+        {
+          "t_ns": 1793606808703167303,
+          "text": "我"
+        },
+        {
+          "t_ns": 1793606808740558007,
+          "text": "问"
+        },
+        {
+          "t_ns": 1793606808769377068,
+          "text": "爸爸"
+        },
+        {
+          "t_ns": 1793606808802299858,
+          "text": "："
+        },
+        {
+          "t_ns": 1793606808834813285,
+          "text": "你"
+        },
+        {
+          "t_ns": 1793606808868049807,
+          "text": "爱"
+        },
+        {
+          "t_ns": 1793606808901983638,
+          "text": "我"
+        },
+        {
+          "t_ns": 1793606808931523736,
+          "text": "吗"
+        },
+        {
+          "t_ns": 1793606808947703293,
+          "text": "？"
+        },
+        {
+          "t_ns": 1793606808968447339,
+          "text": "爸爸"
+        },
+        {
+          "t_ns": 1793606808973708119,
+          "text": "说"
+        },
+        {
+          "t_ns": 1793606808993519328,
+          "text": "："
+        },
+        {
+          "t_ns": 1793606809021516711,
+          "text": "爱你"
+        },
+        {
+          "t_ns": 1793606809048965758,
+          "text": "。"
+        },
+        {
+          "t_ns": 1793606809077455010,
+          "text": "我"
+        },
+        {
+          "t_ns": 1793606809109971629,
+          "text": "问"
+        },
+        {
+          "t_ns": 1793606809142545225,
+          "text": "爷爷"
+        },
+        {
+          "t_ns": 1793606809180043031,
+          "text": "："
+        },
+        {
+          "t_ns": 1793606809208629409,
+          "text": "你"
+        },
+        {
+          "t_ns": 1793606809241835759,
+          "text": "爱"
+        },
+        {
+          "t_ns": 1793606809279071478,
+          "text": "我"
+        },
+        {
+          "t_ns": 1793606809307907474,
+          "text": "吗"
+        },
+        {
+          "t_ns": 1793606809340610953,
+          "text": "？"
+        },
+        {
+          "t_ns": 1793606809375910385,
+          "text": "爷爷"
+        },
+        {
+          "t_ns": 1793606809406777185,
+          "text": "说"
+        },
+        {
+          "t_ns": 1793606809439352430,
+          "text": "："
+        },
+        {
+          "t_ns": 1793606809472831054,
+          "text": "爱"
+        },
+        {
+          "t_ns": 1793606809505849275,
+          "text": "得"
+        },
+        {
+          "t_ns": 1793606809539331087,
+          "text": "不够"
+        },
+        {
+          "t_ns": 1793606809569523954,
+          "text": "。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793606808360079134,
+      "done_rx_ns": 1793606809606644559,
+      "text_count": 12,
+      "texts": [
+        {
+          "t_ns": 1793606808360079134,
+          "text": "我问妈妈："
+        },
+        {
+          "t_ns": 1793606808504763833,
+          "text": "你爱我吗？"
+        },
+        {
+          "t_ns": 1793606808606273860,
+          "text": "妈妈说："
+        },
+        {
+          "t_ns": 1793606808672340128,
+          "text": "爱你。"
+        },
+        {
+          "t_ns": 1793606808802500997,
+          "text": "我问爸爸："
+        },
+        {
+          "t_ns": 1793606808948002892,
+          "text": "你爱我吗？"
+        },
+        {
+          "t_ns": 1793606808993563087,
+          "text": "爸爸说："
+        },
+        {
+          "t_ns": 1793606809049294607,
+          "text": "爱你。"
+        },
+        {
+          "t_ns": 1793606809180231471,
+          "text": "我问爷爷："
+        },
+        {
+          "t_ns": 1793606809340811045,
+          "text": "你爱我吗？"
+        },
+        {
+          "t_ns": 1793606809439554570,
+          "text": "爷爷说："
+        },
+        {
+          "t_ns": 1793606809569758596,
+          "text": "爱得不够。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 67,
+    "latency_events_total": 67,
+    "asr_events": 0,
+    "tts_events": 63,
+    "tts_play_pairs": 12,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793606808249034727,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793606808248856793,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "chitchat",
+        "keyword_medical": false,
+        "chitchat": true,
+        "judge_kind": null,
+        "judge_ms": 0.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793606808248856793, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"chitchat\", \"keyword_medical\": false, \"chitchat\": true, \"judge_kind\": null, \"judge_ms\": 0.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606808249328212,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793606808249212345,
+      "detail": {
+        "provider": "ollama",
+        "prompt_chars": 581,
+        "n_messages": 4
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793606808249212345, \"detail\": {\"provider\": \"ollama\", \"prompt_chars\": 581, \"n_messages\": 4}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606808325764964,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793606808325344917,
+      "detail": {
+        "prompt_chars": 581
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793606808325344917, \"detail\": {\"prompt_chars\": 581}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606808327656459,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793606808327351349,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793606808327351349, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606808360283836,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793606808360127765,
+      "detail": {
+        "text_len": 5,
+        "head": "我问妈妈："
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793606808360127765, \"detail\": {\"text_len\": 5, \"head\": \"我问妈妈：\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606808360502850,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793606808360180005,
+      "detail": {
+        "text_len": 5
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793606808360180005, \"detail\": {\"text_len\": 5}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606808953080424,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793606808952862826,
+      "detail": {
+        "text_len": 5,
+        "dur_ms": 592.679512,
+        "audio_sec": 1.28,
+        "rtf": 0.46303086875
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793606808952862826, \"detail\": {\"text_len\": 5, \"dur_ms\": 592.679512, \"audio_sec\": 1.28, \"rtf\": 0.46303086875}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606808973473044,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793606808971460749,
+      "detail": {
+        "text_len": 5,
+        "head": "你爱我吗？"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793606808971460749, \"detail\": {\"text_len\": 5, \"head\": \"你爱我吗？\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606808973741554,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793606808971523838,
+      "detail": {
+        "text_len": 5
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793606808971523838, \"detail\": {\"text_len\": 5}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606809031544699,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793606809031317083,
+      "detail": {
+        "text_len": 5,
+        "head": "我问妈妈："
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793606809031317083, \"detail\": {\"text_len\": 5, \"head\": \"我问妈妈：\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606809596659368,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793606809594595571,
+      "detail": {
+        "text_len": 5,
+        "dur_ms": 623.066963,
+        "audio_sec": 1.36,
+        "rtf": 0.4581374727941176
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793606809594595571, \"detail\": {\"text_len\": 5, \"dur_ms\": 623.066963, \"audio_sec\": 1.36, \"rtf\": 0.4581374727941176}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606809599188173,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793606809598376443,
+      "detail": {
+        "text_len": 4,
+        "head": "妈妈说："
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793606809598376443, \"detail\": {\"text_len\": 4, \"head\": \"妈妈说：\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606809599443943,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793606809598435663,
+      "detail": {
+        "text_len": 4
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793606809598435663, \"detail\": {\"text_len\": 4}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606809604636904,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793606809604431431,
+      "detail": {
+        "chars": 53
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793606809604431431, \"detail\": {\"chars\": 53}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606810053197916,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793606810052866641,
+      "detail": {
+        "text_len": 4,
+        "dur_ms": 454.427688,
+        "audio_sec": 1.28,
+        "rtf": 0.35502163124999997
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793606810052866641, \"detail\": {\"text_len\": 4, \"dur_ms\": 454.427688, \"audio_sec\": 1.28, \"rtf\": 0.35502163124999997}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606810105619599,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793606810105390779,
+      "detail": {
+        "text_len": 3,
+        "head": "爱你。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793606810105390779, \"detail\": {\"text_len\": 3, \"head\": \"爱你。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606810105835821,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793606810105437484,
+      "detail": {
+        "text_len": 3
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793606810105437484, \"detail\": {\"text_len\": 3}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606810382140630,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793606810381878602,
+      "detail": {
+        "text_len": 5,
+        "interrupted": false,
+        "dur_ms": 1350.559905
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793606810381878602, \"detail\": {\"text_len\": 5, \"interrupted\": false, \"dur_ms\": 1350.559905}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606810382614578,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793606810382448538,
+      "detail": {
+        "text_len": 5,
+        "head": "你爱我吗？"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793606810382448538, \"detail\": {\"text_len\": 5, \"head\": \"你爱我吗？\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606810527440526,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793606810527179983,
+      "detail": {
+        "text_len": 3,
+        "dur_ms": 421.738457,
+        "audio_sec": 1.28,
+        "rtf": 0.32948316953124995
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793606810527179983, \"detail\": {\"text_len\": 3, \"dur_ms\": 421.738457, \"audio_sec\": 1.28, \"rtf\": 0.32948316953124995}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606810527776361,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793606810527643404,
+      "detail": {
+        "text_len": 5,
+        "head": "我问爸爸："
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793606810527643404, \"detail\": {\"text_len\": 5, \"head\": \"我问爸爸：\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606810527946300,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793606810527687563,
+      "detail": {
+        "text_len": 5
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793606810527687563, \"detail\": {\"text_len\": 5}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606810933446903,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793606810933159577,
+      "detail": {
+        "text_len": 5,
+        "dur_ms": 405.469094,
+        "audio_sec": 1.2,
+        "rtf": 0.3378909116666667
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793606810933159577, \"detail\": {\"text_len\": 5, \"dur_ms\": 405.469094, \"audio_sec\": 1.2, \"rtf\": 0.3378909116666667}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606810933894405,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793606810933748207,
+      "detail": {
+        "text_len": 5,
+        "head": "你爱我吗？"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793606810933748207, \"detail\": {\"text_len\": 5, \"head\": \"你爱我吗？\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606810934076019,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793606810933803540,
+      "detail": {
+        "text_len": 5
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793606810933803540, \"detail\": {\"text_len\": 5}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606811379461796,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793606811379189533,
+      "detail": {
+        "text_len": 5,
+        "dur_ms": 445.382412,
+        "audio_sec": 1.36,
+        "rtf": 0.3274870676470588
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793606811379189533, \"detail\": {\"text_len\": 5, \"dur_ms\": 445.382412, \"audio_sec\": 1.36, \"rtf\": 0.3274870676470588}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606811379912519,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793606811379785733,
+      "detail": {
+        "text_len": 4,
+        "head": "爸爸说："
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793606811379785733, \"detail\": {\"text_len\": 4, \"head\": \"爸爸说：\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606811380089052,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793606811379826220,
+      "detail": {
+        "text_len": 4
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793606811379826220, \"detail\": {\"text_len\": 4}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606811778716973,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793606811778456055,
+      "detail": {
+        "text_len": 4,
+        "dur_ms": 398.626351,
+        "audio_sec": 1.2,
+        "rtf": 0.33218862583333336
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793606811778456055, \"detail\": {\"text_len\": 4, \"dur_ms\": 398.626351, \"audio_sec\": 1.2, \"rtf\": 0.33218862583333336}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606811779133818,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793606811779013596,
+      "detail": {
+        "text_len": 3,
+        "head": "爱你。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793606811779013596, \"detail\": {\"text_len\": 3, \"head\": \"爱你。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606811779310549,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793606811779045344,
+      "detail": {
+        "text_len": 3
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793606811779045344, \"detail\": {\"text_len\": 3}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606811793590126,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793606811793220037,
+      "detail": {
+        "text_len": 5,
+        "interrupted": false,
+        "dur_ms": 1410.767718
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793606811793220037, \"detail\": {\"text_len\": 5, \"interrupted\": false, \"dur_ms\": 1410.767718}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606811794169754,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793606811793952334,
+      "detail": {
+        "text_len": 4,
+        "head": "妈妈说："
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793606811793952334, \"detail\": {\"text_len\": 4, \"head\": \"妈妈说：\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606812211129643,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793606812210870619,
+      "detail": {
+        "text_len": 3,
+        "dur_ms": 431.82144,
+        "audio_sec": 1.28,
+        "rtf": 0.3373605
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793606812210870619, \"detail\": {\"text_len\": 3, \"dur_ms\": 431.82144, \"audio_sec\": 1.28, \"rtf\": 0.3373605}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606812211618418,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793606812211452445,
+      "detail": {
+        "text_len": 5,
+        "head": "我问爷爷："
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793606812211452445, \"detail\": {\"text_len\": 5, \"head\": \"我问爷爷：\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606812211901291,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793606812211496602,
+      "detail": {
+        "text_len": 5
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793606812211496602, \"detail\": {\"text_len\": 5}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606812612026121,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793606812611771235,
+      "detail": {
+        "text_len": 5,
+        "dur_ms": 400.270373,
+        "audio_sec": 1.2,
+        "rtf": 0.3335586441666667
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793606812611771235, \"detail\": {\"text_len\": 5, \"dur_ms\": 400.270373, \"audio_sec\": 1.2, \"rtf\": 0.3335586441666667}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606812612336462,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793606812612233119,
+      "detail": {
+        "text_len": 5,
+        "head": "你爱我吗？"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793606812612233119, \"detail\": {\"text_len\": 5, \"head\": \"你爱我吗？\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606812612499425,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793606812612261390,
+      "detail": {
+        "text_len": 5
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793606812612261390, \"detail\": {\"text_len\": 5}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606813033457332,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793606813033143613,
+      "detail": {
+        "text_len": 5,
+        "dur_ms": 420.878685,
+        "audio_sec": 1.28,
+        "rtf": 0.32881147265625
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793606813033143613, \"detail\": {\"text_len\": 5, \"dur_ms\": 420.878685, \"audio_sec\": 1.28, \"rtf\": 0.32881147265625}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606813033836101,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793606813033640228,
+      "detail": {
+        "text_len": 4,
+        "head": "爷爷说："
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793606813033640228, \"detail\": {\"text_len\": 4, \"head\": \"爷爷说：\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606813034031221,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793606813033699130,
+      "detail": {
+        "text_len": 4
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793606813033699130, \"detail\": {\"text_len\": 4}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606813126267756,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793606813125928708,
+      "detail": {
+        "text_len": 4,
+        "interrupted": false,
+        "dur_ms": 1331.973205
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793606813125928708, \"detail\": {\"text_len\": 4, \"interrupted\": false, \"dur_ms\": 1331.973205}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606813126931297,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793606813126754252,
+      "detail": {
+        "text_len": 3,
+        "head": "爱你。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793606813126754252, \"detail\": {\"text_len\": 3, \"head\": \"爱你。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606813604844791,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793606813604559297,
+      "detail": {
+        "text_len": 4,
+        "dur_ms": 570.856302,
+        "audio_sec": 1.76,
+        "rtf": 0.3243501715909091
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793606813604559297, \"detail\": {\"text_len\": 4, \"dur_ms\": 570.856302, \"audio_sec\": 1.76, \"rtf\": 0.3243501715909091}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606813605159395,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793606813605037817,
+      "detail": {
+        "text_len": 5,
+        "head": "爱得不够。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793606813605037817, \"detail\": {\"text_len\": 5, \"head\": \"爱得不够。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606813605349910,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793606813605070983,
+      "detail": {
+        "text_len": 5
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793606813605070983, \"detail\": {\"text_len\": 5}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606814082488987,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793606814082210254,
+      "detail": {
+        "text_len": 5,
+        "dur_ms": 477.134568,
+        "audio_sec": 1.44,
+        "rtf": 0.33134345
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793606814082210254, \"detail\": {\"text_len\": 5, \"dur_ms\": 477.134568, \"audio_sec\": 1.44, \"rtf\": 0.33134345}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606814082925040,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793606814082798075,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793606814082798075, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606814457398171,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793606814457101330,
+      "detail": {
+        "text_len": 3,
+        "interrupted": false,
+        "dur_ms": 1330.344041
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793606814457101330, \"detail\": {\"text_len\": 3, \"interrupted\": false, \"dur_ms\": 1330.344041}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606814457898666,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793606814457762172,
+      "detail": {
+        "text_len": 5,
+        "head": "我问爸爸："
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793606814457762172, \"detail\": {\"text_len\": 5, \"head\": \"我问爸爸：\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606815711900265,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793606815710647428,
+      "detail": {
+        "text_len": 5,
+        "interrupted": false,
+        "dur_ms": 1252.882392
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793606815710647428, \"detail\": {\"text_len\": 5, \"interrupted\": false, \"dur_ms\": 1252.882392}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606815712824575,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793606815711508189,
+      "detail": {
+        "text_len": 5,
+        "head": "你爱我吗？"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793606815711508189, \"detail\": {\"text_len\": 5, \"head\": \"你爱我吗？\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606817128047975,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793606817127590096,
+      "detail": {
+        "text_len": 5,
+        "interrupted": false,
+        "dur_ms": 1416.079972
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793606817127590096, \"detail\": {\"text_len\": 5, \"interrupted\": false, \"dur_ms\": 1416.079972}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606817128463147,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793606817128294620,
+      "detail": {
+        "text_len": 4,
+        "head": "爸爸说："
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793606817128294620, \"detail\": {\"text_len\": 4, \"head\": \"爸爸说：\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606818378622291,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793606818378294454,
+      "detail": {
+        "text_len": 4,
+        "interrupted": false,
+        "dur_ms": 1249.997253
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793606818378294454, \"detail\": {\"text_len\": 4, \"interrupted\": false, \"dur_ms\": 1249.997253}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606818379195016,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793606818379035785,
+      "detail": {
+        "text_len": 3,
+        "head": "爱你。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793606818379035785, \"detail\": {\"text_len\": 3, \"head\": \"爱你。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606819709199461,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793606819708939069,
+      "detail": {
+        "text_len": 3,
+        "interrupted": false,
+        "dur_ms": 1329.900386
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793606819708939069, \"detail\": {\"text_len\": 3, \"interrupted\": false, \"dur_ms\": 1329.900386}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606819709757431,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793606819709627350,
+      "detail": {
+        "text_len": 5,
+        "head": "我问爷爷："
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793606819709627350, \"detail\": {\"text_len\": 5, \"head\": \"我问爷爷：\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606820960475874,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793606820960218720,
+      "detail": {
+        "text_len": 5,
+        "interrupted": false,
+        "dur_ms": 1250.587968
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793606820960218720, \"detail\": {\"text_len\": 5, \"interrupted\": false, \"dur_ms\": 1250.587968}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606820961046096,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793606820960911897,
+      "detail": {
+        "text_len": 5,
+        "head": "你爱我吗？"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793606820960911897, \"detail\": {\"text_len\": 5, \"head\": \"你爱我吗？\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606822298049946,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793606822297677593,
+      "detail": {
+        "text_len": 5,
+        "interrupted": false,
+        "dur_ms": 1336.76391
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793606822297677593, \"detail\": {\"text_len\": 5, \"interrupted\": false, \"dur_ms\": 1336.76391}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606822298645714,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793606822298396021,
+      "detail": {
+        "text_len": 4,
+        "head": "爷爷说："
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793606822298396021, \"detail\": {\"text_len\": 4, \"head\": \"爷爷说：\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606824113882750,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793606824113595531,
+      "detail": {
+        "text_len": 4,
+        "interrupted": false,
+        "dur_ms": 1815.196947
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793606824113595531, \"detail\": {\"text_len\": 4, \"interrupted\": false, \"dur_ms\": 1815.196947}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606824114530295,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793606824114276466,
+      "detail": {
+        "text_len": 5,
+        "head": "爱得不够。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793606824114276466, \"detail\": {\"text_len\": 5, \"head\": \"爱得不够。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606825601064023,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793606825600736272,
+      "detail": {
+        "text_len": 5,
+        "interrupted": false,
+        "dur_ms": 1486.45676
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793606825600736272, \"detail\": {\"text_len\": 5, \"interrupted\": false, \"dur_ms\": 1486.45676}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793606825601688196,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793606825601539857,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793606825601539857, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793606808248856793,
+          "arrival_ns": 1793606808249034727,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "chitchat",
+            "keyword_medical": false,
+            "chitchat": true,
+            "judge_kind": null,
+            "judge_ms": 0.0
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793606808249212345,
+          "arrival_ns": 1793606808249328212,
+          "source": "round",
+          "detail": {
+            "provider": "ollama",
+            "prompt_chars": 581,
+            "n_messages": 4
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793606808325344917,
+          "arrival_ns": 1793606808325764964,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 581
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793606809604431431,
+          "arrival_ns": 1793606809604636904,
+          "source": "round",
+          "detail": {
+            "chars": 53
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793606808327351349,
+          "arrival_ns": 1793606808327656459,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793606814082798075,
+          "arrival_ns": 1793606814082925040,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793606808360127765,
+          "arrival_ns": 1793606808360283836,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "我问妈妈："
+          }
+        },
+        {
+          "t_ns": 1793606808971460749,
+          "arrival_ns": 1793606808973473044,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "你爱我吗？"
+          }
+        },
+        {
+          "t_ns": 1793606809598376443,
+          "arrival_ns": 1793606809599188173,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "妈妈说："
+          }
+        },
+        {
+          "t_ns": 1793606810105390779,
+          "arrival_ns": 1793606810105619599,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "head": "爱你。"
+          }
+        },
+        {
+          "t_ns": 1793606810527643404,
+          "arrival_ns": 1793606810527776361,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "我问爸爸："
+          }
+        },
+        {
+          "t_ns": 1793606810933748207,
+          "arrival_ns": 1793606810933894405,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "你爱我吗？"
+          }
+        },
+        {
+          "t_ns": 1793606811379785733,
+          "arrival_ns": 1793606811379912519,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "爸爸说："
+          }
+        },
+        {
+          "t_ns": 1793606811779013596,
+          "arrival_ns": 1793606811779133818,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "head": "爱你。"
+          }
+        },
+        {
+          "t_ns": 1793606812211452445,
+          "arrival_ns": 1793606812211618418,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "我问爷爷："
+          }
+        },
+        {
+          "t_ns": 1793606812612233119,
+          "arrival_ns": 1793606812612336462,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "你爱我吗？"
+          }
+        },
+        {
+          "t_ns": 1793606813033640228,
+          "arrival_ns": 1793606813033836101,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "爷爷说："
+          }
+        },
+        {
+          "t_ns": 1793606813605037817,
+          "arrival_ns": 1793606813605159395,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "爱得不够。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793606808360180005,
+          "arrival_ns": 1793606808360502850,
+          "source": "round",
+          "detail": {
+            "text_len": 5
+          }
+        },
+        {
+          "t_ns": 1793606808971523838,
+          "arrival_ns": 1793606808973741554,
+          "source": "round",
+          "detail": {
+            "text_len": 5
+          }
+        },
+        {
+          "t_ns": 1793606809598435663,
+          "arrival_ns": 1793606809599443943,
+          "source": "round",
+          "detail": {
+            "text_len": 4
+          }
+        },
+        {
+          "t_ns": 1793606810105437484,
+          "arrival_ns": 1793606810105835821,
+          "source": "round",
+          "detail": {
+            "text_len": 3
+          }
+        },
+        {
+          "t_ns": 1793606810527687563,
+          "arrival_ns": 1793606810527946300,
+          "source": "round",
+          "detail": {
+            "text_len": 5
+          }
+        },
+        {
+          "t_ns": 1793606810933803540,
+          "arrival_ns": 1793606810934076019,
+          "source": "round",
+          "detail": {
+            "text_len": 5
+          }
+        },
+        {
+          "t_ns": 1793606811379826220,
+          "arrival_ns": 1793606811380089052,
+          "source": "round",
+          "detail": {
+            "text_len": 4
+          }
+        },
+        {
+          "t_ns": 1793606811779045344,
+          "arrival_ns": 1793606811779310549,
+          "source": "round",
+          "detail": {
+            "text_len": 3
+          }
+        },
+        {
+          "t_ns": 1793606812211496602,
+          "arrival_ns": 1793606812211901291,
+          "source": "round",
+          "detail": {
+            "text_len": 5
+          }
+        },
+        {
+          "t_ns": 1793606812612261390,
+          "arrival_ns": 1793606812612499425,
+          "source": "round",
+          "detail": {
+            "text_len": 5
+          }
+        },
+        {
+          "t_ns": 1793606813033699130,
+          "arrival_ns": 1793606813034031221,
+          "source": "round",
+          "detail": {
+            "text_len": 4
+          }
+        },
+        {
+          "t_ns": 1793606813605070983,
+          "arrival_ns": 1793606813605349910,
+          "source": "round",
+          "detail": {
+            "text_len": 5
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793606808952862826,
+          "arrival_ns": 1793606808953080424,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "dur_ms": 592.679512,
+            "audio_sec": 1.28,
+            "rtf": 0.46303086875
+          }
+        },
+        {
+          "t_ns": 1793606809594595571,
+          "arrival_ns": 1793606809596659368,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "dur_ms": 623.066963,
+            "audio_sec": 1.36,
+            "rtf": 0.4581374727941176
+          }
+        },
+        {
+          "t_ns": 1793606810052866641,
+          "arrival_ns": 1793606810053197916,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "dur_ms": 454.427688,
+            "audio_sec": 1.28,
+            "rtf": 0.35502163124999997
+          }
+        },
+        {
+          "t_ns": 1793606810527179983,
+          "arrival_ns": 1793606810527440526,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "dur_ms": 421.738457,
+            "audio_sec": 1.28,
+            "rtf": 0.32948316953124995
+          }
+        },
+        {
+          "t_ns": 1793606810933159577,
+          "arrival_ns": 1793606810933446903,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "dur_ms": 405.469094,
+            "audio_sec": 1.2,
+            "rtf": 0.3378909116666667
+          }
+        },
+        {
+          "t_ns": 1793606811379189533,
+          "arrival_ns": 1793606811379461796,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "dur_ms": 445.382412,
+            "audio_sec": 1.36,
+            "rtf": 0.3274870676470588
+          }
+        },
+        {
+          "t_ns": 1793606811778456055,
+          "arrival_ns": 1793606811778716973,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "dur_ms": 398.626351,
+            "audio_sec": 1.2,
+            "rtf": 0.33218862583333336
+          }
+        },
+        {
+          "t_ns": 1793606812210870619,
+          "arrival_ns": 1793606812211129643,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "dur_ms": 431.82144,
+            "audio_sec": 1.28,
+            "rtf": 0.3373605
+          }
+        },
+        {
+          "t_ns": 1793606812611771235,
+          "arrival_ns": 1793606812612026121,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "dur_ms": 400.270373,
+            "audio_sec": 1.2,
+            "rtf": 0.3335586441666667
+          }
+        },
+        {
+          "t_ns": 1793606813033143613,
+          "arrival_ns": 1793606813033457332,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "dur_ms": 420.878685,
+            "audio_sec": 1.28,
+            "rtf": 0.32881147265625
+          }
+        },
+        {
+          "t_ns": 1793606813604559297,
+          "arrival_ns": 1793606813604844791,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "dur_ms": 570.856302,
+            "audio_sec": 1.76,
+            "rtf": 0.3243501715909091
+          }
+        },
+        {
+          "t_ns": 1793606814082210254,
+          "arrival_ns": 1793606814082488987,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "dur_ms": 477.134568,
+            "audio_sec": 1.44,
+            "rtf": 0.33134345
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793606809031317083,
+          "arrival_ns": 1793606809031544699,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "我问妈妈："
+          }
+        },
+        {
+          "t_ns": 1793606810382448538,
+          "arrival_ns": 1793606810382614578,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "你爱我吗？"
+          }
+        },
+        {
+          "t_ns": 1793606811793952334,
+          "arrival_ns": 1793606811794169754,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "妈妈说："
+          }
+        },
+        {
+          "t_ns": 1793606813126754252,
+          "arrival_ns": 1793606813126931297,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "head": "爱你。"
+          }
+        },
+        {
+          "t_ns": 1793606814457762172,
+          "arrival_ns": 1793606814457898666,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "我问爸爸："
+          }
+        },
+        {
+          "t_ns": 1793606815711508189,
+          "arrival_ns": 1793606815712824575,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "你爱我吗？"
+          }
+        },
+        {
+          "t_ns": 1793606817128294620,
+          "arrival_ns": 1793606817128463147,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "爸爸说："
+          }
+        },
+        {
+          "t_ns": 1793606818379035785,
+          "arrival_ns": 1793606818379195016,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "head": "爱你。"
+          }
+        },
+        {
+          "t_ns": 1793606819709627350,
+          "arrival_ns": 1793606819709757431,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "我问爷爷："
+          }
+        },
+        {
+          "t_ns": 1793606820960911897,
+          "arrival_ns": 1793606820961046096,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "你爱我吗？"
+          }
+        },
+        {
+          "t_ns": 1793606822298396021,
+          "arrival_ns": 1793606822298645714,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "爷爷说："
+          }
+        },
+        {
+          "t_ns": 1793606824114276466,
+          "arrival_ns": 1793606824114530295,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "爱得不够。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793606810381878602,
+          "arrival_ns": 1793606810382140630,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "interrupted": false,
+            "dur_ms": 1350.559905
+          }
+        },
+        {
+          "t_ns": 1793606811793220037,
+          "arrival_ns": 1793606811793590126,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "interrupted": false,
+            "dur_ms": 1410.767718
+          }
+        },
+        {
+          "t_ns": 1793606813125928708,
+          "arrival_ns": 1793606813126267756,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "interrupted": false,
+            "dur_ms": 1331.973205
+          }
+        },
+        {
+          "t_ns": 1793606814457101330,
+          "arrival_ns": 1793606814457398171,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "interrupted": false,
+            "dur_ms": 1330.344041
+          }
+        },
+        {
+          "t_ns": 1793606815710647428,
+          "arrival_ns": 1793606815711900265,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "interrupted": false,
+            "dur_ms": 1252.882392
+          }
+        },
+        {
+          "t_ns": 1793606817127590096,
+          "arrival_ns": 1793606817128047975,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "interrupted": false,
+            "dur_ms": 1416.079972
+          }
+        },
+        {
+          "t_ns": 1793606818378294454,
+          "arrival_ns": 1793606818378622291,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "interrupted": false,
+            "dur_ms": 1249.997253
+          }
+        },
+        {
+          "t_ns": 1793606819708939069,
+          "arrival_ns": 1793606819709199461,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "interrupted": false,
+            "dur_ms": 1329.900386
+          }
+        },
+        {
+          "t_ns": 1793606820960218720,
+          "arrival_ns": 1793606820960475874,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "interrupted": false,
+            "dur_ms": 1250.587968
+          }
+        },
+        {
+          "t_ns": 1793606822297677593,
+          "arrival_ns": 1793606822298049946,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "interrupted": false,
+            "dur_ms": 1336.76391
+          }
+        },
+        {
+          "t_ns": 1793606824113595531,
+          "arrival_ns": 1793606824113882750,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "interrupted": false,
+            "dur_ms": 1815.196947
+          }
+        },
+        {
+          "t_ns": 1793606825600736272,
+          "arrival_ns": 1793606825601064023,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "interrupted": false,
+            "dur_ms": 1486.45676
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793606825601539857,
+          "arrival_ns": 1793606825601688196,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 40.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 3,
+    "interval_s": 2.0
+  }
+}

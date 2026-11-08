@@ -1,0 +1,1008 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1147862",
+  "host": "artrc",
+  "tag": "ol_kb10",
+  "round_index": 2,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T15:36:17.455",
+  "finished_at": "2026-10-30T15:36:28.822",
+  "duration_s": 11.368,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "透析的时候能吃东西吗？",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793345777455579312,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793345777455146495,
+    "t_publish_question_ns": 1793345777455579312,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793345777456141230,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793345777456492170,
+      "ali_llm_output_start": 1793345777936725210,
+      "ali_llm_output_first_text": 1793345777937026966,
+      "ali_llm_output_done": 1793345778876357024,
+      "tts_realtime_data_start": 1793345777937066866,
+      "tts_realtime_data_first_text": 1793345778039829299,
+      "tts_realtime_data_done": 1793345778876670312,
+      "tts_session_finished": 1793345788522470427
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793345778056776127,
+      "tts_local.synth_start_first": 1793345778056858109,
+      "tts_local.synth_end_first": 1793345779253457985,
+      "tts_local.play_start_first": 1793345779326226995,
+      "tts_local.play_end_last": 1793345788521435935,
+      "tts_local.session_finished": 1793345788522159210
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.913,
+    "router_to_llm_first_ms": 480.535,
+    "question_to_llm_first_ms": 481.448,
+    "llm_first_to_done_ms": 939.33,
+    "question_to_llm_done_ms": 1420.778,
+    "llm_first_to_tts_first_text_ms": 102.802,
+    "question_to_tts_first_text_ms": 584.25,
+    "first_tts_text_to_first_play_start_ms": 1286.398,
+    "tts_rx_to_synth_end_ms": 1196.682,
+    "tts_rx_to_play_start_ms": 1269.451,
+    "tts_synth_end_to_play_start_ms": 72.769,
+    "question_to_first_audio_ms": 1870.648,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 11066.891,
+    "audio_total_sum_ms": 9192.871,
+    "audio_first_to_last_ms": 9195.209
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 912858,
+    "router_to_llm_first_ns": 480534796,
+    "question_to_llm_first_ns": 481447654,
+    "llm_first_to_done_ns": 939330058,
+    "question_to_llm_done_ns": 1420777712,
+    "llm_first_to_tts_first_text_ns": 102802333,
+    "question_to_tts_first_text_ns": 584249987,
+    "first_tts_text_to_first_play_start_ns": 1286397696,
+    "tts_rx_to_synth_end_ns": 1196681858,
+    "tts_rx_to_play_start_ns": 1269450868,
+    "tts_synth_end_to_play_start_ns": 72769010,
+    "question_to_first_audio_ns": 1870647683,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 11066891115,
+    "audio_total_sum_ns": 9192871253,
+    "audio_first_to_last_ns": 9195208940
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 481447654,
+      "ms": 481.448
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 939330058,
+      "ms": 939.33
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 102802333,
+      "ms": 102.802
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 1286397696,
+      "ms": 1286.398
+    },
+    "question_to_first_play_start": {
+      "ns": 1870647683,
+      "ms": 1870.648
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 11066891115,
+      "ms": 11066.891
+    },
+    "audio_total_sec": {
+      "ns": 9192871253,
+      "ms": 9192.871,
+      "sec": 9.193
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.913,
+    "router_to_llm_first_ms": 480.535,
+    "question_to_llm_first_ms": 481.448,
+    "llm_first_to_done_ms": 939.33,
+    "question_to_llm_done_ms": 1420.778,
+    "llm_first_to_tts_first_text_ms": 102.802,
+    "question_to_tts_first_text_ms": 584.25,
+    "first_tts_text_to_first_play_start_ms": 1286.398,
+    "tts_rx_to_synth_end_ms": 1196.682,
+    "tts_rx_to_play_start_ms": 1269.451,
+    "tts_synth_end_to_play_start_ms": 72.769,
+    "question_to_first_audio_ms": 1870.648,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 11066.891,
+    "audio_total_sum_ms": 9192.871,
+    "audio_first_to_last_ms": 9195.209
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793345777936725210,
+      "first_text_rx_ns": 1793345777937026966,
+      "done_rx_ns": 1793345778876357024,
+      "chunk_count": 27,
+      "char_count": 38,
+      "chunks": [
+        {
+          "t_ns": 1793345777937026966,
+          "text": "透"
+        },
+        {
+          "t_ns": 1793345777953786156,
+          "text": "析"
+        },
+        {
+          "t_ns": 1793345777971019087,
+          "text": "时"
+        },
+        {
+          "t_ns": 1793345777988440092,
+          "text": "不能"
+        },
+        {
+          "t_ns": 1793345778005971189,
+          "text": "吃"
+        },
+        {
+          "t_ns": 1793345778022852551,
+          "text": "东西"
+        },
+        {
+          "t_ns": 1793345778039603073,
+          "text": "。"
+        },
+        {
+          "t_ns": 1793345778057052138,
+          "text": "透"
+        },
+        {
+          "t_ns": 1793345778076074934,
+          "text": "析"
+        },
+        {
+          "t_ns": 1793345778106626281,
+          "text": "中"
+        },
+        {
+          "t_ns": 1793345778157759482,
+          "text": "进食"
+        },
+        {
+          "t_ns": 1793345778203716179,
+          "text": "可能"
+        },
+        {
+          "t_ns": 1793345778248327335,
+          "text": "引起"
+        },
+        {
+          "t_ns": 1793345778289738779,
+          "text": "恶心"
+        },
+        {
+          "t_ns": 1793345778333817371,
+          "text": "、"
+        },
+        {
+          "t_ns": 1793345778375235565,
+          "text": "呕吐"
+        },
+        {
+          "t_ns": 1793345778414301720,
+          "text": "等"
+        },
+        {
+          "t_ns": 1793345778455976950,
+          "text": "不适"
+        },
+        {
+          "t_ns": 1793345778497087316,
+          "text": "。"
+        },
+        {
+          "t_ns": 1793345778539248869,
+          "text": "请"
+        },
+        {
+          "t_ns": 1793345778582246623,
+          "text": "遵"
+        },
+        {
+          "t_ns": 1793345778622828454,
+          "text": "医"
+        },
+        {
+          "t_ns": 1793345778665149540,
+          "text": "嘱"
+        },
+        {
+          "t_ns": 1793345778709132250,
+          "text": "安排"
+        },
+        {
+          "t_ns": 1793345778751529859,
+          "text": "饮食"
+        },
+        {
+          "t_ns": 1793345778793581562,
+          "text": "时间"
+        },
+        {
+          "t_ns": 1793345778836698865,
+          "text": "。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793345778039829299,
+      "done_rx_ns": 1793345778876670312,
+      "text_count": 4,
+      "texts": [
+        {
+          "t_ns": 1793345778039829299,
+          "text": "透析时不能吃东西。"
+        },
+        {
+          "t_ns": 1793345778334057469,
+          "text": "透析中进食可能引起恶心、"
+        },
+        {
+          "t_ns": 1793345778497379233,
+          "text": "呕吐等不适。"
+        },
+        {
+          "t_ns": 1793345778838913728,
+          "text": "请遵医嘱安排饮食时间。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 29,
+    "latency_events_total": 29,
+    "asr_events": 0,
+    "tts_events": 23,
+    "tts_play_pairs": 4,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793345777477591310,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793345777477261010,
+      "detail": {
+        "kind": "medical",
+        "chat_mode": false,
+        "source": "keyword",
+        "keyword_medical": true,
+        "chitchat": false,
+        "judge_kind": null,
+        "judge_ms": 0.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793345777477261010, \"detail\": {\"kind\": \"medical\", \"chat_mode\": false, \"source\": \"keyword\", \"keyword_medical\": true, \"chitchat\": false, \"judge_kind\": null, \"judge_ms\": 0.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345777477962384,
+      "node": "llm_medical",
+      "stage": "rag_start",
+      "t_ns": 1793345777477746145,
+      "detail": {},
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_start\", \"t_ns\": 1793345777477746145, \"detail\": {}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345777510344127,
+      "node": "llm_medical",
+      "stage": "rag_end",
+      "t_ns": 1793345777510051437,
+      "detail": {
+        "n_chunks": 3,
+        "took_ms": 32.19,
+        "top1": "血液透析患者内瘘手术宣教"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_end\", \"t_ns\": 1793345777510051437, \"detail\": {\"n_chunks\": 3, \"took_ms\": 32.19, \"top1\": \"血液透析患者内瘘手术宣教\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345777510961755,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793345777510774414,
+      "detail": {
+        "provider": "ollama",
+        "prompt_chars": 1238,
+        "n_messages": 6
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793345777510774414, \"detail\": {\"provider\": \"ollama\", \"prompt_chars\": 1238, \"n_messages\": 6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345777937096617,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793345777936833412,
+      "detail": {
+        "prompt_chars": 1238
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793345777936833412, \"detail\": {\"prompt_chars\": 1238}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345777953544688,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793345777953285122,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793345777953285122, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345778057111284,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793345778056776127,
+      "detail": {
+        "text_len": 9,
+        "head": "透析时不能吃东西。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793345778056776127, \"detail\": {\"text_len\": 9, \"head\": \"透析时不能吃东西。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345778057324504,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793345778056858109,
+      "detail": {
+        "text_len": 9
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793345778056858109, \"detail\": {\"text_len\": 9}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345778876406677,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793345778876033484,
+      "detail": {
+        "chars": 38
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793345778876033484, \"detail\": {\"chars\": 38}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345779253770265,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793345779253457985,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 1196.593025,
+        "audio_sec": 2.48,
+        "rtf": 0.4824971874999999
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793345779253457985, \"detail\": {\"text_len\": 9, \"dur_ms\": 1196.593025, \"audio_sec\": 2.48, \"rtf\": 0.4824971874999999}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345779254350131,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793345779254188544,
+      "detail": {
+        "text_len": 12,
+        "head": "透析中进食可能引起恶心、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793345779254188544, \"detail\": {\"text_len\": 12, \"head\": \"透析中进食可能引起恶心、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345779254539173,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793345779254237698,
+      "detail": {
+        "text_len": 12
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793345779254237698, \"detail\": {\"text_len\": 12}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345779326526236,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793345779326226995,
+      "detail": {
+        "text_len": 9,
+        "head": "透析时不能吃东西。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793345779326226995, \"detail\": {\"text_len\": 9, \"head\": \"透析时不能吃东西。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345780227413522,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793345780226967380,
+      "detail": {
+        "text_len": 12,
+        "dur_ms": 972.722707,
+        "audio_sec": 2.72,
+        "rtf": 0.3576186422794117
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793345780226967380, \"detail\": {\"text_len\": 12, \"dur_ms\": 972.722707, \"audio_sec\": 2.72, \"rtf\": 0.3576186422794117}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345780227979419,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793345780227700119,
+      "detail": {
+        "text_len": 6,
+        "head": "呕吐等不适。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793345780227700119, \"detail\": {\"text_len\": 6, \"head\": \"呕吐等不适。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345780228160418,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793345780227808197,
+      "detail": {
+        "text_len": 6
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793345780227808197, \"detail\": {\"text_len\": 6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345780845532144,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793345780845056572,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 617.244019,
+        "audio_sec": 1.68,
+        "rtf": 0.3674071541666667
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793345780845056572, \"detail\": {\"text_len\": 6, \"dur_ms\": 617.244019, \"audio_sec\": 1.68, \"rtf\": 0.3674071541666667}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345780845956451,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793345780845692518,
+      "detail": {
+        "text_len": 11,
+        "head": "请遵医嘱安排饮食时间。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793345780845692518, \"detail\": {\"text_len\": 11, \"head\": \"请遵医嘱安排饮食时间。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345780846167580,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793345780845748979,
+      "detail": {
+        "text_len": 11
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793345780845748979, \"detail\": {\"text_len\": 11}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345781665226924,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793345781664912872,
+      "detail": {
+        "text_len": 11,
+        "dur_ms": 819.158132,
+        "audio_sec": 2.32,
+        "rtf": 0.35308540172413794
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793345781664912872, \"detail\": {\"text_len\": 11, \"dur_ms\": 819.158132, \"audio_sec\": 2.32, \"rtf\": 0.35308540172413794}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345781665795404,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793345781665613787,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793345781665613787, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345781805834206,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793345781805518118,
+      "detail": {
+        "text_len": 9,
+        "interrupted": false,
+        "dur_ms": 2479.287383
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793345781805518118, \"detail\": {\"text_len\": 9, \"interrupted\": false, \"dur_ms\": 2479.287383}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345781806432024,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793345781806228897,
+      "detail": {
+        "text_len": 12,
+        "head": "透析中进食可能引起恶心、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793345781806228897, \"detail\": {\"text_len\": 12, \"head\": \"透析中进食可能引起恶心、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345784524485405,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793345784524180366,
+      "detail": {
+        "text_len": 12,
+        "interrupted": false,
+        "dur_ms": 2717.948563
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793345784524180366, \"detail\": {\"text_len\": 12, \"interrupted\": false, \"dur_ms\": 2717.948563}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345784525261592,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793345784525059490,
+      "detail": {
+        "text_len": 6,
+        "head": "呕吐等不适。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793345784525059490, \"detail\": {\"text_len\": 6, \"head\": \"呕吐等不适。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345786203201619,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793345786202877118,
+      "detail": {
+        "text_len": 6,
+        "interrupted": false,
+        "dur_ms": 1677.815528
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793345786202877118, \"detail\": {\"text_len\": 6, \"interrupted\": false, \"dur_ms\": 1677.815528}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345786203756121,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793345786203624902,
+      "detail": {
+        "text_len": 11,
+        "head": "请遵医嘱安排饮食时间。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793345786203624902, \"detail\": {\"text_len\": 11, \"head\": \"请遵医嘱安排饮食时间。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345788521814396,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793345788521435935,
+      "detail": {
+        "text_len": 11,
+        "interrupted": false,
+        "dur_ms": 2317.807336
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793345788521435935, \"detail\": {\"text_len\": 11, \"interrupted\": false, \"dur_ms\": 2317.807336}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793345788522289961,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793345788522159210,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793345788522159210, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793345777477261010,
+          "arrival_ns": 1793345777477591310,
+          "source": "round",
+          "detail": {
+            "kind": "medical",
+            "chat_mode": false,
+            "source": "keyword",
+            "keyword_medical": true,
+            "chitchat": false,
+            "judge_kind": null,
+            "judge_ms": 0.0
+          }
+        }
+      ],
+      "rag_start": [
+        {
+          "t_ns": 1793345777477746145,
+          "arrival_ns": 1793345777477962384,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "rag_end": [
+        {
+          "t_ns": 1793345777510051437,
+          "arrival_ns": 1793345777510344127,
+          "source": "round",
+          "detail": {
+            "n_chunks": 3,
+            "took_ms": 32.19,
+            "top1": "血液透析患者内瘘手术宣教"
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793345777510774414,
+          "arrival_ns": 1793345777510961755,
+          "source": "round",
+          "detail": {
+            "provider": "ollama",
+            "prompt_chars": 1238,
+            "n_messages": 6
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793345777936833412,
+          "arrival_ns": 1793345777937096617,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1238
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793345778876033484,
+          "arrival_ns": 1793345778876406677,
+          "source": "round",
+          "detail": {
+            "chars": 38
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793345777953285122,
+          "arrival_ns": 1793345777953544688,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793345781665613787,
+          "arrival_ns": 1793345781665795404,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793345778056776127,
+          "arrival_ns": 1793345778057111284,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "透析时不能吃东西。"
+          }
+        },
+        {
+          "t_ns": 1793345779254188544,
+          "arrival_ns": 1793345779254350131,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "透析中进食可能引起恶心、"
+          }
+        },
+        {
+          "t_ns": 1793345780227700119,
+          "arrival_ns": 1793345780227979419,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "呕吐等不适。"
+          }
+        },
+        {
+          "t_ns": 1793345780845692518,
+          "arrival_ns": 1793345780845956451,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "请遵医嘱安排饮食时间。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793345778056858109,
+          "arrival_ns": 1793345778057324504,
+          "source": "round",
+          "detail": {
+            "text_len": 9
+          }
+        },
+        {
+          "t_ns": 1793345779254237698,
+          "arrival_ns": 1793345779254539173,
+          "source": "round",
+          "detail": {
+            "text_len": 12
+          }
+        },
+        {
+          "t_ns": 1793345780227808197,
+          "arrival_ns": 1793345780228160418,
+          "source": "round",
+          "detail": {
+            "text_len": 6
+          }
+        },
+        {
+          "t_ns": 1793345780845748979,
+          "arrival_ns": 1793345780846167580,
+          "source": "round",
+          "detail": {
+            "text_len": 11
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793345779253457985,
+          "arrival_ns": 1793345779253770265,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 1196.593025,
+            "audio_sec": 2.48,
+            "rtf": 0.4824971874999999
+          }
+        },
+        {
+          "t_ns": 1793345780226967380,
+          "arrival_ns": 1793345780227413522,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "dur_ms": 972.722707,
+            "audio_sec": 2.72,
+            "rtf": 0.3576186422794117
+          }
+        },
+        {
+          "t_ns": 1793345780845056572,
+          "arrival_ns": 1793345780845532144,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 617.244019,
+            "audio_sec": 1.68,
+            "rtf": 0.3674071541666667
+          }
+        },
+        {
+          "t_ns": 1793345781664912872,
+          "arrival_ns": 1793345781665226924,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "dur_ms": 819.158132,
+            "audio_sec": 2.32,
+            "rtf": 0.35308540172413794
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793345779326226995,
+          "arrival_ns": 1793345779326526236,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "透析时不能吃东西。"
+          }
+        },
+        {
+          "t_ns": 1793345781806228897,
+          "arrival_ns": 1793345781806432024,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "透析中进食可能引起恶心、"
+          }
+        },
+        {
+          "t_ns": 1793345784525059490,
+          "arrival_ns": 1793345784525261592,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "呕吐等不适。"
+          }
+        },
+        {
+          "t_ns": 1793345786203624902,
+          "arrival_ns": 1793345786203756121,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "请遵医嘱安排饮食时间。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793345781805518118,
+          "arrival_ns": 1793345781805834206,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "interrupted": false,
+            "dur_ms": 2479.287383
+          }
+        },
+        {
+          "t_ns": 1793345784524180366,
+          "arrival_ns": 1793345784524485405,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "interrupted": false,
+            "dur_ms": 2717.948563
+          }
+        },
+        {
+          "t_ns": 1793345786202877118,
+          "arrival_ns": 1793345786203201619,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "interrupted": false,
+            "dur_ms": 1677.815528
+          }
+        },
+        {
+          "t_ns": 1793345788521435935,
+          "arrival_ns": 1793345788521814396,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "interrupted": false,
+            "dur_ms": 2317.807336
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793345788522159210,
+          "arrival_ns": 1793345788522289961,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 10,
+    "interval_s": 2.0
+  }
+}

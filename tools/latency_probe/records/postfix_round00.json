@@ -1,0 +1,1162 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1070639",
+  "host": "artrc",
+  "tag": "postfix",
+  "round_index": 0,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T10:40:08.824",
+  "finished_at": "2026-10-30T10:40:21.856",
+  "duration_s": 13.032,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "透析完浑身痒，有什么办法？",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793328008825164694,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793328008824643819,
+    "t_publish_question_ns": 1793328008825164694,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793328008825920632,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793328008826279424,
+      "ali_llm_output_start": 1793328009540229741,
+      "ali_llm_output_first_text": 1793328009540647535,
+      "ali_llm_output_done": 1793328010260231339,
+      "tts_realtime_data_start": 1793328009540688674,
+      "tts_realtime_data_first_text": 1793328009573449073,
+      "tts_realtime_data_done": 1793328010260544272,
+      "tts_session_finished": 1793328021556149095
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793328009583324590,
+      "tts_local.synth_start_first": 1793328009583408667,
+      "tts_local.synth_end_first": 1793328010079178580,
+      "tts_local.play_start_first": 1793328010155151869,
+      "tts_local.play_end_last": 1793328021554925296,
+      "tts_local.session_finished": 1793328021555747887
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.115,
+    "router_to_llm_first_ms": 714.368,
+    "question_to_llm_first_ms": 715.483,
+    "llm_first_to_done_ms": 719.584,
+    "question_to_llm_done_ms": 1435.067,
+    "llm_first_to_tts_first_text_ms": 32.802,
+    "question_to_tts_first_text_ms": 748.284,
+    "first_tts_text_to_first_play_start_ms": 581.703,
+    "tts_rx_to_synth_end_ms": 495.854,
+    "tts_rx_to_play_start_ms": 571.827,
+    "tts_synth_end_to_play_start_ms": 75.973,
+    "question_to_first_audio_ms": 1329.987,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 12730.984,
+    "audio_total_sum_ms": 11395.717,
+    "audio_first_to_last_ms": 11399.773
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 1114730,
+    "router_to_llm_first_ns": 714368111,
+    "question_to_llm_first_ns": 715482841,
+    "llm_first_to_done_ns": 719583804,
+    "question_to_llm_done_ns": 1435066645,
+    "llm_first_to_tts_first_text_ns": 32801538,
+    "question_to_tts_first_text_ns": 748284379,
+    "first_tts_text_to_first_play_start_ns": 581702796,
+    "tts_rx_to_synth_end_ns": 495853990,
+    "tts_rx_to_play_start_ns": 571827279,
+    "tts_synth_end_to_play_start_ns": 75973289,
+    "question_to_first_audio_ns": 1329987175,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 12730984401,
+    "audio_total_sum_ns": 11395717176,
+    "audio_first_to_last_ns": 11399773427
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 715482841,
+      "ms": 715.483
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 719583804,
+      "ms": 719.584
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 32801538,
+      "ms": 32.802
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 581702796,
+      "ms": 581.703
+    },
+    "question_to_first_play_start": {
+      "ns": 1329987175,
+      "ms": 1329.987
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 12730984401,
+      "ms": 12730.984
+    },
+    "audio_total_sec": {
+      "ns": 11395717176,
+      "ms": 11395.717,
+      "sec": 11.396
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.115,
+    "router_to_llm_first_ms": 714.368,
+    "question_to_llm_first_ms": 715.483,
+    "llm_first_to_done_ms": 719.584,
+    "question_to_llm_done_ms": 1435.067,
+    "llm_first_to_tts_first_text_ms": 32.802,
+    "question_to_tts_first_text_ms": 748.284,
+    "first_tts_text_to_first_play_start_ms": 581.703,
+    "tts_rx_to_synth_end_ms": 495.854,
+    "tts_rx_to_play_start_ms": 571.827,
+    "tts_synth_end_to_play_start_ms": 75.973,
+    "question_to_first_audio_ms": 1329.987,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 12730.984,
+    "audio_total_sum_ms": 11395.717,
+    "audio_first_to_last_ms": 11399.773
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793328009540229741,
+      "first_text_rx_ns": 1793328009540647535,
+      "done_rx_ns": 1793328010260231339,
+      "chunk_count": 10,
+      "char_count": 46,
+      "chunks": [
+        {
+          "t_ns": 1793328009540647535,
+          "text": "这个"
+        },
+        {
+          "t_ns": 1793328009573239118,
+          "text": "要注意。"
+        },
+        {
+          "t_ns": 1793328009666561539,
+          "text": "透"
+        },
+        {
+          "t_ns": 1793328009666812480,
+          "text": "析后皮肤"
+        },
+        {
+          "t_ns": 1793328009740487205,
+          "text": "痒，可能和"
+        },
+        {
+          "t_ns": 1793328009875073500,
+          "text": "钙磷代谢有关"
+        },
+        {
+          "t_ns": 1793328009963959338,
+          "text": "；  \n用保湿霜"
+        },
+        {
+          "t_ns": 1793328010078490497,
+          "text": "、穿全棉衣服，"
+        },
+        {
+          "t_ns": 1793328010229718904,
+          "text": "别用刺激性清洁"
+        },
+        {
+          "t_ns": 1793328010244257096,
+          "text": "剂。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793328009573449073,
+      "done_rx_ns": 1793328010260544272,
+      "text_count": 6,
+      "texts": [
+        {
+          "t_ns": 1793328009573449073,
+          "text": "这个要注意。"
+        },
+        {
+          "t_ns": 1793328009740848900,
+          "text": "透析后皮肤痒，"
+        },
+        {
+          "t_ns": 1793328009964141413,
+          "text": "可能和钙磷代谢有关；"
+        },
+        {
+          "t_ns": 1793328010078783382,
+          "text": "用保湿霜、"
+        },
+        {
+          "t_ns": 1793328010079154376,
+          "text": "穿全棉衣服，"
+        },
+        {
+          "t_ns": 1793328010244562542,
+          "text": "别用刺激性清洁剂。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 39,
+    "latency_events_total": 39,
+    "asr_events": 0,
+    "tts_events": 33,
+    "tts_play_pairs": 6,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793328008848940890,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793328008847107198,
+      "detail": {
+        "kind": "medical",
+        "chat_mode": false,
+        "source": "keyword",
+        "keyword_medical": true,
+        "judge_kind": null,
+        "judge_ms": 0.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793328008847107198, \"detail\": {\"kind\": \"medical\", \"chat_mode\": false, \"source\": \"keyword\", \"keyword_medical\": true, \"judge_kind\": null, \"judge_ms\": 0.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328008849246591,
+      "node": "llm_medical",
+      "stage": "rag_start",
+      "t_ns": 1793328008847676646,
+      "detail": {},
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_start\", \"t_ns\": 1793328008847676646, \"detail\": {}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328009107747351,
+      "node": "llm_medical",
+      "stage": "rag_end",
+      "t_ns": 1793328009105218870,
+      "detail": {
+        "n_chunks": 4,
+        "took_ms": 257.44,
+        "top1": "透析相关并发症与处理"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_end\", \"t_ns\": 1793328009105218870, \"detail\": {\"n_chunks\": 4, \"took_ms\": 257.44, \"top1\": \"透析相关并发症与处理\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328009540297956,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793328009539870405,
+      "detail": {
+        "prompt_chars": 1287,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793328009539870405, \"detail\": {\"prompt_chars\": 1287, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328009540718300,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793328009540447429,
+      "detail": {
+        "prompt_chars": 1287
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793328009540447429, \"detail\": {\"prompt_chars\": 1287}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328009541038326,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793328009540871655,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793328009540871655, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328009583602823,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793328009583324590,
+      "detail": {
+        "text_len": 6,
+        "head": "这个要注意。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793328009583324590, \"detail\": {\"text_len\": 6, \"head\": \"这个要注意。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328009583936227,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793328009583408667,
+      "detail": {
+        "text_len": 6
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793328009583408667, \"detail\": {\"text_len\": 6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328010079471707,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793328010079178580,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 495.76363,
+        "audio_sec": 1.28,
+        "rtf": 0.38731533593749995
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793328010079178580, \"detail\": {\"text_len\": 6, \"dur_ms\": 495.76363, \"audio_sec\": 1.28, \"rtf\": 0.38731533593749995}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328010080008404,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793328010079812051,
+      "detail": {
+        "text_len": 7,
+        "head": "透析后皮肤痒，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793328010079812051, \"detail\": {\"text_len\": 7, \"head\": \"透析后皮肤痒，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328010080204924,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793328010079869514,
+      "detail": {
+        "text_len": 7
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793328010079869514, \"detail\": {\"text_len\": 7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328010155413743,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793328010155151869,
+      "detail": {
+        "text_len": 6,
+        "head": "这个要注意。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793328010155151869, \"detail\": {\"text_len\": 6, \"head\": \"这个要注意。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328010260279306,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793328010259901040,
+      "detail": {
+        "chars": 49
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793328010259901040, \"detail\": {\"chars\": 49}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328010732690886,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793328010732331285,
+      "detail": {
+        "text_len": 7,
+        "dur_ms": 652.455064,
+        "audio_sec": 1.76,
+        "rtf": 0.37071310454545453
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793328010732331285, \"detail\": {\"text_len\": 7, \"dur_ms\": 652.455064, \"audio_sec\": 1.76, \"rtf\": 0.37071310454545453}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328010736093948,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793328010735852485,
+      "detail": {
+        "text_len": 10,
+        "head": "可能和钙磷代谢有关；"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793328010735852485, \"detail\": {\"text_len\": 10, \"head\": \"可能和钙磷代谢有关；\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328010736390549,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793328010735912749,
+      "detail": {
+        "text_len": 10
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793328010735912749, \"detail\": {\"text_len\": 10}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328011462391779,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793328011462095606,
+      "detail": {
+        "text_len": 6,
+        "interrupted": false,
+        "dur_ms": 1306.942155
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793328011462095606, \"detail\": {\"text_len\": 6, \"interrupted\": false, \"dur_ms\": 1306.942155}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328011463013025,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793328011462873756,
+      "detail": {
+        "text_len": 7,
+        "head": "透析后皮肤痒，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793328011462873756, \"detail\": {\"text_len\": 7, \"head\": \"透析后皮肤痒，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328011617910342,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793328011617608060,
+      "detail": {
+        "text_len": 10,
+        "dur_ms": 881.690727,
+        "audio_sec": 2.48,
+        "rtf": 0.3555204544354839
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793328011617608060, \"detail\": {\"text_len\": 10, \"dur_ms\": 881.690727, \"audio_sec\": 2.48, \"rtf\": 0.3555204544354839}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328011618328644,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793328011618164331,
+      "detail": {
+        "text_len": 5,
+        "head": "用保湿霜、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793328011618164331, \"detail\": {\"text_len\": 5, \"head\": \"用保湿霜、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328011618515989,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793328011618223084,
+      "detail": {
+        "text_len": 5
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793328011618223084, \"detail\": {\"text_len\": 5}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328012280404639,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793328012280075646,
+      "detail": {
+        "text_len": 5,
+        "dur_ms": 661.847752,
+        "audio_sec": 1.84,
+        "rtf": 0.3596998652173913
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793328012280075646, \"detail\": {\"text_len\": 5, \"dur_ms\": 661.847752, \"audio_sec\": 1.84, \"rtf\": 0.3596998652173913}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328012280915302,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793328012280633512,
+      "detail": {
+        "text_len": 6,
+        "head": "穿全棉衣服，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793328012280633512, \"detail\": {\"text_len\": 6, \"head\": \"穿全棉衣服，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328012281118194,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793328012280675199,
+      "detail": {
+        "text_len": 6
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793328012280675199, \"detail\": {\"text_len\": 6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328012979016789,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793328012978705880,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 698.025866,
+        "audio_sec": 1.92,
+        "rtf": 0.36355513854166666
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793328012978705880, \"detail\": {\"text_len\": 6, \"dur_ms\": 698.025866, \"audio_sec\": 1.92, \"rtf\": 0.36355513854166666}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328012979418010,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793328012979283267,
+      "detail": {
+        "text_len": 9,
+        "head": "别用刺激性清洁剂。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793328012979283267, \"detail\": {\"text_len\": 9, \"head\": \"别用刺激性清洁剂。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328012979620535,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793328012979342578,
+      "detail": {
+        "text_len": 9
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793328012979342578, \"detail\": {\"text_len\": 9}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328013249892594,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793328013249628473,
+      "detail": {
+        "text_len": 7,
+        "interrupted": false,
+        "dur_ms": 1786.752407
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793328013249628473, \"detail\": {\"text_len\": 7, \"interrupted\": false, \"dur_ms\": 1786.752407}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328013250510349,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793328013250337126,
+      "detail": {
+        "text_len": 10,
+        "head": "可能和钙磷代谢有关；"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793328013250337126, \"detail\": {\"text_len\": 10, \"head\": \"可能和钙磷代谢有关；\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328013692884448,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793328013692551802,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 713.203783,
+        "audio_sec": 2.0,
+        "rtf": 0.35660189150000005
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793328013692551802, \"detail\": {\"text_len\": 9, \"dur_ms\": 713.203783, \"audio_sec\": 2.0, \"rtf\": 0.35660189150000005}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328013693248762,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793328013693118186,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793328013693118186, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328015763830866,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793328015763549433,
+      "detail": {
+        "text_len": 10,
+        "interrupted": false,
+        "dur_ms": 2513.209609
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793328015763549433, \"detail\": {\"text_len\": 10, \"interrupted\": false, \"dur_ms\": 2513.209609}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328015764460202,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793328015764301254,
+      "detail": {
+        "text_len": 5,
+        "head": "用保湿霜、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793328015764301254, \"detail\": {\"text_len\": 5, \"head\": \"用保湿霜、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328017619818696,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793328017619451237,
+      "detail": {
+        "text_len": 5,
+        "interrupted": false,
+        "dur_ms": 1855.146163
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793328017619451237, \"detail\": {\"text_len\": 5, \"interrupted\": false, \"dur_ms\": 1855.146163}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328017620547746,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793328017620388590,
+      "detail": {
+        "text_len": 6,
+        "head": "穿全棉衣服，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793328017620388590, \"detail\": {\"text_len\": 6, \"head\": \"穿全棉衣服，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328019549504870,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793328019549185910,
+      "detail": {
+        "text_len": 6,
+        "interrupted": false,
+        "dur_ms": 1928.794671
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793328019549185910, \"detail\": {\"text_len\": 6, \"interrupted\": false, \"dur_ms\": 1928.794671}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328019550327803,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793328019550066184,
+      "detail": {
+        "text_len": 9,
+        "head": "别用刺激性清洁剂。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793328019550066184, \"detail\": {\"text_len\": 9, \"head\": \"别用刺激性清洁剂。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328021555255508,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793328021554925296,
+      "detail": {
+        "text_len": 9,
+        "interrupted": false,
+        "dur_ms": 2004.856484
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793328021554925296, \"detail\": {\"text_len\": 9, \"interrupted\": false, \"dur_ms\": 2004.856484}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793328021555937289,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793328021555747887,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793328021555747887, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793328008847107198,
+          "arrival_ns": 1793328008848940890,
+          "source": "round",
+          "detail": {
+            "kind": "medical",
+            "chat_mode": false,
+            "source": "keyword",
+            "keyword_medical": true,
+            "judge_kind": null,
+            "judge_ms": 0.0
+          }
+        }
+      ],
+      "rag_start": [
+        {
+          "t_ns": 1793328008847676646,
+          "arrival_ns": 1793328008849246591,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "rag_end": [
+        {
+          "t_ns": 1793328009105218870,
+          "arrival_ns": 1793328009107747351,
+          "source": "round",
+          "detail": {
+            "n_chunks": 4,
+            "took_ms": 257.44,
+            "top1": "透析相关并发症与处理"
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793328009539870405,
+          "arrival_ns": 1793328009540297956,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1287,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793328009540447429,
+          "arrival_ns": 1793328009540718300,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1287
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793328010259901040,
+          "arrival_ns": 1793328010260279306,
+          "source": "round",
+          "detail": {
+            "chars": 49
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793328009540871655,
+          "arrival_ns": 1793328009541038326,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793328013693118186,
+          "arrival_ns": 1793328013693248762,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793328009583324590,
+          "arrival_ns": 1793328009583602823,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "这个要注意。"
+          }
+        },
+        {
+          "t_ns": 1793328010079812051,
+          "arrival_ns": 1793328010080008404,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "透析后皮肤痒，"
+          }
+        },
+        {
+          "t_ns": 1793328010735852485,
+          "arrival_ns": 1793328010736093948,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "可能和钙磷代谢有关；"
+          }
+        },
+        {
+          "t_ns": 1793328011618164331,
+          "arrival_ns": 1793328011618328644,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "用保湿霜、"
+          }
+        },
+        {
+          "t_ns": 1793328012280633512,
+          "arrival_ns": 1793328012280915302,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "穿全棉衣服，"
+          }
+        },
+        {
+          "t_ns": 1793328012979283267,
+          "arrival_ns": 1793328012979418010,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "别用刺激性清洁剂。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793328009583408667,
+          "arrival_ns": 1793328009583936227,
+          "source": "round",
+          "detail": {
+            "text_len": 6
+          }
+        },
+        {
+          "t_ns": 1793328010079869514,
+          "arrival_ns": 1793328010080204924,
+          "source": "round",
+          "detail": {
+            "text_len": 7
+          }
+        },
+        {
+          "t_ns": 1793328010735912749,
+          "arrival_ns": 1793328010736390549,
+          "source": "round",
+          "detail": {
+            "text_len": 10
+          }
+        },
+        {
+          "t_ns": 1793328011618223084,
+          "arrival_ns": 1793328011618515989,
+          "source": "round",
+          "detail": {
+            "text_len": 5
+          }
+        },
+        {
+          "t_ns": 1793328012280675199,
+          "arrival_ns": 1793328012281118194,
+          "source": "round",
+          "detail": {
+            "text_len": 6
+          }
+        },
+        {
+          "t_ns": 1793328012979342578,
+          "arrival_ns": 1793328012979620535,
+          "source": "round",
+          "detail": {
+            "text_len": 9
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793328010079178580,
+          "arrival_ns": 1793328010079471707,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 495.76363,
+            "audio_sec": 1.28,
+            "rtf": 0.38731533593749995
+          }
+        },
+        {
+          "t_ns": 1793328010732331285,
+          "arrival_ns": 1793328010732690886,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "dur_ms": 652.455064,
+            "audio_sec": 1.76,
+            "rtf": 0.37071310454545453
+          }
+        },
+        {
+          "t_ns": 1793328011617608060,
+          "arrival_ns": 1793328011617910342,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "dur_ms": 881.690727,
+            "audio_sec": 2.48,
+            "rtf": 0.3555204544354839
+          }
+        },
+        {
+          "t_ns": 1793328012280075646,
+          "arrival_ns": 1793328012280404639,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "dur_ms": 661.847752,
+            "audio_sec": 1.84,
+            "rtf": 0.3596998652173913
+          }
+        },
+        {
+          "t_ns": 1793328012978705880,
+          "arrival_ns": 1793328012979016789,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 698.025866,
+            "audio_sec": 1.92,
+            "rtf": 0.36355513854166666
+          }
+        },
+        {
+          "t_ns": 1793328013692551802,
+          "arrival_ns": 1793328013692884448,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 713.203783,
+            "audio_sec": 2.0,
+            "rtf": 0.35660189150000005
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793328010155151869,
+          "arrival_ns": 1793328010155413743,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "这个要注意。"
+          }
+        },
+        {
+          "t_ns": 1793328011462873756,
+          "arrival_ns": 1793328011463013025,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "透析后皮肤痒，"
+          }
+        },
+        {
+          "t_ns": 1793328013250337126,
+          "arrival_ns": 1793328013250510349,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "可能和钙磷代谢有关；"
+          }
+        },
+        {
+          "t_ns": 1793328015764301254,
+          "arrival_ns": 1793328015764460202,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "用保湿霜、"
+          }
+        },
+        {
+          "t_ns": 1793328017620388590,
+          "arrival_ns": 1793328017620547746,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "穿全棉衣服，"
+          }
+        },
+        {
+          "t_ns": 1793328019550066184,
+          "arrival_ns": 1793328019550327803,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "别用刺激性清洁剂。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793328011462095606,
+          "arrival_ns": 1793328011462391779,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "interrupted": false,
+            "dur_ms": 1306.942155
+          }
+        },
+        {
+          "t_ns": 1793328013249628473,
+          "arrival_ns": 1793328013249892594,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "interrupted": false,
+            "dur_ms": 1786.752407
+          }
+        },
+        {
+          "t_ns": 1793328015763549433,
+          "arrival_ns": 1793328015763830866,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "interrupted": false,
+            "dur_ms": 2513.209609
+          }
+        },
+        {
+          "t_ns": 1793328017619451237,
+          "arrival_ns": 1793328017619818696,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "interrupted": false,
+            "dur_ms": 1855.146163
+          }
+        },
+        {
+          "t_ns": 1793328019549185910,
+          "arrival_ns": 1793328019549504870,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "interrupted": false,
+            "dur_ms": 1928.794671
+          }
+        },
+        {
+          "t_ns": 1793328021554925296,
+          "arrival_ns": 1793328021555255508,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "interrupted": false,
+            "dur_ms": 2004.856484
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793328021555747887,
+          "arrival_ns": 1793328021555937289,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 5,
+    "interval_s": 2.0
+  }
+}

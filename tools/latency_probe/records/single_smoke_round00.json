@@ -1,0 +1,1329 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_9718",
+  "host": "artrc",
+  "tag": "single_smoke",
+  "round_index": 0,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-11-05T09:55:45.327",
+  "finished_at": "2026-11-05T09:55:57.894",
+  "duration_s": 12.567,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "讲个笑话",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793843745328131205,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793843745327690351,
+    "t_publish_question_ns": 1793843745328131205,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793843745328722509,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793843745329168822,
+      "ali_llm_output_start": 1793843745762342866,
+      "ali_llm_output_first_text": 1793843745765329460,
+      "ali_llm_output_done": 1793843746928617212,
+      "tts_realtime_data_start": 1793843745762805149,
+      "tts_realtime_data_first_text": 1793843745768108068,
+      "tts_realtime_data_done": 1793843746928649375,
+      "tts_session_finished": 1793843757591684724
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793843745768253348,
+      "tts_local.synth_start_first": 1793843745768295194,
+      "tts_local.synth_end_first": 1793843746432916243,
+      "tts_local.play_start_first": 1793843746464708421,
+      "tts_local.play_end_last": 1793843757590824864,
+      "tts_local.session_finished": 1793843757591476922
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.038,
+    "router_to_llm_first_ms": 436.161,
+    "question_to_llm_first_ms": 437.198,
+    "llm_first_to_done_ms": 1163.288,
+    "question_to_llm_done_ms": 1600.486,
+    "llm_first_to_tts_first_text_ms": 2.779,
+    "question_to_tts_first_text_ms": 439.977,
+    "first_tts_text_to_first_play_start_ms": 696.6,
+    "tts_rx_to_synth_end_ms": 664.663,
+    "tts_rx_to_play_start_ms": 696.455,
+    "tts_synth_end_to_play_start_ms": 31.792,
+    "question_to_first_audio_ms": 1136.577,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 12263.554,
+    "audio_total_sum_ms": 11116.632,
+    "audio_first_to_last_ms": 11126.116
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 1037617,
+    "router_to_llm_first_ns": 436160638,
+    "question_to_llm_first_ns": 437198255,
+    "llm_first_to_done_ns": 1163287752,
+    "question_to_llm_done_ns": 1600486007,
+    "llm_first_to_tts_first_text_ns": 2778608,
+    "question_to_tts_first_text_ns": 439976863,
+    "first_tts_text_to_first_play_start_ns": 696600353,
+    "tts_rx_to_synth_end_ns": 664662895,
+    "tts_rx_to_play_start_ns": 696455073,
+    "tts_synth_end_to_play_start_ns": 31792178,
+    "question_to_first_audio_ns": 1136577216,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 12263553519,
+    "audio_total_sum_ns": 11116632108,
+    "audio_first_to_last_ns": 11126116443
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 437198255,
+      "ms": 437.198
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 1163287752,
+      "ms": 1163.288
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 2778608,
+      "ms": 2.779
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 696600353,
+      "ms": 696.6
+    },
+    "question_to_first_play_start": {
+      "ns": 1136577216,
+      "ms": 1136.577
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 12263553519,
+      "ms": 12263.554
+    },
+    "audio_total_sec": {
+      "ns": 11116632108,
+      "ms": 11116.632,
+      "sec": 11.117
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.038,
+    "router_to_llm_first_ms": 436.161,
+    "question_to_llm_first_ms": 437.198,
+    "llm_first_to_done_ms": 1163.288,
+    "question_to_llm_done_ms": 1600.486,
+    "llm_first_to_tts_first_text_ms": 2.779,
+    "question_to_tts_first_text_ms": 439.977,
+    "first_tts_text_to_first_play_start_ms": 696.6,
+    "tts_rx_to_synth_end_ms": 664.663,
+    "tts_rx_to_play_start_ms": 696.455,
+    "tts_synth_end_to_play_start_ms": 31.792,
+    "question_to_first_audio_ms": 1136.577,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 12263.554,
+    "audio_total_sum_ms": 11116.632,
+    "audio_first_to_last_ms": 11126.116
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793843745762342866,
+      "first_text_rx_ns": 1793843745765329460,
+      "done_rx_ns": 1793843746928617212,
+      "chunk_count": 33,
+      "char_count": 46,
+      "chunks": [
+        {
+          "t_ns": 1793843745765329460,
+          "text": "有一天"
+        },
+        {
+          "t_ns": 1793843745767921610,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793843745783761165,
+          "text": "小"
+        },
+        {
+          "t_ns": 1793843745811226916,
+          "text": "明"
+        },
+        {
+          "t_ns": 1793843745859900038,
+          "text": "去"
+        },
+        {
+          "t_ns": 1793843745900294706,
+          "text": "动物园"
+        },
+        {
+          "t_ns": 1793843745938229225,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793843745978304339,
+          "text": "看到"
+        },
+        {
+          "t_ns": 1793843746022172947,
+          "text": "猴子"
+        },
+        {
+          "t_ns": 1793843746052785913,
+          "text": "在"
+        },
+        {
+          "t_ns": 1793843746091315126,
+          "text": "玩"
+        },
+        {
+          "t_ns": 1793843746133753211,
+          "text": "滑"
+        },
+        {
+          "t_ns": 1793843746167983506,
+          "text": "梯"
+        },
+        {
+          "t_ns": 1793843746206627275,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793843746244774432,
+          "text": "他"
+        },
+        {
+          "t_ns": 1793843746289565042,
+          "text": "问"
+        },
+        {
+          "t_ns": 1793843746325868939,
+          "text": "："
+        },
+        {
+          "t_ns": 1793843746362699424,
+          "text": "你们"
+        },
+        {
+          "t_ns": 1793843746390141469,
+          "text": "怎么"
+        },
+        {
+          "t_ns": 1793843746408618799,
+          "text": "不"
+        },
+        {
+          "t_ns": 1793843746435610170,
+          "text": "摔"
+        },
+        {
+          "t_ns": 1793843746451856550,
+          "text": "下来"
+        },
+        {
+          "t_ns": 1793843746475598399,
+          "text": "？"
+        },
+        {
+          "t_ns": 1793843746542392446,
+          "text": "猴子"
+        },
+        {
+          "t_ns": 1793843746582959060,
+          "text": "说"
+        },
+        {
+          "t_ns": 1793843746620996871,
+          "text": "："
+        },
+        {
+          "t_ns": 1793843746661196174,
+          "text": "我们"
+        },
+        {
+          "t_ns": 1793843746699628178,
+          "text": "怕"
+        },
+        {
+          "t_ns": 1793843746733627311,
+          "text": "摔"
+        },
+        {
+          "t_ns": 1793843746772074621,
+          "text": "坏"
+        },
+        {
+          "t_ns": 1793843746812541453,
+          "text": "你的"
+        },
+        {
+          "t_ns": 1793843746851121859,
+          "text": "手机"
+        },
+        {
+          "t_ns": 1793843746889461883,
+          "text": "。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793843745768108068,
+      "done_rx_ns": 1793843746928649375,
+      "text_count": 7,
+      "texts": [
+        {
+          "t_ns": 1793843745768108068,
+          "text": "有一天，"
+        },
+        {
+          "t_ns": 1793843745938415290,
+          "text": "小明去动物园，"
+        },
+        {
+          "t_ns": 1793843746206898093,
+          "text": "看到猴子在玩滑梯，"
+        },
+        {
+          "t_ns": 1793843746326108246,
+          "text": "他问："
+        },
+        {
+          "t_ns": 1793843746475864258,
+          "text": "你们怎么不摔下来？"
+        },
+        {
+          "t_ns": 1793843746621266660,
+          "text": "猴子说："
+        },
+        {
+          "t_ns": 1793843746889663694,
+          "text": "我们怕摔坏你的手机。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 42,
+    "latency_events_total": 42,
+    "asr_events": 0,
+    "tts_events": 38,
+    "tts_play_pairs": 7,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793843745350166278,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793843745349952186,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "chitchat",
+        "keyword_medical": false,
+        "chitchat": true,
+        "judge_kind": null,
+        "judge_ms": 0.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793843745349952186, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"chitchat\", \"keyword_medical\": false, \"chitchat\": true, \"judge_kind\": null, \"judge_ms\": 0.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843745350464196,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793843745350274462,
+      "detail": {
+        "provider": "ollama",
+        "prompt_chars": 554,
+        "n_messages": 2
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793843745350274462, \"detail\": {\"provider\": \"ollama\", \"prompt_chars\": 554, \"n_messages\": 2}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843745764771766,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793843745764554759,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793843745764554759, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843745765366158,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793843745765102667,
+      "detail": {
+        "prompt_chars": 554
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793843745765102667, \"detail\": {\"prompt_chars\": 554}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843745768398538,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793843745768253348,
+      "detail": {
+        "text_len": 4,
+        "head": "有一天，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793843745768253348, \"detail\": {\"text_len\": 4, \"head\": \"有一天，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843745768579119,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793843745768295194,
+      "detail": {
+        "text_len": 4
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793843745768295194, \"detail\": {\"text_len\": 4}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843746433150933,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793843746432916243,
+      "detail": {
+        "text_len": 4,
+        "dur_ms": 664.616091,
+        "audio_sec": 1.2,
+        "rtf": 0.5538467425
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793843746432916243, \"detail\": {\"text_len\": 4, \"dur_ms\": 664.616091, \"audio_sec\": 1.2, \"rtf\": 0.5538467425}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843746435412585,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793843746435200847,
+      "detail": {
+        "text_len": 7,
+        "head": "小明去动物园，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793843746435200847, \"detail\": {\"text_len\": 7, \"head\": \"小明去动物园，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843746435646351,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793843746435242229,
+      "detail": {
+        "text_len": 7
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793843746435242229, \"detail\": {\"text_len\": 7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843746464870635,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793843746464708421,
+      "detail": {
+        "text_len": 4,
+        "head": "有一天，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793843746464708421, \"detail\": {\"text_len\": 4, \"head\": \"有一天，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843746928409179,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793843746928237155,
+      "detail": {
+        "chars": 46
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793843746928237155, \"detail\": {\"chars\": 46}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843747229384167,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793843747229007137,
+      "detail": {
+        "text_len": 7,
+        "dur_ms": 793.760791,
+        "audio_sec": 1.76,
+        "rtf": 0.4510004494318182
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793843747229007137, \"detail\": {\"text_len\": 7, \"dur_ms\": 793.760791, \"audio_sec\": 1.76, \"rtf\": 0.4510004494318182}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843747231143126,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793843747230917992,
+      "detail": {
+        "text_len": 9,
+        "head": "看到猴子在玩滑梯，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793843747230917992, \"detail\": {\"text_len\": 9, \"head\": \"看到猴子在玩滑梯，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843747231331918,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793843747230969391,
+      "detail": {
+        "text_len": 9
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793843747230969391, \"detail\": {\"text_len\": 9}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843747755158862,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793843747754826307,
+      "detail": {
+        "text_len": 4,
+        "interrupted": false,
+        "dur_ms": 1290.116519
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793843747754826307, \"detail\": {\"text_len\": 4, \"interrupted\": false, \"dur_ms\": 1290.116519}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843747755661361,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793843747755540326,
+      "detail": {
+        "text_len": 7,
+        "head": "小明去动物园，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793843747755540326, \"detail\": {\"text_len\": 7, \"head\": \"小明去动物园，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843747870917128,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793843747870584345,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 639.610437,
+        "audio_sec": 1.92,
+        "rtf": 0.3331304359375001
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793843747870584345, \"detail\": {\"text_len\": 9, \"dur_ms\": 639.610437, \"audio_sec\": 1.92, \"rtf\": 0.3331304359375001}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843747871236535,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793843747871097111,
+      "detail": {
+        "text_len": 3,
+        "head": "他问："
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793843747871097111, \"detail\": {\"text_len\": 3, \"head\": \"他问：\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843747871407991,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793843747871141635,
+      "detail": {
+        "text_len": 3
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793843747871141635, \"detail\": {\"text_len\": 3}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843748177749989,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793843748177319911,
+      "detail": {
+        "text_len": 3,
+        "dur_ms": 306.174056,
+        "audio_sec": 0.88,
+        "rtf": 0.34792506363636366
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793843748177319911, \"detail\": {\"text_len\": 3, \"dur_ms\": 306.174056, \"audio_sec\": 0.88, \"rtf\": 0.34792506363636366}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843748178063977,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793843748177853052,
+      "detail": {
+        "text_len": 9,
+        "head": "你们怎么不摔下来？"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793843748177853052, \"detail\": {\"text_len\": 9, \"head\": \"你们怎么不摔下来？\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843748178232096,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793843748177896730,
+      "detail": {
+        "text_len": 9
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793843748177896730, \"detail\": {\"text_len\": 9}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843748676765389,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793843748676443759,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 498.542471,
+        "audio_sec": 1.52,
+        "rtf": 0.3279884677631579
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793843748676443759, \"detail\": {\"text_len\": 9, \"dur_ms\": 498.542471, \"audio_sec\": 1.52, \"rtf\": 0.3279884677631579}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843748677122203,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793843748676997059,
+      "detail": {
+        "text_len": 4,
+        "head": "猴子说："
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793843748676997059, \"detail\": {\"text_len\": 4, \"head\": \"猴子说：\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843748677297267,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793843748677043805,
+      "detail": {
+        "text_len": 4
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793843748677043805, \"detail\": {\"text_len\": 4}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843749144379087,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793843749144164216,
+      "detail": {
+        "text_len": 4,
+        "dur_ms": 467.116742,
+        "audio_sec": 1.44,
+        "rtf": 0.3243866263888889
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793843749144164216, \"detail\": {\"text_len\": 4, \"dur_ms\": 467.116742, \"audio_sec\": 1.44, \"rtf\": 0.3243866263888889}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843749144744408,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793843749144612381,
+      "detail": {
+        "text_len": 10,
+        "head": "我们怕摔坏你的手机。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793843749144612381, \"detail\": {\"text_len\": 10, \"head\": \"我们怕摔坏你的手机。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843749144912890,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793843749144654467,
+      "detail": {
+        "text_len": 10
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793843749144654467, \"detail\": {\"text_len\": 10}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843749514894746,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793843749514427452,
+      "detail": {
+        "text_len": 7,
+        "interrupted": false,
+        "dur_ms": 1758.88472
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793843749514427452, \"detail\": {\"text_len\": 7, \"interrupted\": false, \"dur_ms\": 1758.88472}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843749520854231,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793843749520649294,
+      "detail": {
+        "text_len": 9,
+        "head": "看到猴子在玩滑梯，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793843749520649294, \"detail\": {\"text_len\": 9, \"head\": \"看到猴子在玩滑梯，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843749875957649,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793843749875299043,
+      "detail": {
+        "text_len": 10,
+        "dur_ms": 730.639952,
+        "audio_sec": 2.32,
+        "rtf": 0.31493101379310345
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793843749875299043, \"detail\": {\"text_len\": 10, \"dur_ms\": 730.639952, \"audio_sec\": 2.32, \"rtf\": 0.31493101379310345}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843749876599943,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793843749875881778,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793843749875881778, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843751442295213,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793843751442018453,
+      "detail": {
+        "text_len": 9,
+        "interrupted": false,
+        "dur_ms": 1921.36707
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793843751442018453, \"detail\": {\"text_len\": 9, \"interrupted\": false, \"dur_ms\": 1921.36707}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843751442816966,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793843751442670204,
+      "detail": {
+        "text_len": 3,
+        "head": "他问："
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793843751442670204, \"detail\": {\"text_len\": 3, \"head\": \"他问：\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843752319610956,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793843752319333135,
+      "detail": {
+        "text_len": 3,
+        "interrupted": false,
+        "dur_ms": 876.660486
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793843752319333135, \"detail\": {\"text_len\": 3, \"interrupted\": false, \"dur_ms\": 876.660486}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843752320092123,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793843752319932916,
+      "detail": {
+        "text_len": 9,
+        "head": "你们怎么不摔下来？"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793843752319932916, \"detail\": {\"text_len\": 9, \"head\": \"你们怎么不摔下来？\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843753836848796,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793843753836584082,
+      "detail": {
+        "text_len": 9,
+        "interrupted": false,
+        "dur_ms": 1516.657233
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793843753836584082, \"detail\": {\"text_len\": 9, \"interrupted\": false, \"dur_ms\": 1516.657233}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843753837418649,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793843753837239143,
+      "detail": {
+        "text_len": 4,
+        "head": "猴子说："
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793843753837239143, \"detail\": {\"text_len\": 4, \"head\": \"猴子说：\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843755274026463,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793843755273774659,
+      "detail": {
+        "text_len": 4,
+        "interrupted": false,
+        "dur_ms": 1436.533359
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793843755273774659, \"detail\": {\"text_len\": 4, \"interrupted\": false, \"dur_ms\": 1436.533359}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843755274614575,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793843755274416540,
+      "detail": {
+        "text_len": 10,
+        "head": "我们怕摔坏你的手机。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793843755274416540, \"detail\": {\"text_len\": 10, \"head\": \"我们怕摔坏你的手机。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843757591180057,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793843757590824864,
+      "detail": {
+        "text_len": 10,
+        "interrupted": false,
+        "dur_ms": 2316.406199
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793843757590824864, \"detail\": {\"text_len\": 10, \"interrupted\": false, \"dur_ms\": 2316.406199}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793843757591726754,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793843757591476922,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793843757591476922, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793843745349952186,
+          "arrival_ns": 1793843745350166278,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "chitchat",
+            "keyword_medical": false,
+            "chitchat": true,
+            "judge_kind": null,
+            "judge_ms": 0.0
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793843745350274462,
+          "arrival_ns": 1793843745350464196,
+          "source": "round",
+          "detail": {
+            "provider": "ollama",
+            "prompt_chars": 554,
+            "n_messages": 2
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793843745765102667,
+          "arrival_ns": 1793843745765366158,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 554
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793843746928237155,
+          "arrival_ns": 1793843746928409179,
+          "source": "round",
+          "detail": {
+            "chars": 46
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793843745764554759,
+          "arrival_ns": 1793843745764771766,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793843749875881778,
+          "arrival_ns": 1793843749876599943,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793843745768253348,
+          "arrival_ns": 1793843745768398538,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "有一天，"
+          }
+        },
+        {
+          "t_ns": 1793843746435200847,
+          "arrival_ns": 1793843746435412585,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "小明去动物园，"
+          }
+        },
+        {
+          "t_ns": 1793843747230917992,
+          "arrival_ns": 1793843747231143126,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "看到猴子在玩滑梯，"
+          }
+        },
+        {
+          "t_ns": 1793843747871097111,
+          "arrival_ns": 1793843747871236535,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "head": "他问："
+          }
+        },
+        {
+          "t_ns": 1793843748177853052,
+          "arrival_ns": 1793843748178063977,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "你们怎么不摔下来？"
+          }
+        },
+        {
+          "t_ns": 1793843748676997059,
+          "arrival_ns": 1793843748677122203,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "猴子说："
+          }
+        },
+        {
+          "t_ns": 1793843749144612381,
+          "arrival_ns": 1793843749144744408,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "我们怕摔坏你的手机。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793843745768295194,
+          "arrival_ns": 1793843745768579119,
+          "source": "round",
+          "detail": {
+            "text_len": 4
+          }
+        },
+        {
+          "t_ns": 1793843746435242229,
+          "arrival_ns": 1793843746435646351,
+          "source": "round",
+          "detail": {
+            "text_len": 7
+          }
+        },
+        {
+          "t_ns": 1793843747230969391,
+          "arrival_ns": 1793843747231331918,
+          "source": "round",
+          "detail": {
+            "text_len": 9
+          }
+        },
+        {
+          "t_ns": 1793843747871141635,
+          "arrival_ns": 1793843747871407991,
+          "source": "round",
+          "detail": {
+            "text_len": 3
+          }
+        },
+        {
+          "t_ns": 1793843748177896730,
+          "arrival_ns": 1793843748178232096,
+          "source": "round",
+          "detail": {
+            "text_len": 9
+          }
+        },
+        {
+          "t_ns": 1793843748677043805,
+          "arrival_ns": 1793843748677297267,
+          "source": "round",
+          "detail": {
+            "text_len": 4
+          }
+        },
+        {
+          "t_ns": 1793843749144654467,
+          "arrival_ns": 1793843749144912890,
+          "source": "round",
+          "detail": {
+            "text_len": 10
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793843746432916243,
+          "arrival_ns": 1793843746433150933,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "dur_ms": 664.616091,
+            "audio_sec": 1.2,
+            "rtf": 0.5538467425
+          }
+        },
+        {
+          "t_ns": 1793843747229007137,
+          "arrival_ns": 1793843747229384167,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "dur_ms": 793.760791,
+            "audio_sec": 1.76,
+            "rtf": 0.4510004494318182
+          }
+        },
+        {
+          "t_ns": 1793843747870584345,
+          "arrival_ns": 1793843747870917128,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 639.610437,
+            "audio_sec": 1.92,
+            "rtf": 0.3331304359375001
+          }
+        },
+        {
+          "t_ns": 1793843748177319911,
+          "arrival_ns": 1793843748177749989,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "dur_ms": 306.174056,
+            "audio_sec": 0.88,
+            "rtf": 0.34792506363636366
+          }
+        },
+        {
+          "t_ns": 1793843748676443759,
+          "arrival_ns": 1793843748676765389,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 498.542471,
+            "audio_sec": 1.52,
+            "rtf": 0.3279884677631579
+          }
+        },
+        {
+          "t_ns": 1793843749144164216,
+          "arrival_ns": 1793843749144379087,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "dur_ms": 467.116742,
+            "audio_sec": 1.44,
+            "rtf": 0.3243866263888889
+          }
+        },
+        {
+          "t_ns": 1793843749875299043,
+          "arrival_ns": 1793843749875957649,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "dur_ms": 730.639952,
+            "audio_sec": 2.32,
+            "rtf": 0.31493101379310345
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793843746464708421,
+          "arrival_ns": 1793843746464870635,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "有一天，"
+          }
+        },
+        {
+          "t_ns": 1793843747755540326,
+          "arrival_ns": 1793843747755661361,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "小明去动物园，"
+          }
+        },
+        {
+          "t_ns": 1793843749520649294,
+          "arrival_ns": 1793843749520854231,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "看到猴子在玩滑梯，"
+          }
+        },
+        {
+          "t_ns": 1793843751442670204,
+          "arrival_ns": 1793843751442816966,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "head": "他问："
+          }
+        },
+        {
+          "t_ns": 1793843752319932916,
+          "arrival_ns": 1793843752320092123,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "你们怎么不摔下来？"
+          }
+        },
+        {
+          "t_ns": 1793843753837239143,
+          "arrival_ns": 1793843753837418649,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "猴子说："
+          }
+        },
+        {
+          "t_ns": 1793843755274416540,
+          "arrival_ns": 1793843755274614575,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "我们怕摔坏你的手机。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793843747754826307,
+          "arrival_ns": 1793843747755158862,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "interrupted": false,
+            "dur_ms": 1290.116519
+          }
+        },
+        {
+          "t_ns": 1793843749514427452,
+          "arrival_ns": 1793843749514894746,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "interrupted": false,
+            "dur_ms": 1758.88472
+          }
+        },
+        {
+          "t_ns": 1793843751442018453,
+          "arrival_ns": 1793843751442295213,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "interrupted": false,
+            "dur_ms": 1921.36707
+          }
+        },
+        {
+          "t_ns": 1793843752319333135,
+          "arrival_ns": 1793843752319610956,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "interrupted": false,
+            "dur_ms": 876.660486
+          }
+        },
+        {
+          "t_ns": 1793843753836584082,
+          "arrival_ns": 1793843753836848796,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "interrupted": false,
+            "dur_ms": 1516.657233
+          }
+        },
+        {
+          "t_ns": 1793843755273774659,
+          "arrival_ns": 1793843755274026463,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "interrupted": false,
+            "dur_ms": 1436.533359
+          }
+        },
+        {
+          "t_ns": 1793843757590824864,
+          "arrival_ns": 1793843757591180057,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "interrupted": false,
+            "dur_ms": 2316.406199
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793843757591476922,
+          "arrival_ns": 1793843757591726754,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 40.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 2,
+    "interval_s": 3.0
+  }
+}

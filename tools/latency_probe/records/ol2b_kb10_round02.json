@@ -1,0 +1,992 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1166384",
+  "host": "artrc",
+  "tag": "ol2b_kb10",
+  "round_index": 2,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T16:32:24.992",
+  "finished_at": "2026-10-30T16:32:34.666",
+  "duration_s": 9.674,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "透析的时候能吃东西吗？",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793349144992393181,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793349144992008507,
+    "t_publish_question_ns": 1793349144992393181,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793349144993075753,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793349144993496601,
+      "ali_llm_output_start": 1793349145493174993,
+      "ali_llm_output_first_text": 1793349145493438359,
+      "ali_llm_output_done": 1793349146365836200,
+      "tts_realtime_data_start": 1793349145493835443,
+      "tts_realtime_data_first_text": 1793349145542138486,
+      "tts_realtime_data_done": 1793349146366122744,
+      "tts_session_finished": 1793349154361616532
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793349145542427447,
+      "tts_local.synth_start_first": 1793349145542508999,
+      "tts_local.synth_end_first": 1793349146411803232,
+      "tts_local.play_start_first": 1793349146443284274,
+      "tts_local.play_end_last": 1793349154360634797,
+      "tts_local.session_finished": 1793349154361305627
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.103,
+    "router_to_llm_first_ms": 499.942,
+    "question_to_llm_first_ms": 501.045,
+    "llm_first_to_done_ms": 872.398,
+    "question_to_llm_done_ms": 1373.443,
+    "llm_first_to_tts_first_text_ms": 48.7,
+    "question_to_tts_first_text_ms": 549.745,
+    "first_tts_text_to_first_play_start_ms": 901.146,
+    "tts_rx_to_synth_end_ms": 869.376,
+    "tts_rx_to_play_start_ms": 900.857,
+    "tts_synth_end_to_play_start_ms": 31.481,
+    "question_to_first_audio_ms": 1450.891,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 9369.223,
+    "audio_total_sum_ms": 7915.292,
+    "audio_first_to_last_ms": 7917.351
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 1103420,
+    "router_to_llm_first_ns": 499941758,
+    "question_to_llm_first_ns": 501045178,
+    "llm_first_to_done_ns": 872397841,
+    "question_to_llm_done_ns": 1373443019,
+    "llm_first_to_tts_first_text_ns": 48700127,
+    "question_to_tts_first_text_ns": 549745305,
+    "first_tts_text_to_first_play_start_ns": 901145788,
+    "tts_rx_to_synth_end_ns": 869375785,
+    "tts_rx_to_play_start_ns": 900856827,
+    "tts_synth_end_to_play_start_ns": 31481042,
+    "question_to_first_audio_ns": 1450891093,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 9369223351,
+    "audio_total_sum_ns": 7915292021,
+    "audio_first_to_last_ns": 7917350523
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 501045178,
+      "ms": 501.045
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 872397841,
+      "ms": 872.398
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 48700127,
+      "ms": 48.7
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 901145788,
+      "ms": 901.146
+    },
+    "question_to_first_play_start": {
+      "ns": 1450891093,
+      "ms": 1450.891
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 9369223351,
+      "ms": 9369.223
+    },
+    "audio_total_sec": {
+      "ns": 7915292021,
+      "ms": 7915.292,
+      "sec": 7.915
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.103,
+    "router_to_llm_first_ms": 499.942,
+    "question_to_llm_first_ms": 501.045,
+    "llm_first_to_done_ms": 872.398,
+    "question_to_llm_done_ms": 1373.443,
+    "llm_first_to_tts_first_text_ms": 48.7,
+    "question_to_tts_first_text_ms": 549.745,
+    "first_tts_text_to_first_play_start_ms": 901.146,
+    "tts_rx_to_synth_end_ms": 869.376,
+    "tts_rx_to_play_start_ms": 900.857,
+    "tts_synth_end_to_play_start_ms": 31.481,
+    "question_to_first_audio_ms": 1450.891,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 9369.223,
+    "audio_total_sum_ms": 7915.292,
+    "audio_first_to_last_ms": 7917.351
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793349145493174993,
+      "first_text_rx_ns": 1793349145493438359,
+      "done_rx_ns": 1793349146365836200,
+      "chunk_count": 23,
+      "char_count": 30,
+      "chunks": [
+        {
+          "t_ns": 1793349145493438359,
+          "text": "尽量"
+        },
+        {
+          "t_ns": 1793349145506588754,
+          "text": "别"
+        },
+        {
+          "t_ns": 1793349145524377937,
+          "text": "吃"
+        },
+        {
+          "t_ns": 1793349145541920986,
+          "text": "。"
+        },
+        {
+          "t_ns": 1793349145560797936,
+          "text": "透"
+        },
+        {
+          "t_ns": 1793349145588862209,
+          "text": "析"
+        },
+        {
+          "t_ns": 1793349145641044864,
+          "text": "中"
+        },
+        {
+          "t_ns": 1793349145689721120,
+          "text": "进食"
+        },
+        {
+          "t_ns": 1793349145732547832,
+          "text": "容易"
+        },
+        {
+          "t_ns": 1793349145770969241,
+          "text": "引起"
+        },
+        {
+          "t_ns": 1793349145816508388,
+          "text": "低"
+        },
+        {
+          "t_ns": 1793349145858524004,
+          "text": "血压"
+        },
+        {
+          "t_ns": 1793349145903539343,
+          "text": "、"
+        },
+        {
+          "t_ns": 1793349145943285726,
+          "text": "抽"
+        },
+        {
+          "t_ns": 1793349145988358239,
+          "text": "筋"
+        },
+        {
+          "t_ns": 1793349146028231970,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793349146081299247,
+          "text": "实在"
+        },
+        {
+          "t_ns": 1793349146112618336,
+          "text": "饿"
+        },
+        {
+          "t_ns": 1793349146154599159,
+          "text": "了"
+        },
+        {
+          "t_ns": 1793349146195893017,
+          "text": "先"
+        },
+        {
+          "t_ns": 1793349146243032395,
+          "text": "问"
+        },
+        {
+          "t_ns": 1793349146280336798,
+          "text": "护士"
+        },
+        {
+          "t_ns": 1793349146325979228,
+          "text": "。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793349145542138486,
+      "done_rx_ns": 1793349146366122744,
+      "text_count": 4,
+      "texts": [
+        {
+          "t_ns": 1793349145542138486,
+          "text": "尽量别吃。"
+        },
+        {
+          "t_ns": 1793349145903796460,
+          "text": "透析中进食容易引起低血压、"
+        },
+        {
+          "t_ns": 1793349146028577769,
+          "text": "抽筋，"
+        },
+        {
+          "t_ns": 1793349146326217369,
+          "text": "实在饿了先问护士。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 29,
+    "latency_events_total": 29,
+    "asr_events": 0,
+    "tts_events": 23,
+    "tts_play_pairs": 4,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793349145014408977,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793349145014116471,
+      "detail": {
+        "kind": "medical",
+        "chat_mode": false,
+        "source": "keyword",
+        "keyword_medical": true,
+        "chitchat": false,
+        "judge_kind": null,
+        "judge_ms": 0.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793349145014116471, \"detail\": {\"kind\": \"medical\", \"chat_mode\": false, \"source\": \"keyword\", \"keyword_medical\": true, \"chitchat\": false, \"judge_kind\": null, \"judge_ms\": 0.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349145014726026,
+      "node": "llm_medical",
+      "stage": "rag_start",
+      "t_ns": 1793349145014591643,
+      "detail": {},
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_start\", \"t_ns\": 1793349145014591643, \"detail\": {}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349145025432631,
+      "node": "llm_medical",
+      "stage": "rag_end",
+      "t_ns": 1793349145025137860,
+      "detail": {
+        "n_chunks": 3,
+        "took_ms": 10.46,
+        "top1": "血液透析患者内瘘手术宣教"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_end\", \"t_ns\": 1793349145025137860, \"detail\": {\"n_chunks\": 3, \"took_ms\": 10.46, \"top1\": \"血液透析患者内瘘手术宣教\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349145025820089,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793349145025678487,
+      "detail": {
+        "provider": "ollama",
+        "prompt_chars": 1402,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793349145025678487, \"detail\": {\"provider\": \"ollama\", \"prompt_chars\": 1402, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349145493480646,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793349145493247685,
+      "detail": {
+        "prompt_chars": 1402
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793349145493247685, \"detail\": {\"prompt_chars\": 1402}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349145496391208,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793349145495992618,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793349145495992618, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349145542577608,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793349145542427447,
+      "detail": {
+        "text_len": 5,
+        "head": "尽量别吃。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793349145542427447, \"detail\": {\"text_len\": 5, \"head\": \"尽量别吃。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349145542756161,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793349145542508999,
+      "detail": {
+        "text_len": 5
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793349145542508999, \"detail\": {\"text_len\": 5}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349146365884526,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793349146365562100,
+      "detail": {
+        "chars": 30
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793349146365562100, \"detail\": {\"chars\": 30}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349146413737788,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793349146411803232,
+      "detail": {
+        "text_len": 5,
+        "dur_ms": 869.289624,
+        "audio_sec": 1.52,
+        "rtf": 0.5719010684210526
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793349146411803232, \"detail\": {\"text_len\": 5, \"dur_ms\": 869.289624, \"audio_sec\": 1.52, \"rtf\": 0.5719010684210526}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349146415789219,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793349146415578344,
+      "detail": {
+        "text_len": 13,
+        "head": "透析中进食容易引起低血压、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793349146415578344, \"detail\": {\"text_len\": 13, \"head\": \"透析中进食容易引起低血压、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349146418855667,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793349146415642554,
+      "detail": {
+        "text_len": 13
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793349146415642554, \"detail\": {\"text_len\": 13}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349146443581308,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793349146443284274,
+      "detail": {
+        "text_len": 5,
+        "head": "尽量别吃。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793349146443284274, \"detail\": {\"text_len\": 5, \"head\": \"尽量别吃。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349147495053929,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793349147494748870,
+      "detail": {
+        "text_len": 13,
+        "dur_ms": 1079.100532,
+        "audio_sec": 3.04,
+        "rtf": 0.3549672802631579
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793349147494748870, \"detail\": {\"text_len\": 13, \"dur_ms\": 1079.100532, \"audio_sec\": 3.04, \"rtf\": 0.3549672802631579}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349147495576034,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793349147495420625,
+      "detail": {
+        "text_len": 3,
+        "head": "抽筋，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793349147495420625, \"detail\": {\"text_len\": 3, \"head\": \"抽筋，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349147495849049,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793349147495459921,
+      "detail": {
+        "text_len": 3
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793349147495459921, \"detail\": {\"text_len\": 3}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349147895323045,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793349147895071866,
+      "detail": {
+        "text_len": 3,
+        "dur_ms": 399.607756,
+        "audio_sec": 1.04,
+        "rtf": 0.3842382269230769
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793349147895071866, \"detail\": {\"text_len\": 3, \"dur_ms\": 399.607756, \"audio_sec\": 1.04, \"rtf\": 0.3842382269230769}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349147895790114,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793349147895654893,
+      "detail": {
+        "text_len": 9,
+        "head": "实在饿了先问护士。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793349147895654893, \"detail\": {\"text_len\": 9, \"head\": \"实在饿了先问护士。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349147895968540,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793349147895710331,
+      "detail": {
+        "text_len": 9
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793349147895710331, \"detail\": {\"text_len\": 9}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349147966578541,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793349147966250805,
+      "detail": {
+        "text_len": 5,
+        "interrupted": false,
+        "dur_ms": 1522.964065
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793349147966250805, \"detail\": {\"text_len\": 5, \"interrupted\": false, \"dur_ms\": 1522.964065}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349147967020383,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793349147966888399,
+      "detail": {
+        "text_len": 13,
+        "head": "透析中进食容易引起低血压、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793349147966888399, \"detail\": {\"text_len\": 13, \"head\": \"透析中进食容易引起低血压、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349148745900590,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793349148745641026,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 849.924979,
+        "audio_sec": 2.32,
+        "rtf": 0.36634697370689656
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793349148745641026, \"detail\": {\"text_len\": 9, \"dur_ms\": 849.924979, \"audio_sec\": 2.32, \"rtf\": 0.36634697370689656}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349148746326604,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793349148746200339,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793349148746200339, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349151006176360,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793349151005791437,
+      "detail": {
+        "text_len": 13,
+        "interrupted": false,
+        "dur_ms": 3038.898877
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793349151005791437, \"detail\": {\"text_len\": 13, \"interrupted\": false, \"dur_ms\": 3038.898877}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349151006663072,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793349151006524593,
+      "detail": {
+        "text_len": 3,
+        "head": "抽筋，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793349151006524593, \"detail\": {\"text_len\": 3, \"head\": \"抽筋，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349152043716229,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793349152043404705,
+      "detail": {
+        "text_len": 3,
+        "interrupted": false,
+        "dur_ms": 1036.877468
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793349152043404705, \"detail\": {\"text_len\": 3, \"interrupted\": false, \"dur_ms\": 1036.877468}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349152044254307,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793349152044092457,
+      "detail": {
+        "text_len": 9,
+        "head": "实在饿了先问护士。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793349152044092457, \"detail\": {\"text_len\": 9, \"head\": \"实在饿了先问护士。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349154360928030,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793349154360634797,
+      "detail": {
+        "text_len": 9,
+        "interrupted": false,
+        "dur_ms": 2316.538639
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793349154360634797, \"detail\": {\"text_len\": 9, \"interrupted\": false, \"dur_ms\": 2316.538639}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793349154361434168,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793349154361305627,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793349154361305627, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793349145014116471,
+          "arrival_ns": 1793349145014408977,
+          "source": "round",
+          "detail": {
+            "kind": "medical",
+            "chat_mode": false,
+            "source": "keyword",
+            "keyword_medical": true,
+            "chitchat": false,
+            "judge_kind": null,
+            "judge_ms": 0.0
+          }
+        }
+      ],
+      "rag_start": [
+        {
+          "t_ns": 1793349145014591643,
+          "arrival_ns": 1793349145014726026,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "rag_end": [
+        {
+          "t_ns": 1793349145025137860,
+          "arrival_ns": 1793349145025432631,
+          "source": "round",
+          "detail": {
+            "n_chunks": 3,
+            "took_ms": 10.46,
+            "top1": "血液透析患者内瘘手术宣教"
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793349145025678487,
+          "arrival_ns": 1793349145025820089,
+          "source": "round",
+          "detail": {
+            "provider": "ollama",
+            "prompt_chars": 1402,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793349145493247685,
+          "arrival_ns": 1793349145493480646,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1402
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793349146365562100,
+          "arrival_ns": 1793349146365884526,
+          "source": "round",
+          "detail": {
+            "chars": 30
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793349145495992618,
+          "arrival_ns": 1793349145496391208,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793349148746200339,
+          "arrival_ns": 1793349148746326604,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793349145542427447,
+          "arrival_ns": 1793349145542577608,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "尽量别吃。"
+          }
+        },
+        {
+          "t_ns": 1793349146415578344,
+          "arrival_ns": 1793349146415789219,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "head": "透析中进食容易引起低血压、"
+          }
+        },
+        {
+          "t_ns": 1793349147495420625,
+          "arrival_ns": 1793349147495576034,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "head": "抽筋，"
+          }
+        },
+        {
+          "t_ns": 1793349147895654893,
+          "arrival_ns": 1793349147895790114,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "实在饿了先问护士。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793349145542508999,
+          "arrival_ns": 1793349145542756161,
+          "source": "round",
+          "detail": {
+            "text_len": 5
+          }
+        },
+        {
+          "t_ns": 1793349146415642554,
+          "arrival_ns": 1793349146418855667,
+          "source": "round",
+          "detail": {
+            "text_len": 13
+          }
+        },
+        {
+          "t_ns": 1793349147495459921,
+          "arrival_ns": 1793349147495849049,
+          "source": "round",
+          "detail": {
+            "text_len": 3
+          }
+        },
+        {
+          "t_ns": 1793349147895710331,
+          "arrival_ns": 1793349147895968540,
+          "source": "round",
+          "detail": {
+            "text_len": 9
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793349146411803232,
+          "arrival_ns": 1793349146413737788,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "dur_ms": 869.289624,
+            "audio_sec": 1.52,
+            "rtf": 0.5719010684210526
+          }
+        },
+        {
+          "t_ns": 1793349147494748870,
+          "arrival_ns": 1793349147495053929,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "dur_ms": 1079.100532,
+            "audio_sec": 3.04,
+            "rtf": 0.3549672802631579
+          }
+        },
+        {
+          "t_ns": 1793349147895071866,
+          "arrival_ns": 1793349147895323045,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "dur_ms": 399.607756,
+            "audio_sec": 1.04,
+            "rtf": 0.3842382269230769
+          }
+        },
+        {
+          "t_ns": 1793349148745641026,
+          "arrival_ns": 1793349148745900590,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 849.924979,
+            "audio_sec": 2.32,
+            "rtf": 0.36634697370689656
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793349146443284274,
+          "arrival_ns": 1793349146443581308,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "尽量别吃。"
+          }
+        },
+        {
+          "t_ns": 1793349147966888399,
+          "arrival_ns": 1793349147967020383,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "head": "透析中进食容易引起低血压、"
+          }
+        },
+        {
+          "t_ns": 1793349151006524593,
+          "arrival_ns": 1793349151006663072,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "head": "抽筋，"
+          }
+        },
+        {
+          "t_ns": 1793349152044092457,
+          "arrival_ns": 1793349152044254307,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "实在饿了先问护士。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793349147966250805,
+          "arrival_ns": 1793349147966578541,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "interrupted": false,
+            "dur_ms": 1522.964065
+          }
+        },
+        {
+          "t_ns": 1793349151005791437,
+          "arrival_ns": 1793349151006176360,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "interrupted": false,
+            "dur_ms": 3038.898877
+          }
+        },
+        {
+          "t_ns": 1793349152043404705,
+          "arrival_ns": 1793349152043716229,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "interrupted": false,
+            "dur_ms": 1036.877468
+          }
+        },
+        {
+          "t_ns": 1793349154360634797,
+          "arrival_ns": 1793349154360928030,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "interrupted": false,
+            "dur_ms": 2316.538639
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793349154361305627,
+          "arrival_ns": 1793349154361434168,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 10,
+    "interval_s": 2.0
+  }
+}

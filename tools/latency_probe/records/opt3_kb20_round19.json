@@ -1,0 +1,934 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1087678",
+  "host": "artrc",
+  "tag": "opt3_kb20",
+  "round_index": 19,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T11:33:19.895",
+  "finished_at": "2026-10-30T11:33:48.246",
+  "duration_s": 28.35,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "内瘘手术前需要做什么准备？",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793331199896316039,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793331199895966223,
+    "t_publish_question_ns": 1793331199896316039,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793331199896746598,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793331199897450112,
+      "ali_llm_output_start": 1793331217076762263,
+      "ali_llm_output_first_text": 1793331217077020870,
+      "ali_llm_output_done": 1793331217802834408,
+      "tts_realtime_data_start": 1793331217077051301,
+      "tts_realtime_data_first_text": 1793331217136609489,
+      "tts_realtime_data_done": 1793331217803225061,
+      "tts_session_finished": 1793331227941258698
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793331217136803497,
+      "tts_local.synth_start_first": 1793331217136856829,
+      "tts_local.synth_end_first": 1793331217588588375,
+      "tts_local.play_start_first": 1793331217618246520,
+      "tts_local.play_end_last": 1793331227939956448,
+      "tts_local.session_finished": 1793331227940825690
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.134,
+    "router_to_llm_first_ms": 17179.571,
+    "question_to_llm_first_ms": 17180.705,
+    "llm_first_to_done_ms": 725.814,
+    "question_to_llm_done_ms": 17906.518,
+    "llm_first_to_tts_first_text_ms": 59.589,
+    "question_to_tts_first_text_ms": 17240.293,
+    "first_tts_text_to_first_play_start_ms": 481.637,
+    "tts_rx_to_synth_end_ms": 451.785,
+    "tts_rx_to_play_start_ms": 481.443,
+    "tts_synth_end_to_play_start_ms": 29.658,
+    "question_to_first_audio_ms": 17721.93,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 28044.943,
+    "audio_total_sum_ms": 10319.712,
+    "audio_first_to_last_ms": 10321.71
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 1134073,
+    "router_to_llm_first_ns": 17179570758,
+    "question_to_llm_first_ns": 17180704831,
+    "llm_first_to_done_ns": 725813538,
+    "question_to_llm_done_ns": 17906518369,
+    "llm_first_to_tts_first_text_ns": 59588619,
+    "question_to_tts_first_text_ns": 17240293450,
+    "first_tts_text_to_first_play_start_ns": 481637031,
+    "tts_rx_to_synth_end_ns": 451784878,
+    "tts_rx_to_play_start_ns": 481443023,
+    "tts_synth_end_to_play_start_ns": 29658145,
+    "question_to_first_audio_ns": 17721930481,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 28044942659,
+    "audio_total_sum_ns": 10319711880,
+    "audio_first_to_last_ns": 10321709928
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 17180704831,
+      "ms": 17180.705
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 725813538,
+      "ms": 725.814
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 59588619,
+      "ms": 59.589
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 481637031,
+      "ms": 481.637
+    },
+    "question_to_first_play_start": {
+      "ns": 17721930481,
+      "ms": 17721.93
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 28044942659,
+      "ms": 28044.943
+    },
+    "audio_total_sec": {
+      "ns": 10319711880,
+      "ms": 10319.712,
+      "sec": 10.32
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.134,
+    "router_to_llm_first_ms": 17179.571,
+    "question_to_llm_first_ms": 17180.705,
+    "llm_first_to_done_ms": 725.814,
+    "question_to_llm_done_ms": 17906.518,
+    "llm_first_to_tts_first_text_ms": 59.589,
+    "question_to_tts_first_text_ms": 17240.293,
+    "first_tts_text_to_first_play_start_ms": 481.637,
+    "tts_rx_to_synth_end_ms": 451.785,
+    "tts_rx_to_play_start_ms": 481.443,
+    "tts_synth_end_to_play_start_ms": 29.658,
+    "question_to_first_audio_ms": 17721.93,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 28044.943,
+    "audio_total_sum_ms": 10319.712,
+    "audio_first_to_last_ms": 10321.71
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793331217076762263,
+      "first_text_rx_ns": 1793331217077020870,
+      "done_rx_ns": 1793331217802834408,
+      "chunk_count": 9,
+      "char_count": 46,
+      "chunks": [
+        {
+          "t_ns": 1793331217077020870,
+          "text": "这个"
+        },
+        {
+          "t_ns": 1793331217097269739,
+          "text": "要注意"
+        },
+        {
+          "t_ns": 1793331217136428351,
+          "text": "。  \n术"
+        },
+        {
+          "t_ns": 1793331217180545162,
+          "text": "前需签署"
+        },
+        {
+          "t_ns": 1793331217331267798,
+          "text": "新瘘启用告知书，"
+        },
+        {
+          "t_ns": 1793331217396729505,
+          "text": "穿刺前清洗"
+        },
+        {
+          "t_ns": 1793331217531369982,
+          "text": "手臂。  \n怕疼"
+        },
+        {
+          "t_ns": 1793331217671817748,
+          "text": "可提前涂利多卡"
+        },
+        {
+          "t_ns": 1793331217769098462,
+          "text": "因凝胶。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793331217136609489,
+      "done_rx_ns": 1793331217803225061,
+      "text_count": 4,
+      "texts": [
+        {
+          "t_ns": 1793331217136609489,
+          "text": "这个要注意。"
+        },
+        {
+          "t_ns": 1793331217331502891,
+          "text": "术前需签署新瘘启用告知书，"
+        },
+        {
+          "t_ns": 1793331217531686765,
+          "text": "穿刺前清洗手臂。"
+        },
+        {
+          "t_ns": 1793331217769143347,
+          "text": "怕疼可提前涂利多卡因凝胶。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 29,
+    "latency_events_total": 29,
+    "asr_events": 0,
+    "tts_events": 23,
+    "tts_play_pairs": 4,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793331199918282142,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793331199918134018,
+      "detail": {
+        "kind": "medical",
+        "chat_mode": false,
+        "source": "keyword",
+        "keyword_medical": true,
+        "chitchat": false,
+        "judge_kind": null,
+        "judge_ms": 0.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793331199918134018, \"detail\": {\"kind\": \"medical\", \"chat_mode\": false, \"source\": \"keyword\", \"keyword_medical\": true, \"chitchat\": false, \"judge_kind\": null, \"judge_ms\": 0.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331199918598159,
+      "node": "llm_medical",
+      "stage": "rag_start",
+      "t_ns": 1793331199918472320,
+      "detail": {},
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_start\", \"t_ns\": 1793331199918472320, \"detail\": {}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331199930283035,
+      "node": "llm_medical",
+      "stage": "rag_end",
+      "t_ns": 1793331199930090107,
+      "detail": {
+        "n_chunks": 3,
+        "took_ms": 11.54,
+        "top1": "血液透析患者内瘘手术宣教"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_end\", \"t_ns\": 1793331199930090107, \"detail\": {\"n_chunks\": 3, \"took_ms\": 11.54, \"top1\": \"血液透析患者内瘘手术宣教\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331217076805029,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793331217076479808,
+      "detail": {
+        "prompt_chars": 1543,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793331217076479808, \"detail\": {\"prompt_chars\": 1543, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331217077077631,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793331217076895068,
+      "detail": {
+        "prompt_chars": 1543
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793331217076895068, \"detail\": {\"prompt_chars\": 1543}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331217079780956,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793331217079576544,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793331217079576544, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331217136918730,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793331217136803497,
+      "detail": {
+        "text_len": 6,
+        "head": "这个要注意。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793331217136803497, \"detail\": {\"text_len\": 6, \"head\": \"这个要注意。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331217137086814,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793331217136856829,
+      "detail": {
+        "text_len": 6
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793331217136856829, \"detail\": {\"text_len\": 6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331217588927670,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793331217588588375,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 451.728518,
+        "audio_sec": 1.36,
+        "rtf": 0.33215332205882353
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793331217588588375, \"detail\": {\"text_len\": 6, \"dur_ms\": 451.728518, \"audio_sec\": 1.36, \"rtf\": 0.33215332205882353}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331217617782284,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793331217617639128,
+      "detail": {
+        "text_len": 13,
+        "head": "术前需签署新瘘启用告知书，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793331217617639128, \"detail\": {\"text_len\": 13, \"head\": \"术前需签署新瘘启用告知书，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331217617985145,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793331217617690005,
+      "detail": {
+        "text_len": 13
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793331217617690005, \"detail\": {\"text_len\": 13}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331217618367787,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793331217618246520,
+      "detail": {
+        "text_len": 6,
+        "head": "这个要注意。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793331217618246520, \"detail\": {\"text_len\": 6, \"head\": \"这个要注意。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331217802896893,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793331217802549799,
+      "detail": {
+        "chars": 46
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793331217802549799, \"detail\": {\"chars\": 46}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331218524569041,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793331218524221866,
+      "detail": {
+        "text_len": 13,
+        "dur_ms": 906.527884,
+        "audio_sec": 2.96,
+        "rtf": 0.30625942027027026
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793331218524221866, \"detail\": {\"text_len\": 13, \"dur_ms\": 906.527884, \"audio_sec\": 2.96, \"rtf\": 0.30625942027027026}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331218550151738,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793331218549906455,
+      "detail": {
+        "text_len": 8,
+        "head": "穿刺前清洗手臂。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793331218549906455, \"detail\": {\"text_len\": 8, \"head\": \"穿刺前清洗手臂。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331218550369080,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793331218549952755,
+      "detail": {
+        "text_len": 8
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793331218549952755, \"detail\": {\"text_len\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331219066999482,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793331219066717633,
+      "detail": {
+        "text_len": 6,
+        "interrupted": false,
+        "dur_ms": 1448.468919
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793331219066717633, \"detail\": {\"text_len\": 6, \"interrupted\": false, \"dur_ms\": 1448.468919}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331219067405573,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793331219067269505,
+      "detail": {
+        "text_len": 13,
+        "head": "术前需签署新瘘启用告知书，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793331219067269505, \"detail\": {\"text_len\": 13, \"head\": \"术前需签署新瘘启用告知书，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331219432548522,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793331219432219047,
+      "detail": {
+        "text_len": 8,
+        "dur_ms": 882.262962,
+        "audio_sec": 2.88,
+        "rtf": 0.30634130625
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793331219432219047, \"detail\": {\"text_len\": 8, \"dur_ms\": 882.262962, \"audio_sec\": 2.88, \"rtf\": 0.30634130625}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331219433059534,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793331219432819446,
+      "detail": {
+        "text_len": 13,
+        "head": "怕疼可提前涂利多卡因凝胶。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793331219432819446, \"detail\": {\"text_len\": 13, \"head\": \"怕疼可提前涂利多卡因凝胶。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331219433232455,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793331219432868305,
+      "detail": {
+        "text_len": 13
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793331219432868305, \"detail\": {\"text_len\": 13}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331220358637292,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793331220358356556,
+      "detail": {
+        "text_len": 13,
+        "dur_ms": 925.48446,
+        "audio_sec": 3.04,
+        "rtf": 0.30443567763157897
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793331220358356556, \"detail\": {\"text_len\": 13, \"dur_ms\": 925.48446, \"audio_sec\": 3.04, \"rtf\": 0.30443567763157897}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331220359105687,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793331220358960746,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793331220358960746, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331222025179209,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793331222024822174,
+      "detail": {
+        "text_len": 13,
+        "interrupted": false,
+        "dur_ms": 2957.550034
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793331222024822174, \"detail\": {\"text_len\": 13, \"interrupted\": false, \"dur_ms\": 2957.550034}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331222025784044,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793331222025609036,
+      "detail": {
+        "text_len": 8,
+        "head": "穿刺前清洗手臂。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793331222025609036, \"detail\": {\"text_len\": 8, \"head\": \"穿刺前清洗手臂。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331224902335996,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793331224902057814,
+      "detail": {
+        "text_len": 8,
+        "interrupted": false,
+        "dur_ms": 2876.447283
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793331224902057814, \"detail\": {\"text_len\": 8, \"interrupted\": false, \"dur_ms\": 2876.447283}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331224902834788,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793331224902717128,
+      "detail": {
+        "text_len": 13,
+        "head": "怕疼可提前涂利多卡因凝胶。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793331224902717128, \"detail\": {\"text_len\": 13, \"head\": \"怕疼可提前涂利多卡因凝胶。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331227940358029,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793331227939956448,
+      "detail": {
+        "text_len": 13,
+        "interrupted": false,
+        "dur_ms": 3037.236116
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793331227939956448, \"detail\": {\"text_len\": 13, \"interrupted\": false, \"dur_ms\": 3037.236116}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793331227941001938,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793331227940825690,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793331227940825690, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793331199918134018,
+          "arrival_ns": 1793331199918282142,
+          "source": "round",
+          "detail": {
+            "kind": "medical",
+            "chat_mode": false,
+            "source": "keyword",
+            "keyword_medical": true,
+            "chitchat": false,
+            "judge_kind": null,
+            "judge_ms": 0.0
+          }
+        }
+      ],
+      "rag_start": [
+        {
+          "t_ns": 1793331199918472320,
+          "arrival_ns": 1793331199918598159,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "rag_end": [
+        {
+          "t_ns": 1793331199930090107,
+          "arrival_ns": 1793331199930283035,
+          "source": "round",
+          "detail": {
+            "n_chunks": 3,
+            "took_ms": 11.54,
+            "top1": "血液透析患者内瘘手术宣教"
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793331217076479808,
+          "arrival_ns": 1793331217076805029,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1543,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793331217076895068,
+          "arrival_ns": 1793331217077077631,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1543
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793331217802549799,
+          "arrival_ns": 1793331217802896893,
+          "source": "round",
+          "detail": {
+            "chars": 46
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793331217079576544,
+          "arrival_ns": 1793331217079780956,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793331220358960746,
+          "arrival_ns": 1793331220359105687,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793331217136803497,
+          "arrival_ns": 1793331217136918730,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "这个要注意。"
+          }
+        },
+        {
+          "t_ns": 1793331217617639128,
+          "arrival_ns": 1793331217617782284,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "head": "术前需签署新瘘启用告知书，"
+          }
+        },
+        {
+          "t_ns": 1793331218549906455,
+          "arrival_ns": 1793331218550151738,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "穿刺前清洗手臂。"
+          }
+        },
+        {
+          "t_ns": 1793331219432819446,
+          "arrival_ns": 1793331219433059534,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "head": "怕疼可提前涂利多卡因凝胶。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793331217136856829,
+          "arrival_ns": 1793331217137086814,
+          "source": "round",
+          "detail": {
+            "text_len": 6
+          }
+        },
+        {
+          "t_ns": 1793331217617690005,
+          "arrival_ns": 1793331217617985145,
+          "source": "round",
+          "detail": {
+            "text_len": 13
+          }
+        },
+        {
+          "t_ns": 1793331218549952755,
+          "arrival_ns": 1793331218550369080,
+          "source": "round",
+          "detail": {
+            "text_len": 8
+          }
+        },
+        {
+          "t_ns": 1793331219432868305,
+          "arrival_ns": 1793331219433232455,
+          "source": "round",
+          "detail": {
+            "text_len": 13
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793331217588588375,
+          "arrival_ns": 1793331217588927670,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 451.728518,
+            "audio_sec": 1.36,
+            "rtf": 0.33215332205882353
+          }
+        },
+        {
+          "t_ns": 1793331218524221866,
+          "arrival_ns": 1793331218524569041,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "dur_ms": 906.527884,
+            "audio_sec": 2.96,
+            "rtf": 0.30625942027027026
+          }
+        },
+        {
+          "t_ns": 1793331219432219047,
+          "arrival_ns": 1793331219432548522,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "dur_ms": 882.262962,
+            "audio_sec": 2.88,
+            "rtf": 0.30634130625
+          }
+        },
+        {
+          "t_ns": 1793331220358356556,
+          "arrival_ns": 1793331220358637292,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "dur_ms": 925.48446,
+            "audio_sec": 3.04,
+            "rtf": 0.30443567763157897
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793331217618246520,
+          "arrival_ns": 1793331217618367787,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "这个要注意。"
+          }
+        },
+        {
+          "t_ns": 1793331219067269505,
+          "arrival_ns": 1793331219067405573,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "head": "术前需签署新瘘启用告知书，"
+          }
+        },
+        {
+          "t_ns": 1793331222025609036,
+          "arrival_ns": 1793331222025784044,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "穿刺前清洗手臂。"
+          }
+        },
+        {
+          "t_ns": 1793331224902717128,
+          "arrival_ns": 1793331224902834788,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "head": "怕疼可提前涂利多卡因凝胶。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793331219066717633,
+          "arrival_ns": 1793331219066999482,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "interrupted": false,
+            "dur_ms": 1448.468919
+          }
+        },
+        {
+          "t_ns": 1793331222024822174,
+          "arrival_ns": 1793331222025179209,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "interrupted": false,
+            "dur_ms": 2957.550034
+          }
+        },
+        {
+          "t_ns": 1793331224902057814,
+          "arrival_ns": 1793331224902335996,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "interrupted": false,
+            "dur_ms": 2876.447283
+          }
+        },
+        {
+          "t_ns": 1793331227939956448,
+          "arrival_ns": 1793331227940358029,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "interrupted": false,
+            "dur_ms": 3037.236116
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793331227940825690,
+          "arrival_ns": 1793331227941001938,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 45.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 20,
+    "interval_s": 2.0
+  }
+}

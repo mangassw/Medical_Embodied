@@ -1,0 +1,834 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1198278",
+  "host": "artrc",
+  "tag": "ol3_chatgen10",
+  "round_index": 6,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T18:13:40.661",
+  "finished_at": "2026-10-30T18:13:47.834",
+  "duration_s": 7.174,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "你知道周杰伦吗",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793355220661526585,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793355220661100362,
+    "t_publish_question_ns": 1793355220661526585,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793355220662251126,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793355220662559619,
+      "ali_llm_output_start": 1793355220827918750,
+      "ali_llm_output_first_text": 1793355220828320793,
+      "ali_llm_output_done": 1793355221181283552,
+      "tts_realtime_data_start": 1793355220828375472,
+      "tts_realtime_data_first_text": 1793355220876371438,
+      "tts_realtime_data_done": 1793355221181717118,
+      "tts_session_finished": 1793355227532787737
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793355220885122458,
+      "tts_local.synth_start_first": 1793355220885207947,
+      "tts_local.synth_end_first": 1793355221707335770,
+      "tts_local.play_start_first": 1793355221763521593,
+      "tts_local.play_end_last": 1793355227531518084,
+      "tts_local.session_finished": 1793355227532428157
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.033,
+    "router_to_llm_first_ms": 165.761,
+    "question_to_llm_first_ms": 166.794,
+    "llm_first_to_done_ms": 352.963,
+    "question_to_llm_done_ms": 519.757,
+    "llm_first_to_tts_first_text_ms": 48.051,
+    "question_to_tts_first_text_ms": 214.845,
+    "first_tts_text_to_first_play_start_ms": 887.15,
+    "tts_rx_to_synth_end_ms": 822.213,
+    "tts_rx_to_play_start_ms": 878.399,
+    "tts_synth_end_to_play_start_ms": 56.186,
+    "question_to_first_audio_ms": 1101.995,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 6871.261,
+    "audio_total_sum_ms": 5765.991,
+    "audio_first_to_last_ms": 5767.996
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 1033034,
+    "router_to_llm_first_ns": 165761174,
+    "question_to_llm_first_ns": 166794208,
+    "llm_first_to_done_ns": 352962759,
+    "question_to_llm_done_ns": 519756967,
+    "llm_first_to_tts_first_text_ns": 48050645,
+    "question_to_tts_first_text_ns": 214844853,
+    "first_tts_text_to_first_play_start_ns": 887150155,
+    "tts_rx_to_synth_end_ns": 822213312,
+    "tts_rx_to_play_start_ns": 878399135,
+    "tts_synth_end_to_play_start_ns": 56185823,
+    "question_to_first_audio_ns": 1101995008,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 6871261152,
+    "audio_total_sum_ns": 5765990911,
+    "audio_first_to_last_ns": 5767996491
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 166794208,
+      "ms": 166.794
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 352962759,
+      "ms": 352.963
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 48050645,
+      "ms": 48.051
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 887150155,
+      "ms": 887.15
+    },
+    "question_to_first_play_start": {
+      "ns": 1101995008,
+      "ms": 1101.995
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 6871261152,
+      "ms": 6871.261
+    },
+    "audio_total_sec": {
+      "ns": 5765990911,
+      "ms": 5765.991,
+      "sec": 5.766
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.033,
+    "router_to_llm_first_ms": 165.761,
+    "question_to_llm_first_ms": 166.794,
+    "llm_first_to_done_ms": 352.963,
+    "question_to_llm_done_ms": 519.757,
+    "llm_first_to_tts_first_text_ms": 48.051,
+    "question_to_tts_first_text_ms": 214.845,
+    "first_tts_text_to_first_play_start_ms": 887.15,
+    "tts_rx_to_synth_end_ms": 822.213,
+    "tts_rx_to_play_start_ms": 878.399,
+    "tts_synth_end_to_play_start_ms": 56.186,
+    "question_to_first_audio_ms": 1101.995,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 6871.261,
+    "audio_total_sum_ms": 5765.991,
+    "audio_first_to_last_ms": 5767.996
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793355220827918750,
+      "first_text_rx_ns": 1793355220828320793,
+      "done_rx_ns": 1793355221181283552,
+      "chunk_count": 15,
+      "char_count": 21,
+      "chunks": [
+        {
+          "t_ns": 1793355220828320793,
+          "text": "我知道"
+        },
+        {
+          "t_ns": 1793355220840144956,
+          "text": "周"
+        },
+        {
+          "t_ns": 1793355220852512969,
+          "text": "杰"
+        },
+        {
+          "t_ns": 1793355220864995141,
+          "text": "伦"
+        },
+        {
+          "t_ns": 1793355220876178607,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793355220891091300,
+          "text": "他是"
+        },
+        {
+          "t_ns": 1793355220902200964,
+          "text": "歌手"
+        },
+        {
+          "t_ns": 1793355220920605321,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793355220937067445,
+          "text": "写"
+        },
+        {
+          "t_ns": 1793355220953642691,
+          "text": "了很多"
+        },
+        {
+          "t_ns": 1793355220987277896,
+          "text": "好"
+        },
+        {
+          "t_ns": 1793355221030462748,
+          "text": "听"
+        },
+        {
+          "t_ns": 1793355221068378479,
+          "text": "的"
+        },
+        {
+          "t_ns": 1793355221106646275,
+          "text": "歌"
+        },
+        {
+          "t_ns": 1793355221145745205,
+          "text": "。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793355220876371438,
+      "done_rx_ns": 1793355221181717118,
+      "text_count": 3,
+      "texts": [
+        {
+          "t_ns": 1793355220876371438,
+          "text": "我知道周杰伦，"
+        },
+        {
+          "t_ns": 1793355220920674852,
+          "text": "他是歌手，"
+        },
+        {
+          "t_ns": 1793355221146144830,
+          "text": "写了很多好听的歌。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 23,
+    "latency_events_total": 23,
+    "asr_events": 0,
+    "tts_events": 18,
+    "tts_play_pairs": 3,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793355220719482304,
+      "node": "llm_medical",
+      "stage": "intent_judge",
+      "t_ns": 1793355220719177740,
+      "detail": {
+        "model": "qwen3:8b",
+        "ms": 55.8,
+        "answer": "聊",
+        "kind": "chat",
+        "provider": "ollama"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent_judge\", \"t_ns\": 1793355220719177740, \"detail\": {\"model\": \"qwen3:8b\", \"ms\": 55.8, \"answer\": \"聊\", \"kind\": \"chat\", \"provider\": \"ollama\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355220719731269,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793355220719368596,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "llm:qwen3:8b",
+        "keyword_medical": false,
+        "chitchat": false,
+        "judge_kind": "chat",
+        "judge_ms": 55.8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793355220719368596, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"llm:qwen3:8b\", \"keyword_medical\": false, \"chitchat\": false, \"judge_kind\": \"chat\", \"judge_ms\": 55.8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355220719916340,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793355220719812956,
+      "detail": {
+        "provider": "ollama",
+        "prompt_chars": 453,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793355220719812956, \"detail\": {\"provider\": \"ollama\", \"prompt_chars\": 453, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355220828418006,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793355220827942718,
+      "detail": {
+        "prompt_chars": 453
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793355220827942718, \"detail\": {\"prompt_chars\": 453}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355220828736955,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793355220828382162,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793355220828382162, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355220885435790,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793355220885122458,
+      "detail": {
+        "text_len": 7,
+        "head": "我知道周杰伦，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793355220885122458, \"detail\": {\"text_len\": 7, \"head\": \"我知道周杰伦，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355220885805711,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793355220885207947,
+      "detail": {
+        "text_len": 7
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793355220885207947, \"detail\": {\"text_len\": 7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355221181351704,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793355221180892540,
+      "detail": {
+        "chars": 21
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793355221180892540, \"detail\": {\"chars\": 21}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355221707605504,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793355221707335770,
+      "detail": {
+        "text_len": 7,
+        "dur_ms": 822.122092,
+        "audio_sec": 1.84,
+        "rtf": 0.4468054847826087
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793355221707335770, \"detail\": {\"text_len\": 7, \"dur_ms\": 822.122092, \"audio_sec\": 1.84, \"rtf\": 0.4468054847826087}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355221711303307,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793355221710997382,
+      "detail": {
+        "text_len": 5,
+        "head": "他是歌手，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793355221710997382, \"detail\": {\"text_len\": 5, \"head\": \"他是歌手，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355221711611822,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793355221711084389,
+      "detail": {
+        "text_len": 5
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793355221711084389, \"detail\": {\"text_len\": 5}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355221763908962,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793355221763521593,
+      "detail": {
+        "text_len": 7,
+        "head": "我知道周杰伦，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793355221763521593, \"detail\": {\"text_len\": 7, \"head\": \"我知道周杰伦，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355222351100552,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793355222350676086,
+      "detail": {
+        "text_len": 5,
+        "dur_ms": 639.586284,
+        "audio_sec": 1.52,
+        "rtf": 0.42078045
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793355222350676086, \"detail\": {\"text_len\": 5, \"dur_ms\": 639.586284, \"audio_sec\": 1.52, \"rtf\": 0.42078045}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355222351747975,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793355222351495476,
+      "detail": {
+        "text_len": 9,
+        "head": "写了很多好听的歌。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793355222351495476, \"detail\": {\"text_len\": 9, \"head\": \"写了很多好听的歌。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355222351976421,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793355222351587424,
+      "detail": {
+        "text_len": 9
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793355222351587424, \"detail\": {\"text_len\": 9}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355223303475872,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793355223303073627,
+      "detail": {
+        "text_len": 9,
+        "dur_ms": 951.478518,
+        "audio_sec": 2.4,
+        "rtf": 0.39644938250000006
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793355223303073627, \"detail\": {\"text_len\": 9, \"dur_ms\": 951.478518, \"audio_sec\": 2.4, \"rtf\": 0.39644938250000006}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355223304041365,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793355223303871122,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793355223303871122, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355223604988975,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793355223604524827,
+      "detail": {
+        "text_len": 7,
+        "interrupted": false,
+        "dur_ms": 1840.998607
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793355223604524827, \"detail\": {\"text_len\": 7, \"interrupted\": false, \"dur_ms\": 1840.998607}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355223605577809,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793355223605397030,
+      "detail": {
+        "text_len": 5,
+        "head": "他是歌手，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793355223605397030, \"detail\": {\"text_len\": 5, \"head\": \"他是歌手，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355225131983129,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793355225131417969,
+      "detail": {
+        "text_len": 5,
+        "interrupted": false,
+        "dur_ms": 1526.016184
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793355225131417969, \"detail\": {\"text_len\": 5, \"interrupted\": false, \"dur_ms\": 1526.016184}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355225132784978,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793355225132551346,
+      "detail": {
+        "text_len": 9,
+        "head": "写了很多好听的歌。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793355225132551346, \"detail\": {\"text_len\": 9, \"head\": \"写了很多好听的歌。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355227532084214,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793355227531518084,
+      "detail": {
+        "text_len": 9,
+        "interrupted": false,
+        "dur_ms": 2398.958156
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793355227531518084, \"detail\": {\"text_len\": 9, \"interrupted\": false, \"dur_ms\": 2398.958156}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793355227532858277,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793355227532428157,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793355227532428157, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent_judge": [
+        {
+          "t_ns": 1793355220719177740,
+          "arrival_ns": 1793355220719482304,
+          "source": "round",
+          "detail": {
+            "model": "qwen3:8b",
+            "ms": 55.8,
+            "answer": "聊",
+            "kind": "chat",
+            "provider": "ollama"
+          }
+        }
+      ],
+      "intent": [
+        {
+          "t_ns": 1793355220719368596,
+          "arrival_ns": 1793355220719731269,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "llm:qwen3:8b",
+            "keyword_medical": false,
+            "chitchat": false,
+            "judge_kind": "chat",
+            "judge_ms": 55.8
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793355220719812956,
+          "arrival_ns": 1793355220719916340,
+          "source": "round",
+          "detail": {
+            "provider": "ollama",
+            "prompt_chars": 453,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793355220827942718,
+          "arrival_ns": 1793355220828418006,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 453
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793355221180892540,
+          "arrival_ns": 1793355221181351704,
+          "source": "round",
+          "detail": {
+            "chars": 21
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793355220828382162,
+          "arrival_ns": 1793355220828736955,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793355223303871122,
+          "arrival_ns": 1793355223304041365,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793355220885122458,
+          "arrival_ns": 1793355220885435790,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "我知道周杰伦，"
+          }
+        },
+        {
+          "t_ns": 1793355221710997382,
+          "arrival_ns": 1793355221711303307,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "他是歌手，"
+          }
+        },
+        {
+          "t_ns": 1793355222351495476,
+          "arrival_ns": 1793355222351747975,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "写了很多好听的歌。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793355220885207947,
+          "arrival_ns": 1793355220885805711,
+          "source": "round",
+          "detail": {
+            "text_len": 7
+          }
+        },
+        {
+          "t_ns": 1793355221711084389,
+          "arrival_ns": 1793355221711611822,
+          "source": "round",
+          "detail": {
+            "text_len": 5
+          }
+        },
+        {
+          "t_ns": 1793355222351587424,
+          "arrival_ns": 1793355222351976421,
+          "source": "round",
+          "detail": {
+            "text_len": 9
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793355221707335770,
+          "arrival_ns": 1793355221707605504,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "dur_ms": 822.122092,
+            "audio_sec": 1.84,
+            "rtf": 0.4468054847826087
+          }
+        },
+        {
+          "t_ns": 1793355222350676086,
+          "arrival_ns": 1793355222351100552,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "dur_ms": 639.586284,
+            "audio_sec": 1.52,
+            "rtf": 0.42078045
+          }
+        },
+        {
+          "t_ns": 1793355223303073627,
+          "arrival_ns": 1793355223303475872,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "dur_ms": 951.478518,
+            "audio_sec": 2.4,
+            "rtf": 0.39644938250000006
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793355221763521593,
+          "arrival_ns": 1793355221763908962,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "我知道周杰伦，"
+          }
+        },
+        {
+          "t_ns": 1793355223605397030,
+          "arrival_ns": 1793355223605577809,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "他是歌手，"
+          }
+        },
+        {
+          "t_ns": 1793355225132551346,
+          "arrival_ns": 1793355225132784978,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "head": "写了很多好听的歌。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793355223604524827,
+          "arrival_ns": 1793355223604988975,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "interrupted": false,
+            "dur_ms": 1840.998607
+          }
+        },
+        {
+          "t_ns": 1793355225131417969,
+          "arrival_ns": 1793355225131983129,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "interrupted": false,
+            "dur_ms": 1526.016184
+          }
+        },
+        {
+          "t_ns": 1793355227531518084,
+          "arrival_ns": 1793355227532084214,
+          "source": "round",
+          "detail": {
+            "text_len": 9,
+            "interrupted": false,
+            "dur_ms": 2398.958156
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793355227532428157,
+          "arrival_ns": 1793355227532858277,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 10,
+    "interval_s": 2.0
+  }
+}

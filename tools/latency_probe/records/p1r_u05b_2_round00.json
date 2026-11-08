@@ -1,0 +1,1021 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_856467",
+  "host": "artrc",
+  "tag": "p1r_u05b_2",
+  "round_index": 0,
+  "mode": "wake-wav",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-29T15:41:42.417",
+  "finished_at": "2026-10-29T15:41:57.492",
+  "duration_s": 15.076,
+  "trigger": {
+    "mode": "wake-wav",
+    "t0_source": "question_asr_rx",
+    "inject_text": null,
+    "question_wav": "tools/latency_probe/audio/u05b_needle_water_ma.wav",
+    "wake_wav": "tools/latency_probe/audio/wake_xiaoyi.wav",
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": [
+      {
+        "role": "wake",
+        "wav": "tools/latency_probe/audio/wake_xiaoyi.wav",
+        "cmd": "pw-play --target latency_sink tools/latency_probe/audio/wake_xiaoyi.wav",
+        "start_ns": 1793259702418013989,
+        "end_ns": 1793259704412558417,
+        "ok": true,
+        "error": null
+      },
+      {
+        "role": "question",
+        "wav": "tools/latency_probe/audio/u05b_needle_water_ma.wav",
+        "cmd": "pw-play --target latency_sink tools/latency_probe/audio/u05b_needle_water_ma.wav",
+        "start_ns": 1793259704636545116,
+        "end_ns": 1793259707612585088,
+        "ok": true,
+        "error": null
+      }
+    ]
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793259708083513219,
+    "t0_source": "question_asr_rx",
+    "t_trigger_begin_ns": 1793259702417196770,
+    "t_publish_question_ns": null,
+    "t_start_asr_pub_ns": 1793259704333648064,
+    "t_question_play_start_ns": 1793259704636545116,
+    "t_question_play_end_ns": 1793259707612585088,
+    "probe_rx_ns": {
+      "question_asr": 1793259708083513219,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793259708084391306,
+      "ali_llm_output_start": 1793259710161599370,
+      "ali_llm_output_first_text": 1793259710161886912,
+      "ali_llm_output_done": 1793259710593377534,
+      "tts_realtime_data_start": 1793259710161921022,
+      "tts_realtime_data_first_text": 1793259710242592163,
+      "tts_realtime_data_done": 1793259710593930015,
+      "tts_session_finished": 1793259717190040839
+    },
+    "node_event_ns": {
+      "asr.kws_detected": 1793259704331031768,
+      "asr.start_asr": 1793259704333788361,
+      "asr.endpoint": 1793259708080828755,
+      "asr.asr_callback": 1793259708082832856,
+      "asr.nurse_req": 1793259708082962995,
+      "asr.nurse_resp": null,
+      "asr.publish_question": 1793259708083000220,
+      "tts_local.rx_first": 1793259710242852454,
+      "tts_local.synth_start_first": 1793259710242915764,
+      "tts_local.synth_end_first": 1793259710850755837,
+      "tts_local.play_start_first": 1793259710878150373,
+      "tts_local.play_end_last": 1793259717188947780,
+      "tts_local.session_finished": 1793259717189879379
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": 2.757,
+    "asr_endpoint_silence_used_ms": 555.0,
+    "asr_start_asr_to_endpoint_ms": 3747.04,
+    "asr_endpoint_to_nurse_req_ms": 2.134,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": 2.684,
+    "asr_publish_question_to_rx_ms": 0.513,
+    "question_to_router_ms": 0.878,
+    "router_to_llm_first_ms": 2077.496,
+    "question_to_llm_first_ms": 2078.374,
+    "llm_first_to_done_ms": 431.491,
+    "question_to_llm_done_ms": 2509.864,
+    "llm_first_to_tts_first_text_ms": 80.705,
+    "question_to_tts_first_text_ms": 2159.079,
+    "first_tts_text_to_first_play_start_ms": 635.558,
+    "tts_rx_to_synth_end_ms": 607.903,
+    "tts_rx_to_play_start_ms": 635.298,
+    "tts_synth_end_to_play_start_ms": 27.395,
+    "question_to_first_audio_ms": 2794.637,
+    "speech_end_to_first_audio_ms": 3352.322,
+    "playback_end_to_first_audio_ms": 3265.565,
+    "question_to_session_finished_ms": 9106.528,
+    "audio_total_sum_ms": 6309.355,
+    "audio_first_to_last_ms": 6310.797
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": 2756593,
+    "asr_start_asr_to_endpoint_ns": 3747040394,
+    "asr_endpoint_to_nurse_req_ns": 2134240,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": 2684464,
+    "asr_publish_question_to_rx_ns": 512999,
+    "question_to_router_ns": 878087,
+    "router_to_llm_first_ns": 2077495606,
+    "question_to_llm_first_ns": 2078373693,
+    "llm_first_to_done_ns": 431490622,
+    "question_to_llm_done_ns": 2509864315,
+    "llm_first_to_tts_first_text_ns": 80705251,
+    "question_to_tts_first_text_ns": 2159078944,
+    "first_tts_text_to_first_play_start_ns": 635558210,
+    "tts_rx_to_synth_end_ns": 607903383,
+    "tts_rx_to_play_start_ns": 635297919,
+    "tts_synth_end_to_play_start_ns": 27394536,
+    "question_to_first_audio_ns": 2794637154,
+    "speech_end_to_first_audio_ns": 3352321618,
+    "playback_end_to_first_audio_ns": 3265565285,
+    "question_to_session_finished_ns": 9106527620,
+    "audio_total_sum_ns": 6309354732,
+    "audio_first_to_last_ns": 6310797407
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": 2134240,
+      "ms": 2.134
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 2078373693,
+      "ms": 2078.374
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 431490622,
+      "ms": 431.491
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 80705251,
+      "ms": 80.705
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 635558210,
+      "ms": 635.558
+    },
+    "question_to_first_play_start": {
+      "ns": 2794637154,
+      "ms": 2794.637
+    },
+    "speech_end_to_first_play_start": {
+      "ns": 3352321618,
+      "ms": 3352.322
+    },
+    "question_to_session_finished": {
+      "ns": 9106527620,
+      "ms": 9106.528
+    },
+    "audio_total_sec": {
+      "ns": 6309354732,
+      "ms": 6309.355,
+      "sec": 6.309
+    }
+  },
+  "asr_chain": {
+    "kws_detected": {
+      "t_ns": 1793259704331031768,
+      "arrival_ns": 1793259704333580269,
+      "detail": {
+        "keyword": "{\"start_time\":0.00, \"keyword\": \"小艺小艺\", \"timestamps\": [0.00, 0.36, 0.52, 0.68, 1.04, 1.08, 1.24, 1.32], \"tokens\":[\"x\", \"iǎo\", \"y\", \"ì\", \"x\", \"iǎo\", \"y\", \"ì\"]}"
+      }
+    },
+    "start_asr": {
+      "t_ns": 1793259704333788361,
+      "arrival_ns": 1793259704333969803,
+      "detail": {}
+    },
+    "endpoint": {
+      "t_ns": 1793259708080828755,
+      "arrival_ns": 1793259708081228782,
+      "detail": {
+        "reason": "semantic",
+        "silence_ms": 555
+      }
+    },
+    "asr_callback": {
+      "t_ns": 1793259708082832856,
+      "arrival_ns": 1793259708083158713,
+      "detail": {
+        "text_len": 36
+      }
+    },
+    "nurse_req": {
+      "t_ns": 1793259708082962995,
+      "arrival_ns": 1793259708084424793,
+      "detail": {
+        "text_len": 36
+      }
+    },
+    "publish_question": {
+      "t_ns": 1793259708083000220,
+      "arrival_ns": 1793259708084691089,
+      "detail": {
+        "text_len": 70
+      }
+    }
+  },
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": 1793259708083000220,
+    "publish_question_found": true
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": 2.757,
+    "asr_endpoint_silence_used_ms": 555.0,
+    "asr_start_asr_to_endpoint_ms": 3747.04,
+    "asr_endpoint_to_nurse_req_ms": 2.134,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": 2.684,
+    "asr_publish_question_to_rx_ms": 0.513,
+    "question_to_router_ms": 0.878,
+    "router_to_llm_first_ms": 2077.496,
+    "question_to_llm_first_ms": 2078.374,
+    "llm_first_to_done_ms": 431.491,
+    "question_to_llm_done_ms": 2509.864,
+    "llm_first_to_tts_first_text_ms": 80.705,
+    "question_to_tts_first_text_ms": 2159.079,
+    "first_tts_text_to_first_play_start_ms": 635.558,
+    "tts_rx_to_synth_end_ms": 607.903,
+    "tts_rx_to_play_start_ms": 635.298,
+    "tts_synth_end_to_play_start_ms": 27.395,
+    "question_to_first_audio_ms": 2794.637,
+    "speech_end_to_first_audio_ms": 3352.322,
+    "playback_end_to_first_audio_ms": 3265.565,
+    "question_to_session_finished_ms": 9106.528,
+    "audio_total_sum_ms": 6309.355,
+    "audio_first_to_last_ms": 6310.797
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793259710161599370,
+      "first_text_rx_ns": 1793259710161886912,
+      "done_rx_ns": 1793259710593377534,
+      "chunk_count": 6,
+      "char_count": 28,
+      "chunks": [
+        {
+          "t_ns": 1793259710161886912,
+          "text": "资料"
+        },
+        {
+          "t_ns": 1793259710195271083,
+          "text": "里"
+        },
+        {
+          "t_ns": 1793259710242390390,
+          "text": "没有。"
+        },
+        {
+          "t_ns": 1793259710280918010,
+          "text": "这个问题"
+        },
+        {
+          "t_ns": 1793259710382764117,
+          "text": "我资料里没有，建议"
+        },
+        {
+          "t_ns": 1793259710519039542,
+          "text": "您咨询护士或医生。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793259710242592163,
+      "done_rx_ns": 1793259710593930015,
+      "text_count": 3,
+      "texts": [
+        {
+          "t_ns": 1793259710242592163,
+          "text": "资料里没有。"
+        },
+        {
+          "t_ns": 1793259710382964285,
+          "text": "这个问题我资料里没有，"
+        },
+        {
+          "t_ns": 1793259710519335191,
+          "text": "建议您咨询护士或医生。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 32,
+    "latency_events_total": 32,
+    "asr_events": 9,
+    "tts_events": 18,
+    "tts_play_pairs": 3,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793259704333580269,
+      "node": "asr",
+      "stage": "kws_detected",
+      "t_ns": 1793259704331031768,
+      "detail": {
+        "keyword": "{\"start_time\":0.00, \"keyword\": \"小艺小艺\", \"timestamps\": [0.00, 0.36, 0.52, 0.68, 1.04, 1.08, 1.24, 1.32], \"tokens\":[\"x\", \"iǎo\", \"y\", \"ì\", \"x\", \"iǎo\", \"y\", \"ì\"]}"
+      },
+      "raw": "{\"node\":\"asr\",\"stage\":\"kws_detected\",\"t_ns\":1793259704331031768,\"detail\":{\"keyword\":\"{\\\"start_time\\\":0.00, \\\"keyword\\\": \\\"小艺小艺\\\", \\\"timestamps\\\": [0.00, 0.36, 0.52, 0.68, 1.04, 1.08, 1.24, 1.32], \\\"tokens\\\":[\\\"x\\\", \\\"iǎo\\\", \\\"y\\\", \\\"ì\\\", \\\"x\\\", \\\"iǎo\\\", \\\"y\\\", \\\"ì\\\"]}\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793259704333969803,
+      "node": "asr",
+      "stage": "start_asr",
+      "t_ns": 1793259704333788361,
+      "detail": {},
+      "raw": "{\"node\":\"asr\",\"stage\":\"start_asr\",\"t_ns\":1793259704333788361}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793259704612053776,
+      "node": "asr",
+      "stage": "endpoint",
+      "t_ns": 1793259704606038642,
+      "detail": {
+        "reason": "lib",
+        "silence_ms": 0
+      },
+      "raw": "{\"node\":\"asr\",\"stage\":\"endpoint\",\"t_ns\":1793259704606038642,\"detail\":{\"reason\":\"lib\",\"silence_ms\":0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793259708081228782,
+      "node": "asr",
+      "stage": "endpoint",
+      "t_ns": 1793259708080828755,
+      "detail": {
+        "reason": "semantic",
+        "silence_ms": 555
+      },
+      "raw": "{\"node\":\"asr\",\"stage\":\"endpoint\",\"t_ns\":1793259708080828755,\"detail\":{\"reason\":\"semantic\",\"silence_ms\":555}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793259708083158713,
+      "node": "asr",
+      "stage": "asr_callback",
+      "t_ns": 1793259708082832856,
+      "detail": {
+        "text_len": 36
+      },
+      "raw": "{\"node\":\"asr\",\"stage\":\"asr_callback\",\"t_ns\":1793259708082832856,\"detail\":{\"text_len\":36}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793259708084067360,
+      "node": "asr",
+      "stage": "nurse_parallel_start",
+      "t_ns": 1793259708082953482,
+      "detail": {},
+      "raw": "{\"node\":\"asr\",\"stage\":\"nurse_parallel_start\",\"t_ns\":1793259708082953482}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793259708084424793,
+      "node": "asr",
+      "stage": "nurse_req",
+      "t_ns": 1793259708082962995,
+      "detail": {
+        "text_len": 36
+      },
+      "raw": "{\"node\":\"asr\",\"stage\":\"nurse_req\",\"t_ns\":1793259708082962995,\"detail\":{\"text_len\":36}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793259708084691089,
+      "node": "asr",
+      "stage": "publish_question",
+      "t_ns": 1793259708083000220,
+      "detail": {
+        "text_len": 70
+      },
+      "raw": "{\"node\":\"asr\",\"stage\":\"publish_question\",\"t_ns\":1793259708083000220,\"detail\":{\"text_len\":70}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793259708105059610,
+      "node": "llm_medical",
+      "stage": "rag_start",
+      "t_ns": 1793259708104762497,
+      "detail": {},
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_start\", \"t_ns\": 1793259708104762497, \"detail\": {}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793259708123155233,
+      "node": "llm_medical",
+      "stage": "rag_end",
+      "t_ns": 1793259708122886122,
+      "detail": {
+        "n_chunks": 3,
+        "took_ms": 17.94,
+        "top1": "血液透析导管的日常护理"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_end\", \"t_ns\": 1793259708122886122, \"detail\": {\"n_chunks\": 3, \"took_ms\": 17.94, \"top1\": \"血液透析导管的日常护理\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793259709576647011,
+      "node": "asr",
+      "stage": "nurse_resp",
+      "t_ns": 1793259709576449694,
+      "detail": {
+        "dur_ms": 1493.482
+      },
+      "raw": "{\"node\":\"asr\",\"stage\":\"nurse_resp\",\"t_ns\":1793259709576449694,\"detail\":{\"dur_ms\":1493.482}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793259710161644140,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793259710160985845,
+      "detail": {
+        "prompt_chars": 1026,
+        "n_messages": 4
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793259710160985845, \"detail\": {\"prompt_chars\": 1026, \"n_messages\": 4}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793259710161948059,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793259710161475807,
+      "detail": {
+        "prompt_chars": 1026
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793259710161475807, \"detail\": {\"prompt_chars\": 1026}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793259710167987106,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793259710167740345,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793259710167740345, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793259710242979017,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793259710242852454,
+      "detail": {
+        "text_len": 6,
+        "head": "资料里没有。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793259710242852454, \"detail\": {\"text_len\": 6, \"head\": \"资料里没有。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793259710243161346,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793259710242915764,
+      "detail": {
+        "text_len": 6
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793259710242915764, \"detail\": {\"text_len\": 6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793259710593470116,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793259710592916217,
+      "detail": {
+        "chars": 31
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793259710592916217, \"detail\": {\"chars\": 31}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793259710851116115,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793259710850755837,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 607.833787,
+        "audio_sec": 1.6,
+        "rtf": 0.37989611687499997
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793259710850755837, \"detail\": {\"text_len\": 6, \"dur_ms\": 607.833787, \"audio_sec\": 1.6, \"rtf\": 0.37989611687499997}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793259710855426356,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793259710855238935,
+      "detail": {
+        "text_len": 11,
+        "head": "这个问题我资料里没有，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793259710855238935, \"detail\": {\"text_len\": 11, \"head\": \"这个问题我资料里没有，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793259710855697704,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793259710855309428,
+      "detail": {
+        "text_len": 11
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793259710855309428, \"detail\": {\"text_len\": 11}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793259710878441552,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793259710878150373,
+      "detail": {
+        "text_len": 6,
+        "head": "资料里没有。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793259710878150373, \"detail\": {\"text_len\": 6, \"head\": \"资料里没有。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793259711631339321,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793259711631015047,
+      "detail": {
+        "text_len": 11,
+        "dur_ms": 775.700685,
+        "audio_sec": 2.16,
+        "rtf": 0.3591206875
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793259711631015047, \"detail\": {\"text_len\": 11, \"dur_ms\": 775.700685, \"audio_sec\": 2.16, \"rtf\": 0.3591206875}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793259711632000424,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793259711631786962,
+      "detail": {
+        "text_len": 11,
+        "head": "建议您咨询护士或医生。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793259711631786962, \"detail\": {\"text_len\": 11, \"head\": \"建议您咨询护士或医生。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793259711632219587,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793259711631870277,
+      "detail": {
+        "text_len": 11
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793259711631870277, \"detail\": {\"text_len\": 11}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793259712520152574,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793259712519828848,
+      "detail": {
+        "text_len": 11,
+        "dur_ms": 887.952931,
+        "audio_sec": 2.4,
+        "rtf": 0.3699803879166667
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793259712519828848, \"detail\": {\"text_len\": 11, \"dur_ms\": 887.952931, \"audio_sec\": 2.4, \"rtf\": 0.3699803879166667}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793259712520521071,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793259712520359671,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793259712520359671, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793259712625209292,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793259712624911988,
+      "detail": {
+        "text_len": 6,
+        "interrupted": false,
+        "dur_ms": 1746.759166
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793259712624911988, \"detail\": {\"text_len\": 6, \"interrupted\": false, \"dur_ms\": 1746.759166}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793259712625736816,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793259712625608094,
+      "detail": {
+        "text_len": 11,
+        "head": "这个问题我资料里没有，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793259712625608094, \"detail\": {\"text_len\": 11, \"head\": \"这个问题我资料里没有，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793259714785168274,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793259714784810800,
+      "detail": {
+        "text_len": 11,
+        "interrupted": false,
+        "dur_ms": 2159.199337
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793259714784810800, \"detail\": {\"text_len\": 11, \"interrupted\": false, \"dur_ms\": 2159.199337}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793259714785686957,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793259714785557369,
+      "detail": {
+        "text_len": 11,
+        "head": "建议您咨询护士或医生。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793259714785557369, \"detail\": {\"text_len\": 11, \"head\": \"建议您咨询护士或医生。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793259717189239999,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793259717188947780,
+      "detail": {
+        "text_len": 11,
+        "interrupted": false,
+        "dur_ms": 2403.386725
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793259717188947780, \"detail\": {\"text_len\": 11, \"interrupted\": false, \"dur_ms\": 2403.386725}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793259717190076247,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793259717189879379,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793259717189879379, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "asr": {
+      "kws_detected": [
+        {
+          "t_ns": 1793259704331031768,
+          "arrival_ns": 1793259704333580269,
+          "source": "round",
+          "detail": {
+            "keyword": "{\"start_time\":0.00, \"keyword\": \"小艺小艺\", \"timestamps\": [0.00, 0.36, 0.52, 0.68, 1.04, 1.08, 1.24, 1.32], \"tokens\":[\"x\", \"iǎo\", \"y\", \"ì\", \"x\", \"iǎo\", \"y\", \"ì\"]}"
+          }
+        }
+      ],
+      "start_asr": [
+        {
+          "t_ns": 1793259704333788361,
+          "arrival_ns": 1793259704333969803,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "endpoint": [
+        {
+          "t_ns": 1793259704606038642,
+          "arrival_ns": 1793259704612053776,
+          "source": "round",
+          "detail": {
+            "reason": "lib",
+            "silence_ms": 0
+          }
+        },
+        {
+          "t_ns": 1793259708080828755,
+          "arrival_ns": 1793259708081228782,
+          "source": "round",
+          "detail": {
+            "reason": "semantic",
+            "silence_ms": 555
+          }
+        }
+      ],
+      "asr_callback": [
+        {
+          "t_ns": 1793259708082832856,
+          "arrival_ns": 1793259708083158713,
+          "source": "round",
+          "detail": {
+            "text_len": 36
+          }
+        }
+      ],
+      "nurse_parallel_start": [
+        {
+          "t_ns": 1793259708082953482,
+          "arrival_ns": 1793259708084067360,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "nurse_req": [
+        {
+          "t_ns": 1793259708082962995,
+          "arrival_ns": 1793259708084424793,
+          "source": "round",
+          "detail": {
+            "text_len": 36
+          }
+        }
+      ],
+      "publish_question": [
+        {
+          "t_ns": 1793259708083000220,
+          "arrival_ns": 1793259708084691089,
+          "source": "round",
+          "detail": {
+            "text_len": 70
+          }
+        }
+      ],
+      "nurse_resp": [
+        {
+          "t_ns": 1793259709576449694,
+          "arrival_ns": 1793259709576647011,
+          "source": "round",
+          "detail": {
+            "dur_ms": 1493.482
+          }
+        }
+      ]
+    },
+    "llm_medical": {
+      "rag_start": [
+        {
+          "t_ns": 1793259708104762497,
+          "arrival_ns": 1793259708105059610,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "rag_end": [
+        {
+          "t_ns": 1793259708122886122,
+          "arrival_ns": 1793259708123155233,
+          "source": "round",
+          "detail": {
+            "n_chunks": 3,
+            "took_ms": 17.94,
+            "top1": "血液透析导管的日常护理"
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793259710160985845,
+          "arrival_ns": 1793259710161644140,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1026,
+            "n_messages": 4
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793259710161475807,
+          "arrival_ns": 1793259710161948059,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1026
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793259710592916217,
+          "arrival_ns": 1793259710593470116,
+          "source": "round",
+          "detail": {
+            "chars": 31
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793259710167740345,
+          "arrival_ns": 1793259710167987106,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793259712520359671,
+          "arrival_ns": 1793259712520521071,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793259710242852454,
+          "arrival_ns": 1793259710242979017,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "资料里没有。"
+          }
+        },
+        {
+          "t_ns": 1793259710855238935,
+          "arrival_ns": 1793259710855426356,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "这个问题我资料里没有，"
+          }
+        },
+        {
+          "t_ns": 1793259711631786962,
+          "arrival_ns": 1793259711632000424,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "建议您咨询护士或医生。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793259710242915764,
+          "arrival_ns": 1793259710243161346,
+          "source": "round",
+          "detail": {
+            "text_len": 6
+          }
+        },
+        {
+          "t_ns": 1793259710855309428,
+          "arrival_ns": 1793259710855697704,
+          "source": "round",
+          "detail": {
+            "text_len": 11
+          }
+        },
+        {
+          "t_ns": 1793259711631870277,
+          "arrival_ns": 1793259711632219587,
+          "source": "round",
+          "detail": {
+            "text_len": 11
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793259710850755837,
+          "arrival_ns": 1793259710851116115,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 607.833787,
+            "audio_sec": 1.6,
+            "rtf": 0.37989611687499997
+          }
+        },
+        {
+          "t_ns": 1793259711631015047,
+          "arrival_ns": 1793259711631339321,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "dur_ms": 775.700685,
+            "audio_sec": 2.16,
+            "rtf": 0.3591206875
+          }
+        },
+        {
+          "t_ns": 1793259712519828848,
+          "arrival_ns": 1793259712520152574,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "dur_ms": 887.952931,
+            "audio_sec": 2.4,
+            "rtf": 0.3699803879166667
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793259710878150373,
+          "arrival_ns": 1793259710878441552,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "资料里没有。"
+          }
+        },
+        {
+          "t_ns": 1793259712625608094,
+          "arrival_ns": 1793259712625736816,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "这个问题我资料里没有，"
+          }
+        },
+        {
+          "t_ns": 1793259714785557369,
+          "arrival_ns": 1793259714785686957,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "建议您咨询护士或医生。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793259712624911988,
+          "arrival_ns": 1793259712625209292,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "interrupted": false,
+            "dur_ms": 1746.759166
+          }
+        },
+        {
+          "t_ns": 1793259714784810800,
+          "arrival_ns": 1793259714785168274,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "interrupted": false,
+            "dur_ms": 2159.199337
+          }
+        },
+        {
+          "t_ns": 1793259717188947780,
+          "arrival_ns": 1793259717189239999,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "interrupted": false,
+            "dur_ms": 2403.386725
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793259717189879379,
+          "arrival_ns": 1793259717190076247,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 0.8,
+    "event_lookback_s": 60.0,
+    "timeout_s": 90.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 1,
+    "interval_s": 22.0
+  }
+}

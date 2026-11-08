@@ -1,0 +1,1168 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1077670",
+  "host": "artrc",
+  "tag": "opt2_kb20",
+  "round_index": 1,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T11:00:46.703",
+  "finished_at": "2026-10-30T11:01:00.250",
+  "duration_s": 13.547,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "第一次透析会很疼吗？",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793329246704019839,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793329246703585694,
+    "t_publish_question_ns": 1793329246704019839,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793329246704602822,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793329246704913362,
+      "ali_llm_output_start": 1793329247413013905,
+      "ali_llm_output_first_text": 1793329247414623053,
+      "ali_llm_output_done": 1793329248246844930,
+      "tts_realtime_data_start": 1793329247414664345,
+      "tts_realtime_data_first_text": 1793329247441110610,
+      "tts_realtime_data_done": 1793329248247128455,
+      "tts_session_finished": 1793329259949858967
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793329247441205910,
+      "tts_local.synth_start_first": 1793329247441290225,
+      "tts_local.synth_end_first": 1793329248038249732,
+      "tts_local.play_start_first": 1793329248120007553,
+      "tts_local.play_end_last": 1793329259948773063,
+      "tts_local.session_finished": 1793329259949489482
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.894,
+    "router_to_llm_first_ms": 709.71,
+    "question_to_llm_first_ms": 710.603,
+    "llm_first_to_done_ms": 832.222,
+    "question_to_llm_done_ms": 1542.825,
+    "llm_first_to_tts_first_text_ms": 26.488,
+    "question_to_tts_first_text_ms": 737.091,
+    "first_tts_text_to_first_play_start_ms": 678.897,
+    "tts_rx_to_synth_end_ms": 597.044,
+    "tts_rx_to_play_start_ms": 678.802,
+    "tts_synth_end_to_play_start_ms": 81.758,
+    "question_to_first_audio_ms": 1415.988,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 13245.839,
+    "audio_total_sum_ms": 11823.753,
+    "audio_first_to_last_ms": 11828.766
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 893523,
+    "router_to_llm_first_ns": 709709691,
+    "question_to_llm_first_ns": 710603214,
+    "llm_first_to_done_ns": 832221877,
+    "question_to_llm_done_ns": 1542825091,
+    "llm_first_to_tts_first_text_ns": 26487557,
+    "question_to_tts_first_text_ns": 737090771,
+    "first_tts_text_to_first_play_start_ns": 678896943,
+    "tts_rx_to_synth_end_ns": 597043822,
+    "tts_rx_to_play_start_ns": 678801643,
+    "tts_synth_end_to_play_start_ns": 81757821,
+    "question_to_first_audio_ns": 1415987714,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 13245839128,
+    "audio_total_sum_ns": 11823752834,
+    "audio_first_to_last_ns": 11828765510
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 710603214,
+      "ms": 710.603
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 832221877,
+      "ms": 832.222
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 26487557,
+      "ms": 26.488
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 678896943,
+      "ms": 678.897
+    },
+    "question_to_first_play_start": {
+      "ns": 1415987714,
+      "ms": 1415.988
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 13245839128,
+      "ms": 13245.839
+    },
+    "audio_total_sec": {
+      "ns": 11823752834,
+      "ms": 11823.753,
+      "sec": 11.824
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.894,
+    "router_to_llm_first_ms": 709.71,
+    "question_to_llm_first_ms": 710.603,
+    "llm_first_to_done_ms": 832.222,
+    "question_to_llm_done_ms": 1542.825,
+    "llm_first_to_tts_first_text_ms": 26.488,
+    "question_to_tts_first_text_ms": 737.091,
+    "first_tts_text_to_first_play_start_ms": 678.897,
+    "tts_rx_to_synth_end_ms": 597.044,
+    "tts_rx_to_play_start_ms": 678.802,
+    "tts_synth_end_to_play_start_ms": 81.758,
+    "question_to_first_audio_ms": 1415.988,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 13245.839,
+    "audio_total_sum_ms": 11823.753,
+    "audio_first_to_last_ms": 11828.766
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793329247413013905,
+      "first_text_rx_ns": 1793329247414623053,
+      "done_rx_ns": 1793329248246844930,
+      "chunk_count": 11,
+      "char_count": 50,
+      "chunks": [
+        {
+          "t_ns": 1793329247414623053,
+          "text": "不"
+        },
+        {
+          "t_ns": 1793329247440566967,
+          "text": "疼。"
+        },
+        {
+          "t_ns": 1793329247565745999,
+          "text": "穿刺时"
+        },
+        {
+          "t_ns": 1793329247565982867,
+          "text": "可能"
+        },
+        {
+          "t_ns": 1793329247663865688,
+          "text": "有轻微针刺感"
+        },
+        {
+          "t_ns": 1793329247802605767,
+          "text": "，但多数人能"
+        },
+        {
+          "t_ns": 1793329247875031360,
+          "text": "耐受。  \n护士"
+        },
+        {
+          "t_ns": 1793329247964344131,
+          "text": "会轻柔操作"
+        },
+        {
+          "t_ns": 1793329248104967101,
+          "text": "，紧张反而容易"
+        },
+        {
+          "t_ns": 1793329248126708379,
+          "text": "血管痉挛，"
+        },
+        {
+          "t_ns": 1793329248226436928,
+          "text": "放松就好。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793329247441110610,
+      "done_rx_ns": 1793329248247128455,
+      "text_count": 6,
+      "texts": [
+        {
+          "t_ns": 1793329247441110610,
+          "text": "不疼。"
+        },
+        {
+          "t_ns": 1793329247802830914,
+          "text": "穿刺时可能有轻微针刺感，"
+        },
+        {
+          "t_ns": 1793329247875277439,
+          "text": "但多数人能耐受。"
+        },
+        {
+          "t_ns": 1793329248105017323,
+          "text": "护士会轻柔操作，"
+        },
+        {
+          "t_ns": 1793329248127079930,
+          "text": "紧张反而容易血管痉挛，"
+        },
+        {
+          "t_ns": 1793329248226723983,
+          "text": "放松就好。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 39,
+    "latency_events_total": 39,
+    "asr_events": 0,
+    "tts_events": 33,
+    "tts_play_pairs": 6,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793329246726079630,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793329246725765946,
+      "detail": {
+        "kind": "medical",
+        "chat_mode": false,
+        "source": "keyword",
+        "keyword_medical": true,
+        "chitchat": false,
+        "judge_kind": null,
+        "judge_ms": 0.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793329246725765946, \"detail\": {\"kind\": \"medical\", \"chat_mode\": false, \"source\": \"keyword\", \"keyword_medical\": true, \"chitchat\": false, \"judge_kind\": null, \"judge_ms\": 0.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329246726394789,
+      "node": "llm_medical",
+      "stage": "rag_start",
+      "t_ns": 1793329246726251851,
+      "detail": {},
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_start\", \"t_ns\": 1793329246726251851, \"detail\": {}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329246738760172,
+      "node": "llm_medical",
+      "stage": "rag_end",
+      "t_ns": 1793329246738470270,
+      "detail": {
+        "n_chunks": 3,
+        "took_ms": 12.12,
+        "top1": "首次透析要注意什么"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_end\", \"t_ns\": 1793329246738470270, \"detail\": {\"n_chunks\": 3, \"took_ms\": 12.12, \"top1\": \"首次透析要注意什么\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329247413063929,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793329247412678353,
+      "detail": {
+        "prompt_chars": 1121,
+        "n_messages": 4
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793329247412678353, \"detail\": {\"prompt_chars\": 1121, \"n_messages\": 4}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329247414696281,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793329247413369922,
+      "detail": {
+        "prompt_chars": 1121
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793329247413369922, \"detail\": {\"prompt_chars\": 1121}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329247414897328,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793329247413926744,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793329247413926744, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329247441400647,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329247441205910,
+      "detail": {
+        "text_len": 3,
+        "head": "不疼。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329247441205910, \"detail\": {\"text_len\": 3, \"head\": \"不疼。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329247441704732,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329247441290225,
+      "detail": {
+        "text_len": 3
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329247441290225, \"detail\": {\"text_len\": 3}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329248038571533,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329248038249732,
+      "detail": {
+        "text_len": 3,
+        "dur_ms": 596.955106,
+        "audio_sec": 1.6,
+        "rtf": 0.37309694125
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329248038249732, \"detail\": {\"text_len\": 3, \"dur_ms\": 596.955106, \"audio_sec\": 1.6, \"rtf\": 0.37309694125}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329248041679340,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329248041393365,
+      "detail": {
+        "text_len": 12,
+        "head": "穿刺时可能有轻微针刺感，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329248041393365, \"detail\": {\"text_len\": 12, \"head\": \"穿刺时可能有轻微针刺感，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329248041892965,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329248041477886,
+      "detail": {
+        "text_len": 12
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329248041477886, \"detail\": {\"text_len\": 12}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329248122868819,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329248120007553,
+      "detail": {
+        "text_len": 3,
+        "head": "不疼。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329248120007553, \"detail\": {\"text_len\": 3, \"head\": \"不疼。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329248246890950,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793329248246549306,
+      "detail": {
+        "chars": 53
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793329248246549306, \"detail\": {\"chars\": 53}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329249006982712,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329249006563575,
+      "detail": {
+        "text_len": 12,
+        "dur_ms": 965.07949,
+        "audio_sec": 2.64,
+        "rtf": 0.3655604128787878
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329249006563575, \"detail\": {\"text_len\": 12, \"dur_ms\": 965.07949, \"audio_sec\": 2.64, \"rtf\": 0.3655604128787878}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329249011029368,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329249010733802,
+      "detail": {
+        "text_len": 8,
+        "head": "但多数人能耐受。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329249010733802, \"detail\": {\"text_len\": 8, \"head\": \"但多数人能耐受。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329249011590547,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329249010796572,
+      "detail": {
+        "text_len": 8
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329249010796572, \"detail\": {\"text_len\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329249688039286,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329249687640302,
+      "detail": {
+        "text_len": 8,
+        "dur_ms": 676.836048,
+        "audio_sec": 1.76,
+        "rtf": 0.38456593636363634
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329249687640302, \"detail\": {\"text_len\": 8, \"dur_ms\": 676.836048, \"audio_sec\": 1.76, \"rtf\": 0.38456593636363634}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329249688426389,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329249688250609,
+      "detail": {
+        "text_len": 8,
+        "head": "护士会轻柔操作，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329249688250609, \"detail\": {\"text_len\": 8, \"head\": \"护士会轻柔操作，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329249688606301,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329249688301822,
+      "detail": {
+        "text_len": 8
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329249688301822, \"detail\": {\"text_len\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329249736047016,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329249735564189,
+      "detail": {
+        "text_len": 3,
+        "interrupted": false,
+        "dur_ms": 1615.554103
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329249735564189, \"detail\": {\"text_len\": 3, \"interrupted\": false, \"dur_ms\": 1615.554103}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329249739014285,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329249737350415,
+      "detail": {
+        "text_len": 12,
+        "head": "穿刺时可能有轻微针刺感，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329249737350415, \"detail\": {\"text_len\": 12, \"head\": \"穿刺时可能有轻微针刺感，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329250464335693,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329250463967839,
+      "detail": {
+        "text_len": 8,
+        "dur_ms": 775.660906,
+        "audio_sec": 2.08,
+        "rtf": 0.3729138971153846
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329250463967839, \"detail\": {\"text_len\": 8, \"dur_ms\": 775.660906, \"audio_sec\": 2.08, \"rtf\": 0.3729138971153846}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329250464746522,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329250464520702,
+      "detail": {
+        "text_len": 11,
+        "head": "紧张反而容易血管痉挛，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329250464520702, \"detail\": {\"text_len\": 11, \"head\": \"紧张反而容易血管痉挛，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329250464943733,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329250464571377,
+      "detail": {
+        "text_len": 11
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329250464571377, \"detail\": {\"text_len\": 11}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329251304048482,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329251303763324,
+      "detail": {
+        "text_len": 11,
+        "dur_ms": 839.185477,
+        "audio_sec": 2.32,
+        "rtf": 0.3617178780172414
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329251303763324, \"detail\": {\"text_len\": 11, \"dur_ms\": 839.185477, \"audio_sec\": 2.32, \"rtf\": 0.3617178780172414}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329251304456879,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329251304311913,
+      "detail": {
+        "text_len": 5,
+        "head": "放松就好。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329251304311913, \"detail\": {\"text_len\": 5, \"head\": \"放松就好。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329251304645501,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329251304366010,
+      "detail": {
+        "text_len": 5
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329251304366010, \"detail\": {\"text_len\": 5}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329251821632207,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329251821298582,
+      "detail": {
+        "text_len": 5,
+        "dur_ms": 516.925763,
+        "audio_sec": 1.36,
+        "rtf": 0.38009247279411756
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329251821298582, \"detail\": {\"text_len\": 5, \"dur_ms\": 516.925763, \"audio_sec\": 1.36, \"rtf\": 0.38009247279411756}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329251822047449,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793329251821924358,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793329251821924358, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329252398246148,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329252397852860,
+      "detail": {
+        "text_len": 12,
+        "interrupted": false,
+        "dur_ms": 2660.498871
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329252397852860, \"detail\": {\"text_len\": 12, \"interrupted\": false, \"dur_ms\": 2660.498871}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329252398766997,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329252398597114,
+      "detail": {
+        "text_len": 8,
+        "head": "但多数人能耐受。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329252398597114, \"detail\": {\"text_len\": 8, \"head\": \"但多数人能耐受。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329254169359273,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329254168967385,
+      "detail": {
+        "text_len": 8,
+        "interrupted": false,
+        "dur_ms": 1770.365876
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329254168967385, \"detail\": {\"text_len\": 8, \"interrupted\": false, \"dur_ms\": 1770.365876}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329254170106620,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329254169832404,
+      "detail": {
+        "text_len": 8,
+        "head": "护士会轻柔操作，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329254169832404, \"detail\": {\"text_len\": 8, \"head\": \"护士会轻柔操作，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329256259338395,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329256258998825,
+      "detail": {
+        "text_len": 8,
+        "interrupted": false,
+        "dur_ms": 2089.16268
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329256258998825, \"detail\": {\"text_len\": 8, \"interrupted\": false, \"dur_ms\": 2089.16268}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329256260097019,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329256259934162,
+      "detail": {
+        "text_len": 11,
+        "head": "紧张反而容易血管痉挛，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329256259934162, \"detail\": {\"text_len\": 11, \"head\": \"紧张反而容易血管痉挛，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329258586335832,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329258586076304,
+      "detail": {
+        "text_len": 11,
+        "interrupted": false,
+        "dur_ms": 2326.139761
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329258586076304, \"detail\": {\"text_len\": 11, \"interrupted\": false, \"dur_ms\": 2326.139761}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329258586964542,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329258586758144,
+      "detail": {
+        "text_len": 5,
+        "head": "放松就好。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329258586758144, \"detail\": {\"text_len\": 5, \"head\": \"放松就好。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329259949097405,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329259948773063,
+      "detail": {
+        "text_len": 5,
+        "interrupted": false,
+        "dur_ms": 1362.012027
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329259948773063, \"detail\": {\"text_len\": 5, \"interrupted\": false, \"dur_ms\": 1362.012027}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329259949673450,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793329259949489482,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793329259949489482, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793329246725765946,
+          "arrival_ns": 1793329246726079630,
+          "source": "round",
+          "detail": {
+            "kind": "medical",
+            "chat_mode": false,
+            "source": "keyword",
+            "keyword_medical": true,
+            "chitchat": false,
+            "judge_kind": null,
+            "judge_ms": 0.0
+          }
+        }
+      ],
+      "rag_start": [
+        {
+          "t_ns": 1793329246726251851,
+          "arrival_ns": 1793329246726394789,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "rag_end": [
+        {
+          "t_ns": 1793329246738470270,
+          "arrival_ns": 1793329246738760172,
+          "source": "round",
+          "detail": {
+            "n_chunks": 3,
+            "took_ms": 12.12,
+            "top1": "首次透析要注意什么"
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793329247412678353,
+          "arrival_ns": 1793329247413063929,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1121,
+            "n_messages": 4
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793329247413369922,
+          "arrival_ns": 1793329247414696281,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1121
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793329248246549306,
+          "arrival_ns": 1793329248246890950,
+          "source": "round",
+          "detail": {
+            "chars": 53
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793329247413926744,
+          "arrival_ns": 1793329247414897328,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793329251821924358,
+          "arrival_ns": 1793329251822047449,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793329247441205910,
+          "arrival_ns": 1793329247441400647,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "head": "不疼。"
+          }
+        },
+        {
+          "t_ns": 1793329248041393365,
+          "arrival_ns": 1793329248041679340,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "穿刺时可能有轻微针刺感，"
+          }
+        },
+        {
+          "t_ns": 1793329249010733802,
+          "arrival_ns": 1793329249011029368,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "但多数人能耐受。"
+          }
+        },
+        {
+          "t_ns": 1793329249688250609,
+          "arrival_ns": 1793329249688426389,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "护士会轻柔操作，"
+          }
+        },
+        {
+          "t_ns": 1793329250464520702,
+          "arrival_ns": 1793329250464746522,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "紧张反而容易血管痉挛，"
+          }
+        },
+        {
+          "t_ns": 1793329251304311913,
+          "arrival_ns": 1793329251304456879,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "放松就好。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793329247441290225,
+          "arrival_ns": 1793329247441704732,
+          "source": "round",
+          "detail": {
+            "text_len": 3
+          }
+        },
+        {
+          "t_ns": 1793329248041477886,
+          "arrival_ns": 1793329248041892965,
+          "source": "round",
+          "detail": {
+            "text_len": 12
+          }
+        },
+        {
+          "t_ns": 1793329249010796572,
+          "arrival_ns": 1793329249011590547,
+          "source": "round",
+          "detail": {
+            "text_len": 8
+          }
+        },
+        {
+          "t_ns": 1793329249688301822,
+          "arrival_ns": 1793329249688606301,
+          "source": "round",
+          "detail": {
+            "text_len": 8
+          }
+        },
+        {
+          "t_ns": 1793329250464571377,
+          "arrival_ns": 1793329250464943733,
+          "source": "round",
+          "detail": {
+            "text_len": 11
+          }
+        },
+        {
+          "t_ns": 1793329251304366010,
+          "arrival_ns": 1793329251304645501,
+          "source": "round",
+          "detail": {
+            "text_len": 5
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793329248038249732,
+          "arrival_ns": 1793329248038571533,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "dur_ms": 596.955106,
+            "audio_sec": 1.6,
+            "rtf": 0.37309694125
+          }
+        },
+        {
+          "t_ns": 1793329249006563575,
+          "arrival_ns": 1793329249006982712,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "dur_ms": 965.07949,
+            "audio_sec": 2.64,
+            "rtf": 0.3655604128787878
+          }
+        },
+        {
+          "t_ns": 1793329249687640302,
+          "arrival_ns": 1793329249688039286,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "dur_ms": 676.836048,
+            "audio_sec": 1.76,
+            "rtf": 0.38456593636363634
+          }
+        },
+        {
+          "t_ns": 1793329250463967839,
+          "arrival_ns": 1793329250464335693,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "dur_ms": 775.660906,
+            "audio_sec": 2.08,
+            "rtf": 0.3729138971153846
+          }
+        },
+        {
+          "t_ns": 1793329251303763324,
+          "arrival_ns": 1793329251304048482,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "dur_ms": 839.185477,
+            "audio_sec": 2.32,
+            "rtf": 0.3617178780172414
+          }
+        },
+        {
+          "t_ns": 1793329251821298582,
+          "arrival_ns": 1793329251821632207,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "dur_ms": 516.925763,
+            "audio_sec": 1.36,
+            "rtf": 0.38009247279411756
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793329248120007553,
+          "arrival_ns": 1793329248122868819,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "head": "不疼。"
+          }
+        },
+        {
+          "t_ns": 1793329249737350415,
+          "arrival_ns": 1793329249739014285,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "穿刺时可能有轻微针刺感，"
+          }
+        },
+        {
+          "t_ns": 1793329252398597114,
+          "arrival_ns": 1793329252398766997,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "但多数人能耐受。"
+          }
+        },
+        {
+          "t_ns": 1793329254169832404,
+          "arrival_ns": 1793329254170106620,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "护士会轻柔操作，"
+          }
+        },
+        {
+          "t_ns": 1793329256259934162,
+          "arrival_ns": 1793329256260097019,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "紧张反而容易血管痉挛，"
+          }
+        },
+        {
+          "t_ns": 1793329258586758144,
+          "arrival_ns": 1793329258586964542,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "放松就好。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793329249735564189,
+          "arrival_ns": 1793329249736047016,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "interrupted": false,
+            "dur_ms": 1615.554103
+          }
+        },
+        {
+          "t_ns": 1793329252397852860,
+          "arrival_ns": 1793329252398246148,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "interrupted": false,
+            "dur_ms": 2660.498871
+          }
+        },
+        {
+          "t_ns": 1793329254168967385,
+          "arrival_ns": 1793329254169359273,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "interrupted": false,
+            "dur_ms": 1770.365876
+          }
+        },
+        {
+          "t_ns": 1793329256258998825,
+          "arrival_ns": 1793329256259338395,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "interrupted": false,
+            "dur_ms": 2089.16268
+          }
+        },
+        {
+          "t_ns": 1793329258586076304,
+          "arrival_ns": 1793329258586335832,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "interrupted": false,
+            "dur_ms": 2326.139761
+          }
+        },
+        {
+          "t_ns": 1793329259948773063,
+          "arrival_ns": 1793329259949097405,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "interrupted": false,
+            "dur_ms": 1362.012027
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793329259949489482,
+          "arrival_ns": 1793329259949673450,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 20,
+    "interval_s": 2.0
+  }
+}

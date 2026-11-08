@@ -1,0 +1,917 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1064920",
+  "host": "artrc",
+  "tag": "chat50",
+  "round_index": 29,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T10:32:13.459",
+  "finished_at": "2026-10-30T10:32:25.641",
+  "duration_s": 12.181,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "推荐一部好看的电影",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793327533460295025,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793327533459896152,
+    "t_publish_question_ns": 1793327533460295025,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793327533460786222,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793327533461339073,
+      "ali_llm_output_start": 1793327534316039524,
+      "ali_llm_output_first_text": 1793327534316356843,
+      "ali_llm_output_done": 1793327534992029439,
+      "tts_realtime_data_start": 1793327534316405023,
+      "tts_realtime_data_first_text": 1793327534743109713,
+      "tts_realtime_data_done": 1793327534992394218,
+      "tts_session_finished": 1793327545336811478
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793327534743395505,
+      "tts_local.synth_start_first": 1793327534743464679,
+      "tts_local.synth_end_first": 1793327536255203554,
+      "tts_local.play_start_first": 1793327536355176546,
+      "tts_local.play_end_last": 1793327545335771011,
+      "tts_local.session_finished": 1793327545336533105
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.044,
+    "router_to_llm_first_ms": 855.018,
+    "question_to_llm_first_ms": 856.062,
+    "llm_first_to_done_ms": 675.673,
+    "question_to_llm_done_ms": 1531.734,
+    "llm_first_to_tts_first_text_ms": 426.753,
+    "question_to_tts_first_text_ms": 1282.815,
+    "first_tts_text_to_first_play_start_ms": 1612.067,
+    "tts_rx_to_synth_end_ms": 1511.808,
+    "tts_rx_to_play_start_ms": 1611.781,
+    "tts_synth_end_to_play_start_ms": 99.973,
+    "question_to_first_audio_ms": 2894.882,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 11876.516,
+    "audio_total_sum_ms": 8978.107,
+    "audio_first_to_last_ms": 8980.594
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 1044048,
+    "router_to_llm_first_ns": 855017770,
+    "question_to_llm_first_ns": 856061818,
+    "llm_first_to_done_ns": 675672596,
+    "question_to_llm_done_ns": 1531734414,
+    "llm_first_to_tts_first_text_ns": 426752870,
+    "question_to_tts_first_text_ns": 1282814688,
+    "first_tts_text_to_first_play_start_ns": 1612066833,
+    "tts_rx_to_synth_end_ns": 1511808049,
+    "tts_rx_to_play_start_ns": 1611781041,
+    "tts_synth_end_to_play_start_ns": 99972992,
+    "question_to_first_audio_ns": 2894881521,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 11876516453,
+    "audio_total_sum_ns": 8978106887,
+    "audio_first_to_last_ns": 8980594465
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 856061818,
+      "ms": 856.062
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 675672596,
+      "ms": 675.673
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 426752870,
+      "ms": 426.753
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 1612066833,
+      "ms": 1612.067
+    },
+    "question_to_first_play_start": {
+      "ns": 2894881521,
+      "ms": 2894.882
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 11876516453,
+      "ms": 11876.516
+    },
+    "audio_total_sec": {
+      "ns": 8978106887,
+      "ms": 8978.107,
+      "sec": 8.978
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.044,
+    "router_to_llm_first_ms": 855.018,
+    "question_to_llm_first_ms": 856.062,
+    "llm_first_to_done_ms": 675.673,
+    "question_to_llm_done_ms": 1531.734,
+    "llm_first_to_tts_first_text_ms": 426.753,
+    "question_to_tts_first_text_ms": 1282.815,
+    "first_tts_text_to_first_play_start_ms": 1612.067,
+    "tts_rx_to_synth_end_ms": 1511.808,
+    "tts_rx_to_play_start_ms": 1611.781,
+    "tts_synth_end_to_play_start_ms": 99.973,
+    "question_to_first_audio_ms": 2894.882,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 11876.516,
+    "audio_total_sum_ms": 8978.107,
+    "audio_first_to_last_ms": 8980.594
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793327534316039524,
+      "first_text_rx_ns": 1793327534316356843,
+      "done_rx_ns": 1793327534992029439,
+      "chunk_count": 9,
+      "char_count": 30,
+      "chunks": [
+        {
+          "t_ns": 1793327534316356843,
+          "text": "《"
+        },
+        {
+          "t_ns": 1793327534331900154,
+          "text": "海"
+        },
+        {
+          "t_ns": 1793327534356407276,
+          "text": "蒂"
+        },
+        {
+          "t_ns": 1793327534397909104,
+          "text": "和"
+        },
+        {
+          "t_ns": 1793327534513149472,
+          "text": "爷爷》很治愈"
+        },
+        {
+          "t_ns": 1793327534640357776,
+          "text": "～  \n山风"
+        },
+        {
+          "t_ns": 1793327534742911171,
+          "text": "、阳光、笑"
+        },
+        {
+          "t_ns": 1793327534889318108,
+          "text": "眼，看着心"
+        },
+        {
+          "t_ns": 1793327534974458185,
+          "text": "都软了。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793327534743109713,
+      "done_rx_ns": 1793327534992394218,
+      "text_count": 4,
+      "texts": [
+        {
+          "t_ns": 1793327534743109713,
+          "text": "《海蒂和爷爷》很治愈～  \n山风、"
+        },
+        {
+          "t_ns": 1793327534743540166,
+          "text": "阳光、"
+        },
+        {
+          "t_ns": 1793327534889860571,
+          "text": "笑眼，"
+        },
+        {
+          "t_ns": 1793327534974780458,
+          "text": "看着心都软了。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 28,
+    "latency_events_total": 28,
+    "asr_events": 0,
+    "tts_events": 23,
+    "tts_play_pairs": 4,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793327533807087872,
+      "node": "llm_medical",
+      "stage": "intent_judge",
+      "t_ns": 1793327533806790327,
+      "detail": {
+        "model": "qwen-flash",
+        "ms": 344.7,
+        "answer": "聊",
+        "kind": "chat"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent_judge\", \"t_ns\": 1793327533806790327, \"detail\": {\"model\": \"qwen-flash\", \"ms\": 344.7, \"answer\": \"聊\", \"kind\": \"chat\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327533807438833,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793327533806940121,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "llm:qwen-flash",
+        "keyword_medical": false,
+        "judge_kind": "chat",
+        "judge_ms": 344.7
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793327533806940121, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"llm:qwen-flash\", \"keyword_medical\": false, \"judge_kind\": \"chat\", \"judge_ms\": 344.7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327534316084792,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793327534315749069,
+      "detail": {
+        "prompt_chars": 415,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793327534315749069, \"detail\": {\"prompt_chars\": 415, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327534316448210,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793327534316196547,
+      "detail": {
+        "prompt_chars": 415
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793327534316196547, \"detail\": {\"prompt_chars\": 415}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327534316861740,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793327534316659511,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793327534316659511, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327534743574641,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327534743395505,
+      "detail": {
+        "text_len": 17,
+        "head": "《海蒂和爷爷》很治愈～  \n山风、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327534743395505, \"detail\": {\"text_len\": 17, \"head\": \"《海蒂和爷爷》很治愈～  \\n山风、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327534743765978,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327534743464679,
+      "detail": {
+        "text_len": 17
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327534743464679, \"detail\": {\"text_len\": 17}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327534992072189,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793327534991757257,
+      "detail": {
+        "chars": 30
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793327534991757257, \"detail\": {\"chars\": 30}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327536255660084,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327536255203554,
+      "detail": {
+        "text_len": 17,
+        "dur_ms": 1511.734158,
+        "audio_sec": 4.32,
+        "rtf": 0.34993846249999994
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327536255203554, \"detail\": {\"text_len\": 17, \"dur_ms\": 1511.734158, \"audio_sec\": 4.32, \"rtf\": 0.34993846249999994}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327536260887581,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327536260669385,
+      "detail": {
+        "text_len": 3,
+        "head": "阳光、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327536260669385, \"detail\": {\"text_len\": 3, \"head\": \"阳光、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327536261107042,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327536260717048,
+      "detail": {
+        "text_len": 3
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327536260717048, \"detail\": {\"text_len\": 3}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327536355469755,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327536355176546,
+      "detail": {
+        "text_len": 17,
+        "head": "《海蒂和爷爷》很治愈～  \n山风、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327536355176546, \"detail\": {\"text_len\": 17, \"head\": \"《海蒂和爷爷》很治愈～  \\n山风、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327536718350734,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327536718058272,
+      "detail": {
+        "text_len": 3,
+        "dur_ms": 457.337049,
+        "audio_sec": 1.2,
+        "rtf": 0.3811142075
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327536718058272, \"detail\": {\"text_len\": 3, \"dur_ms\": 457.337049, \"audio_sec\": 1.2, \"rtf\": 0.3811142075}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327536718843692,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327536718726006,
+      "detail": {
+        "text_len": 3,
+        "head": "笑眼，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327536718726006, \"detail\": {\"text_len\": 3, \"head\": \"笑眼，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327536719024568,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327536718772363,
+      "detail": {
+        "text_len": 3
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327536718772363, \"detail\": {\"text_len\": 3}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327537232886067,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327537232633443,
+      "detail": {
+        "text_len": 3,
+        "dur_ms": 513.856178,
+        "audio_sec": 1.36,
+        "rtf": 0.377835425
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327537232633443, \"detail\": {\"text_len\": 3, \"dur_ms\": 513.856178, \"audio_sec\": 1.36, \"rtf\": 0.377835425}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327537233316365,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327537233179517,
+      "detail": {
+        "text_len": 7,
+        "head": "看着心都软了。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327537233179517, \"detail\": {\"text_len\": 7, \"head\": \"看着心都软了。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327537233504805,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327537233227248,
+      "detail": {
+        "text_len": 7
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327537233227248, \"detail\": {\"text_len\": 7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327537991753988,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327537991363271,
+      "detail": {
+        "text_len": 7,
+        "dur_ms": 758.131234,
+        "audio_sec": 2.08,
+        "rtf": 0.36448617019230767
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327537991363271, \"detail\": {\"text_len\": 7, \"dur_ms\": 758.131234, \"audio_sec\": 2.08, \"rtf\": 0.36448617019230767}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327537992220819,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793327537992006362,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793327537992006362, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327540697110424,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327540696724734,
+      "detail": {
+        "text_len": 17,
+        "interrupted": false,
+        "dur_ms": 4341.545142
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327540696724734, \"detail\": {\"text_len\": 17, \"interrupted\": false, \"dur_ms\": 4341.545142}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327540697706025,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327540697552723,
+      "detail": {
+        "text_len": 3,
+        "head": "阳光、"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327540697552723, \"detail\": {\"text_len\": 3, \"head\": \"阳光、\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327541896399214,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327541895961365,
+      "detail": {
+        "text_len": 3,
+        "interrupted": false,
+        "dur_ms": 1198.36029
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327541895961365, \"detail\": {\"text_len\": 3, \"interrupted\": false, \"dur_ms\": 1198.36029}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327541897052453,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327541896872956,
+      "detail": {
+        "text_len": 3,
+        "head": "笑眼，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327541896872956, \"detail\": {\"text_len\": 3, \"head\": \"笑眼，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327543257267295,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327543256960812,
+      "detail": {
+        "text_len": 3,
+        "interrupted": false,
+        "dur_ms": 1360.087337
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327543256960812, \"detail\": {\"text_len\": 3, \"interrupted\": false, \"dur_ms\": 1360.087337}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327543257900686,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327543257708810,
+      "detail": {
+        "text_len": 7,
+        "head": "看着心都软了。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327543257708810, \"detail\": {\"text_len\": 7, \"head\": \"看着心都软了。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327545336239737,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327545335771011,
+      "detail": {
+        "text_len": 7,
+        "interrupted": false,
+        "dur_ms": 2078.058966
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327545335771011, \"detail\": {\"text_len\": 7, \"interrupted\": false, \"dur_ms\": 2078.058966}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327545336853662,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793327545336533105,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793327545336533105, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent_judge": [
+        {
+          "t_ns": 1793327533806790327,
+          "arrival_ns": 1793327533807087872,
+          "source": "round",
+          "detail": {
+            "model": "qwen-flash",
+            "ms": 344.7,
+            "answer": "聊",
+            "kind": "chat"
+          }
+        }
+      ],
+      "intent": [
+        {
+          "t_ns": 1793327533806940121,
+          "arrival_ns": 1793327533807438833,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "llm:qwen-flash",
+            "keyword_medical": false,
+            "judge_kind": "chat",
+            "judge_ms": 344.7
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793327534315749069,
+          "arrival_ns": 1793327534316084792,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 415,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793327534316196547,
+          "arrival_ns": 1793327534316448210,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 415
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793327534991757257,
+          "arrival_ns": 1793327534992072189,
+          "source": "round",
+          "detail": {
+            "chars": 30
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793327534316659511,
+          "arrival_ns": 1793327534316861740,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793327537992006362,
+          "arrival_ns": 1793327537992220819,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793327534743395505,
+          "arrival_ns": 1793327534743574641,
+          "source": "round",
+          "detail": {
+            "text_len": 17,
+            "head": "《海蒂和爷爷》很治愈～  \n山风、"
+          }
+        },
+        {
+          "t_ns": 1793327536260669385,
+          "arrival_ns": 1793327536260887581,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "head": "阳光、"
+          }
+        },
+        {
+          "t_ns": 1793327536718726006,
+          "arrival_ns": 1793327536718843692,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "head": "笑眼，"
+          }
+        },
+        {
+          "t_ns": 1793327537233179517,
+          "arrival_ns": 1793327537233316365,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "看着心都软了。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793327534743464679,
+          "arrival_ns": 1793327534743765978,
+          "source": "round",
+          "detail": {
+            "text_len": 17
+          }
+        },
+        {
+          "t_ns": 1793327536260717048,
+          "arrival_ns": 1793327536261107042,
+          "source": "round",
+          "detail": {
+            "text_len": 3
+          }
+        },
+        {
+          "t_ns": 1793327536718772363,
+          "arrival_ns": 1793327536719024568,
+          "source": "round",
+          "detail": {
+            "text_len": 3
+          }
+        },
+        {
+          "t_ns": 1793327537233227248,
+          "arrival_ns": 1793327537233504805,
+          "source": "round",
+          "detail": {
+            "text_len": 7
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793327536255203554,
+          "arrival_ns": 1793327536255660084,
+          "source": "round",
+          "detail": {
+            "text_len": 17,
+            "dur_ms": 1511.734158,
+            "audio_sec": 4.32,
+            "rtf": 0.34993846249999994
+          }
+        },
+        {
+          "t_ns": 1793327536718058272,
+          "arrival_ns": 1793327536718350734,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "dur_ms": 457.337049,
+            "audio_sec": 1.2,
+            "rtf": 0.3811142075
+          }
+        },
+        {
+          "t_ns": 1793327537232633443,
+          "arrival_ns": 1793327537232886067,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "dur_ms": 513.856178,
+            "audio_sec": 1.36,
+            "rtf": 0.377835425
+          }
+        },
+        {
+          "t_ns": 1793327537991363271,
+          "arrival_ns": 1793327537991753988,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "dur_ms": 758.131234,
+            "audio_sec": 2.08,
+            "rtf": 0.36448617019230767
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793327536355176546,
+          "arrival_ns": 1793327536355469755,
+          "source": "round",
+          "detail": {
+            "text_len": 17,
+            "head": "《海蒂和爷爷》很治愈～  \n山风、"
+          }
+        },
+        {
+          "t_ns": 1793327540697552723,
+          "arrival_ns": 1793327540697706025,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "head": "阳光、"
+          }
+        },
+        {
+          "t_ns": 1793327541896872956,
+          "arrival_ns": 1793327541897052453,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "head": "笑眼，"
+          }
+        },
+        {
+          "t_ns": 1793327543257708810,
+          "arrival_ns": 1793327543257900686,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "看着心都软了。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793327540696724734,
+          "arrival_ns": 1793327540697110424,
+          "source": "round",
+          "detail": {
+            "text_len": 17,
+            "interrupted": false,
+            "dur_ms": 4341.545142
+          }
+        },
+        {
+          "t_ns": 1793327541895961365,
+          "arrival_ns": 1793327541896399214,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "interrupted": false,
+            "dur_ms": 1198.36029
+          }
+        },
+        {
+          "t_ns": 1793327543256960812,
+          "arrival_ns": 1793327543257267295,
+          "source": "round",
+          "detail": {
+            "text_len": 3,
+            "interrupted": false,
+            "dur_ms": 1360.087337
+          }
+        },
+        {
+          "t_ns": 1793327545335771011,
+          "arrival_ns": 1793327545336239737,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "interrupted": false,
+            "dur_ms": 2078.058966
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793327545336533105,
+          "arrival_ns": 1793327545336853662,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 50,
+    "interval_s": 2.0
+  }
+}

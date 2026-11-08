@@ -1,0 +1,1034 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1064920",
+  "host": "artrc",
+  "tag": "chat50",
+  "round_index": 15,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T10:29:32.297",
+  "finished_at": "2026-10-30T10:29:43.596",
+  "duration_s": 11.298,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "来个绕口令",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793327372298393069,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793327372297996458,
+    "t_publish_question_ns": 1793327372298393069,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793327372298880562,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793327372299372480,
+      "ali_llm_output_start": 1793327373831054773,
+      "ali_llm_output_first_text": 1793327373831766323,
+      "ali_llm_output_done": 1793327374477205829,
+      "tts_realtime_data_start": 1793327373831301573,
+      "tts_realtime_data_first_text": 1793327374008224167,
+      "tts_realtime_data_done": 1793327374477237559,
+      "tts_session_finished": 1793327383291051334
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793327374008466666,
+      "tts_local.synth_start_first": 1793327374008534446,
+      "tts_local.synth_end_first": 1793327374617572419,
+      "tts_local.play_start_first": 1793327374655135883,
+      "tts_local.play_end_last": 1793327383289815686,
+      "tts_local.session_finished": 1793327383290608777
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.979,
+    "router_to_llm_first_ms": 1532.394,
+    "question_to_llm_first_ms": 1533.373,
+    "llm_first_to_done_ms": 645.44,
+    "question_to_llm_done_ms": 2178.813,
+    "llm_first_to_tts_first_text_ms": 176.458,
+    "question_to_tts_first_text_ms": 1709.831,
+    "first_tts_text_to_first_play_start_ms": 646.912,
+    "tts_rx_to_synth_end_ms": 609.106,
+    "tts_rx_to_play_start_ms": 646.669,
+    "tts_synth_end_to_play_start_ms": 37.563,
+    "question_to_first_audio_ms": 2356.743,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 10992.658,
+    "audio_total_sum_ms": 8628.608,
+    "audio_first_to_last_ms": 8634.68
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 979411,
+    "router_to_llm_first_ns": 1532393843,
+    "question_to_llm_first_ns": 1533373254,
+    "llm_first_to_done_ns": 645439506,
+    "question_to_llm_done_ns": 2178812760,
+    "llm_first_to_tts_first_text_ns": 176457844,
+    "question_to_tts_first_text_ns": 1709831098,
+    "first_tts_text_to_first_play_start_ns": 646911716,
+    "tts_rx_to_synth_end_ns": 609105753,
+    "tts_rx_to_play_start_ns": 646669217,
+    "tts_synth_end_to_play_start_ns": 37563464,
+    "question_to_first_audio_ns": 2356742814,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 10992658265,
+    "audio_total_sum_ns": 8628607792,
+    "audio_first_to_last_ns": 8634679803
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 1533373254,
+      "ms": 1533.373
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 645439506,
+      "ms": 645.44
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 176457844,
+      "ms": 176.458
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 646911716,
+      "ms": 646.912
+    },
+    "question_to_first_play_start": {
+      "ns": 2356742814,
+      "ms": 2356.743
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 10992658265,
+      "ms": 10992.658
+    },
+    "audio_total_sec": {
+      "ns": 8628607792,
+      "ms": 8628.608,
+      "sec": 8.629
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.979,
+    "router_to_llm_first_ms": 1532.394,
+    "question_to_llm_first_ms": 1533.373,
+    "llm_first_to_done_ms": 645.44,
+    "question_to_llm_done_ms": 2178.813,
+    "llm_first_to_tts_first_text_ms": 176.458,
+    "question_to_tts_first_text_ms": 1709.831,
+    "first_tts_text_to_first_play_start_ms": 646.912,
+    "tts_rx_to_synth_end_ms": 609.106,
+    "tts_rx_to_play_start_ms": 646.669,
+    "tts_synth_end_to_play_start_ms": 37.563,
+    "question_to_first_audio_ms": 2356.743,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 10992.658,
+    "audio_total_sum_ms": 8628.608,
+    "audio_first_to_last_ms": 8634.68
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793327373831054773,
+      "first_text_rx_ns": 1793327373831766323,
+      "done_rx_ns": 1793327374477205829,
+      "chunk_count": 10,
+      "char_count": 41,
+      "chunks": [
+        {
+          "t_ns": 1793327373831766323,
+          "text": "透"
+        },
+        {
+          "t_ns": 1793327373831923572,
+          "text": "析室"
+        },
+        {
+          "t_ns": 1793327373832083335,
+          "text": "里"
+        },
+        {
+          "t_ns": 1793327373850071088,
+          "text": "透"
+        },
+        {
+          "t_ns": 1793327374007921570,
+          "text": "析忙，  \n滤"
+        },
+        {
+          "t_ns": 1793327374078585072,
+          "text": "器滤水不滤糖"
+        },
+        {
+          "t_ns": 1793327374213839335,
+          "text": "，  \n护士手脚"
+        },
+        {
+          "t_ns": 1793327374414019032,
+          "text": "快又稳，  \n您"
+        },
+        {
+          "t_ns": 1793327374421514063,
+          "text": "安心，她放心"
+        },
+        {
+          "t_ns": 1793327374458726794,
+          "text": "。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793327374008224167,
+      "done_rx_ns": 1793327374477237559,
+      "text_count": 5,
+      "texts": [
+        {
+          "t_ns": 1793327374008224167,
+          "text": "透析室里透析忙，"
+        },
+        {
+          "t_ns": 1793327374214466623,
+          "text": "滤器滤水不滤糖，"
+        },
+        {
+          "t_ns": 1793327374414218361,
+          "text": "护士手脚快又稳，"
+        },
+        {
+          "t_ns": 1793327374421728291,
+          "text": "您安心，"
+        },
+        {
+          "t_ns": 1793327374458905187,
+          "text": "她放心。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 33,
+    "latency_events_total": 33,
+    "asr_events": 0,
+    "tts_events": 28,
+    "tts_play_pairs": 5,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793327373193386862,
+      "node": "llm_medical",
+      "stage": "intent_judge",
+      "t_ns": 1793327373193076927,
+      "detail": {
+        "model": "qwen-flash",
+        "ms": 893.0,
+        "answer": "聊",
+        "kind": "chat"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent_judge\", \"t_ns\": 1793327373193076927, \"detail\": {\"model\": \"qwen-flash\", \"ms\": 893.0, \"answer\": \"聊\", \"kind\": \"chat\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327373193620047,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793327373193249634,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "llm:qwen-flash",
+        "keyword_medical": false,
+        "judge_kind": "chat",
+        "judge_ms": 893.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793327373193249634, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"llm:qwen-flash\", \"keyword_medical\": false, \"judge_kind\": \"chat\", \"judge_ms\": 893.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327373831101408,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793327373830746463,
+      "detail": {
+        "prompt_chars": 444,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793327373830746463, \"detail\": {\"prompt_chars\": 444, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327373831591696,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793327373831456243,
+      "detail": {
+        "prompt_chars": 444
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793327373831456243, \"detail\": {\"prompt_chars\": 444}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327373841913824,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793327373841683889,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793327373841683889, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327374008597511,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327374008466666,
+      "detail": {
+        "text_len": 8,
+        "head": "透析室里透析忙，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327374008466666, \"detail\": {\"text_len\": 8, \"head\": \"透析室里透析忙，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327374008779253,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327374008534446,
+      "detail": {
+        "text_len": 8
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327374008534446, \"detail\": {\"text_len\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327374477002301,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793327374476717474,
+      "detail": {
+        "chars": 41
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793327374476717474, \"detail\": {\"chars\": 41}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327374617935358,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327374617572419,
+      "detail": {
+        "text_len": 8,
+        "dur_ms": 609.033443,
+        "audio_sec": 1.68,
+        "rtf": 0.3625199065476191
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327374617572419, \"detail\": {\"text_len\": 8, \"dur_ms\": 609.033443, \"audio_sec\": 1.68, \"rtf\": 0.3625199065476191}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327374620980642,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327374620761852,
+      "detail": {
+        "text_len": 8,
+        "head": "滤器滤水不滤糖，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327374620761852, \"detail\": {\"text_len\": 8, \"head\": \"滤器滤水不滤糖，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327374621174159,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327374620808873,
+      "detail": {
+        "text_len": 8
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327374620808873, \"detail\": {\"text_len\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327374655386791,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327374655135883,
+      "detail": {
+        "text_len": 8,
+        "head": "透析室里透析忙，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327374655135883, \"detail\": {\"text_len\": 8, \"head\": \"透析室里透析忙，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327375459377869,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327375459093751,
+      "detail": {
+        "text_len": 8,
+        "dur_ms": 838.279944,
+        "audio_sec": 2.32,
+        "rtf": 0.36132756206896555
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327375459093751, \"detail\": {\"text_len\": 8, \"dur_ms\": 838.279944, \"audio_sec\": 2.32, \"rtf\": 0.36132756206896555}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327375459975846,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327375459793737,
+      "detail": {
+        "text_len": 8,
+        "head": "护士手脚快又稳，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327375459793737, \"detail\": {\"text_len\": 8, \"head\": \"护士手脚快又稳，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327375460204771,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327375459857045,
+      "detail": {
+        "text_len": 8
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327375459857045, \"detail\": {\"text_len\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327376155153190,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327376154855232,
+      "detail": {
+        "text_len": 8,
+        "dur_ms": 694.993684,
+        "audio_sec": 1.92,
+        "rtf": 0.3619758770833334
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327376154855232, \"detail\": {\"text_len\": 8, \"dur_ms\": 694.993684, \"audio_sec\": 1.92, \"rtf\": 0.3619758770833334}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327376155609541,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327376155451464,
+      "detail": {
+        "text_len": 4,
+        "head": "您安心，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327376155451464, \"detail\": {\"text_len\": 4, \"head\": \"您安心，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327376155811576,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327376155531199,
+      "detail": {
+        "text_len": 4
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327376155531199, \"detail\": {\"text_len\": 4}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327376332472132,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327376332068616,
+      "detail": {
+        "text_len": 8,
+        "interrupted": false,
+        "dur_ms": 1676.930166
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327376332068616, \"detail\": {\"text_len\": 8, \"interrupted\": false, \"dur_ms\": 1676.930166}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327376333109398,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327376332865888,
+      "detail": {
+        "text_len": 8,
+        "head": "滤器滤水不滤糖，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327376332865888, \"detail\": {\"text_len\": 8, \"head\": \"滤器滤水不滤糖，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327376654480077,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327376654155727,
+      "detail": {
+        "text_len": 4,
+        "dur_ms": 498.620401,
+        "audio_sec": 1.36,
+        "rtf": 0.36663264779411764
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327376654155727, \"detail\": {\"text_len\": 4, \"dur_ms\": 498.620401, \"audio_sec\": 1.36, \"rtf\": 0.36663264779411764}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327376655016559,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327376654886123,
+      "detail": {
+        "text_len": 4,
+        "head": "她放心。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327376654886123, \"detail\": {\"text_len\": 4, \"head\": \"她放心。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327376655204637,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327376654937936,
+      "detail": {
+        "text_len": 4
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327376654937936, \"detail\": {\"text_len\": 4}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327377162048663,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327377161697130,
+      "detail": {
+        "text_len": 4,
+        "dur_ms": 506.754763,
+        "audio_sec": 1.36,
+        "rtf": 0.37261379632352937
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327377161697130, \"detail\": {\"text_len\": 4, \"dur_ms\": 506.754763, \"audio_sec\": 1.36, \"rtf\": 0.37261379632352937}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327377162448313,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793327377162259260,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793327377162259260, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327378652245002,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327378651920685,
+      "detail": {
+        "text_len": 8,
+        "interrupted": false,
+        "dur_ms": 2319.052133
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327378651920685, \"detail\": {\"text_len\": 8, \"interrupted\": false, \"dur_ms\": 2319.052133}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327378652983517,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327378652744342,
+      "detail": {
+        "text_len": 8,
+        "head": "护士手脚快又稳，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327378652744342, \"detail\": {\"text_len\": 8, \"head\": \"护士手脚快又稳，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327380570083489,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327380569697998,
+      "detail": {
+        "text_len": 8,
+        "interrupted": false,
+        "dur_ms": 1916.946715
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327380569697998, \"detail\": {\"text_len\": 8, \"interrupted\": false, \"dur_ms\": 1916.946715}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327380570837450,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327380570687130,
+      "detail": {
+        "text_len": 4,
+        "head": "您安心，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327380570687130, \"detail\": {\"text_len\": 4, \"head\": \"您安心，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327381928687170,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327381928336793,
+      "detail": {
+        "text_len": 4,
+        "interrupted": false,
+        "dur_ms": 1357.646729
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327381928336793, \"detail\": {\"text_len\": 4, \"interrupted\": false, \"dur_ms\": 1357.646729}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327381932072236,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327381931798743,
+      "detail": {
+        "text_len": 4,
+        "head": "她放心。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327381931798743, \"detail\": {\"text_len\": 4, \"head\": \"她放心。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327383290189527,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327383289815686,
+      "detail": {
+        "text_len": 4,
+        "interrupted": false,
+        "dur_ms": 1358.014271
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327383289815686, \"detail\": {\"text_len\": 4, \"interrupted\": false, \"dur_ms\": 1358.014271}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327383290785878,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793327383290608777,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793327383290608777, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent_judge": [
+        {
+          "t_ns": 1793327373193076927,
+          "arrival_ns": 1793327373193386862,
+          "source": "round",
+          "detail": {
+            "model": "qwen-flash",
+            "ms": 893.0,
+            "answer": "聊",
+            "kind": "chat"
+          }
+        }
+      ],
+      "intent": [
+        {
+          "t_ns": 1793327373193249634,
+          "arrival_ns": 1793327373193620047,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "llm:qwen-flash",
+            "keyword_medical": false,
+            "judge_kind": "chat",
+            "judge_ms": 893.0
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793327373830746463,
+          "arrival_ns": 1793327373831101408,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 444,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793327373831456243,
+          "arrival_ns": 1793327373831591696,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 444
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793327374476717474,
+          "arrival_ns": 1793327374477002301,
+          "source": "round",
+          "detail": {
+            "chars": 41
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793327373841683889,
+          "arrival_ns": 1793327373841913824,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793327377162259260,
+          "arrival_ns": 1793327377162448313,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793327374008466666,
+          "arrival_ns": 1793327374008597511,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "透析室里透析忙，"
+          }
+        },
+        {
+          "t_ns": 1793327374620761852,
+          "arrival_ns": 1793327374620980642,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "滤器滤水不滤糖，"
+          }
+        },
+        {
+          "t_ns": 1793327375459793737,
+          "arrival_ns": 1793327375459975846,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "护士手脚快又稳，"
+          }
+        },
+        {
+          "t_ns": 1793327376155451464,
+          "arrival_ns": 1793327376155609541,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "您安心，"
+          }
+        },
+        {
+          "t_ns": 1793327376654886123,
+          "arrival_ns": 1793327376655016559,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "她放心。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793327374008534446,
+          "arrival_ns": 1793327374008779253,
+          "source": "round",
+          "detail": {
+            "text_len": 8
+          }
+        },
+        {
+          "t_ns": 1793327374620808873,
+          "arrival_ns": 1793327374621174159,
+          "source": "round",
+          "detail": {
+            "text_len": 8
+          }
+        },
+        {
+          "t_ns": 1793327375459857045,
+          "arrival_ns": 1793327375460204771,
+          "source": "round",
+          "detail": {
+            "text_len": 8
+          }
+        },
+        {
+          "t_ns": 1793327376155531199,
+          "arrival_ns": 1793327376155811576,
+          "source": "round",
+          "detail": {
+            "text_len": 4
+          }
+        },
+        {
+          "t_ns": 1793327376654937936,
+          "arrival_ns": 1793327376655204637,
+          "source": "round",
+          "detail": {
+            "text_len": 4
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793327374617572419,
+          "arrival_ns": 1793327374617935358,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "dur_ms": 609.033443,
+            "audio_sec": 1.68,
+            "rtf": 0.3625199065476191
+          }
+        },
+        {
+          "t_ns": 1793327375459093751,
+          "arrival_ns": 1793327375459377869,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "dur_ms": 838.279944,
+            "audio_sec": 2.32,
+            "rtf": 0.36132756206896555
+          }
+        },
+        {
+          "t_ns": 1793327376154855232,
+          "arrival_ns": 1793327376155153190,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "dur_ms": 694.993684,
+            "audio_sec": 1.92,
+            "rtf": 0.3619758770833334
+          }
+        },
+        {
+          "t_ns": 1793327376654155727,
+          "arrival_ns": 1793327376654480077,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "dur_ms": 498.620401,
+            "audio_sec": 1.36,
+            "rtf": 0.36663264779411764
+          }
+        },
+        {
+          "t_ns": 1793327377161697130,
+          "arrival_ns": 1793327377162048663,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "dur_ms": 506.754763,
+            "audio_sec": 1.36,
+            "rtf": 0.37261379632352937
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793327374655135883,
+          "arrival_ns": 1793327374655386791,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "透析室里透析忙，"
+          }
+        },
+        {
+          "t_ns": 1793327376332865888,
+          "arrival_ns": 1793327376333109398,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "滤器滤水不滤糖，"
+          }
+        },
+        {
+          "t_ns": 1793327378652744342,
+          "arrival_ns": 1793327378652983517,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "护士手脚快又稳，"
+          }
+        },
+        {
+          "t_ns": 1793327380570687130,
+          "arrival_ns": 1793327380570837450,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "您安心，"
+          }
+        },
+        {
+          "t_ns": 1793327381931798743,
+          "arrival_ns": 1793327381932072236,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "她放心。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793327376332068616,
+          "arrival_ns": 1793327376332472132,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "interrupted": false,
+            "dur_ms": 1676.930166
+          }
+        },
+        {
+          "t_ns": 1793327378651920685,
+          "arrival_ns": 1793327378652245002,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "interrupted": false,
+            "dur_ms": 2319.052133
+          }
+        },
+        {
+          "t_ns": 1793327380569697998,
+          "arrival_ns": 1793327380570083489,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "interrupted": false,
+            "dur_ms": 1916.946715
+          }
+        },
+        {
+          "t_ns": 1793327381928336793,
+          "arrival_ns": 1793327381928687170,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "interrupted": false,
+            "dur_ms": 1357.646729
+          }
+        },
+        {
+          "t_ns": 1793327383289815686,
+          "arrival_ns": 1793327383290189527,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "interrupted": false,
+            "dur_ms": 1358.014271
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793327383290608777,
+          "arrival_ns": 1793327383290785878,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 50,
+    "interval_s": 2.0
+  }
+}

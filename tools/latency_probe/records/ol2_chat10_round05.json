@@ -1,0 +1,841 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1162930",
+  "host": "artrc",
+  "tag": "ol2_chat10",
+  "round_index": 5,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T16:19:52.573",
+  "finished_at": "2026-10-30T16:20:01.985",
+  "duration_s": 9.413,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "给我讲个笑话吧",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793348392573570484,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793348392573140044,
+    "t_publish_question_ns": 1793348392573570484,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793348392574067170,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793348392574546138,
+      "ali_llm_output_start": 1793348392737702999,
+      "ali_llm_output_first_text": 1793348392738055957,
+      "ali_llm_output_done": 1793348393557305060,
+      "tts_realtime_data_start": 1793348392738103196,
+      "tts_realtime_data_first_text": 1793348392877401811,
+      "tts_realtime_data_done": 1793348393557341256,
+      "tts_session_finished": 1793348401685865814
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793348392877709271,
+      "tts_local.synth_start_first": 1793348392877808668,
+      "tts_local.synth_end_first": 1793348394121757003,
+      "tts_local.play_start_first": 1793348394143241405,
+      "tts_local.play_end_last": 1793348401684792066,
+      "tts_local.session_finished": 1793348401685493579
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.976,
+    "router_to_llm_first_ms": 163.51,
+    "question_to_llm_first_ms": 164.485,
+    "llm_first_to_done_ms": 819.249,
+    "question_to_llm_done_ms": 983.735,
+    "llm_first_to_tts_first_text_ms": 139.346,
+    "question_to_tts_first_text_ms": 303.831,
+    "first_tts_text_to_first_play_start_ms": 1265.84,
+    "tts_rx_to_synth_end_ms": 1244.048,
+    "tts_rx_to_play_start_ms": 1265.532,
+    "tts_synth_end_to_play_start_ms": 21.484,
+    "question_to_first_audio_ms": 1569.671,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 9112.295,
+    "audio_total_sum_ms": 7540.047,
+    "audio_first_to_last_ms": 7541.551
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 975654,
+    "router_to_llm_first_ns": 163509819,
+    "question_to_llm_first_ns": 164485473,
+    "llm_first_to_done_ns": 819249103,
+    "question_to_llm_done_ns": 983734576,
+    "llm_first_to_tts_first_text_ns": 139345854,
+    "question_to_tts_first_text_ns": 303831327,
+    "first_tts_text_to_first_play_start_ns": 1265839594,
+    "tts_rx_to_synth_end_ns": 1244047732,
+    "tts_rx_to_play_start_ns": 1265532134,
+    "tts_synth_end_to_play_start_ns": 21484402,
+    "question_to_first_audio_ns": 1569670921,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 9112295330,
+    "audio_total_sum_ns": 7540047425,
+    "audio_first_to_last_ns": 7541550661
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 164485473,
+      "ms": 164.485
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 819249103,
+      "ms": 819.249
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 139345854,
+      "ms": 139.346
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 1265839594,
+      "ms": 1265.84
+    },
+    "question_to_first_play_start": {
+      "ns": 1569670921,
+      "ms": 1569.671
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 9112295330,
+      "ms": 9112.295
+    },
+    "audio_total_sec": {
+      "ns": 7540047425,
+      "ms": 7540.047,
+      "sec": 7.54
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.976,
+    "router_to_llm_first_ms": 163.51,
+    "question_to_llm_first_ms": 164.485,
+    "llm_first_to_done_ms": 819.249,
+    "question_to_llm_done_ms": 983.735,
+    "llm_first_to_tts_first_text_ms": 139.346,
+    "question_to_tts_first_text_ms": 303.831,
+    "first_tts_text_to_first_play_start_ms": 1265.84,
+    "tts_rx_to_synth_end_ms": 1244.048,
+    "tts_rx_to_play_start_ms": 1265.532,
+    "tts_synth_end_to_play_start_ms": 21.484,
+    "question_to_first_audio_ms": 1569.671,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 9112.295,
+    "audio_total_sum_ms": 7540.047,
+    "audio_first_to_last_ms": 7541.551
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793348392737702999,
+      "first_text_rx_ns": 1793348392738055957,
+      "done_rx_ns": 1793348393557305060,
+      "chunk_count": 24,
+      "char_count": 37,
+      "chunks": [
+        {
+          "t_ns": 1793348392738055957,
+          "text": "昨天"
+        },
+        {
+          "t_ns": 1793348392754358025,
+          "text": "我"
+        },
+        {
+          "t_ns": 1793348392771728206,
+          "text": "梦见"
+        },
+        {
+          "t_ns": 1793348392790961388,
+          "text": "自己"
+        },
+        {
+          "t_ns": 1793348392808195813,
+          "text": "变成"
+        },
+        {
+          "t_ns": 1793348392828402803,
+          "text": "了一"
+        },
+        {
+          "t_ns": 1793348392843219789,
+          "text": "只"
+        },
+        {
+          "t_ns": 1793348392860238581,
+          "text": "猫"
+        },
+        {
+          "t_ns": 1793348392877203514,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793348392895200521,
+          "text": "结果"
+        },
+        {
+          "t_ns": 1793348392924969748,
+          "text": "醒来"
+        },
+        {
+          "t_ns": 1793348392969435751,
+          "text": "发现"
+        },
+        {
+          "t_ns": 1793348393021816732,
+          "text": "枕头"
+        },
+        {
+          "t_ns": 1793348393071567515,
+          "text": "底下"
+        },
+        {
+          "t_ns": 1793348393109153946,
+          "text": "有一"
+        },
+        {
+          "t_ns": 1793348393155726148,
+          "text": "团"
+        },
+        {
+          "t_ns": 1793348393196457446,
+          "text": "毛"
+        },
+        {
+          "t_ns": 1793348393237730188,
+          "text": "线"
+        },
+        {
+          "t_ns": 1793348393279114614,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793348393328448499,
+          "text": "真是"
+        },
+        {
+          "t_ns": 1793348393370125705,
+          "text": "虚"
+        },
+        {
+          "t_ns": 1793348393420710589,
+          "text": "惊"
+        },
+        {
+          "t_ns": 1793348393469353023,
+          "text": "一场"
+        },
+        {
+          "t_ns": 1793348393514945466,
+          "text": "。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793348392877401811,
+      "done_rx_ns": 1793348393557341256,
+      "text_count": 3,
+      "texts": [
+        {
+          "t_ns": 1793348392877401811,
+          "text": "昨天我梦见自己变成了一只猫，"
+        },
+        {
+          "t_ns": 1793348393279361285,
+          "text": "结果醒来发现枕头底下有一团毛线，"
+        },
+        {
+          "t_ns": 1793348393515219586,
+          "text": "真是虚惊一场。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 22,
+    "latency_events_total": 22,
+    "asr_events": 0,
+    "tts_events": 18,
+    "tts_play_pairs": 3,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793348392595809733,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793348392595568228,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "chitchat",
+        "keyword_medical": false,
+        "chitchat": true,
+        "judge_kind": null,
+        "judge_ms": 0.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793348392595568228, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"chitchat\", \"keyword_medical\": false, \"chitchat\": true, \"judge_kind\": null, \"judge_ms\": 0.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348392596145336,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793348392596036555,
+      "detail": {
+        "provider": "ollama",
+        "prompt_chars": 462,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793348392596036555, \"detail\": {\"provider\": \"ollama\", \"prompt_chars\": 462, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348392738134230,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793348392737740444,
+      "detail": {
+        "prompt_chars": 462
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793348392737740444, \"detail\": {\"prompt_chars\": 462}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348392738339636,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793348392738218633,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793348392738218633, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348392877991627,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793348392877709271,
+      "detail": {
+        "text_len": 14,
+        "head": "昨天我梦见自己变成了一只猫，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793348392877709271, \"detail\": {\"text_len\": 14, \"head\": \"昨天我梦见自己变成了一只猫，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348392878193848,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793348392877808668,
+      "detail": {
+        "text_len": 14
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793348392877808668, \"detail\": {\"text_len\": 14}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348393557060592,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793348393556792676,
+      "detail": {
+        "chars": 37
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793348393556792676, \"detail\": {\"chars\": 37}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348394122115666,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793348394121757003,
+      "detail": {
+        "text_len": 14,
+        "dur_ms": 1243.9405,
+        "audio_sec": 2.8,
+        "rtf": 0.44426446428571426
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793348394121757003, \"detail\": {\"text_len\": 14, \"dur_ms\": 1243.9405, \"audio_sec\": 2.8, \"rtf\": 0.44426446428571426}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348394137474345,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793348394137194095,
+      "detail": {
+        "text_len": 16,
+        "head": "结果醒来发现枕头底下有一团毛线，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793348394137194095, \"detail\": {\"text_len\": 16, \"head\": \"结果醒来发现枕头底下有一团毛线，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348394137725709,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793348394137299725,
+      "detail": {
+        "text_len": 16
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793348394137299725, \"detail\": {\"text_len\": 16}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348394143518725,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793348394143241405,
+      "detail": {
+        "text_len": 14,
+        "head": "昨天我梦见自己变成了一只猫，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793348394143241405, \"detail\": {\"text_len\": 14, \"head\": \"昨天我梦见自己变成了一只猫，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348395246929908,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793348395246571210,
+      "detail": {
+        "text_len": 16,
+        "dur_ms": 1109.266572,
+        "audio_sec": 3.04,
+        "rtf": 0.36489031973684205
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793348395246571210, \"detail\": {\"text_len\": 16, \"dur_ms\": 1109.266572, \"audio_sec\": 3.04, \"rtf\": 0.36489031973684205}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348395247331423,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793348395247125272,
+      "detail": {
+        "text_len": 7,
+        "head": "真是虚惊一场。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793348395247125272, \"detail\": {\"text_len\": 7, \"head\": \"真是虚惊一场。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348395247513288,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793348395247165200,
+      "detail": {
+        "text_len": 7
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793348395247165200, \"detail\": {\"text_len\": 7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348395869916117,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793348395869602436,
+      "detail": {
+        "text_len": 7,
+        "dur_ms": 622.431987,
+        "audio_sec": 1.68,
+        "rtf": 0.3704952303571429
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793348395869602436, \"detail\": {\"text_len\": 7, \"dur_ms\": 622.431987, \"audio_sec\": 1.68, \"rtf\": 0.3704952303571429}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348395870312372,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793348395870141959,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793348395870141959, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348396953553175,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793348396953201616,
+      "detail": {
+        "text_len": 14,
+        "interrupted": false,
+        "dur_ms": 2809.957696
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793348396953201616, \"detail\": {\"text_len\": 14, \"interrupted\": false, \"dur_ms\": 2809.957696}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348396954161489,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793348396954023059,
+      "detail": {
+        "text_len": 16,
+        "head": "结果醒来发现枕头底下有一团毛线，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793348396954023059, \"detail\": {\"text_len\": 16, \"head\": \"结果醒来发现枕头底下有一团毛线，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348400002278666,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793348400001966050,
+      "detail": {
+        "text_len": 16,
+        "interrupted": false,
+        "dur_ms": 3047.937799
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793348400001966050, \"detail\": {\"text_len\": 16, \"interrupted\": false, \"dur_ms\": 3047.937799}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348400002854897,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793348400002647843,
+      "detail": {
+        "text_len": 7,
+        "head": "真是虚惊一场。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793348400002647843, \"detail\": {\"text_len\": 7, \"head\": \"真是虚惊一场。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348401685100130,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793348401684792066,
+      "detail": {
+        "text_len": 7,
+        "interrupted": false,
+        "dur_ms": 1682.141048
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793348401684792066, \"detail\": {\"text_len\": 7, \"interrupted\": false, \"dur_ms\": 1682.141048}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793348401685648453,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793348401685493579,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793348401685493579, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793348392595568228,
+          "arrival_ns": 1793348392595809733,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "chitchat",
+            "keyword_medical": false,
+            "chitchat": true,
+            "judge_kind": null,
+            "judge_ms": 0.0
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793348392596036555,
+          "arrival_ns": 1793348392596145336,
+          "source": "round",
+          "detail": {
+            "provider": "ollama",
+            "prompt_chars": 462,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793348392737740444,
+          "arrival_ns": 1793348392738134230,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 462
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793348393556792676,
+          "arrival_ns": 1793348393557060592,
+          "source": "round",
+          "detail": {
+            "chars": 37
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793348392738218633,
+          "arrival_ns": 1793348392738339636,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793348395870141959,
+          "arrival_ns": 1793348395870312372,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793348392877709271,
+          "arrival_ns": 1793348392877991627,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "head": "昨天我梦见自己变成了一只猫，"
+          }
+        },
+        {
+          "t_ns": 1793348394137194095,
+          "arrival_ns": 1793348394137474345,
+          "source": "round",
+          "detail": {
+            "text_len": 16,
+            "head": "结果醒来发现枕头底下有一团毛线，"
+          }
+        },
+        {
+          "t_ns": 1793348395247125272,
+          "arrival_ns": 1793348395247331423,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "真是虚惊一场。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793348392877808668,
+          "arrival_ns": 1793348392878193848,
+          "source": "round",
+          "detail": {
+            "text_len": 14
+          }
+        },
+        {
+          "t_ns": 1793348394137299725,
+          "arrival_ns": 1793348394137725709,
+          "source": "round",
+          "detail": {
+            "text_len": 16
+          }
+        },
+        {
+          "t_ns": 1793348395247165200,
+          "arrival_ns": 1793348395247513288,
+          "source": "round",
+          "detail": {
+            "text_len": 7
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793348394121757003,
+          "arrival_ns": 1793348394122115666,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "dur_ms": 1243.9405,
+            "audio_sec": 2.8,
+            "rtf": 0.44426446428571426
+          }
+        },
+        {
+          "t_ns": 1793348395246571210,
+          "arrival_ns": 1793348395246929908,
+          "source": "round",
+          "detail": {
+            "text_len": 16,
+            "dur_ms": 1109.266572,
+            "audio_sec": 3.04,
+            "rtf": 0.36489031973684205
+          }
+        },
+        {
+          "t_ns": 1793348395869602436,
+          "arrival_ns": 1793348395869916117,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "dur_ms": 622.431987,
+            "audio_sec": 1.68,
+            "rtf": 0.3704952303571429
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793348394143241405,
+          "arrival_ns": 1793348394143518725,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "head": "昨天我梦见自己变成了一只猫，"
+          }
+        },
+        {
+          "t_ns": 1793348396954023059,
+          "arrival_ns": 1793348396954161489,
+          "source": "round",
+          "detail": {
+            "text_len": 16,
+            "head": "结果醒来发现枕头底下有一团毛线，"
+          }
+        },
+        {
+          "t_ns": 1793348400002647843,
+          "arrival_ns": 1793348400002854897,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "真是虚惊一场。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793348396953201616,
+          "arrival_ns": 1793348396953553175,
+          "source": "round",
+          "detail": {
+            "text_len": 14,
+            "interrupted": false,
+            "dur_ms": 2809.957696
+          }
+        },
+        {
+          "t_ns": 1793348400001966050,
+          "arrival_ns": 1793348400002278666,
+          "source": "round",
+          "detail": {
+            "text_len": 16,
+            "interrupted": false,
+            "dur_ms": 3047.937799
+          }
+        },
+        {
+          "t_ns": 1793348401684792066,
+          "arrival_ns": 1793348401685100130,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "interrupted": false,
+            "dur_ms": 1682.141048
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793348401685493579,
+          "arrival_ns": 1793348401685648453,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 10,
+    "interval_s": 2.0
+  }
+}

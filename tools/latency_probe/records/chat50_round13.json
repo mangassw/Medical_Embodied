@@ -1,0 +1,679 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1064920",
+  "host": "artrc",
+  "tag": "chat50",
+  "round_index": 13,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T10:29:06.351",
+  "finished_at": "2026-10-30T10:29:12.642",
+  "duration_s": 6.292,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "说个歇后语",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793327346351416796,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793327346351014251,
+    "t_publish_question_ns": 1793327346351416796,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793327346351927674,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793327346352269898,
+      "ali_llm_output_start": 1793327347072756525,
+      "ali_llm_output_first_text": 1793327347073064729,
+      "ali_llm_output_done": 1793327347442319831,
+      "tts_realtime_data_start": 1793327347073096171,
+      "tts_realtime_data_first_text": 1793327347299463280,
+      "tts_realtime_data_done": 1793327347442822451,
+      "tts_session_finished": 1793327352338306724
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793327347299730706,
+      "tts_local.synth_start_first": 1793327347299796003,
+      "tts_local.synth_end_first": 1793327348177377688,
+      "tts_local.play_start_first": 1793327348255108625,
+      "tts_local.play_end_last": 1793327352337168894,
+      "tts_local.session_finished": 1793327352337973096
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.853,
+    "router_to_llm_first_ms": 720.795,
+    "question_to_llm_first_ms": 721.648,
+    "llm_first_to_done_ms": 369.255,
+    "question_to_llm_done_ms": 1090.903,
+    "llm_first_to_tts_first_text_ms": 226.399,
+    "question_to_tts_first_text_ms": 948.046,
+    "first_tts_text_to_first_play_start_ms": 955.645,
+    "tts_rx_to_synth_end_ms": 877.647,
+    "tts_rx_to_play_start_ms": 955.378,
+    "tts_synth_end_to_play_start_ms": 77.731,
+    "question_to_first_audio_ms": 1903.692,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 5986.89,
+    "audio_total_sum_ms": 4081.306,
+    "audio_first_to_last_ms": 4082.06
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 853102,
+    "router_to_llm_first_ns": 720794831,
+    "question_to_llm_first_ns": 721647933,
+    "llm_first_to_done_ns": 369255102,
+    "question_to_llm_done_ns": 1090903035,
+    "llm_first_to_tts_first_text_ns": 226398551,
+    "question_to_tts_first_text_ns": 948046484,
+    "first_tts_text_to_first_play_start_ns": 955645345,
+    "tts_rx_to_synth_end_ns": 877646982,
+    "tts_rx_to_play_start_ns": 955377919,
+    "tts_synth_end_to_play_start_ns": 77730937,
+    "question_to_first_audio_ns": 1903691829,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 5986889928,
+    "audio_total_sum_ns": 4081306248,
+    "audio_first_to_last_ns": 4082060269
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 721647933,
+      "ms": 721.648
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 369255102,
+      "ms": 369.255
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 226398551,
+      "ms": 226.399
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 955645345,
+      "ms": 955.645
+    },
+    "question_to_first_play_start": {
+      "ns": 1903691829,
+      "ms": 1903.692
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 5986889928,
+      "ms": 5986.89
+    },
+    "audio_total_sec": {
+      "ns": 4081306248,
+      "ms": 4081.306,
+      "sec": 4.081
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.853,
+    "router_to_llm_first_ms": 720.795,
+    "question_to_llm_first_ms": 721.648,
+    "llm_first_to_done_ms": 369.255,
+    "question_to_llm_done_ms": 1090.903,
+    "llm_first_to_tts_first_text_ms": 226.399,
+    "question_to_tts_first_text_ms": 948.046,
+    "first_tts_text_to_first_play_start_ms": 955.645,
+    "tts_rx_to_synth_end_ms": 877.647,
+    "tts_rx_to_play_start_ms": 955.378,
+    "tts_synth_end_to_play_start_ms": 77.731,
+    "question_to_first_audio_ms": 1903.692,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 5986.89,
+    "audio_total_sum_ms": 4081.306,
+    "audio_first_to_last_ms": 4082.06
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793327347072756525,
+      "first_text_rx_ns": 1793327347073064729,
+      "done_rx_ns": 1793327347442319831,
+      "chunk_count": 6,
+      "char_count": 16,
+      "chunks": [
+        {
+          "t_ns": 1793327347073064729,
+          "text": "血"
+        },
+        {
+          "t_ns": 1793327347105942926,
+          "text": "透室"
+        },
+        {
+          "t_ns": 1793327347144262088,
+          "text": "的闹"
+        },
+        {
+          "t_ns": 1793327347187057506,
+          "text": "钟——"
+        },
+        {
+          "t_ns": 1793327347299138762,
+          "text": "不响，但"
+        },
+        {
+          "t_ns": 1793327347427079317,
+          "text": "准得很。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793327347299463280,
+      "done_rx_ns": 1793327347442822451,
+      "text_count": 2,
+      "texts": [
+        {
+          "t_ns": 1793327347299463280,
+          "text": "血透室的闹钟——不响，"
+        },
+        {
+          "t_ns": 1793327347427274312,
+          "text": "但准得很。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 18,
+    "latency_events_total": 18,
+    "asr_events": 0,
+    "tts_events": 13,
+    "tts_play_pairs": 2,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793327346726519819,
+      "node": "llm_medical",
+      "stage": "intent_judge",
+      "t_ns": 1793327346726189429,
+      "detail": {
+        "model": "qwen-flash",
+        "ms": 373.2,
+        "answer": "聊",
+        "kind": "chat"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent_judge\", \"t_ns\": 1793327346726189429, \"detail\": {\"model\": \"qwen-flash\", \"ms\": 373.2, \"answer\": \"聊\", \"kind\": \"chat\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327346726804394,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793327346726351410,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "llm:qwen-flash",
+        "keyword_medical": false,
+        "judge_kind": "chat",
+        "judge_ms": 373.2
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793327346726351410, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"llm:qwen-flash\", \"keyword_medical\": false, \"judge_kind\": \"chat\", \"judge_ms\": 373.2}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327347072797328,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793327347072323539,
+      "detail": {
+        "prompt_chars": 451,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793327347072323539, \"detail\": {\"prompt_chars\": 451, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327347073122578,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793327347072812713,
+      "detail": {
+        "prompt_chars": 451
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793327347072812713, \"detail\": {\"prompt_chars\": 451}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327347079608066,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793327347079336053,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793327347079336053, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327347299965704,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327347299730706,
+      "detail": {
+        "text_len": 11,
+        "head": "血透室的闹钟——不响，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327347299730706, \"detail\": {\"text_len\": 11, \"head\": \"血透室的闹钟——不响，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327347300252413,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327347299796003,
+      "detail": {
+        "text_len": 11
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327347299796003, \"detail\": {\"text_len\": 11}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327347442395506,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793327347442011133,
+      "detail": {
+        "chars": 19
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793327347442011133, \"detail\": {\"chars\": 19}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327348177665384,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327348177377688,
+      "detail": {
+        "text_len": 11,
+        "dur_ms": 877.576978,
+        "audio_sec": 2.4,
+        "rtf": 0.3656570741666667
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327348177377688, \"detail\": {\"text_len\": 11, \"dur_ms\": 877.576978, \"audio_sec\": 2.4, \"rtf\": 0.3656570741666667}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327348187782067,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327348187523224,
+      "detail": {
+        "text_len": 5,
+        "head": "但准得很。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327348187523224, \"detail\": {\"text_len\": 5, \"head\": \"但准得很。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327348187986794,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327348187605498,
+      "detail": {
+        "text_len": 5
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327348187605498, \"detail\": {\"text_len\": 5}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327348255486347,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327348255108625,
+      "detail": {
+        "text_len": 11,
+        "head": "血透室的闹钟——不响，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327348255108625, \"detail\": {\"text_len\": 11, \"head\": \"血透室的闹钟——不响，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327348802215859,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327348801894497,
+      "detail": {
+        "text_len": 5,
+        "dur_ms": 614.284,
+        "audio_sec": 1.68,
+        "rtf": 0.3656452380952381
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327348801894497, \"detail\": {\"text_len\": 5, \"dur_ms\": 614.284, \"audio_sec\": 1.68, \"rtf\": 0.3656452380952381}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327348802610555,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793327348802456812,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793327348802456812, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327350657800220,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327350657322467,
+      "detail": {
+        "text_len": 11,
+        "interrupted": false,
+        "dur_ms": 2402.209317
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327350657322467, \"detail\": {\"text_len\": 11, \"interrupted\": false, \"dur_ms\": 2402.209317}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327350658277045,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327350658076488,
+      "detail": {
+        "text_len": 5,
+        "head": "但准得很。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327350658076488, \"detail\": {\"text_len\": 5, \"head\": \"但准得很。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327352337566057,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327352337168894,
+      "detail": {
+        "text_len": 5,
+        "interrupted": false,
+        "dur_ms": 1679.088555
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327352337168894, \"detail\": {\"text_len\": 5, \"interrupted\": false, \"dur_ms\": 1679.088555}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327352338124962,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793327352337973096,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793327352337973096, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent_judge": [
+        {
+          "t_ns": 1793327346726189429,
+          "arrival_ns": 1793327346726519819,
+          "source": "round",
+          "detail": {
+            "model": "qwen-flash",
+            "ms": 373.2,
+            "answer": "聊",
+            "kind": "chat"
+          }
+        }
+      ],
+      "intent": [
+        {
+          "t_ns": 1793327346726351410,
+          "arrival_ns": 1793327346726804394,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "llm:qwen-flash",
+            "keyword_medical": false,
+            "judge_kind": "chat",
+            "judge_ms": 373.2
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793327347072323539,
+          "arrival_ns": 1793327347072797328,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 451,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793327347072812713,
+          "arrival_ns": 1793327347073122578,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 451
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793327347442011133,
+          "arrival_ns": 1793327347442395506,
+          "source": "round",
+          "detail": {
+            "chars": 19
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793327347079336053,
+          "arrival_ns": 1793327347079608066,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793327348802456812,
+          "arrival_ns": 1793327348802610555,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793327347299730706,
+          "arrival_ns": 1793327347299965704,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "血透室的闹钟——不响，"
+          }
+        },
+        {
+          "t_ns": 1793327348187523224,
+          "arrival_ns": 1793327348187782067,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "但准得很。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793327347299796003,
+          "arrival_ns": 1793327347300252413,
+          "source": "round",
+          "detail": {
+            "text_len": 11
+          }
+        },
+        {
+          "t_ns": 1793327348187605498,
+          "arrival_ns": 1793327348187986794,
+          "source": "round",
+          "detail": {
+            "text_len": 5
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793327348177377688,
+          "arrival_ns": 1793327348177665384,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "dur_ms": 877.576978,
+            "audio_sec": 2.4,
+            "rtf": 0.3656570741666667
+          }
+        },
+        {
+          "t_ns": 1793327348801894497,
+          "arrival_ns": 1793327348802215859,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "dur_ms": 614.284,
+            "audio_sec": 1.68,
+            "rtf": 0.3656452380952381
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793327348255108625,
+          "arrival_ns": 1793327348255486347,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "head": "血透室的闹钟——不响，"
+          }
+        },
+        {
+          "t_ns": 1793327350658076488,
+          "arrival_ns": 1793327350658277045,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "但准得很。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793327350657322467,
+          "arrival_ns": 1793327350657800220,
+          "source": "round",
+          "detail": {
+            "text_len": 11,
+            "interrupted": false,
+            "dur_ms": 2402.209317
+          }
+        },
+        {
+          "t_ns": 1793327352337168894,
+          "arrival_ns": 1793327352337566057,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "interrupted": false,
+            "dur_ms": 1679.088555
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793327352337973096,
+          "arrival_ns": 1793327352338124962,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 50,
+    "interval_s": 2.0
+  }
+}

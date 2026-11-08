@@ -1,0 +1,930 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1077670",
+  "host": "artrc",
+  "tag": "opt2_kb20",
+  "round_index": 14,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T11:06:14.149",
+  "finished_at": "2026-10-30T11:06:27.407",
+  "duration_s": 13.258,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "透析室家属能进来陪吗？",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793329574150240566,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793329574149839884,
+    "t_publish_question_ns": 1793329574150240566,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793329574150735049,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793329574151240405,
+      "ali_llm_output_start": 1793329576209047996,
+      "ali_llm_output_first_text": 1793329576209481873,
+      "ali_llm_output_done": 1793329577386788794,
+      "tts_realtime_data_start": 1793329576209310670,
+      "tts_realtime_data_first_text": 1793329576262144196,
+      "tts_realtime_data_done": 1793329577387090948,
+      "tts_session_finished": 1793329587102956777
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793329576262444363,
+      "tts_local.synth_start_first": 1793329576262525472,
+      "tts_local.synth_end_first": 1793329576745703169,
+      "tts_local.play_start_first": 1793329576818891213,
+      "tts_local.play_end_last": 1793329587101558654,
+      "tts_local.session_finished": 1793329587102449589
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.0,
+    "router_to_llm_first_ms": 2058.241,
+    "question_to_llm_first_ms": 2059.241,
+    "llm_first_to_done_ms": 1177.307,
+    "question_to_llm_done_ms": 3236.548,
+    "llm_first_to_tts_first_text_ms": 52.662,
+    "question_to_tts_first_text_ms": 2111.904,
+    "first_tts_text_to_first_play_start_ms": 556.747,
+    "tts_rx_to_synth_end_ms": 483.259,
+    "tts_rx_to_play_start_ms": 556.447,
+    "tts_synth_end_to_play_start_ms": 73.188,
+    "question_to_first_audio_ms": 2668.651,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 12952.716,
+    "audio_total_sum_ms": 10277.439,
+    "audio_first_to_last_ms": 10282.667
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 999839,
+    "router_to_llm_first_ns": 2058241468,
+    "question_to_llm_first_ns": 2059241307,
+    "llm_first_to_done_ns": 1177306921,
+    "question_to_llm_done_ns": 3236548228,
+    "llm_first_to_tts_first_text_ns": 52662323,
+    "question_to_tts_first_text_ns": 2111903630,
+    "first_tts_text_to_first_play_start_ns": 556747017,
+    "tts_rx_to_synth_end_ns": 483258806,
+    "tts_rx_to_play_start_ns": 556446850,
+    "tts_synth_end_to_play_start_ns": 73188044,
+    "question_to_first_audio_ns": 2668650647,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 12952716211,
+    "audio_total_sum_ns": 10277438798,
+    "audio_first_to_last_ns": 10282667441
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 2059241307,
+      "ms": 2059.241
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 1177306921,
+      "ms": 1177.307
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 52662323,
+      "ms": 52.662
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 556747017,
+      "ms": 556.747
+    },
+    "question_to_first_play_start": {
+      "ns": 2668650647,
+      "ms": 2668.651
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 12952716211,
+      "ms": 12952.716
+    },
+    "audio_total_sec": {
+      "ns": 10277438798,
+      "ms": 10277.439,
+      "sec": 10.277
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.0,
+    "router_to_llm_first_ms": 2058.241,
+    "question_to_llm_first_ms": 2059.241,
+    "llm_first_to_done_ms": 1177.307,
+    "question_to_llm_done_ms": 3236.548,
+    "llm_first_to_tts_first_text_ms": 52.662,
+    "question_to_tts_first_text_ms": 2111.904,
+    "first_tts_text_to_first_play_start_ms": 556.747,
+    "tts_rx_to_synth_end_ms": 483.259,
+    "tts_rx_to_play_start_ms": 556.447,
+    "tts_synth_end_to_play_start_ms": 73.188,
+    "question_to_first_audio_ms": 2668.651,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 12952.716,
+    "audio_total_sum_ms": 10277.439,
+    "audio_first_to_last_ms": 10282.667
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793329576209047996,
+      "first_text_rx_ns": 1793329576209481873,
+      "done_rx_ns": 1793329577386788794,
+      "chunk_count": 8,
+      "char_count": 41,
+      "chunks": [
+        {
+          "t_ns": 1793329576209481873,
+          "text": "不能"
+        },
+        {
+          "t_ns": 1793329576261884789,
+          "text": "陪护。"
+        },
+        {
+          "t_ns": 1793329576512614103,
+          "text": "血"
+        },
+        {
+          "t_ns": 1793329576536587254,
+          "text": "透室实行"
+        },
+        {
+          "t_ns": 1793329576705797885,
+          "text": "相对隔离，为"
+        },
+        {
+          "t_ns": 1793329576705978165,
+          "text": "减少交叉感染。  \n危"
+        },
+        {
+          "t_ns": 1793329576839515350,
+          "text": "重或不能自理者"
+        },
+        {
+          "t_ns": 1793329576889459119,
+          "text": "可留一名家属。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793329576262144196,
+      "done_rx_ns": 1793329577387090948,
+      "text_count": 4,
+      "texts": [
+        {
+          "t_ns": 1793329576262144196,
+          "text": "不能陪护。"
+        },
+        {
+          "t_ns": 1793329576706019172,
+          "text": "血透室实行相对隔离，"
+        },
+        {
+          "t_ns": 1793329576706681233,
+          "text": "为减少交叉感染。"
+        },
+        {
+          "t_ns": 1793329576889659332,
+          "text": "危重或不能自理者可留一名家属。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 29,
+    "latency_events_total": 29,
+    "asr_events": 0,
+    "tts_events": 23,
+    "tts_play_pairs": 4,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793329574172278667,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793329574171933136,
+      "detail": {
+        "kind": "medical",
+        "chat_mode": false,
+        "source": "keyword",
+        "keyword_medical": true,
+        "chitchat": false,
+        "judge_kind": null,
+        "judge_ms": 0.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793329574171933136, \"detail\": {\"kind\": \"medical\", \"chat_mode\": false, \"source\": \"keyword\", \"keyword_medical\": true, \"chitchat\": false, \"judge_kind\": null, \"judge_ms\": 0.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329574172595506,
+      "node": "llm_medical",
+      "stage": "rag_start",
+      "t_ns": 1793329574172404467,
+      "detail": {},
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_start\", \"t_ns\": 1793329574172404467, \"detail\": {}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329574182070021,
+      "node": "llm_medical",
+      "stage": "rag_end",
+      "t_ns": 1793329574181703571,
+      "detail": {
+        "n_chunks": 3,
+        "took_ms": 9.21,
+        "top1": "首次透析要注意什么"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_end\", \"t_ns\": 1793329574181703571, \"detail\": {\"n_chunks\": 3, \"took_ms\": 9.21, \"top1\": \"首次透析要注意什么\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329576209091351,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793329576208681856,
+      "detail": {
+        "prompt_chars": 1104,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793329576208681856, \"detail\": {\"prompt_chars\": 1104, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329576209517487,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793329576209231511,
+      "detail": {
+        "prompt_chars": 1104
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793329576209231511, \"detail\": {\"prompt_chars\": 1104}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329576209812103,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793329576209675683,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793329576209675683, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329576262709873,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329576262444363,
+      "detail": {
+        "text_len": 5,
+        "head": "不能陪护。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329576262444363, \"detail\": {\"text_len\": 5, \"head\": \"不能陪护。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329576262957232,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329576262525472,
+      "detail": {
+        "text_len": 5
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329576262525472, \"detail\": {\"text_len\": 5}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329576746039934,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329576745703169,
+      "detail": {
+        "text_len": 5,
+        "dur_ms": 483.173571,
+        "audio_sec": 1.28,
+        "rtf": 0.37747935234374996
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329576745703169, \"detail\": {\"text_len\": 5, \"dur_ms\": 483.173571, \"audio_sec\": 1.28, \"rtf\": 0.37747935234374996}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329576746811388,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329576746622381,
+      "detail": {
+        "text_len": 10,
+        "head": "血透室实行相对隔离，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329576746622381, \"detail\": {\"text_len\": 10, \"head\": \"血透室实行相对隔离，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329576747018610,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329576746666580,
+      "detail": {
+        "text_len": 10
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329576746666580, \"detail\": {\"text_len\": 10}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329576819196864,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329576818891213,
+      "detail": {
+        "text_len": 5,
+        "head": "不能陪护。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329576818891213, \"detail\": {\"text_len\": 5, \"head\": \"不能陪护。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329577386853192,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793329577386475876,
+      "detail": {
+        "chars": 44
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793329577386475876, \"detail\": {\"chars\": 44}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329577890703311,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329577888107357,
+      "detail": {
+        "text_len": 10,
+        "dur_ms": 1141.433942,
+        "audio_sec": 3.28,
+        "rtf": 0.3479981530487805
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329577888107357, \"detail\": {\"text_len\": 10, \"dur_ms\": 1141.433942, \"audio_sec\": 3.28, \"rtf\": 0.3479981530487805}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329577891914631,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329577891716205,
+      "detail": {
+        "text_len": 8,
+        "head": "为减少交叉感染。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329577891716205, \"detail\": {\"text_len\": 8, \"head\": \"为减少交叉感染。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329577892158439,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329577891787674,
+      "detail": {
+        "text_len": 8
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329577891787674, \"detail\": {\"text_len\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329578097964412,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329578097627187,
+      "detail": {
+        "text_len": 5,
+        "interrupted": false,
+        "dur_ms": 1278.734174
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329578097627187, \"detail\": {\"text_len\": 5, \"interrupted\": false, \"dur_ms\": 1278.734174}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329578098685556,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329578098454973,
+      "detail": {
+        "text_len": 10,
+        "head": "血透室实行相对隔离，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329578098454973, \"detail\": {\"text_len\": 10, \"head\": \"血透室实行相对隔离，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329578611234222,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329578610889369,
+      "detail": {
+        "text_len": 8,
+        "dur_ms": 719.095058,
+        "audio_sec": 2.0,
+        "rtf": 0.359547529
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329578610889369, \"detail\": {\"text_len\": 8, \"dur_ms\": 719.095058, \"audio_sec\": 2.0, \"rtf\": 0.359547529}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329578611642715,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793329578611485854,
+      "detail": {
+        "text_len": 15,
+        "head": "危重或不能自理者可留一名家属。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793329578611485854, \"detail\": {\"text_len\": 15, \"head\": \"危重或不能自理者可留一名家属。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329578611927192,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793329578611533838,
+      "detail": {
+        "text_len": 15
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793329578611533838, \"detail\": {\"text_len\": 15}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329579900528857,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793329579900245646,
+      "detail": {
+        "text_len": 15,
+        "dur_ms": 1288.706316,
+        "audio_sec": 3.68,
+        "rtf": 0.35019193369565216
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793329579900245646, \"detail\": {\"text_len\": 15, \"dur_ms\": 1288.706316, \"audio_sec\": 3.68, \"rtf\": 0.35019193369565216}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329579900963311,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793329579900832911,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793329579900832911, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329581382813427,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329581382417805,
+      "detail": {
+        "text_len": 10,
+        "interrupted": false,
+        "dur_ms": 3283.95861
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329581382417805, \"detail\": {\"text_len\": 10, \"interrupted\": false, \"dur_ms\": 3283.95861}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329581390710693,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329581386113828,
+      "detail": {
+        "text_len": 8,
+        "head": "为减少交叉感染。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329581386113828, \"detail\": {\"text_len\": 8, \"head\": \"为减少交叉感染。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329583395836808,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329583395510152,
+      "detail": {
+        "text_len": 8,
+        "interrupted": false,
+        "dur_ms": 2009.384798
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329583395510152, \"detail\": {\"text_len\": 8, \"interrupted\": false, \"dur_ms\": 2009.384798}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329583396360257,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793329583396214986,
+      "detail": {
+        "text_len": 15,
+        "head": "危重或不能自理者可留一名家属。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793329583396214986, \"detail\": {\"text_len\": 15, \"head\": \"危重或不能自理者可留一名家属。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329587101947680,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793329587101558654,
+      "detail": {
+        "text_len": 15,
+        "interrupted": false,
+        "dur_ms": 3705.338908
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793329587101558654, \"detail\": {\"text_len\": 15, \"interrupted\": false, \"dur_ms\": 3705.338908}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793329587102679662,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793329587102449589,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793329587102449589, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793329574171933136,
+          "arrival_ns": 1793329574172278667,
+          "source": "round",
+          "detail": {
+            "kind": "medical",
+            "chat_mode": false,
+            "source": "keyword",
+            "keyword_medical": true,
+            "chitchat": false,
+            "judge_kind": null,
+            "judge_ms": 0.0
+          }
+        }
+      ],
+      "rag_start": [
+        {
+          "t_ns": 1793329574172404467,
+          "arrival_ns": 1793329574172595506,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "rag_end": [
+        {
+          "t_ns": 1793329574181703571,
+          "arrival_ns": 1793329574182070021,
+          "source": "round",
+          "detail": {
+            "n_chunks": 3,
+            "took_ms": 9.21,
+            "top1": "首次透析要注意什么"
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793329576208681856,
+          "arrival_ns": 1793329576209091351,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1104,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793329576209231511,
+          "arrival_ns": 1793329576209517487,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1104
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793329577386475876,
+          "arrival_ns": 1793329577386853192,
+          "source": "round",
+          "detail": {
+            "chars": 44
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793329576209675683,
+          "arrival_ns": 1793329576209812103,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793329579900832911,
+          "arrival_ns": 1793329579900963311,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793329576262444363,
+          "arrival_ns": 1793329576262709873,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "不能陪护。"
+          }
+        },
+        {
+          "t_ns": 1793329576746622381,
+          "arrival_ns": 1793329576746811388,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "血透室实行相对隔离，"
+          }
+        },
+        {
+          "t_ns": 1793329577891716205,
+          "arrival_ns": 1793329577891914631,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "为减少交叉感染。"
+          }
+        },
+        {
+          "t_ns": 1793329578611485854,
+          "arrival_ns": 1793329578611642715,
+          "source": "round",
+          "detail": {
+            "text_len": 15,
+            "head": "危重或不能自理者可留一名家属。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793329576262525472,
+          "arrival_ns": 1793329576262957232,
+          "source": "round",
+          "detail": {
+            "text_len": 5
+          }
+        },
+        {
+          "t_ns": 1793329576746666580,
+          "arrival_ns": 1793329576747018610,
+          "source": "round",
+          "detail": {
+            "text_len": 10
+          }
+        },
+        {
+          "t_ns": 1793329577891787674,
+          "arrival_ns": 1793329577892158439,
+          "source": "round",
+          "detail": {
+            "text_len": 8
+          }
+        },
+        {
+          "t_ns": 1793329578611533838,
+          "arrival_ns": 1793329578611927192,
+          "source": "round",
+          "detail": {
+            "text_len": 15
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793329576745703169,
+          "arrival_ns": 1793329576746039934,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "dur_ms": 483.173571,
+            "audio_sec": 1.28,
+            "rtf": 0.37747935234374996
+          }
+        },
+        {
+          "t_ns": 1793329577888107357,
+          "arrival_ns": 1793329577890703311,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "dur_ms": 1141.433942,
+            "audio_sec": 3.28,
+            "rtf": 0.3479981530487805
+          }
+        },
+        {
+          "t_ns": 1793329578610889369,
+          "arrival_ns": 1793329578611234222,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "dur_ms": 719.095058,
+            "audio_sec": 2.0,
+            "rtf": 0.359547529
+          }
+        },
+        {
+          "t_ns": 1793329579900245646,
+          "arrival_ns": 1793329579900528857,
+          "source": "round",
+          "detail": {
+            "text_len": 15,
+            "dur_ms": 1288.706316,
+            "audio_sec": 3.68,
+            "rtf": 0.35019193369565216
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793329576818891213,
+          "arrival_ns": 1793329576819196864,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "不能陪护。"
+          }
+        },
+        {
+          "t_ns": 1793329578098454973,
+          "arrival_ns": 1793329578098685556,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "head": "血透室实行相对隔离，"
+          }
+        },
+        {
+          "t_ns": 1793329581386113828,
+          "arrival_ns": 1793329581390710693,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "为减少交叉感染。"
+          }
+        },
+        {
+          "t_ns": 1793329583396214986,
+          "arrival_ns": 1793329583396360257,
+          "source": "round",
+          "detail": {
+            "text_len": 15,
+            "head": "危重或不能自理者可留一名家属。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793329578097627187,
+          "arrival_ns": 1793329578097964412,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "interrupted": false,
+            "dur_ms": 1278.734174
+          }
+        },
+        {
+          "t_ns": 1793329581382417805,
+          "arrival_ns": 1793329581382813427,
+          "source": "round",
+          "detail": {
+            "text_len": 10,
+            "interrupted": false,
+            "dur_ms": 3283.95861
+          }
+        },
+        {
+          "t_ns": 1793329583395510152,
+          "arrival_ns": 1793329583395836808,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "interrupted": false,
+            "dur_ms": 2009.384798
+          }
+        },
+        {
+          "t_ns": 1793329587101558654,
+          "arrival_ns": 1793329587101947680,
+          "source": "round",
+          "detail": {
+            "text_len": 15,
+            "interrupted": false,
+            "dur_ms": 3705.338908
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793329587102449589,
+          "arrival_ns": 1793329587102679662,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 20,
+    "interval_s": 2.0
+  }
+}

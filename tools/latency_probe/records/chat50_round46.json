@@ -1,0 +1,796 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1064920",
+  "host": "artrc",
+  "tag": "chat50",
+  "round_index": 46,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T10:35:30.202",
+  "finished_at": "2026-10-30T10:35:39.563",
+  "duration_s": 9.361,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "你家在哪里",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793327730203068104,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793327730202459667,
+    "t_publish_question_ns": 1793327730203068104,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793327730203872806,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793327730204194372,
+      "ali_llm_output_start": 1793327731591360503,
+      "ali_llm_output_first_text": 1793327731591776659,
+      "ali_llm_output_done": 1793327732020639297,
+      "tts_realtime_data_start": 1793327731591608635,
+      "tts_realtime_data_first_text": 1793327731796346747,
+      "tts_realtime_data_done": 1793327732022179836,
+      "tts_session_finished": 1793327739262662494
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793327731796661942,
+      "tts_local.synth_start_first": 1793327731796734792,
+      "tts_local.synth_end_first": 1793327732808816652,
+      "tts_local.play_start_first": 1793327732855072530,
+      "tts_local.play_end_last": 1793327739261630435,
+      "tts_local.session_finished": 1793327739262340009
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.126,
+    "router_to_llm_first_ms": 1387.582,
+    "question_to_llm_first_ms": 1388.709,
+    "llm_first_to_done_ms": 428.863,
+    "question_to_llm_done_ms": 1817.571,
+    "llm_first_to_tts_first_text_ms": 204.57,
+    "question_to_tts_first_text_ms": 1593.279,
+    "first_tts_text_to_first_play_start_ms": 1058.726,
+    "tts_rx_to_synth_end_ms": 1012.155,
+    "tts_rx_to_play_start_ms": 1058.411,
+    "tts_synth_end_to_play_start_ms": 46.256,
+    "question_to_first_audio_ms": 2652.004,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 9059.594,
+    "audio_total_sum_ms": 6405.111,
+    "audio_first_to_last_ms": 6406.558
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 1126268,
+    "router_to_llm_first_ns": 1387582287,
+    "question_to_llm_first_ns": 1388708555,
+    "llm_first_to_done_ns": 428862638,
+    "question_to_llm_done_ns": 1817571193,
+    "llm_first_to_tts_first_text_ns": 204570088,
+    "question_to_tts_first_text_ns": 1593278643,
+    "first_tts_text_to_first_play_start_ns": 1058725783,
+    "tts_rx_to_synth_end_ns": 1012154710,
+    "tts_rx_to_play_start_ns": 1058410588,
+    "tts_synth_end_to_play_start_ns": 46255878,
+    "question_to_first_audio_ns": 2652004426,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 9059594390,
+    "audio_total_sum_ns": 6405111445,
+    "audio_first_to_last_ns": 6406557905
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 1388708555,
+      "ms": 1388.709
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 428862638,
+      "ms": 428.863
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 204570088,
+      "ms": 204.57
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 1058725783,
+      "ms": 1058.726
+    },
+    "question_to_first_play_start": {
+      "ns": 2652004426,
+      "ms": 2652.004
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 9059594390,
+      "ms": 9059.594
+    },
+    "audio_total_sec": {
+      "ns": 6405111445,
+      "ms": 6405.111,
+      "sec": 6.405
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 1.126,
+    "router_to_llm_first_ms": 1387.582,
+    "question_to_llm_first_ms": 1388.709,
+    "llm_first_to_done_ms": 428.863,
+    "question_to_llm_done_ms": 1817.571,
+    "llm_first_to_tts_first_text_ms": 204.57,
+    "question_to_tts_first_text_ms": 1593.279,
+    "first_tts_text_to_first_play_start_ms": 1058.726,
+    "tts_rx_to_synth_end_ms": 1012.155,
+    "tts_rx_to_play_start_ms": 1058.411,
+    "tts_synth_end_to_play_start_ms": 46.256,
+    "question_to_first_audio_ms": 2652.004,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 9059.594,
+    "audio_total_sum_ms": 6405.111,
+    "audio_first_to_last_ms": 6406.558
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793327731591360503,
+      "first_text_rx_ns": 1793327731591776659,
+      "done_rx_ns": 1793327732020639297,
+      "chunk_count": 7,
+      "char_count": 29,
+      "chunks": [
+        {
+          "t_ns": 1793327731591776659,
+          "text": "我就"
+        },
+        {
+          "t_ns": 1793327731627186612,
+          "text": "在血"
+        },
+        {
+          "t_ns": 1793327731656682987,
+          "text": "透中心陪着"
+        },
+        {
+          "t_ns": 1793327731735600105,
+          "text": "大家"
+        },
+        {
+          "t_ns": 1793327731796153332,
+          "text": "呀，  \n哪儿"
+        },
+        {
+          "t_ns": 1793327731949711720,
+          "text": "需要帮忙，我就"
+        },
+        {
+          "t_ns": 1793327732011711395,
+          "text": "在哪儿。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793327731796346747,
+      "done_rx_ns": 1793327732022179836,
+      "text_count": 3,
+      "texts": [
+        {
+          "t_ns": 1793327731796346747,
+          "text": "我就在血透中心陪着大家呀，"
+        },
+        {
+          "t_ns": 1793327731950129396,
+          "text": "哪儿需要帮忙，"
+        },
+        {
+          "t_ns": 1793327732012466761,
+          "text": "我就在哪儿。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 23,
+    "latency_events_total": 23,
+    "asr_events": 0,
+    "tts_events": 18,
+    "tts_play_pairs": 3,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793327731158275494,
+      "node": "llm_medical",
+      "stage": "intent_judge",
+      "t_ns": 1793327731157951793,
+      "detail": {
+        "model": "qwen-flash",
+        "ms": 953.2,
+        "answer": "聊",
+        "kind": "chat"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent_judge\", \"t_ns\": 1793327731157951793, \"detail\": {\"model\": \"qwen-flash\", \"ms\": 953.2, \"answer\": \"聊\", \"kind\": \"chat\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327731158523743,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793327731158107283,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "llm:qwen-flash",
+        "keyword_medical": false,
+        "judge_kind": "chat",
+        "judge_ms": 953.2
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793327731158107283, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"llm:qwen-flash\", \"keyword_medical\": false, \"judge_kind\": \"chat\", \"judge_ms\": 953.2}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327731591403376,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793327731591076478,
+      "detail": {
+        "prompt_chars": 417,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793327731591076478, \"detail\": {\"prompt_chars\": 417, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327731591807776,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793327731591613176,
+      "detail": {
+        "prompt_chars": 417
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793327731591613176, \"detail\": {\"prompt_chars\": 417}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327731592123581,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793327731591983764,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793327731591983764, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327731796796265,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327731796661942,
+      "detail": {
+        "text_len": 13,
+        "head": "我就在血透中心陪着大家呀，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327731796661942, \"detail\": {\"text_len\": 13, \"head\": \"我就在血透中心陪着大家呀，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327731796977782,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327731796734792,
+      "detail": {
+        "text_len": 13
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327731796734792, \"detail\": {\"text_len\": 13}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327732020708361,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793327732019589222,
+      "detail": {
+        "chars": 29
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793327732019589222, \"detail\": {\"chars\": 29}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327732809114694,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327732808816652,
+      "detail": {
+        "text_len": 13,
+        "dur_ms": 1012.076587,
+        "audio_sec": 2.8,
+        "rtf": 0.3614559239285714
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327732808816652, \"detail\": {\"text_len\": 13, \"dur_ms\": 1012.076587, \"audio_sec\": 2.8, \"rtf\": 0.3614559239285714}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327732817372894,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327732817144765,
+      "detail": {
+        "text_len": 7,
+        "head": "哪儿需要帮忙，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327732817144765, \"detail\": {\"text_len\": 7, \"head\": \"哪儿需要帮忙，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327732817604372,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327732817211589,
+      "detail": {
+        "text_len": 7
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327732817211589, \"detail\": {\"text_len\": 7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327732855321009,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327732855072530,
+      "detail": {
+        "text_len": 13,
+        "head": "我就在血透中心陪着大家呀，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327732855072530, \"detail\": {\"text_len\": 13, \"head\": \"我就在血透中心陪着大家呀，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327733599214906,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327733598915181,
+      "detail": {
+        "text_len": 7,
+        "dur_ms": 781.698417,
+        "audio_sec": 2.16,
+        "rtf": 0.36189741527777775
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327733598915181, \"detail\": {\"text_len\": 7, \"dur_ms\": 781.698417, \"audio_sec\": 2.16, \"rtf\": 0.36189741527777775}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327733599644603,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793327733599494870,
+      "detail": {
+        "text_len": 6,
+        "head": "我就在哪儿。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793327733599494870, \"detail\": {\"text_len\": 6, \"head\": \"我就在哪儿。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327733599846578,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793327733599557312,
+      "detail": {
+        "text_len": 6
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793327733599557312, \"detail\": {\"text_len\": 6}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327734117776415,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793327734117470677,
+      "detail": {
+        "text_len": 6,
+        "dur_ms": 517.908761,
+        "audio_sec": 1.44,
+        "rtf": 0.3596588618055556
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793327734117470677, \"detail\": {\"text_len\": 6, \"dur_ms\": 517.908761, \"audio_sec\": 1.44, \"rtf\": 0.3596588618055556}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327734118311170,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793327734118165795,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793327734118165795, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327735659221583,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327735658936641,
+      "detail": {
+        "text_len": 13,
+        "interrupted": false,
+        "dur_ms": 2803.860812
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327735658936641, \"detail\": {\"text_len\": 13, \"interrupted\": false, \"dur_ms\": 2803.860812}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327735659779893,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327735659631900,
+      "detail": {
+        "text_len": 7,
+        "head": "哪儿需要帮忙，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327735659631900, \"detail\": {\"text_len\": 7, \"head\": \"哪儿需要帮忙，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327737821267804,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327737820957015,
+      "detail": {
+        "text_len": 7,
+        "interrupted": false,
+        "dur_ms": 2161.322338
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327737820957015, \"detail\": {\"text_len\": 7, \"interrupted\": false, \"dur_ms\": 2161.322338}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327737821913220,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793327737821708216,
+      "detail": {
+        "text_len": 6,
+        "head": "我就在哪儿。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793327737821708216, \"detail\": {\"text_len\": 6, \"head\": \"我就在哪儿。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327739261956024,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793327739261630435,
+      "detail": {
+        "text_len": 6,
+        "interrupted": false,
+        "dur_ms": 1439.919016
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793327739261630435, \"detail\": {\"text_len\": 6, \"interrupted\": false, \"dur_ms\": 1439.919016}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793327739262479092,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793327739262340009,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793327739262340009, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent_judge": [
+        {
+          "t_ns": 1793327731157951793,
+          "arrival_ns": 1793327731158275494,
+          "source": "round",
+          "detail": {
+            "model": "qwen-flash",
+            "ms": 953.2,
+            "answer": "聊",
+            "kind": "chat"
+          }
+        }
+      ],
+      "intent": [
+        {
+          "t_ns": 1793327731158107283,
+          "arrival_ns": 1793327731158523743,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "llm:qwen-flash",
+            "keyword_medical": false,
+            "judge_kind": "chat",
+            "judge_ms": 953.2
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793327731591076478,
+          "arrival_ns": 1793327731591403376,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 417,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793327731591613176,
+          "arrival_ns": 1793327731591807776,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 417
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793327732019589222,
+          "arrival_ns": 1793327732020708361,
+          "source": "round",
+          "detail": {
+            "chars": 29
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793327731591983764,
+          "arrival_ns": 1793327731592123581,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793327734118165795,
+          "arrival_ns": 1793327734118311170,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793327731796661942,
+          "arrival_ns": 1793327731796796265,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "head": "我就在血透中心陪着大家呀，"
+          }
+        },
+        {
+          "t_ns": 1793327732817144765,
+          "arrival_ns": 1793327732817372894,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "哪儿需要帮忙，"
+          }
+        },
+        {
+          "t_ns": 1793327733599494870,
+          "arrival_ns": 1793327733599644603,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "我就在哪儿。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793327731796734792,
+          "arrival_ns": 1793327731796977782,
+          "source": "round",
+          "detail": {
+            "text_len": 13
+          }
+        },
+        {
+          "t_ns": 1793327732817211589,
+          "arrival_ns": 1793327732817604372,
+          "source": "round",
+          "detail": {
+            "text_len": 7
+          }
+        },
+        {
+          "t_ns": 1793327733599557312,
+          "arrival_ns": 1793327733599846578,
+          "source": "round",
+          "detail": {
+            "text_len": 6
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793327732808816652,
+          "arrival_ns": 1793327732809114694,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "dur_ms": 1012.076587,
+            "audio_sec": 2.8,
+            "rtf": 0.3614559239285714
+          }
+        },
+        {
+          "t_ns": 1793327733598915181,
+          "arrival_ns": 1793327733599214906,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "dur_ms": 781.698417,
+            "audio_sec": 2.16,
+            "rtf": 0.36189741527777775
+          }
+        },
+        {
+          "t_ns": 1793327734117470677,
+          "arrival_ns": 1793327734117776415,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "dur_ms": 517.908761,
+            "audio_sec": 1.44,
+            "rtf": 0.3596588618055556
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793327732855072530,
+          "arrival_ns": 1793327732855321009,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "head": "我就在血透中心陪着大家呀，"
+          }
+        },
+        {
+          "t_ns": 1793327735659631900,
+          "arrival_ns": 1793327735659779893,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "哪儿需要帮忙，"
+          }
+        },
+        {
+          "t_ns": 1793327737821708216,
+          "arrival_ns": 1793327737821913220,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "head": "我就在哪儿。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793327735658936641,
+          "arrival_ns": 1793327735659221583,
+          "source": "round",
+          "detail": {
+            "text_len": 13,
+            "interrupted": false,
+            "dur_ms": 2803.860812
+          }
+        },
+        {
+          "t_ns": 1793327737820957015,
+          "arrival_ns": 1793327737821267804,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "interrupted": false,
+            "dur_ms": 2161.322338
+          }
+        },
+        {
+          "t_ns": 1793327739261630435,
+          "arrival_ns": 1793327739261956024,
+          "source": "round",
+          "detail": {
+            "text_len": 6,
+            "interrupted": false,
+            "dur_ms": 1439.919016
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793327739262340009,
+          "arrival_ns": 1793327739262479092,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 50,
+    "interval_s": 2.0
+  }
+}

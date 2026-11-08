@@ -1,0 +1,707 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1150446",
+  "host": "artrc",
+  "tag": "ol_chatgen10",
+  "round_index": 2,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T15:40:12.643",
+  "finished_at": "2026-10-30T15:40:19.075",
+  "duration_s": 6.432,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "推荐一部好看的电影",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793346012644266311,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793346012643812224,
+    "t_publish_question_ns": 1793346012644266311,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793346012644793131,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793346012645215940,
+      "ali_llm_output_start": 1793346013186572396,
+      "ali_llm_output_first_text": 1793346013186916473,
+      "ali_llm_output_done": 1793346013493115460,
+      "tts_realtime_data_start": 1793346013186973244,
+      "tts_realtime_data_first_text": 1793346013306722526,
+      "tts_realtime_data_done": 1793346013493384780,
+      "tts_session_finished": 1793346018770923582
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793346013307034003,
+      "tts_local.synth_start_first": 1793346013307118141,
+      "tts_local.synth_end_first": 1793346014306275615,
+      "tts_local.play_start_first": 1793346014326090549,
+      "tts_local.play_end_last": 1793346018769858219,
+      "tts_local.session_finished": 1793346018770565830
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.95,
+    "router_to_llm_first_ms": 541.701,
+    "question_to_llm_first_ms": 542.65,
+    "llm_first_to_done_ms": 306.199,
+    "question_to_llm_done_ms": 848.849,
+    "llm_first_to_tts_first_text_ms": 119.806,
+    "question_to_tts_first_text_ms": 662.456,
+    "first_tts_text_to_first_play_start_ms": 1019.368,
+    "tts_rx_to_synth_end_ms": 999.242,
+    "tts_rx_to_play_start_ms": 1019.057,
+    "tts_synth_end_to_play_start_ms": 19.815,
+    "question_to_first_audio_ms": 1681.824,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 6126.657,
+    "audio_total_sum_ms": 4442.77,
+    "audio_first_to_last_ms": 4443.768
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 949629,
+    "router_to_llm_first_ns": 541700533,
+    "question_to_llm_first_ns": 542650162,
+    "llm_first_to_done_ns": 306198987,
+    "question_to_llm_done_ns": 848849149,
+    "llm_first_to_tts_first_text_ns": 119806053,
+    "question_to_tts_first_text_ns": 662456215,
+    "first_tts_text_to_first_play_start_ns": 1019368023,
+    "tts_rx_to_synth_end_ns": 999241612,
+    "tts_rx_to_play_start_ns": 1019056546,
+    "tts_synth_end_to_play_start_ns": 19814934,
+    "question_to_first_audio_ns": 1681824238,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 6126657271,
+    "audio_total_sum_ns": 4442769708,
+    "audio_first_to_last_ns": 4443767670
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 542650162,
+      "ms": 542.65
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 306198987,
+      "ms": 306.199
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 119806053,
+      "ms": 119.806
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 1019368023,
+      "ms": 1019.368
+    },
+    "question_to_first_play_start": {
+      "ns": 1681824238,
+      "ms": 1681.824
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 6126657271,
+      "ms": 6126.657
+    },
+    "audio_total_sec": {
+      "ns": 4442769708,
+      "ms": 4442.77,
+      "sec": 4.443
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.95,
+    "router_to_llm_first_ms": 541.701,
+    "question_to_llm_first_ms": 542.65,
+    "llm_first_to_done_ms": 306.199,
+    "question_to_llm_done_ms": 848.849,
+    "llm_first_to_tts_first_text_ms": 119.806,
+    "question_to_tts_first_text_ms": 662.456,
+    "first_tts_text_to_first_play_start_ms": 1019.368,
+    "tts_rx_to_synth_end_ms": 999.242,
+    "tts_rx_to_play_start_ms": 1019.057,
+    "tts_synth_end_to_play_start_ms": 19.815,
+    "question_to_first_audio_ms": 1681.824,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 6126.657,
+    "audio_total_sum_ms": 4442.77,
+    "audio_first_to_last_ms": 4443.768
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793346013186572396,
+      "first_text_rx_ns": 1793346013186916473,
+      "done_rx_ns": 1793346013493115460,
+      "chunk_count": 12,
+      "char_count": 19,
+      "chunks": [
+        {
+          "t_ns": 1793346013186916473,
+          "text": "最近"
+        },
+        {
+          "t_ns": 1793346013203810621,
+          "text": "有一"
+        },
+        {
+          "t_ns": 1793346013221113556,
+          "text": "部"
+        },
+        {
+          "t_ns": 1793346013237801165,
+          "text": "温馨"
+        },
+        {
+          "t_ns": 1793346013254377885,
+          "text": "的"
+        },
+        {
+          "t_ns": 1793346013272107461,
+          "text": "动画"
+        },
+        {
+          "t_ns": 1793346013289428047,
+          "text": "片"
+        },
+        {
+          "t_ns": 1793346013306492977,
+          "text": "，"
+        },
+        {
+          "t_ns": 1793346013324979467,
+          "text": "你"
+        },
+        {
+          "t_ns": 1793346013353339518,
+          "text": "可能会"
+        },
+        {
+          "t_ns": 1793346013400291299,
+          "text": "喜欢"
+        },
+        {
+          "t_ns": 1793346013450584475,
+          "text": "。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793346013306722526,
+      "done_rx_ns": 1793346013493384780,
+      "text_count": 2,
+      "texts": [
+        {
+          "t_ns": 1793346013306722526,
+          "text": "最近有一部温馨的动画片，"
+        },
+        {
+          "t_ns": 1793346013450823326,
+          "text": "你可能会喜欢。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 18,
+    "latency_events_total": 18,
+    "asr_events": 0,
+    "tts_events": 13,
+    "tts_play_pairs": 2,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793346013054997391,
+      "node": "llm_medical",
+      "stage": "intent_judge",
+      "t_ns": 1793346013053978523,
+      "detail": {
+        "model": "qwen-flash",
+        "ms": 408.1,
+        "answer": "聊",
+        "kind": "chat"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent_judge\", \"t_ns\": 1793346013053978523, \"detail\": {\"model\": \"qwen-flash\", \"ms\": 408.1, \"answer\": \"聊\", \"kind\": \"chat\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346013055227541,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793346013054136717,
+      "detail": {
+        "kind": "chat",
+        "chat_mode": true,
+        "source": "llm:qwen-flash",
+        "keyword_medical": false,
+        "chitchat": false,
+        "judge_kind": "chat",
+        "judge_ms": 408.1
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793346013054136717, \"detail\": {\"kind\": \"chat\", \"chat_mode\": true, \"source\": \"llm:qwen-flash\", \"keyword_medical\": false, \"chitchat\": false, \"judge_kind\": \"chat\", \"judge_ms\": 408.1}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346013055475115,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793346013054813562,
+      "detail": {
+        "provider": "ollama",
+        "prompt_chars": 396,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793346013054813562, \"detail\": {\"provider\": \"ollama\", \"prompt_chars\": 396, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346013187023663,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793346013186570600,
+      "detail": {
+        "prompt_chars": 396
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793346013186570600, \"detail\": {\"prompt_chars\": 396}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346013187342271,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793346013187043421,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793346013187043421, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346013307256724,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793346013307034003,
+      "detail": {
+        "text_len": 12,
+        "head": "最近有一部温馨的动画片，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793346013307034003, \"detail\": {\"text_len\": 12, \"head\": \"最近有一部温馨的动画片，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346013307518046,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793346013307118141,
+      "detail": {
+        "text_len": 12
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793346013307118141, \"detail\": {\"text_len\": 12}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346013493163268,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793346013492801843,
+      "detail": {
+        "chars": 19
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793346013492801843, \"detail\": {\"chars\": 19}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346014306602499,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793346014306275615,
+      "detail": {
+        "text_len": 12,
+        "dur_ms": 999.152815,
+        "audio_sec": 2.64,
+        "rtf": 0.3784669753787879
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793346014306275615, \"detail\": {\"text_len\": 12, \"dur_ms\": 999.152815, \"audio_sec\": 2.64, \"rtf\": 0.3784669753787879}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346014309740240,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793346014309578523,
+      "detail": {
+        "text_len": 7,
+        "head": "你可能会喜欢。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793346014309578523, \"detail\": {\"text_len\": 7, \"head\": \"你可能会喜欢。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346014310030044,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793346014309642138,
+      "detail": {
+        "text_len": 7
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793346014309642138, \"detail\": {\"text_len\": 7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346014326373048,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793346014326090549,
+      "detail": {
+        "text_len": 12,
+        "head": "最近有一部温馨的动画片，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793346014326090549, \"detail\": {\"text_len\": 12, \"head\": \"最近有一部温馨的动画片，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346014950202695,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793346014949909827,
+      "detail": {
+        "text_len": 7,
+        "dur_ms": 640.26307,
+        "audio_sec": 1.76,
+        "rtf": 0.3637858352272727
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793346014949909827, \"detail\": {\"text_len\": 7, \"dur_ms\": 640.26307, \"audio_sec\": 1.76, \"rtf\": 0.3637858352272727}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346014950613799,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793346014950450595,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793346014950450595, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346016997275618,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793346016996762992,
+      "detail": {
+        "text_len": 12,
+        "interrupted": false,
+        "dur_ms": 2670.668515
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793346016996762992, \"detail\": {\"text_len\": 12, \"interrupted\": false, \"dur_ms\": 2670.668515}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346016998548974,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793346016997760954,
+      "detail": {
+        "text_len": 7,
+        "head": "你可能会喜欢。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793346016997760954, \"detail\": {\"text_len\": 7, \"head\": \"你可能会喜欢。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346018770156928,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793346018769858219,
+      "detail": {
+        "text_len": 7,
+        "interrupted": false,
+        "dur_ms": 1772.094674
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793346018769858219, \"detail\": {\"text_len\": 7, \"interrupted\": false, \"dur_ms\": 1772.094674}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793346018770727094,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793346018770565830,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793346018770565830, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent_judge": [
+        {
+          "t_ns": 1793346013053978523,
+          "arrival_ns": 1793346013054997391,
+          "source": "round",
+          "detail": {
+            "model": "qwen-flash",
+            "ms": 408.1,
+            "answer": "聊",
+            "kind": "chat"
+          }
+        }
+      ],
+      "intent": [
+        {
+          "t_ns": 1793346013054136717,
+          "arrival_ns": 1793346013055227541,
+          "source": "round",
+          "detail": {
+            "kind": "chat",
+            "chat_mode": true,
+            "source": "llm:qwen-flash",
+            "keyword_medical": false,
+            "chitchat": false,
+            "judge_kind": "chat",
+            "judge_ms": 408.1
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793346013054813562,
+          "arrival_ns": 1793346013055475115,
+          "source": "round",
+          "detail": {
+            "provider": "ollama",
+            "prompt_chars": 396,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793346013186570600,
+          "arrival_ns": 1793346013187023663,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 396
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793346013492801843,
+          "arrival_ns": 1793346013493163268,
+          "source": "round",
+          "detail": {
+            "chars": 19
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793346013187043421,
+          "arrival_ns": 1793346013187342271,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793346014950450595,
+          "arrival_ns": 1793346014950613799,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793346013307034003,
+          "arrival_ns": 1793346013307256724,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "最近有一部温馨的动画片，"
+          }
+        },
+        {
+          "t_ns": 1793346014309578523,
+          "arrival_ns": 1793346014309740240,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "你可能会喜欢。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793346013307118141,
+          "arrival_ns": 1793346013307518046,
+          "source": "round",
+          "detail": {
+            "text_len": 12
+          }
+        },
+        {
+          "t_ns": 1793346014309642138,
+          "arrival_ns": 1793346014310030044,
+          "source": "round",
+          "detail": {
+            "text_len": 7
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793346014306275615,
+          "arrival_ns": 1793346014306602499,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "dur_ms": 999.152815,
+            "audio_sec": 2.64,
+            "rtf": 0.3784669753787879
+          }
+        },
+        {
+          "t_ns": 1793346014949909827,
+          "arrival_ns": 1793346014950202695,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "dur_ms": 640.26307,
+            "audio_sec": 1.76,
+            "rtf": 0.3637858352272727
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793346014326090549,
+          "arrival_ns": 1793346014326373048,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "head": "最近有一部温馨的动画片，"
+          }
+        },
+        {
+          "t_ns": 1793346016997760954,
+          "arrival_ns": 1793346016998548974,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "你可能会喜欢。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793346016996762992,
+          "arrival_ns": 1793346016997275618,
+          "source": "round",
+          "detail": {
+            "text_len": 12,
+            "interrupted": false,
+            "dur_ms": 2670.668515
+          }
+        },
+        {
+          "t_ns": 1793346018769858219,
+          "arrival_ns": 1793346018770156928,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "interrupted": false,
+            "dur_ms": 1772.094674
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793346018770565830,
+          "arrival_ns": 1793346018770727094,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 10,
+    "interval_s": 2.0
+  }
+}

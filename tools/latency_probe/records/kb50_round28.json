@@ -1,0 +1,1045 @@
+{
+  "schema_version": 1,
+  "tool": "latency_probe",
+  "node_name": "latency_probe_1058399",
+  "host": "artrc",
+  "tag": "kb50",
+  "round_index": 28,
+  "mode": "inject-text",
+  "status": "ok",
+  "notes": [],
+  "started_at": "2026-10-30T10:22:01.983",
+  "finished_at": "2026-10-30T10:22:13.234",
+  "duration_s": 11.251,
+  "trigger": {
+    "mode": "inject-text",
+    "t0_source": "publish_question",
+    "inject_text": "吃了降压药血压还是高怎么办？",
+    "question_wav": null,
+    "wake_wav": null,
+    "root_play_cmd": "pw-play --target latency_sink {wav}",
+    "plays": []
+  },
+  "timestamps_ns": {
+    "t0_ns": 1793326921983728362,
+    "t0_source": "publish_question",
+    "t_trigger_begin_ns": 1793326921983287215,
+    "t_publish_question_ns": 1793326921983728362,
+    "t_start_asr_pub_ns": null,
+    "t_question_play_start_ns": null,
+    "t_question_play_end_ns": null,
+    "probe_rx_ns": {
+      "question_asr": 1793326921984253687,
+      "llm_to_openai": null,
+      "llm_to_dashapp": 1793326921984644240,
+      "ali_llm_output_start": 1793326922460669405,
+      "ali_llm_output_first_text": 1793326922461104537,
+      "ali_llm_output_done": 1793326923183187824,
+      "tts_realtime_data_start": 1793326922460940607,
+      "tts_realtime_data_first_text": 1793326922545035879,
+      "tts_realtime_data_done": 1793326923183454561,
+      "tts_session_finished": 1793326932929212442
+    },
+    "node_event_ns": {
+      "asr.kws_detected": null,
+      "asr.start_asr": null,
+      "asr.endpoint": null,
+      "asr.asr_callback": null,
+      "asr.nurse_req": null,
+      "asr.nurse_resp": null,
+      "asr.publish_question": null,
+      "tts_local.rx_first": 1793326922552455538,
+      "tts_local.synth_start_first": 1793326922552557383,
+      "tts_local.synth_end_first": 1793326923156800784,
+      "tts_local.play_start_first": 1793326923255072081,
+      "tts_local.play_end_last": 1793326932927805977,
+      "tts_local.session_finished": 1793326932928865934
+    }
+  },
+  "segments_ms": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.916,
+    "router_to_llm_first_ms": 476.46,
+    "question_to_llm_first_ms": 477.376,
+    "llm_first_to_done_ms": 722.083,
+    "question_to_llm_done_ms": 1199.459,
+    "llm_first_to_tts_first_text_ms": 83.931,
+    "question_to_tts_first_text_ms": 561.308,
+    "first_tts_text_to_first_play_start_ms": 710.036,
+    "tts_rx_to_synth_end_ms": 604.345,
+    "tts_rx_to_play_start_ms": 702.617,
+    "tts_synth_end_to_play_start_ms": 98.271,
+    "question_to_first_audio_ms": 1271.344,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 10945.484,
+    "audio_total_sum_ms": 9669.756,
+    "audio_first_to_last_ms": 9672.734
+  },
+  "segments_ns": {
+    "asr_kws_to_start_asr_ns": null,
+    "asr_start_asr_to_endpoint_ns": null,
+    "asr_endpoint_to_nurse_req_ns": null,
+    "asr_nurse_req_to_nurse_resp_ns": null,
+    "asr_nurse_resp_to_publish_question_ns": null,
+    "asr_endpoint_to_question_rx_ns": null,
+    "asr_publish_question_to_rx_ns": null,
+    "question_to_router_ns": 915878,
+    "router_to_llm_first_ns": 476460297,
+    "question_to_llm_first_ns": 477376175,
+    "llm_first_to_done_ns": 722083287,
+    "question_to_llm_done_ns": 1199459462,
+    "llm_first_to_tts_first_text_ns": 83931342,
+    "question_to_tts_first_text_ns": 561307517,
+    "first_tts_text_to_first_play_start_ns": 710036202,
+    "tts_rx_to_synth_end_ns": 604345246,
+    "tts_rx_to_play_start_ns": 702616543,
+    "tts_synth_end_to_play_start_ns": 98271297,
+    "question_to_first_audio_ns": 1271343719,
+    "speech_end_to_first_audio_ns": null,
+    "playback_end_to_first_audio_ns": null,
+    "question_to_session_finished_ns": 10945484080,
+    "audio_total_sum_ns": 9669756274,
+    "audio_first_to_last_ns": 9672733896
+  },
+  "derived": {
+    "asr_endpoint_to_nurse_req": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_dur": {
+      "ns": null,
+      "ms": null
+    },
+    "nurse_resp_to_question": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_first_llm_chunk": {
+      "ns": 477376175,
+      "ms": 477.376
+    },
+    "first_llm_chunk_to_done": {
+      "ns": 722083287,
+      "ms": 722.083
+    },
+    "first_llm_chunk_to_first_tts_text": {
+      "ns": 83931342,
+      "ms": 83.931
+    },
+    "first_tts_text_to_first_play_start": {
+      "ns": 710036202,
+      "ms": 710.036
+    },
+    "question_to_first_play_start": {
+      "ns": 1271343719,
+      "ms": 1271.344
+    },
+    "speech_end_to_first_play_start": {
+      "ns": null,
+      "ms": null
+    },
+    "question_to_session_finished": {
+      "ns": 10945484080,
+      "ms": 10945.484
+    },
+    "audio_total_sec": {
+      "ns": 9669756274,
+      "ms": 9669.756,
+      "sec": 9.67
+    }
+  },
+  "asr_chain": {},
+  "asr_chain_meta": {
+    "source": "event_cache",
+    "lookback_s": 60.0,
+    "anchor_ns": null,
+    "publish_question_found": false,
+    "note": "inject-text 模式不关联 ASR 事件链"
+  },
+  "metrics": {
+    "asr_kws_to_start_asr_ms": null,
+    "asr_endpoint_silence_used_ms": null,
+    "asr_start_asr_to_endpoint_ms": null,
+    "asr_endpoint_to_nurse_req_ms": null,
+    "asr_nurse_req_to_nurse_resp_ms": null,
+    "asr_nurse_resp_to_publish_question_ms": null,
+    "asr_endpoint_to_question_rx_ms": null,
+    "asr_publish_question_to_rx_ms": null,
+    "question_to_router_ms": 0.916,
+    "router_to_llm_first_ms": 476.46,
+    "question_to_llm_first_ms": 477.376,
+    "llm_first_to_done_ms": 722.083,
+    "question_to_llm_done_ms": 1199.459,
+    "llm_first_to_tts_first_text_ms": 83.931,
+    "question_to_tts_first_text_ms": 561.308,
+    "first_tts_text_to_first_play_start_ms": 710.036,
+    "tts_rx_to_synth_end_ms": 604.345,
+    "tts_rx_to_play_start_ms": 702.617,
+    "tts_synth_end_to_play_start_ms": 98.271,
+    "question_to_first_audio_ms": 1271.344,
+    "speech_end_to_first_audio_ms": null,
+    "playback_end_to_first_audio_ms": null,
+    "question_to_session_finished_ms": 10945.484,
+    "audio_total_sum_ms": 9669.756,
+    "audio_first_to_last_ms": 9672.734
+  },
+  "streams": {
+    "llm": {
+      "start_rx_ns": 1793326922460669405,
+      "first_text_rx_ns": 1793326922461104537,
+      "done_rx_ns": 1793326923183187824,
+      "chunk_count": 9,
+      "char_count": 35,
+      "chunks": [
+        {
+          "t_ns": 1793326922461104537,
+          "text": "先"
+        },
+        {
+          "t_ns": 1793326922508857352,
+          "text": "别急"
+        },
+        {
+          "t_ns": 1793326922544801658,
+          "text": "。"
+        },
+        {
+          "t_ns": 1793326922586249449,
+          "text": "血压"
+        },
+        {
+          "t_ns": 1793326922702226419,
+          "text": "高要查原因"
+        },
+        {
+          "t_ns": 1793326922824726366,
+          "text": "，比如水多了"
+        },
+        {
+          "t_ns": 1793326922971965139,
+          "text": "没？药够"
+        },
+        {
+          "t_ns": 1793326923033414102,
+          "text": "量吗？  \n请"
+        },
+        {
+          "t_ns": 1793326923153209610,
+          "text": "医生调整方案。"
+        }
+      ]
+    },
+    "tts": {
+      "first_text_rx_ns": 1793326922545035879,
+      "done_rx_ns": 1793326923183454561,
+      "text_count": 5,
+      "texts": [
+        {
+          "t_ns": 1793326922545035879,
+          "text": "先别急。"
+        },
+        {
+          "t_ns": 1793326922824947839,
+          "text": "血压高要查原因，"
+        },
+        {
+          "t_ns": 1793326922972196932,
+          "text": "比如水多了没？"
+        },
+        {
+          "t_ns": 1793326923033683669,
+          "text": "药够量吗？"
+        },
+        {
+          "t_ns": 1793326923153408709,
+          "text": "请医生调整方案。"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "latency_events_round": 34,
+    "latency_events_total": 34,
+    "asr_events": 0,
+    "tts_events": 28,
+    "tts_play_pairs": 5,
+    "question_asr_rx": 1,
+    "ignored": {}
+  },
+  "events": [
+    {
+      "source": "round",
+      "arrival_ns": 1793326922005774337,
+      "node": "llm_medical",
+      "stage": "intent",
+      "t_ns": 1793326922005525478,
+      "detail": {
+        "kind": "medical",
+        "chat_mode": false,
+        "source": "keyword",
+        "keyword_medical": true,
+        "judge_kind": null,
+        "judge_ms": 0.0
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"intent\", \"t_ns\": 1793326922005525478, \"detail\": {\"kind\": \"medical\", \"chat_mode\": false, \"source\": \"keyword\", \"keyword_medical\": true, \"judge_kind\": null, \"judge_ms\": 0.0}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326922006105613,
+      "node": "llm_medical",
+      "stage": "rag_start",
+      "t_ns": 1793326922005987668,
+      "detail": {},
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_start\", \"t_ns\": 1793326922005987668, \"detail\": {}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326922015828972,
+      "node": "llm_medical",
+      "stage": "rag_end",
+      "t_ns": 1793326922015472609,
+      "detail": {
+        "n_chunks": 4,
+        "took_ms": 9.38,
+        "top1": "血压管理与理想血压"
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"rag_end\", \"t_ns\": 1793326922015472609, \"detail\": {\"n_chunks\": 4, \"took_ms\": 9.38, \"top1\": \"血压管理与理想血压\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326922460714549,
+      "node": "llm_medical",
+      "stage": "llm_request",
+      "t_ns": 1793326922460330087,
+      "detail": {
+        "prompt_chars": 1137,
+        "n_messages": 8
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_request\", \"t_ns\": 1793326922460330087, \"detail\": {\"prompt_chars\": 1137, \"n_messages\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326922461135523,
+      "node": "llm_medical",
+      "stage": "llm_first_chunk",
+      "t_ns": 1793326922460890997,
+      "detail": {
+        "prompt_chars": 1137
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_first_chunk\", \"t_ns\": 1793326922460890997, \"detail\": {\"prompt_chars\": 1137}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326922461305251,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793326922461149172,
+      "detail": {
+        "control": "[START]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793326922461149172, \"detail\": {\"control\": \"[START]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326922552744142,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793326922552455538,
+      "detail": {
+        "text_len": 4,
+        "head": "先别急。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793326922552455538, \"detail\": {\"text_len\": 4, \"head\": \"先别急。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326922552991566,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793326922552557383,
+      "detail": {
+        "text_len": 4
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793326922552557383, \"detail\": {\"text_len\": 4}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326923157072532,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793326923156800784,
+      "detail": {
+        "text_len": 4,
+        "dur_ms": 604.239029,
+        "audio_sec": 1.6,
+        "rtf": 0.37764939312499995
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793326923156800784, \"detail\": {\"text_len\": 4, \"dur_ms\": 604.239029, \"audio_sec\": 1.6, \"rtf\": 0.37764939312499995}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326923159546705,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793326923159411877,
+      "detail": {
+        "text_len": 8,
+        "head": "血压高要查原因，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793326923159411877, \"detail\": {\"text_len\": 8, \"head\": \"血压高要查原因，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326923159734538,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793326923159458543,
+      "detail": {
+        "text_len": 8
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793326923159458543, \"detail\": {\"text_len\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326923183232406,
+      "node": "llm_medical",
+      "stage": "llm_done",
+      "t_ns": 1793326923182921127,
+      "detail": {
+        "chars": 38
+      },
+      "raw": "{\"node\": \"llm_medical\", \"stage\": \"llm_done\", \"t_ns\": 1793326923182921127, \"detail\": {\"chars\": 38}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326923255331222,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793326923255072081,
+      "detail": {
+        "text_len": 4,
+        "head": "先别急。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793326923255072081, \"detail\": {\"text_len\": 4, \"head\": \"先别急。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326923948598148,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793326923948278802,
+      "detail": {
+        "text_len": 8,
+        "dur_ms": 788.815648,
+        "audio_sec": 2.24,
+        "rtf": 0.35214984285714285
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793326923948278802, \"detail\": {\"text_len\": 8, \"dur_ms\": 788.815648, \"audio_sec\": 2.24, \"rtf\": 0.35214984285714285}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326923950758797,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793326923950487591,
+      "detail": {
+        "text_len": 7,
+        "head": "比如水多了没？"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793326923950487591, \"detail\": {\"text_len\": 7, \"head\": \"比如水多了没？\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326923950976339,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793326923950553335,
+      "detail": {
+        "text_len": 7
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793326923950553335, \"detail\": {\"text_len\": 7}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326924673421406,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793326924673101675,
+      "detail": {
+        "text_len": 7,
+        "dur_ms": 722.54141,
+        "audio_sec": 2.0,
+        "rtf": 0.361270705
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793326924673101675, \"detail\": {\"text_len\": 7, \"dur_ms\": 722.54141, \"audio_sec\": 2.0, \"rtf\": 0.361270705}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326924673880856,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793326924673728900,
+      "detail": {
+        "text_len": 5,
+        "head": "药够量吗？"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793326924673728900, \"detail\": {\"text_len\": 5, \"head\": \"药够量吗？\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326924674066116,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793326924673799601,
+      "detail": {
+        "text_len": 5
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793326924673799601, \"detail\": {\"text_len\": 5}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326924854897704,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793326924854466570,
+      "detail": {
+        "text_len": 4,
+        "interrupted": false,
+        "dur_ms": 1599.392495
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793326924854466570, \"detail\": {\"text_len\": 4, \"interrupted\": false, \"dur_ms\": 1599.392495}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326924855355218,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793326924855198052,
+      "detail": {
+        "text_len": 8,
+        "head": "血压高要查原因，"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793326924855198052, \"detail\": {\"text_len\": 8, \"head\": \"血压高要查原因，\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326925249779489,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793326925249526263,
+      "detail": {
+        "text_len": 5,
+        "dur_ms": 575.722597,
+        "audio_sec": 1.6,
+        "rtf": 0.35982662312499997
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793326925249526263, \"detail\": {\"text_len\": 5, \"dur_ms\": 575.722597, \"audio_sec\": 1.6, \"rtf\": 0.35982662312499997}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326925250199621,
+      "node": "tts_local",
+      "stage": "rx",
+      "t_ns": 1793326925250079390,
+      "detail": {
+        "text_len": 8,
+        "head": "请医生调整方案。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx\", \"t_ns\": 1793326925250079390, \"detail\": {\"text_len\": 8, \"head\": \"请医生调整方案。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326925250392662,
+      "node": "tts_local",
+      "stage": "synth_start",
+      "t_ns": 1793326925250128879,
+      "detail": {
+        "text_len": 8
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_start\", \"t_ns\": 1793326925250128879, \"detail\": {\"text_len\": 8}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326926057592452,
+      "node": "tts_local",
+      "stage": "synth_end",
+      "t_ns": 1793326926057218721,
+      "detail": {
+        "text_len": 8,
+        "dur_ms": 807.085825,
+        "audio_sec": 2.24,
+        "rtf": 0.36030617187499997
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"synth_end\", \"t_ns\": 1793326926057218721, \"detail\": {\"text_len\": 8, \"dur_ms\": 807.085825, \"audio_sec\": 2.24, \"rtf\": 0.36030617187499997}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326926058164002,
+      "node": "tts_local",
+      "stage": "rx_control",
+      "t_ns": 1793326926057888771,
+      "detail": {
+        "control": "[DONE]"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"rx_control\", \"t_ns\": 1793326926057888771, \"detail\": {\"control\": \"[DONE]\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326927094227617,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793326927093870725,
+      "detail": {
+        "text_len": 8,
+        "interrupted": false,
+        "dur_ms": 2238.666883
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793326927093870725, \"detail\": {\"text_len\": 8, \"interrupted\": false, \"dur_ms\": 2238.666883}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326927094813870,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793326927094660147,
+      "detail": {
+        "text_len": 7,
+        "head": "比如水多了没？"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793326927094660147, \"detail\": {\"text_len\": 7, \"head\": \"比如水多了没？\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326929092516010,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793326929092197777,
+      "detail": {
+        "text_len": 7,
+        "interrupted": false,
+        "dur_ms": 1997.533915
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793326929092197777, \"detail\": {\"text_len\": 7, \"interrupted\": false, \"dur_ms\": 1997.533915}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326929093138456,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793326929092916205,
+      "detail": {
+        "text_len": 5,
+        "head": "药够量吗？"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793326929092916205, \"detail\": {\"text_len\": 5, \"head\": \"药够量吗？\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326930691335054,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793326930691024399,
+      "detail": {
+        "text_len": 5,
+        "interrupted": false,
+        "dur_ms": 1598.103978
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793326930691024399, \"detail\": {\"text_len\": 5, \"interrupted\": false, \"dur_ms\": 1598.103978}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326930691921357,
+      "node": "tts_local",
+      "stage": "play_start",
+      "t_ns": 1793326930691762689,
+      "detail": {
+        "text_len": 8,
+        "head": "请医生调整方案。"
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_start\", \"t_ns\": 1793326930691762689, \"detail\": {\"text_len\": 8, \"head\": \"请医生调整方案。\"}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326932928139580,
+      "node": "tts_local",
+      "stage": "play_end",
+      "t_ns": 1793326932927805977,
+      "detail": {
+        "text_len": 8,
+        "interrupted": false,
+        "dur_ms": 2236.039425
+      },
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"play_end\", \"t_ns\": 1793326932927805977, \"detail\": {\"text_len\": 8, \"interrupted\": false, \"dur_ms\": 2236.039425}}"
+    },
+    {
+      "source": "round",
+      "arrival_ns": 1793326932929026736,
+      "node": "tts_local",
+      "stage": "session_finished",
+      "t_ns": 1793326932928865934,
+      "detail": {},
+      "raw": "{\"node\": \"tts_local\", \"stage\": \"session_finished\", \"t_ns\": 1793326932928865934, \"detail\": {}}"
+    }
+  ],
+  "events_by_stage": {
+    "llm_medical": {
+      "intent": [
+        {
+          "t_ns": 1793326922005525478,
+          "arrival_ns": 1793326922005774337,
+          "source": "round",
+          "detail": {
+            "kind": "medical",
+            "chat_mode": false,
+            "source": "keyword",
+            "keyword_medical": true,
+            "judge_kind": null,
+            "judge_ms": 0.0
+          }
+        }
+      ],
+      "rag_start": [
+        {
+          "t_ns": 1793326922005987668,
+          "arrival_ns": 1793326922006105613,
+          "source": "round",
+          "detail": {}
+        }
+      ],
+      "rag_end": [
+        {
+          "t_ns": 1793326922015472609,
+          "arrival_ns": 1793326922015828972,
+          "source": "round",
+          "detail": {
+            "n_chunks": 4,
+            "took_ms": 9.38,
+            "top1": "血压管理与理想血压"
+          }
+        }
+      ],
+      "llm_request": [
+        {
+          "t_ns": 1793326922460330087,
+          "arrival_ns": 1793326922460714549,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1137,
+            "n_messages": 8
+          }
+        }
+      ],
+      "llm_first_chunk": [
+        {
+          "t_ns": 1793326922460890997,
+          "arrival_ns": 1793326922461135523,
+          "source": "round",
+          "detail": {
+            "prompt_chars": 1137
+          }
+        }
+      ],
+      "llm_done": [
+        {
+          "t_ns": 1793326923182921127,
+          "arrival_ns": 1793326923183232406,
+          "source": "round",
+          "detail": {
+            "chars": 38
+          }
+        }
+      ]
+    },
+    "tts_local": {
+      "rx_control": [
+        {
+          "t_ns": 1793326922461149172,
+          "arrival_ns": 1793326922461305251,
+          "source": "round",
+          "detail": {
+            "control": "[START]"
+          }
+        },
+        {
+          "t_ns": 1793326926057888771,
+          "arrival_ns": 1793326926058164002,
+          "source": "round",
+          "detail": {
+            "control": "[DONE]"
+          }
+        }
+      ],
+      "rx": [
+        {
+          "t_ns": 1793326922552455538,
+          "arrival_ns": 1793326922552744142,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "先别急。"
+          }
+        },
+        {
+          "t_ns": 1793326923159411877,
+          "arrival_ns": 1793326923159546705,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "血压高要查原因，"
+          }
+        },
+        {
+          "t_ns": 1793326923950487591,
+          "arrival_ns": 1793326923950758797,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "比如水多了没？"
+          }
+        },
+        {
+          "t_ns": 1793326924673728900,
+          "arrival_ns": 1793326924673880856,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "药够量吗？"
+          }
+        },
+        {
+          "t_ns": 1793326925250079390,
+          "arrival_ns": 1793326925250199621,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "请医生调整方案。"
+          }
+        }
+      ],
+      "synth_start": [
+        {
+          "t_ns": 1793326922552557383,
+          "arrival_ns": 1793326922552991566,
+          "source": "round",
+          "detail": {
+            "text_len": 4
+          }
+        },
+        {
+          "t_ns": 1793326923159458543,
+          "arrival_ns": 1793326923159734538,
+          "source": "round",
+          "detail": {
+            "text_len": 8
+          }
+        },
+        {
+          "t_ns": 1793326923950553335,
+          "arrival_ns": 1793326923950976339,
+          "source": "round",
+          "detail": {
+            "text_len": 7
+          }
+        },
+        {
+          "t_ns": 1793326924673799601,
+          "arrival_ns": 1793326924674066116,
+          "source": "round",
+          "detail": {
+            "text_len": 5
+          }
+        },
+        {
+          "t_ns": 1793326925250128879,
+          "arrival_ns": 1793326925250392662,
+          "source": "round",
+          "detail": {
+            "text_len": 8
+          }
+        }
+      ],
+      "synth_end": [
+        {
+          "t_ns": 1793326923156800784,
+          "arrival_ns": 1793326923157072532,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "dur_ms": 604.239029,
+            "audio_sec": 1.6,
+            "rtf": 0.37764939312499995
+          }
+        },
+        {
+          "t_ns": 1793326923948278802,
+          "arrival_ns": 1793326923948598148,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "dur_ms": 788.815648,
+            "audio_sec": 2.24,
+            "rtf": 0.35214984285714285
+          }
+        },
+        {
+          "t_ns": 1793326924673101675,
+          "arrival_ns": 1793326924673421406,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "dur_ms": 722.54141,
+            "audio_sec": 2.0,
+            "rtf": 0.361270705
+          }
+        },
+        {
+          "t_ns": 1793326925249526263,
+          "arrival_ns": 1793326925249779489,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "dur_ms": 575.722597,
+            "audio_sec": 1.6,
+            "rtf": 0.35982662312499997
+          }
+        },
+        {
+          "t_ns": 1793326926057218721,
+          "arrival_ns": 1793326926057592452,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "dur_ms": 807.085825,
+            "audio_sec": 2.24,
+            "rtf": 0.36030617187499997
+          }
+        }
+      ],
+      "play_start": [
+        {
+          "t_ns": 1793326923255072081,
+          "arrival_ns": 1793326923255331222,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "head": "先别急。"
+          }
+        },
+        {
+          "t_ns": 1793326924855198052,
+          "arrival_ns": 1793326924855355218,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "血压高要查原因，"
+          }
+        },
+        {
+          "t_ns": 1793326927094660147,
+          "arrival_ns": 1793326927094813870,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "head": "比如水多了没？"
+          }
+        },
+        {
+          "t_ns": 1793326929092916205,
+          "arrival_ns": 1793326929093138456,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "head": "药够量吗？"
+          }
+        },
+        {
+          "t_ns": 1793326930691762689,
+          "arrival_ns": 1793326930691921357,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "head": "请医生调整方案。"
+          }
+        }
+      ],
+      "play_end": [
+        {
+          "t_ns": 1793326924854466570,
+          "arrival_ns": 1793326924854897704,
+          "source": "round",
+          "detail": {
+            "text_len": 4,
+            "interrupted": false,
+            "dur_ms": 1599.392495
+          }
+        },
+        {
+          "t_ns": 1793326927093870725,
+          "arrival_ns": 1793326927094227617,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "interrupted": false,
+            "dur_ms": 2238.666883
+          }
+        },
+        {
+          "t_ns": 1793326929092197777,
+          "arrival_ns": 1793326929092516010,
+          "source": "round",
+          "detail": {
+            "text_len": 7,
+            "interrupted": false,
+            "dur_ms": 1997.533915
+          }
+        },
+        {
+          "t_ns": 1793326930691024399,
+          "arrival_ns": 1793326930691335054,
+          "source": "round",
+          "detail": {
+            "text_len": 5,
+            "interrupted": false,
+            "dur_ms": 1598.103978
+          }
+        },
+        {
+          "t_ns": 1793326932927805977,
+          "arrival_ns": 1793326932928139580,
+          "source": "round",
+          "detail": {
+            "text_len": 8,
+            "interrupted": false,
+            "dur_ms": 2236.039425
+          }
+        }
+      ],
+      "session_finished": [
+        {
+          "t_ns": 1793326932928865934,
+          "arrival_ns": 1793326932929026736,
+          "source": "round",
+          "detail": {}
+        }
+      ]
+    }
+  },
+  "config": {
+    "endpoint_silence_s": 2.4,
+    "event_lookback_s": 60.0,
+    "timeout_s": 60.0,
+    "kws_timeout_s": 10.0,
+    "pre_delay_s": 0.3,
+    "play_cmd": "pw-play --target latency_sink {wav}",
+    "repeat": 50,
+    "interval_s": 2.0
+  }
+}
