@@ -495,6 +495,8 @@ class CosyVoiceTtsServiceNode(Node):
                 if not stream_first:
                     with self.queueLock:
                         self.ttsRealtimeQueue.append((text, audio, sample_rate))
+                    if os.environ.get("TTS_DEBUG_DUP") == "1":
+                        self.get_logger().info(f"[D2]合成完成入播:{text[:12]}")
             finally:
                 self._synthQ.task_done()
 
@@ -505,33 +507,9 @@ class CosyVoiceTtsServiceNode(Node):
         stream_first = self._awaiting_first_unit
         self._awaiting_first_unit = False
         self._synthQ.put(("unit", text, stream_first))
+        if os.environ.get("TTS_DEBUG_DUP") == "1":
+            self.get_logger().info(f"[D1]入合成队列:{text[:12]}")
 
-        def _enqueue_chunk(audio, sample_rate):
-            """流式首块/后续块即时入播队列（边合成边播）。"""
-            with self.queueLock:
-                self.ttsRealtimeQueue.append((f"{text[:12]}…", audio, sample_rate))
-
-        try:
-            synth_start_ns = time.time_ns()
-            self._lat("synth_start", text_len=len(text), stream_first=stream_first)
-            if stream_first:
-                audio, sample_rate = self.runTtsOneShotStreaming(text, _enqueue_chunk)
-            else:
-                audio, sample_rate = self.runTtsOneShot(text)
-            synth_end_ns = time.time_ns()
-            dur_ms = (synth_end_ns - synth_start_ns) / 1e6
-            audio_sec = float(len(audio)) / float(sample_rate) if sample_rate else 0.0
-            self._lat("synth_end", text_len=len(text), dur_ms=dur_ms,
-                      audio_sec=audio_sec,
-                      rtf=(dur_ms / 1000.0 / audio_sec if audio_sec > 0 else 0.0))
-        except Exception as exc:
-            self._lat("synth_error", text_len=len(text))
-            self.get_logger().error(f"文本单元 CosyVoice2 合成失败: {exc}")
-            return
-
-        if not stream_first:
-            with self.queueLock:
-                self.ttsRealtimeQueue.append((text, audio, sample_rate))
 
     def handleTtsCancel(self, msg: String) -> None:
         reason = msg.data.strip() or "cancel"
@@ -553,6 +531,12 @@ class CosyVoiceTtsServiceNode(Node):
 
         # 带 epoch：可精确统计播放次数（原来 print 无时间戳，被仪表盘逐帧重绘无法去重）
         self.get_logger().info(f"正在播放：{text}")
+        if os.environ.get("TTS_DEBUG_DUP") == "1":
+            with self.queueLock:
+                _ql = len(self.ttsRealtimeQueue)
+                _nxt = (self.ttsRealtimeQueue[0][0][:12]
+                        if self.ttsRealtimeQueue else "-")
+            self.get_logger().info(f"[D3]出队播放:{text[:12]} 剩余{_ql} 下一个={_nxt}")
 
         if text == "[DONE]":
             self._lat("session_finished")
