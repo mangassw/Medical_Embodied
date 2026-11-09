@@ -42,6 +42,7 @@ import sys
 import threading
 import time
 import traceback
+import queue
 from collections import deque
 
 # 必须在 import torch 之前设置：显存分配器分段扩展，
@@ -300,6 +301,11 @@ class CosyVoiceTtsServiceNode(Node):
 
         threading.Thread(target=_trim_ram, daemon=True).start()
 
+    # 合成工作线程：单元队列 → CosyVoice2 合成 → 播放队列（与播放重叠）
+        self._synthQ = queue.Queue()
+        self._synth_worker = threading.Thread(target=self._synth_loop, daemon=True)
+        self._synth_worker.start()
+
     # ---------- 延迟埋点（与 tts_local 同款） ----------
     def _lat(self, stage: str, **detail) -> None:
         if self._latency_pub is None:
@@ -442,19 +448,63 @@ class CosyVoiceTtsServiceNode(Node):
             # 冲刷断句器残留，再入队 [DONE] 结束标记
             for unit in self._splitter.flush():
                 self._handle_unit(unit)
-            with self.queueLock:
-                self.ttsRealtimeQueue.append(("[DONE]", None, None))
+            self._synthQ.put(("done", None, None))
             return
 
         # LLM 增量文本 → 断句器 → TTS 单元
         for unit in self._splitter.feed(text):
             self._handle_unit(unit)
 
+    def _synth_loop(self) -> None:
+        """合成线程：unit → 合成 → 播放队列；done → 转发 [DONE] 结束标记。"""
+        while True:
+            item = self._synthQ.get()
+            try:
+                kind = item[0]
+                if kind == "done":
+                    with self.queueLock:
+                        self.ttsRealtimeQueue.append(("[DONE]", None, None))
+                    continue
+                text = item[1]
+
+                def _enqueue_chunk(audio, sample_rate, _text=text):
+                    with self.queueLock:
+                        self.ttsRealtimeQueue.append(
+                            (f"{_text[:12]}…", audio, sample_rate))
+
+                # stream_first 已在 _handle_unit 入队时捕获（避免与回调线程竞态）
+                stream_first = item[2]
+                try:
+                    synth_start_ns = time.time_ns()
+                    self._lat("synth_start", text_len=len(text), stream_first=stream_first)
+                    if stream_first:
+                        audio, sample_rate = self.runTtsOneShotStreaming(text, _enqueue_chunk)
+                    else:
+                        audio, sample_rate = self.runTtsOneShot(text)
+                    synth_end_ns = time.time_ns()
+                    dur_ms = (synth_end_ns - synth_start_ns) / 1e6
+                    audio_sec = float(len(audio)) / float(sample_rate) if sample_rate else 0.0
+                    self._lat("synth_end", text_len=len(text), dur_ms=dur_ms,
+                              audio_sec=audio_sec,
+                              rtf=(dur_ms / 1000.0 / audio_sec if audio_sec > 0 else 0.0))
+                except Exception as exc:
+                    self._lat("synth_error", text_len=len(text))
+                    self.get_logger().error(f"文本单元 CosyVoice2 合成失败: {exc}")
+                    continue
+
+                if not stream_first:
+                    with self.queueLock:
+                        self.ttsRealtimeQueue.append((text, audio, sample_rate))
+            finally:
+                self._synthQ.task_done()
+
     def _handle_unit(self, text: str) -> None:
-        """合成一个 TTS 单元（与原 /tts_realtime_data 文本分支同逻辑）。"""
+        """单元入合成队列并立即返回；合成在独立线程，与播放重叠，
+        消除句末标点处的"合成等待"间隙。"""
         self._lat("rx", text_len=len(text), head=text[:24])
         stream_first = self._awaiting_first_unit
         self._awaiting_first_unit = False
+        self._synthQ.put(("unit", text, stream_first))
 
         def _enqueue_chunk(audio, sample_rate):
             """流式首块/后续块即时入播队列（边合成边播）。"""
