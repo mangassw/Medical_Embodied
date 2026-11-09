@@ -34,6 +34,7 @@
                                        deps/whisper 为本地桩（CosyVoice 只用 log_mel_spectrogram）
 """
 
+import ctypes
 import json
 import os
 import re
@@ -268,6 +269,26 @@ class CosyVoiceTtsServiceNode(Node):
             except Exception as exc:
                 self.get_logger().warn(f"填充词预合成失败（禁用填充词）: {exc}")
                 self._filler_audio = None
+
+        # 加载期内存回收：fp32→fp16 转换后的 CPU 侧临时张量、tokenizer 会话等
+        # 已不再需要，但 glibc/PyTorch 分配器不主动归还 OS，RSS 会常驻在峰值
+        #（实测 ~5.1GB）。这里 gc + malloc_trim 把可回收部分还给系统（给导航省 RAM）。
+        def _trim_ram():
+            import gc
+            gc.collect()
+            freed = 0
+            try:
+                libc = ctypes.CDLL("libc.so.6")
+                freed = libc.malloc_trim(0)
+            except Exception:
+                pass
+            try:
+                rss = int(open("/proc/self/statm").read().split()[1]) * 4 // 1024
+            except Exception:
+                rss = -1
+            self.get_logger().info(f"加载期内存回收完成(malloc_trim={freed})，RSS≈{rss}MB")
+
+        threading.Thread(target=_trim_ram, daemon=True).start()
 
     # ---------- 延迟埋点（与 tts_local 同款） ----------
     def _lat(self, stage: str, **detail) -> None:
