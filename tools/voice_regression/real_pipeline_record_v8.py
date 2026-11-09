@@ -187,19 +187,21 @@ class StreamSplitter:
         self.first_flushed = False
 
     def feed(self, text):
+        """句级切分 + 顺序保护（与生产 TTS 断句器一致）：
+        逗号碎片并入紧随的完整句，绝不能先发后面的句子。"""
         self.buffer += text
-        units, keep = [], ""
+        units, pending = [], ""
         for part in self.PATTERN.findall(self.buffer):
             part = part.strip()
             if not part:
                 continue
-            if part[-1] in self.SENTENCE_MARKS or part[-1] == "，" \
-                    or part[-1] in self.SHORT_MARKS:
+            if part[-1] in self.SENTENCE_MARKS:
                 self.first_flushed = True
-                units.append(part)
+                units.append(pending + part)
+                pending = ""
             else:
-                keep += part
-        self.buffer = keep
+                pending += part
+        self.buffer = pending
         return units
 
     def flush(self):

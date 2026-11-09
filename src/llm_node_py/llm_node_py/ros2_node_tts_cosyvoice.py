@@ -104,21 +104,26 @@ class _StreamSplitter:
         self.first_flushed = False
 
     def feed(self, text):
+        """按序切分：以逗号结尾的碎片必须并入紧随的完整句一起发出。
+        旧实现把碎片留在 buffer 而先发后面的完整句，导致句子顺序颠倒
+        （实测："第二句是解释说明，继续补充第二句。" → 先播后半句）。"""
         self.buffer += text
-        units, keep = [], ""
+        units, pending = [], ""
         for part in self.PATTERN.findall(self.buffer):
             part = part.strip()
             if not part:
                 continue
             if part[-1] in self.SENTENCE_MARKS:
                 self.first_flushed = True
-                units.append(part)
+                units.append(pending + part)      # 前缀碎片 + 本句，顺序保护
+                pending = ""
             elif self.split_commas:
                 self.first_flushed = True
-                units.append(part)
+                units.append(pending + part)
+                pending = ""
             else:
-                keep += part      # 逗号/顿号等并入下一句
-        self.buffer = keep
+                pending += part                   # 逗号/顿号等并入下一句
+        self.buffer = pending
         return units
 
     def flush(self):
