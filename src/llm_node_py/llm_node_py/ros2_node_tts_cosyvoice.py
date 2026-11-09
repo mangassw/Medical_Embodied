@@ -78,6 +78,8 @@ TTS_SPEED = float(os.environ.get("TTS_SPEED", "1.0"))
 # 代价是显存 1600→2036MiB（TRT 上下文 +333MiB）。
 # 资源优先场景保持默认关；要速度时 TTS_LOAD_TRT=1 即启用（秒级加载）。
 TTS_LOAD_TRT = os.environ.get("TTS_LOAD_TRT", "0") == "1"
+# 播放队列深度上限（工业背压）：满时等待，超时丢最老保最新
+PLAYBACK_QMAX = int(os.environ.get("VOICE_TTS_QMAX", "15"))
 
 
 class _StreamSplitter:
@@ -272,6 +274,7 @@ class CosyVoiceTtsServiceNode(Node):
         # 预合成填充词缓存（0 延迟可播）。首轮 TTS 单元用流式合成时，
         # 该状态位为 True，播完即复位。
         self._awaiting_first_unit = False
+        self._playback_qmax = PLAYBACK_QMAX
         self._filler_audio = None
         if TTS_FILLER_TEXT:
             try:
@@ -460,6 +463,27 @@ class CosyVoiceTtsServiceNode(Node):
         for unit in self._splitter.feed(text):
             self._handle_unit(unit)
 
+    def _enqueue_playback(self, entry) -> None:
+        """入播放队列，带深度护栏（工业背压）：
+        队列满时等待最多 10s，仍满则丢最老一条保最新（防无限积压）。"""
+        deadline = time.time() + 10.0
+        while True:
+            with self.queueLock:
+                if len(self.ttsRealtimeQueue) < self._playback_qmax:
+                    self.ttsRealtimeQueue.append(entry)
+                    return
+                overflow = True
+            if time.time() > deadline:
+                with self.queueLock:
+                    if self.ttsRealtimeQueue:
+                        dropped = self.ttsRealtimeQueue.popleft()
+                        self.get_logger().warn(
+                            f"播放队列满(>{self._playback_qmax})，丢弃最老: "
+                            f"{dropped[0][:16]}")
+                    self.ttsRealtimeQueue.append(entry)
+                return
+            time.sleep(0.05)
+
     def _synth_loop(self) -> None:
         """合成线程：unit → 合成 → 播放队列；done → 转发 [DONE] 结束标记。"""
         while True:
@@ -483,7 +507,9 @@ class CosyVoiceTtsServiceNode(Node):
                     synth_start_ns = time.time_ns()
                     self._lat("synth_start", text_len=len(text), stream_first=stream_first)
                     if stream_first:
-                        audio, sample_rate = self.runTtsOneShotStreaming(text, _enqueue_chunk)
+                        audio, sample_rate = self.runTtsOneShotStreaming(
+                            text, lambda a, s: self._enqueue_playback(
+                                (f"{text[:12]}…", a, s)))
                     else:
                         audio, sample_rate = self.runTtsOneShot(text)
                     synth_end_ns = time.time_ns()
@@ -498,8 +524,7 @@ class CosyVoiceTtsServiceNode(Node):
                     continue
 
                 if not stream_first:
-                    with self.queueLock:
-                        self.ttsRealtimeQueue.append((text, audio, sample_rate))
+                    self._enqueue_playback((text, audio, sample_rate))
                     if os.environ.get("TTS_DEBUG_DUP") == "1":
                         self.get_logger().info(f"[D2]合成完成入播:{text[:12]}")
             finally:

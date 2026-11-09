@@ -41,6 +41,42 @@ retired 节点在 src/llm_node_py/llm_node_py/legacy/（含 UI 文字问答通�
 
 ## 二、启动方式
 
+### 方式一（推荐）：前台状态终端（工业运行台）
+
+```bash
+cd ~/medical_ws/Medical_Embodied_dev
+./voice_start.sh
+```
+
+- 前台实时仪表盘：7 节点存活/PID/重启次数/CPU/内存 + 流水线状态 + 合并事件流（0.6s 刷新）
+- **启动预检**：模型/密钥/索引/音频设备 12 项检查，缺失即拒绝启动并列出清单
+- **看门狗自愈**：节点崩溃自动重启（冷却 2/5/10/20/30s，稳定 10 分钟清零；`--no-supervise` 关闭）
+- **日志持久化**：`logs/voice_<时间戳>/<节点>.log`（10MB 轮转保留 3 份）
+- **单实例锁**：`/tmp/voice_stack.lock`，双栈拒绝启动（双栈=每个回答播两遍）
+- 关闭终端 / Ctrl+C = 全链路退出（子进程 PDEATHSIG 双保险）
+
+### 方式二（兼容）：tmux 三会话
+
+```bash
+# 0) 关键环境（必须）：PYTHONNOUSERSITE=1
+#    原因：2026-10-30 起 ~/.local 里有 numpy 1.26.4 会遮蔽 conda 环境的 2.4.2，
+#    导致 transformers 导入即崩。所有启动脚本/终端都要带。
+export PYTHONNOUSERSITE=1
+
+# 1) ROS + 工作空间 overlay（rclpy、llm_node_comm 类型支持）
+source /opt/ros/jazzy/setup.bash
+source ~/medical_ws/Medical_Embodied_dev/install/setup.bash
+
+# 2) 一键拉起（tmux 三会话，脚本内部用 conda env qwen_tts_online 的 python）
+cd ~/medical_ws/Medical_Embodied_dev/launch
+./launch_llm_nodes.sh        # = depends_asr_question + depends_ui_question + dialog_manager
+```
+
+### 启动后验证
+
+```bash
+ps aux | grep -cE "ros_node_tts_cosyvoic[e]"   # 必须为 1（双栈=回答播两遍）
+```
 ```bash
 # 0) 关键环境（必须）：PYTHONNOUSERSITE=1
 #    原因：2026-10-30 起 ~/.local 里有 numpy 1.26.4 会遮蔽 conda 环境的 2.4.2，

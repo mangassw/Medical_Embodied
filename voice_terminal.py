@@ -25,6 +25,11 @@ from datetime import datetime
 # ---------- 路径 ----------
 BASE = os.path.dirname(os.path.abspath(__file__))
 WS = os.path.dirname(BASE)                       # medical_ws/
+LOG_DIR = os.path.join(BASE, "logs",
+                       "voice_" + datetime.now().strftime("%Y%m%d_%H%M%S"))
+SUPERVISE = "--no-supervise" not in sys.argv
+RESTART_COOLDOWN = [2, 5, 10, 20, 30]            # 秒，封顶 30
+RESTART_STABLE_S = 600                            # 稳定 10 分钟后清零计数
 PY = os.path.join(os.path.expanduser("~"),
                   "miniconda3/envs/qwen_tts_online/bin/python")
 ASR_BIN = os.path.join(BASE, "install/llm_node_cpp/lib/llm_node_cpp/ros_node_keyword_asr")
@@ -73,6 +78,53 @@ def kill_stale():
         subprocess.run(["pkill", "-f", pat], capture_output=True)
 
 
+def preflight():
+    """启动预检：工业要求——任何资产缺失在拉起节点前失败并给出清单。"""
+    problems = []
+    checks = [
+        ("conda python", os.path.exists(PY)),
+        ("密钥文件", os.path.exists(os.path.join(
+            BASE, "src/llm_node_py/key/dashscope.key"))),
+        ("Qwen3-TTS 备用引擎", os.path.exists(os.path.join(
+            BASE, "src/llm_node_py/Qwen3-TTS-12Hz-0.6B-CustomVoice/config.json"))),
+        ("CosyVoice2 模型", os.path.exists(os.path.join(
+            "/home/artrc/cosyvoice_runtime/CosyVoice2-0.5B/cosyvoice2.yaml"))),
+        ("CosyVoice2 提示音", os.path.exists(os.path.join(
+            BASE, "src/llm_node_py/cosyvoice_assets/prompt_serena.wav"))),
+        ("RAG 索引", os.path.exists(os.path.join(
+            BASE, "tools/rag/index/chunks.jsonl"))),
+        ("ASR 模型", os.path.exists(os.path.join(
+            SHERPA_ROOT, "sherpa-onnx-streaming-zipformer-bilingual-zh-en/tokens.txt"))),
+        ("KWS 唤醒词表", os.path.exists(os.path.join(
+            SHERPA_ROOT, "kws-zipformer-wenetspeech/outputMykeywords.txt"))),
+        ("标点模型", os.path.exists(PUNCT)),
+        ("C++ ASR 二进制", os.path.exists(ASR_BIN)),
+        ("BT 接口脚本", os.path.exists(DIALOG)),
+    ]
+    for name, ok in checks:
+        if ok:
+            print(f"  [预检] OK   {name}")
+        else:
+            problems.append(name)
+            print(f"  [预检] 缺失 {name}")
+    # 音频设备
+    try:
+        import subprocess as _sp
+        out = _sp.run(["pw-cli", "ls", "Node"], capture_output=True, text=True,
+                      timeout=10).stdout
+        has_in = "alsa_input" in out
+        has_out = "alsa_output" in out
+        print(f"  [预检] {'OK  ' if has_in and has_out else '缺失'} 音频输入/输出设备")
+        if not (has_in and has_out):
+            problems.append("音频设备")
+    except Exception as e:
+        print(f"  [预检] 音频设备检查失败: {e}")
+        problems.append("音频设备")
+    if problems:
+        print("[terminal][错误] 预检未通过，拒绝启动。缺失项: " + ", ".join(problems))
+        sys.exit(1)
+
+
 def spawn(name, cmd, extra_env):
     env = dict(os.environ)
     env.update(extra_env)
@@ -80,16 +132,45 @@ def spawn(name, cmd, extra_env):
         cmd, env=env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
         text=True, bufsize=1, preexec_fn=prctl_pdeathsig)
     st = {"proc": p, "buf": deque(maxlen=300), "last_cpu": _read_cpu(p.pid),
-          "born": time.time(), "cpu": 0.0}
+          "born": time.time(), "cpu": 0.0, "restarts": 0, "noted": None,
+          "cmd": cmd, "extra": extra_env}
     _proc[name] = st
+    try:
+        os.makedirs(LOG_DIR, exist_ok=True)
+        st["logfh"] = open(os.path.join(LOG_DIR, f"{name}.log"),
+                           "a", encoding="utf-8")
+    except Exception:
+        st["logfh"] = None
     threading.Thread(target=_reader, args=(name, p), daemon=True).start()
     return p
+
+
+def _log_writer(name, line, dt):
+    """节点日志持久化：logs/voice_<ts>/<name>.log，10MB 轮转保留 3 份。"""
+    try:
+        fh = _proc[name]["logfh"]
+        if fh is None:
+            return
+        fh.write(f"{dt:%H:%M:%S.%f} {line}\n")
+        fh.flush()
+        path = fh.name
+        if fh.tell() > 10 * 1024 * 1024:
+            fh.close()
+            for i in (2, 1):
+                if os.path.exists(f"{path}.{i}"):
+                    os.replace(f"{path}.{i}", f"{path}.{i+1}")
+            os.replace(path, f"{path}.1")
+            _proc[name]["logfh"] = open(path, "a", encoding="utf-8")
+    except Exception:
+        pass
 
 
 def _reader(name, p):
     try:
         for line in p.stdout:
-            _proc[name]["buf"].append((datetime.now(), line.rstrip()))
+            dt = datetime.now()
+            _proc[name]["buf"].append((dt, line.rstrip()))
+            _log_writer(name, line.rstrip(), dt)
     except Exception:
         pass
 
@@ -180,7 +261,8 @@ def render():
     out = ["\033[H\033[2J"]  # 清屏定位
     up = time.time() - _t0
     out.append(f"═" * 30 + f" 语音链路状态台  {datetime.now():%H:%M:%S}  运行 {int(up)//60:02d}:{int(up)%60:02d} " + "═" * 20)
-    out.append(f"{'节点':<10}{'PID':>8}{'状态':>6}{'CPU%':>8}{'内存':>10}")
+    wd = "看门狗:开" if SUPERVISE else "看门狗:关"
+    out.append(f"{'节点':<10}{'PID':>8}{'状态':>6}{'重启':>5}{'CPU%':>8}{'内存':>10}   {wd}")
     alive = 0
     for name, _, _ in NODES:
         st = _proc.get(name)
@@ -191,7 +273,8 @@ def render():
         pid = st["proc"].pid if st else 0
         cpu = f"{st['cpu']:.1f}" if st else "-"
         mem = f"{_mem_mb(pid):.0f}MB" if st and st["proc"].poll() is None else "-"
-        out.append(f"{name:<10}{pid:>8}{ok:>6}{cpu:>8}{mem:>10}")
+        rst = str(st["restarts"]) if st else "-"
+        out.append(f"{name:<10}{pid:>8}{ok:>6}{rst:>5}{cpu:>8}{mem:>10}")
     out.append("─" * term_w)
     out.append("【流水线】")
     out.append(f" 唤醒(KWS) : {_state['wake']}")
@@ -253,6 +336,8 @@ def main():
     signal.signal(signal.SIGINT, _on_signal)
     signal.signal(signal.SIGTERM, _on_signal)
     signal.signal(signal.SIGHUP, _on_signal)   # 关闭终端窗口
+    print("[terminal] 启动预检...", flush=True)
+    preflight()
     kill_stale()
     time.sleep(0.5)
     print("[terminal] 启动节点...", flush=True)
@@ -269,9 +354,28 @@ def main():
                 render()
                 last = now
             time.sleep(0.1)
-            for st in _proc.values():          # 任意节点退出即播报，不自动重启
-                if st["proc"].poll() is not None and st.get("noted") is None:
+            now = time.time()
+            for st in _proc.values():
+                if st["proc"].poll() is None:
+                    # 稳定运行超过阈值后清零重启计数
+                    if now - st["born"] > RESTART_STABLE_S:
+                        st["restarts"] = 0
+                    continue
+                # 节点已退出
+                if st["noted"] is None:
                     st["noted"] = True
+                    st["exit_at"] = now
+                if not SUPERVISE:
+                    continue
+                # 看门狗：冷却后自动重启（计数防崩溃循环）
+                if now - st.get("exit_at", now) >= RESTART_COOLDOWN[
+                        min(st["restarts"], len(RESTART_COOLDOWN) - 1)]:
+                    st["restarts"] += 1
+                    name2 = [n for n, v in _proc.items() if v is st][0]
+                    cmd2, extra2 = st["cmd"], st["extra"]
+                    print(f"[watchdog] {name2} 退出(第{st['restarts']}次)，自动重启...",
+                          flush=True)
+                    spawn(name2, cmd2, extra2)
     except KeyboardInterrupt:
         pass
     finally:
