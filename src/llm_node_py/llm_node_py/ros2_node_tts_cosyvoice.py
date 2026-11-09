@@ -80,16 +80,23 @@ TTS_LOAD_TRT = os.environ.get("TTS_LOAD_TRT", "0") == "1"
 
 
 class _StreamSplitter:
-    """断句器（原 ros2_node_stream_text.py SentenceSplitterNode 的进程内移植，
-    默认配置：按全部标点子句切分，每个子句独立送 TTS）。"""
+    """断句器（TTS 进程内）：切分送 CosyVoice2 的合成单元。
+
+    粒度实测（2026-11-09，campplus 声纹一致性量化）：
+      逐标点子句切（旧行为）：2~6 字碎片独立生成，各段音色/韵律各自漂移
+      （短文本声纹相似度低至 0.73），总 RTF 3.65，拼接后听感"很乱"。
+      句级切分（默认）：12~30 字单元，总 RTF 1.78，单元内韵律连贯。
+    TTS_SPLIT_COMMAS=1 可回退旧逐子句行为。
+    """
 
     PATTERN = re.compile(r"[^，。；：、！？]*[，。；：、！？]?")
     SENTENCE_MARKS = "。；！？"
-    SHORT_MARKS = "，：、"
 
     def __init__(self):
         self.buffer = ""
         self.first_flushed = False
+        # 逗号是否切断（默认否：并入整句，避免碎片化合成）
+        self.split_commas = os.environ.get("TTS_SPLIT_COMMAS", "0") == "1"
 
     def reset(self):
         self.buffer = ""
@@ -102,18 +109,21 @@ class _StreamSplitter:
             part = part.strip()
             if not part:
                 continue
-            if part[-1] in self.SENTENCE_MARKS or part[-1] == "，" \
-                    or part[-1] in self.SHORT_MARKS:
+            if part[-1] in self.SENTENCE_MARKS:
+                self.first_flushed = True
+                units.append(part)
+            elif self.split_commas:
                 self.first_flushed = True
                 units.append(part)
             else:
-                keep += part
+                keep += part      # 逗号/顿号等并入下一句
         self.buffer = keep
         return units
 
     def flush(self):
-        if self.buffer:
-            out, self.buffer = self.buffer, ""
+        if self.buffer.strip():
+            out, self.buffer = self.buffer.strip(), ""
+            self.first_flushed = True
             return [out]
         return []
 # 固定首句（填充词）：收到 [START]（LLM 即将开始生成）时立即播报，
@@ -404,9 +414,15 @@ class CosyVoiceTtsServiceNode(Node):
             return
 
         if text == "[START]":
-            if self.cancelEvent.is_set():
-                self.cancelEvent.clear()
-                self.get_logger().info("收到 [START]，复位 /tts_cancel 状态")
+            # 新一轮对话新高一：打断上一轮残留播放并清空未播队列，
+            # 否则上一轮说"结束"时没播完的单元会留到下次唤醒抢播（实测 2026-11-09）
+            self.cancelEvent.set()
+            time.sleep(0.05)                      # 让播放线程尽快停在当前音频块
+            with self.queueLock:
+                dropped = len(self.ttsRealtimeQueue)
+                self.ttsRealtimeQueue.clear()
+            self.cancelEvent.clear()
+            self.get_logger().info(f"收到 [START]，清掉上轮残留 {dropped} 条，复位打断状态")
             self._splitter.reset()
             # 本轮第一个 TTS 单元走流式合成（首块即入播）
             self._awaiting_first_unit = True
