@@ -34,6 +34,20 @@ fi
 echo "[INFO] Using python: $PYTHON_EXEC"
 
 # ================================
+# 运行环境（直接前缀到每个节点的命令行，避免 tmux 服务器环境不继承）
+# ================================
+# PYTHONNOUSERSITE=1 必须：~/.local 的旧 numpy 会遮蔽 conda 环境的 2.4.2，
+# 导致 transformers/CosyVoice2 导入即崩（2026-10-30 起）。
+export PYTHONNOUSERSITE=1
+# sherpa ASR/KWS/标点模型根目录（开发机与部署机均为 <ws>/../models/sherpa 布局）
+MODELS_DIR="$(cd "$BASE_DIR/../.." && pwd)/models"
+SHERPA_MODEL_ROOT="${SHERPA_MODEL_ROOT:-$MODELS_DIR/sherpa}"
+PUNCT_MODEL_PATH="${PUNCT_MODEL_PATH:-$SHERPA_MODEL_ROOT/sherpa-onnx-punct-model/model.onnx}"
+echo "[INFO] SHERPA_MODEL_ROOT: $SHERPA_MODEL_ROOT"
+PY_ENV_PREFIX="PYTHONNOUSERSITE=1"
+CPP_ENV_PREFIX="SHERPA_MODEL_ROOT=$SHERPA_MODEL_ROOT PUNCT_MODEL_PATH=$PUNCT_MODEL_PATH"
+
+# ================================
 # 如果 session 已存在
 # ================================
 if tmux has-session -t "$TMUX_SESSION" 2>/dev/null; then
@@ -76,9 +90,9 @@ do
     # 判断 Python / C++ 执行方式
     # -------------------------------
     if [[ "$ABS_NODE" == *.py ]]; then
-        tmux send-keys -t "$TARGET" "$PYTHON_EXEC $ABS_NODE" C-m
+        tmux send-keys -t "$TARGET" "$PY_ENV_PREFIX $PYTHON_EXEC $ABS_NODE" C-m
     else
-        tmux send-keys -t "$TARGET" "$ABS_NODE" C-m
+        tmux send-keys -t "$TARGET" "$CPP_ENV_PREFIX $ABS_NODE" C-m
     fi
 
     WINDOW_INDEX=$((WINDOW_INDEX + 1))

@@ -13,6 +13,9 @@ TMUX_SESSION="depends_asr_question"
 PYTHON_NODES=(
     # 是否需要呼叫护士
     "../src/llm_node_py/llm_node_py/ros2_node_nurse_alert.py"
+    # 唤醒桥：/call_signal -> /start_asr。精简栈没有行为树，没有它真人唤醒后
+    # ASR 永远处于 pause（2026-11-09 排障确认）。真机有行为树时可注释掉本行。
+    "../src/llm_node_py/llm_node_py/ros2_node_wake_bridge.py"
     # 大模型网关（已并入 router 纠错/分流 + dialog_history + check_end_dialog，
     # 直接消费 /question_asr，2026-11 架构精简）
     "../src/llm_node_py/llm_node_py/ros2_node_llm_medical.py"

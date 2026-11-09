@@ -644,7 +644,7 @@ class KnowledgeBaseLLMNode(Node):
                     enable_thinking=self.enable_thinking,
                     temperature=0.6,
                     top_p=0.8,
-                    max_tokens=max_tokens or self.max_tokens,
+                    max_tokens=self.max_tokens,
                     **({"enable_search": True} if enable_search else {}),
                 )
                 for resp in responses:
