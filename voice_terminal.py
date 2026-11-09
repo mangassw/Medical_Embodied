@@ -240,6 +240,16 @@ def cleanup():
 
 def main():
     global _dt
+    # 单实例锁：防止两套栈同时运行（双栈 = 每个问题被回答两次，实测事故）
+    import fcntl
+    _lock_fp = open("/tmp/voice_stack.lock", "w")
+    try:
+        fcntl.flock(_lock_fp, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except BlockingIOError:
+        print("[terminal][错误] 已有一套语音链路在运行（/tmp/voice_stack.lock 被占用）。\n"
+              "  先关闭已有实例（关闭其终端或 pkill -f voice_terminal），再启动。")
+        sys.exit(1)
+    sys._lock_fp = _lock_fp  # 生命周期内保持
     signal.signal(signal.SIGINT, _on_signal)
     signal.signal(signal.SIGTERM, _on_signal)
     signal.signal(signal.SIGHUP, _on_signal)   # 关闭终端窗口

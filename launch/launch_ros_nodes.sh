@@ -8,6 +8,22 @@ BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 echo "[INFO] Base directory: $BASE_DIR"
 
 # ================================
+# 单实例保护：与 voice_terminal.py 共用 /tmp/voice_stack.lock
+# （双栈同时运行会导致每个问题被回答两次）
+# ================================
+exec 9>/tmp/voice_stack.lock
+if ! flock -n 9; then
+    echo "[ERROR] 已有语音链路在运行（voice_terminal 或另一套 tmux 栈），拒绝重复启动。"
+    exit 1
+fi
+
+# 清理可能残留的节点（与语音终端行为一致）
+pkill -f "ros2_node[_]" 2>/dev/null || true
+pkill -f "keyword_as[r]" 2>/dev/null || true
+pkill -f "bt_hci_interfac[e]" 2>/dev/null || true
+sleep 0.5
+
+# ================================
 # 参数检查
 # ================================
 if [ "$#" -lt 2 ]; then

@@ -551,7 +551,8 @@ class CosyVoiceTtsServiceNode(Node):
                 return
             text, audio, sample_rate = self.ttsRealtimeQueue.popleft()
 
-        print(f"正在播放：{text}")
+        # 带 epoch：可精确统计播放次数（原来 print 无时间戳，被仪表盘逐帧重绘无法去重）
+        self.get_logger().info(f"正在播放：{text}")
 
         if text == "[DONE]":
             self._lat("session_finished")
