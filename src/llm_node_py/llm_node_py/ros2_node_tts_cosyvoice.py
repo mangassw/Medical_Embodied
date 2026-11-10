@@ -275,6 +275,7 @@ class CosyVoiceTtsServiceNode(Node):
         # 该状态位为 True，播完即复位。
         self._awaiting_first_unit = False
         self._playback_qmax = PLAYBACK_QMAX
+        self._session_gen = 0   # 会话代数：换轮后丢弃旧轮仍在合成中的单元
         self._filler_audio = None
         if TTS_FILLER_TEXT:
             try:
@@ -436,7 +437,21 @@ class CosyVoiceTtsServiceNode(Node):
                 dropped = len(self.ttsRealtimeQueue)
                 self.ttsRealtimeQueue.clear()
             self.cancelEvent.clear()
-            self.get_logger().info(f"收到 [START]，清掉上轮残留 {dropped} 条，复位打断状态")
+            # 会话代数+1：丢弃上一轮滞留在合成队列/合成中的单元（否则它们会在
+            # 下一轮唤醒后补播——实测"没回答，重新唤醒后先播上一题"的根因）
+            self._session_gen += 1
+            drained = 0
+            while True:
+                try:
+                    item = self._synthQ.get_nowait()
+                    self._synthQ.task_done()
+                    if item[0] == "unit":
+                        drained += 1
+                except queue.Empty:
+                    break
+            self.get_logger().info(
+                f"收到 [START]，清掉上轮残留 {dropped} 条(播放)/{drained} 条(待合成)，"
+                f"会话代数->{self._session_gen}")
             self._splitter.reset()
             # 本轮第一个 TTS 单元走流式合成（首块即入播）
             self._awaiting_first_unit = True
@@ -456,7 +471,7 @@ class CosyVoiceTtsServiceNode(Node):
             # 冲刷断句器残留，再入队 [DONE] 结束标记
             for unit in self._splitter.flush():
                 self._handle_unit(unit)
-            self._synthQ.put(("done", None, None))
+            self._synthQ.put(("done", None, None, self._session_gen))
             return
 
         # LLM 增量文本 → 断句器 → TTS 单元
@@ -490,9 +505,11 @@ class CosyVoiceTtsServiceNode(Node):
             item = self._synthQ.get()
             try:
                 kind = item[0]
+                item_gen = item[3] if len(item) > 3 else self._session_gen
                 if kind == "done":
-                    with self.queueLock:
-                        self.ttsRealtimeQueue.append(("[DONE]", None, None))
+                    if item_gen == self._session_gen:
+                        with self.queueLock:
+                            self.ttsRealtimeQueue.append(("[DONE]", None, None))
                     continue
                 text = item[1]
 
@@ -506,10 +523,13 @@ class CosyVoiceTtsServiceNode(Node):
                 try:
                     synth_start_ns = time.time_ns()
                     self._lat("synth_start", text_len=len(text), stream_first=stream_first)
+                    def _chunk_gate(a, s, _g=item_gen, _t=text):
+                        if _g == self._session_gen:
+                            self._enqueue_playback((f"{_t[:12]}…", a, s))
+
                     if stream_first:
                         audio, sample_rate = self.runTtsOneShotStreaming(
-                            text, lambda a, s: self._enqueue_playback(
-                                (f"{text[:12]}…", a, s)))
+                            text, _chunk_gate)
                     else:
                         audio, sample_rate = self.runTtsOneShot(text)
                     synth_end_ns = time.time_ns()
@@ -523,6 +543,10 @@ class CosyVoiceTtsServiceNode(Node):
                     self.get_logger().error(f"文本单元 CosyVoice2 合成失败: {exc}")
                     continue
 
+                if item_gen != self._session_gen:
+                    self.get_logger().info(
+                        f"丢弃过期合成结果(代数{item_gen}->{self._session_gen}): {text[:12]}")
+                    continue
                 if not stream_first:
                     self._enqueue_playback((text, audio, sample_rate))
                     if os.environ.get("TTS_DEBUG_DUP") == "1":
@@ -536,7 +560,7 @@ class CosyVoiceTtsServiceNode(Node):
         self._lat("rx", text_len=len(text), head=text[:24])
         stream_first = self._awaiting_first_unit
         self._awaiting_first_unit = False
-        self._synthQ.put(("unit", text, stream_first))
+        self._synthQ.put(("unit", text, stream_first, self._session_gen))
         if os.environ.get("TTS_DEBUG_DUP") == "1":
             self.get_logger().info(f"[D1]入合成队列:{text[:12]}")
 

@@ -223,7 +223,9 @@ class KnowledgeBaseLLMNode(Node):
         # ---------- 配置 ----------
         self.backend = _env("MED_LLM_BACKEND", "direct").strip().lower()
         # provider=dashscope: SDK 原生接口（MaaS 专有部署）；openai: 兼容接口（旧 qwen-plus 路径）
-        self.provider = _env("MED_LLM_PROVIDER", "dashscope").strip().lower()
+        # 默认走 openai 兼容 (qwen-plus-latest)：MaaS deepseek 专有部署 2026-11 起 404 失效
+        # 需要恢复 MaaS 时设 MED_LLM_PROVIDER=dashscope
+        self.provider = _env("MED_LLM_PROVIDER", "openai").strip().lower()
         if self.provider == "ollama":
             # 本机 ollama（OpenAI 兼容接口），默认 qwen3:8b
             self.model_name = _env("MED_LLM_MODEL", "qwen3:8b")
