@@ -55,7 +55,7 @@ from http import HTTPStatus
 
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import String
+from std_msgs.msg import Bool, String
 import dashscope
 from dashscope import Application, MultiModalConversation
 from openai import OpenAI
@@ -305,6 +305,16 @@ class KnowledgeBaseLLMNode(Node):
             api_key=self.api_key, base_url=self.judge_base_url, max_retries=0
         )
 
+        # ---------- 云端连接预热（工业优化） ----------
+        # 唤醒（/start_asr）后用户还在说话，微小请求先把 TLS/连接池建好——
+        # 实测云端建连/响应头等待中位 1.44s / P90 3.2s / 最大 10s
+        self._last_prewarm = 0.0
+        self.start_asr_sub = self.create_subscription(
+            Bool, "/start_asr", self._on_start_asr, 10
+        )
+        if os.environ.get("MED_LLM_PREWARM", "1") == "1":
+            threading.Thread(target=self._prewarm, daemon=True).start()
+
         # ---------- ROS 接口 ----------
         # 网关入口：直接消费 ASR 输出（含同音错字纠正），不再经过独立 router 进程
         self.sub_asr = self.create_subscription(
@@ -370,6 +380,33 @@ class KnowledgeBaseLLMNode(Node):
         )
 
     # ------------------------------------------------------------------
+    # ------------------------------------------------------------------
+    def _prewarm(self) -> None:
+        """云端连接预热：1-token 微请求建立 TLS/连接池。30s 防抖。"""
+        if time.time() - self._last_prewarm < 30:
+            return
+        try:
+            t0 = time.perf_counter()
+            self.client.chat.completions.create(
+                model=self.model_name,
+                messages=[{"role": "user", "content": "1"}],
+                max_tokens=1, stream=False, timeout=8,
+            )
+            dt = (time.perf_counter() - t0) * 1000
+            self._last_prewarm = time.time()
+            self.get_logger().info(f"LLM 连接预热完成 {dt:.0f}ms")
+            self._lat("llm_prewarm", ms=round(dt))
+        except Exception as exc:
+            self.get_logger().warn(f"LLM 连接预热失败: {str(exc)[:80]}")
+
+    def _on_start_asr(self, msg: Bool) -> None:
+        """收音开启（唤醒桥/行为树）：预热云端连接，赶在问题说完之前。"""
+        if not msg.data:
+            return
+        if time.time() - self._last_prewarm < 30:
+            return
+        threading.Thread(target=self._prewarm, daemon=True).start()
+
     def _lat(self, stage: str, **detail) -> None:
         """把内部时间戳发布到 /latency_event（仅 LATENCY_PROBE=1）。"""
         if self._latency_pub is None:
@@ -616,10 +653,33 @@ class KnowledgeBaseLLMNode(Node):
 
         model 不为空时可临时覆盖（闲聊用更小的本地模型）。
         """
-        self._request_model = model or self.model_name
-        if self.provider == "dashscope":
-            return self._stream_dashscope(messages, enable_search=enable_search)
-        return self._stream_openai(messages, **gen_kwargs)
+        model_used = model or self.model_name
+        self._request_model = model_used
+        backup = os.environ.get("MED_LLM_BACKUP_MODEL", "qwen-flash")
+        failover = (os.environ.get("MED_LLM_FAILOVER", "1") == "1" and bool(backup)
+                    and backup != model_used and self.provider == "openai")
+        try:
+            if self.provider == "dashscope":
+                return self._stream_dashscope(messages, enable_search=enable_search)
+            return self._stream_openai(messages, allow_fallback=not failover,
+                                       **gen_kwargs)
+        except Exception as primary_exc:
+            if not failover:
+                raise
+            self.get_logger().warn(
+                f"主模型 {model_used} 失败({str(primary_exc)[:80]})，"
+                f"自动切换备用模型 {backup}")
+            try:
+                self._request_model = backup
+                out = self._stream_openai(messages, allow_fallback=False,
+                                          publish_start=False, **gen_kwargs)
+                self._lat("llm_failover", model=backup)
+                self.get_logger().info(f"备用模型 {backup} 回答成功 chars={len(out)}")
+                return out
+            except Exception as backup_exc:
+                self.get_logger().error(
+                    f"备用模型 {backup} 也失败({str(backup_exc)[:80]})")
+                raise primary_exc
 
     # ------------------------------------------------------------------
     def _stream_dashscope(self, messages, enable_search: bool = False) -> str:
@@ -730,8 +790,13 @@ class KnowledgeBaseLLMNode(Node):
 
     # ------------------------------------------------------------------
     def _stream_openai(self, messages, temperature: float = 0.6,
-                       frequency_penalty: float = None, max_tokens: int = None) -> str:
-        """OpenAI 兼容接口路径（旧 qwen-plus 直连，保留可回退）。"""
+                       frequency_penalty: float = None, max_tokens: int = None,
+                       allow_fallback: bool = True,
+                       publish_start: bool = True) -> str:
+        """OpenAI 兼容接口路径（qwen-plus 直连）。
+
+        allow_fallback: 失败时是否就地播兜底话术（False=抛异常，由双通道切换接管）
+        publish_start: 是否发布 [START]（备用通道重试时主通道已发过，避免重复）"""
         if self.provider == "ollama" and self.no_think:
             # qwen3 的思考开关：系统提示带上 /no_think 才不推理（实测首块 107 ms vs 无内容）
             messages = [dict(m) for m in messages]
@@ -756,7 +821,8 @@ class KnowledgeBaseLLMNode(Node):
             # 先发 [START] 再发云端请求：TTS 的填充词"好的，"不必等云端建连
             #（实测云端建连等待中位 1.44s、P90 3.2s、最大 10s——提前发布让
             # 首响从 ~1.4s 降到 ~0.1-0.3s；请求失败时错误路径会补发兜底话术）
-            self.pub.publish(String(data="[START]"))
+            if publish_start:
+                self.pub.publish(String(data="[START]"))
             started = True
             completion = self.client.chat.completions.create(
                 model=self._request_model,
@@ -790,6 +856,8 @@ class KnowledgeBaseLLMNode(Node):
             # 网络超时/中断：播兜底话术并正常结束本段，避免 TTS 等不到 [DONE] 卡满超时
             self._lat("llm_error", backend="openai", error=str(exc)[:120])
             self.get_logger().error(f"LLM 流式失败({type(exc).__name__}): {exc}")
+            if not allow_fallback:
+                raise
             fallback = "抱歉，我这会儿有点忙，请稍后再问一次。"
             if not started:
                 self.pub.publish(String(data="[START]"))
