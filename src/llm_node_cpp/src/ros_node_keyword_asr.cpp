@@ -648,7 +648,19 @@ int main(int argc, char ** argv)
     latency_probe::emit("asr", "init_done");
 
     // asr 定期检查，如果 15 秒 没有应答就走开
-    asr_timer = node->create_wall_timer(std::chrono::seconds(15), asr_timerCallback);
+    // 会话静默计时器：默认 15s，环境变量 ASR_SESSION_TIMEOUT 可覆盖（秒）。
+    // 注意：长回答播放超过该值时，会话会在播放中途被判超时结束（BT 视角），
+    // 需要支持长回答时调大（如 30~60s）。
+    {
+        const char *to_env = std::getenv("ASR_SESSION_TIMEOUT");
+        int session_timeout_s = 15;
+        if (to_env != nullptr && *to_env != '\0') {
+            try { session_timeout_s = std::max(5, std::stoi(to_env)); } catch (...) {}
+        }
+        sys_log("session timeout: %d s", session_timeout_s);
+        asr_timer = node->create_wall_timer(
+            std::chrono::seconds(session_timeout_s), asr_timerCallback);
+    }
     asr_timer->cancel();
 
     // 向 question manager 发布语音识别到的问题
