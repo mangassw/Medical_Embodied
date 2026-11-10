@@ -72,12 +72,12 @@ TTS_PROMPT_TEXT = os.environ.get(
     "TTS_PROMPT_TEXT", "您好，我是血透巡诊机器人小医，今天由我为您做透析前的健康指导。")
 TTS_SPK_ID = os.environ.get("TTS_SPK_ID", "xiaoyi")
 TTS_SPEED = float(os.environ.get("TTS_SPEED", "1.0"))
-# TensorRT 加速 flow 解码：引擎已构建并缓存于模型目录
-#（flow.decoder.estimator.fp16.mygpu.plan，170MB，换 GPU 需删除重建）。
-# 实测（RTX 3080，同句对比）：RTF 0.437→0.385（约 12% 提速），
-# 代价是显存 1600→2036MiB（TRT 上下文 +333MiB）。
-# 资源优先场景保持默认关；要速度时 TTS_LOAD_TRT=1 即启用（秒级加载）。
-TTS_LOAD_TRT = os.environ.get("TTS_LOAD_TRT", "0") == "1"
+# TensorRT 加速 flow 解码（2026-11-10 起默认开启，用户确认允许）：
+# 引擎已构建并缓存于模型目录（flow.decoder.estimator.fp16.mygpu.plan，170MB，
+# 换 GPU 需删除重建，构建约 78s）。
+# 实测（RTX 3080）：RTF 0.437→0.385（约 12% 提速），显存 1600→2036MiB。
+# 需要省显存时设 TTS_LOAD_TRT=0 关闭。
+TTS_LOAD_TRT = os.environ.get("TTS_LOAD_TRT", "1") == "1"
 # 播放队列深度上限（工业背压）：满时等待，超时丢最老保最新
 PLAYBACK_QMAX = int(os.environ.get("VOICE_TTS_QMAX", "15"))
 

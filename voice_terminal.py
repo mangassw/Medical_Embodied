@@ -107,6 +107,15 @@ def preflight():
         else:
             problems.append(name)
             print(f"  [预检] 缺失 {name}")
+    # TRT 引擎（非致命：缺失时首次启动自动构建 ~78s）
+    _plan = "/home/artrc/cosyvoice_runtime/CosyVoice2-0.5B/flow.decoder.estimator.fp16.mygpu.plan"
+    _trt_on = os.environ.get("TTS_LOAD_TRT", "1") == "1"
+    if _trt_on:
+        if os.path.exists(_plan):
+            print("  [预检] OK   TRT 引擎(.plan)")
+        else:
+            print("  [预检] 提示 TRT 引擎缺失，首次启用将自动构建(~78s)")
+
     # 音频设备
     try:
         import subprocess as _sp

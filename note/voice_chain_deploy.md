@@ -116,7 +116,7 @@ PYTHONNOUSERSITE=1 /home/artrc/miniconda3/envs/qwen_tts_online/bin/python \
 | `TTS_FP16_WEIGHTS` | 1 | CosyVoice2 权重真 fp16（2946→1600MiB，RTF 0.60→0.44；hift 保持 fp32） |
 | `PYTORCH_CUDA_ALLOC_CONF` | expandable_segments:True | 节点内自动设置，勿覆盖 |
 | `TTS_SPK_ID` / `TTS_PROMPT_WAV` / `TTS_PROMPT_TEXT` / `TTS_SPEED` | xiaoyi / 项目资产 / — / 1.0 | 克隆音色定义（换音色只需换提示音+文本） |
-| `TTS_LOAD_TRT` | 0 | TRT 加速 flow 解码（引擎已缓存 .plan）：RTF 0.44→0.39，显存 +436MiB；速度优先时置 1 |
+| `TTS_LOAD_TRT` | **1** | TRT 加速 flow 解码（引擎已缓存 .plan，默认开启）：RTF 0.44→0.39、显存 1600→2036MiB；省显存时置 0 |
 | `TTS_FLOW_FP16` | TRT 关=1 / TRT 开=0 | flow 编码器权重 fp16（与 TRT 的 dtype 兼容默认值已按实测配好） |
 | `MED_LLM_PROVIDER` / `MED_LLM_MODEL` | openai / qwen-plus-latest | 可切 dashscope 原生（deepseek-v4.1-flash-1017）或 ollama（qwen3:8b，降级用） |
 | `MED_LLM_ENABLE_THINKING` | 0 | 必须保持 0，否则首句晚数秒 |
