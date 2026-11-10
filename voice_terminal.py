@@ -28,6 +28,7 @@ WS = os.path.dirname(BASE)                       # medical_ws/
 LOG_DIR = os.path.join(BASE, "logs",
                        "voice_" + datetime.now().strftime("%Y%m%d_%H%M%S"))
 SUPERVISE = "--no-supervise" not in sys.argv
+HEADLESS = "--headless" in sys.argv
 RESTART_COOLDOWN = [2, 5, 10, 20, 30]            # 秒，封顶 30
 RESTART_STABLE_S = 600                            # 稳定 10 分钟后清零计数
 PY = os.path.join(os.path.expanduser("~"),
@@ -261,6 +262,7 @@ def update_state():
 # ---------- 渲染 ----------
 _dt = 0.6
 _running = True
+_last_headless_log = 0.0
 _t0 = time.time()
 
 
@@ -360,7 +362,14 @@ def main():
             if now - last >= _dt:
                 sample_cpu()
                 update_state()
-                render()
+                if not HEADLESS:
+                    render()
+                elif now - last_headless_log >= 10:
+                    alive = sum(1 for st in _proc.values() if st["proc"].poll() is None)
+                    rst = sum(st["restarts"] for st in _proc.values())
+                    print(f"[terminal] {datetime.now():%H:%M:%S} 节点存活 {alive}/{len(NODES)}"
+                          f" 重启累计 {rst} 队列正常", flush=True)
+                    last_headless_log = now
                 last = now
             time.sleep(0.1)
             now = time.time()

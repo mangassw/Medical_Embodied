@@ -314,6 +314,14 @@ class KnowledgeBaseLLMNode(Node):
         )
         if os.environ.get("MED_LLM_PREWARM", "1") == "1":
             threading.Thread(target=self._prewarm, daemon=True).start()
+        # 连接保活：定期 1-token 请求维持连接池热态（keep-alive 超时后不再冷连）
+        keepalive_s = int(os.environ.get("MED_LLM_KEEPALIVE", "60") or 0)
+        if keepalive_s > 0:
+            def _keepalive():
+                while True:
+                    time.sleep(keepalive_s)
+                    self._prewarm()
+            threading.Thread(target=_keepalive, daemon=True).start()
 
         # ---------- ROS 接口 ----------
         # 网关入口：直接消费 ASR 输出（含同音错字纠正），不再经过独立 router 进程
@@ -381,6 +389,38 @@ class KnowledgeBaseLLMNode(Node):
 
     # ------------------------------------------------------------------
     # ------------------------------------------------------------------
+    # ------------------------------------------------------------------
+    def _llm_correct_asr(self, text: str) -> str:
+        """ASR 语义纠错层（第二层，静态 typo_map 之后）：qwen-flash 上下文纠错，
+        修同音错字与丢字。防呆：纠正结果长度突变(>±30%)或为空 → 用原文。
+        MED_ASR_CORRECT=0 关闭；超时 MED_ASR_CORRECT_TIMEOUT（默认 1.0s）。
+        延迟被填充词播放期掩盖（[START] 先行，纠错与"好的，"播放并行）。"""
+        if os.environ.get("MED_ASR_CORRECT", "1") != "1":
+            return text
+        if len(text) < 4 or len(text) > 80:
+            return text
+        try:
+            timeout = float(os.environ.get("MED_ASR_CORRECT_TIMEOUT", "1.0"))
+            r = self.judge_client.chat.completions.create(
+                model=self.intent_model,
+                messages=[
+                    {"role": "system", "content": (
+                        "你是血透病房语音识别纠错器。只修正同音错字和明显丢字，"
+                        "保持原意、原语气和标点结构；不要回答问题、不要增删语义。"
+                        "领域词汇：内瘘、透析、血钾、血磷、干体重、穿刺、震颤、"
+                        "导管、人工血管。无错误就原样输出。只输出修正后的文本。")},
+                    {"role": "user", "content": text},
+                ],
+                temperature=0.0, max_tokens=100, timeout=timeout,
+                extra_body={"enable_thinking": False})
+            fixed = (r.choices[0].message.content or "").strip()
+            if fixed and abs(len(fixed) - len(text)) <= max(2, len(text) // 3):
+                self._lat("asr_correct", fixed=fixed[:24])
+                return fixed
+        except Exception as exc:
+            self.get_logger().warn(f"语义纠错失败（用原文）: {str(exc)[:60]}")
+        return text
+
     def _prewarm(self) -> None:
         """云端连接预热：1-token 微请求建立 TLS/连接池。30s 防抖。"""
         if time.time() - self._last_prewarm < 30:
@@ -521,6 +561,11 @@ class KnowledgeBaseLLMNode(Node):
             return
         fixed = _TYPO_PATTERN.sub(lambda m: _TYPO_MAP[m.group(0)], raw)
         fixed = _WAKE_RE.sub("小医", fixed)
+        # 第二层：LLM 语义纠错（qwen-flash，~0.3-0.5s，MED_ASR_CORRECT=0 可关）
+        corrected = self._llm_correct_asr(fixed)
+        if corrected != fixed:
+            self.get_logger().info(f"语义纠错：{fixed} -> {corrected}")
+            fixed = corrected
         if fixed != raw:
             self.get_logger().info(f"错别字修正：{raw} -> {fixed}")
         self.query_callback(String(data=fixed))
@@ -574,6 +619,33 @@ class KnowledgeBaseLLMNode(Node):
         return response
 
     # ------------------------------------------------------------------
+    def _rag_expand(self, question: str) -> str:
+        """LLM 查询扩展：口语问句 → 检索关键词（BM25 词面无重叠的语义改述
+        如 睡不着→失眠/情绪、小豆子→耳穴压豆）。超时/失败返回空串。
+        MED_RAG_EXPAND=0 关闭；延迟与填充词播放重叠，不增加首音。"""
+        if os.environ.get("MED_RAG_EXPAND", "1") != "1":
+            return ""
+        if len(question) > 60:
+            return ""
+        try:
+            r = self.judge_client.chat.completions.create(
+                model=self.intent_model,
+                messages=[
+                    {"role": "system", "content": (
+                        "把血透患者的问题改写成 2~4 个知识库检索关键词（逗号分隔）。"
+                        "只输出关键词。领域：内瘘、透析、血钾、血磷、干体重、穿刺、"
+                        "震颤、导管、人工血管、耳穴压豆、中医、情绪、失眠、运动、饮食。"
+                        "示例：'总睡不着心里烦' → '失眠, 情绪, 心理'")},
+                    {"role": "user", "content": question},
+                ],
+                temperature=0.0, max_tokens=30, timeout=1.0,
+                extra_body={"enable_thinking": False})
+            kw = (r.choices[0].message.content or "").strip().replace("\n", " ")[:40]
+            return kw
+        except Exception:
+            return ""
+
+    # ------------------------------------------------------------------
     def _rag_retrieve(self, question: str):
         """调用本地 RAG，返回 (chunks, took_ms)；失败返回 ([], None)。
 
@@ -587,6 +659,18 @@ class KnowledgeBaseLLMNode(Node):
             t0 = time.perf_counter()
             try:
                 chunks = rag_bm25.retrieve(question, top_k=self.rag_top_k)
+                # LLM 查询扩展：口语改述与知识库词面无重叠时（睡不着→失眠）
+                # 用扩展词补检索，合并去重（原词结果优先保序）
+                expanded = self._rag_expand(question)
+                if expanded and expanded != question:
+                    extra = rag_bm25.retrieve(expanded, top_k=max(2, self.rag_top_k - 2))
+                    seen = {(c.get("doc_id"), c.get("heading_path")) for c in chunks}
+                    for c in extra:
+                        key = (c.get("doc_id"), c.get("heading_path"))
+                        if key not in seen:
+                            chunks.append(c)
+                            seen.add(key)
+                    chunks = chunks[: self.rag_top_k]
                 took_ms = (time.perf_counter() - t0) * 1000.0
                 return chunks, took_ms
             except Exception as exc:

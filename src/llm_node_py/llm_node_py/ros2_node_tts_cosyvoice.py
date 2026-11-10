@@ -271,6 +271,19 @@ class CosyVoiceTtsServiceNode(Node):
         self.get_logger().info("CosyVoice2 TTS 服务节点启动完成，开始预热模型...")
         self._warmup_model()
 
+        # C1 内存卸载：音色已注册（缓存 spk），speech_tokenizer/campplus 仅用于
+        # 注册/克隆音色——卸载可省 RAM（克隆新音色需重启节点）。
+        if os.environ.get("VOICE_UNLOAD_TOKENIZER", "1") == "1":
+            try:
+                fe = self.model.frontend
+                fe.speech_tokenizer_session = None
+                fe.campplus_session = None
+                import gc as _gc
+                _gc.collect()
+                self.get_logger().info("tokenizer/campplus 会话已卸载（省 RAM）")
+            except Exception as exc:
+                self.get_logger().warn(f"tokenizer 卸载失败（保留）: {exc}")
+
         # 预合成填充词缓存（0 延迟可播）。首轮 TTS 单元用流式合成时，
         # 该状态位为 True，播完即复位。
         self._awaiting_first_unit = False
