@@ -753,6 +753,11 @@ class KnowledgeBaseLLMNode(Node):
             n_messages=len(messages),
         )
         try:
+            # 先发 [START] 再发云端请求：TTS 的填充词"好的，"不必等云端建连
+            #（实测云端建连等待中位 1.44s、P90 3.2s、最大 10s——提前发布让
+            # 首响从 ~1.4s 降到 ~0.1-0.3s；请求失败时错误路径会补发兜底话术）
+            self.pub.publish(String(data="[START]"))
+            started = True
             completion = self.client.chat.completions.create(
                 model=self._request_model,
                 messages=messages,
@@ -763,9 +768,6 @@ class KnowledgeBaseLLMNode(Node):
                 max_tokens=self.max_tokens,
                 timeout=self.llm_timeout,
             )
-
-            self.pub.publish(String(data="[START]"))
-            started = True
             first_chunk = True
             for chunk in completion:
                 if not chunk.choices:
