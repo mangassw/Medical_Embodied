@@ -59,6 +59,7 @@ from std_msgs.msg import Bool, String
 import dashscope
 from dashscope import Application, MultiModalConversation
 from openai import OpenAI
+import httpx
 
 # 把 ros 生成的 srv 文件的地址加上（ROS2中可能需要调整路径，保留原逻辑）
 ROOT_DIR = os.path.abspath(
@@ -300,7 +301,13 @@ class KnowledgeBaseLLMNode(Node):
         main_base = (
             self.base_url if self.provider in ("openai", "ollama") else self.judge_base_url
         )
-        self.client = OpenAI(api_key=self.api_key, base_url=main_base, max_retries=0)
+        # 分项超时：读超时 4s（流式中途卡死快速失败→切备用；正常长回答不受影响）
+        self._http_timeout = httpx.Timeout(
+            connect=float(os.environ.get("MED_LLM_CONNECT_TIMEOUT", "3.0")),
+            read=float(os.environ.get("MED_LLM_READ_TIMEOUT", "4.0")),
+            write=10.0, pool=3.0)
+        self.client = OpenAI(api_key=self.api_key, base_url=main_base,
+                             max_retries=0, timeout=self._http_timeout)
         self.judge_client = OpenAI(
             api_key=self.api_key, base_url=self.judge_base_url, max_retries=0
         )
@@ -390,6 +397,13 @@ class KnowledgeBaseLLMNode(Node):
     # ------------------------------------------------------------------
     # ------------------------------------------------------------------
     # ------------------------------------------------------------------
+    def _ensure_start_published(self) -> None:
+        """每轮只发一次 [START]（TTS 轮次起点：清队列+填充词）。
+        问题一进入就发，填充词不必等纠错/RAG扩展/云端建连。"""
+        if not getattr(self, "_round_start_published", False):
+            self.pub.publish(String(data="[START]"))
+            self._round_start_published = True
+
     def _llm_correct_asr(self, text: str) -> str:
         """ASR 语义纠错层（第二层，静态 typo_map 之后）：qwen-flash 上下文纠错，
         修同音错字与丢字。防呆：纠正结果长度突变(>±30%)或为空 → 用原文。
@@ -467,6 +481,8 @@ class KnowledgeBaseLLMNode(Node):
     # ------------------------------------------------------------------
     def query_callback(self, msg: String):
         question = msg.data.strip()
+        if not getattr(self, "_round_start_published", False):
+            self._ensure_start_published()
         self.get_logger().info(f"Received question: {question}")
         threading.Thread(
             target=self.handle_query, args=(question,), daemon=True
@@ -559,6 +575,8 @@ class KnowledgeBaseLLMNode(Node):
         raw = (msg.data or "").strip()
         if not raw:
             return
+        self._round_start_published = False
+        self._ensure_start_published()   # 填充词立即响（纠错/扩展与播放并行）
         fixed = _TYPO_PATTERN.sub(lambda m: _TYPO_MAP[m.group(0)], raw)
         fixed = _WAKE_RE.sub("小医", fixed)
         # 第二层：LLM 语义纠错（qwen-flash，~0.3-0.5s，MED_ASR_CORRECT=0 可关）
@@ -756,7 +774,9 @@ class KnowledgeBaseLLMNode(Node):
             try:
                 self._request_model = backup
                 out = self._stream_openai(messages, allow_fallback=False,
-                                          publish_start=False, **gen_kwargs)
+                                          publish_start=False,
+                                          skip_prefix=getattr(self, "_partial_text", ""),
+                                          **gen_kwargs)
                 self._lat("llm_failover", model=backup)
                 self.get_logger().info(f"备用模型 {backup} 回答成功 chars={len(out)}")
                 return out
@@ -830,7 +850,7 @@ class KnowledgeBaseLLMNode(Node):
             n_messages=len(messages),
         )
 
-        self.pub.publish(String(data="[START]"))
+        self._ensure_start_published()
         full_response = ""
         first_chunk = True
         error_detail = None
@@ -855,7 +875,21 @@ class KnowledgeBaseLLMNode(Node):
                     )
                     first_chunk = False
                 full_response += content
-                self.pub.publish(String(data=content))
+                if _diverged:
+                    self.pub.publish(String(data=content))
+                    continue
+                # 前缀去重：备用通道从与已播前缀的分歧处续播（避免重播开头）
+                cp = 0
+                m = min(len(full_response), len(skip_prefix))
+                while cp < m and full_response[cp] == skip_prefix[cp]:
+                    cp += 1
+                if cp == len(full_response) and len(full_response) <= len(skip_prefix):
+                    continue
+                _diverged = True
+                out = (full_response[len(skip_prefix):] if cp >= len(skip_prefix)
+                       else full_response[cp:])
+                if out:
+                    self.pub.publish(String(data=out))
             elif kind == "err":
                 error_detail = payload
                 break
@@ -876,7 +910,8 @@ class KnowledgeBaseLLMNode(Node):
     def _stream_openai(self, messages, temperature: float = 0.6,
                        frequency_penalty: float = None, max_tokens: int = None,
                        allow_fallback: bool = True,
-                       publish_start: bool = True) -> str:
+                       publish_start: bool = True,
+                       skip_prefix: str = "") -> str:
         """OpenAI 兼容接口路径（qwen-plus 直连）。
 
         allow_fallback: 失败时是否就地播兜底话术（False=抛异常，由双通道切换接管）
@@ -906,7 +941,7 @@ class KnowledgeBaseLLMNode(Node):
             #（实测云端建连等待中位 1.44s、P90 3.2s、最大 10s——提前发布让
             # 首响从 ~1.4s 降到 ~0.1-0.3s；请求失败时错误路径会补发兜底话术）
             if publish_start:
-                self.pub.publish(String(data="[START]"))
+                self._ensure_start_published()
             started = True
             completion = self.client.chat.completions.create(
                 model=self._request_model,
@@ -916,9 +951,10 @@ class KnowledgeBaseLLMNode(Node):
                 **({"frequency_penalty": frequency_penalty} if frequency_penalty is not None else {}),
                 top_p=0.8,
                 max_tokens=self.max_tokens,
-                timeout=self.llm_timeout,
+                timeout=self._http_timeout,
             )
             first_chunk = True
+            _diverged = not skip_prefix
             for chunk in completion:
                 if not chunk.choices:
                     continue
@@ -940,11 +976,12 @@ class KnowledgeBaseLLMNode(Node):
             # 网络超时/中断：播兜底话术并正常结束本段，避免 TTS 等不到 [DONE] 卡满超时
             self._lat("llm_error", backend="openai", error=str(exc)[:120])
             self.get_logger().error(f"LLM 流式失败({type(exc).__name__}): {exc}")
+            self._partial_text = full_response  # 供备用通道前缀去重
             if not allow_fallback:
                 raise
             fallback = "抱歉，我这会儿有点忙，请稍后再问一次。"
             if not started:
-                self.pub.publish(String(data="[START]"))
+                self._ensure_start_published()
             if not full_response:
                 self.pub.publish(String(data=fallback))
                 full_response = fallback
@@ -995,7 +1032,7 @@ class KnowledgeBaseLLMNode(Node):
         finally:
             dashscope.base_http_api_url = prev_base
 
-        self.pub.publish(String(data="[START]"))
+        self._ensure_start_published()
         full_response = ""
         for response in responses:
             if response.status_code == HTTPStatus.OK:
@@ -1119,6 +1156,7 @@ class KnowledgeBaseLLMNode(Node):
                         raise
 
             self.pub.publish(String(data="[DONE]"))
+            self._round_start_published = False
 
             # 完整问答写入内嵌对话历史（原 dialog_history 节点职责）
             self._append_history(question, full_response.strip())
@@ -1129,9 +1167,10 @@ class KnowledgeBaseLLMNode(Node):
         except Exception as exc:
             self.get_logger().error(f"Error querying KnowledgeBase LLM: {exc}")
             self._lat("llm_error", error=str(exc)[:120])
-            self.pub.publish(String(data="[START]"))
+            self._ensure_start_published()
             self.pub.publish(String(data="抱歉，我这会儿有点忙，请稍后再问一次。"))
             self.pub.publish(String(data="[DONE]"))
+            self._round_start_published = False
 
 
 def main(args=None):
