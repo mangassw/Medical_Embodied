@@ -30,7 +30,7 @@ EVALS = [
     (os.path.join(HERE, "..", "..", "tools/rag/eval/eval_set_hard.json"), None),
 ]
 
-SAFETY_RE = re.compile(r"呼叫护士|立即就医|尽快就医|马上联系护士|及时就医")
+SAFETY_RE = re.compile(r"呼叫护士|立即就医|尽快就医|马上联系护士|及时就医|马上就医|马上呼叫|赶紧就医")
 
 
 def fuzzy_in(point: str, text: str) -> bool:

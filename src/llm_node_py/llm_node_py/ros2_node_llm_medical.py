@@ -237,6 +237,10 @@ class KnowledgeBaseLLMNode(Node):
                 "https://llm-wd6fnilu0sk3blx6.cn-beijing.maas.aliyuncs.com/api/v1"
             )
         else:
+            # qwen3.8-flash 实测（2026-11-12, 23题质量评测）：TTFT 555ms vs 608ms
+            # 但要点覆盖均值 49.7% vs 58.7%、1 题边界编造——医疗场景质量优先，
+            # 默认仍用 qwen-plus-latest。需切换时 MED_LLM_MODEL=qwen3.8-flash
+            # （注意：qwen3 系列混合思考模型，openai 路径已显式关思考）
             self.model_name = _env("MED_LLM_MODEL", "qwen-plus-latest")
             default_base = "https://dashscope.aliyuncs.com/compatible-mode/v1"
         self.base_url = _env("MED_LLM_BASE_URL", default_base)
@@ -952,6 +956,8 @@ class KnowledgeBaseLLMNode(Node):
                 top_p=0.8,
                 max_tokens=self.max_tokens,
                 timeout=self._http_timeout,
+                # qwen3 系列混合思考模型必须显式关思考（否则先吐 reasoning 内容）
+                extra_body={"enable_thinking": self.enable_thinking},
             )
             first_chunk = True
             _diverged = not skip_prefix
