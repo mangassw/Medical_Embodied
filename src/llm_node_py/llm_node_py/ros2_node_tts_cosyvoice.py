@@ -525,6 +525,26 @@ class CosyVoiceTtsServiceNode(Node):
                             self.ttsRealtimeQueue.append(("[DONE]", None, None))
                     continue
                 text = item[1]
+                # 排空合并：已排队的后续单元并入本次合成（单次生成音频连续，
+                # 消除"短首句播完、次句还在合成"的句间空隙；上限 120 字）
+                done_flag = False
+                merged = 0
+                while len(text) < 120:
+                    try:
+                        nxt = self._synthQ.get_nowait()
+                    except queue.Empty:
+                        break
+                    self._synthQ.task_done()
+                    if nxt[0] == "done":
+                        if nxt[3] == self._session_gen:
+                            done_flag = True
+                        break
+                    if nxt[3] != item_gen:
+                        continue          # 跨轮次滞留单元丢弃
+                    text += nxt[1]
+                    merged += 1
+                if merged:
+                    self.get_logger().info(f"合并 {merged} 个后续单元一起合成")
 
                 def _enqueue_chunk(audio, sample_rate, _text=text):
                     with self.queueLock:
@@ -564,6 +584,9 @@ class CosyVoiceTtsServiceNode(Node):
                     self._enqueue_playback((text, audio, sample_rate))
                     if os.environ.get("TTS_DEBUG_DUP") == "1":
                         self.get_logger().info(f"[D2]合成完成入播:{text[:12]}")
+                if done_flag:
+                    with self.queueLock:
+                        self.ttsRealtimeQueue.append(("[DONE]", None, None))
             finally:
                 self._synthQ.task_done()
 
