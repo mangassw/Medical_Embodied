@@ -116,6 +116,16 @@ PYTHONNOUSERSITE=1 /home/artrc/miniconda3/envs/qwen_tts_online/bin/python \
 | `TTS_FP16_WEIGHTS` | 1 | CosyVoice2 权重真 fp16（2946→1600MiB，RTF 0.60→0.44；hift 保持 fp32） |
 | `PYTORCH_CUDA_ALLOC_CONF` | expandable_segments:True | 节点内自动设置，勿覆盖 |
 | `TTS_SPK_ID` / `TTS_PROMPT_WAV` / `TTS_PROMPT_TEXT` / `TTS_SPEED` | xiaoyi / 项目资产 / — / 1.0 | 克隆音色定义（换音色只需换提示音+文本） |
+| `MED_LLM_BACKUP_MODEL` | qwen-flash | 备用模型：主模型失败自动切换（`MED_LLM_FAILOVER=0` 关闭） |
+| `MED_LLM_READ_TIMEOUT` / `MED_LLM_CONNECT_TIMEOUT` | 4.0 / 3.0 | LLM 分项超时：流式卡顿 4s 快速失败切备用，正常长回答不受影响 |
+| `MED_LLM_KEEPALIVE` | 60 | 云端连接保活间隔（秒，0 关闭）——消除建连等待（中位 1.44s→~0） |
+| `MED_LLM_PREWARM` | 1 | 启动/唤醒（start_asr）时云端连接预热 |
+| `MED_ASR_CORRECT` / `MED_ASR_CORRECT_TIMEOUT` | 1 / 1.0 | ASR 语义纠错层（qwen-flash 修同音错字/丢字，静态 typo_map 后第二层） |
+| `MED_RAG_EXPAND` | 1 | RAG 查询扩展：口语改述→检索关键词（修复"睡不着/小豆子"类语义漏检拒答） |
+| `ASR_SESSION_TIMEOUT` | 15 | 会话静默超时（秒）：长回答场景调大（如 30~60），否则播放中途被判超时 |
+| `VOICE_TTS_QMAX` | 15 | TTS 播放队列深度上限（满时背压，超时丢最老保最新） |
+| `VOICE_UNLOAD_TOKENIZER` | 1 | 音色注册后卸载 tokenizer 会话（省 RAM；克隆新音色需重启） |
+| `TTS_SPLIT_COMMAS` | 0 | 0=句级合成单元（默认，音色稳）；1=逐子句（旧行为，碎片音色漂移） |
 | `TTS_LOAD_TRT` | **1** | TRT 加速 flow 解码（引擎已缓存 .plan，默认开启）：RTF 0.44→0.39、显存 1600→2036MiB；省显存时置 0 |
 | `TTS_FLOW_FP16` | TRT 关=1 / TRT 开=0 | flow 编码器权重 fp16（与 TRT 的 dtype 兼容默认值已按实测配好） |
 | `MED_LLM_PROVIDER` / `MED_LLM_MODEL` | openai / qwen-plus-latest | 可切 dashscope 原生（deepseek-v4.1-flash-1017）或 ollama（qwen3:8b，降级用） |
@@ -164,6 +174,22 @@ PYTHONNOUSERSITE=1 /home/artrc/miniconda3/envs/qwen_tts_online/bin/python \
   注意资料约束偏松，只建议闲聊路径）。
 - `RAG_MODE=http`：旧 GPU 混合检索（BGE-M3），排障时对比用。
 
+
+## 六、已知云端特性与近期优化摘要
+
+- **qwen-plus 偶发流式停顿（~3%）**：服务端随机 >4s 无输出（32 次压测实测，`-latest` 别名与固定版无差异）。
+  处理链：读超时 4s 快速失败 → 备用模型 qwen-flash 自动切换 → **前缀去重续播**（不重播已播开头）。
+  最坏情况从旧配置的 10s 静音+重播整段，压到 ~4s 停顿后无缝续播。
+- **qwen3.8-flash 评测结论**（23 题真实链路）：TTFT 555ms（qwen-plus 608ms）但要点覆盖均值 49.7% vs 58.7%，
+  1 题边界编造——医疗场景质量优先，默认仍 qwen-plus-latest；切换用 `MED_LLM_MODEL=qwen3.8-flash`（代码已显式关思考）。
+- **填充词"好的，"即时响应**：[START] 在问题入口发布，语义纠错/RAG 扩展/云端建连全部与填充词播放并行。
+- **合成排空合并**：已排队的后续单元并入同一次合成（≤120 字），消除短首句后的句间空隙。
+- **systemd 服务化（无头部署）**：
+  ```bash
+  sudo cp deploy/voice-chain.service /etc/systemd/system/
+  sudo systemctl daemon-reload && sudo systemctl enable --now voice-chain
+  ```
+  与前台 `./voice_start.sh` 互斥（单实例锁自动仲裁）；开机自启、崩溃 5s 重启、journald + logs/voice_* 双日志。
 
 ## 六、一键部署包与脚本（deploy_voice_chain.sh）
 
